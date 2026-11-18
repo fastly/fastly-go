@@ -1,82 +1,80 @@
-# TlsCertificateResponseDataAllOf
+# TLSCertificateResponseDataAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
-**Attributes** | Pointer to [**TlsCertificateResponseAttributes**](TlsCertificateResponseAttributes.md) |  | [optional] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Attributes** | Pointer to [**TLSCertificateResponseAttributes**](TlsCertificateResponseAttributes.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsCertificateResponseDataAllOf
+### NewTLSCertificateResponseDataAllOf
 
-`func NewTlsCertificateResponseDataAllOf() *TlsCertificateResponseDataAllOf`
+`func NewTLSCertificateResponseDataAllOf() *TLSCertificateResponseDataAllOf`
 
-NewTlsCertificateResponseDataAllOf instantiates a new TlsCertificateResponseDataAllOf object
+NewTLSCertificateResponseDataAllOf instantiates a new TLSCertificateResponseDataAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsCertificateResponseDataAllOfWithDefaults
+### NewTLSCertificateResponseDataAllOfWithDefaults
 
-`func NewTlsCertificateResponseDataAllOfWithDefaults() *TlsCertificateResponseDataAllOf`
+`func NewTLSCertificateResponseDataAllOfWithDefaults() *TLSCertificateResponseDataAllOf`
 
-NewTlsCertificateResponseDataAllOfWithDefaults instantiates a new TlsCertificateResponseDataAllOf object
+NewTLSCertificateResponseDataAllOfWithDefaults instantiates a new TLSCertificateResponseDataAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *TlsCertificateResponseDataAllOf) GetId() string`
+`func (o *TLSCertificateResponseDataAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *TlsCertificateResponseDataAllOf) GetIdOk() (*string, bool)`
+`func (o *TLSCertificateResponseDataAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *TlsCertificateResponseDataAllOf) SetId(v string)`
+`func (o *TLSCertificateResponseDataAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *TlsCertificateResponseDataAllOf) HasId() bool`
+`func (o *TLSCertificateResponseDataAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TlsCertificateResponseDataAllOf) GetAttributes() TlsCertificateResponseAttributes`
+`func (o *TLSCertificateResponseDataAllOf) GetAttributes() TLSCertificateResponseAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TlsCertificateResponseDataAllOf) GetAttributesOk() (*TlsCertificateResponseAttributes, bool)`
+`func (o *TLSCertificateResponseDataAllOf) GetAttributesOk() (*TLSCertificateResponseAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TlsCertificateResponseDataAllOf) SetAttributes(v TlsCertificateResponseAttributes)`
+`func (o *TLSCertificateResponseDataAllOf) SetAttributes(v TLSCertificateResponseAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TlsCertificateResponseDataAllOf) HasAttributes() bool`
+`func (o *TLSCertificateResponseDataAllOf) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

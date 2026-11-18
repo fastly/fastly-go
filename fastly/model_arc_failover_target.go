@@ -19,7 +19,7 @@ import (
 // ArcFailoverTarget A provider connection to retry a request against.
 type ArcFailoverTarget struct {
 	// The ID of the provider connection to retry against.
-	ProviderConnectionId string `json:"provider_connection_id"`
+	ProviderConnectionID string `json:"provider_connection_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -29,9 +29,9 @@ type _ArcFailoverTarget ArcFailoverTarget
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcFailoverTarget(providerConnectionId string) *ArcFailoverTarget {
+func NewArcFailoverTarget(providerConnectionID string) *ArcFailoverTarget {
 	this := ArcFailoverTarget{}
-	this.ProviderConnectionId = providerConnectionId
+	this.ProviderConnectionID = providerConnectionID
 	return &this
 }
 
@@ -43,28 +43,28 @@ func NewArcFailoverTargetWithDefaults() *ArcFailoverTarget {
 	return &this
 }
 
-// GetProviderConnectionId returns the ProviderConnectionId field value
-func (o *ArcFailoverTarget) GetProviderConnectionId() string {
+// GetProviderConnectionID returns the ProviderConnectionID field value
+func (o *ArcFailoverTarget) GetProviderConnectionID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.ProviderConnectionId
+	return o.ProviderConnectionID
 }
 
-// GetProviderConnectionIdOk returns a tuple with the ProviderConnectionId field value
+// GetProviderConnectionIDOk returns a tuple with the ProviderConnectionID field value
 // and a boolean to check if the value has been set.
-func (o *ArcFailoverTarget) GetProviderConnectionIdOk() (*string, bool) {
+func (o *ArcFailoverTarget) GetProviderConnectionIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ProviderConnectionId, true
+	return &o.ProviderConnectionID, true
 }
 
-// SetProviderConnectionId sets field value
-func (o *ArcFailoverTarget) SetProviderConnectionId(v string) {
-	o.ProviderConnectionId = v
+// SetProviderConnectionID sets field value
+func (o *ArcFailoverTarget) SetProviderConnectionID(v string) {
+	o.ProviderConnectionID = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -72,7 +72,7 @@ func (o *ArcFailoverTarget) SetProviderConnectionId(v string) {
 func (o ArcFailoverTarget) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["provider_connection_id"] = o.ProviderConnectionId
+		toSerialize["provider_connection_id"] = o.ProviderConnectionID
 	}
 
 	for key, value := range o.AdditionalProperties {

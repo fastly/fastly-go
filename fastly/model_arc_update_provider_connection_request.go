@@ -21,7 +21,7 @@ type ArcUpdateProviderConnectionRequest struct {
 	// The AI model identifiers this connection is allowed to use. Must be non-empty if included.
 	Models []string `json:"models,omitempty"`
 	// The base URL of the provider's API (`api-key` connections only).
-	BaseUrl *string `json:"base_url,omitempty"`
+	BaseURL *string `json:"base_url,omitempty"`
 	// The provider's secret API key (`api-key` connections only).
 	ApiKey *string `json:"api_key,omitempty"`
 	// The ARN of the IAM role to assume for Bedrock requests (`aws-iam` connections only).
@@ -82,36 +82,36 @@ func (o *ArcUpdateProviderConnectionRequest) SetModels(v []string) {
 	o.Models = v
 }
 
-// GetBaseUrl returns the BaseUrl field value if set, zero value otherwise.
-func (o *ArcUpdateProviderConnectionRequest) GetBaseUrl() string {
-	if o == nil || o.BaseUrl == nil {
+// GetBaseURL returns the BaseURL field value if set, zero value otherwise.
+func (o *ArcUpdateProviderConnectionRequest) GetBaseURL() string {
+	if o == nil || o.BaseURL == nil {
 		var ret string
 		return ret
 	}
-	return *o.BaseUrl
+	return *o.BaseURL
 }
 
-// GetBaseUrlOk returns a tuple with the BaseUrl field value if set, nil otherwise
+// GetBaseURLOk returns a tuple with the BaseURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArcUpdateProviderConnectionRequest) GetBaseUrlOk() (*string, bool) {
-	if o == nil || o.BaseUrl == nil {
+func (o *ArcUpdateProviderConnectionRequest) GetBaseURLOk() (*string, bool) {
+	if o == nil || o.BaseURL == nil {
 		return nil, false
 	}
-	return o.BaseUrl, true
+	return o.BaseURL, true
 }
 
-// HasBaseUrl returns a boolean if a field has been set.
-func (o *ArcUpdateProviderConnectionRequest) HasBaseUrl() bool {
-	if o != nil && o.BaseUrl != nil {
+// HasBaseURL returns a boolean if a field has been set.
+func (o *ArcUpdateProviderConnectionRequest) HasBaseURL() bool {
+	if o != nil && o.BaseURL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBaseUrl gets a reference to the given string and assigns it to the BaseUrl field.
-func (o *ArcUpdateProviderConnectionRequest) SetBaseUrl(v string) {
-	o.BaseUrl = &v
+// SetBaseURL gets a reference to the given string and assigns it to the BaseURL field.
+func (o *ArcUpdateProviderConnectionRequest) SetBaseURL(v string) {
+	o.BaseURL = &v
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
@@ -217,8 +217,8 @@ func (o ArcUpdateProviderConnectionRequest) MarshalJSON() ([]byte, error) {
 	if o.Models != nil {
 		toSerialize["models"] = o.Models
 	}
-	if o.BaseUrl != nil {
-		toSerialize["base_url"] = o.BaseUrl
+	if o.BaseURL != nil {
+		toSerialize["base_url"] = o.BaseURL
 	}
 	if o.ApiKey != nil {
 		toSerialize["api_key"] = o.ApiKey

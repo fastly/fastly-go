@@ -36,10 +36,10 @@ type ProductBrotliCompressionAPI interface {
 		Disable the Brotli Compression product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIDisableProductBrotliCompressionRequest
 	*/
-	DisableProductBrotliCompression(ctx context.Context, serviceId string) APIDisableProductBrotliCompressionRequest
+	DisableProductBrotliCompression(ctx context.Context, serviceID string) APIDisableProductBrotliCompressionRequest
 
 	// DisableProductBrotliCompressionExecute executes the request
 	DisableProductBrotliCompressionExecute(r APIDisableProductBrotliCompressionRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductBrotliCompressionAPI interface {
 		Enable the Brotli Compression product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIEnableProductBrotliCompressionRequest
 	*/
-	EnableProductBrotliCompression(ctx context.Context, serviceId string) APIEnableProductBrotliCompressionRequest
+	EnableProductBrotliCompression(ctx context.Context, serviceID string) APIEnableProductBrotliCompressionRequest
 
 	// EnableProductBrotliCompressionExecute executes the request
 	//  @return BrotliCompressionResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductBrotliCompressionAPI interface {
 		Get the enablement status of the Brotli Compression product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetProductBrotliCompressionRequest
 	*/
-	GetProductBrotliCompression(ctx context.Context, serviceId string) APIGetProductBrotliCompressionRequest
+	GetProductBrotliCompression(ctx context.Context, serviceID string) APIGetProductBrotliCompressionRequest
 
 	// GetProductBrotliCompressionExecute executes the request
 	//  @return BrotliCompressionResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductBrotliCompressionAPIService service
 type APIDisableProductBrotliCompressionRequest struct {
 	ctx        context.Context
 	APIService ProductBrotliCompressionAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductBrotliCompression Disable product
 Disable the Brotli Compression product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIDisableProductBrotliCompressionRequest
 */
-func (a *ProductBrotliCompressionAPIService) DisableProductBrotliCompression(ctx context.Context, serviceId string) APIDisableProductBrotliCompressionRequest {
+func (a *ProductBrotliCompressionAPIService) DisableProductBrotliCompression(ctx context.Context, serviceID string) APIDisableProductBrotliCompressionRequest {
 	return APIDisableProductBrotliCompressionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductBrotliCompressionAPIService) DisableProductBrotliCompressionExec
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/brotli_compression/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductBrotliCompressionAPIService) DisableProductBrotliCompressionExec
 type APIEnableProductBrotliCompressionRequest struct {
 	ctx        context.Context
 	APIService ProductBrotliCompressionAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductBrotliCompression Enable product
 Enable the Brotli Compression product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIEnableProductBrotliCompressionRequest
 */
-func (a *ProductBrotliCompressionAPIService) EnableProductBrotliCompression(ctx context.Context, serviceId string) APIEnableProductBrotliCompressionRequest {
+func (a *ProductBrotliCompressionAPIService) EnableProductBrotliCompression(ctx context.Context, serviceID string) APIEnableProductBrotliCompressionRequest {
 	return APIEnableProductBrotliCompressionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductBrotliCompressionAPIService) EnableProductBrotliCompressionExecu
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/brotli_compression/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductBrotliCompressionAPIService) EnableProductBrotliCompressionExecu
 type APIGetProductBrotliCompressionRequest struct {
 	ctx        context.Context
 	APIService ProductBrotliCompressionAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductBrotliCompression Get product enablement status
 Get the enablement status of the Brotli Compression product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetProductBrotliCompressionRequest
 */
-func (a *ProductBrotliCompressionAPIService) GetProductBrotliCompression(ctx context.Context, serviceId string) APIGetProductBrotliCompressionRequest {
+func (a *ProductBrotliCompressionAPIService) GetProductBrotliCompression(ctx context.Context, serviceID string) APIGetProductBrotliCompressionRequest {
 	return APIGetProductBrotliCompressionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductBrotliCompressionAPIService) GetProductBrotliCompressionExecute(
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/brotli_compression/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

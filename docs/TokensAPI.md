@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiBulkRevokeTokensRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
@@ -155,12 +155,12 @@ import (
 )
 
 func main() {
-    tokenId := "tokenId_example" // string | Alphanumeric string identifying a token.
+    tokenID := "tokenId_example" // string | Alphanumeric string identifying a token.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TokensAPI.GetToken(ctx, tokenId).Execute()
+    resp, r, err := apiClient.TokensAPI.GetToken(ctx, tokenID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TokensAPI.GetToken`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -176,7 +176,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tokenId** | **string** | Alphanumeric string identifying a token. | 
+**tokenID** | **string** | Alphanumeric string identifying a token. | 
 
 ### Other Parameters
 
@@ -281,12 +281,12 @@ import (
 )
 
 func main() {
-    customerId := "customerId_example" // string | Alphanumeric string identifying the customer.
+    customerID := "customerId_example" // string | Alphanumeric string identifying the customer.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TokensAPI.ListTokensCustomer(ctx, customerId).Execute()
+    resp, r, err := apiClient.TokensAPI.ListTokensCustomer(ctx, customerID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TokensAPI.ListTokensCustomer`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -302,7 +302,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | Alphanumeric string identifying the customer. | 
+**customerID** | **string** | Alphanumeric string identifying the customer. | 
 
 ### Other Parameters
 
@@ -407,12 +407,12 @@ import (
 )
 
 func main() {
-    tokenId := "tokenId_example" // string | Alphanumeric string identifying a token.
+    tokenID := "tokenId_example" // string | Alphanumeric string identifying a token.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TokensAPI.RevokeToken(ctx, tokenId).Execute()
+    resp, r, err := apiClient.TokensAPI.RevokeToken(ctx, tokenID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TokensAPI.RevokeToken`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -426,7 +426,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tokenId** | **string** | Alphanumeric string identifying a token. | 
+**tokenID** | **string** | Alphanumeric string identifying a token. | 
 
 ### Other Parameters
 
@@ -508,4 +508,3 @@ Other parameters are passed through a pointer to a apiRevokeTokenCurrentRequest 
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

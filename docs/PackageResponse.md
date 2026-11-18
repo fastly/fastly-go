@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Metadata** | Pointer to [**PackageMetadata**](PackageMetadata.md) |  | [optional] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Id** | Pointer to **string** | Alphanumeric string identifying the package. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the package. | [optional] [readonly] 
 
 ## Methods
 
@@ -56,30 +56,30 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceID
 
-`func (o *PackageResponse) GetServiceId() string`
+`func (o *PackageResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *PackageResponse) GetServiceIdOk() (*string, bool)`
+`func (o *PackageResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *PackageResponse) SetServiceId(v string)`
+`func (o *PackageResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *PackageResponse) HasServiceId() bool`
+`func (o *PackageResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -211,32 +211,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *PackageResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *PackageResponse) GetId() string`
+`func (o *PackageResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *PackageResponse) GetIdOk() (*string, bool)`
+`func (o *PackageResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *PackageResponse) SetId(v string)`
+`func (o *PackageResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *PackageResponse) HasId() bool`
+`func (o *PackageResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

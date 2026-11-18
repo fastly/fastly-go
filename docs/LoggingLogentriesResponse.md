@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **Port** | Pointer to **int32** | The port number. | [optional] [default to 20000]
 **Token** | Pointer to **string** | Use token based authentication. | [optional] 
-**UseTls** | Pointer to [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -259,30 +259,30 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetUseTls
+### GetUseTLS
 
-`func (o *LoggingLogentriesResponse) GetUseTls() LoggingUseTlsString`
+`func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLSString`
 
-GetUseTls returns the UseTls field if non-nil, zero value otherwise.
+GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
-### GetUseTlsOk
+### GetUseTLSOk
 
-`func (o *LoggingLogentriesResponse) GetUseTlsOk() (*LoggingUseTlsString, bool)`
+`func (o *LoggingLogentriesResponse) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
-GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
+GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTls
+### SetUseTLS
 
-`func (o *LoggingLogentriesResponse) SetUseTls(v LoggingUseTlsString)`
+`func (o *LoggingLogentriesResponse) SetUseTLS(v LoggingUseTLSString)`
 
-SetUseTls sets UseTls field to given value.
+SetUseTLS sets UseTLS field to given value.
 
-### HasUseTls
+### HasUseTLS
 
-`func (o *LoggingLogentriesResponse) HasUseTls() bool`
+`func (o *LoggingLogentriesResponse) HasUseTLS() bool`
 
-HasUseTls returns a boolean if a field has been set.
+HasUseTLS returns a boolean if a field has been set.
 
 ### GetRegion
 
@@ -414,30 +414,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingLogentriesResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingLogentriesResponse) GetServiceId() string`
+`func (o *LoggingLogentriesResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingLogentriesResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingLogentriesResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingLogentriesResponse) SetServiceId(v string)`
+`func (o *LoggingLogentriesResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingLogentriesResponse) HasServiceId() bool`
+`func (o *LoggingLogentriesResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -466,5 +466,3 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

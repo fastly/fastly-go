@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// TlsPrivateKeyDataAttributes struct for TlsPrivateKeyDataAttributes
-type TlsPrivateKeyDataAttributes struct {
+// TLSPrivateKeyDataAttributes struct for TLSPrivateKeyDataAttributes
+type TLSPrivateKeyDataAttributes struct {
 	// A customizable name for your private key. Optional.
 	Name *string `json:"name,omitempty"`
 	// The contents of the private key. Must be a PEM-formatted key. Not returned in response body. Required.
@@ -25,27 +25,27 @@ type TlsPrivateKeyDataAttributes struct {
 	AdditionalProperties map[string]any
 }
 
-type _TlsPrivateKeyDataAttributes TlsPrivateKeyDataAttributes
+type _TLSPrivateKeyDataAttributes TLSPrivateKeyDataAttributes
 
-// NewTlsPrivateKeyDataAttributes instantiates a new TlsPrivateKeyDataAttributes object
+// NewTLSPrivateKeyDataAttributes instantiates a new TLSPrivateKeyDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsPrivateKeyDataAttributes() *TlsPrivateKeyDataAttributes {
-	this := TlsPrivateKeyDataAttributes{}
+func NewTLSPrivateKeyDataAttributes() *TLSPrivateKeyDataAttributes {
+	this := TLSPrivateKeyDataAttributes{}
 	return &this
 }
 
-// NewTlsPrivateKeyDataAttributesWithDefaults instantiates a new TlsPrivateKeyDataAttributes object
+// NewTLSPrivateKeyDataAttributesWithDefaults instantiates a new TLSPrivateKeyDataAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsPrivateKeyDataAttributesWithDefaults() *TlsPrivateKeyDataAttributes {
-	this := TlsPrivateKeyDataAttributes{}
+func NewTLSPrivateKeyDataAttributesWithDefaults() *TLSPrivateKeyDataAttributes {
+	this := TLSPrivateKeyDataAttributes{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *TlsPrivateKeyDataAttributes) GetName() string {
+func (o *TLSPrivateKeyDataAttributes) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *TlsPrivateKeyDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyDataAttributes) GetNameOk() (*string, bool) {
+func (o *TLSPrivateKeyDataAttributes) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *TlsPrivateKeyDataAttributes) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *TlsPrivateKeyDataAttributes) HasName() bool {
+func (o *TLSPrivateKeyDataAttributes) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *TlsPrivateKeyDataAttributes) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *TlsPrivateKeyDataAttributes) SetName(v string) {
+func (o *TLSPrivateKeyDataAttributes) SetName(v string) {
 	o.Name = &v
 }
 
 // GetKey returns the Key field value if set, zero value otherwise.
-func (o *TlsPrivateKeyDataAttributes) GetKey() string {
+func (o *TLSPrivateKeyDataAttributes) GetKey() string {
 	if o == nil || o.Key == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *TlsPrivateKeyDataAttributes) GetKey() string {
 
 // GetKeyOk returns a tuple with the Key field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyDataAttributes) GetKeyOk() (*string, bool) {
+func (o *TLSPrivateKeyDataAttributes) GetKeyOk() (*string, bool) {
 	if o == nil || o.Key == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *TlsPrivateKeyDataAttributes) GetKeyOk() (*string, bool) {
 }
 
 // HasKey returns a boolean if a field has been set.
-func (o *TlsPrivateKeyDataAttributes) HasKey() bool {
+func (o *TLSPrivateKeyDataAttributes) HasKey() bool {
 	if o != nil && o.Key != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *TlsPrivateKeyDataAttributes) HasKey() bool {
 }
 
 // SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *TlsPrivateKeyDataAttributes) SetKey(v string) {
+func (o *TLSPrivateKeyDataAttributes) SetKey(v string) {
 	o.Key = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsPrivateKeyDataAttributes) MarshalJSON() ([]byte, error) {
+func (o TLSPrivateKeyDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -128,11 +128,11 @@ func (o TlsPrivateKeyDataAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsPrivateKeyDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsPrivateKeyDataAttributes := _TlsPrivateKeyDataAttributes{}
+func (o *TLSPrivateKeyDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSPrivateKeyDataAttributes := _TLSPrivateKeyDataAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTlsPrivateKeyDataAttributes); err == nil {
-		*o = TlsPrivateKeyDataAttributes(varTlsPrivateKeyDataAttributes)
+	if err = json.Unmarshal(bytes, &varTLSPrivateKeyDataAttributes); err == nil {
+		*o = TLSPrivateKeyDataAttributes(varTLSPrivateKeyDataAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *TlsPrivateKeyDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsPrivateKeyDataAttributes is a helper abstraction for handling nullable tlsprivatekeydataattributes types.
-type NullableTlsPrivateKeyDataAttributes struct {
-	value *TlsPrivateKeyDataAttributes
+// NullableTLSPrivateKeyDataAttributes is a helper abstraction for handling nullable tlsprivatekeydataattributes types.
+type NullableTLSPrivateKeyDataAttributes struct {
+	value *TLSPrivateKeyDataAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsPrivateKeyDataAttributes) Get() *TlsPrivateKeyDataAttributes {
+func (v NullableTLSPrivateKeyDataAttributes) Get() *TLSPrivateKeyDataAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsPrivateKeyDataAttributes) Set(val *TlsPrivateKeyDataAttributes) {
+func (v *NullableTLSPrivateKeyDataAttributes) Set(val *TLSPrivateKeyDataAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsPrivateKeyDataAttributes) IsSet() bool {
+func (v NullableTLSPrivateKeyDataAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsPrivateKeyDataAttributes) Unset() {
+func (v *NullableTLSPrivateKeyDataAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsPrivateKeyDataAttributes returns a pointer to a new instance of NullableTlsPrivateKeyDataAttributes.
-func NewNullableTlsPrivateKeyDataAttributes(val *TlsPrivateKeyDataAttributes) *NullableTlsPrivateKeyDataAttributes {
-	return &NullableTlsPrivateKeyDataAttributes{value: val, isSet: true}
+// NewNullableTLSPrivateKeyDataAttributes returns a pointer to a new instance of NullableTLSPrivateKeyDataAttributes.
+func NewNullableTLSPrivateKeyDataAttributes(val *TLSPrivateKeyDataAttributes) *NullableTLSPrivateKeyDataAttributes {
+	return &NullableTLSPrivateKeyDataAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsPrivateKeyDataAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTLSPrivateKeyDataAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsPrivateKeyDataAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSPrivateKeyDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

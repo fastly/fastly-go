@@ -1,4 +1,4 @@
-# TlsActivationsResponse
+# TLSActivationsResponse
 
 ## Properties
 
@@ -6,103 +6,101 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationMeta1**](PaginationMeta1.md) |  | [optional] 
-**Data** | Pointer to [**[]TlsActivationResponseData**](TlsActivationResponseData.md) |  | [optional] 
+**Data** | Pointer to [**[]TLSActivationResponseData**](TlsActivationResponseData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsActivationsResponse
+### NewTLSActivationsResponse
 
-`func NewTlsActivationsResponse() *TlsActivationsResponse`
+`func NewTLSActivationsResponse() *TLSActivationsResponse`
 
-NewTlsActivationsResponse instantiates a new TlsActivationsResponse object
+NewTLSActivationsResponse instantiates a new TLSActivationsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsActivationsResponseWithDefaults
+### NewTLSActivationsResponseWithDefaults
 
-`func NewTlsActivationsResponseWithDefaults() *TlsActivationsResponse`
+`func NewTLSActivationsResponseWithDefaults() *TLSActivationsResponse`
 
-NewTlsActivationsResponseWithDefaults instantiates a new TlsActivationsResponse object
+NewTLSActivationsResponseWithDefaults instantiates a new TLSActivationsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLinks
 
-`func (o *TlsActivationsResponse) GetLinks() PaginationLinks`
+`func (o *TLSActivationsResponse) GetLinks() PaginationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *TlsActivationsResponse) GetLinksOk() (*PaginationLinks, bool)`
+`func (o *TLSActivationsResponse) GetLinksOk() (*PaginationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *TlsActivationsResponse) SetLinks(v PaginationLinks)`
+`func (o *TLSActivationsResponse) SetLinks(v PaginationLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *TlsActivationsResponse) HasLinks() bool`
+`func (o *TLSActivationsResponse) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *TlsActivationsResponse) GetMeta() PaginationMeta1`
+`func (o *TLSActivationsResponse) GetMeta() PaginationMeta1`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *TlsActivationsResponse) GetMetaOk() (*PaginationMeta1, bool)`
+`func (o *TLSActivationsResponse) GetMetaOk() (*PaginationMeta1, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *TlsActivationsResponse) SetMeta(v PaginationMeta1)`
+`func (o *TLSActivationsResponse) SetMeta(v PaginationMeta1)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *TlsActivationsResponse) HasMeta() bool`
+`func (o *TLSActivationsResponse) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *TlsActivationsResponse) GetData() []TlsActivationResponseData`
+`func (o *TLSActivationsResponse) GetData() []TLSActivationResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsActivationsResponse) GetDataOk() (*[]TlsActivationResponseData, bool)`
+`func (o *TLSActivationsResponse) GetDataOk() (*[]TLSActivationResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsActivationsResponse) SetData(v []TlsActivationResponseData)`
+`func (o *TLSActivationsResponse) SetData(v []TLSActivationResponseData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsActivationsResponse) HasData() bool`
+`func (o *TLSActivationsResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

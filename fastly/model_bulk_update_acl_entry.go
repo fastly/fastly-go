@@ -16,46 +16,46 @@ import (
 	"encoding/json"
 )
 
-// BulkUpdateAclEntry struct for BulkUpdateAclEntry
-type BulkUpdateAclEntry struct {
+// BulkUpdateACLEntry struct for BulkUpdateACLEntry
+type BulkUpdateACLEntry struct {
 	// Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
 	Negated *int32 `json:"negated,omitempty"`
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`
 	// An IP address.
-	Ip *string `json:"ip,omitempty"`
+	IP *string `json:"ip,omitempty"`
 	// Number of bits for the subnet mask applied to the IP address. For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses), and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
 	Subnet               NullableInt32 `json:"subnet,omitempty"`
 	Op                   *string       `json:"op,omitempty"`
-	Id                   *string       `json:"id,omitempty"`
+	ID                   *string       `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _BulkUpdateAclEntry BulkUpdateAclEntry
+type _BulkUpdateACLEntry BulkUpdateACLEntry
 
-// NewBulkUpdateAclEntry instantiates a new BulkUpdateAclEntry object
+// NewBulkUpdateACLEntry instantiates a new BulkUpdateACLEntry object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBulkUpdateAclEntry() *BulkUpdateAclEntry {
-	this := BulkUpdateAclEntry{}
+func NewBulkUpdateACLEntry() *BulkUpdateACLEntry {
+	this := BulkUpdateACLEntry{}
 	var negated int32 = 0
 	this.Negated = &negated
 	return &this
 }
 
-// NewBulkUpdateAclEntryWithDefaults instantiates a new BulkUpdateAclEntry object
+// NewBulkUpdateACLEntryWithDefaults instantiates a new BulkUpdateACLEntry object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBulkUpdateAclEntryWithDefaults() *BulkUpdateAclEntry {
-	this := BulkUpdateAclEntry{}
+func NewBulkUpdateACLEntryWithDefaults() *BulkUpdateACLEntry {
+	this := BulkUpdateACLEntry{}
 	var negated int32 = 0
 	this.Negated = &negated
 	return &this
 }
 
 // GetNegated returns the Negated field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntry) GetNegated() int32 {
+func (o *BulkUpdateACLEntry) GetNegated() int32 {
 	if o == nil || o.Negated == nil {
 		var ret int32
 		return ret
@@ -65,7 +65,7 @@ func (o *BulkUpdateAclEntry) GetNegated() int32 {
 
 // GetNegatedOk returns a tuple with the Negated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntry) GetNegatedOk() (*int32, bool) {
+func (o *BulkUpdateACLEntry) GetNegatedOk() (*int32, bool) {
 	if o == nil || o.Negated == nil {
 		return nil, false
 	}
@@ -73,7 +73,7 @@ func (o *BulkUpdateAclEntry) GetNegatedOk() (*int32, bool) {
 }
 
 // HasNegated returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntry) HasNegated() bool {
+func (o *BulkUpdateACLEntry) HasNegated() bool {
 	if o != nil && o.Negated != nil {
 		return true
 	}
@@ -82,12 +82,12 @@ func (o *BulkUpdateAclEntry) HasNegated() bool {
 }
 
 // SetNegated gets a reference to the given int32 and assigns it to the Negated field.
-func (o *BulkUpdateAclEntry) SetNegated(v int32) {
+func (o *BulkUpdateACLEntry) SetNegated(v int32) {
 	o.Negated = &v
 }
 
 // GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BulkUpdateAclEntry) GetComment() string {
+func (o *BulkUpdateACLEntry) GetComment() string {
 	if o == nil || o.Comment.Get() == nil {
 		var ret string
 		return ret
@@ -98,7 +98,7 @@ func (o *BulkUpdateAclEntry) GetComment() string {
 // GetCommentOk returns a tuple with the Comment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BulkUpdateAclEntry) GetCommentOk() (*string, bool) {
+func (o *BulkUpdateACLEntry) GetCommentOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -106,7 +106,7 @@ func (o *BulkUpdateAclEntry) GetCommentOk() (*string, bool) {
 }
 
 // HasComment returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntry) HasComment() bool {
+func (o *BulkUpdateACLEntry) HasComment() bool {
 	if o != nil && o.Comment.IsSet() {
 		return true
 	}
@@ -115,54 +115,54 @@ func (o *BulkUpdateAclEntry) HasComment() bool {
 }
 
 // SetComment gets a reference to the given NullableString and assigns it to the Comment field.
-func (o *BulkUpdateAclEntry) SetComment(v string) {
+func (o *BulkUpdateACLEntry) SetComment(v string) {
 	o.Comment.Set(&v)
 }
 
 // SetCommentNil sets the value for Comment to be an explicit nil
-func (o *BulkUpdateAclEntry) SetCommentNil() {
+func (o *BulkUpdateACLEntry) SetCommentNil() {
 	o.Comment.Set(nil)
 }
 
 // UnsetComment ensures that no value is present for Comment, not even an explicit nil
-func (o *BulkUpdateAclEntry) UnsetComment() {
+func (o *BulkUpdateACLEntry) UnsetComment() {
 	o.Comment.Unset()
 }
 
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntry) GetIp() string {
-	if o == nil || o.Ip == nil {
+// GetIP returns the IP field value if set, zero value otherwise.
+func (o *BulkUpdateACLEntry) GetIP() string {
+	if o == nil || o.IP == nil {
 		var ret string
 		return ret
 	}
-	return *o.Ip
+	return *o.IP
 }
 
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
+// GetIPOk returns a tuple with the IP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntry) GetIpOk() (*string, bool) {
-	if o == nil || o.Ip == nil {
+func (o *BulkUpdateACLEntry) GetIPOk() (*string, bool) {
+	if o == nil || o.IP == nil {
 		return nil, false
 	}
-	return o.Ip, true
+	return o.IP, true
 }
 
-// HasIp returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntry) HasIp() bool {
-	if o != nil && o.Ip != nil {
+// HasIP returns a boolean if a field has been set.
+func (o *BulkUpdateACLEntry) HasIP() bool {
+	if o != nil && o.IP != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *BulkUpdateAclEntry) SetIp(v string) {
-	o.Ip = &v
+// SetIP gets a reference to the given string and assigns it to the IP field.
+func (o *BulkUpdateACLEntry) SetIP(v string) {
+	o.IP = &v
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BulkUpdateAclEntry) GetSubnet() int32 {
+func (o *BulkUpdateACLEntry) GetSubnet() int32 {
 	if o == nil || o.Subnet.Get() == nil {
 		var ret int32
 		return ret
@@ -173,7 +173,7 @@ func (o *BulkUpdateAclEntry) GetSubnet() int32 {
 // GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BulkUpdateAclEntry) GetSubnetOk() (*int32, bool) {
+func (o *BulkUpdateACLEntry) GetSubnetOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *BulkUpdateAclEntry) GetSubnetOk() (*int32, bool) {
 }
 
 // HasSubnet returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntry) HasSubnet() bool {
+func (o *BulkUpdateACLEntry) HasSubnet() bool {
 	if o != nil && o.Subnet.IsSet() {
 		return true
 	}
@@ -190,22 +190,22 @@ func (o *BulkUpdateAclEntry) HasSubnet() bool {
 }
 
 // SetSubnet gets a reference to the given NullableInt32 and assigns it to the Subnet field.
-func (o *BulkUpdateAclEntry) SetSubnet(v int32) {
+func (o *BulkUpdateACLEntry) SetSubnet(v int32) {
 	o.Subnet.Set(&v)
 }
 
 // SetSubnetNil sets the value for Subnet to be an explicit nil
-func (o *BulkUpdateAclEntry) SetSubnetNil() {
+func (o *BulkUpdateACLEntry) SetSubnetNil() {
 	o.Subnet.Set(nil)
 }
 
 // UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
-func (o *BulkUpdateAclEntry) UnsetSubnet() {
+func (o *BulkUpdateACLEntry) UnsetSubnet() {
 	o.Subnet.Unset()
 }
 
 // GetOp returns the Op field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntry) GetOp() string {
+func (o *BulkUpdateACLEntry) GetOp() string {
 	if o == nil || o.Op == nil {
 		var ret string
 		return ret
@@ -215,7 +215,7 @@ func (o *BulkUpdateAclEntry) GetOp() string {
 
 // GetOpOk returns a tuple with the Op field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntry) GetOpOk() (*string, bool) {
+func (o *BulkUpdateACLEntry) GetOpOk() (*string, bool) {
 	if o == nil || o.Op == nil {
 		return nil, false
 	}
@@ -223,7 +223,7 @@ func (o *BulkUpdateAclEntry) GetOpOk() (*string, bool) {
 }
 
 // HasOp returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntry) HasOp() bool {
+func (o *BulkUpdateACLEntry) HasOp() bool {
 	if o != nil && o.Op != nil {
 		return true
 	}
@@ -232,45 +232,45 @@ func (o *BulkUpdateAclEntry) HasOp() bool {
 }
 
 // SetOp gets a reference to the given string and assigns it to the Op field.
-func (o *BulkUpdateAclEntry) SetOp(v string) {
+func (o *BulkUpdateACLEntry) SetOp(v string) {
 	o.Op = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntry) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *BulkUpdateACLEntry) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntry) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *BulkUpdateACLEntry) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntry) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *BulkUpdateACLEntry) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *BulkUpdateAclEntry) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *BulkUpdateACLEntry) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o BulkUpdateAclEntry) MarshalJSON() ([]byte, error) {
+func (o BulkUpdateACLEntry) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Negated != nil {
 		toSerialize["negated"] = o.Negated
@@ -278,8 +278,8 @@ func (o BulkUpdateAclEntry) MarshalJSON() ([]byte, error) {
 	if o.Comment.IsSet() {
 		toSerialize["comment"] = o.Comment.Get()
 	}
-	if o.Ip != nil {
-		toSerialize["ip"] = o.Ip
+	if o.IP != nil {
+		toSerialize["ip"] = o.IP
 	}
 	if o.Subnet.IsSet() {
 		toSerialize["subnet"] = o.Subnet.Get()
@@ -287,8 +287,8 @@ func (o BulkUpdateAclEntry) MarshalJSON() ([]byte, error) {
 	if o.Op != nil {
 		toSerialize["op"] = o.Op
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -300,11 +300,11 @@ func (o BulkUpdateAclEntry) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *BulkUpdateAclEntry) UnmarshalJSON(bytes []byte) (err error) {
-	varBulkUpdateAclEntry := _BulkUpdateAclEntry{}
+func (o *BulkUpdateACLEntry) UnmarshalJSON(bytes []byte) (err error) {
+	varBulkUpdateACLEntry := _BulkUpdateACLEntry{}
 
-	if err = json.Unmarshal(bytes, &varBulkUpdateAclEntry); err == nil {
-		*o = BulkUpdateAclEntry(varBulkUpdateAclEntry)
+	if err = json.Unmarshal(bytes, &varBulkUpdateACLEntry); err == nil {
+		*o = BulkUpdateACLEntry(varBulkUpdateACLEntry)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -322,48 +322,48 @@ func (o *BulkUpdateAclEntry) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBulkUpdateAclEntry is a helper abstraction for handling nullable bulkupdateaclentry types.
-type NullableBulkUpdateAclEntry struct {
-	value *BulkUpdateAclEntry
+// NullableBulkUpdateACLEntry is a helper abstraction for handling nullable bulkupdateaclentry types.
+type NullableBulkUpdateACLEntry struct {
+	value *BulkUpdateACLEntry
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableBulkUpdateAclEntry) Get() *BulkUpdateAclEntry {
+func (v NullableBulkUpdateACLEntry) Get() *BulkUpdateACLEntry {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableBulkUpdateAclEntry) Set(val *BulkUpdateAclEntry) {
+func (v *NullableBulkUpdateACLEntry) Set(val *BulkUpdateACLEntry) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableBulkUpdateAclEntry) IsSet() bool {
+func (v NullableBulkUpdateACLEntry) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableBulkUpdateAclEntry) Unset() {
+func (v *NullableBulkUpdateACLEntry) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableBulkUpdateAclEntry returns a pointer to a new instance of NullableBulkUpdateAclEntry.
-func NewNullableBulkUpdateAclEntry(val *BulkUpdateAclEntry) *NullableBulkUpdateAclEntry {
-	return &NullableBulkUpdateAclEntry{value: val, isSet: true}
+// NewNullableBulkUpdateACLEntry returns a pointer to a new instance of NullableBulkUpdateACLEntry.
+func NewNullableBulkUpdateACLEntry(val *BulkUpdateACLEntry) *NullableBulkUpdateACLEntry {
+	return &NullableBulkUpdateACLEntry{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableBulkUpdateAclEntry) MarshalJSON() ([]byte, error) {
+func (v NullableBulkUpdateACLEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableBulkUpdateAclEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableBulkUpdateACLEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

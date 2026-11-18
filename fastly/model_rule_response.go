@@ -24,7 +24,7 @@ type RuleResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	// Alphanumeric string identifying the rule. Stable across versions of the routing config.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Whether this is the default (catch-all) rule for the path.
 	IsDefault *bool   `json:"is_default,omitempty"`
 	Action    *Action `json:"action,omitempty"`
@@ -138,36 +138,36 @@ func (o *RuleResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RuleResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *RuleResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RuleResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *RuleResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RuleResponse) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *RuleResponse) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *RuleResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *RuleResponse) SetID(v string) {
+	o.ID = &v
 }
 
 // GetIsDefault returns the IsDefault field value if set, zero value otherwise.
@@ -276,8 +276,8 @@ func (o RuleResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.IsDefault != nil {
 		toSerialize["is_default"] = o.IsDefault

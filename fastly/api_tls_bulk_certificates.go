@@ -27,129 +27,129 @@ var (
 	_ context.Context
 )
 
-// TlsBulkCertificatesAPI defines an interface for interacting with the resource.
-type TlsBulkCertificatesAPI interface {
+// TLSBulkCertificatesAPI defines an interface for interacting with the resource.
+type TLSBulkCertificatesAPI interface {
 
 	/*
-		DeleteBulkTlsCert Delete a certificate
+		DeleteBulkTLSCert Delete a certificate
 
 		Destroy a certificate. This disables TLS for all domains listed as SAN entries.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param certificateId Alphanumeric string identifying a TLS bulk certificate.
-		 @return APIDeleteBulkTlsCertRequest
+		 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+		 @return APIDeleteBulkTLSCertRequest
 	*/
-	DeleteBulkTlsCert(ctx context.Context, certificateId string) APIDeleteBulkTlsCertRequest
+	DeleteBulkTLSCert(ctx context.Context, certificateID string) APIDeleteBulkTLSCertRequest
 
-	// DeleteBulkTlsCertExecute executes the request
-	DeleteBulkTlsCertExecute(r APIDeleteBulkTlsCertRequest) (*http.Response, error)
+	// DeleteBulkTLSCertExecute executes the request
+	DeleteBulkTLSCertExecute(r APIDeleteBulkTLSCertRequest) (*http.Response, error)
 
 	/*
-		GetTlsBulkCert Get a certificate
+		GetTLSBulkCert Get a certificate
 
 		Retrieve a single certificate.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param certificateId Alphanumeric string identifying a TLS bulk certificate.
-		 @return APIGetTlsBulkCertRequest
+		 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+		 @return APIGetTLSBulkCertRequest
 	*/
-	GetTlsBulkCert(ctx context.Context, certificateId string) APIGetTlsBulkCertRequest
+	GetTLSBulkCert(ctx context.Context, certificateID string) APIGetTLSBulkCertRequest
 
-	// GetTlsBulkCertExecute executes the request
-	//  @return TlsBulkCertificateResponse
-	GetTlsBulkCertExecute(r APIGetTlsBulkCertRequest) (*TlsBulkCertificateResponse, *http.Response, error)
+	// GetTLSBulkCertExecute executes the request
+	//  @return TLSBulkCertificateResponse
+	GetTLSBulkCertExecute(r APIGetTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error)
 
 	/*
-		ListTlsBulkCerts List certificates
+		ListTLSBulkCerts List certificates
 
 		List all certificates.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIListTlsBulkCertsRequest
+		 @return APIListTLSBulkCertsRequest
 	*/
-	ListTlsBulkCerts(ctx context.Context) APIListTlsBulkCertsRequest
+	ListTLSBulkCerts(ctx context.Context) APIListTLSBulkCertsRequest
 
-	// ListTlsBulkCertsExecute executes the request
-	//  @return TlsBulkCertificatesResponse
-	ListTlsBulkCertsExecute(r APIListTlsBulkCertsRequest) (*TlsBulkCertificatesResponse, *http.Response, error)
+	// ListTLSBulkCertsExecute executes the request
+	//  @return TLSBulkCertificatesResponse
+	ListTLSBulkCertsExecute(r APIListTLSBulkCertsRequest) (*TLSBulkCertificatesResponse, *http.Response, error)
 
 	/*
-		UpdateBulkTlsCert Update a certificate
+		UpdateBulkTLSCert Update a certificate
 
 		Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param certificateId Alphanumeric string identifying a TLS bulk certificate.
-		 @return APIUpdateBulkTlsCertRequest
+		 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+		 @return APIUpdateBulkTLSCertRequest
 	*/
-	UpdateBulkTlsCert(ctx context.Context, certificateId string) APIUpdateBulkTlsCertRequest
+	UpdateBulkTLSCert(ctx context.Context, certificateID string) APIUpdateBulkTLSCertRequest
 
-	// UpdateBulkTlsCertExecute executes the request
-	//  @return TlsBulkCertificateResponse
-	UpdateBulkTlsCertExecute(r APIUpdateBulkTlsCertRequest) (*TlsBulkCertificateResponse, *http.Response, error)
+	// UpdateBulkTLSCertExecute executes the request
+	//  @return TLSBulkCertificateResponse
+	UpdateBulkTLSCertExecute(r APIUpdateBulkTLSCertRequest) (*TLSBulkCertificateResponse, *http.Response, error)
 
 	/*
-		UploadTlsBulkCert Upload a certificate
+		UploadTLSBulkCert Upload a certificate
 
 		Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIUploadTlsBulkCertRequest
+		 @return APIUploadTLSBulkCertRequest
 	*/
-	UploadTlsBulkCert(ctx context.Context) APIUploadTlsBulkCertRequest
+	UploadTLSBulkCert(ctx context.Context) APIUploadTLSBulkCertRequest
 
-	// UploadTlsBulkCertExecute executes the request
-	//  @return TlsBulkCertificateResponse
-	UploadTlsBulkCertExecute(r APIUploadTlsBulkCertRequest) (*TlsBulkCertificateResponse, *http.Response, error)
+	// UploadTLSBulkCertExecute executes the request
+	//  @return TLSBulkCertificateResponse
+	UploadTLSBulkCertExecute(r APIUploadTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error)
 }
 
-// TlsBulkCertificatesAPIService TlsBulkCertificatesAPI service
-type TlsBulkCertificatesAPIService service
+// TLSBulkCertificatesAPIService TLSBulkCertificatesAPI service
+type TLSBulkCertificatesAPIService service
 
-// APIDeleteBulkTlsCertRequest represents a request for the resource.
-type APIDeleteBulkTlsCertRequest struct {
+// APIDeleteBulkTLSCertRequest represents a request for the resource.
+type APIDeleteBulkTLSCertRequest struct {
 	ctx           context.Context
-	APIService    TlsBulkCertificatesAPI
-	certificateId string
+	APIService    TLSBulkCertificatesAPI
+	certificateID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteBulkTlsCertRequest) Execute() (*http.Response, error) {
-	return r.APIService.DeleteBulkTlsCertExecute(r)
+func (r APIDeleteBulkTLSCertRequest) Execute() (*http.Response, error) {
+	return r.APIService.DeleteBulkTLSCertExecute(r)
 }
 
 /*
-DeleteBulkTlsCert Delete a certificate
+DeleteBulkTLSCert Delete a certificate
 
 Destroy a certificate. This disables TLS for all domains listed as SAN entries.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param certificateId Alphanumeric string identifying a TLS bulk certificate.
- @return APIDeleteBulkTlsCertRequest
+ @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+ @return APIDeleteBulkTLSCertRequest
 */
-func (a *TlsBulkCertificatesAPIService) DeleteBulkTlsCert(ctx context.Context, certificateId string) APIDeleteBulkTlsCertRequest {
-	return APIDeleteBulkTlsCertRequest{
+func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCert(ctx context.Context, certificateID string) APIDeleteBulkTLSCertRequest {
+	return APIDeleteBulkTLSCertRequest{
 		APIService:    a,
 		ctx:           ctx,
-		certificateId: certificateId,
+		certificateID: certificateID,
 	}
 }
 
-// DeleteBulkTlsCertExecute executes the request
-func (a *TlsBulkCertificatesAPIService) DeleteBulkTlsCertExecute(r APIDeleteBulkTlsCertRequest) (*http.Response, error) {
+// DeleteBulkTLSCertExecute executes the request
+func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCertExecute(r APIDeleteBulkTLSCertRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsBulkCertificatesAPIService.DeleteBulkTlsCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.DeleteBulkTLSCert")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/bulk/certificates/{certificate_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"certificate_id"+"}", gourl.PathEscape(parameterToString(r.certificateId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"certificate_id"+"}", gourl.PathEscape(parameterToString(r.certificateID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -227,52 +227,52 @@ func (a *TlsBulkCertificatesAPIService) DeleteBulkTlsCertExecute(r APIDeleteBulk
 	return localVarHTTPResponse, nil
 }
 
-// APIGetTlsBulkCertRequest represents a request for the resource.
-type APIGetTlsBulkCertRequest struct {
+// APIGetTLSBulkCertRequest represents a request for the resource.
+type APIGetTLSBulkCertRequest struct {
 	ctx           context.Context
-	APIService    TlsBulkCertificatesAPI
-	certificateId string
+	APIService    TLSBulkCertificatesAPI
+	certificateID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetTlsBulkCertRequest) Execute() (*TlsBulkCertificateResponse, *http.Response, error) {
-	return r.APIService.GetTlsBulkCertExecute(r)
+func (r APIGetTLSBulkCertRequest) Execute() (*TLSBulkCertificateResponse, *http.Response, error) {
+	return r.APIService.GetTLSBulkCertExecute(r)
 }
 
 /*
-GetTlsBulkCert Get a certificate
+GetTLSBulkCert Get a certificate
 
 Retrieve a single certificate.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param certificateId Alphanumeric string identifying a TLS bulk certificate.
- @return APIGetTlsBulkCertRequest
+ @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+ @return APIGetTLSBulkCertRequest
 */
-func (a *TlsBulkCertificatesAPIService) GetTlsBulkCert(ctx context.Context, certificateId string) APIGetTlsBulkCertRequest {
-	return APIGetTlsBulkCertRequest{
+func (a *TLSBulkCertificatesAPIService) GetTLSBulkCert(ctx context.Context, certificateID string) APIGetTLSBulkCertRequest {
+	return APIGetTLSBulkCertRequest{
 		APIService:    a,
 		ctx:           ctx,
-		certificateId: certificateId,
+		certificateID: certificateID,
 	}
 }
 
-// GetTlsBulkCertExecute executes the request
-//  @return TlsBulkCertificateResponse
-func (a *TlsBulkCertificatesAPIService) GetTlsBulkCertExecute(r APIGetTlsBulkCertRequest) (*TlsBulkCertificateResponse, *http.Response, error) {
+// GetTLSBulkCertExecute executes the request
+//  @return TLSBulkCertificateResponse
+func (a *TLSBulkCertificatesAPIService) GetTLSBulkCertExecute(r APIGetTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsBulkCertificateResponse
+		localVarReturnValue *TLSBulkCertificateResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsBulkCertificatesAPIService.GetTlsBulkCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.GetTLSBulkCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/bulk/certificates/{certificate_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"certificate_id"+"}", gourl.PathEscape(parameterToString(r.certificateId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"certificate_id"+"}", gourl.PathEscape(parameterToString(r.certificateID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -359,11 +359,11 @@ func (a *TlsBulkCertificatesAPIService) GetTlsBulkCertExecute(r APIGetTlsBulkCer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListTlsBulkCertsRequest represents a request for the resource.
-type APIListTlsBulkCertsRequest struct {
+// APIListTLSBulkCertsRequest represents a request for the resource.
+type APIListTLSBulkCertsRequest struct {
 	ctx               context.Context
-	APIService        TlsBulkCertificatesAPI
-	filterTlsDomainId *string
+	APIService        TLSBulkCertificatesAPI
+	filterTLSDomainID *string
 	filterNotBefore   *string
 	filterNotAfter    *string
 	pageNumber        *int32
@@ -371,73 +371,73 @@ type APIListTlsBulkCertsRequest struct {
 	sort              *string
 }
 
-// FilterTlsDomainId Filter certificates by their matching, fully-qualified domain name.
-func (r *APIListTlsBulkCertsRequest) FilterTlsDomainId(filterTlsDomainId string) *APIListTlsBulkCertsRequest {
-	r.filterTlsDomainId = &filterTlsDomainId
+// FilterTLSDomainID Filter certificates by their matching, fully-qualified domain name.
+func (r *APIListTLSBulkCertsRequest) FilterTLSDomainID(filterTLSDomainID string) *APIListTLSBulkCertsRequest {
+	r.filterTLSDomainID = &filterTLSDomainID
 	return r
 }
 
 // FilterNotBefore Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]&#x3D;2020-05-05).
-func (r *APIListTlsBulkCertsRequest) FilterNotBefore(filterNotBefore string) *APIListTlsBulkCertsRequest {
+func (r *APIListTLSBulkCertsRequest) FilterNotBefore(filterNotBefore string) *APIListTLSBulkCertsRequest {
 	r.filterNotBefore = &filterNotBefore
 	return r
 }
 
 // FilterNotAfter Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]&#x3D;2020-05-05).
-func (r *APIListTlsBulkCertsRequest) FilterNotAfter(filterNotAfter string) *APIListTlsBulkCertsRequest {
+func (r *APIListTLSBulkCertsRequest) FilterNotAfter(filterNotAfter string) *APIListTLSBulkCertsRequest {
 	r.filterNotAfter = &filterNotAfter
 	return r
 }
 
 // PageNumber Current page.
-func (r *APIListTlsBulkCertsRequest) PageNumber(pageNumber int32) *APIListTlsBulkCertsRequest {
+func (r *APIListTLSBulkCertsRequest) PageNumber(pageNumber int32) *APIListTLSBulkCertsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
 
 // PageSize Number of records per page.
-func (r *APIListTlsBulkCertsRequest) PageSize(pageSize int32) *APIListTlsBulkCertsRequest {
+func (r *APIListTLSBulkCertsRequest) PageSize(pageSize int32) *APIListTLSBulkCertsRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // Sort The order in which to list the results by creation date.
-func (r *APIListTlsBulkCertsRequest) Sort(sort string) *APIListTlsBulkCertsRequest {
+func (r *APIListTLSBulkCertsRequest) Sort(sort string) *APIListTLSBulkCertsRequest {
 	r.sort = &sort
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListTlsBulkCertsRequest) Execute() (*TlsBulkCertificatesResponse, *http.Response, error) {
-	return r.APIService.ListTlsBulkCertsExecute(r)
+func (r APIListTLSBulkCertsRequest) Execute() (*TLSBulkCertificatesResponse, *http.Response, error) {
+	return r.APIService.ListTLSBulkCertsExecute(r)
 }
 
 /*
-ListTlsBulkCerts List certificates
+ListTLSBulkCerts List certificates
 
 List all certificates.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIListTlsBulkCertsRequest
+ @return APIListTLSBulkCertsRequest
 */
-func (a *TlsBulkCertificatesAPIService) ListTlsBulkCerts(ctx context.Context) APIListTlsBulkCertsRequest {
-	return APIListTlsBulkCertsRequest{
+func (a *TLSBulkCertificatesAPIService) ListTLSBulkCerts(ctx context.Context) APIListTLSBulkCertsRequest {
+	return APIListTLSBulkCertsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ListTlsBulkCertsExecute executes the request
-//  @return TlsBulkCertificatesResponse
-func (a *TlsBulkCertificatesAPIService) ListTlsBulkCertsExecute(r APIListTlsBulkCertsRequest) (*TlsBulkCertificatesResponse, *http.Response, error) {
+// ListTLSBulkCertsExecute executes the request
+//  @return TLSBulkCertificatesResponse
+func (a *TLSBulkCertificatesAPIService) ListTLSBulkCertsExecute(r APIListTLSBulkCertsRequest) (*TLSBulkCertificatesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsBulkCertificatesResponse
+		localVarReturnValue *TLSBulkCertificatesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsBulkCertificatesAPIService.ListTlsBulkCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.ListTLSBulkCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -448,8 +448,8 @@ func (a *TlsBulkCertificatesAPIService) ListTlsBulkCertsExecute(r APIListTlsBulk
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.filterTlsDomainId != nil {
-		localVarQueryParams.Add("filter[tls_domain.id]", parameterToString(*r.filterTlsDomainId, ""))
+	if r.filterTLSDomainID != nil {
+		localVarQueryParams.Add("filter[tls_domain.id]", parameterToString(*r.filterTLSDomainID, ""))
 	}
 	if r.filterNotBefore != nil {
 		localVarQueryParams.Add("filter[not_before]", parameterToString(*r.filterNotBefore, ""))
@@ -547,59 +547,59 @@ func (a *TlsBulkCertificatesAPIService) ListTlsBulkCertsExecute(r APIListTlsBulk
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUpdateBulkTlsCertRequest represents a request for the resource.
-type APIUpdateBulkTlsCertRequest struct {
+// APIUpdateBulkTLSCertRequest represents a request for the resource.
+type APIUpdateBulkTLSCertRequest struct {
 	ctx                context.Context
-	APIService         TlsBulkCertificatesAPI
-	certificateId      string
-	tlsBulkCertificate *TlsBulkCertificate
+	APIService         TLSBulkCertificatesAPI
+	certificateID      string
+	tlsBulkCertificate *TLSBulkCertificate
 }
 
-// TlsBulkCertificate returns a pointer to a request.
-func (r *APIUpdateBulkTlsCertRequest) TlsBulkCertificate(tlsBulkCertificate TlsBulkCertificate) *APIUpdateBulkTlsCertRequest {
+// TLSBulkCertificate returns a pointer to a request.
+func (r *APIUpdateBulkTLSCertRequest) TLSBulkCertificate(tlsBulkCertificate TLSBulkCertificate) *APIUpdateBulkTLSCertRequest {
 	r.tlsBulkCertificate = &tlsBulkCertificate
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateBulkTlsCertRequest) Execute() (*TlsBulkCertificateResponse, *http.Response, error) {
-	return r.APIService.UpdateBulkTlsCertExecute(r)
+func (r APIUpdateBulkTLSCertRequest) Execute() (*TLSBulkCertificateResponse, *http.Response, error) {
+	return r.APIService.UpdateBulkTLSCertExecute(r)
 }
 
 /*
-UpdateBulkTlsCert Update a certificate
+UpdateBulkTLSCert Update a certificate
 
 Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param certificateId Alphanumeric string identifying a TLS bulk certificate.
- @return APIUpdateBulkTlsCertRequest
+ @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+ @return APIUpdateBulkTLSCertRequest
 */
-func (a *TlsBulkCertificatesAPIService) UpdateBulkTlsCert(ctx context.Context, certificateId string) APIUpdateBulkTlsCertRequest {
-	return APIUpdateBulkTlsCertRequest{
+func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCert(ctx context.Context, certificateID string) APIUpdateBulkTLSCertRequest {
+	return APIUpdateBulkTLSCertRequest{
 		APIService:    a,
 		ctx:           ctx,
-		certificateId: certificateId,
+		certificateID: certificateID,
 	}
 }
 
-// UpdateBulkTlsCertExecute executes the request
-//  @return TlsBulkCertificateResponse
-func (a *TlsBulkCertificatesAPIService) UpdateBulkTlsCertExecute(r APIUpdateBulkTlsCertRequest) (*TlsBulkCertificateResponse, *http.Response, error) {
+// UpdateBulkTLSCertExecute executes the request
+//  @return TLSBulkCertificateResponse
+func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCertExecute(r APIUpdateBulkTLSCertRequest) (*TLSBulkCertificateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsBulkCertificateResponse
+		localVarReturnValue *TLSBulkCertificateResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsBulkCertificatesAPIService.UpdateBulkTlsCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.UpdateBulkTLSCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/bulk/certificates/{certificate_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"certificate_id"+"}", gourl.PathEscape(parameterToString(r.certificateId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"certificate_id"+"}", gourl.PathEscape(parameterToString(r.certificateID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -688,50 +688,50 @@ func (a *TlsBulkCertificatesAPIService) UpdateBulkTlsCertExecute(r APIUpdateBulk
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUploadTlsBulkCertRequest represents a request for the resource.
-type APIUploadTlsBulkCertRequest struct {
+// APIUploadTLSBulkCertRequest represents a request for the resource.
+type APIUploadTLSBulkCertRequest struct {
 	ctx                context.Context
-	APIService         TlsBulkCertificatesAPI
-	tlsBulkCertificate *TlsBulkCertificate
+	APIService         TLSBulkCertificatesAPI
+	tlsBulkCertificate *TLSBulkCertificate
 }
 
-// TlsBulkCertificate returns a pointer to a request.
-func (r *APIUploadTlsBulkCertRequest) TlsBulkCertificate(tlsBulkCertificate TlsBulkCertificate) *APIUploadTlsBulkCertRequest {
+// TLSBulkCertificate returns a pointer to a request.
+func (r *APIUploadTLSBulkCertRequest) TLSBulkCertificate(tlsBulkCertificate TLSBulkCertificate) *APIUploadTLSBulkCertRequest {
 	r.tlsBulkCertificate = &tlsBulkCertificate
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUploadTlsBulkCertRequest) Execute() (*TlsBulkCertificateResponse, *http.Response, error) {
-	return r.APIService.UploadTlsBulkCertExecute(r)
+func (r APIUploadTLSBulkCertRequest) Execute() (*TLSBulkCertificateResponse, *http.Response, error) {
+	return r.APIService.UploadTLSBulkCertExecute(r)
 }
 
 /*
-UploadTlsBulkCert Upload a certificate
+UploadTLSBulkCert Upload a certificate
 
 Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIUploadTlsBulkCertRequest
+ @return APIUploadTLSBulkCertRequest
 */
-func (a *TlsBulkCertificatesAPIService) UploadTlsBulkCert(ctx context.Context) APIUploadTlsBulkCertRequest {
-	return APIUploadTlsBulkCertRequest{
+func (a *TLSBulkCertificatesAPIService) UploadTLSBulkCert(ctx context.Context) APIUploadTLSBulkCertRequest {
+	return APIUploadTLSBulkCertRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// UploadTlsBulkCertExecute executes the request
-//  @return TlsBulkCertificateResponse
-func (a *TlsBulkCertificatesAPIService) UploadTlsBulkCertExecute(r APIUploadTlsBulkCertRequest) (*TlsBulkCertificateResponse, *http.Response, error) {
+// UploadTLSBulkCertExecute executes the request
+//  @return TLSBulkCertificateResponse
+func (a *TLSBulkCertificatesAPIService) UploadTLSBulkCertExecute(r APIUploadTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsBulkCertificateResponse
+		localVarReturnValue *TLSBulkCertificateResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsBulkCertificatesAPIService.UploadTlsBulkCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.UploadTLSBulkCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}

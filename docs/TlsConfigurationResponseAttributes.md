@@ -1,4 +1,4 @@
-# TlsConfigurationResponseAttributes
+# TLSConfigurationResponseAttributes
 
 ## Properties
 
@@ -8,235 +8,233 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **Default** | Pointer to **bool** | Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/). | [optional] [readonly] 
-**HttpProtocols** | Pointer to **[]string** | HTTP protocols available on your configuration. | [optional] [readonly] 
-**TlsProtocols** | Pointer to **[]string** | TLS protocols available on your configuration. | [optional] [readonly] 
+**HTTPProtocols** | Pointer to **[]string** | HTTP protocols available on your configuration. | [optional] [readonly] 
+**TLSProtocols** | Pointer to **[]string** | TLS protocols available on your configuration. | [optional] [readonly] 
 **Bulk** | Pointer to **bool** | Signifies whether the configuration is used for Platform TLS or not. | [optional] [readonly] 
 
 ## Methods
 
-### NewTlsConfigurationResponseAttributes
+### NewTLSConfigurationResponseAttributes
 
-`func NewTlsConfigurationResponseAttributes() *TlsConfigurationResponseAttributes`
+`func NewTLSConfigurationResponseAttributes() *TLSConfigurationResponseAttributes`
 
-NewTlsConfigurationResponseAttributes instantiates a new TlsConfigurationResponseAttributes object
+NewTLSConfigurationResponseAttributes instantiates a new TLSConfigurationResponseAttributes object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsConfigurationResponseAttributesWithDefaults
+### NewTLSConfigurationResponseAttributesWithDefaults
 
-`func NewTlsConfigurationResponseAttributesWithDefaults() *TlsConfigurationResponseAttributes`
+`func NewTLSConfigurationResponseAttributesWithDefaults() *TLSConfigurationResponseAttributes`
 
-NewTlsConfigurationResponseAttributesWithDefaults instantiates a new TlsConfigurationResponseAttributes object
+NewTLSConfigurationResponseAttributesWithDefaults instantiates a new TLSConfigurationResponseAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreatedAt
 
-`func (o *TlsConfigurationResponseAttributes) GetCreatedAt() time.Time`
+`func (o *TLSConfigurationResponseAttributes) GetCreatedAt() time.Time`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *TlsConfigurationResponseAttributes) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetCreatedAtOk() (*time.Time, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *TlsConfigurationResponseAttributes) SetCreatedAt(v time.Time)`
+`func (o *TLSConfigurationResponseAttributes) SetCreatedAt(v time.Time)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *TlsConfigurationResponseAttributes) HasCreatedAt() bool`
+`func (o *TLSConfigurationResponseAttributes) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### SetCreatedAtNil
 
-`func (o *TlsConfigurationResponseAttributes) SetCreatedAtNil(b bool)`
+`func (o *TLSConfigurationResponseAttributes) SetCreatedAtNil(b bool)`
 
  SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
 ### UnsetCreatedAt
-`func (o *TlsConfigurationResponseAttributes) UnsetCreatedAt()`
+`func (o *TLSConfigurationResponseAttributes) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetDeletedAt
 
-`func (o *TlsConfigurationResponseAttributes) GetDeletedAt() time.Time`
+`func (o *TLSConfigurationResponseAttributes) GetDeletedAt() time.Time`
 
 GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
 
 ### GetDeletedAtOk
 
-`func (o *TlsConfigurationResponseAttributes) GetDeletedAtOk() (*time.Time, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetDeletedAtOk() (*time.Time, bool)`
 
 GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedAt
 
-`func (o *TlsConfigurationResponseAttributes) SetDeletedAt(v time.Time)`
+`func (o *TLSConfigurationResponseAttributes) SetDeletedAt(v time.Time)`
 
 SetDeletedAt sets DeletedAt field to given value.
 
 ### HasDeletedAt
 
-`func (o *TlsConfigurationResponseAttributes) HasDeletedAt() bool`
+`func (o *TLSConfigurationResponseAttributes) HasDeletedAt() bool`
 
 HasDeletedAt returns a boolean if a field has been set.
 
 ### SetDeletedAtNil
 
-`func (o *TlsConfigurationResponseAttributes) SetDeletedAtNil(b bool)`
+`func (o *TLSConfigurationResponseAttributes) SetDeletedAtNil(b bool)`
 
  SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 
 ### UnsetDeletedAt
-`func (o *TlsConfigurationResponseAttributes) UnsetDeletedAt()`
+`func (o *TLSConfigurationResponseAttributes) UnsetDeletedAt()`
 
 UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
 ### GetUpdatedAt
 
-`func (o *TlsConfigurationResponseAttributes) GetUpdatedAt() time.Time`
+`func (o *TLSConfigurationResponseAttributes) GetUpdatedAt() time.Time`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *TlsConfigurationResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *TlsConfigurationResponseAttributes) SetUpdatedAt(v time.Time)`
+`func (o *TLSConfigurationResponseAttributes) SetUpdatedAt(v time.Time)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *TlsConfigurationResponseAttributes) HasUpdatedAt() bool`
+`func (o *TLSConfigurationResponseAttributes) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 
 ### SetUpdatedAtNil
 
-`func (o *TlsConfigurationResponseAttributes) SetUpdatedAtNil(b bool)`
+`func (o *TLSConfigurationResponseAttributes) SetUpdatedAtNil(b bool)`
 
  SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
 ### UnsetUpdatedAt
-`func (o *TlsConfigurationResponseAttributes) UnsetUpdatedAt()`
+`func (o *TLSConfigurationResponseAttributes) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 ### GetDefault
 
-`func (o *TlsConfigurationResponseAttributes) GetDefault() bool`
+`func (o *TLSConfigurationResponseAttributes) GetDefault() bool`
 
 GetDefault returns the Default field if non-nil, zero value otherwise.
 
 ### GetDefaultOk
 
-`func (o *TlsConfigurationResponseAttributes) GetDefaultOk() (*bool, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetDefaultOk() (*bool, bool)`
 
 GetDefaultOk returns a tuple with the Default field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefault
 
-`func (o *TlsConfigurationResponseAttributes) SetDefault(v bool)`
+`func (o *TLSConfigurationResponseAttributes) SetDefault(v bool)`
 
 SetDefault sets Default field to given value.
 
 ### HasDefault
 
-`func (o *TlsConfigurationResponseAttributes) HasDefault() bool`
+`func (o *TLSConfigurationResponseAttributes) HasDefault() bool`
 
 HasDefault returns a boolean if a field has been set.
 
-### GetHttpProtocols
+### GetHTTPProtocols
 
-`func (o *TlsConfigurationResponseAttributes) GetHttpProtocols() []string`
+`func (o *TLSConfigurationResponseAttributes) GetHTTPProtocols() []string`
 
-GetHttpProtocols returns the HttpProtocols field if non-nil, zero value otherwise.
+GetHTTPProtocols returns the HTTPProtocols field if non-nil, zero value otherwise.
 
-### GetHttpProtocolsOk
+### GetHTTPProtocolsOk
 
-`func (o *TlsConfigurationResponseAttributes) GetHttpProtocolsOk() (*[]string, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetHTTPProtocolsOk() (*[]string, bool)`
 
-GetHttpProtocolsOk returns a tuple with the HttpProtocols field if it's non-nil, zero value otherwise
+GetHTTPProtocolsOk returns a tuple with the HTTPProtocols field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHttpProtocols
+### SetHTTPProtocols
 
-`func (o *TlsConfigurationResponseAttributes) SetHttpProtocols(v []string)`
+`func (o *TLSConfigurationResponseAttributes) SetHTTPProtocols(v []string)`
 
-SetHttpProtocols sets HttpProtocols field to given value.
+SetHTTPProtocols sets HTTPProtocols field to given value.
 
-### HasHttpProtocols
+### HasHTTPProtocols
 
-`func (o *TlsConfigurationResponseAttributes) HasHttpProtocols() bool`
+`func (o *TLSConfigurationResponseAttributes) HasHTTPProtocols() bool`
 
-HasHttpProtocols returns a boolean if a field has been set.
+HasHTTPProtocols returns a boolean if a field has been set.
 
-### GetTlsProtocols
+### GetTLSProtocols
 
-`func (o *TlsConfigurationResponseAttributes) GetTlsProtocols() []string`
+`func (o *TLSConfigurationResponseAttributes) GetTLSProtocols() []string`
 
-GetTlsProtocols returns the TlsProtocols field if non-nil, zero value otherwise.
+GetTLSProtocols returns the TLSProtocols field if non-nil, zero value otherwise.
 
-### GetTlsProtocolsOk
+### GetTLSProtocolsOk
 
-`func (o *TlsConfigurationResponseAttributes) GetTlsProtocolsOk() (*[]string, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetTLSProtocolsOk() (*[]string, bool)`
 
-GetTlsProtocolsOk returns a tuple with the TlsProtocols field if it's non-nil, zero value otherwise
+GetTLSProtocolsOk returns a tuple with the TLSProtocols field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsProtocols
+### SetTLSProtocols
 
-`func (o *TlsConfigurationResponseAttributes) SetTlsProtocols(v []string)`
+`func (o *TLSConfigurationResponseAttributes) SetTLSProtocols(v []string)`
 
-SetTlsProtocols sets TlsProtocols field to given value.
+SetTLSProtocols sets TLSProtocols field to given value.
 
-### HasTlsProtocols
+### HasTLSProtocols
 
-`func (o *TlsConfigurationResponseAttributes) HasTlsProtocols() bool`
+`func (o *TLSConfigurationResponseAttributes) HasTLSProtocols() bool`
 
-HasTlsProtocols returns a boolean if a field has been set.
+HasTLSProtocols returns a boolean if a field has been set.
 
 ### GetBulk
 
-`func (o *TlsConfigurationResponseAttributes) GetBulk() bool`
+`func (o *TLSConfigurationResponseAttributes) GetBulk() bool`
 
 GetBulk returns the Bulk field if non-nil, zero value otherwise.
 
 ### GetBulkOk
 
-`func (o *TlsConfigurationResponseAttributes) GetBulkOk() (*bool, bool)`
+`func (o *TLSConfigurationResponseAttributes) GetBulkOk() (*bool, bool)`
 
 GetBulkOk returns a tuple with the Bulk field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBulk
 
-`func (o *TlsConfigurationResponseAttributes) SetBulk(v bool)`
+`func (o *TLSConfigurationResponseAttributes) SetBulk(v bool)`
 
 SetBulk sets Bulk field to given value.
 
 ### HasBulk
 
-`func (o *TlsConfigurationResponseAttributes) HasBulk() bool`
+`func (o *TLSConfigurationResponseAttributes) HasBulk() bool`
 
 HasBulk returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

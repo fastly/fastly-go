@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **BucketName** | Pointer to **string** | The name of the DigitalOcean Space. | [optional] 
 **AccessKey** | Pointer to **string** | Your DigitalOcean Spaces account access key. | [optional] 
@@ -456,30 +456,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingDigitaloceanResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingDigitaloceanResponse) GetServiceId() string`
+`func (o *LoggingDigitaloceanResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingDigitaloceanResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingDigitaloceanResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingDigitaloceanResponse) SetServiceId(v string)`
+`func (o *LoggingDigitaloceanResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingDigitaloceanResponse) HasServiceId() bool`
+`func (o *LoggingDigitaloceanResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -678,5 +678,3 @@ HasPublicKey returns a boolean if a field has been set.
 UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

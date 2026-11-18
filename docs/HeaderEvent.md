@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**ID** | Pointer to **string** |  | [optional] 
 **HeaderName** | Pointer to **string** |  | [optional] 
 **OldValue** | Pointer to **string** |  | [optional] 
 **NewValue** | Pointer to **string** |  | [optional] 
@@ -29,30 +29,30 @@ NewHeaderEventWithDefaults instantiates a new HeaderEvent object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *HeaderEvent) GetId() string`
+`func (o *HeaderEvent) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *HeaderEvent) GetIdOk() (*string, bool)`
+`func (o *HeaderEvent) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *HeaderEvent) SetId(v string)`
+`func (o *HeaderEvent) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *HeaderEvent) HasId() bool`
+`func (o *HeaderEvent) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetHeaderName
 
@@ -156,5 +156,3 @@ HasChangedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

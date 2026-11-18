@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | Pointer to **string** | The URL to post logs to. | [optional] 
+**URL** | Pointer to **string** | The URL to post logs to. | [optional] 
 **Token** | Pointer to **string** | A Splunk token for use in posting logs over HTTP to your collector. | [optional] 
-**UseTls** | Pointer to [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewLoggingSplunkAdditionalWithDefaults instantiates a new LoggingSplunkAdditiona
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUrl
+### GetURL
 
-`func (o *LoggingSplunkAdditional) GetUrl() string`
+`func (o *LoggingSplunkAdditional) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LoggingSplunkAdditional) GetUrlOk() (*string, bool)`
+`func (o *LoggingSplunkAdditional) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LoggingSplunkAdditional) SetUrl(v string)`
+`func (o *LoggingSplunkAdditional) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LoggingSplunkAdditional) HasUrl() bool`
+`func (o *LoggingSplunkAdditional) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
 ### GetToken
 
@@ -77,32 +77,30 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetUseTls
+### GetUseTLS
 
-`func (o *LoggingSplunkAdditional) GetUseTls() LoggingUseTlsString`
+`func (o *LoggingSplunkAdditional) GetUseTLS() LoggingUseTLSString`
 
-GetUseTls returns the UseTls field if non-nil, zero value otherwise.
+GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
-### GetUseTlsOk
+### GetUseTLSOk
 
-`func (o *LoggingSplunkAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool)`
+`func (o *LoggingSplunkAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
-GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
+GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTls
+### SetUseTLS
 
-`func (o *LoggingSplunkAdditional) SetUseTls(v LoggingUseTlsString)`
+`func (o *LoggingSplunkAdditional) SetUseTLS(v LoggingUseTLSString)`
 
-SetUseTls sets UseTls field to given value.
+SetUseTLS sets UseTLS field to given value.
 
-### HasUseTls
+### HasUseTLS
 
-`func (o *LoggingSplunkAdditional) HasUseTls() bool`
+`func (o *LoggingSplunkAdditional) HasUseTLS() bool`
 
-HasUseTls returns a boolean if a field has been set.
+HasUseTLS returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

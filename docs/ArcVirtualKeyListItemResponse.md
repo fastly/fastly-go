@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **SecurityAction** | Pointer to **string** | The action AI Firewall takes when it detects a violation on a request made with this key. Only meaningful when `security_enabled` is `true`. | [optional] 
 **RpmLimit** | Pointer to **NullableInt32** | The requests-per-minute limit for this key. Omit for no limit. | [optional] 
 **TpmLimit** | Pointer to **NullableInt32** | The tokens-per-minute limit for this key. Omit for no limit. | [optional] 
-**Id** | **string** | The unique identifier of the virtual key. | [readonly] 
-**CustomerId** | **string** | The ID of the customer account that owns the key. | [readonly] 
+**ID** | **string** | The unique identifier of the virtual key. | [readonly] 
+**CustomerID** | **string** | The ID of the customer account that owns the key. | [readonly] 
 **Type** | **string** | The type of the resource. | [readonly] 
-**UserId** | **string** | The ID of the user who created the key. | [readonly] 
+**UserID** | **string** | The ID of the user who created the key. | [readonly] 
 **UserName** | Pointer to **string** | The display name of the user who created the key. | [optional] [readonly] 
 **LastUsedAt** | Pointer to **NullableTime** | The date and time the key was last used to make a request, in RFC 3339 format. `null` if the key has never been used. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | The date and time the key was deleted, in RFC 3339 format. `null` unless the key was deleted and `include_deleted` was used to retrieve it. | [optional] [readonly] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewArcVirtualKeyListItemResponse
 
-`func NewArcVirtualKeyListItemResponse(name string, id string, customerId string, type_ string, userId string, createdAt time.Time, updatedAt time.Time, ) *ArcVirtualKeyListItemResponse`
+`func NewArcVirtualKeyListItemResponse(name string, id string, customerID string, resourceType string, userID string, createdAt time.Time, updatedAt time.Time, ) *ArcVirtualKeyListItemResponse`
 
 NewArcVirtualKeyListItemResponse instantiates a new ArcVirtualKeyListItemResponse object
 This constructor will assign default values to properties that have it defined,
@@ -216,44 +216,44 @@ HasTpmLimit returns a boolean if a field has been set.
 `func (o *ArcVirtualKeyListItemResponse) UnsetTpmLimit()`
 
 UnsetTpmLimit ensures that no value is present for TpmLimit, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *ArcVirtualKeyListItemResponse) GetId() string`
+`func (o *ArcVirtualKeyListItemResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ArcVirtualKeyListItemResponse) GetIdOk() (*string, bool)`
+`func (o *ArcVirtualKeyListItemResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ArcVirtualKeyListItemResponse) SetId(v string)`
+`func (o *ArcVirtualKeyListItemResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *ArcVirtualKeyListItemResponse) GetCustomerId() string`
+`func (o *ArcVirtualKeyListItemResponse) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *ArcVirtualKeyListItemResponse) GetCustomerIdOk() (*string, bool)`
+`func (o *ArcVirtualKeyListItemResponse) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *ArcVirtualKeyListItemResponse) SetCustomerId(v string)`
+`func (o *ArcVirtualKeyListItemResponse) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
 
 ### GetType
@@ -276,24 +276,24 @@ and a boolean to check if the value has been set.
 SetType sets Type field to given value.
 
 
-### GetUserId
+### GetUserID
 
-`func (o *ArcVirtualKeyListItemResponse) GetUserId() string`
+`func (o *ArcVirtualKeyListItemResponse) GetUserID() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *ArcVirtualKeyListItemResponse) GetUserIdOk() (*string, bool)`
+`func (o *ArcVirtualKeyListItemResponse) GetUserIDOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *ArcVirtualKeyListItemResponse) SetUserId(v string)`
+`func (o *ArcVirtualKeyListItemResponse) SetUserID(v string)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
 
 ### GetUserName
@@ -493,5 +493,3 @@ HasSpendLimitEnabledOn returns a boolean if a field has been set.
 UnsetSpendLimitEnabledOn ensures that no value is present for SpendLimitEnabledOn, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

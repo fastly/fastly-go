@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **AccessKey** | Pointer to **string** | Your Cloud Files account access key. | [optional] 
 **BucketName** | Pointer to **string** | The name of your Cloud Files container. | [optional] 
@@ -456,30 +456,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingCloudfilesResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingCloudfilesResponse) GetServiceId() string`
+`func (o *LoggingCloudfilesResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingCloudfilesResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingCloudfilesResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingCloudfilesResponse) SetServiceId(v string)`
+`func (o *LoggingCloudfilesResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingCloudfilesResponse) HasServiceId() bool`
+`func (o *LoggingCloudfilesResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -688,5 +688,3 @@ HasUser returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

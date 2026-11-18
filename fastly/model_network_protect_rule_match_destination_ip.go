@@ -16,63 +16,63 @@ import (
 	"encoding/json"
 )
 
-// NetworkProtectRuleMatchDestinationIp Requires a destination address match field.
-type NetworkProtectRuleMatchDestinationIp struct {
+// NetworkProtectRuleMatchDestinationIP Requires a destination address match field.
+type NetworkProtectRuleMatchDestinationIP struct {
 	// Match traffic sent to this address; omit for any destination. An address outside a Network using this Rule Set never matches and still consumes one of the 64 rules. The API does not enforce containment in a network prefix; attached Rule Sets require a compatible IP family.
-	DestinationIpAddress string `json:"destination_ip_address"`
+	DestinationIPAddress string `json:"destination_ip_address"`
 	AdditionalProperties map[string]any
 }
 
-type _NetworkProtectRuleMatchDestinationIp NetworkProtectRuleMatchDestinationIp
+type _NetworkProtectRuleMatchDestinationIP NetworkProtectRuleMatchDestinationIP
 
-// NewNetworkProtectRuleMatchDestinationIp instantiates a new NetworkProtectRuleMatchDestinationIp object
+// NewNetworkProtectRuleMatchDestinationIP instantiates a new NetworkProtectRuleMatchDestinationIP object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkProtectRuleMatchDestinationIp(destinationIpAddress string) *NetworkProtectRuleMatchDestinationIp {
-	this := NetworkProtectRuleMatchDestinationIp{}
-	this.DestinationIpAddress = destinationIpAddress
+func NewNetworkProtectRuleMatchDestinationIP(destinationIPAddress string) *NetworkProtectRuleMatchDestinationIP {
+	this := NetworkProtectRuleMatchDestinationIP{}
+	this.DestinationIPAddress = destinationIPAddress
 	return &this
 }
 
-// NewNetworkProtectRuleMatchDestinationIpWithDefaults instantiates a new NetworkProtectRuleMatchDestinationIp object
+// NewNetworkProtectRuleMatchDestinationIPWithDefaults instantiates a new NetworkProtectRuleMatchDestinationIP object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewNetworkProtectRuleMatchDestinationIpWithDefaults() *NetworkProtectRuleMatchDestinationIp {
-	this := NetworkProtectRuleMatchDestinationIp{}
+func NewNetworkProtectRuleMatchDestinationIPWithDefaults() *NetworkProtectRuleMatchDestinationIP {
+	this := NetworkProtectRuleMatchDestinationIP{}
 	return &this
 }
 
-// GetDestinationIpAddress returns the DestinationIpAddress field value
-func (o *NetworkProtectRuleMatchDestinationIp) GetDestinationIpAddress() string {
+// GetDestinationIPAddress returns the DestinationIPAddress field value
+func (o *NetworkProtectRuleMatchDestinationIP) GetDestinationIPAddress() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.DestinationIpAddress
+	return o.DestinationIPAddress
 }
 
-// GetDestinationIpAddressOk returns a tuple with the DestinationIpAddress field value
+// GetDestinationIPAddressOk returns a tuple with the DestinationIPAddress field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleMatchDestinationIp) GetDestinationIpAddressOk() (*string, bool) {
+func (o *NetworkProtectRuleMatchDestinationIP) GetDestinationIPAddressOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DestinationIpAddress, true
+	return &o.DestinationIPAddress, true
 }
 
-// SetDestinationIpAddress sets field value
-func (o *NetworkProtectRuleMatchDestinationIp) SetDestinationIpAddress(v string) {
-	o.DestinationIpAddress = v
+// SetDestinationIPAddress sets field value
+func (o *NetworkProtectRuleMatchDestinationIP) SetDestinationIPAddress(v string) {
+	o.DestinationIPAddress = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o NetworkProtectRuleMatchDestinationIp) MarshalJSON() ([]byte, error) {
+func (o NetworkProtectRuleMatchDestinationIP) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["destination_ip_address"] = o.DestinationIpAddress
+		toSerialize["destination_ip_address"] = o.DestinationIPAddress
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -84,11 +84,11 @@ func (o NetworkProtectRuleMatchDestinationIp) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *NetworkProtectRuleMatchDestinationIp) UnmarshalJSON(bytes []byte) (err error) {
-	varNetworkProtectRuleMatchDestinationIp := _NetworkProtectRuleMatchDestinationIp{}
+func (o *NetworkProtectRuleMatchDestinationIP) UnmarshalJSON(bytes []byte) (err error) {
+	varNetworkProtectRuleMatchDestinationIP := _NetworkProtectRuleMatchDestinationIP{}
 
-	if err = json.Unmarshal(bytes, &varNetworkProtectRuleMatchDestinationIp); err == nil {
-		*o = NetworkProtectRuleMatchDestinationIp(varNetworkProtectRuleMatchDestinationIp)
+	if err = json.Unmarshal(bytes, &varNetworkProtectRuleMatchDestinationIP); err == nil {
+		*o = NetworkProtectRuleMatchDestinationIP(varNetworkProtectRuleMatchDestinationIP)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -101,48 +101,48 @@ func (o *NetworkProtectRuleMatchDestinationIp) UnmarshalJSON(bytes []byte) (err 
 	return err
 }
 
-// NullableNetworkProtectRuleMatchDestinationIp is a helper abstraction for handling nullable networkprotectrulematchdestinationip types.
-type NullableNetworkProtectRuleMatchDestinationIp struct {
-	value *NetworkProtectRuleMatchDestinationIp
+// NullableNetworkProtectRuleMatchDestinationIP is a helper abstraction for handling nullable networkprotectrulematchdestinationip types.
+type NullableNetworkProtectRuleMatchDestinationIP struct {
+	value *NetworkProtectRuleMatchDestinationIP
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableNetworkProtectRuleMatchDestinationIp) Get() *NetworkProtectRuleMatchDestinationIp {
+func (v NullableNetworkProtectRuleMatchDestinationIP) Get() *NetworkProtectRuleMatchDestinationIP {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableNetworkProtectRuleMatchDestinationIp) Set(val *NetworkProtectRuleMatchDestinationIp) {
+func (v *NullableNetworkProtectRuleMatchDestinationIP) Set(val *NetworkProtectRuleMatchDestinationIP) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableNetworkProtectRuleMatchDestinationIp) IsSet() bool {
+func (v NullableNetworkProtectRuleMatchDestinationIP) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableNetworkProtectRuleMatchDestinationIp) Unset() {
+func (v *NullableNetworkProtectRuleMatchDestinationIP) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableNetworkProtectRuleMatchDestinationIp returns a pointer to a new instance of NullableNetworkProtectRuleMatchDestinationIp.
-func NewNullableNetworkProtectRuleMatchDestinationIp(val *NetworkProtectRuleMatchDestinationIp) *NullableNetworkProtectRuleMatchDestinationIp {
-	return &NullableNetworkProtectRuleMatchDestinationIp{value: val, isSet: true}
+// NewNullableNetworkProtectRuleMatchDestinationIP returns a pointer to a new instance of NullableNetworkProtectRuleMatchDestinationIP.
+func NewNullableNetworkProtectRuleMatchDestinationIP(val *NetworkProtectRuleMatchDestinationIP) *NullableNetworkProtectRuleMatchDestinationIP {
+	return &NullableNetworkProtectRuleMatchDestinationIP{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableNetworkProtectRuleMatchDestinationIp) MarshalJSON() ([]byte, error) {
+func (v NullableNetworkProtectRuleMatchDestinationIP) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableNetworkProtectRuleMatchDestinationIp) UnmarshalJSON(src []byte) error {
+func (v *NullableNetworkProtectRuleMatchDestinationIP) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

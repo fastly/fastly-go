@@ -16,41 +16,41 @@ import (
 	"encoding/json"
 )
 
-// TlsPrivateKeyResponseData struct for TlsPrivateKeyResponseData
-type TlsPrivateKeyResponseData struct {
-	Type                 *TypeTlsPrivateKey               `json:"type,omitempty"`
-	Id                   *string                          `json:"id,omitempty"`
-	Attributes           *TlsPrivateKeyResponseAttributes `json:"attributes,omitempty"`
+// TLSPrivateKeyResponseData struct for TLSPrivateKeyResponseData
+type TLSPrivateKeyResponseData struct {
+	Type                 *TypeTLSPrivateKey               `json:"type,omitempty"`
+	ID                   *string                          `json:"id,omitempty"`
+	Attributes           *TLSPrivateKeyResponseAttributes `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsPrivateKeyResponseData TlsPrivateKeyResponseData
+type _TLSPrivateKeyResponseData TLSPrivateKeyResponseData
 
-// NewTlsPrivateKeyResponseData instantiates a new TlsPrivateKeyResponseData object
+// NewTLSPrivateKeyResponseData instantiates a new TLSPrivateKeyResponseData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsPrivateKeyResponseData() *TlsPrivateKeyResponseData {
-	this := TlsPrivateKeyResponseData{}
-	var type_ TypeTlsPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
-	this.Type = &type_
+func NewTLSPrivateKeyResponseData() *TLSPrivateKeyResponseData {
+	this := TLSPrivateKeyResponseData{}
+	var resourceType TypeTLSPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
+	this.Type = &resourceType
 	return &this
 }
 
-// NewTlsPrivateKeyResponseDataWithDefaults instantiates a new TlsPrivateKeyResponseData object
+// NewTLSPrivateKeyResponseDataWithDefaults instantiates a new TLSPrivateKeyResponseData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsPrivateKeyResponseDataWithDefaults() *TlsPrivateKeyResponseData {
-	this := TlsPrivateKeyResponseData{}
-	var type_ TypeTlsPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
-	this.Type = &type_
+func NewTLSPrivateKeyResponseDataWithDefaults() *TLSPrivateKeyResponseData {
+	this := TLSPrivateKeyResponseData{}
+	var resourceType TypeTLSPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
+	this.Type = &resourceType
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseData) GetType() TypeTlsPrivateKey {
+func (o *TLSPrivateKeyResponseData) GetType() TypeTLSPrivateKey {
 	if o == nil || o.Type == nil {
-		var ret TypeTlsPrivateKey
+		var ret TypeTLSPrivateKey
 		return ret
 	}
 	return *o.Type
@@ -58,7 +58,7 @@ func (o *TlsPrivateKeyResponseData) GetType() TypeTlsPrivateKey {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseData) GetTypeOk() (*TypeTlsPrivateKey, bool) {
+func (o *TLSPrivateKeyResponseData) GetTypeOk() (*TypeTLSPrivateKey, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *TlsPrivateKeyResponseData) GetTypeOk() (*TypeTlsPrivateKey, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseData) HasType() bool {
+func (o *TLSPrivateKeyResponseData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -74,47 +74,47 @@ func (o *TlsPrivateKeyResponseData) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTlsPrivateKey and assigns it to the Type field.
-func (o *TlsPrivateKeyResponseData) SetType(v TypeTlsPrivateKey) {
+// SetType gets a reference to the given TypeTLSPrivateKey and assigns it to the Type field.
+func (o *TLSPrivateKeyResponseData) SetType(v TypeTLSPrivateKey) {
 	o.Type = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseData) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *TLSPrivateKeyResponseData) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *TLSPrivateKeyResponseData) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *TLSPrivateKeyResponseData) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *TlsPrivateKeyResponseData) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *TLSPrivateKeyResponseData) SetID(v string) {
+	o.ID = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseData) GetAttributes() TlsPrivateKeyResponseAttributes {
+func (o *TLSPrivateKeyResponseData) GetAttributes() TLSPrivateKeyResponseAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret TlsPrivateKeyResponseAttributes
+		var ret TLSPrivateKeyResponseAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -122,7 +122,7 @@ func (o *TlsPrivateKeyResponseData) GetAttributes() TlsPrivateKeyResponseAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseData) GetAttributesOk() (*TlsPrivateKeyResponseAttributes, bool) {
+func (o *TLSPrivateKeyResponseData) GetAttributesOk() (*TLSPrivateKeyResponseAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *TlsPrivateKeyResponseData) GetAttributesOk() (*TlsPrivateKeyResponseAtt
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseData) HasAttributes() bool {
+func (o *TLSPrivateKeyResponseData) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -138,20 +138,20 @@ func (o *TlsPrivateKeyResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TlsPrivateKeyResponseAttributes and assigns it to the Attributes field.
-func (o *TlsPrivateKeyResponseData) SetAttributes(v TlsPrivateKeyResponseAttributes) {
+// SetAttributes gets a reference to the given TLSPrivateKeyResponseAttributes and assigns it to the Attributes field.
+func (o *TLSPrivateKeyResponseData) SetAttributes(v TLSPrivateKeyResponseAttributes) {
 	o.Attributes = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsPrivateKeyResponseData) MarshalJSON() ([]byte, error) {
+func (o TLSPrivateKeyResponseData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
@@ -166,11 +166,11 @@ func (o TlsPrivateKeyResponseData) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsPrivateKeyResponseData) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsPrivateKeyResponseData := _TlsPrivateKeyResponseData{}
+func (o *TLSPrivateKeyResponseData) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSPrivateKeyResponseData := _TLSPrivateKeyResponseData{}
 
-	if err = json.Unmarshal(bytes, &varTlsPrivateKeyResponseData); err == nil {
-		*o = TlsPrivateKeyResponseData(varTlsPrivateKeyResponseData)
+	if err = json.Unmarshal(bytes, &varTLSPrivateKeyResponseData); err == nil {
+		*o = TLSPrivateKeyResponseData(varTLSPrivateKeyResponseData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -185,48 +185,48 @@ func (o *TlsPrivateKeyResponseData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsPrivateKeyResponseData is a helper abstraction for handling nullable tlsprivatekeyresponsedata types.
-type NullableTlsPrivateKeyResponseData struct {
-	value *TlsPrivateKeyResponseData
+// NullableTLSPrivateKeyResponseData is a helper abstraction for handling nullable tlsprivatekeyresponsedata types.
+type NullableTLSPrivateKeyResponseData struct {
+	value *TLSPrivateKeyResponseData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsPrivateKeyResponseData) Get() *TlsPrivateKeyResponseData {
+func (v NullableTLSPrivateKeyResponseData) Get() *TLSPrivateKeyResponseData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsPrivateKeyResponseData) Set(val *TlsPrivateKeyResponseData) {
+func (v *NullableTLSPrivateKeyResponseData) Set(val *TLSPrivateKeyResponseData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsPrivateKeyResponseData) IsSet() bool {
+func (v NullableTLSPrivateKeyResponseData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsPrivateKeyResponseData) Unset() {
+func (v *NullableTLSPrivateKeyResponseData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsPrivateKeyResponseData returns a pointer to a new instance of NullableTlsPrivateKeyResponseData.
-func NewNullableTlsPrivateKeyResponseData(val *TlsPrivateKeyResponseData) *NullableTlsPrivateKeyResponseData {
-	return &NullableTlsPrivateKeyResponseData{value: val, isSet: true}
+// NewNullableTLSPrivateKeyResponseData returns a pointer to a new instance of NullableTLSPrivateKeyResponseData.
+func NewNullableTLSPrivateKeyResponseData(val *TLSPrivateKeyResponseData) *NullableTLSPrivateKeyResponseData {
+	return &NullableTLSPrivateKeyResponseData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsPrivateKeyResponseData) MarshalJSON() ([]byte, error) {
+func (v NullableTLSPrivateKeyResponseData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsPrivateKeyResponseData) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSPrivateKeyResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

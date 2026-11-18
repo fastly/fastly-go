@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsPrivateKeysResponse struct for TlsPrivateKeysResponse
-type TlsPrivateKeysResponse struct {
+// TLSPrivateKeysResponse struct for TLSPrivateKeysResponse
+type TLSPrivateKeysResponse struct {
 	Links                *PaginationLinks            `json:"links,omitempty"`
 	Meta                 *PaginationMeta1            `json:"meta,omitempty"`
-	Data                 []TlsPrivateKeyResponseData `json:"data,omitempty"`
+	Data                 []TLSPrivateKeyResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsPrivateKeysResponse TlsPrivateKeysResponse
+type _TLSPrivateKeysResponse TLSPrivateKeysResponse
 
-// NewTlsPrivateKeysResponse instantiates a new TlsPrivateKeysResponse object
+// NewTLSPrivateKeysResponse instantiates a new TLSPrivateKeysResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsPrivateKeysResponse() *TlsPrivateKeysResponse {
-	this := TlsPrivateKeysResponse{}
+func NewTLSPrivateKeysResponse() *TLSPrivateKeysResponse {
+	this := TLSPrivateKeysResponse{}
 	return &this
 }
 
-// NewTlsPrivateKeysResponseWithDefaults instantiates a new TlsPrivateKeysResponse object
+// NewTLSPrivateKeysResponseWithDefaults instantiates a new TLSPrivateKeysResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsPrivateKeysResponseWithDefaults() *TlsPrivateKeysResponse {
-	this := TlsPrivateKeysResponse{}
+func NewTLSPrivateKeysResponseWithDefaults() *TLSPrivateKeysResponse {
+	this := TLSPrivateKeysResponse{}
 	return &this
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *TlsPrivateKeysResponse) GetLinks() PaginationLinks {
+func (o *TLSPrivateKeysResponse) GetLinks() PaginationLinks {
 	if o == nil || o.Links == nil {
 		var ret PaginationLinks
 		return ret
@@ -54,7 +54,7 @@ func (o *TlsPrivateKeysResponse) GetLinks() PaginationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeysResponse) GetLinksOk() (*PaginationLinks, bool) {
+func (o *TLSPrivateKeysResponse) GetLinksOk() (*PaginationLinks, bool) {
 	if o == nil || o.Links == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *TlsPrivateKeysResponse) GetLinksOk() (*PaginationLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *TlsPrivateKeysResponse) HasLinks() bool {
+func (o *TLSPrivateKeysResponse) HasLinks() bool {
 	if o != nil && o.Links != nil {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *TlsPrivateKeysResponse) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given PaginationLinks and assigns it to the Links field.
-func (o *TlsPrivateKeysResponse) SetLinks(v PaginationLinks) {
+func (o *TLSPrivateKeysResponse) SetLinks(v PaginationLinks) {
 	o.Links = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *TlsPrivateKeysResponse) GetMeta() PaginationMeta1 {
+func (o *TLSPrivateKeysResponse) GetMeta() PaginationMeta1 {
 	if o == nil || o.Meta == nil {
 		var ret PaginationMeta1
 		return ret
@@ -86,7 +86,7 @@ func (o *TlsPrivateKeysResponse) GetMeta() PaginationMeta1 {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeysResponse) GetMetaOk() (*PaginationMeta1, bool) {
+func (o *TLSPrivateKeysResponse) GetMetaOk() (*PaginationMeta1, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *TlsPrivateKeysResponse) GetMetaOk() (*PaginationMeta1, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *TlsPrivateKeysResponse) HasMeta() bool {
+func (o *TLSPrivateKeysResponse) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -103,14 +103,14 @@ func (o *TlsPrivateKeysResponse) HasMeta() bool {
 }
 
 // SetMeta gets a reference to the given PaginationMeta1 and assigns it to the Meta field.
-func (o *TlsPrivateKeysResponse) SetMeta(v PaginationMeta1) {
+func (o *TLSPrivateKeysResponse) SetMeta(v PaginationMeta1) {
 	o.Meta = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsPrivateKeysResponse) GetData() []TlsPrivateKeyResponseData {
+func (o *TLSPrivateKeysResponse) GetData() []TLSPrivateKeyResponseData {
 	if o == nil || o.Data == nil {
-		var ret []TlsPrivateKeyResponseData
+		var ret []TLSPrivateKeyResponseData
 		return ret
 	}
 	return o.Data
@@ -118,7 +118,7 @@ func (o *TlsPrivateKeysResponse) GetData() []TlsPrivateKeyResponseData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeysResponse) GetDataOk() ([]TlsPrivateKeyResponseData, bool) {
+func (o *TLSPrivateKeysResponse) GetDataOk() ([]TLSPrivateKeyResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *TlsPrivateKeysResponse) GetDataOk() ([]TlsPrivateKeyResponseData, bool)
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsPrivateKeysResponse) HasData() bool {
+func (o *TLSPrivateKeysResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -134,14 +134,14 @@ func (o *TlsPrivateKeysResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []TlsPrivateKeyResponseData and assigns it to the Data field.
-func (o *TlsPrivateKeysResponse) SetData(v []TlsPrivateKeyResponseData) {
+// SetData gets a reference to the given []TLSPrivateKeyResponseData and assigns it to the Data field.
+func (o *TLSPrivateKeysResponse) SetData(v []TLSPrivateKeyResponseData) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsPrivateKeysResponse) MarshalJSON() ([]byte, error) {
+func (o TLSPrivateKeysResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
@@ -162,11 +162,11 @@ func (o TlsPrivateKeysResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsPrivateKeysResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsPrivateKeysResponse := _TlsPrivateKeysResponse{}
+func (o *TLSPrivateKeysResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSPrivateKeysResponse := _TLSPrivateKeysResponse{}
 
-	if err = json.Unmarshal(bytes, &varTlsPrivateKeysResponse); err == nil {
-		*o = TlsPrivateKeysResponse(varTlsPrivateKeysResponse)
+	if err = json.Unmarshal(bytes, &varTLSPrivateKeysResponse); err == nil {
+		*o = TLSPrivateKeysResponse(varTLSPrivateKeysResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -181,48 +181,48 @@ func (o *TlsPrivateKeysResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsPrivateKeysResponse is a helper abstraction for handling nullable tlsprivatekeysresponse types.
-type NullableTlsPrivateKeysResponse struct {
-	value *TlsPrivateKeysResponse
+// NullableTLSPrivateKeysResponse is a helper abstraction for handling nullable tlsprivatekeysresponse types.
+type NullableTLSPrivateKeysResponse struct {
+	value *TLSPrivateKeysResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsPrivateKeysResponse) Get() *TlsPrivateKeysResponse {
+func (v NullableTLSPrivateKeysResponse) Get() *TLSPrivateKeysResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsPrivateKeysResponse) Set(val *TlsPrivateKeysResponse) {
+func (v *NullableTLSPrivateKeysResponse) Set(val *TLSPrivateKeysResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsPrivateKeysResponse) IsSet() bool {
+func (v NullableTLSPrivateKeysResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsPrivateKeysResponse) Unset() {
+func (v *NullableTLSPrivateKeysResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsPrivateKeysResponse returns a pointer to a new instance of NullableTlsPrivateKeysResponse.
-func NewNullableTlsPrivateKeysResponse(val *TlsPrivateKeysResponse) *NullableTlsPrivateKeysResponse {
-	return &NullableTlsPrivateKeysResponse{value: val, isSet: true}
+// NewNullableTLSPrivateKeysResponse returns a pointer to a new instance of NullableTLSPrivateKeysResponse.
+func NewNullableTLSPrivateKeysResponse(val *TLSPrivateKeysResponse) *NullableTLSPrivateKeysResponse {
+	return &NullableTLSPrivateKeysResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsPrivateKeysResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTLSPrivateKeysResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsPrivateKeysResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSPrivateKeysResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

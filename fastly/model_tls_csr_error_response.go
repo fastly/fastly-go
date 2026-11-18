@@ -16,33 +16,33 @@ import (
 	"encoding/json"
 )
 
-// TlsCsrErrorResponse struct for TlsCsrErrorResponse
-type TlsCsrErrorResponse struct {
+// TLSCsrErrorResponse struct for TLSCsrErrorResponse
+type TLSCsrErrorResponse struct {
 	Errors               []ErrorResponseData `json:"errors,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsCsrErrorResponse TlsCsrErrorResponse
+type _TLSCsrErrorResponse TLSCsrErrorResponse
 
-// NewTlsCsrErrorResponse instantiates a new TlsCsrErrorResponse object
+// NewTLSCsrErrorResponse instantiates a new TLSCsrErrorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsCsrErrorResponse() *TlsCsrErrorResponse {
-	this := TlsCsrErrorResponse{}
+func NewTLSCsrErrorResponse() *TLSCsrErrorResponse {
+	this := TLSCsrErrorResponse{}
 	return &this
 }
 
-// NewTlsCsrErrorResponseWithDefaults instantiates a new TlsCsrErrorResponse object
+// NewTLSCsrErrorResponseWithDefaults instantiates a new TLSCsrErrorResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsCsrErrorResponseWithDefaults() *TlsCsrErrorResponse {
-	this := TlsCsrErrorResponse{}
+func NewTLSCsrErrorResponseWithDefaults() *TLSCsrErrorResponse {
+	this := TLSCsrErrorResponse{}
 	return &this
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *TlsCsrErrorResponse) GetErrors() []ErrorResponseData {
+func (o *TLSCsrErrorResponse) GetErrors() []ErrorResponseData {
 	if o == nil || o.Errors == nil {
 		var ret []ErrorResponseData
 		return ret
@@ -52,7 +52,7 @@ func (o *TlsCsrErrorResponse) GetErrors() []ErrorResponseData {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCsrErrorResponse) GetErrorsOk() ([]ErrorResponseData, bool) {
+func (o *TLSCsrErrorResponse) GetErrorsOk() ([]ErrorResponseData, bool) {
 	if o == nil || o.Errors == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TlsCsrErrorResponse) GetErrorsOk() ([]ErrorResponseData, bool) {
 }
 
 // HasErrors returns a boolean if a field has been set.
-func (o *TlsCsrErrorResponse) HasErrors() bool {
+func (o *TLSCsrErrorResponse) HasErrors() bool {
 	if o != nil && o.Errors != nil {
 		return true
 	}
@@ -69,13 +69,13 @@ func (o *TlsCsrErrorResponse) HasErrors() bool {
 }
 
 // SetErrors gets a reference to the given []ErrorResponseData and assigns it to the Errors field.
-func (o *TlsCsrErrorResponse) SetErrors(v []ErrorResponseData) {
+func (o *TLSCsrErrorResponse) SetErrors(v []ErrorResponseData) {
 	o.Errors = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsCsrErrorResponse) MarshalJSON() ([]byte, error) {
+func (o TLSCsrErrorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Errors != nil {
 		toSerialize["errors"] = o.Errors
@@ -90,11 +90,11 @@ func (o TlsCsrErrorResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsCsrErrorResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsCsrErrorResponse := _TlsCsrErrorResponse{}
+func (o *TLSCsrErrorResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSCsrErrorResponse := _TLSCsrErrorResponse{}
 
-	if err = json.Unmarshal(bytes, &varTlsCsrErrorResponse); err == nil {
-		*o = TlsCsrErrorResponse(varTlsCsrErrorResponse)
+	if err = json.Unmarshal(bytes, &varTLSCsrErrorResponse); err == nil {
+		*o = TLSCsrErrorResponse(varTLSCsrErrorResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TlsCsrErrorResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsCsrErrorResponse is a helper abstraction for handling nullable tlscsrerrorresponse types.
-type NullableTlsCsrErrorResponse struct {
-	value *TlsCsrErrorResponse
+// NullableTLSCsrErrorResponse is a helper abstraction for handling nullable tlscsrerrorresponse types.
+type NullableTLSCsrErrorResponse struct {
+	value *TLSCsrErrorResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsCsrErrorResponse) Get() *TlsCsrErrorResponse {
+func (v NullableTLSCsrErrorResponse) Get() *TLSCsrErrorResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsCsrErrorResponse) Set(val *TlsCsrErrorResponse) {
+func (v *NullableTLSCsrErrorResponse) Set(val *TLSCsrErrorResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsCsrErrorResponse) IsSet() bool {
+func (v NullableTLSCsrErrorResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsCsrErrorResponse) Unset() {
+func (v *NullableTLSCsrErrorResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsCsrErrorResponse returns a pointer to a new instance of NullableTlsCsrErrorResponse.
-func NewNullableTlsCsrErrorResponse(val *TlsCsrErrorResponse) *NullableTlsCsrErrorResponse {
-	return &NullableTlsCsrErrorResponse{value: val, isSet: true}
+// NewNullableTLSCsrErrorResponse returns a pointer to a new instance of NullableTLSCsrErrorResponse.
+func NewNullableTLSCsrErrorResponse(val *TLSCsrErrorResponse) *NullableTLSCsrErrorResponse {
+	return &NullableTLSCsrErrorResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsCsrErrorResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTLSCsrErrorResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsCsrErrorResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSCsrErrorResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

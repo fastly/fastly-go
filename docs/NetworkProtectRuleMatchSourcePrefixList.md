@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourcePrefixListId** | **string** | Match traffic whose source appears in this prefix list. | 
+**SourcePrefixListID** | **string** | Match traffic whose source appears in this prefix list. | 
 
 ## Methods
 
 ### NewNetworkProtectRuleMatchSourcePrefixList
 
-`func NewNetworkProtectRuleMatchSourcePrefixList(sourcePrefixListId string, ) *NetworkProtectRuleMatchSourcePrefixList`
+`func NewNetworkProtectRuleMatchSourcePrefixList(sourcePrefixListID string, ) *NetworkProtectRuleMatchSourcePrefixList`
 
 NewNetworkProtectRuleMatchSourcePrefixList instantiates a new NetworkProtectRuleMatchSourcePrefixList object
 This constructor will assign default values to properties that have it defined,
@@ -25,27 +25,25 @@ NewNetworkProtectRuleMatchSourcePrefixListWithDefaults instantiates a new Networ
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetSourcePrefixListId
+### GetSourcePrefixListID
 
-`func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListId() string`
+`func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListID() string`
 
-GetSourcePrefixListId returns the SourcePrefixListId field if non-nil, zero value otherwise.
+GetSourcePrefixListID returns the SourcePrefixListID field if non-nil, zero value otherwise.
 
-### GetSourcePrefixListIdOk
+### GetSourcePrefixListIDOk
 
-`func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListIdOk() (*string, bool)`
+`func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListIDOk() (*string, bool)`
 
-GetSourcePrefixListIdOk returns a tuple with the SourcePrefixListId field if it's non-nil, zero value otherwise
+GetSourcePrefixListIDOk returns a tuple with the SourcePrefixListID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSourcePrefixListId
+### SetSourcePrefixListID
 
-`func (o *NetworkProtectRuleMatchSourcePrefixList) SetSourcePrefixListId(v string)`
+`func (o *NetworkProtectRuleMatchSourcePrefixList) SetSourcePrefixListID(v string)`
 
-SetSourcePrefixListId sets SourcePrefixListId field to given value.
+SetSourcePrefixListID sets SourcePrefixListID field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

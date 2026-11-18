@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Workspaces** | Pointer to **[]string** | List of workspace IDs the token can access. Only used when `limit_workspaces` is `true` and the token has roles that support workspace access. | [optional] 
 **Scope** | Pointer to **string** |  | [optional] [default to "global"]
 **ExpiresAt** | **NullableTime** | A UTC timestamp of when the token will expire. | 
-**TlsAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. Only applicable when using the single-role `role` field. For tokens with multiple roles, assign TLS roles (`tls_admin` or `tls_viewer`) via the `roles` field instead. | [optional] 
+**TLSAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. Only applicable when using the single-role `role` field. For tokens with multiple roles, assign TLS roles (`tls_admin` or `tls_viewer`) via the `roles` field instead. | [optional] 
 
 ## Methods
 
@@ -259,32 +259,30 @@ SetExpiresAt sets ExpiresAt field to given value.
 `func (o *AutomationTokenCreateRequest) UnsetExpiresAt()`
 
 UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
-### GetTlsAccess
+### GetTLSAccess
 
-`func (o *AutomationTokenCreateRequest) GetTlsAccess() bool`
+`func (o *AutomationTokenCreateRequest) GetTLSAccess() bool`
 
-GetTlsAccess returns the TlsAccess field if non-nil, zero value otherwise.
+GetTLSAccess returns the TLSAccess field if non-nil, zero value otherwise.
 
-### GetTlsAccessOk
+### GetTLSAccessOk
 
-`func (o *AutomationTokenCreateRequest) GetTlsAccessOk() (*bool, bool)`
+`func (o *AutomationTokenCreateRequest) GetTLSAccessOk() (*bool, bool)`
 
-GetTlsAccessOk returns a tuple with the TlsAccess field if it's non-nil, zero value otherwise
+GetTLSAccessOk returns a tuple with the TLSAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsAccess
+### SetTLSAccess
 
-`func (o *AutomationTokenCreateRequest) SetTlsAccess(v bool)`
+`func (o *AutomationTokenCreateRequest) SetTLSAccess(v bool)`
 
-SetTlsAccess sets TlsAccess field to given value.
+SetTLSAccess sets TLSAccess field to given value.
 
-### HasTlsAccess
+### HasTLSAccess
 
-`func (o *AutomationTokenCreateRequest) HasTlsAccess() bool`
+`func (o *AutomationTokenCreateRequest) HasTLSAccess() bool`
 
-HasTlsAccess returns a boolean if a field has been set.
+HasTLSAccess returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
 **Backends** | Pointer to [**[]BackendResponse**](BackendResponse.md) | List of backends associated to this service. | [optional] 
 **CacheSettings** | Pointer to [**[]CacheSettingResponse**](CacheSettingResponse.md) | List of cache settings associated to this service. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Settings** | Pointer to [**VersionDetailSettings**](VersionDetailSettings.md) |  | [optional] 
 **Snippets** | Pointer to [**[]SchemasSnippetResponse**](SchemasSnippetResponse.md) | List of VCL snippets for this service. | [optional] 
 **Vcls** | Pointer to [**[]SchemasVclResponse**](SchemasVclResponse.md) | List of VCL files for this service. | [optional] 
-**Wordpress** | Pointer to **[]map[string]interface{}** | A list of Wordpress rules with this service. | [optional] 
+**Wordpress** | Pointer to **[]map[string]any** | A list of Wordpress rules with this service. | [optional] 
 
 ## Methods
 
@@ -340,30 +340,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *ServiceVersionDetail) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *ServiceVersionDetail) GetServiceId() string`
+`func (o *ServiceVersionDetail) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *ServiceVersionDetail) GetServiceIdOk() (*string, bool)`
+`func (o *ServiceVersionDetail) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *ServiceVersionDetail) SetServiceId(v string)`
+`func (o *ServiceVersionDetail) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *ServiceVersionDetail) HasServiceId() bool`
+`func (o *ServiceVersionDetail) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetEnvironments
 
@@ -717,20 +717,20 @@ HasVcls returns a boolean if a field has been set.
 
 ### GetWordpress
 
-`func (o *ServiceVersionDetail) GetWordpress() []*map[string]interface{}`
+`func (o *ServiceVersionDetail) GetWordpress() []*map[string]any`
 
 GetWordpress returns the Wordpress field if non-nil, zero value otherwise.
 
 ### GetWordpressOk
 
-`func (o *ServiceVersionDetail) GetWordpressOk() (*[]*map[string]interface{}, bool)`
+`func (o *ServiceVersionDetail) GetWordpressOk() (*[]*map[string]any, bool)`
 
 GetWordpressOk returns a tuple with the Wordpress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWordpress
 
-`func (o *ServiceVersionDetail) SetWordpress(v []*map[string]interface{})`
+`func (o *ServiceVersionDetail) SetWordpress(v []*map[string]any)`
 
 SetWordpress sets Wordpress field to given value.
 
@@ -742,5 +742,3 @@ HasWordpress returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

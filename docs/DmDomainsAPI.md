@@ -95,12 +95,12 @@ import (
 )
 
 func main() {
-    domainId := "domainId_example" // string | 
+    domainID := "domainId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmDomainsAPI.DeleteDmDomain(ctx, domainId).Execute()
+    resp, r, err := apiClient.DmDomainsAPI.DeleteDmDomain(ctx, domainID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmDomainsAPI.DeleteDmDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -114,7 +114,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**domainId** | **string** |  | 
+**domainID** | **string** |  | 
 
 ### Other Parameters
 
@@ -160,12 +160,12 @@ import (
 )
 
 func main() {
-    domainId := "domainId_example" // string | 
+    domainID := "domainId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmDomainsAPI.GetDmDomain(ctx, domainId).Execute()
+    resp, r, err := apiClient.DmDomainsAPI.GetDmDomain(ctx, domainID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmDomainsAPI.GetDmDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -181,7 +181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**domainId** | **string** |  | 
+**domainID** | **string** |  | 
 
 ### Other Parameters
 
@@ -229,7 +229,7 @@ import (
 func main() {
     fqdn := "fqdn_example" // string |  (optional)
     fqdnMatch := "fqdnMatch_example" // string | (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN. (optional) (default to "contains")
-    serviceId := "serviceId_example" // string | Filter results based on a service_id. (optional)
+    serviceID := "serviceId_example" // string | Filter results based on a service_id. (optional)
     sort := "sort_example" // string | The order in which to list the results. (optional) (default to "fqdn")
     activated := true // bool |  (optional)
     verified := true // bool |  (optional)
@@ -239,7 +239,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmDomainsAPI.ListDmDomains(ctx).Fqdn(fqdn).FqdnMatch(fqdnMatch).ServiceId(serviceId).Sort(sort).Activated(activated).Verified(verified).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.DmDomainsAPI.ListDmDomains(ctx).Fqdn(fqdn).FqdnMatch(fqdnMatch).ServiceID(serviceID).Sort(sort).Activated(activated).Verified(verified).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmDomainsAPI.ListDmDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -260,7 +260,7 @@ Other parameters are passed through a pointer to a apiListDmDomainsRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fqdn** | **string** |  |  **fqdnMatch** | **string** | (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN. | [default to &quot;contains&quot;] **serviceId** | **string** | Filter results based on a service_id. |  **sort** | **string** | The order in which to list the results. | [default to &quot;fqdn&quot;] **activated** | **bool** |  |  **verified** | **bool** |  |  **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **int32** | Limit how many results are returned. | [default to 20]
+ **fqdn** | **string** |  |  **fqdnMatch** | **string** | (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN. | [default to &quot;contains&quot;] **serviceID** | **string** | Filter results based on a service_id. |  **sort** | **string** | The order in which to list the results. | [default to &quot;fqdn&quot;] **activated** | **bool** |  |  **verified** | **bool** |  |  **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **int32** | Limit how many results are returned. | [default to 20]
 
 ### Return type
 
@@ -297,13 +297,13 @@ import (
 )
 
 func main() {
-    domainId := "domainId_example" // string | 
+    domainID := "domainId_example" // string | 
     requestBodyForUpdate := *openapiclient.NewRequestBodyForUpdate() // RequestBodyForUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmDomainsAPI.UpdateDmDomain(ctx, domainId).RequestBodyForUpdate(requestBodyForUpdate).Execute()
+    resp, r, err := apiClient.DmDomainsAPI.UpdateDmDomain(ctx, domainID).RequestBodyForUpdate(requestBodyForUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmDomainsAPI.UpdateDmDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,7 +319,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**domainId** | **string** |  | 
+**domainID** | **string** |  | 
 
 ### Other Parameters
 
@@ -344,4 +344,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

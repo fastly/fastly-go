@@ -1,56 +1,54 @@
-# TlsPrivateKey
+# TLSPrivateKey
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**TlsPrivateKeyData**](TlsPrivateKeyData.md) |  | [optional] 
+**Data** | Pointer to [**TLSPrivateKeyData**](TlsPrivateKeyData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsPrivateKey
+### NewTLSPrivateKey
 
-`func NewTlsPrivateKey() *TlsPrivateKey`
+`func NewTLSPrivateKey() *TLSPrivateKey`
 
-NewTlsPrivateKey instantiates a new TlsPrivateKey object
+NewTLSPrivateKey instantiates a new TLSPrivateKey object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsPrivateKeyWithDefaults
+### NewTLSPrivateKeyWithDefaults
 
-`func NewTlsPrivateKeyWithDefaults() *TlsPrivateKey`
+`func NewTLSPrivateKeyWithDefaults() *TLSPrivateKey`
 
-NewTlsPrivateKeyWithDefaults instantiates a new TlsPrivateKey object
+NewTLSPrivateKeyWithDefaults instantiates a new TLSPrivateKey object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TlsPrivateKey) GetData() TlsPrivateKeyData`
+`func (o *TLSPrivateKey) GetData() TLSPrivateKeyData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsPrivateKey) GetDataOk() (*TlsPrivateKeyData, bool)`
+`func (o *TLSPrivateKey) GetDataOk() (*TLSPrivateKeyData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsPrivateKey) SetData(v TlsPrivateKeyData)`
+`func (o *TLSPrivateKey) SetData(v TLSPrivateKeyData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsPrivateKey) HasData() bool`
+`func (o *TLSPrivateKey) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -47,7 +47,7 @@ type LoggingDigitaloceanResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceId *string      `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// The name of the DigitalOcean Space.
 	BucketName *string `json:"bucket_name,omitempty"`
@@ -633,36 +633,36 @@ func (o *LoggingDigitaloceanResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingDigitaloceanResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingDigitaloceanResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingDigitaloceanResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingDigitaloceanResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingDigitaloceanResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingDigitaloceanResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingDigitaloceanResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingDigitaloceanResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -957,8 +957,8 @@ func (o LoggingDigitaloceanResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

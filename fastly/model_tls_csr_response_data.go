@@ -16,74 +16,74 @@ import (
 	"encoding/json"
 )
 
-// TlsCsrResponseData struct for TlsCsrResponseData
-type TlsCsrResponseData struct {
-	Id                   *string                    `json:"id,omitempty"`
-	Type                 *TypeTlsCsr                `json:"type,omitempty"`
-	Attributes           *TlsCsrResponseAttributes  `json:"attributes,omitempty"`
-	Relationships        *RelationshipTlsPrivateKey `json:"relationships,omitempty"`
+// TLSCsrResponseData struct for TLSCsrResponseData
+type TLSCsrResponseData struct {
+	ID                   *string                    `json:"id,omitempty"`
+	Type                 *TypeTLSCsr                `json:"type,omitempty"`
+	Attributes           *TLSCsrResponseAttributes  `json:"attributes,omitempty"`
+	Relationships        *RelationshipTLSPrivateKey `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsCsrResponseData TlsCsrResponseData
+type _TLSCsrResponseData TLSCsrResponseData
 
-// NewTlsCsrResponseData instantiates a new TlsCsrResponseData object
+// NewTLSCsrResponseData instantiates a new TLSCsrResponseData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsCsrResponseData() *TlsCsrResponseData {
-	this := TlsCsrResponseData{}
-	var type_ TypeTlsCsr = TYPETLSCSR_CSR
-	this.Type = &type_
+func NewTLSCsrResponseData() *TLSCsrResponseData {
+	this := TLSCsrResponseData{}
+	var resourceType TypeTLSCsr = TYPETLSCSR_CSR
+	this.Type = &resourceType
 	return &this
 }
 
-// NewTlsCsrResponseDataWithDefaults instantiates a new TlsCsrResponseData object
+// NewTLSCsrResponseDataWithDefaults instantiates a new TLSCsrResponseData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsCsrResponseDataWithDefaults() *TlsCsrResponseData {
-	this := TlsCsrResponseData{}
-	var type_ TypeTlsCsr = TYPETLSCSR_CSR
-	this.Type = &type_
+func NewTLSCsrResponseDataWithDefaults() *TLSCsrResponseData {
+	this := TLSCsrResponseData{}
+	var resourceType TypeTLSCsr = TYPETLSCSR_CSR
+	this.Type = &resourceType
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *TlsCsrResponseData) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *TLSCsrResponseData) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCsrResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *TLSCsrResponseData) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *TlsCsrResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *TLSCsrResponseData) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *TlsCsrResponseData) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *TLSCsrResponseData) SetID(v string) {
+	o.ID = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *TlsCsrResponseData) GetType() TypeTlsCsr {
+func (o *TLSCsrResponseData) GetType() TypeTLSCsr {
 	if o == nil || o.Type == nil {
-		var ret TypeTlsCsr
+		var ret TypeTLSCsr
 		return ret
 	}
 	return *o.Type
@@ -91,7 +91,7 @@ func (o *TlsCsrResponseData) GetType() TypeTlsCsr {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCsrResponseData) GetTypeOk() (*TypeTlsCsr, bool) {
+func (o *TLSCsrResponseData) GetTypeOk() (*TypeTLSCsr, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *TlsCsrResponseData) GetTypeOk() (*TypeTlsCsr, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *TlsCsrResponseData) HasType() bool {
+func (o *TLSCsrResponseData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -107,15 +107,15 @@ func (o *TlsCsrResponseData) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTlsCsr and assigns it to the Type field.
-func (o *TlsCsrResponseData) SetType(v TypeTlsCsr) {
+// SetType gets a reference to the given TypeTLSCsr and assigns it to the Type field.
+func (o *TLSCsrResponseData) SetType(v TypeTLSCsr) {
 	o.Type = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TlsCsrResponseData) GetAttributes() TlsCsrResponseAttributes {
+func (o *TLSCsrResponseData) GetAttributes() TLSCsrResponseAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret TlsCsrResponseAttributes
+		var ret TLSCsrResponseAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -123,7 +123,7 @@ func (o *TlsCsrResponseData) GetAttributes() TlsCsrResponseAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCsrResponseData) GetAttributesOk() (*TlsCsrResponseAttributes, bool) {
+func (o *TLSCsrResponseData) GetAttributesOk() (*TLSCsrResponseAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *TlsCsrResponseData) GetAttributesOk() (*TlsCsrResponseAttributes, bool)
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *TlsCsrResponseData) HasAttributes() bool {
+func (o *TLSCsrResponseData) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -139,15 +139,15 @@ func (o *TlsCsrResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TlsCsrResponseAttributes and assigns it to the Attributes field.
-func (o *TlsCsrResponseData) SetAttributes(v TlsCsrResponseAttributes) {
+// SetAttributes gets a reference to the given TLSCsrResponseAttributes and assigns it to the Attributes field.
+func (o *TLSCsrResponseData) SetAttributes(v TLSCsrResponseAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TlsCsrResponseData) GetRelationships() RelationshipTlsPrivateKey {
+func (o *TLSCsrResponseData) GetRelationships() RelationshipTLSPrivateKey {
 	if o == nil || o.Relationships == nil {
-		var ret RelationshipTlsPrivateKey
+		var ret RelationshipTLSPrivateKey
 		return ret
 	}
 	return *o.Relationships
@@ -155,7 +155,7 @@ func (o *TlsCsrResponseData) GetRelationships() RelationshipTlsPrivateKey {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCsrResponseData) GetRelationshipsOk() (*RelationshipTlsPrivateKey, bool) {
+func (o *TLSCsrResponseData) GetRelationshipsOk() (*RelationshipTLSPrivateKey, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -163,7 +163,7 @@ func (o *TlsCsrResponseData) GetRelationshipsOk() (*RelationshipTlsPrivateKey, b
 }
 
 // HasRelationships returns a boolean if a field has been set.
-func (o *TlsCsrResponseData) HasRelationships() bool {
+func (o *TLSCsrResponseData) HasRelationships() bool {
 	if o != nil && o.Relationships != nil {
 		return true
 	}
@@ -171,17 +171,17 @@ func (o *TlsCsrResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given RelationshipTlsPrivateKey and assigns it to the Relationships field.
-func (o *TlsCsrResponseData) SetRelationships(v RelationshipTlsPrivateKey) {
+// SetRelationships gets a reference to the given RelationshipTLSPrivateKey and assigns it to the Relationships field.
+func (o *TLSCsrResponseData) SetRelationships(v RelationshipTLSPrivateKey) {
 	o.Relationships = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsCsrResponseData) MarshalJSON() ([]byte, error) {
+func (o TLSCsrResponseData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -202,11 +202,11 @@ func (o TlsCsrResponseData) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsCsrResponseData) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsCsrResponseData := _TlsCsrResponseData{}
+func (o *TLSCsrResponseData) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSCsrResponseData := _TLSCsrResponseData{}
 
-	if err = json.Unmarshal(bytes, &varTlsCsrResponseData); err == nil {
-		*o = TlsCsrResponseData(varTlsCsrResponseData)
+	if err = json.Unmarshal(bytes, &varTLSCsrResponseData); err == nil {
+		*o = TLSCsrResponseData(varTLSCsrResponseData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -222,48 +222,48 @@ func (o *TlsCsrResponseData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsCsrResponseData is a helper abstraction for handling nullable tlscsrresponsedata types.
-type NullableTlsCsrResponseData struct {
-	value *TlsCsrResponseData
+// NullableTLSCsrResponseData is a helper abstraction for handling nullable tlscsrresponsedata types.
+type NullableTLSCsrResponseData struct {
+	value *TLSCsrResponseData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsCsrResponseData) Get() *TlsCsrResponseData {
+func (v NullableTLSCsrResponseData) Get() *TLSCsrResponseData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsCsrResponseData) Set(val *TlsCsrResponseData) {
+func (v *NullableTLSCsrResponseData) Set(val *TLSCsrResponseData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsCsrResponseData) IsSet() bool {
+func (v NullableTLSCsrResponseData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsCsrResponseData) Unset() {
+func (v *NullableTLSCsrResponseData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsCsrResponseData returns a pointer to a new instance of NullableTlsCsrResponseData.
-func NewNullableTlsCsrResponseData(val *TlsCsrResponseData) *NullableTlsCsrResponseData {
-	return &NullableTlsCsrResponseData{value: val, isSet: true}
+// NewNullableTLSCsrResponseData returns a pointer to a new instance of NullableTLSCsrResponseData.
+func NewNullableTLSCsrResponseData(val *TLSCsrResponseData) *NullableTLSCsrResponseData {
+	return &NullableTLSCsrResponseData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsCsrResponseData) MarshalJSON() ([]byte, error) {
+func (v NullableTLSCsrResponseData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsCsrResponseData) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSCsrResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

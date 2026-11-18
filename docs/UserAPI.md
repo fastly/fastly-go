@@ -105,12 +105,12 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | Alphanumeric string identifying the user.
+    userID := "userId_example" // string | Alphanumeric string identifying the user.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.DeleteUser(ctx, userId).Execute()
+    resp, r, err := apiClient.UserAPI.DeleteUser(ctx, userID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.DeleteUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | Alphanumeric string identifying the user. | 
+**userID** | **string** | Alphanumeric string identifying the user. | 
 
 ### Other Parameters
 
@@ -231,12 +231,12 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | Alphanumeric string identifying the user.
+    userID := "userId_example" // string | Alphanumeric string identifying the user.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.GetUser(ctx, userId).Execute()
+    resp, r, err := apiClient.UserAPI.GetUser(ctx, userID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | Alphanumeric string identifying the user. | 
+**userID** | **string** | Alphanumeric string identifying the user. | 
 
 ### Other Parameters
 
@@ -365,7 +365,7 @@ import (
 )
 
 func main() {
-    userId := "userId_example" // string | Alphanumeric string identifying the user.
+    userID := "userId_example" // string | Alphanumeric string identifying the user.
     login := "login_example" // string |  (optional)
     name := "name_example" // string | The real life name of the user. (optional)
     limitServices := true // bool | Indicates that the user has limited access to the customer's services. (optional)
@@ -379,7 +379,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.UpdateUser(ctx, userId).Login(login).Name(name).LimitServices(limitServices).Locked(locked).RequireNewPassword(requireNewPassword).Role(role).Roles(roles).TwoFactorAuthEnabled(twoFactorAuthEnabled).TwoFactorSetupRequired(twoFactorSetupRequired).Execute()
+    resp, r, err := apiClient.UserAPI.UpdateUser(ctx, userID).Login(login).Name(name).LimitServices(limitServices).Locked(locked).RequireNewPassword(requireNewPassword).Role(role).Roles(roles).TwoFactorAuthEnabled(twoFactorAuthEnabled).TwoFactorSetupRequired(twoFactorSetupRequired).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.UpdateUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -395,7 +395,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | Alphanumeric string identifying the user. | 
+**userID** | **string** | Alphanumeric string identifying the user. | 
 
 ### Other Parameters
 
@@ -484,4 +484,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

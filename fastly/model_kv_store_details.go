@@ -19,7 +19,7 @@ import (
 // KvStoreDetails struct for KvStoreDetails
 type KvStoreDetails struct {
 	// ID of the store.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Name of the store.
 	Name *string `json:"name,omitempty"`
 	// Timestamp at which the store was created.
@@ -48,36 +48,36 @@ func NewKvStoreDetailsWithDefaults() *KvStoreDetails {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *KvStoreDetails) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *KvStoreDetails) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KvStoreDetails) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *KvStoreDetails) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *KvStoreDetails) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *KvStoreDetails) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *KvStoreDetails) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *KvStoreDetails) SetID(v string) {
+	o.ID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -180,8 +180,8 @@ func (o *KvStoreDetails) SetUpdatedAt(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o KvStoreDetails) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

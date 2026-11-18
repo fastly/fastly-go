@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ContentTypes** | Pointer to **NullableString** | Space-separated list of content types to compress. If you omit this field a default list will be used. | [optional] 
 **Extensions** | Pointer to **NullableString** | Space-separated list of file extensions to compress. If you omit this field a default list will be used. | [optional] 
 **Name** | Pointer to **string** | Name of the gzip configuration. | [optional] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -163,30 +163,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceID
 
-`func (o *GzipResponse) GetServiceId() string`
+`func (o *GzipResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *GzipResponse) GetServiceIdOk() (*string, bool)`
+`func (o *GzipResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *GzipResponse) SetServiceId(v string)`
+`func (o *GzipResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *GzipResponse) HasServiceId() bool`
+`func (o *GzipResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -320,5 +320,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

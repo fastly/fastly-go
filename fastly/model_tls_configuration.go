@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsConfiguration struct for TlsConfiguration
-type TlsConfiguration struct {
-	Data                 *TlsConfigurationData `json:"data,omitempty"`
+// TLSConfiguration struct for TLSConfiguration
+type TLSConfiguration struct {
+	Data                 *TLSConfigurationData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsConfiguration TlsConfiguration
+type _TLSConfiguration TLSConfiguration
 
-// NewTlsConfiguration instantiates a new TlsConfiguration object
+// NewTLSConfiguration instantiates a new TLSConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsConfiguration() *TlsConfiguration {
-	this := TlsConfiguration{}
+func NewTLSConfiguration() *TLSConfiguration {
+	this := TLSConfiguration{}
 	return &this
 }
 
-// NewTlsConfigurationWithDefaults instantiates a new TlsConfiguration object
+// NewTLSConfigurationWithDefaults instantiates a new TLSConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsConfigurationWithDefaults() *TlsConfiguration {
-	this := TlsConfiguration{}
+func NewTLSConfigurationWithDefaults() *TLSConfiguration {
+	this := TLSConfiguration{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsConfiguration) GetData() TlsConfigurationData {
+func (o *TLSConfiguration) GetData() TLSConfigurationData {
 	if o == nil || o.Data == nil {
-		var ret TlsConfigurationData
+		var ret TLSConfigurationData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *TlsConfiguration) GetData() TlsConfigurationData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfiguration) GetDataOk() (*TlsConfigurationData, bool) {
+func (o *TLSConfiguration) GetDataOk() (*TLSConfigurationData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TlsConfiguration) GetDataOk() (*TlsConfigurationData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsConfiguration) HasData() bool {
+func (o *TLSConfiguration) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *TlsConfiguration) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given TlsConfigurationData and assigns it to the Data field.
-func (o *TlsConfiguration) SetData(v TlsConfigurationData) {
+// SetData gets a reference to the given TLSConfigurationData and assigns it to the Data field.
+func (o *TLSConfiguration) SetData(v TLSConfigurationData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsConfiguration) MarshalJSON() ([]byte, error) {
+func (o TLSConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o TlsConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsConfiguration) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsConfiguration := _TlsConfiguration{}
+func (o *TLSConfiguration) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSConfiguration := _TLSConfiguration{}
 
-	if err = json.Unmarshal(bytes, &varTlsConfiguration); err == nil {
-		*o = TlsConfiguration(varTlsConfiguration)
+	if err = json.Unmarshal(bytes, &varTLSConfiguration); err == nil {
+		*o = TLSConfiguration(varTLSConfiguration)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TlsConfiguration) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsConfiguration is a helper abstraction for handling nullable tlsconfiguration types.
-type NullableTlsConfiguration struct {
-	value *TlsConfiguration
+// NullableTLSConfiguration is a helper abstraction for handling nullable tlsconfiguration types.
+type NullableTLSConfiguration struct {
+	value *TLSConfiguration
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsConfiguration) Get() *TlsConfiguration {
+func (v NullableTLSConfiguration) Get() *TLSConfiguration {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsConfiguration) Set(val *TlsConfiguration) {
+func (v *NullableTLSConfiguration) Set(val *TLSConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsConfiguration) IsSet() bool {
+func (v NullableTLSConfiguration) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsConfiguration) Unset() {
+func (v *NullableTLSConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsConfiguration returns a pointer to a new instance of NullableTlsConfiguration.
-func NewNullableTlsConfiguration(val *TlsConfiguration) *NullableTlsConfiguration {
-	return &NullableTlsConfiguration{value: val, isSet: true}
+// NewNullableTLSConfiguration returns a pointer to a new instance of NullableTLSConfiguration.
+func NewNullableTLSConfiguration(val *TLSConfiguration) *NullableTLSConfiguration {
+	return &NullableTLSConfiguration{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsConfiguration) MarshalJSON() ([]byte, error) {
+func (v NullableTLSConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsConfiguration) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -20,7 +20,7 @@ import (
 // DdosProtectionEventAllOf struct for DdosProtectionEventAllOf
 type DdosProtectionEventAllOf struct {
 	// Unique ID of the event.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// A human-readable name for the event.
 	Name *string `json:"name,omitempty"`
 	// Number of requests classified as non-attack traffic for an event.
@@ -28,9 +28,9 @@ type DdosProtectionEventAllOf struct {
 	// Number of requests classified as DDoS attack traffic for an event.
 	RequestsDetected *int32 `json:"requests_detected,omitempty"`
 	// Alphanumeric string identifying the customer.
-	CustomerId *string `json:"customer_id,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
 	// Alphanumeric string identifying the service.
-	ServiceId *string `json:"service_id,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
 	// Date and time in ISO 8601 format.
 	StartedAt NullableTime `json:"started_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -57,36 +57,36 @@ func NewDdosProtectionEventAllOfWithDefaults() *DdosProtectionEventAllOf {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *DdosProtectionEventAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *DdosProtectionEventAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionEventAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *DdosProtectionEventAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *DdosProtectionEventAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *DdosProtectionEventAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *DdosProtectionEventAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *DdosProtectionEventAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -185,68 +185,68 @@ func (o *DdosProtectionEventAllOf) SetRequestsDetected(v int32) {
 	o.RequestsDetected = &v
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *DdosProtectionEventAllOf) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *DdosProtectionEventAllOf) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionEventAllOf) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *DdosProtectionEventAllOf) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *DdosProtectionEventAllOf) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *DdosProtectionEventAllOf) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *DdosProtectionEventAllOf) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *DdosProtectionEventAllOf) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *DdosProtectionEventAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *DdosProtectionEventAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionEventAllOf) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *DdosProtectionEventAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *DdosProtectionEventAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *DdosProtectionEventAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *DdosProtectionEventAllOf) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *DdosProtectionEventAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetStartedAt returns the StartedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -339,8 +339,8 @@ func (o *DdosProtectionEventAllOf) UnsetEndedAt() {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DdosProtectionEventAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -351,11 +351,11 @@ func (o DdosProtectionEventAllOf) MarshalJSON() ([]byte, error) {
 	if o.RequestsDetected != nil {
 		toSerialize["requests_detected"] = o.RequestsDetected
 	}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.StartedAt.IsSet() {
 		toSerialize["started_at"] = o.StartedAt.Get()

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**BotManagementListWorkspaces**](BotManagementAPI.md#BotManagementListWorkspaces) | **GET** `/bot-management/v1/workspaces` | List workspaces
 [**BotManagementUpdateBot**](BotManagementAPI.md#BotManagementUpdateBot) | **PATCH** `/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots/{bot_id}` | Set a bot action
 [**BotManagementUpdateCategory**](BotManagementAPI.md#BotManagementUpdateCategory) | **PATCH** `/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}` | Set a category action
+[**BotManagementUpdateCategoryBots**](BotManagementAPI.md#BotManagementUpdateCategoryBots) | **PATCH** `/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots` | Set the action for all bots in a category
 [**BotManagementUpdateWorkspace**](BotManagementAPI.md#BotManagementUpdateWorkspace) | **PATCH** `/bot-management/v1/workspaces/{workspace_id}` | Update a workspace
 
 
@@ -37,14 +38,14 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
-    categoryId := "ai_crawlers" // string | The ID of the bot category.
-    botId := "gptbot" // string | The ID of the bot.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    categoryID := "ai_crawlers" // string | The ID of the bot category.
+    botID := "gptbot" // string | The ID of the bot.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementGetBot(ctx, workspaceId, categoryId, botId).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementGetBot(ctx, workspaceID, categoryID, botID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementGetBot`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,9 +61,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
-**categoryId** | **string** | The ID of the bot category. | 
-**botId** | **string** | The ID of the bot. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
+**categoryID** | **string** | The ID of the bot category. | 
+**botID** | **string** | The ID of the bot. | 
 
 ### Other Parameters
 
@@ -108,13 +109,13 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
-    categoryId := "ai_crawlers" // string | The ID of the bot category.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    categoryID := "ai_crawlers" // string | The ID of the bot category.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementGetCategory(ctx, workspaceId, categoryId).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementGetCategory(ctx, workspaceID, categoryID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementGetCategory`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,8 +131,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
-**categoryId** | **string** | The ID of the bot category. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
+**categoryID** | **string** | The ID of the bot category. | 
 
 ### Other Parameters
 
@@ -177,12 +178,12 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementGetWorkspace(ctx, workspaceId).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementGetWorkspace(ctx, workspaceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementGetWorkspace`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,7 +199,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
 
 ### Other Parameters
 
@@ -244,14 +245,14 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     cursor := "MTAwOjA" // string | Cursor for pagination. Use the `next_cursor` value from a previous response to request the next page of results. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementListBots(ctx, workspaceId).Limit(limit).Cursor(cursor).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementListBots(ctx, workspaceID).Limit(limit).Cursor(cursor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementListBots`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,7 +268,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
 
 ### Other Parameters
 
@@ -313,14 +314,14 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     cursor := "MTAwOjA" // string | Cursor for pagination. Use the `next_cursor` value from a previous response to request the next page of results. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementListCategories(ctx, workspaceId).Limit(limit).Cursor(cursor).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementListCategories(ctx, workspaceID).Limit(limit).Cursor(cursor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementListCategories`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -336,7 +337,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
 
 ### Other Parameters
 
@@ -382,15 +383,15 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
-    categoryId := "ai_crawlers" // string | The ID of the bot category.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    categoryID := "ai_crawlers" // string | The ID of the bot category.
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     cursor := "MTAwOjA" // string | Cursor for pagination. Use the `next_cursor` value from a previous response to request the next page of results. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementListCategoryBots(ctx, workspaceId, categoryId).Limit(limit).Cursor(cursor).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementListCategoryBots(ctx, workspaceID, categoryID).Limit(limit).Cursor(cursor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementListCategoryBots`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -406,8 +407,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
-**categoryId** | **string** | The ID of the bot category. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
+**categoryID** | **string** | The ID of the bot category. | 
 
 ### Other Parameters
 
@@ -453,14 +454,14 @@ import (
 )
 
 func main() {
-    serviceId := "6oMkSHsKCMBjQJPLHgMxu1" // string | Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace. (optional)
+    serviceID := "6oMkSHsKCMBjQJPLHgMxu1" // string | Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace. (optional)
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     cursor := "MTAwOjA" // string | Cursor for pagination. Use the `next_cursor` value from a previous response to request the next page of results. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementListWorkspaces(ctx).ServiceId(serviceId).Limit(limit).Cursor(cursor).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementListWorkspaces(ctx).ServiceID(serviceID).Limit(limit).Cursor(cursor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementListWorkspaces`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -481,7 +482,7 @@ Other parameters are passed through a pointer to a apiBotManagementListWorkspace
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serviceId** | **string** | Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace. |  **limit** | **int32** | Limit how many results are returned. | [default to 100] **cursor** | **string** | Cursor for pagination. Use the `next_cursor` value from a previous response to request the next page of results. | 
+ **serviceID** | **string** | Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace. |  **limit** | **int32** | Limit how many results are returned. | [default to 100] **cursor** | **string** | Cursor for pagination. Use the `next_cursor` value from a previous response to request the next page of results. | 
 
 ### Return type
 
@@ -518,15 +519,15 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
-    categoryId := "ai_crawlers" // string | The ID of the bot category.
-    botId := "gptbot" // string | The ID of the bot.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    categoryID := "ai_crawlers" // string | The ID of the bot category.
+    botID := "gptbot" // string | The ID of the bot.
     botManagementBot := *openapiclient.NewBotManagementBot(*openapiclient.NewBotManagementBotAction("inherit")) // BotManagementBot | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateBot(ctx, workspaceId, categoryId, botId).BotManagementBot(botManagementBot).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateBot(ctx, workspaceID, categoryID, botID).BotManagementBot(botManagementBot).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementUpdateBot`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -542,9 +543,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
-**categoryId** | **string** | The ID of the bot category. | 
-**botId** | **string** | The ID of the bot. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
+**categoryID** | **string** | The ID of the bot category. | 
+**botID** | **string** | The ID of the bot. | 
 
 ### Other Parameters
 
@@ -590,14 +591,14 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
-    categoryId := "ai_crawlers" // string | The ID of the bot category.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    categoryID := "ai_crawlers" // string | The ID of the bot category.
     botManagementCategory := *openapiclient.NewBotManagementCategory(*openapiclient.NewBotManagementAction("block")) // BotManagementCategory | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateCategory(ctx, workspaceId, categoryId).BotManagementCategory(botManagementCategory).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateCategory(ctx, workspaceID, categoryID).BotManagementCategory(botManagementCategory).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementUpdateCategory`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -613,8 +614,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
-**categoryId** | **string** | The ID of the bot category. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
+**categoryID** | **string** | The ID of the bot category. | 
 
 ### Other Parameters
 
@@ -628,6 +629,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BotManagementCategoryResponse**](BotManagementCategoryResponse.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, application/problem+json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## BotManagementUpdateCategoryBots
+
+Set the action for all bots in a category
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    categoryID := "ai_crawlers" // string | The ID of the bot category.
+    botManagementCategoryBots := *openapiclient.NewBotManagementCategoryBots(*openapiclient.NewBotManagementCategoryBotsAction("inherit")) // BotManagementCategoryBots | 
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateCategoryBots(ctx, workspaceID, categoryID).BotManagementCategoryBots(botManagementCategoryBots).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementUpdateCategoryBots`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BotManagementUpdateCategoryBots`: BotManagementBotsResponse
+    fmt.Fprintf(os.Stdout, "Response from `BotManagementAPI.BotManagementUpdateCategoryBots`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**workspaceID** | **string** | The ID of the bot management workspace. | 
+**categoryID** | **string** | The ID of the bot category. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBotManagementUpdateCategoryBotsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **botManagementCategoryBots** | [**BotManagementCategoryBots**](BotManagementCategoryBots.md) |  | 
+
+### Return type
+
+[**BotManagementBotsResponse**](BotManagementBotsResponse.md)
 
 ### Authorization
 
@@ -660,13 +731,13 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the bot management workspace.
     botManagementWorkspace := *openapiclient.NewBotManagementWorkspace() // BotManagementWorkspace | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateWorkspace(ctx, workspaceId).BotManagementWorkspace(botManagementWorkspace).Execute()
+    resp, r, err := apiClient.BotManagementAPI.BotManagementUpdateWorkspace(ctx, workspaceID).BotManagementWorkspace(botManagementWorkspace).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotManagementAPI.BotManagementUpdateWorkspace`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -682,7 +753,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the bot management workspace. | 
+**workspaceID** | **string** | The ID of the bot management workspace. | 
 
 ### Other Parameters
 
@@ -707,4 +778,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

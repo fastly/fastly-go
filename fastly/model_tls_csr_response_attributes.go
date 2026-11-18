@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// TlsCsrResponseAttributes struct for TlsCsrResponseAttributes
-type TlsCsrResponseAttributes struct {
+// TLSCsrResponseAttributes struct for TLSCsrResponseAttributes
+type TLSCsrResponseAttributes struct {
 	// The PEM encoded CSR.
 	Content              *string `json:"content,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsCsrResponseAttributes TlsCsrResponseAttributes
+type _TLSCsrResponseAttributes TLSCsrResponseAttributes
 
-// NewTlsCsrResponseAttributes instantiates a new TlsCsrResponseAttributes object
+// NewTLSCsrResponseAttributes instantiates a new TLSCsrResponseAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsCsrResponseAttributes() *TlsCsrResponseAttributes {
-	this := TlsCsrResponseAttributes{}
+func NewTLSCsrResponseAttributes() *TLSCsrResponseAttributes {
+	this := TLSCsrResponseAttributes{}
 	return &this
 }
 
-// NewTlsCsrResponseAttributesWithDefaults instantiates a new TlsCsrResponseAttributes object
+// NewTLSCsrResponseAttributesWithDefaults instantiates a new TLSCsrResponseAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsCsrResponseAttributesWithDefaults() *TlsCsrResponseAttributes {
-	this := TlsCsrResponseAttributes{}
+func NewTLSCsrResponseAttributesWithDefaults() *TLSCsrResponseAttributes {
+	this := TLSCsrResponseAttributes{}
 	return &this
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *TlsCsrResponseAttributes) GetContent() string {
+func (o *TLSCsrResponseAttributes) GetContent() string {
 	if o == nil || o.Content == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *TlsCsrResponseAttributes) GetContent() string {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCsrResponseAttributes) GetContentOk() (*string, bool) {
+func (o *TLSCsrResponseAttributes) GetContentOk() (*string, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *TlsCsrResponseAttributes) GetContentOk() (*string, bool) {
 }
 
 // HasContent returns a boolean if a field has been set.
-func (o *TlsCsrResponseAttributes) HasContent() bool {
+func (o *TLSCsrResponseAttributes) HasContent() bool {
 	if o != nil && o.Content != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *TlsCsrResponseAttributes) HasContent() bool {
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *TlsCsrResponseAttributes) SetContent(v string) {
+func (o *TLSCsrResponseAttributes) SetContent(v string) {
 	o.Content = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsCsrResponseAttributes) MarshalJSON() ([]byte, error) {
+func (o TLSCsrResponseAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Content != nil {
 		toSerialize["content"] = o.Content
@@ -91,11 +91,11 @@ func (o TlsCsrResponseAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsCsrResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsCsrResponseAttributes := _TlsCsrResponseAttributes{}
+func (o *TLSCsrResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSCsrResponseAttributes := _TLSCsrResponseAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTlsCsrResponseAttributes); err == nil {
-		*o = TlsCsrResponseAttributes(varTlsCsrResponseAttributes)
+	if err = json.Unmarshal(bytes, &varTLSCsrResponseAttributes); err == nil {
+		*o = TLSCsrResponseAttributes(varTLSCsrResponseAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *TlsCsrResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsCsrResponseAttributes is a helper abstraction for handling nullable tlscsrresponseattributes types.
-type NullableTlsCsrResponseAttributes struct {
-	value *TlsCsrResponseAttributes
+// NullableTLSCsrResponseAttributes is a helper abstraction for handling nullable tlscsrresponseattributes types.
+type NullableTLSCsrResponseAttributes struct {
+	value *TLSCsrResponseAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsCsrResponseAttributes) Get() *TlsCsrResponseAttributes {
+func (v NullableTLSCsrResponseAttributes) Get() *TLSCsrResponseAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsCsrResponseAttributes) Set(val *TlsCsrResponseAttributes) {
+func (v *NullableTLSCsrResponseAttributes) Set(val *TLSCsrResponseAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsCsrResponseAttributes) IsSet() bool {
+func (v NullableTLSCsrResponseAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsCsrResponseAttributes) Unset() {
+func (v *NullableTLSCsrResponseAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsCsrResponseAttributes returns a pointer to a new instance of NullableTlsCsrResponseAttributes.
-func NewNullableTlsCsrResponseAttributes(val *TlsCsrResponseAttributes) *NullableTlsCsrResponseAttributes {
-	return &NullableTlsCsrResponseAttributes{value: val, isSet: true}
+// NewNullableTLSCsrResponseAttributes returns a pointer to a new instance of NullableTLSCsrResponseAttributes.
+func NewNullableTLSCsrResponseAttributes(val *TLSCsrResponseAttributes) *NullableTLSCsrResponseAttributes {
+	return &NullableTLSCsrResponseAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsCsrResponseAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTLSCsrResponseAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsCsrResponseAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSCsrResponseAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

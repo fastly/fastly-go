@@ -17,8 +17,8 @@ import (
 	"time"
 )
 
-// TlsCertificateResponseAttributes struct for TlsCertificateResponseAttributes
-type TlsCertificateResponseAttributes struct {
+// TLSCertificateResponseAttributes struct for TLSCertificateResponseAttributes
+type TLSCertificateResponseAttributes struct {
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -42,27 +42,27 @@ type TlsCertificateResponseAttributes struct {
 	AdditionalProperties map[string]any
 }
 
-type _TlsCertificateResponseAttributes TlsCertificateResponseAttributes
+type _TLSCertificateResponseAttributes TLSCertificateResponseAttributes
 
-// NewTlsCertificateResponseAttributes instantiates a new TlsCertificateResponseAttributes object
+// NewTLSCertificateResponseAttributes instantiates a new TLSCertificateResponseAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsCertificateResponseAttributes() *TlsCertificateResponseAttributes {
-	this := TlsCertificateResponseAttributes{}
+func NewTLSCertificateResponseAttributes() *TLSCertificateResponseAttributes {
+	this := TLSCertificateResponseAttributes{}
 	return &this
 }
 
-// NewTlsCertificateResponseAttributesWithDefaults instantiates a new TlsCertificateResponseAttributes object
+// NewTLSCertificateResponseAttributesWithDefaults instantiates a new TLSCertificateResponseAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsCertificateResponseAttributesWithDefaults() *TlsCertificateResponseAttributes {
-	this := TlsCertificateResponseAttributes{}
+func NewTLSCertificateResponseAttributesWithDefaults() *TLSCertificateResponseAttributes {
+	this := TLSCertificateResponseAttributes{}
 	return &this
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TlsCertificateResponseAttributes) GetCreatedAt() time.Time {
+func (o *TLSCertificateResponseAttributes) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -73,7 +73,7 @@ func (o *TlsCertificateResponseAttributes) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TlsCertificateResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
+func (o *TLSCertificateResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -81,7 +81,7 @@ func (o *TlsCertificateResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasCreatedAt() bool {
+func (o *TLSCertificateResponseAttributes) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -90,22 +90,22 @@ func (o *TlsCertificateResponseAttributes) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *TlsCertificateResponseAttributes) SetCreatedAt(v time.Time) {
+func (o *TLSCertificateResponseAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *TlsCertificateResponseAttributes) SetCreatedAtNil() {
+func (o *TLSCertificateResponseAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *TlsCertificateResponseAttributes) UnsetCreatedAt() {
+func (o *TLSCertificateResponseAttributes) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TlsCertificateResponseAttributes) GetDeletedAt() time.Time {
+func (o *TLSCertificateResponseAttributes) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -116,7 +116,7 @@ func (o *TlsCertificateResponseAttributes) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TlsCertificateResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
+func (o *TLSCertificateResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *TlsCertificateResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasDeletedAt() bool {
+func (o *TLSCertificateResponseAttributes) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -133,22 +133,22 @@ func (o *TlsCertificateResponseAttributes) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *TlsCertificateResponseAttributes) SetDeletedAt(v time.Time) {
+func (o *TLSCertificateResponseAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *TlsCertificateResponseAttributes) SetDeletedAtNil() {
+func (o *TLSCertificateResponseAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *TlsCertificateResponseAttributes) UnsetDeletedAt() {
+func (o *TLSCertificateResponseAttributes) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TlsCertificateResponseAttributes) GetUpdatedAt() time.Time {
+func (o *TLSCertificateResponseAttributes) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -159,7 +159,7 @@ func (o *TlsCertificateResponseAttributes) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TlsCertificateResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *TLSCertificateResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *TlsCertificateResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasUpdatedAt() bool {
+func (o *TLSCertificateResponseAttributes) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -176,22 +176,22 @@ func (o *TlsCertificateResponseAttributes) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *TlsCertificateResponseAttributes) SetUpdatedAt(v time.Time) {
+func (o *TLSCertificateResponseAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *TlsCertificateResponseAttributes) SetUpdatedAtNil() {
+func (o *TLSCertificateResponseAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *TlsCertificateResponseAttributes) UnsetUpdatedAt() {
+func (o *TLSCertificateResponseAttributes) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
 // GetIssuedTo returns the IssuedTo field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetIssuedTo() string {
+func (o *TLSCertificateResponseAttributes) GetIssuedTo() string {
 	if o == nil || o.IssuedTo == nil {
 		var ret string
 		return ret
@@ -201,7 +201,7 @@ func (o *TlsCertificateResponseAttributes) GetIssuedTo() string {
 
 // GetIssuedToOk returns a tuple with the IssuedTo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetIssuedToOk() (*string, bool) {
+func (o *TLSCertificateResponseAttributes) GetIssuedToOk() (*string, bool) {
 	if o == nil || o.IssuedTo == nil {
 		return nil, false
 	}
@@ -209,7 +209,7 @@ func (o *TlsCertificateResponseAttributes) GetIssuedToOk() (*string, bool) {
 }
 
 // HasIssuedTo returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasIssuedTo() bool {
+func (o *TLSCertificateResponseAttributes) HasIssuedTo() bool {
 	if o != nil && o.IssuedTo != nil {
 		return true
 	}
@@ -218,12 +218,12 @@ func (o *TlsCertificateResponseAttributes) HasIssuedTo() bool {
 }
 
 // SetIssuedTo gets a reference to the given string and assigns it to the IssuedTo field.
-func (o *TlsCertificateResponseAttributes) SetIssuedTo(v string) {
+func (o *TLSCertificateResponseAttributes) SetIssuedTo(v string) {
 	o.IssuedTo = &v
 }
 
 // GetIssuer returns the Issuer field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetIssuer() string {
+func (o *TLSCertificateResponseAttributes) GetIssuer() string {
 	if o == nil || o.Issuer == nil {
 		var ret string
 		return ret
@@ -233,7 +233,7 @@ func (o *TlsCertificateResponseAttributes) GetIssuer() string {
 
 // GetIssuerOk returns a tuple with the Issuer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetIssuerOk() (*string, bool) {
+func (o *TLSCertificateResponseAttributes) GetIssuerOk() (*string, bool) {
 	if o == nil || o.Issuer == nil {
 		return nil, false
 	}
@@ -241,7 +241,7 @@ func (o *TlsCertificateResponseAttributes) GetIssuerOk() (*string, bool) {
 }
 
 // HasIssuer returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasIssuer() bool {
+func (o *TLSCertificateResponseAttributes) HasIssuer() bool {
 	if o != nil && o.Issuer != nil {
 		return true
 	}
@@ -250,12 +250,12 @@ func (o *TlsCertificateResponseAttributes) HasIssuer() bool {
 }
 
 // SetIssuer gets a reference to the given string and assigns it to the Issuer field.
-func (o *TlsCertificateResponseAttributes) SetIssuer(v string) {
+func (o *TLSCertificateResponseAttributes) SetIssuer(v string) {
 	o.Issuer = &v
 }
 
 // GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetSerialNumber() string {
+func (o *TLSCertificateResponseAttributes) GetSerialNumber() string {
 	if o == nil || o.SerialNumber == nil {
 		var ret string
 		return ret
@@ -265,7 +265,7 @@ func (o *TlsCertificateResponseAttributes) GetSerialNumber() string {
 
 // GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetSerialNumberOk() (*string, bool) {
+func (o *TLSCertificateResponseAttributes) GetSerialNumberOk() (*string, bool) {
 	if o == nil || o.SerialNumber == nil {
 		return nil, false
 	}
@@ -273,7 +273,7 @@ func (o *TlsCertificateResponseAttributes) GetSerialNumberOk() (*string, bool) {
 }
 
 // HasSerialNumber returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasSerialNumber() bool {
+func (o *TLSCertificateResponseAttributes) HasSerialNumber() bool {
 	if o != nil && o.SerialNumber != nil {
 		return true
 	}
@@ -282,12 +282,12 @@ func (o *TlsCertificateResponseAttributes) HasSerialNumber() bool {
 }
 
 // SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
-func (o *TlsCertificateResponseAttributes) SetSerialNumber(v string) {
+func (o *TLSCertificateResponseAttributes) SetSerialNumber(v string) {
 	o.SerialNumber = &v
 }
 
 // GetSignatureAlgorithm returns the SignatureAlgorithm field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetSignatureAlgorithm() string {
+func (o *TLSCertificateResponseAttributes) GetSignatureAlgorithm() string {
 	if o == nil || o.SignatureAlgorithm == nil {
 		var ret string
 		return ret
@@ -297,7 +297,7 @@ func (o *TlsCertificateResponseAttributes) GetSignatureAlgorithm() string {
 
 // GetSignatureAlgorithmOk returns a tuple with the SignatureAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetSignatureAlgorithmOk() (*string, bool) {
+func (o *TLSCertificateResponseAttributes) GetSignatureAlgorithmOk() (*string, bool) {
 	if o == nil || o.SignatureAlgorithm == nil {
 		return nil, false
 	}
@@ -305,7 +305,7 @@ func (o *TlsCertificateResponseAttributes) GetSignatureAlgorithmOk() (*string, b
 }
 
 // HasSignatureAlgorithm returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasSignatureAlgorithm() bool {
+func (o *TLSCertificateResponseAttributes) HasSignatureAlgorithm() bool {
 	if o != nil && o.SignatureAlgorithm != nil {
 		return true
 	}
@@ -314,12 +314,12 @@ func (o *TlsCertificateResponseAttributes) HasSignatureAlgorithm() bool {
 }
 
 // SetSignatureAlgorithm gets a reference to the given string and assigns it to the SignatureAlgorithm field.
-func (o *TlsCertificateResponseAttributes) SetSignatureAlgorithm(v string) {
+func (o *TLSCertificateResponseAttributes) SetSignatureAlgorithm(v string) {
 	o.SignatureAlgorithm = &v
 }
 
 // GetNotAfter returns the NotAfter field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetNotAfter() time.Time {
+func (o *TLSCertificateResponseAttributes) GetNotAfter() time.Time {
 	if o == nil || o.NotAfter == nil {
 		var ret time.Time
 		return ret
@@ -329,7 +329,7 @@ func (o *TlsCertificateResponseAttributes) GetNotAfter() time.Time {
 
 // GetNotAfterOk returns a tuple with the NotAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetNotAfterOk() (*time.Time, bool) {
+func (o *TLSCertificateResponseAttributes) GetNotAfterOk() (*time.Time, bool) {
 	if o == nil || o.NotAfter == nil {
 		return nil, false
 	}
@@ -337,7 +337,7 @@ func (o *TlsCertificateResponseAttributes) GetNotAfterOk() (*time.Time, bool) {
 }
 
 // HasNotAfter returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasNotAfter() bool {
+func (o *TLSCertificateResponseAttributes) HasNotAfter() bool {
 	if o != nil && o.NotAfter != nil {
 		return true
 	}
@@ -346,12 +346,12 @@ func (o *TlsCertificateResponseAttributes) HasNotAfter() bool {
 }
 
 // SetNotAfter gets a reference to the given time.Time and assigns it to the NotAfter field.
-func (o *TlsCertificateResponseAttributes) SetNotAfter(v time.Time) {
+func (o *TLSCertificateResponseAttributes) SetNotAfter(v time.Time) {
 	o.NotAfter = &v
 }
 
 // GetNotBefore returns the NotBefore field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetNotBefore() time.Time {
+func (o *TLSCertificateResponseAttributes) GetNotBefore() time.Time {
 	if o == nil || o.NotBefore == nil {
 		var ret time.Time
 		return ret
@@ -361,7 +361,7 @@ func (o *TlsCertificateResponseAttributes) GetNotBefore() time.Time {
 
 // GetNotBeforeOk returns a tuple with the NotBefore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetNotBeforeOk() (*time.Time, bool) {
+func (o *TLSCertificateResponseAttributes) GetNotBeforeOk() (*time.Time, bool) {
 	if o == nil || o.NotBefore == nil {
 		return nil, false
 	}
@@ -369,7 +369,7 @@ func (o *TlsCertificateResponseAttributes) GetNotBeforeOk() (*time.Time, bool) {
 }
 
 // HasNotBefore returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasNotBefore() bool {
+func (o *TLSCertificateResponseAttributes) HasNotBefore() bool {
 	if o != nil && o.NotBefore != nil {
 		return true
 	}
@@ -378,12 +378,12 @@ func (o *TlsCertificateResponseAttributes) HasNotBefore() bool {
 }
 
 // SetNotBefore gets a reference to the given time.Time and assigns it to the NotBefore field.
-func (o *TlsCertificateResponseAttributes) SetNotBefore(v time.Time) {
+func (o *TLSCertificateResponseAttributes) SetNotBefore(v time.Time) {
 	o.NotBefore = &v
 }
 
 // GetReplace returns the Replace field value if set, zero value otherwise.
-func (o *TlsCertificateResponseAttributes) GetReplace() bool {
+func (o *TLSCertificateResponseAttributes) GetReplace() bool {
 	if o == nil || o.Replace == nil {
 		var ret bool
 		return ret
@@ -393,7 +393,7 @@ func (o *TlsCertificateResponseAttributes) GetReplace() bool {
 
 // GetReplaceOk returns a tuple with the Replace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateResponseAttributes) GetReplaceOk() (*bool, bool) {
+func (o *TLSCertificateResponseAttributes) GetReplaceOk() (*bool, bool) {
 	if o == nil || o.Replace == nil {
 		return nil, false
 	}
@@ -401,7 +401,7 @@ func (o *TlsCertificateResponseAttributes) GetReplaceOk() (*bool, bool) {
 }
 
 // HasReplace returns a boolean if a field has been set.
-func (o *TlsCertificateResponseAttributes) HasReplace() bool {
+func (o *TLSCertificateResponseAttributes) HasReplace() bool {
 	if o != nil && o.Replace != nil {
 		return true
 	}
@@ -410,13 +410,13 @@ func (o *TlsCertificateResponseAttributes) HasReplace() bool {
 }
 
 // SetReplace gets a reference to the given bool and assigns it to the Replace field.
-func (o *TlsCertificateResponseAttributes) SetReplace(v bool) {
+func (o *TLSCertificateResponseAttributes) SetReplace(v bool) {
 	o.Replace = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsCertificateResponseAttributes) MarshalJSON() ([]byte, error) {
+func (o TLSCertificateResponseAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -458,11 +458,11 @@ func (o TlsCertificateResponseAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsCertificateResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsCertificateResponseAttributes := _TlsCertificateResponseAttributes{}
+func (o *TLSCertificateResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSCertificateResponseAttributes := _TLSCertificateResponseAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTlsCertificateResponseAttributes); err == nil {
-		*o = TlsCertificateResponseAttributes(varTlsCertificateResponseAttributes)
+	if err = json.Unmarshal(bytes, &varTLSCertificateResponseAttributes); err == nil {
+		*o = TLSCertificateResponseAttributes(varTLSCertificateResponseAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -484,48 +484,48 @@ func (o *TlsCertificateResponseAttributes) UnmarshalJSON(bytes []byte) (err erro
 	return err
 }
 
-// NullableTlsCertificateResponseAttributes is a helper abstraction for handling nullable tlscertificateresponseattributes types.
-type NullableTlsCertificateResponseAttributes struct {
-	value *TlsCertificateResponseAttributes
+// NullableTLSCertificateResponseAttributes is a helper abstraction for handling nullable tlscertificateresponseattributes types.
+type NullableTLSCertificateResponseAttributes struct {
+	value *TLSCertificateResponseAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsCertificateResponseAttributes) Get() *TlsCertificateResponseAttributes {
+func (v NullableTLSCertificateResponseAttributes) Get() *TLSCertificateResponseAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsCertificateResponseAttributes) Set(val *TlsCertificateResponseAttributes) {
+func (v *NullableTLSCertificateResponseAttributes) Set(val *TLSCertificateResponseAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsCertificateResponseAttributes) IsSet() bool {
+func (v NullableTLSCertificateResponseAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsCertificateResponseAttributes) Unset() {
+func (v *NullableTLSCertificateResponseAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsCertificateResponseAttributes returns a pointer to a new instance of NullableTlsCertificateResponseAttributes.
-func NewNullableTlsCertificateResponseAttributes(val *TlsCertificateResponseAttributes) *NullableTlsCertificateResponseAttributes {
-	return &NullableTlsCertificateResponseAttributes{value: val, isSet: true}
+// NewNullableTLSCertificateResponseAttributes returns a pointer to a new instance of NullableTLSCertificateResponseAttributes.
+func NewNullableTLSCertificateResponseAttributes(val *TLSCertificateResponseAttributes) *NullableTLSCertificateResponseAttributes {
+	return &NullableTLSCertificateResponseAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsCertificateResponseAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTLSCertificateResponseAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsCertificateResponseAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSCertificateResponseAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

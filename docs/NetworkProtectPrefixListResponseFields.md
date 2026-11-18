@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
+**ID** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
 **CreatedAt** | **time.Time** | An ISO 8601 timestamp in UTC. | [readonly] 
 **UpdatedAt** | **time.Time** | An ISO 8601 timestamp in UTC. | [readonly] 
 
@@ -27,24 +27,24 @@ NewNetworkProtectPrefixListResponseFieldsWithDefaults instantiates a new Network
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *NetworkProtectPrefixListResponseFields) GetId() string`
+`func (o *NetworkProtectPrefixListResponseFields) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *NetworkProtectPrefixListResponseFields) GetIdOk() (*string, bool)`
+`func (o *NetworkProtectPrefixListResponseFields) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *NetworkProtectPrefixListResponseFields) SetId(v string)`
+`func (o *NetworkProtectPrefixListResponseFields) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetCreatedAt
@@ -89,5 +89,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

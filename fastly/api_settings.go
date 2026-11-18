@@ -36,11 +36,11 @@ type SettingsAPI interface {
 		Get the settings for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APIGetServiceSettingsRequest
 	*/
-	GetServiceSettings(ctx context.Context, serviceId string, versionId int32) APIGetServiceSettingsRequest
+	GetServiceSettings(ctx context.Context, serviceID string, versionID int32) APIGetServiceSettingsRequest
 
 	// GetServiceSettingsExecute executes the request
 	//  @return SettingsResponse
@@ -53,11 +53,11 @@ type SettingsAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APIUpdateServiceSettingsRequest
 	*/
-	UpdateServiceSettings(ctx context.Context, serviceId string, versionId int32) APIUpdateServiceSettingsRequest
+	UpdateServiceSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceSettingsRequest
 
 	// UpdateServiceSettingsExecute executes the request
 	//  @return SettingsResponse
@@ -71,8 +71,8 @@ type SettingsAPIService service
 type APIGetServiceSettingsRequest struct {
 	ctx        context.Context
 	APIService SettingsAPI
-	serviceId  string
-	versionId  int32
+	serviceID  string
+	versionID  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -86,16 +86,16 @@ GetServiceSettings Get service settings
 Get the settings for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APIGetServiceSettingsRequest
 */
-func (a *SettingsAPIService) GetServiceSettings(ctx context.Context, serviceId string, versionId int32) APIGetServiceSettingsRequest {
+func (a *SettingsAPIService) GetServiceSettings(ctx context.Context, serviceID string, versionID int32) APIGetServiceSettingsRequest {
 	return APIGetServiceSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -115,8 +115,8 @@ func (a *SettingsAPIService) GetServiceSettingsExecute(r APIGetServiceSettingsRe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -207,12 +207,12 @@ func (a *SettingsAPIService) GetServiceSettingsExecute(r APIGetServiceSettingsRe
 type APIUpdateServiceSettingsRequest struct {
 	ctx                    context.Context
 	APIService             SettingsAPI
-	serviceId              string
-	versionId              int32
+	serviceID              string
+	versionID              int32
 	generalDefaultHost     *string
-	generalDefaultTtl      *int32
+	generalDefaultTTL      *int32
 	generalStaleIfError    *bool
-	generalStaleIfErrorTtl *int32
+	generalStaleIfErrorTTL *int32
 }
 
 // GeneralDefaultHost The default host name for the version.
@@ -221,9 +221,9 @@ func (r *APIUpdateServiceSettingsRequest) GeneralDefaultHost(generalDefaultHost 
 	return r
 }
 
-// GeneralDefaultTtl The default time-to-live (TTL) for the version.
-func (r *APIUpdateServiceSettingsRequest) GeneralDefaultTtl(generalDefaultTtl int32) *APIUpdateServiceSettingsRequest {
-	r.generalDefaultTtl = &generalDefaultTtl
+// GeneralDefaultTTL The default time-to-live (TTL) for the version.
+func (r *APIUpdateServiceSettingsRequest) GeneralDefaultTTL(generalDefaultTTL int32) *APIUpdateServiceSettingsRequest {
+	r.generalDefaultTTL = &generalDefaultTTL
 	return r
 }
 
@@ -233,9 +233,9 @@ func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfError(generalStaleIfErro
 	return r
 }
 
-// GeneralStaleIfErrorTtl The default time-to-live (TTL) for serving the stale object for the version.
-func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfErrorTtl(generalStaleIfErrorTtl int32) *APIUpdateServiceSettingsRequest {
-	r.generalStaleIfErrorTtl = &generalStaleIfErrorTtl
+// GeneralStaleIfErrorTTL The default time-to-live (TTL) for serving the stale object for the version.
+func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfErrorTTL(generalStaleIfErrorTTL int32) *APIUpdateServiceSettingsRequest {
+	r.generalStaleIfErrorTTL = &generalStaleIfErrorTTL
 	return r
 }
 
@@ -251,16 +251,16 @@ Update the settings for a particular service and version. NOTE: If you override 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APIUpdateServiceSettingsRequest
 */
-func (a *SettingsAPIService) UpdateServiceSettings(ctx context.Context, serviceId string, versionId int32) APIUpdateServiceSettingsRequest {
+func (a *SettingsAPIService) UpdateServiceSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceSettingsRequest {
 	return APIUpdateServiceSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -280,8 +280,8 @@ func (a *SettingsAPIService) UpdateServiceSettingsExecute(r APIUpdateServiceSett
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -307,14 +307,14 @@ func (a *SettingsAPIService) UpdateServiceSettingsExecute(r APIUpdateServiceSett
 	if r.generalDefaultHost != nil {
 		localVarFormParams.Add("general.default_host", parameterToString(*r.generalDefaultHost, ""))
 	}
-	if r.generalDefaultTtl != nil {
-		localVarFormParams.Add("general.default_ttl", parameterToString(*r.generalDefaultTtl, ""))
+	if r.generalDefaultTTL != nil {
+		localVarFormParams.Add("general.default_ttl", parameterToString(*r.generalDefaultTTL, ""))
 	}
 	if r.generalStaleIfError != nil {
 		localVarFormParams.Add("general.stale_if_error", parameterToString(*r.generalStaleIfError, ""))
 	}
-	if r.generalStaleIfErrorTtl != nil {
-		localVarFormParams.Add("general.stale_if_error_ttl", parameterToString(*r.generalStaleIfErrorTtl, ""))
+	if r.generalStaleIfErrorTTL != nil {
+		localVarFormParams.Add("general.stale_if_error_ttl", parameterToString(*r.generalStaleIfErrorTTL, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

@@ -26,7 +26,7 @@ type LogInsightsDimensions struct {
 	DimensionOs          *DimensionOs
 	DimensionResponse    *DimensionResponse
 	DimensionStatusCode  *DimensionStatusCode
-	DimensionUrl         *DimensionUrl
+	DimensionURL         *DimensionURL
 }
 
 // DimensionBrowserAsLogInsightsDimensions is a convenience function that returns DimensionBrowser wrapped in LogInsightsDimensions
@@ -78,10 +78,10 @@ func DimensionStatusCodeAsLogInsightsDimensions(v *DimensionStatusCode) LogInsig
 	}
 }
 
-// DimensionUrlAsLogInsightsDimensions is a convenience function that returns DimensionUrl wrapped in LogInsightsDimensions
-func DimensionUrlAsLogInsightsDimensions(v *DimensionUrl) LogInsightsDimensions {
+// DimensionURLAsLogInsightsDimensions is a convenience function that returns DimensionURL wrapped in LogInsightsDimensions
+func DimensionURLAsLogInsightsDimensions(v *DimensionURL) LogInsightsDimensions {
 	return LogInsightsDimensions{
-		DimensionUrl: v,
+		DimensionURL: v,
 	}
 }
 
@@ -181,17 +181,17 @@ func (o *LogInsightsDimensions) UnmarshalJSON(data []byte) error {
 		o.DimensionStatusCode = nil
 	}
 
-	// try to unmarshal data into DimensionUrl
-	err = newStrictDecoder(data).Decode(&o.DimensionUrl)
+	// try to unmarshal data into DimensionURL
+	err = newStrictDecoder(data).Decode(&o.DimensionURL)
 	if err == nil {
-		jsonDimensionUrl, _ := json.Marshal(o.DimensionUrl)
-		if string(jsonDimensionUrl) == "{}" { // empty struct
-			o.DimensionUrl = nil
+		jsonDimensionURL, _ := json.Marshal(o.DimensionURL)
+		if string(jsonDimensionURL) == "{}" { // empty struct
+			o.DimensionURL = nil
 		} else {
 			match++
 		}
 	} else {
-		o.DimensionUrl = nil
+		o.DimensionURL = nil
 	}
 
 	if match > 1 { // more than 1 match
@@ -203,14 +203,15 @@ func (o *LogInsightsDimensions) UnmarshalJSON(data []byte) error {
 		o.DimensionOs = nil
 		o.DimensionResponse = nil
 		o.DimensionStatusCode = nil
-		o.DimensionUrl = nil
+		o.DimensionURL = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(LogInsightsDimensions)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(LogInsightsDimensions)")
 	}
+	if match == 1 {
+		return nil // exactly one match
+	}
+	// no match
+	return fmt.Errorf("data failed to match schemas in oneOf(LogInsightsDimensions)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -244,8 +245,8 @@ func (o LogInsightsDimensions) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&o.DimensionStatusCode)
 	}
 
-	if o.DimensionUrl != nil {
-		return json.Marshal(&o.DimensionUrl)
+	if o.DimensionURL != nil {
+		return json.Marshal(&o.DimensionURL)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -284,8 +285,8 @@ func (o *LogInsightsDimensions) GetActualInstance() any {
 		return o.DimensionStatusCode
 	}
 
-	if o.DimensionUrl != nil {
-		return o.DimensionUrl
+	if o.DimensionURL != nil {
+		return o.DimensionURL
 	}
 
 	// all schemas are nil

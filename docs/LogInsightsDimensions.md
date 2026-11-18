@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | Pointer to **string** | The URL path for this dimension. | [optional] 
+**URL** | Pointer to **string** | The URL path for this dimension. | [optional] 
 **Country** | Pointer to **string** | The client&#39;s country for this dimension. | [optional] 
 **StatusCode** | Pointer to **string** | The HTTP response code for this dimension. | [optional] 
 **Response** | Pointer to **string** | The HTTP reason phrase for this dimension. | [optional] 
@@ -32,30 +32,30 @@ NewLogInsightsDimensionsWithDefaults instantiates a new LogInsightsDimensions ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUrl
+### GetURL
 
-`func (o *LogInsightsDimensions) GetUrl() string`
+`func (o *LogInsightsDimensions) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LogInsightsDimensions) GetUrlOk() (*string, bool)`
+`func (o *LogInsightsDimensions) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LogInsightsDimensions) SetUrl(v string)`
+`func (o *LogInsightsDimensions) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LogInsightsDimensions) HasUrl() bool`
+`func (o *LogInsightsDimensions) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
 ### GetCountry
 
@@ -234,5 +234,3 @@ HasOs returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -25,7 +25,7 @@ type ArcUsageMetric struct {
 	// The quantity of the usage type for this date.
 	Quantity int32 `json:"quantity"`
 	// The ID of the virtual key this usage is attributed to.
-	VirtualKeyId *string `json:"virtual_key_id,omitempty"`
+	VirtualKeyID *string `json:"virtual_key_id,omitempty"`
 	// The display name of the virtual key this usage is attributed to.
 	VirtualKeyName *string `json:"virtual_key_name,omitempty"`
 	// The ID of the provider connection originally requested, before any failover occurred.
@@ -33,7 +33,7 @@ type ArcUsageMetric struct {
 	// The name of the provider connection that ultimately served the request.
 	Provider *string `json:"provider,omitempty"`
 	// The ID of the provider connection that ultimately served the request.
-	ProviderConnectionId *string `json:"provider_connection_id,omitempty"`
+	ProviderConnectionID *string `json:"provider_connection_id,omitempty"`
 	// The AI model identifier used.
 	Model                *string `json:"model,omitempty"`
 	AdditionalProperties map[string]any
@@ -133,36 +133,36 @@ func (o *ArcUsageMetric) SetQuantity(v int32) {
 	o.Quantity = v
 }
 
-// GetVirtualKeyId returns the VirtualKeyId field value if set, zero value otherwise.
-func (o *ArcUsageMetric) GetVirtualKeyId() string {
-	if o == nil || o.VirtualKeyId == nil {
+// GetVirtualKeyID returns the VirtualKeyID field value if set, zero value otherwise.
+func (o *ArcUsageMetric) GetVirtualKeyID() string {
+	if o == nil || o.VirtualKeyID == nil {
 		var ret string
 		return ret
 	}
-	return *o.VirtualKeyId
+	return *o.VirtualKeyID
 }
 
-// GetVirtualKeyIdOk returns a tuple with the VirtualKeyId field value if set, nil otherwise
+// GetVirtualKeyIDOk returns a tuple with the VirtualKeyID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArcUsageMetric) GetVirtualKeyIdOk() (*string, bool) {
-	if o == nil || o.VirtualKeyId == nil {
+func (o *ArcUsageMetric) GetVirtualKeyIDOk() (*string, bool) {
+	if o == nil || o.VirtualKeyID == nil {
 		return nil, false
 	}
-	return o.VirtualKeyId, true
+	return o.VirtualKeyID, true
 }
 
-// HasVirtualKeyId returns a boolean if a field has been set.
-func (o *ArcUsageMetric) HasVirtualKeyId() bool {
-	if o != nil && o.VirtualKeyId != nil {
+// HasVirtualKeyID returns a boolean if a field has been set.
+func (o *ArcUsageMetric) HasVirtualKeyID() bool {
+	if o != nil && o.VirtualKeyID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetVirtualKeyId gets a reference to the given string and assigns it to the VirtualKeyId field.
-func (o *ArcUsageMetric) SetVirtualKeyId(v string) {
-	o.VirtualKeyId = &v
+// SetVirtualKeyID gets a reference to the given string and assigns it to the VirtualKeyID field.
+func (o *ArcUsageMetric) SetVirtualKeyID(v string) {
+	o.VirtualKeyID = &v
 }
 
 // GetVirtualKeyName returns the VirtualKeyName field value if set, zero value otherwise.
@@ -261,36 +261,36 @@ func (o *ArcUsageMetric) SetProvider(v string) {
 	o.Provider = &v
 }
 
-// GetProviderConnectionId returns the ProviderConnectionId field value if set, zero value otherwise.
-func (o *ArcUsageMetric) GetProviderConnectionId() string {
-	if o == nil || o.ProviderConnectionId == nil {
+// GetProviderConnectionID returns the ProviderConnectionID field value if set, zero value otherwise.
+func (o *ArcUsageMetric) GetProviderConnectionID() string {
+	if o == nil || o.ProviderConnectionID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProviderConnectionId
+	return *o.ProviderConnectionID
 }
 
-// GetProviderConnectionIdOk returns a tuple with the ProviderConnectionId field value if set, nil otherwise
+// GetProviderConnectionIDOk returns a tuple with the ProviderConnectionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArcUsageMetric) GetProviderConnectionIdOk() (*string, bool) {
-	if o == nil || o.ProviderConnectionId == nil {
+func (o *ArcUsageMetric) GetProviderConnectionIDOk() (*string, bool) {
+	if o == nil || o.ProviderConnectionID == nil {
 		return nil, false
 	}
-	return o.ProviderConnectionId, true
+	return o.ProviderConnectionID, true
 }
 
-// HasProviderConnectionId returns a boolean if a field has been set.
-func (o *ArcUsageMetric) HasProviderConnectionId() bool {
-	if o != nil && o.ProviderConnectionId != nil {
+// HasProviderConnectionID returns a boolean if a field has been set.
+func (o *ArcUsageMetric) HasProviderConnectionID() bool {
+	if o != nil && o.ProviderConnectionID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProviderConnectionId gets a reference to the given string and assigns it to the ProviderConnectionId field.
-func (o *ArcUsageMetric) SetProviderConnectionId(v string) {
-	o.ProviderConnectionId = &v
+// SetProviderConnectionID gets a reference to the given string and assigns it to the ProviderConnectionID field.
+func (o *ArcUsageMetric) SetProviderConnectionID(v string) {
+	o.ProviderConnectionID = &v
 }
 
 // GetModel returns the Model field value if set, zero value otherwise.
@@ -338,8 +338,8 @@ func (o ArcUsageMetric) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["quantity"] = o.Quantity
 	}
-	if o.VirtualKeyId != nil {
-		toSerialize["virtual_key_id"] = o.VirtualKeyId
+	if o.VirtualKeyID != nil {
+		toSerialize["virtual_key_id"] = o.VirtualKeyID
 	}
 	if o.VirtualKeyName != nil {
 		toSerialize["virtual_key_name"] = o.VirtualKeyName
@@ -350,8 +350,8 @@ func (o ArcUsageMetric) MarshalJSON() ([]byte, error) {
 	if o.Provider != nil {
 		toSerialize["provider"] = o.Provider
 	}
-	if o.ProviderConnectionId != nil {
-		toSerialize["provider_connection_id"] = o.ProviderConnectionId
+	if o.ProviderConnectionID != nil {
+		toSerialize["provider_connection_id"] = o.ProviderConnectionID
 	}
 	if o.Model != nil {
 		toSerialize["model"] = o.Model

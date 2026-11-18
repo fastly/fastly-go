@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the session. | [readonly] 
-**VirtualKeyId** | **string** | The ID of the virtual key used for this session. | 
+**ID** | **string** | The unique identifier of the session. | [readonly] 
+**VirtualKeyID** | **string** | The ID of the virtual key used for this session. | 
 **VirtualKeyName** | Pointer to **string** | The display name of the virtual key used for this session. | [optional] 
 **Model** | **string** | The AI model identifier used. | 
 **Provider** | **string** | The name of the provider connection that ultimately served the session. | 
-**ProviderConnectionId** | **string** | The ID of the provider connection that ultimately served the session. | 
+**ProviderConnectionID** | **string** | The ID of the provider connection that ultimately served the session. | 
 **PrimaryProvider** | Pointer to **string** | The ID of the provider connection originally requested, before any failover occurred. | [optional] 
 **Requests** | **int32** | The number of requests made in this session. | 
 **InputTokens** | **int32** | The total input tokens consumed in this session. | 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewArcSession
 
-`func NewArcSession(id string, virtualKeyId string, model string, provider string, providerConnectionId string, requests int32, inputTokens int32, outputTokens int32, violations int32, firewallEnabled bool, createdAt time.Time, updatedAt time.Time, logs []ArcSessionLogEntry, ) *ArcSession`
+`func NewArcSession(id string, virtualKeyID string, model string, provider string, providerConnectionID string, requests int32, inputTokens int32, outputTokens int32, violations int32, firewallEnabled bool, createdAt time.Time, updatedAt time.Time, logs []ArcSessionLogEntry, ) *ArcSession`
 
 NewArcSession instantiates a new ArcSession object
 This constructor will assign default values to properties that have it defined,
@@ -43,44 +43,44 @@ NewArcSessionWithDefaults instantiates a new ArcSession object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *ArcSession) GetId() string`
+`func (o *ArcSession) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ArcSession) GetIdOk() (*string, bool)`
+`func (o *ArcSession) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ArcSession) SetId(v string)`
+`func (o *ArcSession) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
-### GetVirtualKeyId
+### GetVirtualKeyID
 
-`func (o *ArcSession) GetVirtualKeyId() string`
+`func (o *ArcSession) GetVirtualKeyID() string`
 
-GetVirtualKeyId returns the VirtualKeyId field if non-nil, zero value otherwise.
+GetVirtualKeyID returns the VirtualKeyID field if non-nil, zero value otherwise.
 
-### GetVirtualKeyIdOk
+### GetVirtualKeyIDOk
 
-`func (o *ArcSession) GetVirtualKeyIdOk() (*string, bool)`
+`func (o *ArcSession) GetVirtualKeyIDOk() (*string, bool)`
 
-GetVirtualKeyIdOk returns a tuple with the VirtualKeyId field if it's non-nil, zero value otherwise
+GetVirtualKeyIDOk returns a tuple with the VirtualKeyID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVirtualKeyId
+### SetVirtualKeyID
 
-`func (o *ArcSession) SetVirtualKeyId(v string)`
+`func (o *ArcSession) SetVirtualKeyID(v string)`
 
-SetVirtualKeyId sets VirtualKeyId field to given value.
+SetVirtualKeyID sets VirtualKeyID field to given value.
 
 
 ### GetVirtualKeyName
@@ -148,24 +148,24 @@ and a boolean to check if the value has been set.
 SetProvider sets Provider field to given value.
 
 
-### GetProviderConnectionId
+### GetProviderConnectionID
 
-`func (o *ArcSession) GetProviderConnectionId() string`
+`func (o *ArcSession) GetProviderConnectionID() string`
 
-GetProviderConnectionId returns the ProviderConnectionId field if non-nil, zero value otherwise.
+GetProviderConnectionID returns the ProviderConnectionID field if non-nil, zero value otherwise.
 
-### GetProviderConnectionIdOk
+### GetProviderConnectionIDOk
 
-`func (o *ArcSession) GetProviderConnectionIdOk() (*string, bool)`
+`func (o *ArcSession) GetProviderConnectionIDOk() (*string, bool)`
 
-GetProviderConnectionIdOk returns a tuple with the ProviderConnectionId field if it's non-nil, zero value otherwise
+GetProviderConnectionIDOk returns a tuple with the ProviderConnectionID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProviderConnectionId
+### SetProviderConnectionID
 
-`func (o *ArcSession) SetProviderConnectionId(v string)`
+`func (o *ArcSession) SetProviderConnectionID(v string)`
 
-SetProviderConnectionId sets ProviderConnectionId field to given value.
+SetProviderConnectionID sets ProviderConnectionID field to given value.
 
 
 ### GetPrimaryProvider
@@ -455,5 +455,3 @@ SetLogs sets Logs field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

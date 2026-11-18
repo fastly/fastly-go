@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserId** | Pointer to **NullableString** | The alphanumeric string representing the user for this customer contact. | [optional] 
+**UserID** | Pointer to **NullableString** | The alphanumeric string representing the user for this customer contact. | [optional] 
 **ContactType** | Pointer to **string** | The type of contact. | [optional] 
 **Name** | Pointer to **NullableString** | The name of this contact, when user_id is not provided. | [optional] 
 **Email** | Pointer to **NullableString** | The email of this contact, when a user_id is not provided. | [optional] 
 **Phone** | Pointer to **NullableString** | The phone number for this contact. Required for primary, technical, and security contact types. | [optional] 
-**CustomerId** | Pointer to **NullableString** | The alphanumeric string representing the customer for this customer contact. | [optional] 
+**CustomerID** | Pointer to **NullableString** | The alphanumeric string representing the customer for this customer contact. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -34,41 +34,41 @@ NewSchemasContactResponseWithDefaults instantiates a new SchemasContactResponse 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserId
+### GetUserID
 
-`func (o *SchemasContactResponse) GetUserId() string`
+`func (o *SchemasContactResponse) GetUserID() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *SchemasContactResponse) GetUserIdOk() (*string, bool)`
+`func (o *SchemasContactResponse) GetUserIDOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *SchemasContactResponse) SetUserId(v string)`
+`func (o *SchemasContactResponse) SetUserID(v string)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
-### HasUserId
+### HasUserID
 
-`func (o *SchemasContactResponse) HasUserId() bool`
+`func (o *SchemasContactResponse) HasUserID() bool`
 
-HasUserId returns a boolean if a field has been set.
+HasUserID returns a boolean if a field has been set.
 
-### SetUserIdNil
+### SetUserIDNil
 
-`func (o *SchemasContactResponse) SetUserIdNil(b bool)`
+`func (o *SchemasContactResponse) SetUserIDNil(b bool)`
 
- SetUserIdNil sets the value for UserId to be an explicit nil
+ SetUserIDNil sets the value for UserID to be an explicit nil
 
-### UnsetUserId
-`func (o *SchemasContactResponse) UnsetUserId()`
+### UnsetUserID
+`func (o *SchemasContactResponse) UnsetUserID()`
 
-UnsetUserId ensures that no value is present for UserId, not even an explicit nil
+UnsetUserID ensures that no value is present for UserID, not even an explicit nil
 ### GetContactType
 
 `func (o *SchemasContactResponse) GetContactType() string`
@@ -199,41 +199,41 @@ HasPhone returns a boolean if a field has been set.
 `func (o *SchemasContactResponse) UnsetPhone()`
 
 UnsetPhone ensures that no value is present for Phone, not even an explicit nil
-### GetCustomerId
+### GetCustomerID
 
-`func (o *SchemasContactResponse) GetCustomerId() string`
+`func (o *SchemasContactResponse) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *SchemasContactResponse) GetCustomerIdOk() (*string, bool)`
+`func (o *SchemasContactResponse) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *SchemasContactResponse) SetCustomerId(v string)`
+`func (o *SchemasContactResponse) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *SchemasContactResponse) HasCustomerId() bool`
+`func (o *SchemasContactResponse) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
-### SetCustomerIdNil
+### SetCustomerIDNil
 
-`func (o *SchemasContactResponse) SetCustomerIdNil(b bool)`
+`func (o *SchemasContactResponse) SetCustomerIDNil(b bool)`
 
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+ SetCustomerIDNil sets the value for CustomerID to be an explicit nil
 
-### UnsetCustomerId
-`func (o *SchemasContactResponse) UnsetCustomerId()`
+### UnsetCustomerID
+`func (o *SchemasContactResponse) UnsetCustomerID()`
 
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+UnsetCustomerID ensures that no value is present for CustomerID, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *SchemasContactResponse) GetCreatedAt() time.Time`
@@ -339,32 +339,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *SchemasContactResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *SchemasContactResponse) GetId() string`
+`func (o *SchemasContactResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *SchemasContactResponse) GetIdOk() (*string, bool)`
+`func (o *SchemasContactResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *SchemasContactResponse) SetId(v string)`
+`func (o *SchemasContactResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *SchemasContactResponse) HasId() bool`
+`func (o *SchemasContactResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

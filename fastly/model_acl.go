@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// Acl struct for Acl
-type Acl struct {
+// ACL struct for ACL
+type ACL struct {
 	// Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
 	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _Acl Acl
+type _ACL ACL
 
-// NewAcl instantiates a new Acl object
+// NewACL instantiates a new ACL object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAcl() *Acl {
-	this := Acl{}
+func NewACL() *ACL {
+	this := ACL{}
 	return &this
 }
 
-// NewAclWithDefaults instantiates a new Acl object
+// NewACLWithDefaults instantiates a new ACL object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAclWithDefaults() *Acl {
-	this := Acl{}
+func NewACLWithDefaults() *ACL {
+	this := ACL{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *Acl) GetName() string {
+func (o *ACL) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *Acl) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Acl) GetNameOk() (*string, bool) {
+func (o *ACL) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *Acl) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *Acl) HasName() bool {
+func (o *ACL) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *Acl) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Acl) SetName(v string) {
+func (o *ACL) SetName(v string) {
 	o.Name = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o Acl) MarshalJSON() ([]byte, error) {
+func (o ACL) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -91,11 +91,11 @@ func (o Acl) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *Acl) UnmarshalJSON(bytes []byte) (err error) {
-	varAcl := _Acl{}
+func (o *ACL) UnmarshalJSON(bytes []byte) (err error) {
+	varACL := _ACL{}
 
-	if err = json.Unmarshal(bytes, &varAcl); err == nil {
-		*o = Acl(varAcl)
+	if err = json.Unmarshal(bytes, &varACL); err == nil {
+		*o = ACL(varACL)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *Acl) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableAcl is a helper abstraction for handling nullable acl types.
-type NullableAcl struct {
-	value *Acl
+// NullableACL is a helper abstraction for handling nullable acl types.
+type NullableACL struct {
+	value *ACL
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableAcl) Get() *Acl {
+func (v NullableACL) Get() *ACL {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableAcl) Set(val *Acl) {
+func (v *NullableACL) Set(val *ACL) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableAcl) IsSet() bool {
+func (v NullableACL) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableAcl) Unset() {
+func (v *NullableACL) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableAcl returns a pointer to a new instance of NullableAcl.
-func NewNullableAcl(val *Acl) *NullableAcl {
-	return &NullableAcl{value: val, isSet: true}
+// NewNullableACL returns a pointer to a new instance of NullableACL.
+func NewNullableACL(val *ACL) *NullableACL {
+	return &NullableACL{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableAcl) MarshalJSON() ([]byte, error) {
+func (v NullableACL) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableAcl) UnmarshalJSON(src []byte) error {
+func (v *NullableACL) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -96,12 +96,12 @@ import (
 )
 
 func main() {
-    storeId := "storeId_example" // string | 
+    storeID := "storeId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStoreDelete(ctx, storeId).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreDelete(ctx, storeID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreDelete`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -115,7 +115,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeId** | **string** |  | 
+**storeID** | **string** |  | 
 
 ### Other Parameters
 
@@ -161,12 +161,12 @@ import (
 )
 
 func main() {
-    storeId := "storeId_example" // string | 
+    storeID := "storeId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStoreGet(ctx, storeId).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreGet(ctx, storeID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeId** | **string** |  | 
+**storeID** | **string** |  | 
 
 ### Other Parameters
 
@@ -293,13 +293,13 @@ import (
 )
 
 func main() {
-    storeId := "storeId_example" // string | 
+    storeID := "storeId_example" // string | 
     kvStoreRequestCreateOrUpdate := *openapiclient.NewKvStoreRequestCreateOrUpdate("Name_example") // KvStoreRequestCreateOrUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStorePut(ctx, storeId).KvStoreRequestCreateOrUpdate(kvStoreRequestCreateOrUpdate).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStorePut(ctx, storeID).KvStoreRequestCreateOrUpdate(kvStoreRequestCreateOrUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStorePut`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -313,7 +313,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeId** | **string** |  | 
+**storeID** | **string** |  | 
 
 ### Other Parameters
 
@@ -338,4 +338,3 @@ Name | Type | Description  | Notes
 - **Accept**: Not defined
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

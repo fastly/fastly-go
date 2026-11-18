@@ -25,7 +25,7 @@ type LoggingNewrelicotlpAdditional struct {
 	// The region to which to stream logs.
 	Region *string `json:"region,omitempty"`
 	// (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
-	Url                  NullableString `json:"url,omitempty"`
+	URL                  NullableString `json:"url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,7 +42,7 @@ func NewLoggingNewrelicotlpAdditional() *LoggingNewrelicotlpAdditional {
 	var region string = "US"
 	this.Region = &region
 	var url string = "null"
-	this.Url = *NewNullableString(&url)
+	this.URL = *NewNullableString(&url)
 	return &this
 }
 
@@ -56,7 +56,7 @@ func NewLoggingNewrelicotlpAdditionalWithDefaults() *LoggingNewrelicotlpAddition
 	var region string = "US"
 	this.Region = &region
 	var url string = "null"
-	this.Url = *NewNullableString(&url)
+	this.URL = *NewNullableString(&url)
 	return &this
 }
 
@@ -156,47 +156,47 @@ func (o *LoggingNewrelicotlpAdditional) SetRegion(v string) {
 	o.Region = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingNewrelicotlpAdditional) GetUrl() string {
-	if o == nil || o.Url.Get() == nil {
+// GetURL returns the URL field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingNewrelicotlpAdditional) GetURL() string {
+	if o == nil || o.URL.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url.Get()
+	return *o.URL.Get()
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingNewrelicotlpAdditional) GetUrlOk() (*string, bool) {
+func (o *LoggingNewrelicotlpAdditional) GetURLOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Url.Get(), o.Url.IsSet()
+	return o.URL.Get(), o.URL.IsSet()
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingNewrelicotlpAdditional) HasUrl() bool {
-	if o != nil && o.Url.IsSet() {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingNewrelicotlpAdditional) HasURL() bool {
+	if o != nil && o.URL.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
-func (o *LoggingNewrelicotlpAdditional) SetUrl(v string) {
-	o.Url.Set(&v)
+// SetURL gets a reference to the given NullableString and assigns it to the URL field.
+func (o *LoggingNewrelicotlpAdditional) SetURL(v string) {
+	o.URL.Set(&v)
 }
 
-// SetUrlNil sets the value for Url to be an explicit nil
-func (o *LoggingNewrelicotlpAdditional) SetUrlNil() {
-	o.Url.Set(nil)
+// SetURLNil sets the value for URL to be an explicit nil
+func (o *LoggingNewrelicotlpAdditional) SetURLNil() {
+	o.URL.Set(nil)
 }
 
-// UnsetUrl ensures that no value is present for Url, not even an explicit nil
-func (o *LoggingNewrelicotlpAdditional) UnsetUrl() {
-	o.Url.Unset()
+// UnsetURL ensures that no value is present for URL, not even an explicit nil
+func (o *LoggingNewrelicotlpAdditional) UnsetURL() {
+	o.URL.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -212,8 +212,8 @@ func (o LoggingNewrelicotlpAdditional) MarshalJSON() ([]byte, error) {
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
 	}
-	if o.Url.IsSet() {
-		toSerialize["url"] = o.Url.Get()
+	if o.URL.IsSet() {
+		toSerialize["url"] = o.URL.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

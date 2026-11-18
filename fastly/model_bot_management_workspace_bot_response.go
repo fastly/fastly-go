@@ -20,11 +20,11 @@ import (
 type BotManagementWorkspaceBotResponse struct {
 	Action BotManagementBotAction `json:"action"`
 	// The unique identifier of the bot.
-	BotId string `json:"bot_id"`
+	BotID string `json:"bot_id"`
 	// The display name of the bot.
 	Name string `json:"name"`
 	// The ID of the category the bot belongs to.
-	CategoryId           string `json:"category_id"`
+	CategoryID           string `json:"category_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -34,12 +34,12 @@ type _BotManagementWorkspaceBotResponse BotManagementWorkspaceBotResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotManagementWorkspaceBotResponse(action BotManagementBotAction, botId string, name string, categoryId string) *BotManagementWorkspaceBotResponse {
+func NewBotManagementWorkspaceBotResponse(action BotManagementBotAction, botID string, name string, categoryID string) *BotManagementWorkspaceBotResponse {
 	this := BotManagementWorkspaceBotResponse{}
 	this.Action = action
-	this.BotId = botId
+	this.BotID = botID
 	this.Name = name
-	this.CategoryId = categoryId
+	this.CategoryID = categoryID
 	return &this
 }
 
@@ -75,28 +75,28 @@ func (o *BotManagementWorkspaceBotResponse) SetAction(v BotManagementBotAction) 
 	o.Action = v
 }
 
-// GetBotId returns the BotId field value
-func (o *BotManagementWorkspaceBotResponse) GetBotId() string {
+// GetBotID returns the BotID field value
+func (o *BotManagementWorkspaceBotResponse) GetBotID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.BotId
+	return o.BotID
 }
 
-// GetBotIdOk returns a tuple with the BotId field value
+// GetBotIDOk returns a tuple with the BotID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementWorkspaceBotResponse) GetBotIdOk() (*string, bool) {
+func (o *BotManagementWorkspaceBotResponse) GetBotIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.BotId, true
+	return &o.BotID, true
 }
 
-// SetBotId sets field value
-func (o *BotManagementWorkspaceBotResponse) SetBotId(v string) {
-	o.BotId = v
+// SetBotID sets field value
+func (o *BotManagementWorkspaceBotResponse) SetBotID(v string) {
+	o.BotID = v
 }
 
 // GetName returns the Name field value
@@ -123,28 +123,28 @@ func (o *BotManagementWorkspaceBotResponse) SetName(v string) {
 	o.Name = v
 }
 
-// GetCategoryId returns the CategoryId field value
-func (o *BotManagementWorkspaceBotResponse) GetCategoryId() string {
+// GetCategoryID returns the CategoryID field value
+func (o *BotManagementWorkspaceBotResponse) GetCategoryID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.CategoryId
+	return o.CategoryID
 }
 
-// GetCategoryIdOk returns a tuple with the CategoryId field value
+// GetCategoryIDOk returns a tuple with the CategoryID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementWorkspaceBotResponse) GetCategoryIdOk() (*string, bool) {
+func (o *BotManagementWorkspaceBotResponse) GetCategoryIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.CategoryId, true
+	return &o.CategoryID, true
 }
 
-// SetCategoryId sets field value
-func (o *BotManagementWorkspaceBotResponse) SetCategoryId(v string) {
-	o.CategoryId = v
+// SetCategoryID sets field value
+func (o *BotManagementWorkspaceBotResponse) SetCategoryID(v string) {
+	o.CategoryID = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -155,13 +155,13 @@ func (o BotManagementWorkspaceBotResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["action"] = o.Action
 	}
 	if true {
-		toSerialize["bot_id"] = o.BotId
+		toSerialize["bot_id"] = o.BotID
 	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["category_id"] = o.CategoryId
+		toSerialize["category_id"] = o.CategoryID
 	}
 
 	for key, value := range o.AdditionalProperties {

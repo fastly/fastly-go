@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Comment** | Pointer to **string** | Optional rule metadata of 1 to 100 Unicode code points. It does not participate in traffic matching. Omit it to leave a rule without a comment; replacing rules with an item that omits it clears the stored comment. Omitting rules on PATCH preserves existing comments. Empty strings and null are rejected. | [optional] 
-**IpProtocol** | [**NetworkProtectRuleIpProtocol**](NetworkProtectRuleIpProtocol.md) |  | 
-**SourcePrefixListId** | **string** | Match traffic whose source appears in this prefix list. | 
-**DestinationIpAddress** | **string** | Match traffic sent to this address; omit for any destination. An address outside a Network using this Rule Set never matches and still consumes one of the 64 rules. The API does not enforce containment in a network prefix; attached Rule Sets require a compatible IP family. | 
+**IPProtocol** | [**NetworkProtectRuleIPProtocol**](NetworkProtectRuleIPProtocol.md) |  | 
+**SourcePrefixListID** | **string** | Match traffic whose source appears in this prefix list. | 
+**DestinationIPAddress** | **string** | Match traffic sent to this address; omit for any destination. An address outside a Network using this Rule Set never matches and still consumes one of the 64 rules. The API does not enforce containment in a network prefix; attached Rule Sets require a compatible IP family. | 
 **SourcePorts** | [**NetworkProtectRuleSourcePorts**](NetworkProtectRuleSourcePorts.md) |  | 
 **DestinationPorts** | [**NetworkProtectRuleDestinationPorts**](NetworkProtectRuleDestinationPorts.md) |  | 
 **Action** | [**NetworkProtectRuleAction**](NetworkProtectRuleAction.md) |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewNetworkProtectRule
 
-`func NewNetworkProtectRule(ipProtocol NetworkProtectRuleIpProtocol, sourcePrefixListId string, destinationIpAddress string, sourcePorts NetworkProtectRuleSourcePorts, destinationPorts NetworkProtectRuleDestinationPorts, action NetworkProtectRuleAction, ) *NetworkProtectRule`
+`func NewNetworkProtectRule(ipProtocol NetworkProtectRuleIPProtocol, sourcePrefixListID string, destinationIPAddress string, sourcePorts NetworkProtectRuleSourcePorts, destinationPorts NetworkProtectRuleDestinationPorts, action NetworkProtectRuleAction, ) *NetworkProtectRule`
 
 NewNetworkProtectRule instantiates a new NetworkProtectRule object
 This constructor will assign default values to properties that have it defined,
@@ -56,64 +56,64 @@ SetComment sets Comment field to given value.
 
 HasComment returns a boolean if a field has been set.
 
-### GetIpProtocol
+### GetIPProtocol
 
-`func (o *NetworkProtectRule) GetIpProtocol() NetworkProtectRuleIpProtocol`
+`func (o *NetworkProtectRule) GetIPProtocol() NetworkProtectRuleIPProtocol`
 
-GetIpProtocol returns the IpProtocol field if non-nil, zero value otherwise.
+GetIPProtocol returns the IPProtocol field if non-nil, zero value otherwise.
 
-### GetIpProtocolOk
+### GetIPProtocolOk
 
-`func (o *NetworkProtectRule) GetIpProtocolOk() (*NetworkProtectRuleIpProtocol, bool)`
+`func (o *NetworkProtectRule) GetIPProtocolOk() (*NetworkProtectRuleIPProtocol, bool)`
 
-GetIpProtocolOk returns a tuple with the IpProtocol field if it's non-nil, zero value otherwise
+GetIPProtocolOk returns a tuple with the IPProtocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIpProtocol
+### SetIPProtocol
 
-`func (o *NetworkProtectRule) SetIpProtocol(v NetworkProtectRuleIpProtocol)`
+`func (o *NetworkProtectRule) SetIPProtocol(v NetworkProtectRuleIPProtocol)`
 
-SetIpProtocol sets IpProtocol field to given value.
+SetIPProtocol sets IPProtocol field to given value.
 
 
-### GetSourcePrefixListId
+### GetSourcePrefixListID
 
-`func (o *NetworkProtectRule) GetSourcePrefixListId() string`
+`func (o *NetworkProtectRule) GetSourcePrefixListID() string`
 
-GetSourcePrefixListId returns the SourcePrefixListId field if non-nil, zero value otherwise.
+GetSourcePrefixListID returns the SourcePrefixListID field if non-nil, zero value otherwise.
 
-### GetSourcePrefixListIdOk
+### GetSourcePrefixListIDOk
 
-`func (o *NetworkProtectRule) GetSourcePrefixListIdOk() (*string, bool)`
+`func (o *NetworkProtectRule) GetSourcePrefixListIDOk() (*string, bool)`
 
-GetSourcePrefixListIdOk returns a tuple with the SourcePrefixListId field if it's non-nil, zero value otherwise
+GetSourcePrefixListIDOk returns a tuple with the SourcePrefixListID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSourcePrefixListId
+### SetSourcePrefixListID
 
-`func (o *NetworkProtectRule) SetSourcePrefixListId(v string)`
+`func (o *NetworkProtectRule) SetSourcePrefixListID(v string)`
 
-SetSourcePrefixListId sets SourcePrefixListId field to given value.
+SetSourcePrefixListID sets SourcePrefixListID field to given value.
 
 
-### GetDestinationIpAddress
+### GetDestinationIPAddress
 
-`func (o *NetworkProtectRule) GetDestinationIpAddress() string`
+`func (o *NetworkProtectRule) GetDestinationIPAddress() string`
 
-GetDestinationIpAddress returns the DestinationIpAddress field if non-nil, zero value otherwise.
+GetDestinationIPAddress returns the DestinationIPAddress field if non-nil, zero value otherwise.
 
-### GetDestinationIpAddressOk
+### GetDestinationIPAddressOk
 
-`func (o *NetworkProtectRule) GetDestinationIpAddressOk() (*string, bool)`
+`func (o *NetworkProtectRule) GetDestinationIPAddressOk() (*string, bool)`
 
-GetDestinationIpAddressOk returns a tuple with the DestinationIpAddress field if it's non-nil, zero value otherwise
+GetDestinationIPAddressOk returns a tuple with the DestinationIPAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDestinationIpAddress
+### SetDestinationIPAddress
 
-`func (o *NetworkProtectRule) SetDestinationIpAddress(v string)`
+`func (o *NetworkProtectRule) SetDestinationIPAddress(v string)`
 
-SetDestinationIpAddress sets DestinationIpAddress field to given value.
+SetDestinationIPAddress sets DestinationIPAddress field to given value.
 
 
 ### GetSourcePorts
@@ -178,5 +178,3 @@ SetAction sets Action field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

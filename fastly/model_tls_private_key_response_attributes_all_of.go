@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// TlsPrivateKeyResponseAttributesAllOf struct for TlsPrivateKeyResponseAttributesAllOf
-type TlsPrivateKeyResponseAttributesAllOf struct {
+// TLSPrivateKeyResponseAttributesAllOf struct for TLSPrivateKeyResponseAttributesAllOf
+type TLSPrivateKeyResponseAttributesAllOf struct {
 	// A customizable name for your private key.
 	Name *string `json:"name,omitempty"`
 	// The key length used to generate the private key.
@@ -31,27 +31,27 @@ type TlsPrivateKeyResponseAttributesAllOf struct {
 	AdditionalProperties map[string]any
 }
 
-type _TlsPrivateKeyResponseAttributesAllOf TlsPrivateKeyResponseAttributesAllOf
+type _TLSPrivateKeyResponseAttributesAllOf TLSPrivateKeyResponseAttributesAllOf
 
-// NewTlsPrivateKeyResponseAttributesAllOf instantiates a new TlsPrivateKeyResponseAttributesAllOf object
+// NewTLSPrivateKeyResponseAttributesAllOf instantiates a new TLSPrivateKeyResponseAttributesAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsPrivateKeyResponseAttributesAllOf() *TlsPrivateKeyResponseAttributesAllOf {
-	this := TlsPrivateKeyResponseAttributesAllOf{}
+func NewTLSPrivateKeyResponseAttributesAllOf() *TLSPrivateKeyResponseAttributesAllOf {
+	this := TLSPrivateKeyResponseAttributesAllOf{}
 	return &this
 }
 
-// NewTlsPrivateKeyResponseAttributesAllOfWithDefaults instantiates a new TlsPrivateKeyResponseAttributesAllOf object
+// NewTLSPrivateKeyResponseAttributesAllOfWithDefaults instantiates a new TLSPrivateKeyResponseAttributesAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsPrivateKeyResponseAttributesAllOfWithDefaults() *TlsPrivateKeyResponseAttributesAllOf {
-	this := TlsPrivateKeyResponseAttributesAllOf{}
+func NewTLSPrivateKeyResponseAttributesAllOfWithDefaults() *TLSPrivateKeyResponseAttributesAllOf {
+	this := TLSPrivateKeyResponseAttributesAllOf{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetName() string {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -61,7 +61,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetNameOk() (*string, bool) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) HasName() bool {
+func (o *TLSPrivateKeyResponseAttributesAllOf) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -78,12 +78,12 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *TlsPrivateKeyResponseAttributesAllOf) SetName(v string) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) SetName(v string) {
 	o.Name = &v
 }
 
 // GetKeyLength returns the KeyLength field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyLength() int32 {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetKeyLength() int32 {
 	if o == nil || o.KeyLength == nil {
 		var ret int32
 		return ret
@@ -93,7 +93,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyLength() int32 {
 
 // GetKeyLengthOk returns a tuple with the KeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyLengthOk() (*int32, bool) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetKeyLengthOk() (*int32, bool) {
 	if o == nil || o.KeyLength == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyLengthOk() (*int32, bool) {
 }
 
 // HasKeyLength returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) HasKeyLength() bool {
+func (o *TLSPrivateKeyResponseAttributesAllOf) HasKeyLength() bool {
 	if o != nil && o.KeyLength != nil {
 		return true
 	}
@@ -110,12 +110,12 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) HasKeyLength() bool {
 }
 
 // SetKeyLength gets a reference to the given int32 and assigns it to the KeyLength field.
-func (o *TlsPrivateKeyResponseAttributesAllOf) SetKeyLength(v int32) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) SetKeyLength(v int32) {
 	o.KeyLength = &v
 }
 
 // GetKeyType returns the KeyType field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyType() string {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetKeyType() string {
 	if o == nil || o.KeyType == nil {
 		var ret string
 		return ret
@@ -125,7 +125,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyType() string {
 
 // GetKeyTypeOk returns a tuple with the KeyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyTypeOk() (*string, bool) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetKeyTypeOk() (*string, bool) {
 	if o == nil || o.KeyType == nil {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetKeyTypeOk() (*string, bool) {
 }
 
 // HasKeyType returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) HasKeyType() bool {
+func (o *TLSPrivateKeyResponseAttributesAllOf) HasKeyType() bool {
 	if o != nil && o.KeyType != nil {
 		return true
 	}
@@ -142,12 +142,12 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) HasKeyType() bool {
 }
 
 // SetKeyType gets a reference to the given string and assigns it to the KeyType field.
-func (o *TlsPrivateKeyResponseAttributesAllOf) SetKeyType(v string) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) SetKeyType(v string) {
 	o.KeyType = &v
 }
 
 // GetReplace returns the Replace field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetReplace() bool {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetReplace() bool {
 	if o == nil || o.Replace == nil {
 		var ret bool
 		return ret
@@ -157,7 +157,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetReplace() bool {
 
 // GetReplaceOk returns a tuple with the Replace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetReplaceOk() (*bool, bool) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetReplaceOk() (*bool, bool) {
 	if o == nil || o.Replace == nil {
 		return nil, false
 	}
@@ -165,7 +165,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetReplaceOk() (*bool, bool) {
 }
 
 // HasReplace returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) HasReplace() bool {
+func (o *TLSPrivateKeyResponseAttributesAllOf) HasReplace() bool {
 	if o != nil && o.Replace != nil {
 		return true
 	}
@@ -174,12 +174,12 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) HasReplace() bool {
 }
 
 // SetReplace gets a reference to the given bool and assigns it to the Replace field.
-func (o *TlsPrivateKeyResponseAttributesAllOf) SetReplace(v bool) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) SetReplace(v bool) {
 	o.Replace = &v
 }
 
 // GetPublicKeySha1 returns the PublicKeySha1 field value if set, zero value otherwise.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetPublicKeySha1() string {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetPublicKeySha1() string {
 	if o == nil || o.PublicKeySha1 == nil {
 		var ret string
 		return ret
@@ -189,7 +189,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetPublicKeySha1() string {
 
 // GetPublicKeySha1Ok returns a tuple with the PublicKeySha1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) GetPublicKeySha1Ok() (*string, bool) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) GetPublicKeySha1Ok() (*string, bool) {
 	if o == nil || o.PublicKeySha1 == nil {
 		return nil, false
 	}
@@ -197,7 +197,7 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) GetPublicKeySha1Ok() (*string, bo
 }
 
 // HasPublicKeySha1 returns a boolean if a field has been set.
-func (o *TlsPrivateKeyResponseAttributesAllOf) HasPublicKeySha1() bool {
+func (o *TLSPrivateKeyResponseAttributesAllOf) HasPublicKeySha1() bool {
 	if o != nil && o.PublicKeySha1 != nil {
 		return true
 	}
@@ -206,13 +206,13 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) HasPublicKeySha1() bool {
 }
 
 // SetPublicKeySha1 gets a reference to the given string and assigns it to the PublicKeySha1 field.
-func (o *TlsPrivateKeyResponseAttributesAllOf) SetPublicKeySha1(v string) {
+func (o *TLSPrivateKeyResponseAttributesAllOf) SetPublicKeySha1(v string) {
 	o.PublicKeySha1 = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsPrivateKeyResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (o TLSPrivateKeyResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -239,11 +239,11 @@ func (o TlsPrivateKeyResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsPrivateKeyResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsPrivateKeyResponseAttributesAllOf := _TlsPrivateKeyResponseAttributesAllOf{}
+func (o *TLSPrivateKeyResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSPrivateKeyResponseAttributesAllOf := _TLSPrivateKeyResponseAttributesAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTlsPrivateKeyResponseAttributesAllOf); err == nil {
-		*o = TlsPrivateKeyResponseAttributesAllOf(varTlsPrivateKeyResponseAttributesAllOf)
+	if err = json.Unmarshal(bytes, &varTLSPrivateKeyResponseAttributesAllOf); err == nil {
+		*o = TLSPrivateKeyResponseAttributesAllOf(varTLSPrivateKeyResponseAttributesAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -260,48 +260,48 @@ func (o *TlsPrivateKeyResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err 
 	return err
 }
 
-// NullableTlsPrivateKeyResponseAttributesAllOf is a helper abstraction for handling nullable tlsprivatekeyresponseattributesallof types.
-type NullableTlsPrivateKeyResponseAttributesAllOf struct {
-	value *TlsPrivateKeyResponseAttributesAllOf
+// NullableTLSPrivateKeyResponseAttributesAllOf is a helper abstraction for handling nullable tlsprivatekeyresponseattributesallof types.
+type NullableTLSPrivateKeyResponseAttributesAllOf struct {
+	value *TLSPrivateKeyResponseAttributesAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsPrivateKeyResponseAttributesAllOf) Get() *TlsPrivateKeyResponseAttributesAllOf {
+func (v NullableTLSPrivateKeyResponseAttributesAllOf) Get() *TLSPrivateKeyResponseAttributesAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsPrivateKeyResponseAttributesAllOf) Set(val *TlsPrivateKeyResponseAttributesAllOf) {
+func (v *NullableTLSPrivateKeyResponseAttributesAllOf) Set(val *TLSPrivateKeyResponseAttributesAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsPrivateKeyResponseAttributesAllOf) IsSet() bool {
+func (v NullableTLSPrivateKeyResponseAttributesAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsPrivateKeyResponseAttributesAllOf) Unset() {
+func (v *NullableTLSPrivateKeyResponseAttributesAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsPrivateKeyResponseAttributesAllOf returns a pointer to a new instance of NullableTlsPrivateKeyResponseAttributesAllOf.
-func NewNullableTlsPrivateKeyResponseAttributesAllOf(val *TlsPrivateKeyResponseAttributesAllOf) *NullableTlsPrivateKeyResponseAttributesAllOf {
-	return &NullableTlsPrivateKeyResponseAttributesAllOf{value: val, isSet: true}
+// NewNullableTLSPrivateKeyResponseAttributesAllOf returns a pointer to a new instance of NullableTLSPrivateKeyResponseAttributesAllOf.
+func NewNullableTLSPrivateKeyResponseAttributesAllOf(val *TLSPrivateKeyResponseAttributesAllOf) *NullableTLSPrivateKeyResponseAttributesAllOf {
+	return &NullableTLSPrivateKeyResponseAttributesAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsPrivateKeyResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTLSPrivateKeyResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsPrivateKeyResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSPrivateKeyResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsBulkCertificatesResponse struct for TlsBulkCertificatesResponse
-type TlsBulkCertificatesResponse struct {
+// TLSBulkCertificatesResponse struct for TLSBulkCertificatesResponse
+type TLSBulkCertificatesResponse struct {
 	Links                *PaginationLinks                 `json:"links,omitempty"`
 	Meta                 *PaginationMeta1                 `json:"meta,omitempty"`
-	Data                 []TlsBulkCertificateResponseData `json:"data,omitempty"`
+	Data                 []TLSBulkCertificateResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsBulkCertificatesResponse TlsBulkCertificatesResponse
+type _TLSBulkCertificatesResponse TLSBulkCertificatesResponse
 
-// NewTlsBulkCertificatesResponse instantiates a new TlsBulkCertificatesResponse object
+// NewTLSBulkCertificatesResponse instantiates a new TLSBulkCertificatesResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsBulkCertificatesResponse() *TlsBulkCertificatesResponse {
-	this := TlsBulkCertificatesResponse{}
+func NewTLSBulkCertificatesResponse() *TLSBulkCertificatesResponse {
+	this := TLSBulkCertificatesResponse{}
 	return &this
 }
 
-// NewTlsBulkCertificatesResponseWithDefaults instantiates a new TlsBulkCertificatesResponse object
+// NewTLSBulkCertificatesResponseWithDefaults instantiates a new TLSBulkCertificatesResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsBulkCertificatesResponseWithDefaults() *TlsBulkCertificatesResponse {
-	this := TlsBulkCertificatesResponse{}
+func NewTLSBulkCertificatesResponseWithDefaults() *TLSBulkCertificatesResponse {
+	this := TLSBulkCertificatesResponse{}
 	return &this
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *TlsBulkCertificatesResponse) GetLinks() PaginationLinks {
+func (o *TLSBulkCertificatesResponse) GetLinks() PaginationLinks {
 	if o == nil || o.Links == nil {
 		var ret PaginationLinks
 		return ret
@@ -54,7 +54,7 @@ func (o *TlsBulkCertificatesResponse) GetLinks() PaginationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsBulkCertificatesResponse) GetLinksOk() (*PaginationLinks, bool) {
+func (o *TLSBulkCertificatesResponse) GetLinksOk() (*PaginationLinks, bool) {
 	if o == nil || o.Links == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *TlsBulkCertificatesResponse) GetLinksOk() (*PaginationLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *TlsBulkCertificatesResponse) HasLinks() bool {
+func (o *TLSBulkCertificatesResponse) HasLinks() bool {
 	if o != nil && o.Links != nil {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *TlsBulkCertificatesResponse) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given PaginationLinks and assigns it to the Links field.
-func (o *TlsBulkCertificatesResponse) SetLinks(v PaginationLinks) {
+func (o *TLSBulkCertificatesResponse) SetLinks(v PaginationLinks) {
 	o.Links = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *TlsBulkCertificatesResponse) GetMeta() PaginationMeta1 {
+func (o *TLSBulkCertificatesResponse) GetMeta() PaginationMeta1 {
 	if o == nil || o.Meta == nil {
 		var ret PaginationMeta1
 		return ret
@@ -86,7 +86,7 @@ func (o *TlsBulkCertificatesResponse) GetMeta() PaginationMeta1 {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsBulkCertificatesResponse) GetMetaOk() (*PaginationMeta1, bool) {
+func (o *TLSBulkCertificatesResponse) GetMetaOk() (*PaginationMeta1, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *TlsBulkCertificatesResponse) GetMetaOk() (*PaginationMeta1, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *TlsBulkCertificatesResponse) HasMeta() bool {
+func (o *TLSBulkCertificatesResponse) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -103,14 +103,14 @@ func (o *TlsBulkCertificatesResponse) HasMeta() bool {
 }
 
 // SetMeta gets a reference to the given PaginationMeta1 and assigns it to the Meta field.
-func (o *TlsBulkCertificatesResponse) SetMeta(v PaginationMeta1) {
+func (o *TLSBulkCertificatesResponse) SetMeta(v PaginationMeta1) {
 	o.Meta = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsBulkCertificatesResponse) GetData() []TlsBulkCertificateResponseData {
+func (o *TLSBulkCertificatesResponse) GetData() []TLSBulkCertificateResponseData {
 	if o == nil || o.Data == nil {
-		var ret []TlsBulkCertificateResponseData
+		var ret []TLSBulkCertificateResponseData
 		return ret
 	}
 	return o.Data
@@ -118,7 +118,7 @@ func (o *TlsBulkCertificatesResponse) GetData() []TlsBulkCertificateResponseData
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsBulkCertificatesResponse) GetDataOk() ([]TlsBulkCertificateResponseData, bool) {
+func (o *TLSBulkCertificatesResponse) GetDataOk() ([]TLSBulkCertificateResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *TlsBulkCertificatesResponse) GetDataOk() ([]TlsBulkCertificateResponseD
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsBulkCertificatesResponse) HasData() bool {
+func (o *TLSBulkCertificatesResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -134,14 +134,14 @@ func (o *TlsBulkCertificatesResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []TlsBulkCertificateResponseData and assigns it to the Data field.
-func (o *TlsBulkCertificatesResponse) SetData(v []TlsBulkCertificateResponseData) {
+// SetData gets a reference to the given []TLSBulkCertificateResponseData and assigns it to the Data field.
+func (o *TLSBulkCertificatesResponse) SetData(v []TLSBulkCertificateResponseData) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsBulkCertificatesResponse) MarshalJSON() ([]byte, error) {
+func (o TLSBulkCertificatesResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
@@ -162,11 +162,11 @@ func (o TlsBulkCertificatesResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsBulkCertificatesResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsBulkCertificatesResponse := _TlsBulkCertificatesResponse{}
+func (o *TLSBulkCertificatesResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSBulkCertificatesResponse := _TLSBulkCertificatesResponse{}
 
-	if err = json.Unmarshal(bytes, &varTlsBulkCertificatesResponse); err == nil {
-		*o = TlsBulkCertificatesResponse(varTlsBulkCertificatesResponse)
+	if err = json.Unmarshal(bytes, &varTLSBulkCertificatesResponse); err == nil {
+		*o = TLSBulkCertificatesResponse(varTLSBulkCertificatesResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -181,48 +181,48 @@ func (o *TlsBulkCertificatesResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsBulkCertificatesResponse is a helper abstraction for handling nullable tlsbulkcertificatesresponse types.
-type NullableTlsBulkCertificatesResponse struct {
-	value *TlsBulkCertificatesResponse
+// NullableTLSBulkCertificatesResponse is a helper abstraction for handling nullable tlsbulkcertificatesresponse types.
+type NullableTLSBulkCertificatesResponse struct {
+	value *TLSBulkCertificatesResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsBulkCertificatesResponse) Get() *TlsBulkCertificatesResponse {
+func (v NullableTLSBulkCertificatesResponse) Get() *TLSBulkCertificatesResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsBulkCertificatesResponse) Set(val *TlsBulkCertificatesResponse) {
+func (v *NullableTLSBulkCertificatesResponse) Set(val *TLSBulkCertificatesResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsBulkCertificatesResponse) IsSet() bool {
+func (v NullableTLSBulkCertificatesResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsBulkCertificatesResponse) Unset() {
+func (v *NullableTLSBulkCertificatesResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsBulkCertificatesResponse returns a pointer to a new instance of NullableTlsBulkCertificatesResponse.
-func NewNullableTlsBulkCertificatesResponse(val *TlsBulkCertificatesResponse) *NullableTlsBulkCertificatesResponse {
-	return &NullableTlsBulkCertificatesResponse{value: val, isSet: true}
+// NewNullableTLSBulkCertificatesResponse returns a pointer to a new instance of NullableTLSBulkCertificatesResponse.
+func NewNullableTLSBulkCertificatesResponse(val *TLSBulkCertificatesResponse) *NullableTLSBulkCertificatesResponse {
+	return &NullableTLSBulkCertificatesResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsBulkCertificatesResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTLSBulkCertificatesResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsBulkCertificatesResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSBulkCertificatesResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

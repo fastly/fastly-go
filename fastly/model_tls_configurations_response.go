@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsConfigurationsResponse struct for TlsConfigurationsResponse
-type TlsConfigurationsResponse struct {
+// TLSConfigurationsResponse struct for TLSConfigurationsResponse
+type TLSConfigurationsResponse struct {
 	Links                *PaginationLinks               `json:"links,omitempty"`
 	Meta                 *PaginationMeta1               `json:"meta,omitempty"`
-	Data                 []TlsConfigurationResponseData `json:"data,omitempty"`
+	Data                 []TLSConfigurationResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsConfigurationsResponse TlsConfigurationsResponse
+type _TLSConfigurationsResponse TLSConfigurationsResponse
 
-// NewTlsConfigurationsResponse instantiates a new TlsConfigurationsResponse object
+// NewTLSConfigurationsResponse instantiates a new TLSConfigurationsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsConfigurationsResponse() *TlsConfigurationsResponse {
-	this := TlsConfigurationsResponse{}
+func NewTLSConfigurationsResponse() *TLSConfigurationsResponse {
+	this := TLSConfigurationsResponse{}
 	return &this
 }
 
-// NewTlsConfigurationsResponseWithDefaults instantiates a new TlsConfigurationsResponse object
+// NewTLSConfigurationsResponseWithDefaults instantiates a new TLSConfigurationsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsConfigurationsResponseWithDefaults() *TlsConfigurationsResponse {
-	this := TlsConfigurationsResponse{}
+func NewTLSConfigurationsResponseWithDefaults() *TLSConfigurationsResponse {
+	this := TLSConfigurationsResponse{}
 	return &this
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *TlsConfigurationsResponse) GetLinks() PaginationLinks {
+func (o *TLSConfigurationsResponse) GetLinks() PaginationLinks {
 	if o == nil || o.Links == nil {
 		var ret PaginationLinks
 		return ret
@@ -54,7 +54,7 @@ func (o *TlsConfigurationsResponse) GetLinks() PaginationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationsResponse) GetLinksOk() (*PaginationLinks, bool) {
+func (o *TLSConfigurationsResponse) GetLinksOk() (*PaginationLinks, bool) {
 	if o == nil || o.Links == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *TlsConfigurationsResponse) GetLinksOk() (*PaginationLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *TlsConfigurationsResponse) HasLinks() bool {
+func (o *TLSConfigurationsResponse) HasLinks() bool {
 	if o != nil && o.Links != nil {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *TlsConfigurationsResponse) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given PaginationLinks and assigns it to the Links field.
-func (o *TlsConfigurationsResponse) SetLinks(v PaginationLinks) {
+func (o *TLSConfigurationsResponse) SetLinks(v PaginationLinks) {
 	o.Links = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *TlsConfigurationsResponse) GetMeta() PaginationMeta1 {
+func (o *TLSConfigurationsResponse) GetMeta() PaginationMeta1 {
 	if o == nil || o.Meta == nil {
 		var ret PaginationMeta1
 		return ret
@@ -86,7 +86,7 @@ func (o *TlsConfigurationsResponse) GetMeta() PaginationMeta1 {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationsResponse) GetMetaOk() (*PaginationMeta1, bool) {
+func (o *TLSConfigurationsResponse) GetMetaOk() (*PaginationMeta1, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *TlsConfigurationsResponse) GetMetaOk() (*PaginationMeta1, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *TlsConfigurationsResponse) HasMeta() bool {
+func (o *TLSConfigurationsResponse) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -103,14 +103,14 @@ func (o *TlsConfigurationsResponse) HasMeta() bool {
 }
 
 // SetMeta gets a reference to the given PaginationMeta1 and assigns it to the Meta field.
-func (o *TlsConfigurationsResponse) SetMeta(v PaginationMeta1) {
+func (o *TLSConfigurationsResponse) SetMeta(v PaginationMeta1) {
 	o.Meta = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsConfigurationsResponse) GetData() []TlsConfigurationResponseData {
+func (o *TLSConfigurationsResponse) GetData() []TLSConfigurationResponseData {
 	if o == nil || o.Data == nil {
-		var ret []TlsConfigurationResponseData
+		var ret []TLSConfigurationResponseData
 		return ret
 	}
 	return o.Data
@@ -118,7 +118,7 @@ func (o *TlsConfigurationsResponse) GetData() []TlsConfigurationResponseData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationsResponse) GetDataOk() ([]TlsConfigurationResponseData, bool) {
+func (o *TLSConfigurationsResponse) GetDataOk() ([]TLSConfigurationResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *TlsConfigurationsResponse) GetDataOk() ([]TlsConfigurationResponseData,
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsConfigurationsResponse) HasData() bool {
+func (o *TLSConfigurationsResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -134,14 +134,14 @@ func (o *TlsConfigurationsResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []TlsConfigurationResponseData and assigns it to the Data field.
-func (o *TlsConfigurationsResponse) SetData(v []TlsConfigurationResponseData) {
+// SetData gets a reference to the given []TLSConfigurationResponseData and assigns it to the Data field.
+func (o *TLSConfigurationsResponse) SetData(v []TLSConfigurationResponseData) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsConfigurationsResponse) MarshalJSON() ([]byte, error) {
+func (o TLSConfigurationsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
@@ -162,11 +162,11 @@ func (o TlsConfigurationsResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsConfigurationsResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsConfigurationsResponse := _TlsConfigurationsResponse{}
+func (o *TLSConfigurationsResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSConfigurationsResponse := _TLSConfigurationsResponse{}
 
-	if err = json.Unmarshal(bytes, &varTlsConfigurationsResponse); err == nil {
-		*o = TlsConfigurationsResponse(varTlsConfigurationsResponse)
+	if err = json.Unmarshal(bytes, &varTLSConfigurationsResponse); err == nil {
+		*o = TLSConfigurationsResponse(varTLSConfigurationsResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -181,48 +181,48 @@ func (o *TlsConfigurationsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsConfigurationsResponse is a helper abstraction for handling nullable tlsconfigurationsresponse types.
-type NullableTlsConfigurationsResponse struct {
-	value *TlsConfigurationsResponse
+// NullableTLSConfigurationsResponse is a helper abstraction for handling nullable tlsconfigurationsresponse types.
+type NullableTLSConfigurationsResponse struct {
+	value *TLSConfigurationsResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsConfigurationsResponse) Get() *TlsConfigurationsResponse {
+func (v NullableTLSConfigurationsResponse) Get() *TLSConfigurationsResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsConfigurationsResponse) Set(val *TlsConfigurationsResponse) {
+func (v *NullableTLSConfigurationsResponse) Set(val *TLSConfigurationsResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsConfigurationsResponse) IsSet() bool {
+func (v NullableTLSConfigurationsResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsConfigurationsResponse) Unset() {
+func (v *NullableTLSConfigurationsResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsConfigurationsResponse returns a pointer to a new instance of NullableTlsConfigurationsResponse.
-func NewNullableTlsConfigurationsResponse(val *TlsConfigurationsResponse) *NullableTlsConfigurationsResponse {
-	return &NullableTlsConfigurationsResponse{value: val, isSet: true}
+// NewNullableTLSConfigurationsResponse returns a pointer to a new instance of NullableTLSConfigurationsResponse.
+func NewNullableTLSConfigurationsResponse(val *TLSConfigurationsResponse) *NullableTLSConfigurationsResponse {
+	return &NullableTLSConfigurationsResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsConfigurationsResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTLSConfigurationsResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsConfigurationsResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSConfigurationsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

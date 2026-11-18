@@ -19,7 +19,7 @@ import (
 // Serviceusagetype struct for Serviceusagetype
 type Serviceusagetype struct {
 	// The product identifier associated with the usage type. This corresponds to a Fastly product offering.
-	ProductId *string `json:"product_id,omitempty"`
+	ProductID *string `json:"product_id,omitempty"`
 	// Full name of the product usage type as it might appear on a customer's invoice.
 	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
@@ -44,36 +44,36 @@ func NewServiceusagetypeWithDefaults() *Serviceusagetype {
 	return &this
 }
 
-// GetProductId returns the ProductId field value if set, zero value otherwise.
-func (o *Serviceusagetype) GetProductId() string {
-	if o == nil || o.ProductId == nil {
+// GetProductID returns the ProductID field value if set, zero value otherwise.
+func (o *Serviceusagetype) GetProductID() string {
+	if o == nil || o.ProductID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProductId
+	return *o.ProductID
 }
 
-// GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
+// GetProductIDOk returns a tuple with the ProductID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Serviceusagetype) GetProductIdOk() (*string, bool) {
-	if o == nil || o.ProductId == nil {
+func (o *Serviceusagetype) GetProductIDOk() (*string, bool) {
+	if o == nil || o.ProductID == nil {
 		return nil, false
 	}
-	return o.ProductId, true
+	return o.ProductID, true
 }
 
-// HasProductId returns a boolean if a field has been set.
-func (o *Serviceusagetype) HasProductId() bool {
-	if o != nil && o.ProductId != nil {
+// HasProductID returns a boolean if a field has been set.
+func (o *Serviceusagetype) HasProductID() bool {
+	if o != nil && o.ProductID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProductId gets a reference to the given string and assigns it to the ProductId field.
-func (o *Serviceusagetype) SetProductId(v string) {
-	o.ProductId = &v
+// SetProductID gets a reference to the given string and assigns it to the ProductID field.
+func (o *Serviceusagetype) SetProductID(v string) {
+	o.ProductID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -112,8 +112,8 @@ func (o *Serviceusagetype) SetName(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Serviceusagetype) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ProductId != nil {
-		toSerialize["product_id"] = o.ProductId
+	if o.ProductID != nil {
+		toSerialize["product_id"] = o.ProductID
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

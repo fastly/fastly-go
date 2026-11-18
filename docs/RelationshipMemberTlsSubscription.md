@@ -1,82 +1,80 @@
-# RelationshipMemberTlsSubscription
+# RelationshipMemberTLSSubscription
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] [default to TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION]
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTLSSubscription**](TypeTLSSubscription.md) |  | [optional] [default to TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION]
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTlsSubscription
+### NewRelationshipMemberTLSSubscription
 
-`func NewRelationshipMemberTlsSubscription() *RelationshipMemberTlsSubscription`
+`func NewRelationshipMemberTLSSubscription() *RelationshipMemberTLSSubscription`
 
-NewRelationshipMemberTlsSubscription instantiates a new RelationshipMemberTlsSubscription object
+NewRelationshipMemberTLSSubscription instantiates a new RelationshipMemberTLSSubscription object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTlsSubscriptionWithDefaults
+### NewRelationshipMemberTLSSubscriptionWithDefaults
 
-`func NewRelationshipMemberTlsSubscriptionWithDefaults() *RelationshipMemberTlsSubscription`
+`func NewRelationshipMemberTLSSubscriptionWithDefaults() *RelationshipMemberTLSSubscription`
 
-NewRelationshipMemberTlsSubscriptionWithDefaults instantiates a new RelationshipMemberTlsSubscription object
+NewRelationshipMemberTLSSubscriptionWithDefaults instantiates a new RelationshipMemberTLSSubscription object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTlsSubscription) GetType() TypeTlsSubscription`
+`func (o *RelationshipMemberTLSSubscription) GetType() TypeTLSSubscription`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTlsSubscription) GetTypeOk() (*TypeTlsSubscription, bool)`
+`func (o *RelationshipMemberTLSSubscription) GetTypeOk() (*TypeTLSSubscription, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTlsSubscription) SetType(v TypeTlsSubscription)`
+`func (o *RelationshipMemberTLSSubscription) SetType(v TypeTLSSubscription)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTlsSubscription) HasType() bool`
+`func (o *RelationshipMemberTLSSubscription) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *RelationshipMemberTlsSubscription) GetId() string`
+`func (o *RelationshipMemberTLSSubscription) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RelationshipMemberTlsSubscription) GetIdOk() (*string, bool)`
+`func (o *RelationshipMemberTLSSubscription) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RelationshipMemberTlsSubscription) SetId(v string)`
+`func (o *RelationshipMemberTLSSubscription) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RelationshipMemberTlsSubscription) HasId() bool`
+`func (o *RelationshipMemberTLSSubscription) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

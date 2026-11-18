@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTlsCertificate Resource type
-type TypeTlsCertificate string
+// TypeTLSCertificate Resource type
+type TypeTLSCertificate string
 
-// List of type_tls_certificate
+// List of resourceTypetls_certificate
 const (
-	TYPETLSCERTIFICATE_TLS_CERTIFICATE TypeTlsCertificate = "tls_certificate"
+	TYPETLSCERTIFICATE_TLS_CERTIFICATE TypeTLSCertificate = "tls_certificate"
 )
 
-// AllowedTypeTlsCertificateEnumValues All allowed values of TypeTlsCertificate enum
-var AllowedTypeTlsCertificateEnumValues = []TypeTlsCertificate{
+// AllowedTypeTLSCertificateEnumValues All allowed values of TypeTLSCertificate enum
+var AllowedTypeTLSCertificateEnumValues = []TypeTLSCertificate{
 	"tls_certificate",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTlsCertificate) UnmarshalJSON(src []byte) error {
+func (v *TypeTLSCertificate) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTlsCertificate(value)
-	for _, existing := range AllowedTypeTlsCertificateEnumValues {
+	enumTypeValue := TypeTLSCertificate(value)
+	for _, existing := range AllowedTypeTLSCertificateEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTlsCertificate", value)
+	return fmt.Errorf("%+v is not a valid TypeTLSCertificate", value)
 }
 
-// NewTypeTlsCertificateFromValue returns a pointer to a valid TypeTlsCertificate
+// NewTypeTLSCertificateFromValue returns a pointer to a valid TypeTLSCertificate
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTlsCertificateFromValue(v string) (*TypeTlsCertificate, error) {
-	ev := TypeTlsCertificate(v)
+func NewTypeTLSCertificateFromValue(v string) (*TypeTLSCertificate, error) {
+	ev := TypeTLSCertificate(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTlsCertificate: valid values are %v", v, AllowedTypeTlsCertificateEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTLSCertificate: valid values are %v", v, AllowedTypeTLSCertificateEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTlsCertificate) IsValid() bool {
-	for _, existing := range AllowedTypeTlsCertificateEnumValues {
+func (v TypeTLSCertificate) IsValid() bool {
+	for _, existing := range AllowedTypeTLSCertificateEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTlsCertificate) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to type_tls_certificate value
-func (v TypeTlsCertificate) Ptr() *TypeTlsCertificate {
+// Ptr returns reference to resourceTypetls_certificate value
+func (v TypeTLSCertificate) Ptr() *TypeTLSCertificate {
 	return &v
 }
 
-// NullableTypeTlsCertificate is a helper abstraction for handling nullable typetlscertificate types.
-type NullableTypeTlsCertificate struct {
-	value *TypeTlsCertificate
+// NullableTypeTLSCertificate is a helper abstraction for handling nullable typetlscertificate types.
+type NullableTypeTLSCertificate struct {
+	value *TypeTLSCertificate
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTlsCertificate) Get() *TypeTlsCertificate {
+func (v NullableTypeTLSCertificate) Get() *TypeTLSCertificate {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTlsCertificate) Set(val *TypeTlsCertificate) {
+func (v *NullableTypeTLSCertificate) Set(val *TypeTLSCertificate) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTlsCertificate) IsSet() bool {
+func (v NullableTypeTLSCertificate) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTlsCertificate) Unset() {
+func (v *NullableTypeTLSCertificate) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTlsCertificate returns a pointer to a new instance of NullableTypeTlsCertificate.
-func NewNullableTypeTlsCertificate(val *TypeTlsCertificate) *NullableTypeTlsCertificate {
-	return &NullableTypeTlsCertificate{value: val, isSet: true}
+// NewNullableTypeTLSCertificate returns a pointer to a new instance of NullableTypeTLSCertificate.
+func NewNullableTypeTLSCertificate(val *TypeTLSCertificate) *NullableTypeTLSCertificate {
+	return &NullableTypeTLSCertificate{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTlsCertificate) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTLSCertificate) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTlsCertificate) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTLSCertificate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

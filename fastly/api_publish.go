@@ -38,10 +38,10 @@ type PublishAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIPublishRequest
 	*/
-	Publish(ctx context.Context, serviceId string) APIPublishRequest
+	Publish(ctx context.Context, serviceID string) APIPublishRequest
 
 	// PublishExecute executes the request
 	//  @return string
@@ -55,7 +55,7 @@ type PublishAPIService service
 type APIPublishRequest struct {
 	ctx            context.Context
 	APIService     PublishAPI
-	serviceId      string
+	serviceID      string
 	publishRequest *PublishRequest
 }
 
@@ -78,14 +78,14 @@ Send one or more messages to [Fanout](https://www.fastly.com/documentation/learn
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIPublishRequest
 */
-func (a *PublishAPIService) Publish(ctx context.Context, serviceId string) APIPublishRequest {
+func (a *PublishAPIService) Publish(ctx context.Context, serviceID string) APIPublishRequest {
 	return APIPublishRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -105,7 +105,7 @@ func (a *PublishAPIService) PublishExecute(r APIPublishRequest) (string, *http.R
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/publish/"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

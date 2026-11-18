@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsPrivateKey struct for TlsPrivateKey
-type TlsPrivateKey struct {
-	Data                 *TlsPrivateKeyData `json:"data,omitempty"`
+// TLSPrivateKey struct for TLSPrivateKey
+type TLSPrivateKey struct {
+	Data                 *TLSPrivateKeyData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsPrivateKey TlsPrivateKey
+type _TLSPrivateKey TLSPrivateKey
 
-// NewTlsPrivateKey instantiates a new TlsPrivateKey object
+// NewTLSPrivateKey instantiates a new TLSPrivateKey object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsPrivateKey() *TlsPrivateKey {
-	this := TlsPrivateKey{}
+func NewTLSPrivateKey() *TLSPrivateKey {
+	this := TLSPrivateKey{}
 	return &this
 }
 
-// NewTlsPrivateKeyWithDefaults instantiates a new TlsPrivateKey object
+// NewTLSPrivateKeyWithDefaults instantiates a new TLSPrivateKey object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsPrivateKeyWithDefaults() *TlsPrivateKey {
-	this := TlsPrivateKey{}
+func NewTLSPrivateKeyWithDefaults() *TLSPrivateKey {
+	this := TLSPrivateKey{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsPrivateKey) GetData() TlsPrivateKeyData {
+func (o *TLSPrivateKey) GetData() TLSPrivateKeyData {
 	if o == nil || o.Data == nil {
-		var ret TlsPrivateKeyData
+		var ret TLSPrivateKeyData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *TlsPrivateKey) GetData() TlsPrivateKeyData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsPrivateKey) GetDataOk() (*TlsPrivateKeyData, bool) {
+func (o *TLSPrivateKey) GetDataOk() (*TLSPrivateKeyData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TlsPrivateKey) GetDataOk() (*TlsPrivateKeyData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsPrivateKey) HasData() bool {
+func (o *TLSPrivateKey) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *TlsPrivateKey) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given TlsPrivateKeyData and assigns it to the Data field.
-func (o *TlsPrivateKey) SetData(v TlsPrivateKeyData) {
+// SetData gets a reference to the given TLSPrivateKeyData and assigns it to the Data field.
+func (o *TLSPrivateKey) SetData(v TLSPrivateKeyData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsPrivateKey) MarshalJSON() ([]byte, error) {
+func (o TLSPrivateKey) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o TlsPrivateKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsPrivateKey) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsPrivateKey := _TlsPrivateKey{}
+func (o *TLSPrivateKey) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSPrivateKey := _TLSPrivateKey{}
 
-	if err = json.Unmarshal(bytes, &varTlsPrivateKey); err == nil {
-		*o = TlsPrivateKey(varTlsPrivateKey)
+	if err = json.Unmarshal(bytes, &varTLSPrivateKey); err == nil {
+		*o = TLSPrivateKey(varTLSPrivateKey)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TlsPrivateKey) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsPrivateKey is a helper abstraction for handling nullable tlsprivatekey types.
-type NullableTlsPrivateKey struct {
-	value *TlsPrivateKey
+// NullableTLSPrivateKey is a helper abstraction for handling nullable tlsprivatekey types.
+type NullableTLSPrivateKey struct {
+	value *TLSPrivateKey
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsPrivateKey) Get() *TlsPrivateKey {
+func (v NullableTLSPrivateKey) Get() *TLSPrivateKey {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsPrivateKey) Set(val *TlsPrivateKey) {
+func (v *NullableTLSPrivateKey) Set(val *TLSPrivateKey) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsPrivateKey) IsSet() bool {
+func (v NullableTLSPrivateKey) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsPrivateKey) Unset() {
+func (v *NullableTLSPrivateKey) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsPrivateKey returns a pointer to a new instance of NullableTlsPrivateKey.
-func NewNullableTlsPrivateKey(val *TlsPrivateKey) *NullableTlsPrivateKey {
-	return &NullableTlsPrivateKey{value: val, isSet: true}
+// NewNullableTLSPrivateKey returns a pointer to a new instance of NullableTLSPrivateKey.
+func NewNullableTLSPrivateKey(val *TLSPrivateKey) *NullableTLSPrivateKey {
+	return &NullableTLSPrivateKey{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsPrivateKey) MarshalJSON() ([]byte, error) {
+func (v NullableTLSPrivateKey) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsPrivateKey) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSPrivateKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

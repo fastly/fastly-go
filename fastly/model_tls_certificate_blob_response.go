@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// TlsCertificateBlobResponse struct for TlsCertificateBlobResponse
-type TlsCertificateBlobResponse struct {
+// TLSCertificateBlobResponse struct for TLSCertificateBlobResponse
+type TLSCertificateBlobResponse struct {
 	// A certificate blob
 	CertBlob             *string `json:"cert_blob,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsCertificateBlobResponse TlsCertificateBlobResponse
+type _TLSCertificateBlobResponse TLSCertificateBlobResponse
 
-// NewTlsCertificateBlobResponse instantiates a new TlsCertificateBlobResponse object
+// NewTLSCertificateBlobResponse instantiates a new TLSCertificateBlobResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsCertificateBlobResponse() *TlsCertificateBlobResponse {
-	this := TlsCertificateBlobResponse{}
+func NewTLSCertificateBlobResponse() *TLSCertificateBlobResponse {
+	this := TLSCertificateBlobResponse{}
 	return &this
 }
 
-// NewTlsCertificateBlobResponseWithDefaults instantiates a new TlsCertificateBlobResponse object
+// NewTLSCertificateBlobResponseWithDefaults instantiates a new TLSCertificateBlobResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsCertificateBlobResponseWithDefaults() *TlsCertificateBlobResponse {
-	this := TlsCertificateBlobResponse{}
+func NewTLSCertificateBlobResponseWithDefaults() *TLSCertificateBlobResponse {
+	this := TLSCertificateBlobResponse{}
 	return &this
 }
 
 // GetCertBlob returns the CertBlob field value if set, zero value otherwise.
-func (o *TlsCertificateBlobResponse) GetCertBlob() string {
+func (o *TLSCertificateBlobResponse) GetCertBlob() string {
 	if o == nil || o.CertBlob == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *TlsCertificateBlobResponse) GetCertBlob() string {
 
 // GetCertBlobOk returns a tuple with the CertBlob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsCertificateBlobResponse) GetCertBlobOk() (*string, bool) {
+func (o *TLSCertificateBlobResponse) GetCertBlobOk() (*string, bool) {
 	if o == nil || o.CertBlob == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *TlsCertificateBlobResponse) GetCertBlobOk() (*string, bool) {
 }
 
 // HasCertBlob returns a boolean if a field has been set.
-func (o *TlsCertificateBlobResponse) HasCertBlob() bool {
+func (o *TLSCertificateBlobResponse) HasCertBlob() bool {
 	if o != nil && o.CertBlob != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *TlsCertificateBlobResponse) HasCertBlob() bool {
 }
 
 // SetCertBlob gets a reference to the given string and assigns it to the CertBlob field.
-func (o *TlsCertificateBlobResponse) SetCertBlob(v string) {
+func (o *TLSCertificateBlobResponse) SetCertBlob(v string) {
 	o.CertBlob = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsCertificateBlobResponse) MarshalJSON() ([]byte, error) {
+func (o TLSCertificateBlobResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CertBlob != nil {
 		toSerialize["cert_blob"] = o.CertBlob
@@ -91,11 +91,11 @@ func (o TlsCertificateBlobResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsCertificateBlobResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsCertificateBlobResponse := _TlsCertificateBlobResponse{}
+func (o *TLSCertificateBlobResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSCertificateBlobResponse := _TLSCertificateBlobResponse{}
 
-	if err = json.Unmarshal(bytes, &varTlsCertificateBlobResponse); err == nil {
-		*o = TlsCertificateBlobResponse(varTlsCertificateBlobResponse)
+	if err = json.Unmarshal(bytes, &varTLSCertificateBlobResponse); err == nil {
+		*o = TLSCertificateBlobResponse(varTLSCertificateBlobResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *TlsCertificateBlobResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsCertificateBlobResponse is a helper abstraction for handling nullable tlscertificateblobresponse types.
-type NullableTlsCertificateBlobResponse struct {
-	value *TlsCertificateBlobResponse
+// NullableTLSCertificateBlobResponse is a helper abstraction for handling nullable tlscertificateblobresponse types.
+type NullableTLSCertificateBlobResponse struct {
+	value *TLSCertificateBlobResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsCertificateBlobResponse) Get() *TlsCertificateBlobResponse {
+func (v NullableTLSCertificateBlobResponse) Get() *TLSCertificateBlobResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsCertificateBlobResponse) Set(val *TlsCertificateBlobResponse) {
+func (v *NullableTLSCertificateBlobResponse) Set(val *TLSCertificateBlobResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsCertificateBlobResponse) IsSet() bool {
+func (v NullableTLSCertificateBlobResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsCertificateBlobResponse) Unset() {
+func (v *NullableTLSCertificateBlobResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsCertificateBlobResponse returns a pointer to a new instance of NullableTlsCertificateBlobResponse.
-func NewNullableTlsCertificateBlobResponse(val *TlsCertificateBlobResponse) *NullableTlsCertificateBlobResponse {
-	return &NullableTlsCertificateBlobResponse{value: val, isSet: true}
+// NewNullableTLSCertificateBlobResponse returns a pointer to a new instance of NullableTLSCertificateBlobResponse.
+func NewNullableTLSCertificateBlobResponse(val *TLSCertificateBlobResponse) *NullableTLSCertificateBlobResponse {
+	return &NullableTLSCertificateBlobResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsCertificateBlobResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTLSCertificateBlobResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsCertificateBlobResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSCertificateBlobResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

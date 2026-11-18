@@ -89,12 +89,12 @@ import (
 )
 
 func main() {
-    providerId := "anthropic" // string | The ID of the provider.
+    providerID := "anthropic" // string | The ID of the provider.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlProvidersAPI.ArcGetModelsForProvider(ctx, providerId).Execute()
+    resp, r, err := apiClient.AiRuntimeControlProvidersAPI.ArcGetModelsForProvider(ctx, providerID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlProvidersAPI.ArcGetModelsForProvider`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -110,7 +110,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**providerId** | **string** | The ID of the provider. | 
+**providerID** | **string** | The ID of the provider. | 
 
 ### Other Parameters
 
@@ -194,4 +194,3 @@ Other parameters are passed through a pointer to a apiArcGetSupportedProvidersRe
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

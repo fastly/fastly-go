@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTlsDomain Resource type
-type TypeTlsDomain string
+// TypeTLSDomain Resource type
+type TypeTLSDomain string
 
-// List of type_tls_domain
+// List of resourceTypetls_domain
 const (
-	TYPETLSDOMAIN_TLS_DOMAIN TypeTlsDomain = "tls_domain"
+	TYPETLSDOMAIN_TLS_DOMAIN TypeTLSDomain = "tls_domain"
 )
 
-// AllowedTypeTlsDomainEnumValues All allowed values of TypeTlsDomain enum
-var AllowedTypeTlsDomainEnumValues = []TypeTlsDomain{
+// AllowedTypeTLSDomainEnumValues All allowed values of TypeTLSDomain enum
+var AllowedTypeTLSDomainEnumValues = []TypeTLSDomain{
 	"tls_domain",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTlsDomain) UnmarshalJSON(src []byte) error {
+func (v *TypeTLSDomain) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTlsDomain(value)
-	for _, existing := range AllowedTypeTlsDomainEnumValues {
+	enumTypeValue := TypeTLSDomain(value)
+	for _, existing := range AllowedTypeTLSDomainEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTlsDomain", value)
+	return fmt.Errorf("%+v is not a valid TypeTLSDomain", value)
 }
 
-// NewTypeTlsDomainFromValue returns a pointer to a valid TypeTlsDomain
+// NewTypeTLSDomainFromValue returns a pointer to a valid TypeTLSDomain
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTlsDomainFromValue(v string) (*TypeTlsDomain, error) {
-	ev := TypeTlsDomain(v)
+func NewTypeTLSDomainFromValue(v string) (*TypeTLSDomain, error) {
+	ev := TypeTLSDomain(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTlsDomain: valid values are %v", v, AllowedTypeTlsDomainEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTLSDomain: valid values are %v", v, AllowedTypeTLSDomainEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTlsDomain) IsValid() bool {
-	for _, existing := range AllowedTypeTlsDomainEnumValues {
+func (v TypeTLSDomain) IsValid() bool {
+	for _, existing := range AllowedTypeTLSDomainEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTlsDomain) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to type_tls_domain value
-func (v TypeTlsDomain) Ptr() *TypeTlsDomain {
+// Ptr returns reference to resourceTypetls_domain value
+func (v TypeTLSDomain) Ptr() *TypeTLSDomain {
 	return &v
 }
 
-// NullableTypeTlsDomain is a helper abstraction for handling nullable typetlsdomain types.
-type NullableTypeTlsDomain struct {
-	value *TypeTlsDomain
+// NullableTypeTLSDomain is a helper abstraction for handling nullable typetlsdomain types.
+type NullableTypeTLSDomain struct {
+	value *TypeTLSDomain
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTlsDomain) Get() *TypeTlsDomain {
+func (v NullableTypeTLSDomain) Get() *TypeTLSDomain {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTlsDomain) Set(val *TypeTlsDomain) {
+func (v *NullableTypeTLSDomain) Set(val *TypeTLSDomain) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTlsDomain) IsSet() bool {
+func (v NullableTypeTLSDomain) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTlsDomain) Unset() {
+func (v *NullableTypeTLSDomain) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTlsDomain returns a pointer to a new instance of NullableTypeTlsDomain.
-func NewNullableTypeTlsDomain(val *TypeTlsDomain) *NullableTypeTlsDomain {
-	return &NullableTypeTlsDomain{value: val, isSet: true}
+// NewNullableTypeTLSDomain returns a pointer to a new instance of NullableTypeTLSDomain.
+func NewNullableTypeTLSDomain(val *TypeTLSDomain) *NullableTypeTLSDomain {
+	return &NullableTypeTLSDomain{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTlsDomain) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTLSDomain) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTlsDomain) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTLSDomain) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

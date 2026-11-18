@@ -50,10 +50,10 @@ type ObservabilityCustomDashboardsAPI interface {
 		Delete an existing dashboard
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param dashboardId
+		 @param dashboardID
 		 @return APIDeleteDashboardRequest
 	*/
-	DeleteDashboard(ctx context.Context, dashboardId string) APIDeleteDashboardRequest
+	DeleteDashboard(ctx context.Context, dashboardID string) APIDeleteDashboardRequest
 
 	// DeleteDashboardExecute executes the request
 	DeleteDashboardExecute(r APIDeleteDashboardRequest) (*http.Response, error)
@@ -64,10 +64,10 @@ type ObservabilityCustomDashboardsAPI interface {
 		Retrieve a dashboard by ID
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param dashboardId
+		 @param dashboardID
 		 @return APIGetDashboardRequest
 	*/
-	GetDashboard(ctx context.Context, dashboardId string) APIGetDashboardRequest
+	GetDashboard(ctx context.Context, dashboardID string) APIGetDashboardRequest
 
 	// GetDashboardExecute executes the request
 	//  @return Dashboard
@@ -93,10 +93,10 @@ type ObservabilityCustomDashboardsAPI interface {
 		Update an existing dashboard
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param dashboardId
+		 @param dashboardID
 		 @return APIUpdateDashboardRequest
 	*/
-	UpdateDashboard(ctx context.Context, dashboardId string) APIUpdateDashboardRequest
+	UpdateDashboard(ctx context.Context, dashboardID string) APIUpdateDashboardRequest
 
 	// UpdateDashboardExecute executes the request
 	//  @return Dashboard
@@ -247,7 +247,7 @@ func (a *ObservabilityCustomDashboardsAPIService) CreateDashboardExecute(r APICr
 type APIDeleteDashboardRequest struct {
 	ctx         context.Context
 	APIService  ObservabilityCustomDashboardsAPI
-	dashboardId string
+	dashboardID string
 }
 
 // Execute calls the API using the request data configured.
@@ -261,14 +261,14 @@ DeleteDashboard Delete an existing dashboard
 Delete an existing dashboard
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dashboardId
+ @param dashboardID
  @return APIDeleteDashboardRequest
 */
-func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboard(ctx context.Context, dashboardId string) APIDeleteDashboardRequest {
+func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboard(ctx context.Context, dashboardID string) APIDeleteDashboardRequest {
 	return APIDeleteDashboardRequest{
 		APIService:  a,
 		ctx:         ctx,
-		dashboardId: dashboardId,
+		dashboardID: dashboardID,
 	}
 }
 
@@ -286,7 +286,7 @@ func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboardExecute(r APIDe
 	}
 
 	localVarPath := localBasePath + "/observability/dashboards/{dashboard_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dashboard_id"+"}", gourl.PathEscape(parameterToString(r.dashboardId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dashboard_id"+"}", gourl.PathEscape(parameterToString(r.dashboardID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -368,7 +368,7 @@ func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboardExecute(r APIDe
 type APIGetDashboardRequest struct {
 	ctx         context.Context
 	APIService  ObservabilityCustomDashboardsAPI
-	dashboardId string
+	dashboardID string
 }
 
 // Execute calls the API using the request data configured.
@@ -382,14 +382,14 @@ GetDashboard Retrieve a dashboard by ID
 Retrieve a dashboard by ID
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dashboardId
+ @param dashboardID
  @return APIGetDashboardRequest
 */
-func (a *ObservabilityCustomDashboardsAPIService) GetDashboard(ctx context.Context, dashboardId string) APIGetDashboardRequest {
+func (a *ObservabilityCustomDashboardsAPIService) GetDashboard(ctx context.Context, dashboardID string) APIGetDashboardRequest {
 	return APIGetDashboardRequest{
 		APIService:  a,
 		ctx:         ctx,
-		dashboardId: dashboardId,
+		dashboardID: dashboardID,
 	}
 }
 
@@ -409,7 +409,7 @@ func (a *ObservabilityCustomDashboardsAPIService) GetDashboardExecute(r APIGetDa
 	}
 
 	localVarPath := localBasePath + "/observability/dashboards/{dashboard_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dashboard_id"+"}", gourl.PathEscape(parameterToString(r.dashboardId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dashboard_id"+"}", gourl.PathEscape(parameterToString(r.dashboardID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -628,7 +628,7 @@ func (a *ObservabilityCustomDashboardsAPIService) ListDashboardsExecute(r APILis
 type APIUpdateDashboardRequest struct {
 	ctx                    context.Context
 	APIService             ObservabilityCustomDashboardsAPI
-	dashboardId            string
+	dashboardID            string
 	updateDashboardRequest *UpdateDashboardRequest
 }
 
@@ -649,14 +649,14 @@ UpdateDashboard Update an existing dashboard
 Update an existing dashboard
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dashboardId
+ @param dashboardID
  @return APIUpdateDashboardRequest
 */
-func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboard(ctx context.Context, dashboardId string) APIUpdateDashboardRequest {
+func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboard(ctx context.Context, dashboardID string) APIUpdateDashboardRequest {
 	return APIUpdateDashboardRequest{
 		APIService:  a,
 		ctx:         ctx,
-		dashboardId: dashboardId,
+		dashboardID: dashboardID,
 	}
 }
 
@@ -676,7 +676,7 @@ func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboardExecute(r APIUp
 	}
 
 	localVarPath := localBasePath + "/observability/dashboards/{dashboard_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dashboard_id"+"}", gourl.PathEscape(parameterToString(r.dashboardId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dashboard_id"+"}", gourl.PathEscape(parameterToString(r.dashboardID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

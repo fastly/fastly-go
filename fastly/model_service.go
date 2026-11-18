@@ -23,7 +23,7 @@ type Service struct {
 	// The name of the service.
 	Name *string `json:"name,omitempty"`
 	// Alphanumeric string identifying the customer.
-	CustomerId           *string `json:"customer_id,omitempty"`
+	CustomerID           *string `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -121,36 +121,36 @@ func (o *Service) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *Service) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *Service) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Service) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *Service) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *Service) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *Service) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *Service) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *Service) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -163,8 +163,8 @@ func (o Service) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
 
 	for key, value := range o.AdditionalProperties {

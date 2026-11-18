@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsCertHostname** | Pointer to **NullableString** | The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN). | [optional] [default to "null"]
-**UseTls** | Pointer to **string** | Whether to use TLS. | [optional] [default to "0"]
+**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSCertHostname** | Pointer to **NullableString** | The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN). | [optional] [default to "null"]
+**UseTLS** | Pointer to **string** | Whether to use TLS. | [optional] [default to "0"]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **string** | Name for the Pool. | [optional] 
 **Shield** | Pointer to **NullableString** | Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [optional] [default to "null"]
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
-**TlsCiphers** | Pointer to **NullableString** | List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional. | [optional] 
-**TlsSniHostname** | Pointer to **NullableString** | SNI hostname. Optional. | [optional] 
-**MinTlsVersion** | Pointer to **NullableInt32** | Minimum allowed TLS version on connections to this server. Optional. | [optional] 
-**MaxTlsVersion** | Pointer to **NullableInt32** | Maximum allowed TLS version on connections to this server. Optional. | [optional] 
+**TLSCiphers** | Pointer to **NullableString** | List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional. | [optional] 
+**TLSSniHostname** | Pointer to **NullableString** | SNI hostname. Optional. | [optional] 
+**MinTLSVersion** | Pointer to **NullableInt32** | Minimum allowed TLS version on connections to this server. Optional. | [optional] 
+**MaxTLSVersion** | Pointer to **NullableInt32** | Maximum allowed TLS version on connections to this server. Optional. | [optional] 
 **Healthcheck** | Pointer to **NullableString** | Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools. | [optional] 
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
 **Type** | Pointer to **string** | What type of load balance group to use. | [optional] 
@@ -29,8 +29,8 @@ Name | Type | Description | Notes
 **ConnectTimeout** | Pointer to **string** | How long to wait for a timeout in milliseconds. | [optional] 
 **FirstByteTimeout** | Pointer to **string** | How long to wait for the first byte in milliseconds. | [optional] 
 **MaxConnDefault** | Pointer to **string** | Maximum number of connections. | [optional] [default to "200"]
-**TlsCheckCert** | Pointer to **NullableString** | Be strict on checking TLS certs. | [optional] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**TLSCheckCert** | Pointer to **NullableString** | Be strict on checking TLS certs. | [optional] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **Quorum** | Pointer to **string** | Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up. | [optional] [default to "75"]
 
 ## Methods
@@ -52,170 +52,170 @@ NewPoolResponseWithDefaults instantiates a new PoolResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsCaCert
+### GetTLSCaCert
 
-`func (o *PoolResponse) GetTlsCaCert() string`
+`func (o *PoolResponse) GetTLSCaCert() string`
 
-GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
+GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
 
-### GetTlsCaCertOk
+### GetTLSCaCertOk
 
-`func (o *PoolResponse) GetTlsCaCertOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSCaCertOk() (*string, bool)`
 
-GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
+GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCaCert
+### SetTLSCaCert
 
-`func (o *PoolResponse) SetTlsCaCert(v string)`
+`func (o *PoolResponse) SetTLSCaCert(v string)`
 
-SetTlsCaCert sets TlsCaCert field to given value.
+SetTLSCaCert sets TLSCaCert field to given value.
 
-### HasTlsCaCert
+### HasTLSCaCert
 
-`func (o *PoolResponse) HasTlsCaCert() bool`
+`func (o *PoolResponse) HasTLSCaCert() bool`
 
-HasTlsCaCert returns a boolean if a field has been set.
+HasTLSCaCert returns a boolean if a field has been set.
 
-### SetTlsCaCertNil
+### SetTLSCaCertNil
 
-`func (o *PoolResponse) SetTlsCaCertNil(b bool)`
+`func (o *PoolResponse) SetTLSCaCertNil(b bool)`
 
- SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+ SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 
-### UnsetTlsCaCert
-`func (o *PoolResponse) UnsetTlsCaCert()`
+### UnsetTLSCaCert
+`func (o *PoolResponse) UnsetTLSCaCert()`
 
-UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-### GetTlsClientCert
+UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+### GetTLSClientCert
 
-`func (o *PoolResponse) GetTlsClientCert() string`
+`func (o *PoolResponse) GetTLSClientCert() string`
 
-GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
+GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
 
-### GetTlsClientCertOk
+### GetTLSClientCertOk
 
-`func (o *PoolResponse) GetTlsClientCertOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSClientCertOk() (*string, bool)`
 
-GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
+GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientCert
+### SetTLSClientCert
 
-`func (o *PoolResponse) SetTlsClientCert(v string)`
+`func (o *PoolResponse) SetTLSClientCert(v string)`
 
-SetTlsClientCert sets TlsClientCert field to given value.
+SetTLSClientCert sets TLSClientCert field to given value.
 
-### HasTlsClientCert
+### HasTLSClientCert
 
-`func (o *PoolResponse) HasTlsClientCert() bool`
+`func (o *PoolResponse) HasTLSClientCert() bool`
 
-HasTlsClientCert returns a boolean if a field has been set.
+HasTLSClientCert returns a boolean if a field has been set.
 
-### SetTlsClientCertNil
+### SetTLSClientCertNil
 
-`func (o *PoolResponse) SetTlsClientCertNil(b bool)`
+`func (o *PoolResponse) SetTLSClientCertNil(b bool)`
 
- SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+ SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 
-### UnsetTlsClientCert
-`func (o *PoolResponse) UnsetTlsClientCert()`
+### UnsetTLSClientCert
+`func (o *PoolResponse) UnsetTLSClientCert()`
 
-UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-### GetTlsClientKey
+UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+### GetTLSClientKey
 
-`func (o *PoolResponse) GetTlsClientKey() string`
+`func (o *PoolResponse) GetTLSClientKey() string`
 
-GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
+GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
 
-### GetTlsClientKeyOk
+### GetTLSClientKeyOk
 
-`func (o *PoolResponse) GetTlsClientKeyOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSClientKeyOk() (*string, bool)`
 
-GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
+GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientKey
+### SetTLSClientKey
 
-`func (o *PoolResponse) SetTlsClientKey(v string)`
+`func (o *PoolResponse) SetTLSClientKey(v string)`
 
-SetTlsClientKey sets TlsClientKey field to given value.
+SetTLSClientKey sets TLSClientKey field to given value.
 
-### HasTlsClientKey
+### HasTLSClientKey
 
-`func (o *PoolResponse) HasTlsClientKey() bool`
+`func (o *PoolResponse) HasTLSClientKey() bool`
 
-HasTlsClientKey returns a boolean if a field has been set.
+HasTLSClientKey returns a boolean if a field has been set.
 
-### SetTlsClientKeyNil
+### SetTLSClientKeyNil
 
-`func (o *PoolResponse) SetTlsClientKeyNil(b bool)`
+`func (o *PoolResponse) SetTLSClientKeyNil(b bool)`
 
- SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+ SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 
-### UnsetTlsClientKey
-`func (o *PoolResponse) UnsetTlsClientKey()`
+### UnsetTLSClientKey
+`func (o *PoolResponse) UnsetTLSClientKey()`
 
-UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-### GetTlsCertHostname
+UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+### GetTLSCertHostname
 
-`func (o *PoolResponse) GetTlsCertHostname() string`
+`func (o *PoolResponse) GetTLSCertHostname() string`
 
-GetTlsCertHostname returns the TlsCertHostname field if non-nil, zero value otherwise.
+GetTLSCertHostname returns the TLSCertHostname field if non-nil, zero value otherwise.
 
-### GetTlsCertHostnameOk
+### GetTLSCertHostnameOk
 
-`func (o *PoolResponse) GetTlsCertHostnameOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSCertHostnameOk() (*string, bool)`
 
-GetTlsCertHostnameOk returns a tuple with the TlsCertHostname field if it's non-nil, zero value otherwise
+GetTLSCertHostnameOk returns a tuple with the TLSCertHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCertHostname
+### SetTLSCertHostname
 
-`func (o *PoolResponse) SetTlsCertHostname(v string)`
+`func (o *PoolResponse) SetTLSCertHostname(v string)`
 
-SetTlsCertHostname sets TlsCertHostname field to given value.
+SetTLSCertHostname sets TLSCertHostname field to given value.
 
-### HasTlsCertHostname
+### HasTLSCertHostname
 
-`func (o *PoolResponse) HasTlsCertHostname() bool`
+`func (o *PoolResponse) HasTLSCertHostname() bool`
 
-HasTlsCertHostname returns a boolean if a field has been set.
+HasTLSCertHostname returns a boolean if a field has been set.
 
-### SetTlsCertHostnameNil
+### SetTLSCertHostnameNil
 
-`func (o *PoolResponse) SetTlsCertHostnameNil(b bool)`
+`func (o *PoolResponse) SetTLSCertHostnameNil(b bool)`
 
- SetTlsCertHostnameNil sets the value for TlsCertHostname to be an explicit nil
+ SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
 
-### UnsetTlsCertHostname
-`func (o *PoolResponse) UnsetTlsCertHostname()`
+### UnsetTLSCertHostname
+`func (o *PoolResponse) UnsetTLSCertHostname()`
 
-UnsetTlsCertHostname ensures that no value is present for TlsCertHostname, not even an explicit nil
-### GetUseTls
+UnsetTLSCertHostname ensures that no value is present for TLSCertHostname, not even an explicit nil
+### GetUseTLS
 
-`func (o *PoolResponse) GetUseTls() string`
+`func (o *PoolResponse) GetUseTLS() string`
 
-GetUseTls returns the UseTls field if non-nil, zero value otherwise.
+GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
-### GetUseTlsOk
+### GetUseTLSOk
 
-`func (o *PoolResponse) GetUseTlsOk() (*string, bool)`
+`func (o *PoolResponse) GetUseTLSOk() (*string, bool)`
 
-GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
+GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTls
+### SetUseTLS
 
-`func (o *PoolResponse) SetUseTls(v string)`
+`func (o *PoolResponse) SetUseTLS(v string)`
 
-SetUseTls sets UseTls field to given value.
+SetUseTLS sets UseTLS field to given value.
 
-### HasUseTls
+### HasUseTLS
 
-`func (o *PoolResponse) HasUseTls() bool`
+`func (o *PoolResponse) HasUseTLS() bool`
 
-HasUseTls returns a boolean if a field has been set.
+HasUseTLS returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -322,30 +322,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *PoolResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *PoolResponse) GetServiceId() string`
+`func (o *PoolResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *PoolResponse) GetServiceIdOk() (*string, bool)`
+`func (o *PoolResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *PoolResponse) SetServiceId(v string)`
+`func (o *PoolResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *PoolResponse) HasServiceId() bool`
+`func (o *PoolResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -467,146 +467,146 @@ HasRequestCondition returns a boolean if a field has been set.
 `func (o *PoolResponse) UnsetRequestCondition()`
 
 UnsetRequestCondition ensures that no value is present for RequestCondition, not even an explicit nil
-### GetTlsCiphers
+### GetTLSCiphers
 
-`func (o *PoolResponse) GetTlsCiphers() string`
+`func (o *PoolResponse) GetTLSCiphers() string`
 
-GetTlsCiphers returns the TlsCiphers field if non-nil, zero value otherwise.
+GetTLSCiphers returns the TLSCiphers field if non-nil, zero value otherwise.
 
-### GetTlsCiphersOk
+### GetTLSCiphersOk
 
-`func (o *PoolResponse) GetTlsCiphersOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSCiphersOk() (*string, bool)`
 
-GetTlsCiphersOk returns a tuple with the TlsCiphers field if it's non-nil, zero value otherwise
+GetTLSCiphersOk returns a tuple with the TLSCiphers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCiphers
+### SetTLSCiphers
 
-`func (o *PoolResponse) SetTlsCiphers(v string)`
+`func (o *PoolResponse) SetTLSCiphers(v string)`
 
-SetTlsCiphers sets TlsCiphers field to given value.
+SetTLSCiphers sets TLSCiphers field to given value.
 
-### HasTlsCiphers
+### HasTLSCiphers
 
-`func (o *PoolResponse) HasTlsCiphers() bool`
+`func (o *PoolResponse) HasTLSCiphers() bool`
 
-HasTlsCiphers returns a boolean if a field has been set.
+HasTLSCiphers returns a boolean if a field has been set.
 
-### SetTlsCiphersNil
+### SetTLSCiphersNil
 
-`func (o *PoolResponse) SetTlsCiphersNil(b bool)`
+`func (o *PoolResponse) SetTLSCiphersNil(b bool)`
 
- SetTlsCiphersNil sets the value for TlsCiphers to be an explicit nil
+ SetTLSCiphersNil sets the value for TLSCiphers to be an explicit nil
 
-### UnsetTlsCiphers
-`func (o *PoolResponse) UnsetTlsCiphers()`
+### UnsetTLSCiphers
+`func (o *PoolResponse) UnsetTLSCiphers()`
 
-UnsetTlsCiphers ensures that no value is present for TlsCiphers, not even an explicit nil
-### GetTlsSniHostname
+UnsetTLSCiphers ensures that no value is present for TLSCiphers, not even an explicit nil
+### GetTLSSniHostname
 
-`func (o *PoolResponse) GetTlsSniHostname() string`
+`func (o *PoolResponse) GetTLSSniHostname() string`
 
-GetTlsSniHostname returns the TlsSniHostname field if non-nil, zero value otherwise.
+GetTLSSniHostname returns the TLSSniHostname field if non-nil, zero value otherwise.
 
-### GetTlsSniHostnameOk
+### GetTLSSniHostnameOk
 
-`func (o *PoolResponse) GetTlsSniHostnameOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSSniHostnameOk() (*string, bool)`
 
-GetTlsSniHostnameOk returns a tuple with the TlsSniHostname field if it's non-nil, zero value otherwise
+GetTLSSniHostnameOk returns a tuple with the TLSSniHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsSniHostname
+### SetTLSSniHostname
 
-`func (o *PoolResponse) SetTlsSniHostname(v string)`
+`func (o *PoolResponse) SetTLSSniHostname(v string)`
 
-SetTlsSniHostname sets TlsSniHostname field to given value.
+SetTLSSniHostname sets TLSSniHostname field to given value.
 
-### HasTlsSniHostname
+### HasTLSSniHostname
 
-`func (o *PoolResponse) HasTlsSniHostname() bool`
+`func (o *PoolResponse) HasTLSSniHostname() bool`
 
-HasTlsSniHostname returns a boolean if a field has been set.
+HasTLSSniHostname returns a boolean if a field has been set.
 
-### SetTlsSniHostnameNil
+### SetTLSSniHostnameNil
 
-`func (o *PoolResponse) SetTlsSniHostnameNil(b bool)`
+`func (o *PoolResponse) SetTLSSniHostnameNil(b bool)`
 
- SetTlsSniHostnameNil sets the value for TlsSniHostname to be an explicit nil
+ SetTLSSniHostnameNil sets the value for TLSSniHostname to be an explicit nil
 
-### UnsetTlsSniHostname
-`func (o *PoolResponse) UnsetTlsSniHostname()`
+### UnsetTLSSniHostname
+`func (o *PoolResponse) UnsetTLSSniHostname()`
 
-UnsetTlsSniHostname ensures that no value is present for TlsSniHostname, not even an explicit nil
-### GetMinTlsVersion
+UnsetTLSSniHostname ensures that no value is present for TLSSniHostname, not even an explicit nil
+### GetMinTLSVersion
 
-`func (o *PoolResponse) GetMinTlsVersion() int32`
+`func (o *PoolResponse) GetMinTLSVersion() int32`
 
-GetMinTlsVersion returns the MinTlsVersion field if non-nil, zero value otherwise.
+GetMinTLSVersion returns the MinTLSVersion field if non-nil, zero value otherwise.
 
-### GetMinTlsVersionOk
+### GetMinTLSVersionOk
 
-`func (o *PoolResponse) GetMinTlsVersionOk() (*int32, bool)`
+`func (o *PoolResponse) GetMinTLSVersionOk() (*int32, bool)`
 
-GetMinTlsVersionOk returns a tuple with the MinTlsVersion field if it's non-nil, zero value otherwise
+GetMinTLSVersionOk returns a tuple with the MinTLSVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMinTlsVersion
+### SetMinTLSVersion
 
-`func (o *PoolResponse) SetMinTlsVersion(v int32)`
+`func (o *PoolResponse) SetMinTLSVersion(v int32)`
 
-SetMinTlsVersion sets MinTlsVersion field to given value.
+SetMinTLSVersion sets MinTLSVersion field to given value.
 
-### HasMinTlsVersion
+### HasMinTLSVersion
 
-`func (o *PoolResponse) HasMinTlsVersion() bool`
+`func (o *PoolResponse) HasMinTLSVersion() bool`
 
-HasMinTlsVersion returns a boolean if a field has been set.
+HasMinTLSVersion returns a boolean if a field has been set.
 
-### SetMinTlsVersionNil
+### SetMinTLSVersionNil
 
-`func (o *PoolResponse) SetMinTlsVersionNil(b bool)`
+`func (o *PoolResponse) SetMinTLSVersionNil(b bool)`
 
- SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
+ SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
 
-### UnsetMinTlsVersion
-`func (o *PoolResponse) UnsetMinTlsVersion()`
+### UnsetMinTLSVersion
+`func (o *PoolResponse) UnsetMinTLSVersion()`
 
-UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
-### GetMaxTlsVersion
+UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
+### GetMaxTLSVersion
 
-`func (o *PoolResponse) GetMaxTlsVersion() int32`
+`func (o *PoolResponse) GetMaxTLSVersion() int32`
 
-GetMaxTlsVersion returns the MaxTlsVersion field if non-nil, zero value otherwise.
+GetMaxTLSVersion returns the MaxTLSVersion field if non-nil, zero value otherwise.
 
-### GetMaxTlsVersionOk
+### GetMaxTLSVersionOk
 
-`func (o *PoolResponse) GetMaxTlsVersionOk() (*int32, bool)`
+`func (o *PoolResponse) GetMaxTLSVersionOk() (*int32, bool)`
 
-GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field if it's non-nil, zero value otherwise
+GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxTlsVersion
+### SetMaxTLSVersion
 
-`func (o *PoolResponse) SetMaxTlsVersion(v int32)`
+`func (o *PoolResponse) SetMaxTLSVersion(v int32)`
 
-SetMaxTlsVersion sets MaxTlsVersion field to given value.
+SetMaxTLSVersion sets MaxTLSVersion field to given value.
 
-### HasMaxTlsVersion
+### HasMaxTLSVersion
 
-`func (o *PoolResponse) HasMaxTlsVersion() bool`
+`func (o *PoolResponse) HasMaxTLSVersion() bool`
 
-HasMaxTlsVersion returns a boolean if a field has been set.
+HasMaxTLSVersion returns a boolean if a field has been set.
 
-### SetMaxTlsVersionNil
+### SetMaxTLSVersionNil
 
-`func (o *PoolResponse) SetMaxTlsVersionNil(b bool)`
+`func (o *PoolResponse) SetMaxTLSVersionNil(b bool)`
 
- SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
+ SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
 
-### UnsetMaxTlsVersion
-`func (o *PoolResponse) UnsetMaxTlsVersion()`
+### UnsetMaxTLSVersion
+`func (o *PoolResponse) UnsetMaxTLSVersion()`
 
-UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
+UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
 ### GetHealthcheck
 
 `func (o *PoolResponse) GetHealthcheck() string`
@@ -837,65 +837,65 @@ SetMaxConnDefault sets MaxConnDefault field to given value.
 
 HasMaxConnDefault returns a boolean if a field has been set.
 
-### GetTlsCheckCert
+### GetTLSCheckCert
 
-`func (o *PoolResponse) GetTlsCheckCert() string`
+`func (o *PoolResponse) GetTLSCheckCert() string`
 
-GetTlsCheckCert returns the TlsCheckCert field if non-nil, zero value otherwise.
+GetTLSCheckCert returns the TLSCheckCert field if non-nil, zero value otherwise.
 
-### GetTlsCheckCertOk
+### GetTLSCheckCertOk
 
-`func (o *PoolResponse) GetTlsCheckCertOk() (*string, bool)`
+`func (o *PoolResponse) GetTLSCheckCertOk() (*string, bool)`
 
-GetTlsCheckCertOk returns a tuple with the TlsCheckCert field if it's non-nil, zero value otherwise
+GetTLSCheckCertOk returns a tuple with the TLSCheckCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCheckCert
+### SetTLSCheckCert
 
-`func (o *PoolResponse) SetTlsCheckCert(v string)`
+`func (o *PoolResponse) SetTLSCheckCert(v string)`
 
-SetTlsCheckCert sets TlsCheckCert field to given value.
+SetTLSCheckCert sets TLSCheckCert field to given value.
 
-### HasTlsCheckCert
+### HasTLSCheckCert
 
-`func (o *PoolResponse) HasTlsCheckCert() bool`
+`func (o *PoolResponse) HasTLSCheckCert() bool`
 
-HasTlsCheckCert returns a boolean if a field has been set.
+HasTLSCheckCert returns a boolean if a field has been set.
 
-### SetTlsCheckCertNil
+### SetTLSCheckCertNil
 
-`func (o *PoolResponse) SetTlsCheckCertNil(b bool)`
+`func (o *PoolResponse) SetTLSCheckCertNil(b bool)`
 
- SetTlsCheckCertNil sets the value for TlsCheckCert to be an explicit nil
+ SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
 
-### UnsetTlsCheckCert
-`func (o *PoolResponse) UnsetTlsCheckCert()`
+### UnsetTLSCheckCert
+`func (o *PoolResponse) UnsetTLSCheckCert()`
 
-UnsetTlsCheckCert ensures that no value is present for TlsCheckCert, not even an explicit nil
-### GetId
+UnsetTLSCheckCert ensures that no value is present for TLSCheckCert, not even an explicit nil
+### GetID
 
-`func (o *PoolResponse) GetId() string`
+`func (o *PoolResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *PoolResponse) GetIdOk() (*string, bool)`
+`func (o *PoolResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *PoolResponse) SetId(v string)`
+`func (o *PoolResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *PoolResponse) HasId() bool`
+`func (o *PoolResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetQuorum
 
@@ -924,5 +924,3 @@ HasQuorum returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

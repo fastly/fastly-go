@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the package. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the package. | [optional] [readonly] 
 
 ## Methods
 
@@ -25,32 +25,30 @@ NewPackageResponseAllOfWithDefaults instantiates a new PackageResponseAllOf obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *PackageResponseAllOf) GetId() string`
+`func (o *PackageResponseAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *PackageResponseAllOf) GetIdOk() (*string, bool)`
+`func (o *PackageResponseAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *PackageResponseAllOf) SetId(v string)`
+`func (o *PackageResponseAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *PackageResponseAllOf) HasId() bool`
+`func (o *PackageResponseAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

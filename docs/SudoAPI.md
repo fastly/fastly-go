@@ -70,4 +70,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

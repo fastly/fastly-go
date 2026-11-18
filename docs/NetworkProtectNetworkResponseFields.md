@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
+**ID** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
 **RoaStatus** | Pointer to [**NetworkProtectRoaStatus**](NetworkProtectRoaStatus.md) |  | [optional] 
 **RoaCheckedAt** | Pointer to **NullableTime** | When Fastly last completed a ROA check. Null while the status is pending. A failed check leaves this unchanged; an old value can indicate delayed or failing checks. Null also means the controller did not report a check time. | [optional] [readonly] 
 **RoaDataAsOf** | Pointer to **NullableTime** | When the RPKI dataset used by the last check was built. This is not the same as `roa_checked_at`; a recent check can use an older dataset. Null while the status is pending or when no dataset build time was reported. | [optional] [readonly] 
@@ -31,24 +31,24 @@ NewNetworkProtectNetworkResponseFieldsWithDefaults instantiates a new NetworkPro
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *NetworkProtectNetworkResponseFields) GetId() string`
+`func (o *NetworkProtectNetworkResponseFields) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *NetworkProtectNetworkResponseFields) GetIdOk() (*string, bool)`
+`func (o *NetworkProtectNetworkResponseFields) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *NetworkProtectNetworkResponseFields) SetId(v string)`
+`func (o *NetworkProtectNetworkResponseFields) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetRoaStatus
@@ -213,5 +213,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

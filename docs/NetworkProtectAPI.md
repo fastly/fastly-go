@@ -299,12 +299,12 @@ import (
 )
 
 func main() {
-    endpointId := "DBOEWyMXebAir5qwjWEwK1" // string | Unique identifier of the Network Protect endpoint.
+    endpointID := "DBOEWyMXebAir5qwjWEwK1" // string | Unique identifier of the Network Protect endpoint.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectEndpoint(ctx, endpointId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectEndpoint(ctx, endpointID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.DeleteNetworkProtectEndpoint`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -318,7 +318,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**endpointId** | **string** | Unique identifier of the Network Protect endpoint. | 
+**endpointID** | **string** | Unique identifier of the Network Protect endpoint. | 
 
 ### Other Parameters
 
@@ -364,12 +364,12 @@ import (
 )
 
 func main() {
-    networkId := "an7NWnhOjjOkwSNvrwphTd" // string | Unique identifier of the Network Protect network.
+    networkID := "an7NWnhOjjOkwSNvrwphTd" // string | Unique identifier of the Network Protect network.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectNetwork(ctx, networkId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectNetwork(ctx, networkID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.DeleteNetworkProtectNetwork`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -383,7 +383,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**networkId** | **string** | Unique identifier of the Network Protect network. | 
+**networkID** | **string** | Unique identifier of the Network Protect network. | 
 
 ### Other Parameters
 
@@ -429,12 +429,12 @@ import (
 )
 
 func main() {
-    prefixListId := "QoavyX1BHOMGQm2zmVyEbS" // string | Unique identifier of the Network Protect prefix list.
+    prefixListID := "QoavyX1BHOMGQm2zmVyEbS" // string | Unique identifier of the Network Protect prefix list.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectPrefixList(ctx, prefixListId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectPrefixList(ctx, prefixListID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.DeleteNetworkProtectPrefixList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -448,7 +448,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**prefixListId** | **string** | Unique identifier of the Network Protect prefix list. | 
+**prefixListID** | **string** | Unique identifier of the Network Protect prefix list. | 
 
 ### Other Parameters
 
@@ -494,12 +494,12 @@ import (
 )
 
 func main() {
-    ruleSetId := "Z4xQoBznwNb5GJfdJbp58Y" // string | Unique identifier of the Network Protect rule set.
+    ruleSetID := "Z4xQoBznwNb5GJfdJbp58Y" // string | Unique identifier of the Network Protect rule set.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectRuleSet(ctx, ruleSetId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.DeleteNetworkProtectRuleSet(ctx, ruleSetID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.DeleteNetworkProtectRuleSet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -513,7 +513,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ruleSetId** | **string** | Unique identifier of the Network Protect rule set. | 
+**ruleSetID** | **string** | Unique identifier of the Network Protect rule set. | 
 
 ### Other Parameters
 
@@ -559,12 +559,12 @@ import (
 )
 
 func main() {
-    endpointId := "DBOEWyMXebAir5qwjWEwK1" // string | Unique identifier of the Network Protect endpoint.
+    endpointID := "DBOEWyMXebAir5qwjWEwK1" // string | Unique identifier of the Network Protect endpoint.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectEndpoint(ctx, endpointId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectEndpoint(ctx, endpointID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.GetNetworkProtectEndpoint`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,7 +580,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**endpointId** | **string** | Unique identifier of the Network Protect endpoint. | 
+**endpointID** | **string** | Unique identifier of the Network Protect endpoint. | 
 
 ### Other Parameters
 
@@ -626,12 +626,12 @@ import (
 )
 
 func main() {
-    networkId := "an7NWnhOjjOkwSNvrwphTd" // string | Unique identifier of the Network Protect network.
+    networkID := "an7NWnhOjjOkwSNvrwphTd" // string | Unique identifier of the Network Protect network.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectNetwork(ctx, networkId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectNetwork(ctx, networkID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.GetNetworkProtectNetwork`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -647,7 +647,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**networkId** | **string** | Unique identifier of the Network Protect network. | 
+**networkID** | **string** | Unique identifier of the Network Protect network. | 
 
 ### Other Parameters
 
@@ -693,12 +693,12 @@ import (
 )
 
 func main() {
-    prefixListId := "QoavyX1BHOMGQm2zmVyEbS" // string | Unique identifier of the Network Protect prefix list.
+    prefixListID := "QoavyX1BHOMGQm2zmVyEbS" // string | Unique identifier of the Network Protect prefix list.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectPrefixList(ctx, prefixListId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectPrefixList(ctx, prefixListID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.GetNetworkProtectPrefixList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -714,7 +714,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**prefixListId** | **string** | Unique identifier of the Network Protect prefix list. | 
+**prefixListID** | **string** | Unique identifier of the Network Protect prefix list. | 
 
 ### Other Parameters
 
@@ -760,12 +760,12 @@ import (
 )
 
 func main() {
-    ruleSetId := "Z4xQoBznwNb5GJfdJbp58Y" // string | Unique identifier of the Network Protect rule set.
+    ruleSetID := "Z4xQoBznwNb5GJfdJbp58Y" // string | Unique identifier of the Network Protect rule set.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectRuleSet(ctx, ruleSetId).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.GetNetworkProtectRuleSet(ctx, ruleSetID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.GetNetworkProtectRuleSet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -781,7 +781,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ruleSetId** | **string** | Unique identifier of the Network Protect rule set. | 
+**ruleSetID** | **string** | Unique identifier of the Network Protect rule set. | 
 
 ### Other Parameters
 
@@ -1083,13 +1083,13 @@ import (
 )
 
 func main() {
-    endpointId := "DBOEWyMXebAir5qwjWEwK1" // string | Unique identifier of the Network Protect endpoint.
+    endpointID := "DBOEWyMXebAir5qwjWEwK1" // string | Unique identifier of the Network Protect endpoint.
     networkProtectEndpointUpdate := *openapiclient.NewNetworkProtectEndpointUpdate("Transit network") // NetworkProtectEndpointUpdate | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectEndpoint(ctx, endpointId).NetworkProtectEndpointUpdate(networkProtectEndpointUpdate).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectEndpoint(ctx, endpointID).NetworkProtectEndpointUpdate(networkProtectEndpointUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.UpdateNetworkProtectEndpoint`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1105,7 +1105,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**endpointId** | **string** | Unique identifier of the Network Protect endpoint. | 
+**endpointID** | **string** | Unique identifier of the Network Protect endpoint. | 
 
 ### Other Parameters
 
@@ -1151,13 +1151,13 @@ import (
 )
 
 func main() {
-    networkId := "an7NWnhOjjOkwSNvrwphTd" // string | Unique identifier of the Network Protect network.
+    networkID := "an7NWnhOjjOkwSNvrwphTd" // string | Unique identifier of the Network Protect network.
     networkProtectNetworkUpdate := *openapiclient.NewNetworkProtectNetworkUpdate() // NetworkProtectNetworkUpdate | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectNetwork(ctx, networkId).NetworkProtectNetworkUpdate(networkProtectNetworkUpdate).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectNetwork(ctx, networkID).NetworkProtectNetworkUpdate(networkProtectNetworkUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.UpdateNetworkProtectNetwork`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1173,7 +1173,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**networkId** | **string** | Unique identifier of the Network Protect network. | 
+**networkID** | **string** | Unique identifier of the Network Protect network. | 
 
 ### Other Parameters
 
@@ -1219,13 +1219,13 @@ import (
 )
 
 func main() {
-    prefixListId := "QoavyX1BHOMGQm2zmVyEbS" // string | Unique identifier of the Network Protect prefix list.
+    prefixListID := "QoavyX1BHOMGQm2zmVyEbS" // string | Unique identifier of the Network Protect prefix list.
     networkProtectPrefixListUpdate := *openapiclient.NewNetworkProtectPrefixListUpdate() // NetworkProtectPrefixListUpdate | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectPrefixList(ctx, prefixListId).NetworkProtectPrefixListUpdate(networkProtectPrefixListUpdate).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectPrefixList(ctx, prefixListID).NetworkProtectPrefixListUpdate(networkProtectPrefixListUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.UpdateNetworkProtectPrefixList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1241,7 +1241,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**prefixListId** | **string** | Unique identifier of the Network Protect prefix list. | 
+**prefixListID** | **string** | Unique identifier of the Network Protect prefix list. | 
 
 ### Other Parameters
 
@@ -1287,13 +1287,13 @@ import (
 )
 
 func main() {
-    ruleSetId := "Z4xQoBznwNb5GJfdJbp58Y" // string | Unique identifier of the Network Protect rule set.
+    ruleSetID := "Z4xQoBznwNb5GJfdJbp58Y" // string | Unique identifier of the Network Protect rule set.
     networkProtectRuleSetUpdate := *openapiclient.NewNetworkProtectRuleSetUpdate() // NetworkProtectRuleSetUpdate | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectRuleSet(ctx, ruleSetId).NetworkProtectRuleSetUpdate(networkProtectRuleSetUpdate).Execute()
+    resp, r, err := apiClient.NetworkProtectAPI.UpdateNetworkProtectRuleSet(ctx, ruleSetID).NetworkProtectRuleSetUpdate(networkProtectRuleSetUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkProtectAPI.UpdateNetworkProtectRuleSet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1309,7 +1309,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ruleSetId** | **string** | Unique identifier of the Network Protect rule set. | 
+**ruleSetID** | **string** | Unique identifier of the Network Protect rule set. | 
 
 ### Other Parameters
 
@@ -1334,4 +1334,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

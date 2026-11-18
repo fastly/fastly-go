@@ -19,7 +19,7 @@ import (
 // RuleResponseAllOf struct for RuleResponseAllOf
 type RuleResponseAllOf struct {
 	// Alphanumeric string identifying the rule. Stable across versions of the routing config.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Whether this is the default (catch-all) rule for the path.
 	IsDefault *bool   `json:"is_default,omitempty"`
 	Action    *Action `json:"action,omitempty"`
@@ -47,36 +47,36 @@ func NewRuleResponseAllOfWithDefaults() *RuleResponseAllOf {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RuleResponseAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *RuleResponseAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RuleResponseAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *RuleResponseAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RuleResponseAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *RuleResponseAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *RuleResponseAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *RuleResponseAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetIsDefault returns the IsDefault field value if set, zero value otherwise.
@@ -179,8 +179,8 @@ func (o *RuleResponseAllOf) SetConditions(v []RoutingConfigCondition) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RuleResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.IsDefault != nil {
 		toSerialize["is_default"] = o.IsDefault

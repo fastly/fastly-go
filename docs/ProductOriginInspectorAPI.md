@@ -31,12 +31,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductOriginInspectorAPI.DisableProductOriginInspector(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductOriginInspectorAPI.DisableProductOriginInspector(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductOriginInspectorAPI.DisableProductOriginInspector`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -96,12 +96,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductOriginInspectorAPI.EnableProductOriginInspector(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductOriginInspectorAPI.EnableProductOriginInspector(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductOriginInspectorAPI.EnableProductOriginInspector`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -163,12 +163,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductOriginInspectorAPI.GetProductOriginInspector(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductOriginInspectorAPI.GetProductOriginInspector(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductOriginInspectorAPI.GetProductOriginInspector`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -184,7 +184,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -268,4 +268,3 @@ Other parameters are passed through a pointer to a apiGetServicesProductOriginIn
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

@@ -18,7 +18,7 @@ import (
 
 // StarResponseAllOf struct for StarResponseAllOf
 type StarResponseAllOf struct {
-	Data                 interface{} `json:"data,omitempty"`
+	Data                 any `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,9 +42,9 @@ func NewStarResponseAllOfWithDefaults() *StarResponseAllOf {
 }
 
 // GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *StarResponseAllOf) GetData() interface{} {
+func (o *StarResponseAllOf) GetData() any {
 	if o == nil {
-		var ret interface{}
+		var ret any
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *StarResponseAllOf) GetData() interface{} {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *StarResponseAllOf) GetDataOk() (*interface{}, bool) {
+func (o *StarResponseAllOf) GetDataOk() (*any, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *StarResponseAllOf) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given interface{} and assigns it to the Data field.
-func (o *StarResponseAllOf) SetData(v interface{}) {
+// SetData gets a reference to the given any and assigns it to the Data field.
+func (o *StarResponseAllOf) SetData(v any) {
 	o.Data = v
 }
 

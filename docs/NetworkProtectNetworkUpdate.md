@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **NullableString** | Optional descriptive text for the network. This metadata does not change traffic handling. Null clears it on update. | [optional] 
 **Name** | Pointer to **string** | A human-readable name, unique within the customer. | [optional] 
-**RuleSetId** | Pointer to **NullableString** | Custom rule-set attachment is unavailable. Omission, null, and an empty string preserve the current backend-assigned rule set. | [optional] 
+**RuleSetID** | Pointer to **NullableString** | Custom rule-set attachment is unavailable. Omission, null, and an empty string preserve the current backend-assigned rule set. | [optional] 
 **EndpointPolicies** | Pointer to [**[]NetworkProtectEndpointPolicy**](NetworkProtectEndpointPolicy.md) | Complete endpoint policy configuration. A network has at most one policy per region and may have no policies. | [optional] 
 **Advertise** | Pointer to **bool** | Desired advertisement state, which is not the same as observed route state. Enabling it requires approved LOA, valid ROA, and a ready default-region delivery policy. A later ROA failure does not turn an existing advertisement off; losing LOA approval or the last ready default endpoint does. | [optional] [default to false]
 
@@ -89,41 +89,41 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetRuleSetId
+### GetRuleSetID
 
-`func (o *NetworkProtectNetworkUpdate) GetRuleSetId() string`
+`func (o *NetworkProtectNetworkUpdate) GetRuleSetID() string`
 
-GetRuleSetId returns the RuleSetId field if non-nil, zero value otherwise.
+GetRuleSetID returns the RuleSetID field if non-nil, zero value otherwise.
 
-### GetRuleSetIdOk
+### GetRuleSetIDOk
 
-`func (o *NetworkProtectNetworkUpdate) GetRuleSetIdOk() (*string, bool)`
+`func (o *NetworkProtectNetworkUpdate) GetRuleSetIDOk() (*string, bool)`
 
-GetRuleSetIdOk returns a tuple with the RuleSetId field if it's non-nil, zero value otherwise
+GetRuleSetIDOk returns a tuple with the RuleSetID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRuleSetId
+### SetRuleSetID
 
-`func (o *NetworkProtectNetworkUpdate) SetRuleSetId(v string)`
+`func (o *NetworkProtectNetworkUpdate) SetRuleSetID(v string)`
 
-SetRuleSetId sets RuleSetId field to given value.
+SetRuleSetID sets RuleSetID field to given value.
 
-### HasRuleSetId
+### HasRuleSetID
 
-`func (o *NetworkProtectNetworkUpdate) HasRuleSetId() bool`
+`func (o *NetworkProtectNetworkUpdate) HasRuleSetID() bool`
 
-HasRuleSetId returns a boolean if a field has been set.
+HasRuleSetID returns a boolean if a field has been set.
 
-### SetRuleSetIdNil
+### SetRuleSetIDNil
 
-`func (o *NetworkProtectNetworkUpdate) SetRuleSetIdNil(b bool)`
+`func (o *NetworkProtectNetworkUpdate) SetRuleSetIDNil(b bool)`
 
- SetRuleSetIdNil sets the value for RuleSetId to be an explicit nil
+ SetRuleSetIDNil sets the value for RuleSetID to be an explicit nil
 
-### UnsetRuleSetId
-`func (o *NetworkProtectNetworkUpdate) UnsetRuleSetId()`
+### UnsetRuleSetID
+`func (o *NetworkProtectNetworkUpdate) UnsetRuleSetID()`
 
-UnsetRuleSetId ensures that no value is present for RuleSetId, not even an explicit nil
+UnsetRuleSetID ensures that no value is present for RuleSetID, not even an explicit nil
 ### GetEndpointPolicies
 
 `func (o *NetworkProtectNetworkUpdate) GetEndpointPolicies() []NetworkProtectEndpointPolicy`
@@ -176,5 +176,3 @@ HasAdvertise returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

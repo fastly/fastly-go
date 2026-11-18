@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    serviceId := "SU1Z0isxPaozGVKXdv0eY" // string | 
+    serviceID := "SU1Z0isxPaozGVKXdv0eY" // string | 
     from := int64(1756123200) // int64 |  (optional)
     to := int64(1756209600) // int64 |  (optional)
     filterEndpoint := "MyS3,BigQuery" // string |  (optional)
@@ -36,7 +36,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingEndpointErrorsAPI.GetLogEndpointErrors(ctx, serviceId).From(from).To(to).FilterEndpoint(filterEndpoint).Execute()
+    resp, r, err := apiClient.LoggingEndpointErrorsAPI.GetLogEndpointErrors(ctx, serviceID).From(from).To(to).FilterEndpoint(filterEndpoint).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingEndpointErrorsAPI.GetLogEndpointErrors`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** |  | 
+**serviceID** | **string** |  | 
 
 ### Other Parameters
 
@@ -77,4 +77,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/x-ndjson, application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

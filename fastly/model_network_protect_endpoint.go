@@ -21,7 +21,7 @@ type NetworkProtectEndpoint struct {
 	// A human-readable name, unique within the customer.
 	Name string `json:"name"`
 	// The GRE destination address, unique within the customer. It cannot be changed after endpoint creation.
-	IpAddress            string `json:"ip_address"`
+	IPAddress            string `json:"ip_address"`
 	AdditionalProperties map[string]any
 }
 
@@ -34,7 +34,7 @@ type _NetworkProtectEndpoint NetworkProtectEndpoint
 func NewNetworkProtectEndpoint(name string, ipAddress string) *NetworkProtectEndpoint {
 	this := NetworkProtectEndpoint{}
 	this.Name = name
-	this.IpAddress = ipAddress
+	this.IPAddress = ipAddress
 	return &this
 }
 
@@ -70,28 +70,28 @@ func (o *NetworkProtectEndpoint) SetName(v string) {
 	o.Name = v
 }
 
-// GetIpAddress returns the IpAddress field value
-func (o *NetworkProtectEndpoint) GetIpAddress() string {
+// GetIPAddress returns the IPAddress field value
+func (o *NetworkProtectEndpoint) GetIPAddress() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.IpAddress
+	return o.IPAddress
 }
 
-// GetIpAddressOk returns a tuple with the IpAddress field value
+// GetIPAddressOk returns a tuple with the IPAddress field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectEndpoint) GetIpAddressOk() (*string, bool) {
+func (o *NetworkProtectEndpoint) GetIPAddressOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.IpAddress, true
+	return &o.IPAddress, true
 }
 
-// SetIpAddress sets field value
-func (o *NetworkProtectEndpoint) SetIpAddress(v string) {
-	o.IpAddress = v
+// SetIPAddress sets field value
+func (o *NetworkProtectEndpoint) SetIPAddress(v string) {
+	o.IPAddress = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -102,7 +102,7 @@ func (o NetworkProtectEndpoint) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["ip_address"] = o.IpAddress
+		toSerialize["ip_address"] = o.IPAddress
 	}
 
 	for key, value := range o.AdditionalProperties {

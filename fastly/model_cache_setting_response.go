@@ -26,10 +26,10 @@ type CacheSettingResponse struct {
 	// Name for the cache settings object.
 	Name *string `json:"name,omitempty"`
 	// Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
-	StaleTtl *string `json:"stale_ttl,omitempty"`
+	StaleTTL *string `json:"stale_ttl,omitempty"`
 	// Maximum time to consider the object fresh in the cache (the cache 'time to live').
-	Ttl       *string `json:"ttl,omitempty"`
-	ServiceId *string `json:"service_id,omitempty"`
+	TTL       *string `json:"ttl,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
 	Version   *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
@@ -177,100 +177,100 @@ func (o *CacheSettingResponse) SetName(v string) {
 	o.Name = &v
 }
 
-// GetStaleTtl returns the StaleTtl field value if set, zero value otherwise.
-func (o *CacheSettingResponse) GetStaleTtl() string {
-	if o == nil || o.StaleTtl == nil {
+// GetStaleTTL returns the StaleTTL field value if set, zero value otherwise.
+func (o *CacheSettingResponse) GetStaleTTL() string {
+	if o == nil || o.StaleTTL == nil {
 		var ret string
 		return ret
 	}
-	return *o.StaleTtl
+	return *o.StaleTTL
 }
 
-// GetStaleTtlOk returns a tuple with the StaleTtl field value if set, nil otherwise
+// GetStaleTTLOk returns a tuple with the StaleTTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSettingResponse) GetStaleTtlOk() (*string, bool) {
-	if o == nil || o.StaleTtl == nil {
+func (o *CacheSettingResponse) GetStaleTTLOk() (*string, bool) {
+	if o == nil || o.StaleTTL == nil {
 		return nil, false
 	}
-	return o.StaleTtl, true
+	return o.StaleTTL, true
 }
 
-// HasStaleTtl returns a boolean if a field has been set.
-func (o *CacheSettingResponse) HasStaleTtl() bool {
-	if o != nil && o.StaleTtl != nil {
+// HasStaleTTL returns a boolean if a field has been set.
+func (o *CacheSettingResponse) HasStaleTTL() bool {
+	if o != nil && o.StaleTTL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetStaleTtl gets a reference to the given string and assigns it to the StaleTtl field.
-func (o *CacheSettingResponse) SetStaleTtl(v string) {
-	o.StaleTtl = &v
+// SetStaleTTL gets a reference to the given string and assigns it to the StaleTTL field.
+func (o *CacheSettingResponse) SetStaleTTL(v string) {
+	o.StaleTTL = &v
 }
 
-// GetTtl returns the Ttl field value if set, zero value otherwise.
-func (o *CacheSettingResponse) GetTtl() string {
-	if o == nil || o.Ttl == nil {
+// GetTTL returns the TTL field value if set, zero value otherwise.
+func (o *CacheSettingResponse) GetTTL() string {
+	if o == nil || o.TTL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Ttl
+	return *o.TTL
 }
 
-// GetTtlOk returns a tuple with the Ttl field value if set, nil otherwise
+// GetTTLOk returns a tuple with the TTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSettingResponse) GetTtlOk() (*string, bool) {
-	if o == nil || o.Ttl == nil {
+func (o *CacheSettingResponse) GetTTLOk() (*string, bool) {
+	if o == nil || o.TTL == nil {
 		return nil, false
 	}
-	return o.Ttl, true
+	return o.TTL, true
 }
 
-// HasTtl returns a boolean if a field has been set.
-func (o *CacheSettingResponse) HasTtl() bool {
-	if o != nil && o.Ttl != nil {
+// HasTTL returns a boolean if a field has been set.
+func (o *CacheSettingResponse) HasTTL() bool {
+	if o != nil && o.TTL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTtl gets a reference to the given string and assigns it to the Ttl field.
-func (o *CacheSettingResponse) SetTtl(v string) {
-	o.Ttl = &v
+// SetTTL gets a reference to the given string and assigns it to the TTL field.
+func (o *CacheSettingResponse) SetTTL(v string) {
+	o.TTL = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *CacheSettingResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *CacheSettingResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSettingResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *CacheSettingResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *CacheSettingResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *CacheSettingResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *CacheSettingResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *CacheSettingResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -447,14 +447,14 @@ func (o CacheSettingResponse) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.StaleTtl != nil {
-		toSerialize["stale_ttl"] = o.StaleTtl
+	if o.StaleTTL != nil {
+		toSerialize["stale_ttl"] = o.StaleTTL
 	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
+	if o.TTL != nil {
+		toSerialize["ttl"] = o.TTL
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

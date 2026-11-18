@@ -29,7 +29,7 @@ import (
 
 func main() {
     granularity := "minutely" // string | Duration of sample windows.
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     from := "2025-06-08T00:00:00.000Z" // string | A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided `granularity` value. (optional)
     to := "2025-08-02T00:00:00.000Z" // string | A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided `granularity` value. (optional)
     groupBy := "bot_id" // string | Field to group by in the query. For example, `group_by=bot_id` will return entries grouped by `timestamp` and `bot_id`.  (optional)
@@ -44,7 +44,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BotRequestsMetricsAPI.GetBotRequestMetricsServiceHistorical(ctx, granularity, serviceId).From(from).To(to).GroupBy(groupBy).Datacenter(datacenter).Bot(bot).Region(region).Cursor(cursor).Metric(metric).MetricSet(metricSet).Limit(limit).Execute()
+    resp, r, err := apiClient.BotRequestsMetricsAPI.GetBotRequestMetricsServiceHistorical(ctx, granularity, serviceID).From(from).To(to).GroupBy(groupBy).Datacenter(datacenter).Bot(bot).Region(region).Cursor(cursor).Metric(metric).MetricSet(metricSet).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BotRequestsMetricsAPI.GetBotRequestMetricsServiceHistorical`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **granularity** | **string** | Duration of sample windows. | 
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -86,4 +86,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

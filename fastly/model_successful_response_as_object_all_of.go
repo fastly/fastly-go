@@ -19,13 +19,13 @@ import (
 // SuccessfulResponseAsObjectAllOf struct for SuccessfulResponseAsObjectAllOf
 type SuccessfulResponseAsObjectAllOf struct {
 	// Domain Identifier (UUID).
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// The fully-qualified domain name for your domain. Can be created, but not updated.
 	Fqdn *string `json:"fqdn,omitempty"`
 	// The `service_id` associated with your domain or `null` if there is no association.
-	ServiceId NullableString `json:"service_id,omitempty"`
+	ServiceID NullableString `json:"service_id,omitempty"`
 	// The `routing_configuration_id` associated with your domain or `null` if there is no association.
-	RoutingConfigurationId NullableString `json:"routing_configuration_id,omitempty"`
+	RoutingConfigurationID NullableString `json:"routing_configuration_id,omitempty"`
 	// A freeform descriptive note.
 	Description *string `json:"description,omitempty"`
 	// Denotes if the domain has at least one TLS activation or not.
@@ -54,36 +54,36 @@ func NewSuccessfulResponseAsObjectAllOfWithDefaults() *SuccessfulResponseAsObjec
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SuccessfulResponseAsObjectAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *SuccessfulResponseAsObjectAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SuccessfulResponseAsObjectAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *SuccessfulResponseAsObjectAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SuccessfulResponseAsObjectAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *SuccessfulResponseAsObjectAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *SuccessfulResponseAsObjectAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *SuccessfulResponseAsObjectAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
@@ -118,90 +118,90 @@ func (o *SuccessfulResponseAsObjectAllOf) SetFqdn(v string) {
 	o.Fqdn = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SuccessfulResponseAsObjectAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId.Get() == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SuccessfulResponseAsObjectAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId.Get()
+	return *o.ServiceID.Get()
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SuccessfulResponseAsObjectAllOf) GetServiceIdOk() (*string, bool) {
+func (o *SuccessfulResponseAsObjectAllOf) GetServiceIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ServiceId.Get(), o.ServiceId.IsSet()
+	return o.ServiceID.Get(), o.ServiceID.IsSet()
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *SuccessfulResponseAsObjectAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId.IsSet() {
+// HasServiceID returns a boolean if a field has been set.
+func (o *SuccessfulResponseAsObjectAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given NullableString and assigns it to the ServiceId field.
-func (o *SuccessfulResponseAsObjectAllOf) SetServiceId(v string) {
-	o.ServiceId.Set(&v)
+// SetServiceID gets a reference to the given NullableString and assigns it to the ServiceID field.
+func (o *SuccessfulResponseAsObjectAllOf) SetServiceID(v string) {
+	o.ServiceID.Set(&v)
 }
 
-// SetServiceIdNil sets the value for ServiceId to be an explicit nil
-func (o *SuccessfulResponseAsObjectAllOf) SetServiceIdNil() {
-	o.ServiceId.Set(nil)
+// SetServiceIDNil sets the value for ServiceID to be an explicit nil
+func (o *SuccessfulResponseAsObjectAllOf) SetServiceIDNil() {
+	o.ServiceID.Set(nil)
 }
 
-// UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
-func (o *SuccessfulResponseAsObjectAllOf) UnsetServiceId() {
-	o.ServiceId.Unset()
+// UnsetServiceID ensures that no value is present for ServiceID, not even an explicit nil
+func (o *SuccessfulResponseAsObjectAllOf) UnsetServiceID() {
+	o.ServiceID.Unset()
 }
 
-// GetRoutingConfigurationId returns the RoutingConfigurationId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationId() string {
-	if o == nil || o.RoutingConfigurationId.Get() == nil {
+// GetRoutingConfigurationID returns the RoutingConfigurationID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationID() string {
+	if o == nil || o.RoutingConfigurationID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.RoutingConfigurationId.Get()
+	return *o.RoutingConfigurationID.Get()
 }
 
-// GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field value if set, nil otherwise
+// GetRoutingConfigurationIDOk returns a tuple with the RoutingConfigurationID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationIdOk() (*string, bool) {
+func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.RoutingConfigurationId.Get(), o.RoutingConfigurationId.IsSet()
+	return o.RoutingConfigurationID.Get(), o.RoutingConfigurationID.IsSet()
 }
 
-// HasRoutingConfigurationId returns a boolean if a field has been set.
-func (o *SuccessfulResponseAsObjectAllOf) HasRoutingConfigurationId() bool {
-	if o != nil && o.RoutingConfigurationId.IsSet() {
+// HasRoutingConfigurationID returns a boolean if a field has been set.
+func (o *SuccessfulResponseAsObjectAllOf) HasRoutingConfigurationID() bool {
+	if o != nil && o.RoutingConfigurationID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRoutingConfigurationId gets a reference to the given NullableString and assigns it to the RoutingConfigurationId field.
-func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationId(v string) {
-	o.RoutingConfigurationId.Set(&v)
+// SetRoutingConfigurationID gets a reference to the given NullableString and assigns it to the RoutingConfigurationID field.
+func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationID(v string) {
+	o.RoutingConfigurationID.Set(&v)
 }
 
-// SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
-func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationIdNil() {
-	o.RoutingConfigurationId.Set(nil)
+// SetRoutingConfigurationIDNil sets the value for RoutingConfigurationID to be an explicit nil
+func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationIDNil() {
+	o.RoutingConfigurationID.Set(nil)
 }
 
-// UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
-func (o *SuccessfulResponseAsObjectAllOf) UnsetRoutingConfigurationId() {
-	o.RoutingConfigurationId.Unset()
+// UnsetRoutingConfigurationID ensures that no value is present for RoutingConfigurationID, not even an explicit nil
+func (o *SuccessfulResponseAsObjectAllOf) UnsetRoutingConfigurationID() {
+	o.RoutingConfigurationID.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -304,17 +304,17 @@ func (o *SuccessfulResponseAsObjectAllOf) SetVerified(v bool) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o SuccessfulResponseAsObjectAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Fqdn != nil {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if o.ServiceId.IsSet() {
-		toSerialize["service_id"] = o.ServiceId.Get()
+	if o.ServiceID.IsSet() {
+		toSerialize["service_id"] = o.ServiceID.Get()
 	}
-	if o.RoutingConfigurationId.IsSet() {
-		toSerialize["routing_configuration_id"] = o.RoutingConfigurationId.Get()
+	if o.RoutingConfigurationID.IsSet() {
+		toSerialize["routing_configuration_id"] = o.RoutingConfigurationID.Get()
 	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description

@@ -63,11 +63,11 @@ type APIClient struct {
 
 	// API Services
 
-	AclAPI AclAPI
+	ACLAPI ACLAPI
 
-	AclEntryAPI AclEntryAPI
+	ACLEntryAPI ACLEntryAPI
 
-	AclsInComputeAPI AclsInComputeAPI
+	ACLsInComputeAPI ACLsInComputeAPI
 
 	AiRuntimeControlProviderConnectionsAPI AiRuntimeControlProviderConnectionsAPI
 
@@ -153,7 +153,7 @@ type APIClient struct {
 
 	HistoricalAPI HistoricalAPI
 
-	Http3API Http3API
+	HTTP3API HTTP3API
 
 	IamPermissionsAPI IamPermissionsAPI
 
@@ -197,7 +197,7 @@ type APIClient struct {
 
 	LoggingHoneycombAPI LoggingHoneycombAPI
 
-	LoggingHttpsAPI LoggingHttpsAPI
+	LoggingHTTPSAPI LoggingHTTPSAPI
 
 	LoggingKafkaAPI LoggingKafkaAPI
 
@@ -291,7 +291,7 @@ type APIClient struct {
 
 	ProductWebsocketsAPI ProductWebsocketsAPI
 
-	PublicIpListAPI PublicIpListAPI
+	PublicIPListAPI PublicIPListAPI
 
 	PublishAPI PublishAPI
 
@@ -327,21 +327,21 @@ type APIClient struct {
 
 	SudoAPI SudoAPI
 
-	TlsActivationsAPI TlsActivationsAPI
+	TLSActivationsAPI TLSActivationsAPI
 
-	TlsBulkCertificatesAPI TlsBulkCertificatesAPI
+	TLSBulkCertificatesAPI TLSBulkCertificatesAPI
 
-	TlsCertificatesAPI TlsCertificatesAPI
+	TLSCertificatesAPI TLSCertificatesAPI
 
-	TlsConfigurationsAPI TlsConfigurationsAPI
+	TLSConfigurationsAPI TLSConfigurationsAPI
 
-	TlsCsrsAPI TlsCsrsAPI
+	TLSCsrsAPI TLSCsrsAPI
 
-	TlsDomainsAPI TlsDomainsAPI
+	TLSDomainsAPI TLSDomainsAPI
 
-	TlsPrivateKeysAPI TlsPrivateKeysAPI
+	TLSPrivateKeysAPI TLSPrivateKeysAPI
 
-	TlsSubscriptionsAPI TlsSubscriptionsAPI
+	TLSSubscriptionsAPI TLSSubscriptionsAPI
 
 	TokensAPI TokensAPI
 
@@ -373,9 +373,9 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RateLimitRemaining = defaultRateLimit
 
 	// API Services
-	c.AclAPI = (*AclAPIService)(&c.common)
-	c.AclEntryAPI = (*AclEntryAPIService)(&c.common)
-	c.AclsInComputeAPI = (*AclsInComputeAPIService)(&c.common)
+	c.ACLAPI = (*ACLAPIService)(&c.common)
+	c.ACLEntryAPI = (*ACLEntryAPIService)(&c.common)
+	c.ACLsInComputeAPI = (*ACLsInComputeAPIService)(&c.common)
 	c.AiRuntimeControlProviderConnectionsAPI = (*AiRuntimeControlProviderConnectionsAPIService)(&c.common)
 	c.AiRuntimeControlProvidersAPI = (*AiRuntimeControlProvidersAPIService)(&c.common)
 	c.AiRuntimeControlSessionsAPI = (*AiRuntimeControlSessionsAPIService)(&c.common)
@@ -418,7 +418,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.HeaderAPI = (*HeaderAPIService)(&c.common)
 	c.HealthcheckAPI = (*HealthcheckAPIService)(&c.common)
 	c.HistoricalAPI = (*HistoricalAPIService)(&c.common)
-	c.Http3API = (*Http3APIService)(&c.common)
+	c.HTTP3API = (*HTTP3APIService)(&c.common)
 	c.IamPermissionsAPI = (*IamPermissionsAPIService)(&c.common)
 	c.IamRolesAPI = (*IamRolesAPIService)(&c.common)
 	c.IamServiceGroupsAPI = (*IamServiceGroupsAPIService)(&c.common)
@@ -440,7 +440,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingGrafanacloudlogsAPI = (*LoggingGrafanacloudlogsAPIService)(&c.common)
 	c.LoggingHerokuAPI = (*LoggingHerokuAPIService)(&c.common)
 	c.LoggingHoneycombAPI = (*LoggingHoneycombAPIService)(&c.common)
-	c.LoggingHttpsAPI = (*LoggingHttpsAPIService)(&c.common)
+	c.LoggingHTTPSAPI = (*LoggingHTTPSAPIService)(&c.common)
 	c.LoggingKafkaAPI = (*LoggingKafkaAPIService)(&c.common)
 	c.LoggingKinesisAPI = (*LoggingKinesisAPIService)(&c.common)
 	c.LoggingLogentriesAPI = (*LoggingLogentriesAPIService)(&c.common)
@@ -487,7 +487,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProductObjectStorageAPI = (*ProductObjectStorageAPIService)(&c.common)
 	c.ProductOriginInspectorAPI = (*ProductOriginInspectorAPIService)(&c.common)
 	c.ProductWebsocketsAPI = (*ProductWebsocketsAPIService)(&c.common)
-	c.PublicIpListAPI = (*PublicIpListAPIService)(&c.common)
+	c.PublicIPListAPI = (*PublicIPListAPIService)(&c.common)
 	c.PublishAPI = (*PublishAPIService)(&c.common)
 	c.PurgeAPI = (*PurgeAPIService)(&c.common)
 	c.RateLimiterAPI = (*RateLimiterAPIService)(&c.common)
@@ -505,14 +505,14 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.StarAPI = (*StarAPIService)(&c.common)
 	c.StatsAPI = (*StatsAPIService)(&c.common)
 	c.SudoAPI = (*SudoAPIService)(&c.common)
-	c.TlsActivationsAPI = (*TlsActivationsAPIService)(&c.common)
-	c.TlsBulkCertificatesAPI = (*TlsBulkCertificatesAPIService)(&c.common)
-	c.TlsCertificatesAPI = (*TlsCertificatesAPIService)(&c.common)
-	c.TlsConfigurationsAPI = (*TlsConfigurationsAPIService)(&c.common)
-	c.TlsCsrsAPI = (*TlsCsrsAPIService)(&c.common)
-	c.TlsDomainsAPI = (*TlsDomainsAPIService)(&c.common)
-	c.TlsPrivateKeysAPI = (*TlsPrivateKeysAPIService)(&c.common)
-	c.TlsSubscriptionsAPI = (*TlsSubscriptionsAPIService)(&c.common)
+	c.TLSActivationsAPI = (*TLSActivationsAPIService)(&c.common)
+	c.TLSBulkCertificatesAPI = (*TLSBulkCertificatesAPIService)(&c.common)
+	c.TLSCertificatesAPI = (*TLSCertificatesAPIService)(&c.common)
+	c.TLSConfigurationsAPI = (*TLSConfigurationsAPIService)(&c.common)
+	c.TLSCsrsAPI = (*TLSCsrsAPIService)(&c.common)
+	c.TLSDomainsAPI = (*TLSDomainsAPIService)(&c.common)
+	c.TLSPrivateKeysAPI = (*TLSPrivateKeysAPIService)(&c.common)
+	c.TLSSubscriptionsAPI = (*TLSSubscriptionsAPIService)(&c.common)
 	c.TokensAPI = (*TokensAPIService)(&c.common)
 	c.UserAPI = (*UserAPIService)(&c.common)
 	c.VclAPI = (*VclAPIService)(&c.common)
@@ -817,7 +817,7 @@ func (c *APIClient) decode(v any, b []byte, contentType string) (err error) {
 		return nil
 	}
 	if f, ok := v.(**os.File); ok {
-		*f, err = ioutil.TempFile("", "HttpClientFile")
+		*f, err = ioutil.TempFile("", "HTTPClientFile")
 		if err != nil {
 			return err
 		}
@@ -884,20 +884,24 @@ func setBody(body any, contentType string) (bodyBuf *bytes.Buffer, err error) {
 		bodyBuf = &bytes.Buffer{}
 	}
 
-	if reader, ok := body.(io.Reader); ok {
-		_, err = bodyBuf.ReadFrom(reader)
-	} else if fp, ok := body.(**os.File); ok {
-		_, err = bodyBuf.ReadFrom(*fp)
-	} else if b, ok := body.([]byte); ok {
-		_, err = bodyBuf.Write(b)
-	} else if s, ok := body.(string); ok {
-		_, err = bodyBuf.WriteString(s)
-	} else if s, ok := body.(*string); ok {
-		_, err = bodyBuf.WriteString(*s)
-	} else if jsonCheck.MatchString(contentType) {
-		err = json.NewEncoder(bodyBuf).Encode(body)
-	} else if xmlCheck.MatchString(contentType) {
-		err = xml.NewEncoder(bodyBuf).Encode(body)
+	switch v := body.(type) {
+	case io.Reader:
+		_, err = bodyBuf.ReadFrom(v)
+	case **os.File:
+		_, err = bodyBuf.ReadFrom(*v)
+	case []byte:
+		_, err = bodyBuf.Write(v)
+	case string:
+		_, err = bodyBuf.WriteString(v)
+	case *string:
+		_, err = bodyBuf.WriteString(*v)
+	default:
+		switch {
+		case jsonCheck.MatchString(contentType):
+			err = json.NewEncoder(bodyBuf).Encode(body)
+		case xmlCheck.MatchString(contentType):
+			err = xml.NewEncoder(bodyBuf).Encode(body)
+		}
 	}
 
 	if err != nil {

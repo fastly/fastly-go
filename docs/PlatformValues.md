@@ -27,11 +27,11 @@ Name | Type | Description | Notes
 **Uncacheable** | Pointer to **int64** | Number of requests that were designated uncachable. | [optional] 
 **Pipe** | Pointer to **int64** | Optional. Pipe operations performed (legacy feature). | [optional] 
 **Synth** | Pointer to **int64** | Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement). | [optional] 
-**Tls** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
-**TlsV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
-**TlsV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
-**TlsV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
-**TlsV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
+**TLS** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
+**TLSV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
+**TLSV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
+**TLSV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
+**TLSV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
 **EdgeRequests** | Pointer to **int64** | Number of requests sent by end users to Fastly. | [optional] 
 **EdgeRespHeaderBytes** | Pointer to **int64** | Total header bytes delivered from Fastly to the end user. | [optional] 
 **EdgeRespBodyBytes** | Pointer to **int64** | Total body bytes delivered from Fastly to the end user. | [optional] 
@@ -67,8 +67,8 @@ Name | Type | Description | Notes
 **Pci** | Pointer to **int64** | Number of responses with the PCI flag turned on. | [optional] 
 **Log** | Pointer to **int64** | Number of log lines sent. | [optional] 
 **LogBytes** | Pointer to **int64** | Total log bytes sent. | [optional] 
-**Http2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
-**Http3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
+**HTTP2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
+**HTTP3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
 **AttackReqBodyBytes** | Pointer to **int64** | Total body bytes received from requests that triggered a WAF rule. | [optional] 
 **AttackReqHeaderBytes** | Pointer to **int64** | Total header bytes received from requests that triggered a WAF rule. | [optional] 
 **AttackLoggedReqBodyBytes** | Pointer to **int64** | Total body bytes received from requests that triggered a WAF rule that was logged. | [optional] 
@@ -149,7 +149,7 @@ Name | Type | Description | Notes
 **PrehashSubCount** | Pointer to **int64** | Number of executions of the `vcl_prehash` Varnish subroutine. | [optional] 
 **PredeliverSubTime** | Pointer to **float32** | Time spent inside the `vcl_predeliver` Varnish subroutine (in seconds). | [optional] 
 **PredeliverSubCount** | Pointer to **int64** | Number of executions of the `vcl_predeliver` Varnish subroutine. | [optional] 
-**TlsHandshakeSentBytes** | Pointer to **int64** | Number of bytes transferred during TLS handshake. | [optional] 
+**TLSHandshakeSentBytes** | Pointer to **int64** | Number of bytes transferred during TLS handshake. | [optional] 
 **HitRespBodyBytes** | Pointer to **int64** | Total body bytes delivered for cache hits. | [optional] 
 **MissRespBodyBytes** | Pointer to **int64** | Total body bytes delivered for cache misses. | [optional] 
 **PassRespBodyBytes** | Pointer to **int64** | Total body bytes delivered for cache passes. | [optional] 
@@ -158,7 +158,7 @@ Name | Type | Description | Notes
 **ComputeRequests** | Pointer to **int64** | The total number of requests that were received for your service by Fastly. | [optional] 
 **ComputeRequestTimeMs** | Pointer to **float32** | The total, actual amount of time used to process your requests, including active CPU time (in milliseconds). | [optional] 
 **ComputeRequestTimeBilledMs** | Pointer to **float32** | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. | [optional] 
-**ComputeRamUsed** | Pointer to **int64** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
+**ComputeRAMUsed** | Pointer to **int64** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
 **ComputeExecutionTimeMs** | Pointer to **float32** | The amount of active CPU time used to process your requests (in milliseconds). | [optional] 
 **ComputeReqHeaderBytes** | Pointer to **int64** | Total header bytes received by the Compute platform. | [optional] 
 **ComputeReqBodyBytes** | Pointer to **int64** | Total body bytes received by the Compute platform. | [optional] 
@@ -287,8 +287,8 @@ Name | Type | Description | Notes
 **ComputeRespStatus505** | Pointer to **int32** | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. | [optional] 
 **ComputeRespStatus530** | Pointer to **int32** | Number of responses delivered with status code 530 by the Compute platform. | [optional] 
 **ImgoptoComputeRequests** | Pointer to **int32** | The number of Image Optimizer requests made from Compute services. | [optional] 
-**DnsBillableResponsesCount** | Pointer to **int32** | Number of billable DNS responses (e.g., A, CNAME). | [optional] 
-**DnsNonbillableResponsesCount** | Pointer to **int32** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
+**DNSBillableResponsesCount** | Pointer to **int32** | Number of billable DNS responses (e.g., A, CNAME). | [optional] 
+**DNSNonbillableResponsesCount** | Pointer to **int32** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
 **Upgrade** | Pointer to **int32** | Number of requests that resulted in a WebSocket upgrade. | [optional] 
 **NgwafBotAnalysisRequestCount** | Pointer to **int32** | Count of Next-Gen WAF Bot Management requests. | [optional] 
 **ImgoptoAvifCount** | Pointer to **int32** | Count of AVIF images delivered to end user by Image Optimizer. | [optional] 
@@ -325,22 +325,22 @@ Name | Type | Description | Notes
 **BotEdgeRequestsSearchEngineOptimizationCount** | Pointer to **int32** | Count of edge requests where a search engine optimization bot was detected. | [optional] 
 **BotEdgeRequestsSecurityToolsCount** | Pointer to **int32** | Count of edge requests where a security tool was detected. | [optional] 
 **ComputeHandoff** | Pointer to **int32** | The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy. | [optional] 
-**ComputeServiceBereqDnsError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during DNS resolution. | [optional] 
+**ComputeServiceBereqDNSError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during DNS resolution. | [optional] 
 **ComputeServiceBereqConnTimeoutError** | Pointer to **int32** | Number of backend requests from a Compute service where the connection to the origin timed out before being established. | [optional] 
 **ComputeServiceBereqConnRefusedError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin actively refused the connection. | [optional] 
 **ComputeServiceBereqConnOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal. | [optional] 
-**ComputeServiceBereqTlsServerCertError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch). | [optional] 
-**ComputeServiceBereqTlsOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error. | [optional] 
-**ComputeServiceBereqHttpProtoV1Error** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted. | [optional] 
-**ComputeServiceBereqHttpProtoV2Error** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a `RST_STREAM` or `GO_AWAY` from the origin. | [optional] 
-**ComputeServiceBereqHttpIncompleteError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin sent an incomplete HTTP response. | [optional] 
-**ComputeServiceBereqHttpTimeoutError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin did not respond within the configured timeout period. | [optional] 
-**ComputeServiceBereqHttpOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category. | [optional] 
+**ComputeServiceBereqTLSServerCertError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch). | [optional] 
+**ComputeServiceBereqTLSOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error. | [optional] 
+**ComputeServiceBereqHTTPProtoV1Error** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted. | [optional] 
+**ComputeServiceBereqHTTPProtoV2Error** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a `RST_STREAM` or `GO_AWAY` from the origin. | [optional] 
+**ComputeServiceBereqHTTPIncompleteError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin sent an incomplete HTTP response. | [optional] 
+**ComputeServiceBereqHTTPTimeoutError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin did not respond within the configured timeout period. | [optional] 
+**ComputeServiceBereqHTTPOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category. | [optional] 
 **ComputeServiceBereqOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories. | [optional] 
 **ComputeServiceBereq5xxError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin returned a 5xx status code. | [optional] 
 **ComputeServiceBereqConnError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the TCP connection level. Sum of `compute_service_bereq_conn_timeout_error`, `compute_service_bereq_conn_refused_error`, and `compute_service_bereq_conn_other_error`. | [optional] 
-**ComputeServiceBereqTlsError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`. | [optional] 
-**ComputeServiceBereqHttpError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`. | [optional] 
+**ComputeServiceBereqTLSError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`. | [optional] 
+**ComputeServiceBereqHTTPError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`. | [optional] 
 **BotChallengesPatsIssued** | Pointer to **int32** | Number of Private Access Token challenges issued. | [optional] 
 **BotChallengesPatsSucceeded** | Pointer to **int32** | Number of successful Private Access Token challenge solutions processed. | [optional] 
 **BotEdgeRequestsHeadlessCount** | Pointer to **int32** | Number of edge requests where a headless bot was detected. | [optional] 
@@ -968,130 +968,130 @@ SetSynth sets Synth field to given value.
 
 HasSynth returns a boolean if a field has been set.
 
-### GetTls
+### GetTLS
 
-`func (o *PlatformValues) GetTls() int64`
+`func (o *PlatformValues) GetTLS() int64`
 
-GetTls returns the Tls field if non-nil, zero value otherwise.
+GetTLS returns the TLS field if non-nil, zero value otherwise.
 
-### GetTlsOk
+### GetTLSOk
 
-`func (o *PlatformValues) GetTlsOk() (*int64, bool)`
+`func (o *PlatformValues) GetTLSOk() (*int64, bool)`
 
-GetTlsOk returns a tuple with the Tls field if it's non-nil, zero value otherwise
+GetTLSOk returns a tuple with the TLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTls
+### SetTLS
 
-`func (o *PlatformValues) SetTls(v int64)`
+`func (o *PlatformValues) SetTLS(v int64)`
 
-SetTls sets Tls field to given value.
+SetTLS sets TLS field to given value.
 
-### HasTls
+### HasTLS
 
-`func (o *PlatformValues) HasTls() bool`
+`func (o *PlatformValues) HasTLS() bool`
 
-HasTls returns a boolean if a field has been set.
+HasTLS returns a boolean if a field has been set.
 
-### GetTlsV10
+### GetTLSV10
 
-`func (o *PlatformValues) GetTlsV10() int64`
+`func (o *PlatformValues) GetTLSV10() int64`
 
-GetTlsV10 returns the TlsV10 field if non-nil, zero value otherwise.
+GetTLSV10 returns the TLSV10 field if non-nil, zero value otherwise.
 
-### GetTlsV10Ok
+### GetTLSV10Ok
 
-`func (o *PlatformValues) GetTlsV10Ok() (*int64, bool)`
+`func (o *PlatformValues) GetTLSV10Ok() (*int64, bool)`
 
-GetTlsV10Ok returns a tuple with the TlsV10 field if it's non-nil, zero value otherwise
+GetTLSV10Ok returns a tuple with the TLSV10 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV10
+### SetTLSV10
 
-`func (o *PlatformValues) SetTlsV10(v int64)`
+`func (o *PlatformValues) SetTLSV10(v int64)`
 
-SetTlsV10 sets TlsV10 field to given value.
+SetTLSV10 sets TLSV10 field to given value.
 
-### HasTlsV10
+### HasTLSV10
 
-`func (o *PlatformValues) HasTlsV10() bool`
+`func (o *PlatformValues) HasTLSV10() bool`
 
-HasTlsV10 returns a boolean if a field has been set.
+HasTLSV10 returns a boolean if a field has been set.
 
-### GetTlsV11
+### GetTLSV11
 
-`func (o *PlatformValues) GetTlsV11() int64`
+`func (o *PlatformValues) GetTLSV11() int64`
 
-GetTlsV11 returns the TlsV11 field if non-nil, zero value otherwise.
+GetTLSV11 returns the TLSV11 field if non-nil, zero value otherwise.
 
-### GetTlsV11Ok
+### GetTLSV11Ok
 
-`func (o *PlatformValues) GetTlsV11Ok() (*int64, bool)`
+`func (o *PlatformValues) GetTLSV11Ok() (*int64, bool)`
 
-GetTlsV11Ok returns a tuple with the TlsV11 field if it's non-nil, zero value otherwise
+GetTLSV11Ok returns a tuple with the TLSV11 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV11
+### SetTLSV11
 
-`func (o *PlatformValues) SetTlsV11(v int64)`
+`func (o *PlatformValues) SetTLSV11(v int64)`
 
-SetTlsV11 sets TlsV11 field to given value.
+SetTLSV11 sets TLSV11 field to given value.
 
-### HasTlsV11
+### HasTLSV11
 
-`func (o *PlatformValues) HasTlsV11() bool`
+`func (o *PlatformValues) HasTLSV11() bool`
 
-HasTlsV11 returns a boolean if a field has been set.
+HasTLSV11 returns a boolean if a field has been set.
 
-### GetTlsV12
+### GetTLSV12
 
-`func (o *PlatformValues) GetTlsV12() int64`
+`func (o *PlatformValues) GetTLSV12() int64`
 
-GetTlsV12 returns the TlsV12 field if non-nil, zero value otherwise.
+GetTLSV12 returns the TLSV12 field if non-nil, zero value otherwise.
 
-### GetTlsV12Ok
+### GetTLSV12Ok
 
-`func (o *PlatformValues) GetTlsV12Ok() (*int64, bool)`
+`func (o *PlatformValues) GetTLSV12Ok() (*int64, bool)`
 
-GetTlsV12Ok returns a tuple with the TlsV12 field if it's non-nil, zero value otherwise
+GetTLSV12Ok returns a tuple with the TLSV12 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV12
+### SetTLSV12
 
-`func (o *PlatformValues) SetTlsV12(v int64)`
+`func (o *PlatformValues) SetTLSV12(v int64)`
 
-SetTlsV12 sets TlsV12 field to given value.
+SetTLSV12 sets TLSV12 field to given value.
 
-### HasTlsV12
+### HasTLSV12
 
-`func (o *PlatformValues) HasTlsV12() bool`
+`func (o *PlatformValues) HasTLSV12() bool`
 
-HasTlsV12 returns a boolean if a field has been set.
+HasTLSV12 returns a boolean if a field has been set.
 
-### GetTlsV13
+### GetTLSV13
 
-`func (o *PlatformValues) GetTlsV13() int64`
+`func (o *PlatformValues) GetTLSV13() int64`
 
-GetTlsV13 returns the TlsV13 field if non-nil, zero value otherwise.
+GetTLSV13 returns the TLSV13 field if non-nil, zero value otherwise.
 
-### GetTlsV13Ok
+### GetTLSV13Ok
 
-`func (o *PlatformValues) GetTlsV13Ok() (*int64, bool)`
+`func (o *PlatformValues) GetTLSV13Ok() (*int64, bool)`
 
-GetTlsV13Ok returns a tuple with the TlsV13 field if it's non-nil, zero value otherwise
+GetTLSV13Ok returns a tuple with the TLSV13 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV13
+### SetTLSV13
 
-`func (o *PlatformValues) SetTlsV13(v int64)`
+`func (o *PlatformValues) SetTLSV13(v int64)`
 
-SetTlsV13 sets TlsV13 field to given value.
+SetTLSV13 sets TLSV13 field to given value.
 
-### HasTlsV13
+### HasTLSV13
 
-`func (o *PlatformValues) HasTlsV13() bool`
+`func (o *PlatformValues) HasTLSV13() bool`
 
-HasTlsV13 returns a boolean if a field has been set.
+HasTLSV13 returns a boolean if a field has been set.
 
 ### GetEdgeRequests
 
@@ -1968,55 +1968,55 @@ SetLogBytes sets LogBytes field to given value.
 
 HasLogBytes returns a boolean if a field has been set.
 
-### GetHttp2
+### GetHTTP2
 
-`func (o *PlatformValues) GetHttp2() int64`
+`func (o *PlatformValues) GetHTTP2() int64`
 
-GetHttp2 returns the Http2 field if non-nil, zero value otherwise.
+GetHTTP2 returns the HTTP2 field if non-nil, zero value otherwise.
 
-### GetHttp2Ok
+### GetHTTP2Ok
 
-`func (o *PlatformValues) GetHttp2Ok() (*int64, bool)`
+`func (o *PlatformValues) GetHTTP2Ok() (*int64, bool)`
 
-GetHttp2Ok returns a tuple with the Http2 field if it's non-nil, zero value otherwise
+GetHTTP2Ok returns a tuple with the HTTP2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHttp2
+### SetHTTP2
 
-`func (o *PlatformValues) SetHttp2(v int64)`
+`func (o *PlatformValues) SetHTTP2(v int64)`
 
-SetHttp2 sets Http2 field to given value.
+SetHTTP2 sets HTTP2 field to given value.
 
-### HasHttp2
+### HasHTTP2
 
-`func (o *PlatformValues) HasHttp2() bool`
+`func (o *PlatformValues) HasHTTP2() bool`
 
-HasHttp2 returns a boolean if a field has been set.
+HasHTTP2 returns a boolean if a field has been set.
 
-### GetHttp3
+### GetHTTP3
 
-`func (o *PlatformValues) GetHttp3() int64`
+`func (o *PlatformValues) GetHTTP3() int64`
 
-GetHttp3 returns the Http3 field if non-nil, zero value otherwise.
+GetHTTP3 returns the HTTP3 field if non-nil, zero value otherwise.
 
-### GetHttp3Ok
+### GetHTTP3Ok
 
-`func (o *PlatformValues) GetHttp3Ok() (*int64, bool)`
+`func (o *PlatformValues) GetHTTP3Ok() (*int64, bool)`
 
-GetHttp3Ok returns a tuple with the Http3 field if it's non-nil, zero value otherwise
+GetHTTP3Ok returns a tuple with the HTTP3 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHttp3
+### SetHTTP3
 
-`func (o *PlatformValues) SetHttp3(v int64)`
+`func (o *PlatformValues) SetHTTP3(v int64)`
 
-SetHttp3 sets Http3 field to given value.
+SetHTTP3 sets HTTP3 field to given value.
 
-### HasHttp3
+### HasHTTP3
 
-`func (o *PlatformValues) HasHttp3() bool`
+`func (o *PlatformValues) HasHTTP3() bool`
 
-HasHttp3 returns a boolean if a field has been set.
+HasHTTP3 returns a boolean if a field has been set.
 
 ### GetAttackReqBodyBytes
 
@@ -4018,30 +4018,30 @@ SetPredeliverSubCount sets PredeliverSubCount field to given value.
 
 HasPredeliverSubCount returns a boolean if a field has been set.
 
-### GetTlsHandshakeSentBytes
+### GetTLSHandshakeSentBytes
 
-`func (o *PlatformValues) GetTlsHandshakeSentBytes() int64`
+`func (o *PlatformValues) GetTLSHandshakeSentBytes() int64`
 
-GetTlsHandshakeSentBytes returns the TlsHandshakeSentBytes field if non-nil, zero value otherwise.
+GetTLSHandshakeSentBytes returns the TLSHandshakeSentBytes field if non-nil, zero value otherwise.
 
-### GetTlsHandshakeSentBytesOk
+### GetTLSHandshakeSentBytesOk
 
-`func (o *PlatformValues) GetTlsHandshakeSentBytesOk() (*int64, bool)`
+`func (o *PlatformValues) GetTLSHandshakeSentBytesOk() (*int64, bool)`
 
-GetTlsHandshakeSentBytesOk returns a tuple with the TlsHandshakeSentBytes field if it's non-nil, zero value otherwise
+GetTLSHandshakeSentBytesOk returns a tuple with the TLSHandshakeSentBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsHandshakeSentBytes
+### SetTLSHandshakeSentBytes
 
-`func (o *PlatformValues) SetTlsHandshakeSentBytes(v int64)`
+`func (o *PlatformValues) SetTLSHandshakeSentBytes(v int64)`
 
-SetTlsHandshakeSentBytes sets TlsHandshakeSentBytes field to given value.
+SetTLSHandshakeSentBytes sets TLSHandshakeSentBytes field to given value.
 
-### HasTlsHandshakeSentBytes
+### HasTLSHandshakeSentBytes
 
-`func (o *PlatformValues) HasTlsHandshakeSentBytes() bool`
+`func (o *PlatformValues) HasTLSHandshakeSentBytes() bool`
 
-HasTlsHandshakeSentBytes returns a boolean if a field has been set.
+HasTLSHandshakeSentBytes returns a boolean if a field has been set.
 
 ### GetHitRespBodyBytes
 
@@ -4243,30 +4243,30 @@ SetComputeRequestTimeBilledMs sets ComputeRequestTimeBilledMs field to given val
 
 HasComputeRequestTimeBilledMs returns a boolean if a field has been set.
 
-### GetComputeRamUsed
+### GetComputeRAMUsed
 
-`func (o *PlatformValues) GetComputeRamUsed() int64`
+`func (o *PlatformValues) GetComputeRAMUsed() int64`
 
-GetComputeRamUsed returns the ComputeRamUsed field if non-nil, zero value otherwise.
+GetComputeRAMUsed returns the ComputeRAMUsed field if non-nil, zero value otherwise.
 
-### GetComputeRamUsedOk
+### GetComputeRAMUsedOk
 
-`func (o *PlatformValues) GetComputeRamUsedOk() (*int64, bool)`
+`func (o *PlatformValues) GetComputeRAMUsedOk() (*int64, bool)`
 
-GetComputeRamUsedOk returns a tuple with the ComputeRamUsed field if it's non-nil, zero value otherwise
+GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeRamUsed
+### SetComputeRAMUsed
 
-`func (o *PlatformValues) SetComputeRamUsed(v int64)`
+`func (o *PlatformValues) SetComputeRAMUsed(v int64)`
 
-SetComputeRamUsed sets ComputeRamUsed field to given value.
+SetComputeRAMUsed sets ComputeRAMUsed field to given value.
 
-### HasComputeRamUsed
+### HasComputeRAMUsed
 
-`func (o *PlatformValues) HasComputeRamUsed() bool`
+`func (o *PlatformValues) HasComputeRAMUsed() bool`
 
-HasComputeRamUsed returns a boolean if a field has been set.
+HasComputeRAMUsed returns a boolean if a field has been set.
 
 ### GetComputeExecutionTimeMs
 
@@ -7468,55 +7468,55 @@ SetImgoptoComputeRequests sets ImgoptoComputeRequests field to given value.
 
 HasImgoptoComputeRequests returns a boolean if a field has been set.
 
-### GetDnsBillableResponsesCount
+### GetDNSBillableResponsesCount
 
-`func (o *PlatformValues) GetDnsBillableResponsesCount() int32`
+`func (o *PlatformValues) GetDNSBillableResponsesCount() int32`
 
-GetDnsBillableResponsesCount returns the DnsBillableResponsesCount field if non-nil, zero value otherwise.
+GetDNSBillableResponsesCount returns the DNSBillableResponsesCount field if non-nil, zero value otherwise.
 
-### GetDnsBillableResponsesCountOk
+### GetDNSBillableResponsesCountOk
 
-`func (o *PlatformValues) GetDnsBillableResponsesCountOk() (*int32, bool)`
+`func (o *PlatformValues) GetDNSBillableResponsesCountOk() (*int32, bool)`
 
-GetDnsBillableResponsesCountOk returns a tuple with the DnsBillableResponsesCount field if it's non-nil, zero value otherwise
+GetDNSBillableResponsesCountOk returns a tuple with the DNSBillableResponsesCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDnsBillableResponsesCount
+### SetDNSBillableResponsesCount
 
-`func (o *PlatformValues) SetDnsBillableResponsesCount(v int32)`
+`func (o *PlatformValues) SetDNSBillableResponsesCount(v int32)`
 
-SetDnsBillableResponsesCount sets DnsBillableResponsesCount field to given value.
+SetDNSBillableResponsesCount sets DNSBillableResponsesCount field to given value.
 
-### HasDnsBillableResponsesCount
+### HasDNSBillableResponsesCount
 
-`func (o *PlatformValues) HasDnsBillableResponsesCount() bool`
+`func (o *PlatformValues) HasDNSBillableResponsesCount() bool`
 
-HasDnsBillableResponsesCount returns a boolean if a field has been set.
+HasDNSBillableResponsesCount returns a boolean if a field has been set.
 
-### GetDnsNonbillableResponsesCount
+### GetDNSNonbillableResponsesCount
 
-`func (o *PlatformValues) GetDnsNonbillableResponsesCount() int32`
+`func (o *PlatformValues) GetDNSNonbillableResponsesCount() int32`
 
-GetDnsNonbillableResponsesCount returns the DnsNonbillableResponsesCount field if non-nil, zero value otherwise.
+GetDNSNonbillableResponsesCount returns the DNSNonbillableResponsesCount field if non-nil, zero value otherwise.
 
-### GetDnsNonbillableResponsesCountOk
+### GetDNSNonbillableResponsesCountOk
 
-`func (o *PlatformValues) GetDnsNonbillableResponsesCountOk() (*int32, bool)`
+`func (o *PlatformValues) GetDNSNonbillableResponsesCountOk() (*int32, bool)`
 
-GetDnsNonbillableResponsesCountOk returns a tuple with the DnsNonbillableResponsesCount field if it's non-nil, zero value otherwise
+GetDNSNonbillableResponsesCountOk returns a tuple with the DNSNonbillableResponsesCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDnsNonbillableResponsesCount
+### SetDNSNonbillableResponsesCount
 
-`func (o *PlatformValues) SetDnsNonbillableResponsesCount(v int32)`
+`func (o *PlatformValues) SetDNSNonbillableResponsesCount(v int32)`
 
-SetDnsNonbillableResponsesCount sets DnsNonbillableResponsesCount field to given value.
+SetDNSNonbillableResponsesCount sets DNSNonbillableResponsesCount field to given value.
 
-### HasDnsNonbillableResponsesCount
+### HasDNSNonbillableResponsesCount
 
-`func (o *PlatformValues) HasDnsNonbillableResponsesCount() bool`
+`func (o *PlatformValues) HasDNSNonbillableResponsesCount() bool`
 
-HasDnsNonbillableResponsesCount returns a boolean if a field has been set.
+HasDNSNonbillableResponsesCount returns a boolean if a field has been set.
 
 ### GetUpgrade
 
@@ -8418,30 +8418,30 @@ SetComputeHandoff sets ComputeHandoff field to given value.
 
 HasComputeHandoff returns a boolean if a field has been set.
 
-### GetComputeServiceBereqDnsError
+### GetComputeServiceBereqDNSError
 
-`func (o *PlatformValues) GetComputeServiceBereqDnsError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqDNSError() int32`
 
-GetComputeServiceBereqDnsError returns the ComputeServiceBereqDnsError field if non-nil, zero value otherwise.
+GetComputeServiceBereqDNSError returns the ComputeServiceBereqDNSError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqDnsErrorOk
+### GetComputeServiceBereqDNSErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqDnsErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqDNSErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqDnsErrorOk returns a tuple with the ComputeServiceBereqDnsError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqDNSErrorOk returns a tuple with the ComputeServiceBereqDNSError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqDnsError
+### SetComputeServiceBereqDNSError
 
-`func (o *PlatformValues) SetComputeServiceBereqDnsError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqDNSError(v int32)`
 
-SetComputeServiceBereqDnsError sets ComputeServiceBereqDnsError field to given value.
+SetComputeServiceBereqDNSError sets ComputeServiceBereqDNSError field to given value.
 
-### HasComputeServiceBereqDnsError
+### HasComputeServiceBereqDNSError
 
-`func (o *PlatformValues) HasComputeServiceBereqDnsError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqDNSError() bool`
 
-HasComputeServiceBereqDnsError returns a boolean if a field has been set.
+HasComputeServiceBereqDNSError returns a boolean if a field has been set.
 
 ### GetComputeServiceBereqConnTimeoutError
 
@@ -8518,180 +8518,180 @@ SetComputeServiceBereqConnOtherError sets ComputeServiceBereqConnOtherError fiel
 
 HasComputeServiceBereqConnOtherError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqTlsServerCertError
+### GetComputeServiceBereqTLSServerCertError
 
-`func (o *PlatformValues) GetComputeServiceBereqTlsServerCertError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqTLSServerCertError() int32`
 
-GetComputeServiceBereqTlsServerCertError returns the ComputeServiceBereqTlsServerCertError field if non-nil, zero value otherwise.
+GetComputeServiceBereqTLSServerCertError returns the ComputeServiceBereqTLSServerCertError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqTlsServerCertErrorOk
+### GetComputeServiceBereqTLSServerCertErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqTlsServerCertErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqTLSServerCertErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqTlsServerCertErrorOk returns a tuple with the ComputeServiceBereqTlsServerCertError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqTLSServerCertErrorOk returns a tuple with the ComputeServiceBereqTLSServerCertError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqTlsServerCertError
+### SetComputeServiceBereqTLSServerCertError
 
-`func (o *PlatformValues) SetComputeServiceBereqTlsServerCertError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqTLSServerCertError(v int32)`
 
-SetComputeServiceBereqTlsServerCertError sets ComputeServiceBereqTlsServerCertError field to given value.
+SetComputeServiceBereqTLSServerCertError sets ComputeServiceBereqTLSServerCertError field to given value.
 
-### HasComputeServiceBereqTlsServerCertError
+### HasComputeServiceBereqTLSServerCertError
 
-`func (o *PlatformValues) HasComputeServiceBereqTlsServerCertError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqTLSServerCertError() bool`
 
-HasComputeServiceBereqTlsServerCertError returns a boolean if a field has been set.
+HasComputeServiceBereqTLSServerCertError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqTlsOtherError
+### GetComputeServiceBereqTLSOtherError
 
-`func (o *PlatformValues) GetComputeServiceBereqTlsOtherError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqTLSOtherError() int32`
 
-GetComputeServiceBereqTlsOtherError returns the ComputeServiceBereqTlsOtherError field if non-nil, zero value otherwise.
+GetComputeServiceBereqTLSOtherError returns the ComputeServiceBereqTLSOtherError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqTlsOtherErrorOk
+### GetComputeServiceBereqTLSOtherErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqTlsOtherErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqTLSOtherErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqTlsOtherErrorOk returns a tuple with the ComputeServiceBereqTlsOtherError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqTLSOtherErrorOk returns a tuple with the ComputeServiceBereqTLSOtherError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqTlsOtherError
+### SetComputeServiceBereqTLSOtherError
 
-`func (o *PlatformValues) SetComputeServiceBereqTlsOtherError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqTLSOtherError(v int32)`
 
-SetComputeServiceBereqTlsOtherError sets ComputeServiceBereqTlsOtherError field to given value.
+SetComputeServiceBereqTLSOtherError sets ComputeServiceBereqTLSOtherError field to given value.
 
-### HasComputeServiceBereqTlsOtherError
+### HasComputeServiceBereqTLSOtherError
 
-`func (o *PlatformValues) HasComputeServiceBereqTlsOtherError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqTLSOtherError() bool`
 
-HasComputeServiceBereqTlsOtherError returns a boolean if a field has been set.
+HasComputeServiceBereqTLSOtherError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqHttpProtoV1Error
+### GetComputeServiceBereqHTTPProtoV1Error
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpProtoV1Error() int32`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV1Error() int32`
 
-GetComputeServiceBereqHttpProtoV1Error returns the ComputeServiceBereqHttpProtoV1Error field if non-nil, zero value otherwise.
+GetComputeServiceBereqHTTPProtoV1Error returns the ComputeServiceBereqHTTPProtoV1Error field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqHttpProtoV1ErrorOk
+### GetComputeServiceBereqHTTPProtoV1ErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpProtoV1ErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV1ErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqHttpProtoV1ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV1Error field if it's non-nil, zero value otherwise
+GetComputeServiceBereqHTTPProtoV1ErrorOk returns a tuple with the ComputeServiceBereqHTTPProtoV1Error field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqHttpProtoV1Error
+### SetComputeServiceBereqHTTPProtoV1Error
 
-`func (o *PlatformValues) SetComputeServiceBereqHttpProtoV1Error(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqHTTPProtoV1Error(v int32)`
 
-SetComputeServiceBereqHttpProtoV1Error sets ComputeServiceBereqHttpProtoV1Error field to given value.
+SetComputeServiceBereqHTTPProtoV1Error sets ComputeServiceBereqHTTPProtoV1Error field to given value.
 
-### HasComputeServiceBereqHttpProtoV1Error
+### HasComputeServiceBereqHTTPProtoV1Error
 
-`func (o *PlatformValues) HasComputeServiceBereqHttpProtoV1Error() bool`
+`func (o *PlatformValues) HasComputeServiceBereqHTTPProtoV1Error() bool`
 
-HasComputeServiceBereqHttpProtoV1Error returns a boolean if a field has been set.
+HasComputeServiceBereqHTTPProtoV1Error returns a boolean if a field has been set.
 
-### GetComputeServiceBereqHttpProtoV2Error
+### GetComputeServiceBereqHTTPProtoV2Error
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpProtoV2Error() int32`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV2Error() int32`
 
-GetComputeServiceBereqHttpProtoV2Error returns the ComputeServiceBereqHttpProtoV2Error field if non-nil, zero value otherwise.
+GetComputeServiceBereqHTTPProtoV2Error returns the ComputeServiceBereqHTTPProtoV2Error field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqHttpProtoV2ErrorOk
+### GetComputeServiceBereqHTTPProtoV2ErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpProtoV2ErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV2ErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqHttpProtoV2ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV2Error field if it's non-nil, zero value otherwise
+GetComputeServiceBereqHTTPProtoV2ErrorOk returns a tuple with the ComputeServiceBereqHTTPProtoV2Error field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqHttpProtoV2Error
+### SetComputeServiceBereqHTTPProtoV2Error
 
-`func (o *PlatformValues) SetComputeServiceBereqHttpProtoV2Error(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqHTTPProtoV2Error(v int32)`
 
-SetComputeServiceBereqHttpProtoV2Error sets ComputeServiceBereqHttpProtoV2Error field to given value.
+SetComputeServiceBereqHTTPProtoV2Error sets ComputeServiceBereqHTTPProtoV2Error field to given value.
 
-### HasComputeServiceBereqHttpProtoV2Error
+### HasComputeServiceBereqHTTPProtoV2Error
 
-`func (o *PlatformValues) HasComputeServiceBereqHttpProtoV2Error() bool`
+`func (o *PlatformValues) HasComputeServiceBereqHTTPProtoV2Error() bool`
 
-HasComputeServiceBereqHttpProtoV2Error returns a boolean if a field has been set.
+HasComputeServiceBereqHTTPProtoV2Error returns a boolean if a field has been set.
 
-### GetComputeServiceBereqHttpIncompleteError
+### GetComputeServiceBereqHTTPIncompleteError
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpIncompleteError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPIncompleteError() int32`
 
-GetComputeServiceBereqHttpIncompleteError returns the ComputeServiceBereqHttpIncompleteError field if non-nil, zero value otherwise.
+GetComputeServiceBereqHTTPIncompleteError returns the ComputeServiceBereqHTTPIncompleteError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqHttpIncompleteErrorOk
+### GetComputeServiceBereqHTTPIncompleteErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpIncompleteErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPIncompleteErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqHttpIncompleteErrorOk returns a tuple with the ComputeServiceBereqHttpIncompleteError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqHTTPIncompleteErrorOk returns a tuple with the ComputeServiceBereqHTTPIncompleteError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqHttpIncompleteError
+### SetComputeServiceBereqHTTPIncompleteError
 
-`func (o *PlatformValues) SetComputeServiceBereqHttpIncompleteError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqHTTPIncompleteError(v int32)`
 
-SetComputeServiceBereqHttpIncompleteError sets ComputeServiceBereqHttpIncompleteError field to given value.
+SetComputeServiceBereqHTTPIncompleteError sets ComputeServiceBereqHTTPIncompleteError field to given value.
 
-### HasComputeServiceBereqHttpIncompleteError
+### HasComputeServiceBereqHTTPIncompleteError
 
-`func (o *PlatformValues) HasComputeServiceBereqHttpIncompleteError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqHTTPIncompleteError() bool`
 
-HasComputeServiceBereqHttpIncompleteError returns a boolean if a field has been set.
+HasComputeServiceBereqHTTPIncompleteError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqHttpTimeoutError
+### GetComputeServiceBereqHTTPTimeoutError
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpTimeoutError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPTimeoutError() int32`
 
-GetComputeServiceBereqHttpTimeoutError returns the ComputeServiceBereqHttpTimeoutError field if non-nil, zero value otherwise.
+GetComputeServiceBereqHTTPTimeoutError returns the ComputeServiceBereqHTTPTimeoutError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqHttpTimeoutErrorOk
+### GetComputeServiceBereqHTTPTimeoutErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpTimeoutErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPTimeoutErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqHttpTimeoutErrorOk returns a tuple with the ComputeServiceBereqHttpTimeoutError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqHTTPTimeoutErrorOk returns a tuple with the ComputeServiceBereqHTTPTimeoutError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqHttpTimeoutError
+### SetComputeServiceBereqHTTPTimeoutError
 
-`func (o *PlatformValues) SetComputeServiceBereqHttpTimeoutError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqHTTPTimeoutError(v int32)`
 
-SetComputeServiceBereqHttpTimeoutError sets ComputeServiceBereqHttpTimeoutError field to given value.
+SetComputeServiceBereqHTTPTimeoutError sets ComputeServiceBereqHTTPTimeoutError field to given value.
 
-### HasComputeServiceBereqHttpTimeoutError
+### HasComputeServiceBereqHTTPTimeoutError
 
-`func (o *PlatformValues) HasComputeServiceBereqHttpTimeoutError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqHTTPTimeoutError() bool`
 
-HasComputeServiceBereqHttpTimeoutError returns a boolean if a field has been set.
+HasComputeServiceBereqHTTPTimeoutError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqHttpOtherError
+### GetComputeServiceBereqHTTPOtherError
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpOtherError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPOtherError() int32`
 
-GetComputeServiceBereqHttpOtherError returns the ComputeServiceBereqHttpOtherError field if non-nil, zero value otherwise.
+GetComputeServiceBereqHTTPOtherError returns the ComputeServiceBereqHTTPOtherError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqHttpOtherErrorOk
+### GetComputeServiceBereqHTTPOtherErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpOtherErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPOtherErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqHttpOtherErrorOk returns a tuple with the ComputeServiceBereqHttpOtherError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqHTTPOtherErrorOk returns a tuple with the ComputeServiceBereqHTTPOtherError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqHttpOtherError
+### SetComputeServiceBereqHTTPOtherError
 
-`func (o *PlatformValues) SetComputeServiceBereqHttpOtherError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqHTTPOtherError(v int32)`
 
-SetComputeServiceBereqHttpOtherError sets ComputeServiceBereqHttpOtherError field to given value.
+SetComputeServiceBereqHTTPOtherError sets ComputeServiceBereqHTTPOtherError field to given value.
 
-### HasComputeServiceBereqHttpOtherError
+### HasComputeServiceBereqHTTPOtherError
 
-`func (o *PlatformValues) HasComputeServiceBereqHttpOtherError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqHTTPOtherError() bool`
 
-HasComputeServiceBereqHttpOtherError returns a boolean if a field has been set.
+HasComputeServiceBereqHTTPOtherError returns a boolean if a field has been set.
 
 ### GetComputeServiceBereqOtherError
 
@@ -8768,55 +8768,55 @@ SetComputeServiceBereqConnError sets ComputeServiceBereqConnError field to given
 
 HasComputeServiceBereqConnError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqTlsError
+### GetComputeServiceBereqTLSError
 
-`func (o *PlatformValues) GetComputeServiceBereqTlsError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqTLSError() int32`
 
-GetComputeServiceBereqTlsError returns the ComputeServiceBereqTlsError field if non-nil, zero value otherwise.
+GetComputeServiceBereqTLSError returns the ComputeServiceBereqTLSError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqTlsErrorOk
+### GetComputeServiceBereqTLSErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqTlsErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqTLSErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqTlsErrorOk returns a tuple with the ComputeServiceBereqTlsError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqTLSErrorOk returns a tuple with the ComputeServiceBereqTLSError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqTlsError
+### SetComputeServiceBereqTLSError
 
-`func (o *PlatformValues) SetComputeServiceBereqTlsError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqTLSError(v int32)`
 
-SetComputeServiceBereqTlsError sets ComputeServiceBereqTlsError field to given value.
+SetComputeServiceBereqTLSError sets ComputeServiceBereqTLSError field to given value.
 
-### HasComputeServiceBereqTlsError
+### HasComputeServiceBereqTLSError
 
-`func (o *PlatformValues) HasComputeServiceBereqTlsError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqTLSError() bool`
 
-HasComputeServiceBereqTlsError returns a boolean if a field has been set.
+HasComputeServiceBereqTLSError returns a boolean if a field has been set.
 
-### GetComputeServiceBereqHttpError
+### GetComputeServiceBereqHTTPError
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpError() int32`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPError() int32`
 
-GetComputeServiceBereqHttpError returns the ComputeServiceBereqHttpError field if non-nil, zero value otherwise.
+GetComputeServiceBereqHTTPError returns the ComputeServiceBereqHTTPError field if non-nil, zero value otherwise.
 
-### GetComputeServiceBereqHttpErrorOk
+### GetComputeServiceBereqHTTPErrorOk
 
-`func (o *PlatformValues) GetComputeServiceBereqHttpErrorOk() (*int32, bool)`
+`func (o *PlatformValues) GetComputeServiceBereqHTTPErrorOk() (*int32, bool)`
 
-GetComputeServiceBereqHttpErrorOk returns a tuple with the ComputeServiceBereqHttpError field if it's non-nil, zero value otherwise
+GetComputeServiceBereqHTTPErrorOk returns a tuple with the ComputeServiceBereqHTTPError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeServiceBereqHttpError
+### SetComputeServiceBereqHTTPError
 
-`func (o *PlatformValues) SetComputeServiceBereqHttpError(v int32)`
+`func (o *PlatformValues) SetComputeServiceBereqHTTPError(v int32)`
 
-SetComputeServiceBereqHttpError sets ComputeServiceBereqHttpError field to given value.
+SetComputeServiceBereqHTTPError sets ComputeServiceBereqHTTPError field to given value.
 
-### HasComputeServiceBereqHttpError
+### HasComputeServiceBereqHTTPError
 
-`func (o *PlatformValues) HasComputeServiceBereqHttpError() bool`
+`func (o *PlatformValues) HasComputeServiceBereqHTTPError() bool`
 
-HasComputeServiceBereqHttpError returns a boolean if a field has been set.
+HasComputeServiceBereqHTTPError returns a boolean if a field has been set.
 
 ### GetBotChallengesPatsIssued
 
@@ -9370,5 +9370,3 @@ HasObjectStorageBytesCount returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

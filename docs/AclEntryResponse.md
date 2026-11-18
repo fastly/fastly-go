@@ -1,4 +1,4 @@
-# AclEntryResponse
+# ACLEntryResponse
 
 ## Properties
 
@@ -6,335 +6,333 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Negated** | Pointer to **int32** | Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets. | [optional] [default to 0]
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
-**Ip** | Pointer to **string** | An IP address. | [optional] 
+**IP** | Pointer to **string** | An IP address. | [optional] 
 **Subnet** | Pointer to **NullableInt32** | Number of bits for the subnet mask applied to the IP address. For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses), and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**AclId** | Pointer to **string** |  | [optional] [readonly] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ACLID** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewAclEntryResponse
+### NewACLEntryResponse
 
-`func NewAclEntryResponse() *AclEntryResponse`
+`func NewACLEntryResponse() *ACLEntryResponse`
 
-NewAclEntryResponse instantiates a new AclEntryResponse object
+NewACLEntryResponse instantiates a new ACLEntryResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAclEntryResponseWithDefaults
+### NewACLEntryResponseWithDefaults
 
-`func NewAclEntryResponseWithDefaults() *AclEntryResponse`
+`func NewACLEntryResponseWithDefaults() *ACLEntryResponse`
 
-NewAclEntryResponseWithDefaults instantiates a new AclEntryResponse object
+NewACLEntryResponseWithDefaults instantiates a new ACLEntryResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetNegated
 
-`func (o *AclEntryResponse) GetNegated() int32`
+`func (o *ACLEntryResponse) GetNegated() int32`
 
 GetNegated returns the Negated field if non-nil, zero value otherwise.
 
 ### GetNegatedOk
 
-`func (o *AclEntryResponse) GetNegatedOk() (*int32, bool)`
+`func (o *ACLEntryResponse) GetNegatedOk() (*int32, bool)`
 
 GetNegatedOk returns a tuple with the Negated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNegated
 
-`func (o *AclEntryResponse) SetNegated(v int32)`
+`func (o *ACLEntryResponse) SetNegated(v int32)`
 
 SetNegated sets Negated field to given value.
 
 ### HasNegated
 
-`func (o *AclEntryResponse) HasNegated() bool`
+`func (o *ACLEntryResponse) HasNegated() bool`
 
 HasNegated returns a boolean if a field has been set.
 
 ### GetComment
 
-`func (o *AclEntryResponse) GetComment() string`
+`func (o *ACLEntryResponse) GetComment() string`
 
 GetComment returns the Comment field if non-nil, zero value otherwise.
 
 ### GetCommentOk
 
-`func (o *AclEntryResponse) GetCommentOk() (*string, bool)`
+`func (o *ACLEntryResponse) GetCommentOk() (*string, bool)`
 
 GetCommentOk returns a tuple with the Comment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComment
 
-`func (o *AclEntryResponse) SetComment(v string)`
+`func (o *ACLEntryResponse) SetComment(v string)`
 
 SetComment sets Comment field to given value.
 
 ### HasComment
 
-`func (o *AclEntryResponse) HasComment() bool`
+`func (o *ACLEntryResponse) HasComment() bool`
 
 HasComment returns a boolean if a field has been set.
 
 ### SetCommentNil
 
-`func (o *AclEntryResponse) SetCommentNil(b bool)`
+`func (o *ACLEntryResponse) SetCommentNil(b bool)`
 
  SetCommentNil sets the value for Comment to be an explicit nil
 
 ### UnsetComment
-`func (o *AclEntryResponse) UnsetComment()`
+`func (o *ACLEntryResponse) UnsetComment()`
 
 UnsetComment ensures that no value is present for Comment, not even an explicit nil
-### GetIp
+### GetIP
 
-`func (o *AclEntryResponse) GetIp() string`
+`func (o *ACLEntryResponse) GetIP() string`
 
-GetIp returns the Ip field if non-nil, zero value otherwise.
+GetIP returns the IP field if non-nil, zero value otherwise.
 
-### GetIpOk
+### GetIPOk
 
-`func (o *AclEntryResponse) GetIpOk() (*string, bool)`
+`func (o *ACLEntryResponse) GetIPOk() (*string, bool)`
 
-GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
+GetIPOk returns a tuple with the IP field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIp
+### SetIP
 
-`func (o *AclEntryResponse) SetIp(v string)`
+`func (o *ACLEntryResponse) SetIP(v string)`
 
-SetIp sets Ip field to given value.
+SetIP sets IP field to given value.
 
-### HasIp
+### HasIP
 
-`func (o *AclEntryResponse) HasIp() bool`
+`func (o *ACLEntryResponse) HasIP() bool`
 
-HasIp returns a boolean if a field has been set.
+HasIP returns a boolean if a field has been set.
 
 ### GetSubnet
 
-`func (o *AclEntryResponse) GetSubnet() int32`
+`func (o *ACLEntryResponse) GetSubnet() int32`
 
 GetSubnet returns the Subnet field if non-nil, zero value otherwise.
 
 ### GetSubnetOk
 
-`func (o *AclEntryResponse) GetSubnetOk() (*int32, bool)`
+`func (o *ACLEntryResponse) GetSubnetOk() (*int32, bool)`
 
 GetSubnetOk returns a tuple with the Subnet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubnet
 
-`func (o *AclEntryResponse) SetSubnet(v int32)`
+`func (o *ACLEntryResponse) SetSubnet(v int32)`
 
 SetSubnet sets Subnet field to given value.
 
 ### HasSubnet
 
-`func (o *AclEntryResponse) HasSubnet() bool`
+`func (o *ACLEntryResponse) HasSubnet() bool`
 
 HasSubnet returns a boolean if a field has been set.
 
 ### SetSubnetNil
 
-`func (o *AclEntryResponse) SetSubnetNil(b bool)`
+`func (o *ACLEntryResponse) SetSubnetNil(b bool)`
 
  SetSubnetNil sets the value for Subnet to be an explicit nil
 
 ### UnsetSubnet
-`func (o *AclEntryResponse) UnsetSubnet()`
+`func (o *ACLEntryResponse) UnsetSubnet()`
 
 UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
 ### GetCreatedAt
 
-`func (o *AclEntryResponse) GetCreatedAt() time.Time`
+`func (o *ACLEntryResponse) GetCreatedAt() time.Time`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *AclEntryResponse) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *ACLEntryResponse) GetCreatedAtOk() (*time.Time, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *AclEntryResponse) SetCreatedAt(v time.Time)`
+`func (o *ACLEntryResponse) SetCreatedAt(v time.Time)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *AclEntryResponse) HasCreatedAt() bool`
+`func (o *ACLEntryResponse) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### SetCreatedAtNil
 
-`func (o *AclEntryResponse) SetCreatedAtNil(b bool)`
+`func (o *ACLEntryResponse) SetCreatedAtNil(b bool)`
 
  SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
 ### UnsetCreatedAt
-`func (o *AclEntryResponse) UnsetCreatedAt()`
+`func (o *ACLEntryResponse) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetDeletedAt
 
-`func (o *AclEntryResponse) GetDeletedAt() time.Time`
+`func (o *ACLEntryResponse) GetDeletedAt() time.Time`
 
 GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
 
 ### GetDeletedAtOk
 
-`func (o *AclEntryResponse) GetDeletedAtOk() (*time.Time, bool)`
+`func (o *ACLEntryResponse) GetDeletedAtOk() (*time.Time, bool)`
 
 GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedAt
 
-`func (o *AclEntryResponse) SetDeletedAt(v time.Time)`
+`func (o *ACLEntryResponse) SetDeletedAt(v time.Time)`
 
 SetDeletedAt sets DeletedAt field to given value.
 
 ### HasDeletedAt
 
-`func (o *AclEntryResponse) HasDeletedAt() bool`
+`func (o *ACLEntryResponse) HasDeletedAt() bool`
 
 HasDeletedAt returns a boolean if a field has been set.
 
 ### SetDeletedAtNil
 
-`func (o *AclEntryResponse) SetDeletedAtNil(b bool)`
+`func (o *ACLEntryResponse) SetDeletedAtNil(b bool)`
 
  SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 
 ### UnsetDeletedAt
-`func (o *AclEntryResponse) UnsetDeletedAt()`
+`func (o *ACLEntryResponse) UnsetDeletedAt()`
 
 UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
 ### GetUpdatedAt
 
-`func (o *AclEntryResponse) GetUpdatedAt() time.Time`
+`func (o *ACLEntryResponse) GetUpdatedAt() time.Time`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *AclEntryResponse) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *ACLEntryResponse) GetUpdatedAtOk() (*time.Time, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *AclEntryResponse) SetUpdatedAt(v time.Time)`
+`func (o *ACLEntryResponse) SetUpdatedAt(v time.Time)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *AclEntryResponse) HasUpdatedAt() bool`
+`func (o *ACLEntryResponse) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 
 ### SetUpdatedAtNil
 
-`func (o *AclEntryResponse) SetUpdatedAtNil(b bool)`
+`func (o *ACLEntryResponse) SetUpdatedAtNil(b bool)`
 
  SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
 ### UnsetUpdatedAt
-`func (o *AclEntryResponse) UnsetUpdatedAt()`
+`func (o *ACLEntryResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetAclId
+### GetACLID
 
-`func (o *AclEntryResponse) GetAclId() string`
+`func (o *ACLEntryResponse) GetACLID() string`
 
-GetAclId returns the AclId field if non-nil, zero value otherwise.
+GetACLID returns the ACLID field if non-nil, zero value otherwise.
 
-### GetAclIdOk
+### GetACLIDOk
 
-`func (o *AclEntryResponse) GetAclIdOk() (*string, bool)`
+`func (o *ACLEntryResponse) GetACLIDOk() (*string, bool)`
 
-GetAclIdOk returns a tuple with the AclId field if it's non-nil, zero value otherwise
+GetACLIDOk returns a tuple with the ACLID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAclId
+### SetACLID
 
-`func (o *AclEntryResponse) SetAclId(v string)`
+`func (o *ACLEntryResponse) SetACLID(v string)`
 
-SetAclId sets AclId field to given value.
+SetACLID sets ACLID field to given value.
 
-### HasAclId
+### HasACLID
 
-`func (o *AclEntryResponse) HasAclId() bool`
+`func (o *ACLEntryResponse) HasACLID() bool`
 
-HasAclId returns a boolean if a field has been set.
+HasACLID returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *AclEntryResponse) GetId() string`
+`func (o *ACLEntryResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *AclEntryResponse) GetIdOk() (*string, bool)`
+`func (o *ACLEntryResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *AclEntryResponse) SetId(v string)`
+`func (o *ACLEntryResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *AclEntryResponse) HasId() bool`
+`func (o *ACLEntryResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceID
 
-`func (o *AclEntryResponse) GetServiceId() string`
+`func (o *ACLEntryResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *AclEntryResponse) GetServiceIdOk() (*string, bool)`
+`func (o *ACLEntryResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *AclEntryResponse) SetServiceId(v string)`
+`func (o *ACLEntryResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *AclEntryResponse) HasServiceId() bool`
+`func (o *ACLEntryResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

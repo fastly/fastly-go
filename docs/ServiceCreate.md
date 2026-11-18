@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
 **Name** | Pointer to **string** | The name of the service. | [optional] 
-**CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
+**CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
 **Type** | Pointer to **string** | The type of this service. | [optional] 
 
 ## Methods
@@ -88,30 +88,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *ServiceCreate) GetCustomerId() string`
+`func (o *ServiceCreate) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *ServiceCreate) GetCustomerIdOk() (*string, bool)`
+`func (o *ServiceCreate) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *ServiceCreate) SetCustomerId(v string)`
+`func (o *ServiceCreate) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *ServiceCreate) HasCustomerId() bool`
+`func (o *ServiceCreate) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
 ### GetType
 
@@ -140,5 +140,3 @@ HasType returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

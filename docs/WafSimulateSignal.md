@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWafSimulateSignal
 
-`func NewWafSimulateSignal(type_ string, detector string, detectorScope string, redaction string, ) *WafSimulateSignal`
+`func NewWafSimulateSignal(resourceType string, detector string, detectorScope string, redaction string, ) *WafSimulateSignal`
 
 NewWafSimulateSignal instantiates a new WafSimulateSignal object
 This constructor will assign default values to properties that have it defined,
@@ -188,5 +188,3 @@ HasValue returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

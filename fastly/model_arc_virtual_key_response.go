@@ -32,11 +32,11 @@ type ArcVirtualKeyResponse struct {
 	// The tokens-per-minute limit for this key. Omit for no limit.
 	TpmLimit NullableInt32 `json:"tpm_limit,omitempty"`
 	// The unique identifier of the virtual key.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The type of the resource.
 	Type string `json:"type"`
 	// The ID of the user who created the key.
-	UserId string `json:"user_id"`
+	UserID string `json:"user_id"`
 	// The display name of the user who created the key.
 	CreatedBy *string `json:"created_by,omitempty"`
 	// The date and time the key was last used to make a request, in RFC 3339 format. `null` if the key has never been used.
@@ -60,14 +60,14 @@ type _ArcVirtualKeyResponse ArcVirtualKeyResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcVirtualKeyResponse(name string, id string, type_ string, userId string, createdAt time.Time, updatedAt time.Time) *ArcVirtualKeyResponse {
+func NewArcVirtualKeyResponse(name string, id string, resourceType string, userID string, createdAt time.Time, updatedAt time.Time) *ArcVirtualKeyResponse {
 	this := ArcVirtualKeyResponse{}
 	this.Name = name
 	var securityEnabled bool = false
 	this.SecurityEnabled = &securityEnabled
-	this.Id = id
-	this.Type = type_
-	this.UserId = userId
+	this.ID = id
+	this.Type = resourceType
+	this.UserID = userID
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -300,28 +300,28 @@ func (o *ArcVirtualKeyResponse) UnsetTpmLimit() {
 	o.TpmLimit.Unset()
 }
 
-// GetId returns the Id field value
-func (o *ArcVirtualKeyResponse) GetId() string {
+// GetID returns the ID field value
+func (o *ArcVirtualKeyResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcVirtualKeyResponse) GetIdOk() (*string, bool) {
+func (o *ArcVirtualKeyResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcVirtualKeyResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcVirtualKeyResponse) SetID(v string) {
+	o.ID = v
 }
 
 // GetType returns the Type field value
@@ -348,28 +348,28 @@ func (o *ArcVirtualKeyResponse) SetType(v string) {
 	o.Type = v
 }
 
-// GetUserId returns the UserId field value
-func (o *ArcVirtualKeyResponse) GetUserId() string {
+// GetUserID returns the UserID field value
+func (o *ArcVirtualKeyResponse) GetUserID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.UserId
+	return o.UserID
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIDOk returns a tuple with the UserID field value
 // and a boolean to check if the value has been set.
-func (o *ArcVirtualKeyResponse) GetUserIdOk() (*string, bool) {
+func (o *ArcVirtualKeyResponse) GetUserIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.UserId, true
+	return &o.UserID, true
 }
 
-// SetUserId sets field value
-func (o *ArcVirtualKeyResponse) SetUserId(v string) {
-	o.UserId = v
+// SetUserID sets field value
+func (o *ArcVirtualKeyResponse) SetUserID(v string) {
+	o.UserID = v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -636,13 +636,13 @@ func (o ArcVirtualKeyResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["tpm_limit"] = o.TpmLimit.Get()
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["type"] = o.Type
 	}
 	if true {
-		toSerialize["user_id"] = o.UserId
+		toSerialize["user_id"] = o.UserID
 	}
 	if o.CreatedBy != nil {
 		toSerialize["created_by"] = o.CreatedBy

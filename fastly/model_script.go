@@ -20,9 +20,9 @@ import (
 // Script struct for Script
 type Script struct {
 	// Unique script identifier
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Parent page ID
-	PageId *string `json:"page_id,omitempty"`
+	PageID *string `json:"page_id,omitempty"`
 	// Script source (inline or external URL)
 	Source *string `json:"source,omitempty"`
 	// URLs where this script was observed
@@ -60,68 +60,68 @@ func NewScriptWithDefaults() *Script {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Script) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *Script) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Script) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *Script) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Script) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *Script) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Script) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *Script) SetID(v string) {
+	o.ID = &v
 }
 
-// GetPageId returns the PageId field value if set, zero value otherwise.
-func (o *Script) GetPageId() string {
-	if o == nil || o.PageId == nil {
+// GetPageID returns the PageID field value if set, zero value otherwise.
+func (o *Script) GetPageID() string {
+	if o == nil || o.PageID == nil {
 		var ret string
 		return ret
 	}
-	return *o.PageId
+	return *o.PageID
 }
 
-// GetPageIdOk returns a tuple with the PageId field value if set, nil otherwise
+// GetPageIDOk returns a tuple with the PageID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Script) GetPageIdOk() (*string, bool) {
-	if o == nil || o.PageId == nil {
+func (o *Script) GetPageIDOk() (*string, bool) {
+	if o == nil || o.PageID == nil {
 		return nil, false
 	}
-	return o.PageId, true
+	return o.PageID, true
 }
 
-// HasPageId returns a boolean if a field has been set.
-func (o *Script) HasPageId() bool {
-	if o != nil && o.PageId != nil {
+// HasPageID returns a boolean if a field has been set.
+func (o *Script) HasPageID() bool {
+	if o != nil && o.PageID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPageId gets a reference to the given string and assigns it to the PageId field.
-func (o *Script) SetPageId(v string) {
-	o.PageId = &v
+// SetPageID gets a reference to the given string and assigns it to the PageID field.
+func (o *Script) SetPageID(v string) {
+	o.PageID = &v
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
@@ -416,11 +416,11 @@ func (o *Script) SetAuthorizedAt(v time.Time) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Script) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
-	if o.PageId != nil {
-		toSerialize["page_id"] = o.PageId
+	if o.PageID != nil {
+		toSerialize["page_id"] = o.PageID
 	}
 	if o.Source != nil {
 		toSerialize["source"] = o.Source

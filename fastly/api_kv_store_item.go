@@ -36,11 +36,11 @@ type KvStoreItemAPI interface {
 		Delete an item.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeId
+		 @param storeID
 		 @param key
 		 @return APIKvStoreDeleteItemRequest
 	*/
-	KvStoreDeleteItem(ctx context.Context, storeId string, key string) APIKvStoreDeleteItemRequest
+	KvStoreDeleteItem(ctx context.Context, storeID string, key string) APIKvStoreDeleteItemRequest
 
 	// KvStoreDeleteItemExecute executes the request
 	KvStoreDeleteItemExecute(r APIKvStoreDeleteItemRequest) (*http.Response, error)
@@ -51,11 +51,11 @@ type KvStoreItemAPI interface {
 		Get an item, including its value, metadata (if any), and generation marker.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeId
+		 @param storeID
 		 @param key
 		 @return APIKvStoreGetItemRequest
 	*/
-	KvStoreGetItem(ctx context.Context, storeId string, key string) APIKvStoreGetItemRequest
+	KvStoreGetItem(ctx context.Context, storeID string, key string) APIKvStoreGetItemRequest
 
 	// KvStoreGetItemExecute executes the request
 	//  @return string
@@ -67,10 +67,10 @@ type KvStoreItemAPI interface {
 		Lists the matching item keys (or all item keys, if no prefix is supplied).
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeId
+		 @param storeID
 		 @return APIKvStoreListItemKeysRequest
 	*/
-	KvStoreListItemKeys(ctx context.Context, storeId string) APIKvStoreListItemKeysRequest
+	KvStoreListItemKeys(ctx context.Context, storeID string) APIKvStoreListItemKeysRequest
 
 	// KvStoreListItemKeysExecute executes the request
 	//  @return InlineResponse20018
@@ -82,11 +82,11 @@ type KvStoreItemAPI interface {
 		Inserts or updates an item's value and metadata.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeId
+		 @param storeID
 		 @param key
 		 @return APIKvStoreUpsertItemRequest
 	*/
-	KvStoreUpsertItem(ctx context.Context, storeId string, key string) APIKvStoreUpsertItemRequest
+	KvStoreUpsertItem(ctx context.Context, storeID string, key string) APIKvStoreUpsertItemRequest
 
 	// KvStoreUpsertItemExecute executes the request
 	KvStoreUpsertItemExecute(r APIKvStoreUpsertItemRequest) (*http.Response, error)
@@ -99,7 +99,7 @@ type KvStoreItemAPIService service
 type APIKvStoreDeleteItemRequest struct {
 	ctx               context.Context
 	APIService        KvStoreItemAPI
-	storeId           string
+	storeID           string
 	key               string
 	ifGenerationMatch *int32
 	force             *bool
@@ -128,15 +128,15 @@ KvStoreDeleteItem Delete an item.
 Delete an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeId
+ @param storeID
  @param key
  @return APIKvStoreDeleteItemRequest
 */
-func (a *KvStoreItemAPIService) KvStoreDeleteItem(ctx context.Context, storeId string, key string) APIKvStoreDeleteItemRequest {
+func (a *KvStoreItemAPIService) KvStoreDeleteItem(ctx context.Context, storeID string, key string) APIKvStoreDeleteItemRequest {
 	return APIKvStoreDeleteItemRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeId:    storeId,
+		storeID:    storeID,
 		key:        key,
 	}
 }
@@ -155,7 +155,7 @@ func (a *KvStoreItemAPIService) KvStoreDeleteItemExecute(r APIKvStoreDeleteItemR
 	}
 
 	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys/{key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key"+"}", gourl.PathEscape(parameterToString(r.key, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -244,7 +244,7 @@ func (a *KvStoreItemAPIService) KvStoreDeleteItemExecute(r APIKvStoreDeleteItemR
 type APIKvStoreGetItemRequest struct {
 	ctx        context.Context
 	APIService KvStoreItemAPI
-	storeId    string
+	storeID    string
 	key        string
 }
 
@@ -259,15 +259,15 @@ KvStoreGetItem Get an item.
 Get an item, including its value, metadata (if any), and generation marker.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeId
+ @param storeID
  @param key
  @return APIKvStoreGetItemRequest
 */
-func (a *KvStoreItemAPIService) KvStoreGetItem(ctx context.Context, storeId string, key string) APIKvStoreGetItemRequest {
+func (a *KvStoreItemAPIService) KvStoreGetItem(ctx context.Context, storeID string, key string) APIKvStoreGetItemRequest {
 	return APIKvStoreGetItemRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeId:    storeId,
+		storeID:    storeID,
 		key:        key,
 	}
 }
@@ -288,7 +288,7 @@ func (a *KvStoreItemAPIService) KvStoreGetItemExecute(r APIKvStoreGetItemRequest
 	}
 
 	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys/{key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key"+"}", gourl.PathEscape(parameterToString(r.key, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -380,7 +380,7 @@ func (a *KvStoreItemAPIService) KvStoreGetItemExecute(r APIKvStoreGetItemRequest
 type APIKvStoreListItemKeysRequest struct {
 	ctx         context.Context
 	APIService  KvStoreItemAPI
-	storeId     string
+	storeID     string
 	cursor      *string
 	limit       *int32
 	prefix      *string
@@ -422,14 +422,14 @@ KvStoreListItemKeys List item keys.
 Lists the matching item keys (or all item keys, if no prefix is supplied).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeId
+ @param storeID
  @return APIKvStoreListItemKeysRequest
 */
-func (a *KvStoreItemAPIService) KvStoreListItemKeys(ctx context.Context, storeId string) APIKvStoreListItemKeysRequest {
+func (a *KvStoreItemAPIService) KvStoreListItemKeys(ctx context.Context, storeID string) APIKvStoreListItemKeysRequest {
 	return APIKvStoreListItemKeysRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeId:    storeId,
+		storeID:    storeID,
 	}
 }
 
@@ -449,7 +449,7 @@ func (a *KvStoreItemAPIService) KvStoreListItemKeysExecute(r APIKvStoreListItemK
 	}
 
 	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -552,7 +552,7 @@ func (a *KvStoreItemAPIService) KvStoreListItemKeysExecute(r APIKvStoreListItemK
 type APIKvStoreUpsertItemRequest struct {
 	ctx               context.Context
 	APIService        KvStoreItemAPI
-	storeId           string
+	storeID           string
 	key               string
 	ifGenerationMatch *int32
 	timeToLiveSec     *int32
@@ -623,15 +623,15 @@ KvStoreUpsertItem Insert or update an item.
 Inserts or updates an item's value and metadata.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeId
+ @param storeID
  @param key
  @return APIKvStoreUpsertItemRequest
 */
-func (a *KvStoreItemAPIService) KvStoreUpsertItem(ctx context.Context, storeId string, key string) APIKvStoreUpsertItemRequest {
+func (a *KvStoreItemAPIService) KvStoreUpsertItem(ctx context.Context, storeID string, key string) APIKvStoreUpsertItemRequest {
 	return APIKvStoreUpsertItemRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeId:    storeId,
+		storeID:    storeID,
 		key:        key,
 	}
 }
@@ -650,7 +650,7 @@ func (a *KvStoreItemAPIService) KvStoreUpsertItemExecute(r APIKvStoreUpsertItemR
 	}
 
 	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys/{key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key"+"}", gourl.PathEscape(parameterToString(r.key, "")))
 
 	localVarHeaderParams := make(map[string]string)

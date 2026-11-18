@@ -16,68 +16,68 @@ import (
 	"encoding/json"
 )
 
-// TlsConfigurationResponseDataAllOf struct for TlsConfigurationResponseDataAllOf
-type TlsConfigurationResponseDataAllOf struct {
-	Id                   *string                             `json:"id,omitempty"`
-	Attributes           *TlsConfigurationResponseAttributes `json:"attributes,omitempty"`
+// TLSConfigurationResponseDataAllOf struct for TLSConfigurationResponseDataAllOf
+type TLSConfigurationResponseDataAllOf struct {
+	ID                   *string                             `json:"id,omitempty"`
+	Attributes           *TLSConfigurationResponseAttributes `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsConfigurationResponseDataAllOf TlsConfigurationResponseDataAllOf
+type _TLSConfigurationResponseDataAllOf TLSConfigurationResponseDataAllOf
 
-// NewTlsConfigurationResponseDataAllOf instantiates a new TlsConfigurationResponseDataAllOf object
+// NewTLSConfigurationResponseDataAllOf instantiates a new TLSConfigurationResponseDataAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsConfigurationResponseDataAllOf() *TlsConfigurationResponseDataAllOf {
-	this := TlsConfigurationResponseDataAllOf{}
+func NewTLSConfigurationResponseDataAllOf() *TLSConfigurationResponseDataAllOf {
+	this := TLSConfigurationResponseDataAllOf{}
 	return &this
 }
 
-// NewTlsConfigurationResponseDataAllOfWithDefaults instantiates a new TlsConfigurationResponseDataAllOf object
+// NewTLSConfigurationResponseDataAllOfWithDefaults instantiates a new TLSConfigurationResponseDataAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsConfigurationResponseDataAllOfWithDefaults() *TlsConfigurationResponseDataAllOf {
-	this := TlsConfigurationResponseDataAllOf{}
+func NewTLSConfigurationResponseDataAllOfWithDefaults() *TLSConfigurationResponseDataAllOf {
+	this := TLSConfigurationResponseDataAllOf{}
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseDataAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *TLSConfigurationResponseDataAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseDataAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *TLSConfigurationResponseDataAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseDataAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *TLSConfigurationResponseDataAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *TlsConfigurationResponseDataAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *TLSConfigurationResponseDataAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseDataAllOf) GetAttributes() TlsConfigurationResponseAttributes {
+func (o *TLSConfigurationResponseDataAllOf) GetAttributes() TLSConfigurationResponseAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret TlsConfigurationResponseAttributes
+		var ret TLSConfigurationResponseAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -85,7 +85,7 @@ func (o *TlsConfigurationResponseDataAllOf) GetAttributes() TlsConfigurationResp
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseDataAllOf) GetAttributesOk() (*TlsConfigurationResponseAttributes, bool) {
+func (o *TLSConfigurationResponseDataAllOf) GetAttributesOk() (*TLSConfigurationResponseAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *TlsConfigurationResponseDataAllOf) GetAttributesOk() (*TlsConfiguration
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseDataAllOf) HasAttributes() bool {
+func (o *TLSConfigurationResponseDataAllOf) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -101,17 +101,17 @@ func (o *TlsConfigurationResponseDataAllOf) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TlsConfigurationResponseAttributes and assigns it to the Attributes field.
-func (o *TlsConfigurationResponseDataAllOf) SetAttributes(v TlsConfigurationResponseAttributes) {
+// SetAttributes gets a reference to the given TLSConfigurationResponseAttributes and assigns it to the Attributes field.
+func (o *TLSConfigurationResponseDataAllOf) SetAttributes(v TLSConfigurationResponseAttributes) {
 	o.Attributes = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsConfigurationResponseDataAllOf) MarshalJSON() ([]byte, error) {
+func (o TLSConfigurationResponseDataAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
@@ -126,11 +126,11 @@ func (o TlsConfigurationResponseDataAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsConfigurationResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsConfigurationResponseDataAllOf := _TlsConfigurationResponseDataAllOf{}
+func (o *TLSConfigurationResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSConfigurationResponseDataAllOf := _TLSConfigurationResponseDataAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTlsConfigurationResponseDataAllOf); err == nil {
-		*o = TlsConfigurationResponseDataAllOf(varTlsConfigurationResponseDataAllOf)
+	if err = json.Unmarshal(bytes, &varTLSConfigurationResponseDataAllOf); err == nil {
+		*o = TLSConfigurationResponseDataAllOf(varTLSConfigurationResponseDataAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -144,48 +144,48 @@ func (o *TlsConfigurationResponseDataAllOf) UnmarshalJSON(bytes []byte) (err err
 	return err
 }
 
-// NullableTlsConfigurationResponseDataAllOf is a helper abstraction for handling nullable tlsconfigurationresponsedataallof types.
-type NullableTlsConfigurationResponseDataAllOf struct {
-	value *TlsConfigurationResponseDataAllOf
+// NullableTLSConfigurationResponseDataAllOf is a helper abstraction for handling nullable tlsconfigurationresponsedataallof types.
+type NullableTLSConfigurationResponseDataAllOf struct {
+	value *TLSConfigurationResponseDataAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsConfigurationResponseDataAllOf) Get() *TlsConfigurationResponseDataAllOf {
+func (v NullableTLSConfigurationResponseDataAllOf) Get() *TLSConfigurationResponseDataAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsConfigurationResponseDataAllOf) Set(val *TlsConfigurationResponseDataAllOf) {
+func (v *NullableTLSConfigurationResponseDataAllOf) Set(val *TLSConfigurationResponseDataAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsConfigurationResponseDataAllOf) IsSet() bool {
+func (v NullableTLSConfigurationResponseDataAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsConfigurationResponseDataAllOf) Unset() {
+func (v *NullableTLSConfigurationResponseDataAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsConfigurationResponseDataAllOf returns a pointer to a new instance of NullableTlsConfigurationResponseDataAllOf.
-func NewNullableTlsConfigurationResponseDataAllOf(val *TlsConfigurationResponseDataAllOf) *NullableTlsConfigurationResponseDataAllOf {
-	return &NullableTlsConfigurationResponseDataAllOf{value: val, isSet: true}
+// NewNullableTLSConfigurationResponseDataAllOf returns a pointer to a new instance of NullableTLSConfigurationResponseDataAllOf.
+func NewNullableTLSConfigurationResponseDataAllOf(val *TLSConfigurationResponseDataAllOf) *NullableTLSConfigurationResponseDataAllOf {
+	return &NullableTLSConfigurationResponseDataAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsConfigurationResponseDataAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTLSConfigurationResponseDataAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsConfigurationResponseDataAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSConfigurationResponseDataAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -17,8 +17,8 @@ import (
 	"time"
 )
 
-// TlsConfigurationResponseAttributes struct for TlsConfigurationResponseAttributes
-type TlsConfigurationResponseAttributes struct {
+// TLSConfigurationResponseAttributes struct for TLSConfigurationResponseAttributes
+type TLSConfigurationResponseAttributes struct {
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -28,35 +28,35 @@ type TlsConfigurationResponseAttributes struct {
 	// Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
 	Default *bool `json:"default,omitempty"`
 	// HTTP protocols available on your configuration.
-	HttpProtocols []string `json:"http_protocols,omitempty"`
+	HTTPProtocols []string `json:"http_protocols,omitempty"`
 	// TLS protocols available on your configuration.
-	TlsProtocols []string `json:"tls_protocols,omitempty"`
+	TLSProtocols []string `json:"tls_protocols,omitempty"`
 	// Signifies whether the configuration is used for Platform TLS or not.
 	Bulk                 *bool `json:"bulk,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsConfigurationResponseAttributes TlsConfigurationResponseAttributes
+type _TLSConfigurationResponseAttributes TLSConfigurationResponseAttributes
 
-// NewTlsConfigurationResponseAttributes instantiates a new TlsConfigurationResponseAttributes object
+// NewTLSConfigurationResponseAttributes instantiates a new TLSConfigurationResponseAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsConfigurationResponseAttributes() *TlsConfigurationResponseAttributes {
-	this := TlsConfigurationResponseAttributes{}
+func NewTLSConfigurationResponseAttributes() *TLSConfigurationResponseAttributes {
+	this := TLSConfigurationResponseAttributes{}
 	return &this
 }
 
-// NewTlsConfigurationResponseAttributesWithDefaults instantiates a new TlsConfigurationResponseAttributes object
+// NewTLSConfigurationResponseAttributesWithDefaults instantiates a new TLSConfigurationResponseAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsConfigurationResponseAttributesWithDefaults() *TlsConfigurationResponseAttributes {
-	this := TlsConfigurationResponseAttributes{}
+func NewTLSConfigurationResponseAttributesWithDefaults() *TLSConfigurationResponseAttributes {
+	this := TLSConfigurationResponseAttributes{}
 	return &this
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TlsConfigurationResponseAttributes) GetCreatedAt() time.Time {
+func (o *TLSConfigurationResponseAttributes) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -67,7 +67,7 @@ func (o *TlsConfigurationResponseAttributes) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TlsConfigurationResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
+func (o *TLSConfigurationResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -75,7 +75,7 @@ func (o *TlsConfigurationResponseAttributes) GetCreatedAtOk() (*time.Time, bool)
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasCreatedAt() bool {
+func (o *TLSConfigurationResponseAttributes) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -84,22 +84,22 @@ func (o *TlsConfigurationResponseAttributes) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *TlsConfigurationResponseAttributes) SetCreatedAt(v time.Time) {
+func (o *TLSConfigurationResponseAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *TlsConfigurationResponseAttributes) SetCreatedAtNil() {
+func (o *TLSConfigurationResponseAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *TlsConfigurationResponseAttributes) UnsetCreatedAt() {
+func (o *TLSConfigurationResponseAttributes) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TlsConfigurationResponseAttributes) GetDeletedAt() time.Time {
+func (o *TLSConfigurationResponseAttributes) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -110,7 +110,7 @@ func (o *TlsConfigurationResponseAttributes) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TlsConfigurationResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
+func (o *TLSConfigurationResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -118,7 +118,7 @@ func (o *TlsConfigurationResponseAttributes) GetDeletedAtOk() (*time.Time, bool)
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasDeletedAt() bool {
+func (o *TLSConfigurationResponseAttributes) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -127,22 +127,22 @@ func (o *TlsConfigurationResponseAttributes) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *TlsConfigurationResponseAttributes) SetDeletedAt(v time.Time) {
+func (o *TLSConfigurationResponseAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *TlsConfigurationResponseAttributes) SetDeletedAtNil() {
+func (o *TLSConfigurationResponseAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *TlsConfigurationResponseAttributes) UnsetDeletedAt() {
+func (o *TLSConfigurationResponseAttributes) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TlsConfigurationResponseAttributes) GetUpdatedAt() time.Time {
+func (o *TLSConfigurationResponseAttributes) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -153,7 +153,7 @@ func (o *TlsConfigurationResponseAttributes) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TlsConfigurationResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *TLSConfigurationResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *TlsConfigurationResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasUpdatedAt() bool {
+func (o *TLSConfigurationResponseAttributes) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -170,22 +170,22 @@ func (o *TlsConfigurationResponseAttributes) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *TlsConfigurationResponseAttributes) SetUpdatedAt(v time.Time) {
+func (o *TLSConfigurationResponseAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *TlsConfigurationResponseAttributes) SetUpdatedAtNil() {
+func (o *TLSConfigurationResponseAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *TlsConfigurationResponseAttributes) UnsetUpdatedAt() {
+func (o *TLSConfigurationResponseAttributes) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
 // GetDefault returns the Default field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributes) GetDefault() bool {
+func (o *TLSConfigurationResponseAttributes) GetDefault() bool {
 	if o == nil || o.Default == nil {
 		var ret bool
 		return ret
@@ -195,7 +195,7 @@ func (o *TlsConfigurationResponseAttributes) GetDefault() bool {
 
 // GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributes) GetDefaultOk() (*bool, bool) {
+func (o *TLSConfigurationResponseAttributes) GetDefaultOk() (*bool, bool) {
 	if o == nil || o.Default == nil {
 		return nil, false
 	}
@@ -203,7 +203,7 @@ func (o *TlsConfigurationResponseAttributes) GetDefaultOk() (*bool, bool) {
 }
 
 // HasDefault returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasDefault() bool {
+func (o *TLSConfigurationResponseAttributes) HasDefault() bool {
 	if o != nil && o.Default != nil {
 		return true
 	}
@@ -212,76 +212,76 @@ func (o *TlsConfigurationResponseAttributes) HasDefault() bool {
 }
 
 // SetDefault gets a reference to the given bool and assigns it to the Default field.
-func (o *TlsConfigurationResponseAttributes) SetDefault(v bool) {
+func (o *TLSConfigurationResponseAttributes) SetDefault(v bool) {
 	o.Default = &v
 }
 
-// GetHttpProtocols returns the HttpProtocols field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributes) GetHttpProtocols() []string {
-	if o == nil || o.HttpProtocols == nil {
+// GetHTTPProtocols returns the HTTPProtocols field value if set, zero value otherwise.
+func (o *TLSConfigurationResponseAttributes) GetHTTPProtocols() []string {
+	if o == nil || o.HTTPProtocols == nil {
 		var ret []string
 		return ret
 	}
-	return o.HttpProtocols
+	return o.HTTPProtocols
 }
 
-// GetHttpProtocolsOk returns a tuple with the HttpProtocols field value if set, nil otherwise
+// GetHTTPProtocolsOk returns a tuple with the HTTPProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributes) GetHttpProtocolsOk() ([]string, bool) {
-	if o == nil || o.HttpProtocols == nil {
+func (o *TLSConfigurationResponseAttributes) GetHTTPProtocolsOk() ([]string, bool) {
+	if o == nil || o.HTTPProtocols == nil {
 		return nil, false
 	}
-	return o.HttpProtocols, true
+	return o.HTTPProtocols, true
 }
 
-// HasHttpProtocols returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasHttpProtocols() bool {
-	if o != nil && o.HttpProtocols != nil {
+// HasHTTPProtocols returns a boolean if a field has been set.
+func (o *TLSConfigurationResponseAttributes) HasHTTPProtocols() bool {
+	if o != nil && o.HTTPProtocols != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHttpProtocols gets a reference to the given []string and assigns it to the HttpProtocols field.
-func (o *TlsConfigurationResponseAttributes) SetHttpProtocols(v []string) {
-	o.HttpProtocols = v
+// SetHTTPProtocols gets a reference to the given []string and assigns it to the HTTPProtocols field.
+func (o *TLSConfigurationResponseAttributes) SetHTTPProtocols(v []string) {
+	o.HTTPProtocols = v
 }
 
-// GetTlsProtocols returns the TlsProtocols field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributes) GetTlsProtocols() []string {
-	if o == nil || o.TlsProtocols == nil {
+// GetTLSProtocols returns the TLSProtocols field value if set, zero value otherwise.
+func (o *TLSConfigurationResponseAttributes) GetTLSProtocols() []string {
+	if o == nil || o.TLSProtocols == nil {
 		var ret []string
 		return ret
 	}
-	return o.TlsProtocols
+	return o.TLSProtocols
 }
 
-// GetTlsProtocolsOk returns a tuple with the TlsProtocols field value if set, nil otherwise
+// GetTLSProtocolsOk returns a tuple with the TLSProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributes) GetTlsProtocolsOk() ([]string, bool) {
-	if o == nil || o.TlsProtocols == nil {
+func (o *TLSConfigurationResponseAttributes) GetTLSProtocolsOk() ([]string, bool) {
+	if o == nil || o.TLSProtocols == nil {
 		return nil, false
 	}
-	return o.TlsProtocols, true
+	return o.TLSProtocols, true
 }
 
-// HasTlsProtocols returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasTlsProtocols() bool {
-	if o != nil && o.TlsProtocols != nil {
+// HasTLSProtocols returns a boolean if a field has been set.
+func (o *TLSConfigurationResponseAttributes) HasTLSProtocols() bool {
+	if o != nil && o.TLSProtocols != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsProtocols gets a reference to the given []string and assigns it to the TlsProtocols field.
-func (o *TlsConfigurationResponseAttributes) SetTlsProtocols(v []string) {
-	o.TlsProtocols = v
+// SetTLSProtocols gets a reference to the given []string and assigns it to the TLSProtocols field.
+func (o *TLSConfigurationResponseAttributes) SetTLSProtocols(v []string) {
+	o.TLSProtocols = v
 }
 
 // GetBulk returns the Bulk field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributes) GetBulk() bool {
+func (o *TLSConfigurationResponseAttributes) GetBulk() bool {
 	if o == nil || o.Bulk == nil {
 		var ret bool
 		return ret
@@ -291,7 +291,7 @@ func (o *TlsConfigurationResponseAttributes) GetBulk() bool {
 
 // GetBulkOk returns a tuple with the Bulk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributes) GetBulkOk() (*bool, bool) {
+func (o *TLSConfigurationResponseAttributes) GetBulkOk() (*bool, bool) {
 	if o == nil || o.Bulk == nil {
 		return nil, false
 	}
@@ -299,7 +299,7 @@ func (o *TlsConfigurationResponseAttributes) GetBulkOk() (*bool, bool) {
 }
 
 // HasBulk returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributes) HasBulk() bool {
+func (o *TLSConfigurationResponseAttributes) HasBulk() bool {
 	if o != nil && o.Bulk != nil {
 		return true
 	}
@@ -308,13 +308,13 @@ func (o *TlsConfigurationResponseAttributes) HasBulk() bool {
 }
 
 // SetBulk gets a reference to the given bool and assigns it to the Bulk field.
-func (o *TlsConfigurationResponseAttributes) SetBulk(v bool) {
+func (o *TLSConfigurationResponseAttributes) SetBulk(v bool) {
 	o.Bulk = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
+func (o TLSConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -328,11 +328,11 @@ func (o TlsConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
 	if o.Default != nil {
 		toSerialize["default"] = o.Default
 	}
-	if o.HttpProtocols != nil {
-		toSerialize["http_protocols"] = o.HttpProtocols
+	if o.HTTPProtocols != nil {
+		toSerialize["http_protocols"] = o.HTTPProtocols
 	}
-	if o.TlsProtocols != nil {
-		toSerialize["tls_protocols"] = o.TlsProtocols
+	if o.TLSProtocols != nil {
+		toSerialize["tls_protocols"] = o.TLSProtocols
 	}
 	if o.Bulk != nil {
 		toSerialize["bulk"] = o.Bulk
@@ -347,11 +347,11 @@ func (o TlsConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsConfigurationResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsConfigurationResponseAttributes := _TlsConfigurationResponseAttributes{}
+func (o *TLSConfigurationResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSConfigurationResponseAttributes := _TLSConfigurationResponseAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTlsConfigurationResponseAttributes); err == nil {
-		*o = TlsConfigurationResponseAttributes(varTlsConfigurationResponseAttributes)
+	if err = json.Unmarshal(bytes, &varTLSConfigurationResponseAttributes); err == nil {
+		*o = TLSConfigurationResponseAttributes(varTLSConfigurationResponseAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -370,48 +370,48 @@ func (o *TlsConfigurationResponseAttributes) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableTlsConfigurationResponseAttributes is a helper abstraction for handling nullable tlsconfigurationresponseattributes types.
-type NullableTlsConfigurationResponseAttributes struct {
-	value *TlsConfigurationResponseAttributes
+// NullableTLSConfigurationResponseAttributes is a helper abstraction for handling nullable tlsconfigurationresponseattributes types.
+type NullableTLSConfigurationResponseAttributes struct {
+	value *TLSConfigurationResponseAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsConfigurationResponseAttributes) Get() *TlsConfigurationResponseAttributes {
+func (v NullableTLSConfigurationResponseAttributes) Get() *TLSConfigurationResponseAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsConfigurationResponseAttributes) Set(val *TlsConfigurationResponseAttributes) {
+func (v *NullableTLSConfigurationResponseAttributes) Set(val *TLSConfigurationResponseAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsConfigurationResponseAttributes) IsSet() bool {
+func (v NullableTLSConfigurationResponseAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsConfigurationResponseAttributes) Unset() {
+func (v *NullableTLSConfigurationResponseAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsConfigurationResponseAttributes returns a pointer to a new instance of NullableTlsConfigurationResponseAttributes.
-func NewNullableTlsConfigurationResponseAttributes(val *TlsConfigurationResponseAttributes) *NullableTlsConfigurationResponseAttributes {
-	return &NullableTlsConfigurationResponseAttributes{value: val, isSet: true}
+// NewNullableTLSConfigurationResponseAttributes returns a pointer to a new instance of NullableTLSConfigurationResponseAttributes.
+func NewNullableTLSConfigurationResponseAttributes(val *TLSConfigurationResponseAttributes) *NullableTLSConfigurationResponseAttributes {
+	return &NullableTLSConfigurationResponseAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTLSConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsConfigurationResponseAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSConfigurationResponseAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -27,7 +27,7 @@ type LoggingSftpAdditional struct {
 	// The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
 	SecretKey NullableString `json:"secret_key,omitempty"`
 	// A list of host keys for all hosts we can connect to over SFTP.
-	SshKnownHosts *string `json:"ssh_known_hosts,omitempty"`
+	SSHKnownHosts *string `json:"ssh_known_hosts,omitempty"`
 	// The username for the server.
 	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
@@ -225,36 +225,36 @@ func (o *LoggingSftpAdditional) UnsetSecretKey() {
 	o.SecretKey.Unset()
 }
 
-// GetSshKnownHosts returns the SshKnownHosts field value if set, zero value otherwise.
-func (o *LoggingSftpAdditional) GetSshKnownHosts() string {
-	if o == nil || o.SshKnownHosts == nil {
+// GetSSHKnownHosts returns the SSHKnownHosts field value if set, zero value otherwise.
+func (o *LoggingSftpAdditional) GetSSHKnownHosts() string {
+	if o == nil || o.SSHKnownHosts == nil {
 		var ret string
 		return ret
 	}
-	return *o.SshKnownHosts
+	return *o.SSHKnownHosts
 }
 
-// GetSshKnownHostsOk returns a tuple with the SshKnownHosts field value if set, nil otherwise
+// GetSSHKnownHostsOk returns a tuple with the SSHKnownHosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpAdditional) GetSshKnownHostsOk() (*string, bool) {
-	if o == nil || o.SshKnownHosts == nil {
+func (o *LoggingSftpAdditional) GetSSHKnownHostsOk() (*string, bool) {
+	if o == nil || o.SSHKnownHosts == nil {
 		return nil, false
 	}
-	return o.SshKnownHosts, true
+	return o.SSHKnownHosts, true
 }
 
-// HasSshKnownHosts returns a boolean if a field has been set.
-func (o *LoggingSftpAdditional) HasSshKnownHosts() bool {
-	if o != nil && o.SshKnownHosts != nil {
+// HasSSHKnownHosts returns a boolean if a field has been set.
+func (o *LoggingSftpAdditional) HasSSHKnownHosts() bool {
+	if o != nil && o.SSHKnownHosts != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSshKnownHosts gets a reference to the given string and assigns it to the SshKnownHosts field.
-func (o *LoggingSftpAdditional) SetSshKnownHosts(v string) {
-	o.SshKnownHosts = &v
+// SetSSHKnownHosts gets a reference to the given string and assigns it to the SSHKnownHosts field.
+func (o *LoggingSftpAdditional) SetSSHKnownHosts(v string) {
+	o.SSHKnownHosts = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -305,8 +305,8 @@ func (o LoggingSftpAdditional) MarshalJSON() ([]byte, error) {
 	if o.SecretKey.IsSet() {
 		toSerialize["secret_key"] = o.SecretKey.Get()
 	}
-	if o.SshKnownHosts != nil {
-		toSerialize["ssh_known_hosts"] = o.SshKnownHosts
+	if o.SSHKnownHosts != nil {
+		toSerialize["ssh_known_hosts"] = o.SSHKnownHosts
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User

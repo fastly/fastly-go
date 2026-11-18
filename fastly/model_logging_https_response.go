@@ -17,8 +17,8 @@ import (
 	"time"
 )
 
-// LoggingHttpsResponse struct for LoggingHttpsResponse
-type LoggingHttpsResponse struct {
+// LoggingHTTPSResponse struct for LoggingHTTPSResponse
+type LoggingHTTPSResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
 	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
@@ -32,19 +32,19 @@ type LoggingHttpsResponse struct {
 	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
-	TlsCaCert NullableString `json:"tls_ca_cert,omitempty"`
+	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
 	// The client certificate used to make authenticated requests. Must be in PEM format.
-	TlsClientCert NullableString `json:"tls_client_cert,omitempty"`
+	TLSClientCert NullableString `json:"tls_client_cert,omitempty"`
 	// The client private key used to make authenticated requests. Must be in PEM format.
-	TlsClientKey NullableString `json:"tls_client_key,omitempty"`
+	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-	TlsHostname NullableString `json:"tls_hostname,omitempty"`
+	TLSHostname NullableString `json:"tls_hostname,omitempty"`
 	// The maximum number of logs sent in one request. Defaults `0` (10k).
 	RequestMaxEntries *int32 `json:"request_max_entries,omitempty"`
 	// The maximum number of bytes sent in one request. Defaults `0` (100MB).
 	RequestMaxBytes *int32 `json:"request_max_bytes,omitempty"`
 	// The URL to send logs to. Must use HTTPS. Required.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// Content type of the header sent with the request.
 	ContentType NullableString `json:"content_type,omitempty"`
 	// Name of the custom header sent with the request.
@@ -55,7 +55,7 @@ type LoggingHttpsResponse struct {
 	// HTTP method used for request.
 	Method *string `json:"method,omitempty"`
 	// Enforces valid JSON formatting for log entries.
-	JsonFormat *string `json:"json_format,omitempty"`
+	JSONFormat *string `json:"json_format,omitempty"`
 	// How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
 	Period *int32 `json:"period,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -64,19 +64,19 @@ type LoggingHttpsResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceId            *string      `json:"service_id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _LoggingHttpsResponse LoggingHttpsResponse
+type _LoggingHTTPSResponse LoggingHTTPSResponse
 
-// NewLoggingHttpsResponse instantiates a new LoggingHttpsResponse object
+// NewLoggingHTTPSResponse instantiates a new LoggingHTTPSResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoggingHttpsResponse() *LoggingHttpsResponse {
-	this := LoggingHttpsResponse{}
+func NewLoggingHTTPSResponse() *LoggingHTTPSResponse {
+	this := LoggingHTTPSResponse{}
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
 	var logProcessingRegion string = "none"
@@ -84,13 +84,13 @@ func NewLoggingHttpsResponse() *LoggingHttpsResponse {
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	var tlsCaCert string = "null"
-	this.TlsCaCert = *NewNullableString(&tlsCaCert)
+	this.TLSCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TlsClientCert = *NewNullableString(&tlsClientCert)
+	this.TLSClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TlsClientKey = *NewNullableString(&tlsClientKey)
+	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TlsHostname = *NewNullableString(&tlsHostname)
+	this.TLSHostname = *NewNullableString(&tlsHostname)
 	var requestMaxEntries int32 = 0
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
@@ -110,11 +110,11 @@ func NewLoggingHttpsResponse() *LoggingHttpsResponse {
 	return &this
 }
 
-// NewLoggingHttpsResponseWithDefaults instantiates a new LoggingHttpsResponse object
+// NewLoggingHTTPSResponseWithDefaults instantiates a new LoggingHTTPSResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLoggingHttpsResponseWithDefaults() *LoggingHttpsResponse {
-	this := LoggingHttpsResponse{}
+func NewLoggingHTTPSResponseWithDefaults() *LoggingHTTPSResponse {
+	this := LoggingHTTPSResponse{}
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
 	var logProcessingRegion string = "none"
@@ -122,13 +122,13 @@ func NewLoggingHttpsResponseWithDefaults() *LoggingHttpsResponse {
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	var tlsCaCert string = "null"
-	this.TlsCaCert = *NewNullableString(&tlsCaCert)
+	this.TLSCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TlsClientCert = *NewNullableString(&tlsClientCert)
+	this.TLSClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TlsClientKey = *NewNullableString(&tlsClientKey)
+	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TlsHostname = *NewNullableString(&tlsHostname)
+	this.TLSHostname = *NewNullableString(&tlsHostname)
 	var requestMaxEntries int32 = 0
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
@@ -149,7 +149,7 @@ func NewLoggingHttpsResponseWithDefaults() *LoggingHttpsResponse {
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetName() string {
+func (o *LoggingHTTPSResponse) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -159,7 +159,7 @@ func (o *LoggingHttpsResponse) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetNameOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *LoggingHttpsResponse) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasName() bool {
+func (o *LoggingHTTPSResponse) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -176,12 +176,12 @@ func (o *LoggingHttpsResponse) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *LoggingHttpsResponse) SetName(v string) {
+func (o *LoggingHTTPSResponse) SetName(v string) {
 	o.Name = &v
 }
 
 // GetPlacement returns the Placement field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetPlacement() string {
+func (o *LoggingHTTPSResponse) GetPlacement() string {
 	if o == nil || o.Placement.Get() == nil {
 		var ret string
 		return ret
@@ -192,7 +192,7 @@ func (o *LoggingHttpsResponse) GetPlacement() string {
 // GetPlacementOk returns a tuple with the Placement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetPlacementOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetPlacementOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -200,7 +200,7 @@ func (o *LoggingHttpsResponse) GetPlacementOk() (*string, bool) {
 }
 
 // HasPlacement returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasPlacement() bool {
+func (o *LoggingHTTPSResponse) HasPlacement() bool {
 	if o != nil && o.Placement.IsSet() {
 		return true
 	}
@@ -209,22 +209,22 @@ func (o *LoggingHttpsResponse) HasPlacement() bool {
 }
 
 // SetPlacement gets a reference to the given NullableString and assigns it to the Placement field.
-func (o *LoggingHttpsResponse) SetPlacement(v string) {
+func (o *LoggingHTTPSResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
 
 // SetPlacementNil sets the value for Placement to be an explicit nil
-func (o *LoggingHttpsResponse) SetPlacementNil() {
+func (o *LoggingHTTPSResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
 }
 
 // UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetPlacement() {
+func (o *LoggingHTTPSResponse) UnsetPlacement() {
 	o.Placement.Unset()
 }
 
 // GetResponseCondition returns the ResponseCondition field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetResponseCondition() string {
+func (o *LoggingHTTPSResponse) GetResponseCondition() string {
 	if o == nil || o.ResponseCondition.Get() == nil {
 		var ret string
 		return ret
@@ -235,7 +235,7 @@ func (o *LoggingHttpsResponse) GetResponseCondition() string {
 // GetResponseConditionOk returns a tuple with the ResponseCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetResponseConditionOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetResponseConditionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -243,7 +243,7 @@ func (o *LoggingHttpsResponse) GetResponseConditionOk() (*string, bool) {
 }
 
 // HasResponseCondition returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasResponseCondition() bool {
+func (o *LoggingHTTPSResponse) HasResponseCondition() bool {
 	if o != nil && o.ResponseCondition.IsSet() {
 		return true
 	}
@@ -252,22 +252,22 @@ func (o *LoggingHttpsResponse) HasResponseCondition() bool {
 }
 
 // SetResponseCondition gets a reference to the given NullableString and assigns it to the ResponseCondition field.
-func (o *LoggingHttpsResponse) SetResponseCondition(v string) {
+func (o *LoggingHTTPSResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
 
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
-func (o *LoggingHttpsResponse) SetResponseConditionNil() {
+func (o *LoggingHTTPSResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
 }
 
 // UnsetResponseCondition ensures that no value is present for ResponseCondition, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetResponseCondition() {
+func (o *LoggingHTTPSResponse) UnsetResponseCondition() {
 	o.ResponseCondition.Unset()
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetFormat() string {
+func (o *LoggingHTTPSResponse) GetFormat() string {
 	if o == nil || o.Format == nil {
 		var ret string
 		return ret
@@ -277,7 +277,7 @@ func (o *LoggingHttpsResponse) GetFormat() string {
 
 // GetFormatOk returns a tuple with the Format field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetFormatOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetFormatOk() (*string, bool) {
 	if o == nil || o.Format == nil {
 		return nil, false
 	}
@@ -285,7 +285,7 @@ func (o *LoggingHttpsResponse) GetFormatOk() (*string, bool) {
 }
 
 // HasFormat returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasFormat() bool {
+func (o *LoggingHTTPSResponse) HasFormat() bool {
 	if o != nil && o.Format != nil {
 		return true
 	}
@@ -294,12 +294,12 @@ func (o *LoggingHttpsResponse) HasFormat() bool {
 }
 
 // SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *LoggingHttpsResponse) SetFormat(v string) {
+func (o *LoggingHTTPSResponse) SetFormat(v string) {
 	o.Format = &v
 }
 
 // GetLogProcessingRegion returns the LogProcessingRegion field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetLogProcessingRegion() string {
+func (o *LoggingHTTPSResponse) GetLogProcessingRegion() string {
 	if o == nil || o.LogProcessingRegion == nil {
 		var ret string
 		return ret
@@ -309,7 +309,7 @@ func (o *LoggingHttpsResponse) GetLogProcessingRegion() string {
 
 // GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetLogProcessingRegionOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetLogProcessingRegionOk() (*string, bool) {
 	if o == nil || o.LogProcessingRegion == nil {
 		return nil, false
 	}
@@ -317,7 +317,7 @@ func (o *LoggingHttpsResponse) GetLogProcessingRegionOk() (*string, bool) {
 }
 
 // HasLogProcessingRegion returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasLogProcessingRegion() bool {
+func (o *LoggingHTTPSResponse) HasLogProcessingRegion() bool {
 	if o != nil && o.LogProcessingRegion != nil {
 		return true
 	}
@@ -326,12 +326,12 @@ func (o *LoggingHttpsResponse) HasLogProcessingRegion() bool {
 }
 
 // SetLogProcessingRegion gets a reference to the given string and assigns it to the LogProcessingRegion field.
-func (o *LoggingHttpsResponse) SetLogProcessingRegion(v string) {
+func (o *LoggingHTTPSResponse) SetLogProcessingRegion(v string) {
 	o.LogProcessingRegion = &v
 }
 
 // GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetFormatVersion() string {
+func (o *LoggingHTTPSResponse) GetFormatVersion() string {
 	if o == nil || o.FormatVersion == nil {
 		var ret string
 		return ret
@@ -341,7 +341,7 @@ func (o *LoggingHttpsResponse) GetFormatVersion() string {
 
 // GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetFormatVersionOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetFormatVersionOk() (*string, bool) {
 	if o == nil || o.FormatVersion == nil {
 		return nil, false
 	}
@@ -349,7 +349,7 @@ func (o *LoggingHttpsResponse) GetFormatVersionOk() (*string, bool) {
 }
 
 // HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasFormatVersion() bool {
+func (o *LoggingHTTPSResponse) HasFormatVersion() bool {
 	if o != nil && o.FormatVersion != nil {
 		return true
 	}
@@ -358,184 +358,184 @@ func (o *LoggingHttpsResponse) HasFormatVersion() bool {
 }
 
 // SetFormatVersion gets a reference to the given string and assigns it to the FormatVersion field.
-func (o *LoggingHttpsResponse) SetFormatVersion(v string) {
+func (o *LoggingHTTPSResponse) SetFormatVersion(v string) {
 	o.FormatVersion = &v
 }
 
-// GetTlsCaCert returns the TlsCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetTlsCaCert() string {
-	if o == nil || o.TlsCaCert.Get() == nil {
+// GetTLSCaCert returns the TLSCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingHTTPSResponse) GetTLSCaCert() string {
+	if o == nil || o.TLSCaCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsCaCert.Get()
+	return *o.TLSCaCert.Get()
 }
 
-// GetTlsCaCertOk returns a tuple with the TlsCaCert field value if set, nil otherwise
+// GetTLSCaCertOk returns a tuple with the TLSCaCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetTlsCaCertOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetTLSCaCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsCaCert.Get(), o.TlsCaCert.IsSet()
+	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
 }
 
-// HasTlsCaCert returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasTlsCaCert() bool {
-	if o != nil && o.TlsCaCert.IsSet() {
+// HasTLSCaCert returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasTLSCaCert() bool {
+	if o != nil && o.TLSCaCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsCaCert gets a reference to the given NullableString and assigns it to the TlsCaCert field.
-func (o *LoggingHttpsResponse) SetTlsCaCert(v string) {
-	o.TlsCaCert.Set(&v)
+// SetTLSCaCert gets a reference to the given NullableString and assigns it to the TLSCaCert field.
+func (o *LoggingHTTPSResponse) SetTLSCaCert(v string) {
+	o.TLSCaCert.Set(&v)
 }
 
-// SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
-func (o *LoggingHttpsResponse) SetTlsCaCertNil() {
-	o.TlsCaCert.Set(nil)
+// SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
+func (o *LoggingHTTPSResponse) SetTLSCaCertNil() {
+	o.TLSCaCert.Set(nil)
 }
 
-// UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetTlsCaCert() {
-	o.TlsCaCert.Unset()
+// UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+func (o *LoggingHTTPSResponse) UnsetTLSCaCert() {
+	o.TLSCaCert.Unset()
 }
 
-// GetTlsClientCert returns the TlsClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetTlsClientCert() string {
-	if o == nil || o.TlsClientCert.Get() == nil {
+// GetTLSClientCert returns the TLSClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingHTTPSResponse) GetTLSClientCert() string {
+	if o == nil || o.TLSClientCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsClientCert.Get()
+	return *o.TLSClientCert.Get()
 }
 
-// GetTlsClientCertOk returns a tuple with the TlsClientCert field value if set, nil otherwise
+// GetTLSClientCertOk returns a tuple with the TLSClientCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetTlsClientCertOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetTLSClientCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsClientCert.Get(), o.TlsClientCert.IsSet()
+	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
 }
 
-// HasTlsClientCert returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasTlsClientCert() bool {
-	if o != nil && o.TlsClientCert.IsSet() {
+// HasTLSClientCert returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasTLSClientCert() bool {
+	if o != nil && o.TLSClientCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsClientCert gets a reference to the given NullableString and assigns it to the TlsClientCert field.
-func (o *LoggingHttpsResponse) SetTlsClientCert(v string) {
-	o.TlsClientCert.Set(&v)
+// SetTLSClientCert gets a reference to the given NullableString and assigns it to the TLSClientCert field.
+func (o *LoggingHTTPSResponse) SetTLSClientCert(v string) {
+	o.TLSClientCert.Set(&v)
 }
 
-// SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
-func (o *LoggingHttpsResponse) SetTlsClientCertNil() {
-	o.TlsClientCert.Set(nil)
+// SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
+func (o *LoggingHTTPSResponse) SetTLSClientCertNil() {
+	o.TLSClientCert.Set(nil)
 }
 
-// UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetTlsClientCert() {
-	o.TlsClientCert.Unset()
+// UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+func (o *LoggingHTTPSResponse) UnsetTLSClientCert() {
+	o.TLSClientCert.Unset()
 }
 
-// GetTlsClientKey returns the TlsClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetTlsClientKey() string {
-	if o == nil || o.TlsClientKey.Get() == nil {
+// GetTLSClientKey returns the TLSClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingHTTPSResponse) GetTLSClientKey() string {
+	if o == nil || o.TLSClientKey.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsClientKey.Get()
+	return *o.TLSClientKey.Get()
 }
 
-// GetTlsClientKeyOk returns a tuple with the TlsClientKey field value if set, nil otherwise
+// GetTLSClientKeyOk returns a tuple with the TLSClientKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetTlsClientKeyOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetTLSClientKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsClientKey.Get(), o.TlsClientKey.IsSet()
+	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
 }
 
-// HasTlsClientKey returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasTlsClientKey() bool {
-	if o != nil && o.TlsClientKey.IsSet() {
+// HasTLSClientKey returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasTLSClientKey() bool {
+	if o != nil && o.TLSClientKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsClientKey gets a reference to the given NullableString and assigns it to the TlsClientKey field.
-func (o *LoggingHttpsResponse) SetTlsClientKey(v string) {
-	o.TlsClientKey.Set(&v)
+// SetTLSClientKey gets a reference to the given NullableString and assigns it to the TLSClientKey field.
+func (o *LoggingHTTPSResponse) SetTLSClientKey(v string) {
+	o.TLSClientKey.Set(&v)
 }
 
-// SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
-func (o *LoggingHttpsResponse) SetTlsClientKeyNil() {
-	o.TlsClientKey.Set(nil)
+// SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
+func (o *LoggingHTTPSResponse) SetTLSClientKeyNil() {
+	o.TLSClientKey.Set(nil)
 }
 
-// UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetTlsClientKey() {
-	o.TlsClientKey.Unset()
+// UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+func (o *LoggingHTTPSResponse) UnsetTLSClientKey() {
+	o.TLSClientKey.Unset()
 }
 
-// GetTlsHostname returns the TlsHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetTlsHostname() string {
-	if o == nil || o.TlsHostname.Get() == nil {
+// GetTLSHostname returns the TLSHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingHTTPSResponse) GetTLSHostname() string {
+	if o == nil || o.TLSHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsHostname.Get()
+	return *o.TLSHostname.Get()
 }
 
-// GetTlsHostnameOk returns a tuple with the TlsHostname field value if set, nil otherwise
+// GetTLSHostnameOk returns a tuple with the TLSHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetTlsHostnameOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetTLSHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsHostname.Get(), o.TlsHostname.IsSet()
+	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
 }
 
-// HasTlsHostname returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasTlsHostname() bool {
-	if o != nil && o.TlsHostname.IsSet() {
+// HasTLSHostname returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasTLSHostname() bool {
+	if o != nil && o.TLSHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsHostname gets a reference to the given NullableString and assigns it to the TlsHostname field.
-func (o *LoggingHttpsResponse) SetTlsHostname(v string) {
-	o.TlsHostname.Set(&v)
+// SetTLSHostname gets a reference to the given NullableString and assigns it to the TLSHostname field.
+func (o *LoggingHTTPSResponse) SetTLSHostname(v string) {
+	o.TLSHostname.Set(&v)
 }
 
-// SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
-func (o *LoggingHttpsResponse) SetTlsHostnameNil() {
-	o.TlsHostname.Set(nil)
+// SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
+func (o *LoggingHTTPSResponse) SetTLSHostnameNil() {
+	o.TLSHostname.Set(nil)
 }
 
-// UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetTlsHostname() {
-	o.TlsHostname.Unset()
+// UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
+func (o *LoggingHTTPSResponse) UnsetTLSHostname() {
+	o.TLSHostname.Unset()
 }
 
 // GetRequestMaxEntries returns the RequestMaxEntries field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetRequestMaxEntries() int32 {
+func (o *LoggingHTTPSResponse) GetRequestMaxEntries() int32 {
 	if o == nil || o.RequestMaxEntries == nil {
 		var ret int32
 		return ret
@@ -545,7 +545,7 @@ func (o *LoggingHttpsResponse) GetRequestMaxEntries() int32 {
 
 // GetRequestMaxEntriesOk returns a tuple with the RequestMaxEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetRequestMaxEntriesOk() (*int32, bool) {
+func (o *LoggingHTTPSResponse) GetRequestMaxEntriesOk() (*int32, bool) {
 	if o == nil || o.RequestMaxEntries == nil {
 		return nil, false
 	}
@@ -553,7 +553,7 @@ func (o *LoggingHttpsResponse) GetRequestMaxEntriesOk() (*int32, bool) {
 }
 
 // HasRequestMaxEntries returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasRequestMaxEntries() bool {
+func (o *LoggingHTTPSResponse) HasRequestMaxEntries() bool {
 	if o != nil && o.RequestMaxEntries != nil {
 		return true
 	}
@@ -562,12 +562,12 @@ func (o *LoggingHttpsResponse) HasRequestMaxEntries() bool {
 }
 
 // SetRequestMaxEntries gets a reference to the given int32 and assigns it to the RequestMaxEntries field.
-func (o *LoggingHttpsResponse) SetRequestMaxEntries(v int32) {
+func (o *LoggingHTTPSResponse) SetRequestMaxEntries(v int32) {
 	o.RequestMaxEntries = &v
 }
 
 // GetRequestMaxBytes returns the RequestMaxBytes field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetRequestMaxBytes() int32 {
+func (o *LoggingHTTPSResponse) GetRequestMaxBytes() int32 {
 	if o == nil || o.RequestMaxBytes == nil {
 		var ret int32
 		return ret
@@ -577,7 +577,7 @@ func (o *LoggingHttpsResponse) GetRequestMaxBytes() int32 {
 
 // GetRequestMaxBytesOk returns a tuple with the RequestMaxBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetRequestMaxBytesOk() (*int32, bool) {
+func (o *LoggingHTTPSResponse) GetRequestMaxBytesOk() (*int32, bool) {
 	if o == nil || o.RequestMaxBytes == nil {
 		return nil, false
 	}
@@ -585,7 +585,7 @@ func (o *LoggingHttpsResponse) GetRequestMaxBytesOk() (*int32, bool) {
 }
 
 // HasRequestMaxBytes returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasRequestMaxBytes() bool {
+func (o *LoggingHTTPSResponse) HasRequestMaxBytes() bool {
 	if o != nil && o.RequestMaxBytes != nil {
 		return true
 	}
@@ -594,44 +594,44 @@ func (o *LoggingHttpsResponse) HasRequestMaxBytes() bool {
 }
 
 // SetRequestMaxBytes gets a reference to the given int32 and assigns it to the RequestMaxBytes field.
-func (o *LoggingHttpsResponse) SetRequestMaxBytes(v int32) {
+func (o *LoggingHTTPSResponse) SetRequestMaxBytes(v int32) {
 	o.RequestMaxBytes = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingHTTPSResponse) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingHTTPSResponse) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingHttpsResponse) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingHTTPSResponse) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetContentType returns the ContentType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetContentType() string {
+func (o *LoggingHTTPSResponse) GetContentType() string {
 	if o == nil || o.ContentType.Get() == nil {
 		var ret string
 		return ret
@@ -642,7 +642,7 @@ func (o *LoggingHttpsResponse) GetContentType() string {
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetContentTypeOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetContentTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -650,7 +650,7 @@ func (o *LoggingHttpsResponse) GetContentTypeOk() (*string, bool) {
 }
 
 // HasContentType returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasContentType() bool {
+func (o *LoggingHTTPSResponse) HasContentType() bool {
 	if o != nil && o.ContentType.IsSet() {
 		return true
 	}
@@ -659,22 +659,22 @@ func (o *LoggingHttpsResponse) HasContentType() bool {
 }
 
 // SetContentType gets a reference to the given NullableString and assigns it to the ContentType field.
-func (o *LoggingHttpsResponse) SetContentType(v string) {
+func (o *LoggingHTTPSResponse) SetContentType(v string) {
 	o.ContentType.Set(&v)
 }
 
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
-func (o *LoggingHttpsResponse) SetContentTypeNil() {
+func (o *LoggingHTTPSResponse) SetContentTypeNil() {
 	o.ContentType.Set(nil)
 }
 
 // UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetContentType() {
+func (o *LoggingHTTPSResponse) UnsetContentType() {
 	o.ContentType.Unset()
 }
 
 // GetHeaderName returns the HeaderName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetHeaderName() string {
+func (o *LoggingHTTPSResponse) GetHeaderName() string {
 	if o == nil || o.HeaderName.Get() == nil {
 		var ret string
 		return ret
@@ -685,7 +685,7 @@ func (o *LoggingHttpsResponse) GetHeaderName() string {
 // GetHeaderNameOk returns a tuple with the HeaderName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetHeaderNameOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetHeaderNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -693,7 +693,7 @@ func (o *LoggingHttpsResponse) GetHeaderNameOk() (*string, bool) {
 }
 
 // HasHeaderName returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasHeaderName() bool {
+func (o *LoggingHTTPSResponse) HasHeaderName() bool {
 	if o != nil && o.HeaderName.IsSet() {
 		return true
 	}
@@ -702,22 +702,22 @@ func (o *LoggingHttpsResponse) HasHeaderName() bool {
 }
 
 // SetHeaderName gets a reference to the given NullableString and assigns it to the HeaderName field.
-func (o *LoggingHttpsResponse) SetHeaderName(v string) {
+func (o *LoggingHTTPSResponse) SetHeaderName(v string) {
 	o.HeaderName.Set(&v)
 }
 
 // SetHeaderNameNil sets the value for HeaderName to be an explicit nil
-func (o *LoggingHttpsResponse) SetHeaderNameNil() {
+func (o *LoggingHTTPSResponse) SetHeaderNameNil() {
 	o.HeaderName.Set(nil)
 }
 
 // UnsetHeaderName ensures that no value is present for HeaderName, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetHeaderName() {
+func (o *LoggingHTTPSResponse) UnsetHeaderName() {
 	o.HeaderName.Unset()
 }
 
 // GetMessageType returns the MessageType field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetMessageType() LoggingMessageType {
+func (o *LoggingHTTPSResponse) GetMessageType() LoggingMessageType {
 	if o == nil || o.MessageType == nil {
 		var ret LoggingMessageType
 		return ret
@@ -727,7 +727,7 @@ func (o *LoggingHttpsResponse) GetMessageType() LoggingMessageType {
 
 // GetMessageTypeOk returns a tuple with the MessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetMessageTypeOk() (*LoggingMessageType, bool) {
+func (o *LoggingHTTPSResponse) GetMessageTypeOk() (*LoggingMessageType, bool) {
 	if o == nil || o.MessageType == nil {
 		return nil, false
 	}
@@ -735,7 +735,7 @@ func (o *LoggingHttpsResponse) GetMessageTypeOk() (*LoggingMessageType, bool) {
 }
 
 // HasMessageType returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasMessageType() bool {
+func (o *LoggingHTTPSResponse) HasMessageType() bool {
 	if o != nil && o.MessageType != nil {
 		return true
 	}
@@ -744,12 +744,12 @@ func (o *LoggingHttpsResponse) HasMessageType() bool {
 }
 
 // SetMessageType gets a reference to the given LoggingMessageType and assigns it to the MessageType field.
-func (o *LoggingHttpsResponse) SetMessageType(v LoggingMessageType) {
+func (o *LoggingHTTPSResponse) SetMessageType(v LoggingMessageType) {
 	o.MessageType = &v
 }
 
 // GetHeaderValue returns the HeaderValue field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetHeaderValue() string {
+func (o *LoggingHTTPSResponse) GetHeaderValue() string {
 	if o == nil || o.HeaderValue.Get() == nil {
 		var ret string
 		return ret
@@ -760,7 +760,7 @@ func (o *LoggingHttpsResponse) GetHeaderValue() string {
 // GetHeaderValueOk returns a tuple with the HeaderValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetHeaderValueOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetHeaderValueOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -768,7 +768,7 @@ func (o *LoggingHttpsResponse) GetHeaderValueOk() (*string, bool) {
 }
 
 // HasHeaderValue returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasHeaderValue() bool {
+func (o *LoggingHTTPSResponse) HasHeaderValue() bool {
 	if o != nil && o.HeaderValue.IsSet() {
 		return true
 	}
@@ -777,22 +777,22 @@ func (o *LoggingHttpsResponse) HasHeaderValue() bool {
 }
 
 // SetHeaderValue gets a reference to the given NullableString and assigns it to the HeaderValue field.
-func (o *LoggingHttpsResponse) SetHeaderValue(v string) {
+func (o *LoggingHTTPSResponse) SetHeaderValue(v string) {
 	o.HeaderValue.Set(&v)
 }
 
 // SetHeaderValueNil sets the value for HeaderValue to be an explicit nil
-func (o *LoggingHttpsResponse) SetHeaderValueNil() {
+func (o *LoggingHTTPSResponse) SetHeaderValueNil() {
 	o.HeaderValue.Set(nil)
 }
 
 // UnsetHeaderValue ensures that no value is present for HeaderValue, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetHeaderValue() {
+func (o *LoggingHTTPSResponse) UnsetHeaderValue() {
 	o.HeaderValue.Unset()
 }
 
 // GetMethod returns the Method field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetMethod() string {
+func (o *LoggingHTTPSResponse) GetMethod() string {
 	if o == nil || o.Method == nil {
 		var ret string
 		return ret
@@ -802,7 +802,7 @@ func (o *LoggingHttpsResponse) GetMethod() string {
 
 // GetMethodOk returns a tuple with the Method field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetMethodOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetMethodOk() (*string, bool) {
 	if o == nil || o.Method == nil {
 		return nil, false
 	}
@@ -810,7 +810,7 @@ func (o *LoggingHttpsResponse) GetMethodOk() (*string, bool) {
 }
 
 // HasMethod returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasMethod() bool {
+func (o *LoggingHTTPSResponse) HasMethod() bool {
 	if o != nil && o.Method != nil {
 		return true
 	}
@@ -819,44 +819,44 @@ func (o *LoggingHttpsResponse) HasMethod() bool {
 }
 
 // SetMethod gets a reference to the given string and assigns it to the Method field.
-func (o *LoggingHttpsResponse) SetMethod(v string) {
+func (o *LoggingHTTPSResponse) SetMethod(v string) {
 	o.Method = &v
 }
 
-// GetJsonFormat returns the JsonFormat field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetJsonFormat() string {
-	if o == nil || o.JsonFormat == nil {
+// GetJSONFormat returns the JSONFormat field value if set, zero value otherwise.
+func (o *LoggingHTTPSResponse) GetJSONFormat() string {
+	if o == nil || o.JSONFormat == nil {
 		var ret string
 		return ret
 	}
-	return *o.JsonFormat
+	return *o.JSONFormat
 }
 
-// GetJsonFormatOk returns a tuple with the JsonFormat field value if set, nil otherwise
+// GetJSONFormatOk returns a tuple with the JSONFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetJsonFormatOk() (*string, bool) {
-	if o == nil || o.JsonFormat == nil {
+func (o *LoggingHTTPSResponse) GetJSONFormatOk() (*string, bool) {
+	if o == nil || o.JSONFormat == nil {
 		return nil, false
 	}
-	return o.JsonFormat, true
+	return o.JSONFormat, true
 }
 
-// HasJsonFormat returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasJsonFormat() bool {
-	if o != nil && o.JsonFormat != nil {
+// HasJSONFormat returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasJSONFormat() bool {
+	if o != nil && o.JSONFormat != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetJsonFormat gets a reference to the given string and assigns it to the JsonFormat field.
-func (o *LoggingHttpsResponse) SetJsonFormat(v string) {
-	o.JsonFormat = &v
+// SetJSONFormat gets a reference to the given string and assigns it to the JSONFormat field.
+func (o *LoggingHTTPSResponse) SetJSONFormat(v string) {
+	o.JSONFormat = &v
 }
 
 // GetPeriod returns the Period field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetPeriod() int32 {
+func (o *LoggingHTTPSResponse) GetPeriod() int32 {
 	if o == nil || o.Period == nil {
 		var ret int32
 		return ret
@@ -866,7 +866,7 @@ func (o *LoggingHttpsResponse) GetPeriod() int32 {
 
 // GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetPeriodOk() (*int32, bool) {
+func (o *LoggingHTTPSResponse) GetPeriodOk() (*int32, bool) {
 	if o == nil || o.Period == nil {
 		return nil, false
 	}
@@ -874,7 +874,7 @@ func (o *LoggingHttpsResponse) GetPeriodOk() (*int32, bool) {
 }
 
 // HasPeriod returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasPeriod() bool {
+func (o *LoggingHTTPSResponse) HasPeriod() bool {
 	if o != nil && o.Period != nil {
 		return true
 	}
@@ -883,12 +883,12 @@ func (o *LoggingHttpsResponse) HasPeriod() bool {
 }
 
 // SetPeriod gets a reference to the given int32 and assigns it to the Period field.
-func (o *LoggingHttpsResponse) SetPeriod(v int32) {
+func (o *LoggingHTTPSResponse) SetPeriod(v int32) {
 	o.Period = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetCreatedAt() time.Time {
+func (o *LoggingHTTPSResponse) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -899,7 +899,7 @@ func (o *LoggingHttpsResponse) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetCreatedAtOk() (*time.Time, bool) {
+func (o *LoggingHTTPSResponse) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -907,7 +907,7 @@ func (o *LoggingHttpsResponse) GetCreatedAtOk() (*time.Time, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasCreatedAt() bool {
+func (o *LoggingHTTPSResponse) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -916,22 +916,22 @@ func (o *LoggingHttpsResponse) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *LoggingHttpsResponse) SetCreatedAt(v time.Time) {
+func (o *LoggingHTTPSResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *LoggingHttpsResponse) SetCreatedAtNil() {
+func (o *LoggingHTTPSResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetCreatedAt() {
+func (o *LoggingHTTPSResponse) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetDeletedAt() time.Time {
+func (o *LoggingHTTPSResponse) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -942,7 +942,7 @@ func (o *LoggingHttpsResponse) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetDeletedAtOk() (*time.Time, bool) {
+func (o *LoggingHTTPSResponse) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -950,7 +950,7 @@ func (o *LoggingHttpsResponse) GetDeletedAtOk() (*time.Time, bool) {
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasDeletedAt() bool {
+func (o *LoggingHTTPSResponse) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -959,22 +959,22 @@ func (o *LoggingHttpsResponse) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *LoggingHttpsResponse) SetDeletedAt(v time.Time) {
+func (o *LoggingHTTPSResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *LoggingHttpsResponse) SetDeletedAtNil() {
+func (o *LoggingHTTPSResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetDeletedAt() {
+func (o *LoggingHTTPSResponse) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsResponse) GetUpdatedAt() time.Time {
+func (o *LoggingHTTPSResponse) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -985,7 +985,7 @@ func (o *LoggingHttpsResponse) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsResponse) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *LoggingHTTPSResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -993,7 +993,7 @@ func (o *LoggingHttpsResponse) GetUpdatedAtOk() (*time.Time, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasUpdatedAt() bool {
+func (o *LoggingHTTPSResponse) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -1002,54 +1002,54 @@ func (o *LoggingHttpsResponse) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *LoggingHttpsResponse) SetUpdatedAt(v time.Time) {
+func (o *LoggingHTTPSResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *LoggingHttpsResponse) SetUpdatedAtNil() {
+func (o *LoggingHTTPSResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *LoggingHttpsResponse) UnsetUpdatedAt() {
+func (o *LoggingHTTPSResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingHTTPSResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingHTTPSResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingHTTPSResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingHttpsResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingHTTPSResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *LoggingHttpsResponse) GetVersion() string {
+func (o *LoggingHTTPSResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
 		var ret string
 		return ret
@@ -1059,7 +1059,7 @@ func (o *LoggingHttpsResponse) GetVersion() string {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsResponse) GetVersionOk() (*string, bool) {
+func (o *LoggingHTTPSResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -1067,7 +1067,7 @@ func (o *LoggingHttpsResponse) GetVersionOk() (*string, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *LoggingHttpsResponse) HasVersion() bool {
+func (o *LoggingHTTPSResponse) HasVersion() bool {
 	if o != nil && o.Version != nil {
 		return true
 	}
@@ -1076,13 +1076,13 @@ func (o *LoggingHttpsResponse) HasVersion() bool {
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *LoggingHttpsResponse) SetVersion(v string) {
+func (o *LoggingHTTPSResponse) SetVersion(v string) {
 	o.Version = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o LoggingHttpsResponse) MarshalJSON() ([]byte, error) {
+func (o LoggingHTTPSResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -1102,17 +1102,17 @@ func (o LoggingHttpsResponse) MarshalJSON() ([]byte, error) {
 	if o.FormatVersion != nil {
 		toSerialize["format_version"] = o.FormatVersion
 	}
-	if o.TlsCaCert.IsSet() {
-		toSerialize["tls_ca_cert"] = o.TlsCaCert.Get()
+	if o.TLSCaCert.IsSet() {
+		toSerialize["tls_ca_cert"] = o.TLSCaCert.Get()
 	}
-	if o.TlsClientCert.IsSet() {
-		toSerialize["tls_client_cert"] = o.TlsClientCert.Get()
+	if o.TLSClientCert.IsSet() {
+		toSerialize["tls_client_cert"] = o.TLSClientCert.Get()
 	}
-	if o.TlsClientKey.IsSet() {
-		toSerialize["tls_client_key"] = o.TlsClientKey.Get()
+	if o.TLSClientKey.IsSet() {
+		toSerialize["tls_client_key"] = o.TLSClientKey.Get()
 	}
-	if o.TlsHostname.IsSet() {
-		toSerialize["tls_hostname"] = o.TlsHostname.Get()
+	if o.TLSHostname.IsSet() {
+		toSerialize["tls_hostname"] = o.TLSHostname.Get()
 	}
 	if o.RequestMaxEntries != nil {
 		toSerialize["request_max_entries"] = o.RequestMaxEntries
@@ -1120,8 +1120,8 @@ func (o LoggingHttpsResponse) MarshalJSON() ([]byte, error) {
 	if o.RequestMaxBytes != nil {
 		toSerialize["request_max_bytes"] = o.RequestMaxBytes
 	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.ContentType.IsSet() {
 		toSerialize["content_type"] = o.ContentType.Get()
@@ -1138,8 +1138,8 @@ func (o LoggingHttpsResponse) MarshalJSON() ([]byte, error) {
 	if o.Method != nil {
 		toSerialize["method"] = o.Method
 	}
-	if o.JsonFormat != nil {
-		toSerialize["json_format"] = o.JsonFormat
+	if o.JSONFormat != nil {
+		toSerialize["json_format"] = o.JSONFormat
 	}
 	if o.Period != nil {
 		toSerialize["period"] = o.Period
@@ -1153,8 +1153,8 @@ func (o LoggingHttpsResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -1169,11 +1169,11 @@ func (o LoggingHttpsResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *LoggingHttpsResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varLoggingHttpsResponse := _LoggingHttpsResponse{}
+func (o *LoggingHTTPSResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varLoggingHTTPSResponse := _LoggingHTTPSResponse{}
 
-	if err = json.Unmarshal(bytes, &varLoggingHttpsResponse); err == nil {
-		*o = LoggingHttpsResponse(varLoggingHttpsResponse)
+	if err = json.Unmarshal(bytes, &varLoggingHTTPSResponse); err == nil {
+		*o = LoggingHTTPSResponse(varLoggingHTTPSResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -1210,48 +1210,48 @@ func (o *LoggingHttpsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingHttpsResponse is a helper abstraction for handling nullable logginghttpsresponse types.
-type NullableLoggingHttpsResponse struct {
-	value *LoggingHttpsResponse
+// NullableLoggingHTTPSResponse is a helper abstraction for handling nullable logginghttpsresponse types.
+type NullableLoggingHTTPSResponse struct {
+	value *LoggingHTTPSResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableLoggingHttpsResponse) Get() *LoggingHttpsResponse {
+func (v NullableLoggingHTTPSResponse) Get() *LoggingHTTPSResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableLoggingHttpsResponse) Set(val *LoggingHttpsResponse) {
+func (v *NullableLoggingHTTPSResponse) Set(val *LoggingHTTPSResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableLoggingHttpsResponse) IsSet() bool {
+func (v NullableLoggingHTTPSResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableLoggingHttpsResponse) Unset() {
+func (v *NullableLoggingHTTPSResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableLoggingHttpsResponse returns a pointer to a new instance of NullableLoggingHttpsResponse.
-func NewNullableLoggingHttpsResponse(val *LoggingHttpsResponse) *NullableLoggingHttpsResponse {
-	return &NullableLoggingHttpsResponse{value: val, isSet: true}
+// NewNullableLoggingHTTPSResponse returns a pointer to a new instance of NullableLoggingHTTPSResponse.
+func NewNullableLoggingHTTPSResponse(val *LoggingHTTPSResponse) *NullableLoggingHTTPSResponse {
+	return &NullableLoggingHTTPSResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableLoggingHttpsResponse) MarshalJSON() ([]byte, error) {
+func (v NullableLoggingHTTPSResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableLoggingHttpsResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableLoggingHTTPSResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

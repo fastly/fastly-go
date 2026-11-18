@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourceId** | Pointer to **string** | The ID of the underlying linked resource. | [optional] 
+**ResourceID** | Pointer to **string** | The ID of the underlying linked resource. | [optional] 
 **Name** | Pointer to **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewResourceWithDefaults instantiates a new Resource object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetResourceId
+### GetResourceID
 
-`func (o *Resource) GetResourceId() string`
+`func (o *Resource) GetResourceID() string`
 
-GetResourceId returns the ResourceId field if non-nil, zero value otherwise.
+GetResourceID returns the ResourceID field if non-nil, zero value otherwise.
 
-### GetResourceIdOk
+### GetResourceIDOk
 
-`func (o *Resource) GetResourceIdOk() (*string, bool)`
+`func (o *Resource) GetResourceIDOk() (*string, bool)`
 
-GetResourceIdOk returns a tuple with the ResourceId field if it's non-nil, zero value otherwise
+GetResourceIDOk returns a tuple with the ResourceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourceId
+### SetResourceID
 
-`func (o *Resource) SetResourceId(v string)`
+`func (o *Resource) SetResourceID(v string)`
 
-SetResourceId sets ResourceId field to given value.
+SetResourceID sets ResourceID field to given value.
 
-### HasResourceId
+### HasResourceID
 
-`func (o *Resource) HasResourceId() bool`
+`func (o *Resource) HasResourceID() bool`
 
-HasResourceId returns a boolean if a field has been set.
+HasResourceID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -78,5 +78,3 @@ HasName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

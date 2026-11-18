@@ -50,10 +50,10 @@ type AiRuntimeControlVirtualKeysAPI interface {
 		Delete a virtual key. This also deletes any security configuration associated with the key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param keyId The ID of the virtual key.
+		 @param keyID The ID of the virtual key.
 		 @return APIArcDeleteVirtualKeyRequest
 	*/
-	ArcDeleteVirtualKey(ctx context.Context, keyId string) APIArcDeleteVirtualKeyRequest
+	ArcDeleteVirtualKey(ctx context.Context, keyID string) APIArcDeleteVirtualKeyRequest
 
 	// ArcDeleteVirtualKeyExecute executes the request
 	ArcDeleteVirtualKeyExecute(r APIArcDeleteVirtualKeyRequest) (*http.Response, error)
@@ -64,10 +64,10 @@ type AiRuntimeControlVirtualKeysAPI interface {
 		Retrieve a single virtual key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param keyId The ID of the virtual key.
+		 @param keyID The ID of the virtual key.
 		 @return APIArcGetVirtualKeyRequest
 	*/
-	ArcGetVirtualKey(ctx context.Context, keyId string) APIArcGetVirtualKeyRequest
+	ArcGetVirtualKey(ctx context.Context, keyID string) APIArcGetVirtualKeyRequest
 
 	// ArcGetVirtualKeyExecute executes the request
 	//  @return ArcVirtualKeyResponse
@@ -85,10 +85,10 @@ type AiRuntimeControlVirtualKeysAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param keyId The ID of the virtual key.
+		 @param keyID The ID of the virtual key.
 		 @return APIArcGetVirtualKeyFailoverRequest
 	*/
-	ArcGetVirtualKeyFailover(ctx context.Context, keyId string) APIArcGetVirtualKeyFailoverRequest
+	ArcGetVirtualKeyFailover(ctx context.Context, keyID string) APIArcGetVirtualKeyFailoverRequest
 
 	// ArcGetVirtualKeyFailoverExecute executes the request
 	//  @return ArcVirtualKeyFailoverResponse
@@ -114,10 +114,10 @@ type AiRuntimeControlVirtualKeysAPI interface {
 		Issue a new access token for a virtual key, invalidating the previous one.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param keyId The ID of the virtual key.
+		 @param keyID The ID of the virtual key.
 		 @return APIArcRotateVirtualKeyRequest
 	*/
-	ArcRotateVirtualKey(ctx context.Context, keyId string) APIArcRotateVirtualKeyRequest
+	ArcRotateVirtualKey(ctx context.Context, keyID string) APIArcRotateVirtualKeyRequest
 
 	// ArcRotateVirtualKeyExecute executes the request
 	//  @return ArcRotateVirtualKeyResponse
@@ -129,10 +129,10 @@ type AiRuntimeControlVirtualKeysAPI interface {
 		Update the attributes of a virtual key. Only the fields you include are changed.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param keyId The ID of the virtual key.
+		 @param keyID The ID of the virtual key.
 		 @return APIArcUpdateVirtualKeyRequest
 	*/
-	ArcUpdateVirtualKey(ctx context.Context, keyId string) APIArcUpdateVirtualKeyRequest
+	ArcUpdateVirtualKey(ctx context.Context, keyID string) APIArcUpdateVirtualKeyRequest
 
 	// ArcUpdateVirtualKeyExecute executes the request
 	//  @return ArcUpdateVirtualKeyResponse
@@ -148,10 +148,10 @@ type AiRuntimeControlVirtualKeysAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param keyId The ID of the virtual key.
+		 @param keyID The ID of the virtual key.
 		 @return APIArcUpdateVirtualKeyFailoverRequest
 	*/
-	ArcUpdateVirtualKeyFailover(ctx context.Context, keyId string) APIArcUpdateVirtualKeyFailoverRequest
+	ArcUpdateVirtualKeyFailover(ctx context.Context, keyID string) APIArcUpdateVirtualKeyFailoverRequest
 
 	// ArcUpdateVirtualKeyFailoverExecute executes the request
 	//  @return ArcVirtualKeyFailoverResponse
@@ -334,7 +334,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcCreateVirtualKeyExecute(r API
 type APIArcDeleteVirtualKeyRequest struct {
 	ctx        context.Context
 	APIService AiRuntimeControlVirtualKeysAPI
-	keyId      string
+	keyID      string
 }
 
 // Execute calls the API using the request data configured.
@@ -348,14 +348,14 @@ ArcDeleteVirtualKey Delete a virtual key
 Delete a virtual key. This also deletes any security configuration associated with the key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyId The ID of the virtual key.
+ @param keyID The ID of the virtual key.
  @return APIArcDeleteVirtualKeyRequest
 */
-func (a *AiRuntimeControlVirtualKeysAPIService) ArcDeleteVirtualKey(ctx context.Context, keyId string) APIArcDeleteVirtualKeyRequest {
+func (a *AiRuntimeControlVirtualKeysAPIService) ArcDeleteVirtualKey(ctx context.Context, keyID string) APIArcDeleteVirtualKeyRequest {
 	return APIArcDeleteVirtualKeyRequest{
 		APIService: a,
 		ctx:        ctx,
-		keyId:      keyId,
+		keyID:      keyID,
 	}
 }
 
@@ -373,7 +373,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcDeleteVirtualKeyExecute(r API
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/keys/{key_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -484,7 +484,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcDeleteVirtualKeyExecute(r API
 type APIArcGetVirtualKeyRequest struct {
 	ctx        context.Context
 	APIService AiRuntimeControlVirtualKeysAPI
-	keyId      string
+	keyID      string
 }
 
 // Execute calls the API using the request data configured.
@@ -498,14 +498,14 @@ ArcGetVirtualKey Get a virtual key
 Retrieve a single virtual key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyId The ID of the virtual key.
+ @param keyID The ID of the virtual key.
  @return APIArcGetVirtualKeyRequest
 */
-func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKey(ctx context.Context, keyId string) APIArcGetVirtualKeyRequest {
+func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKey(ctx context.Context, keyID string) APIArcGetVirtualKeyRequest {
 	return APIArcGetVirtualKeyRequest{
 		APIService: a,
 		ctx:        ctx,
-		keyId:      keyId,
+		keyID:      keyID,
 	}
 }
 
@@ -525,7 +525,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKeyExecute(r APIArc
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/keys/{key_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -645,7 +645,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKeyExecute(r APIArc
 type APIArcGetVirtualKeyFailoverRequest struct {
 	ctx        context.Context
 	APIService AiRuntimeControlVirtualKeysAPI
-	keyId      string
+	keyID      string
 }
 
 // Execute calls the API using the request data configured.
@@ -665,14 +665,14 @@ returns a 404 response.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyId The ID of the virtual key.
+ @param keyID The ID of the virtual key.
  @return APIArcGetVirtualKeyFailoverRequest
 */
-func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKeyFailover(ctx context.Context, keyId string) APIArcGetVirtualKeyFailoverRequest {
+func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKeyFailover(ctx context.Context, keyID string) APIArcGetVirtualKeyFailoverRequest {
 	return APIArcGetVirtualKeyFailoverRequest{
 		APIService: a,
 		ctx:        ctx,
-		keyId:      keyId,
+		keyID:      keyID,
 	}
 }
 
@@ -692,7 +692,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcGetVirtualKeyFailoverExecute(
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/keys/{key_id}/failover"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1009,7 +1009,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcListVirtualKeysExecute(r APIA
 type APIArcRotateVirtualKeyRequest struct {
 	ctx                        context.Context
 	APIService                 AiRuntimeControlVirtualKeysAPI
-	keyId                      string
+	keyID                      string
 	arcRotateVirtualKeyRequest *ArcRotateVirtualKeyRequest
 }
 
@@ -1030,14 +1030,14 @@ ArcRotateVirtualKey Rotate a virtual key
 Issue a new access token for a virtual key, invalidating the previous one.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyId The ID of the virtual key.
+ @param keyID The ID of the virtual key.
  @return APIArcRotateVirtualKeyRequest
 */
-func (a *AiRuntimeControlVirtualKeysAPIService) ArcRotateVirtualKey(ctx context.Context, keyId string) APIArcRotateVirtualKeyRequest {
+func (a *AiRuntimeControlVirtualKeysAPIService) ArcRotateVirtualKey(ctx context.Context, keyID string) APIArcRotateVirtualKeyRequest {
 	return APIArcRotateVirtualKeyRequest{
 		APIService: a,
 		ctx:        ctx,
-		keyId:      keyId,
+		keyID:      keyID,
 	}
 }
 
@@ -1057,7 +1057,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcRotateVirtualKeyExecute(r API
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/keys/{key_id}/rotate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1189,7 +1189,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcRotateVirtualKeyExecute(r API
 type APIArcUpdateVirtualKeyRequest struct {
 	ctx                        context.Context
 	APIService                 AiRuntimeControlVirtualKeysAPI
-	keyId                      string
+	keyID                      string
 	arcUpdateVirtualKeyRequest *ArcUpdateVirtualKeyRequest
 }
 
@@ -1210,14 +1210,14 @@ ArcUpdateVirtualKey Update a virtual key
 Update the attributes of a virtual key. Only the fields you include are changed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyId The ID of the virtual key.
+ @param keyID The ID of the virtual key.
  @return APIArcUpdateVirtualKeyRequest
 */
-func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKey(ctx context.Context, keyId string) APIArcUpdateVirtualKeyRequest {
+func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKey(ctx context.Context, keyID string) APIArcUpdateVirtualKeyRequest {
 	return APIArcUpdateVirtualKeyRequest{
 		APIService: a,
 		ctx:        ctx,
-		keyId:      keyId,
+		keyID:      keyID,
 	}
 }
 
@@ -1237,7 +1237,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKeyExecute(r API
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/keys/{key_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1372,7 +1372,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKeyExecute(r API
 type APIArcUpdateVirtualKeyFailoverRequest struct {
 	ctx                          context.Context
 	APIService                   AiRuntimeControlVirtualKeysAPI
-	keyId                        string
+	keyID                        string
 	arcVirtualKeyFailoverRequest *ArcVirtualKeyFailoverRequest
 }
 
@@ -1397,14 +1397,14 @@ returns a 404 response.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyId The ID of the virtual key.
+ @param keyID The ID of the virtual key.
  @return APIArcUpdateVirtualKeyFailoverRequest
 */
-func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKeyFailover(ctx context.Context, keyId string) APIArcUpdateVirtualKeyFailoverRequest {
+func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKeyFailover(ctx context.Context, keyID string) APIArcUpdateVirtualKeyFailoverRequest {
 	return APIArcUpdateVirtualKeyFailoverRequest{
 		APIService: a,
 		ctx:        ctx,
-		keyId:      keyId,
+		keyID:      keyID,
 	}
 }
 
@@ -1424,7 +1424,7 @@ func (a *AiRuntimeControlVirtualKeysAPIService) ArcUpdateVirtualKeyFailoverExecu
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/keys/{key_id}/failover"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_id"+"}", gourl.PathEscape(parameterToString(r.keyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

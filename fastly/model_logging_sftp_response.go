@@ -43,7 +43,7 @@ type LoggingSftpResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceId *string      `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
 	Password *string `json:"password,omitempty"`
@@ -54,7 +54,7 @@ type LoggingSftpResponse struct {
 	// The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
 	SecretKey NullableString `json:"secret_key,omitempty"`
 	// A list of host keys for all hosts we can connect to over SFTP.
-	SshKnownHosts *string `json:"ssh_known_hosts,omitempty"`
+	SSHKnownHosts *string `json:"ssh_known_hosts,omitempty"`
 	// The username for the server.
 	User *string `json:"user,omitempty"`
 	// A hostname or IPv4 address.
@@ -577,36 +577,36 @@ func (o *LoggingSftpResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingSftpResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingSftpResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingSftpResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -802,36 +802,36 @@ func (o *LoggingSftpResponse) UnsetSecretKey() {
 	o.SecretKey.Unset()
 }
 
-// GetSshKnownHosts returns the SshKnownHosts field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetSshKnownHosts() string {
-	if o == nil || o.SshKnownHosts == nil {
+// GetSSHKnownHosts returns the SSHKnownHosts field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetSSHKnownHosts() string {
+	if o == nil || o.SSHKnownHosts == nil {
 		var ret string
 		return ret
 	}
-	return *o.SshKnownHosts
+	return *o.SSHKnownHosts
 }
 
-// GetSshKnownHostsOk returns a tuple with the SshKnownHosts field value if set, nil otherwise
+// GetSSHKnownHostsOk returns a tuple with the SSHKnownHosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetSshKnownHostsOk() (*string, bool) {
-	if o == nil || o.SshKnownHosts == nil {
+func (o *LoggingSftpResponse) GetSSHKnownHostsOk() (*string, bool) {
+	if o == nil || o.SSHKnownHosts == nil {
 		return nil, false
 	}
-	return o.SshKnownHosts, true
+	return o.SSHKnownHosts, true
 }
 
-// HasSshKnownHosts returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasSshKnownHosts() bool {
-	if o != nil && o.SshKnownHosts != nil {
+// HasSSHKnownHosts returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasSSHKnownHosts() bool {
+	if o != nil && o.SSHKnownHosts != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSshKnownHosts gets a reference to the given string and assigns it to the SshKnownHosts field.
-func (o *LoggingSftpResponse) SetSshKnownHosts(v string) {
-	o.SshKnownHosts = &v
+// SetSSHKnownHosts gets a reference to the given string and assigns it to the SSHKnownHosts field.
+func (o *LoggingSftpResponse) SetSSHKnownHosts(v string) {
+	o.SSHKnownHosts = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -1034,8 +1034,8 @@ func (o LoggingSftpResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -1052,8 +1052,8 @@ func (o LoggingSftpResponse) MarshalJSON() ([]byte, error) {
 	if o.SecretKey.IsSet() {
 		toSerialize["secret_key"] = o.SecretKey.Get()
 	}
-	if o.SshKnownHosts != nil {
-		toSerialize["ssh_known_hosts"] = o.SshKnownHosts
+	if o.SSHKnownHosts != nil {
+		toSerialize["ssh_known_hosts"] = o.SSHKnownHosts
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User

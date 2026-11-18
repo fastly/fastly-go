@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | Pointer to **string** | The HTTP request path. | [optional] 
-**RatePerUrl** | Pointer to **float32** | The rate at which the reason in this dimension occurs among responses to this URL with a 503 status code. | [optional] 
-**Var503RatePerUrl** | Pointer to **float32** | The rate at which 503 status codes are returned for this URL. | [optional] 
+**URL** | Pointer to **string** | The HTTP request path. | [optional] 
+**RatePerURL** | Pointer to **float32** | The rate at which the reason in this dimension occurs among responses to this URL with a 503 status code. | [optional] 
+**Var503RatePerURL** | Pointer to **float32** | The rate at which 503 status codes are returned for this URL. | [optional] 
 
 ## Methods
 
@@ -27,82 +27,80 @@ NewValues503ResponsesWithDefaults instantiates a new Values503Responses object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUrl
+### GetURL
 
-`func (o *Values503Responses) GetUrl() string`
+`func (o *Values503Responses) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *Values503Responses) GetUrlOk() (*string, bool)`
+`func (o *Values503Responses) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *Values503Responses) SetUrl(v string)`
+`func (o *Values503Responses) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *Values503Responses) HasUrl() bool`
+`func (o *Values503Responses) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
-### GetRatePerUrl
+### GetRatePerURL
 
-`func (o *Values503Responses) GetRatePerUrl() float32`
+`func (o *Values503Responses) GetRatePerURL() float32`
 
-GetRatePerUrl returns the RatePerUrl field if non-nil, zero value otherwise.
+GetRatePerURL returns the RatePerURL field if non-nil, zero value otherwise.
 
-### GetRatePerUrlOk
+### GetRatePerURLOk
 
-`func (o *Values503Responses) GetRatePerUrlOk() (*float32, bool)`
+`func (o *Values503Responses) GetRatePerURLOk() (*float32, bool)`
 
-GetRatePerUrlOk returns a tuple with the RatePerUrl field if it's non-nil, zero value otherwise
+GetRatePerURLOk returns a tuple with the RatePerURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRatePerUrl
+### SetRatePerURL
 
-`func (o *Values503Responses) SetRatePerUrl(v float32)`
+`func (o *Values503Responses) SetRatePerURL(v float32)`
 
-SetRatePerUrl sets RatePerUrl field to given value.
+SetRatePerURL sets RatePerURL field to given value.
 
-### HasRatePerUrl
+### HasRatePerURL
 
-`func (o *Values503Responses) HasRatePerUrl() bool`
+`func (o *Values503Responses) HasRatePerURL() bool`
 
-HasRatePerUrl returns a boolean if a field has been set.
+HasRatePerURL returns a boolean if a field has been set.
 
-### GetVar503RatePerUrl
+### GetVar503RatePerURL
 
-`func (o *Values503Responses) GetVar503RatePerUrl() float32`
+`func (o *Values503Responses) GetVar503RatePerURL() float32`
 
-GetVar503RatePerUrl returns the Var503RatePerUrl field if non-nil, zero value otherwise.
+GetVar503RatePerURL returns the Var503RatePerURL field if non-nil, zero value otherwise.
 
-### GetVar503RatePerUrlOk
+### GetVar503RatePerURLOk
 
-`func (o *Values503Responses) GetVar503RatePerUrlOk() (*float32, bool)`
+`func (o *Values503Responses) GetVar503RatePerURLOk() (*float32, bool)`
 
-GetVar503RatePerUrlOk returns a tuple with the Var503RatePerUrl field if it's non-nil, zero value otherwise
+GetVar503RatePerURLOk returns a tuple with the Var503RatePerURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVar503RatePerUrl
+### SetVar503RatePerURL
 
-`func (o *Values503Responses) SetVar503RatePerUrl(v float32)`
+`func (o *Values503Responses) SetVar503RatePerURL(v float32)`
 
-SetVar503RatePerUrl sets Var503RatePerUrl field to given value.
+SetVar503RatePerURL sets Var503RatePerURL field to given value.
 
-### HasVar503RatePerUrl
+### HasVar503RatePerURL
 
-`func (o *Values503Responses) HasVar503RatePerUrl() bool`
+`func (o *Values503Responses) HasVar503RatePerURL() bool`
 
-HasVar503RatePerUrl returns a boolean if a field has been set.
+HasVar503RatePerURL returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

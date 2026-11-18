@@ -20,9 +20,9 @@ import (
 // Page struct for Page
 type Page struct {
 	// Unique page identifier
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Parent website ID
-	WebsiteId *string `json:"website_id,omitempty"`
+	WebsiteID *string `json:"website_id,omitempty"`
 	// Page name
 	Name *string `json:"name,omitempty"`
 	// Page description
@@ -55,68 +55,68 @@ func NewPageWithDefaults() *Page {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Page) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *Page) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Page) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *Page) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Page) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *Page) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Page) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *Page) SetID(v string) {
+	o.ID = &v
 }
 
-// GetWebsiteId returns the WebsiteId field value if set, zero value otherwise.
-func (o *Page) GetWebsiteId() string {
-	if o == nil || o.WebsiteId == nil {
+// GetWebsiteID returns the WebsiteID field value if set, zero value otherwise.
+func (o *Page) GetWebsiteID() string {
+	if o == nil || o.WebsiteID == nil {
 		var ret string
 		return ret
 	}
-	return *o.WebsiteId
+	return *o.WebsiteID
 }
 
-// GetWebsiteIdOk returns a tuple with the WebsiteId field value if set, nil otherwise
+// GetWebsiteIDOk returns a tuple with the WebsiteID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Page) GetWebsiteIdOk() (*string, bool) {
-	if o == nil || o.WebsiteId == nil {
+func (o *Page) GetWebsiteIDOk() (*string, bool) {
+	if o == nil || o.WebsiteID == nil {
 		return nil, false
 	}
-	return o.WebsiteId, true
+	return o.WebsiteID, true
 }
 
-// HasWebsiteId returns a boolean if a field has been set.
-func (o *Page) HasWebsiteId() bool {
-	if o != nil && o.WebsiteId != nil {
+// HasWebsiteID returns a boolean if a field has been set.
+func (o *Page) HasWebsiteID() bool {
+	if o != nil && o.WebsiteID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWebsiteId gets a reference to the given string and assigns it to the WebsiteId field.
-func (o *Page) SetWebsiteId(v string) {
-	o.WebsiteId = &v
+// SetWebsiteID gets a reference to the given string and assigns it to the WebsiteID field.
+func (o *Page) SetWebsiteID(v string) {
+	o.WebsiteID = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -315,11 +315,11 @@ func (o *Page) SetUpdatedAt(v time.Time) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Page) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
-	if o.WebsiteId != nil {
-		toSerialize["website_id"] = o.WebsiteId
+	if o.WebsiteID != nil {
+		toSerialize["website_id"] = o.WebsiteID
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

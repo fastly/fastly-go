@@ -39,10 +39,10 @@ type NgwafSimulateAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the workspace.
+		 @param workspaceID The ID of the workspace.
 		 @return APINgwafSimulateWafRequestRequest
 	*/
-	NgwafSimulateWafRequest(ctx context.Context, workspaceId string) APINgwafSimulateWafRequestRequest
+	NgwafSimulateWafRequest(ctx context.Context, workspaceID string) APINgwafSimulateWafRequestRequest
 
 	// NgwafSimulateWafRequestExecute executes the request
 	//  @return WafSimulateResponse
@@ -56,7 +56,7 @@ type NgwafSimulateAPIService service
 type APINgwafSimulateWafRequestRequest struct {
 	ctx                context.Context
 	APIService         NgwafSimulateAPI
-	workspaceId        string
+	workspaceID        string
 	wafSimulateRequest *WafSimulateRequest
 }
 
@@ -80,14 +80,14 @@ is stateless — no simulation data is persisted.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the workspace.
+ @param workspaceID The ID of the workspace.
  @return APINgwafSimulateWafRequestRequest
 */
-func (a *NgwafSimulateAPIService) NgwafSimulateWafRequest(ctx context.Context, workspaceId string) APINgwafSimulateWafRequestRequest {
+func (a *NgwafSimulateAPIService) NgwafSimulateWafRequest(ctx context.Context, workspaceID string) APINgwafSimulateWafRequestRequest {
 	return APINgwafSimulateWafRequestRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
+		workspaceID: workspaceID,
 	}
 }
 
@@ -107,7 +107,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 	}
 
 	localVarPath := localBasePath + "/ngwaf/v1/workspaces/{workspace_id}/simulate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -172,7 +172,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -182,7 +182,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -192,7 +192,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -202,7 +202,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -212,7 +212,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

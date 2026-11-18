@@ -1,51 +1,49 @@
-# NetworkProtectRuleMatchDestinationIp
+# NetworkProtectRuleMatchDestinationIP
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DestinationIpAddress** | **string** | Match traffic sent to this address; omit for any destination. An address outside a Network using this Rule Set never matches and still consumes one of the 64 rules. The API does not enforce containment in a network prefix; attached Rule Sets require a compatible IP family. | 
+**DestinationIPAddress** | **string** | Match traffic sent to this address; omit for any destination. An address outside a Network using this Rule Set never matches and still consumes one of the 64 rules. The API does not enforce containment in a network prefix; attached Rule Sets require a compatible IP family. | 
 
 ## Methods
 
-### NewNetworkProtectRuleMatchDestinationIp
+### NewNetworkProtectRuleMatchDestinationIP
 
-`func NewNetworkProtectRuleMatchDestinationIp(destinationIpAddress string, ) *NetworkProtectRuleMatchDestinationIp`
+`func NewNetworkProtectRuleMatchDestinationIP(destinationIPAddress string, ) *NetworkProtectRuleMatchDestinationIP`
 
-NewNetworkProtectRuleMatchDestinationIp instantiates a new NetworkProtectRuleMatchDestinationIp object
+NewNetworkProtectRuleMatchDestinationIP instantiates a new NetworkProtectRuleMatchDestinationIP object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNetworkProtectRuleMatchDestinationIpWithDefaults
+### NewNetworkProtectRuleMatchDestinationIPWithDefaults
 
-`func NewNetworkProtectRuleMatchDestinationIpWithDefaults() *NetworkProtectRuleMatchDestinationIp`
+`func NewNetworkProtectRuleMatchDestinationIPWithDefaults() *NetworkProtectRuleMatchDestinationIP`
 
-NewNetworkProtectRuleMatchDestinationIpWithDefaults instantiates a new NetworkProtectRuleMatchDestinationIp object
+NewNetworkProtectRuleMatchDestinationIPWithDefaults instantiates a new NetworkProtectRuleMatchDestinationIP object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetDestinationIpAddress
+### GetDestinationIPAddress
 
-`func (o *NetworkProtectRuleMatchDestinationIp) GetDestinationIpAddress() string`
+`func (o *NetworkProtectRuleMatchDestinationIP) GetDestinationIPAddress() string`
 
-GetDestinationIpAddress returns the DestinationIpAddress field if non-nil, zero value otherwise.
+GetDestinationIPAddress returns the DestinationIPAddress field if non-nil, zero value otherwise.
 
-### GetDestinationIpAddressOk
+### GetDestinationIPAddressOk
 
-`func (o *NetworkProtectRuleMatchDestinationIp) GetDestinationIpAddressOk() (*string, bool)`
+`func (o *NetworkProtectRuleMatchDestinationIP) GetDestinationIPAddressOk() (*string, bool)`
 
-GetDestinationIpAddressOk returns a tuple with the DestinationIpAddress field if it's non-nil, zero value otherwise
+GetDestinationIPAddressOk returns a tuple with the DestinationIPAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDestinationIpAddress
+### SetDestinationIPAddress
 
-`func (o *NetworkProtectRuleMatchDestinationIp) SetDestinationIpAddress(v string)`
+`func (o *NetworkProtectRuleMatchDestinationIP) SetDestinationIPAddress(v string)`
 
-SetDestinationIpAddress sets DestinationIpAddress field to given value.
+SetDestinationIPAddress sets DestinationIPAddress field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

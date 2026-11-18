@@ -29,13 +29,13 @@ import (
 )
 
 func main() {
-    roleId := "Q4rXe9vN1szK8a2fUjYtWp" // string | Alphanumeric string identifying the role.
+    roleID := "Q4rXe9vN1szK8a2fUjYtWp" // string | Alphanumeric string identifying the role.
     include := "include_example" // string | Include related data (i.e., permissions). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamRolesAPI.IamV1RolesGet(ctx, roleId).Include(include).Execute()
+    resp, r, err := apiClient.IamRolesAPI.IamV1RolesGet(ctx, roleID).Include(include).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamRolesAPI.IamV1RolesGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**roleId** | **string** | Alphanumeric string identifying the role. | 
+**roleID** | **string** | Alphanumeric string identifying the role. | 
 
 ### Other Parameters
 
@@ -140,4 +140,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

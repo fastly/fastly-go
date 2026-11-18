@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BatchId** | Pointer to **string** | Unique identifier for this batch of logs. | [optional] 
+**BatchID** | Pointer to **string** | Unique identifier for this batch of logs. | [optional] 
 **Logs** | Pointer to [**[]LogError**](LogError.md) |  | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewLogErrorBatchWithDefaults instantiates a new LogErrorBatch object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetBatchId
+### GetBatchID
 
-`func (o *LogErrorBatch) GetBatchId() string`
+`func (o *LogErrorBatch) GetBatchID() string`
 
-GetBatchId returns the BatchId field if non-nil, zero value otherwise.
+GetBatchID returns the BatchID field if non-nil, zero value otherwise.
 
-### GetBatchIdOk
+### GetBatchIDOk
 
-`func (o *LogErrorBatch) GetBatchIdOk() (*string, bool)`
+`func (o *LogErrorBatch) GetBatchIDOk() (*string, bool)`
 
-GetBatchIdOk returns a tuple with the BatchId field if it's non-nil, zero value otherwise
+GetBatchIDOk returns a tuple with the BatchID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBatchId
+### SetBatchID
 
-`func (o *LogErrorBatch) SetBatchId(v string)`
+`func (o *LogErrorBatch) SetBatchID(v string)`
 
-SetBatchId sets BatchId field to given value.
+SetBatchID sets BatchID field to given value.
 
-### HasBatchId
+### HasBatchID
 
-`func (o *LogErrorBatch) HasBatchId() bool`
+`func (o *LogErrorBatch) HasBatchID() bool`
 
-HasBatchId returns a boolean if a field has been set.
+HasBatchID returns a boolean if a field has been set.
 
 ### GetLogs
 
@@ -78,5 +78,3 @@ HasLogs returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -28,12 +28,12 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the workspace.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the workspace.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NgwafAgentKeysAPI.NgwafListAgentKeys(ctx, workspaceId).Execute()
+    resp, r, err := apiClient.NgwafAgentKeysAPI.NgwafListAgentKeys(ctx, workspaceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NgwafAgentKeysAPI.NgwafListAgentKeys`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -49,7 +49,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the workspace. | 
+**workspaceID** | **string** | The ID of the workspace. | 
 
 ### Other Parameters
 
@@ -74,4 +74,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

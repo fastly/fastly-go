@@ -39,6 +39,16 @@ type BackendResponse struct {
 	Healthcheck NullableString `json:"healthcheck,omitempty"`
 	// The hostname of the backend. May be used as an alternative to `address` to set the backend location.
 	Hostname NullableString `json:"hostname,omitempty"`
+	// If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set.
+	IamExternalID NullableString `json:"iam_external_id,omitempty"`
+	// If the backend is using IAM authentication, the IAM signature will use this as the product element.
+	IamProduct NullableString `json:"iam_product,omitempty"`
+	// If the backend is using IAM authentication, this region will be used for signing and access.
+	IamRegion NullableString `json:"iam_region,omitempty"`
+	// If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor.
+	IamRole NullableString `json:"iam_role,omitempty"`
+	// A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value.
+	IamVendor NullableString `json:"iam_vendor,omitempty"`
 	// IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -50,9 +60,9 @@ type BackendResponse struct {
 	// Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
 	MaxLifetime NullableInt32 `json:"max_lifetime,omitempty"`
 	// Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
-	MaxTlsVersion NullableString `json:"max_tls_version,omitempty"`
+	MaxTLSVersion NullableString `json:"max_tls_version,omitempty"`
 	// Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
-	MinTlsVersion NullableString `json:"min_tls_version,omitempty"`
+	MinTLSVersion NullableString `json:"min_tls_version,omitempty"`
 	// Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
 	MaxUse NullableInt32 `json:"max_use,omitempty"`
 	// The name of the backend.
@@ -104,7 +114,7 @@ type BackendResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceId *string      `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	Version   *int32       `json:"version,omitempty"`
 	// Indicates whether the version of the service this backend is attached to accepts edits.
 	Locked               *bool `json:"locked,omitempty"`
@@ -510,6 +520,221 @@ func (o *BackendResponse) UnsetHostname() {
 	o.Hostname.Unset()
 }
 
+// GetIamExternalID returns the IamExternalID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetIamExternalID() string {
+	if o == nil || o.IamExternalID.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.IamExternalID.Get()
+}
+
+// GetIamExternalIDOk returns a tuple with the IamExternalID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetIamExternalIDOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IamExternalID.Get(), o.IamExternalID.IsSet()
+}
+
+// HasIamExternalID returns a boolean if a field has been set.
+func (o *BackendResponse) HasIamExternalID() bool {
+	if o != nil && o.IamExternalID.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIamExternalID gets a reference to the given NullableString and assigns it to the IamExternalID field.
+func (o *BackendResponse) SetIamExternalID(v string) {
+	o.IamExternalID.Set(&v)
+}
+
+// SetIamExternalIDNil sets the value for IamExternalID to be an explicit nil
+func (o *BackendResponse) SetIamExternalIDNil() {
+	o.IamExternalID.Set(nil)
+}
+
+// UnsetIamExternalID ensures that no value is present for IamExternalID, not even an explicit nil
+func (o *BackendResponse) UnsetIamExternalID() {
+	o.IamExternalID.Unset()
+}
+
+// GetIamProduct returns the IamProduct field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetIamProduct() string {
+	if o == nil || o.IamProduct.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.IamProduct.Get()
+}
+
+// GetIamProductOk returns a tuple with the IamProduct field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetIamProductOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IamProduct.Get(), o.IamProduct.IsSet()
+}
+
+// HasIamProduct returns a boolean if a field has been set.
+func (o *BackendResponse) HasIamProduct() bool {
+	if o != nil && o.IamProduct.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIamProduct gets a reference to the given NullableString and assigns it to the IamProduct field.
+func (o *BackendResponse) SetIamProduct(v string) {
+	o.IamProduct.Set(&v)
+}
+
+// SetIamProductNil sets the value for IamProduct to be an explicit nil
+func (o *BackendResponse) SetIamProductNil() {
+	o.IamProduct.Set(nil)
+}
+
+// UnsetIamProduct ensures that no value is present for IamProduct, not even an explicit nil
+func (o *BackendResponse) UnsetIamProduct() {
+	o.IamProduct.Unset()
+}
+
+// GetIamRegion returns the IamRegion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetIamRegion() string {
+	if o == nil || o.IamRegion.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.IamRegion.Get()
+}
+
+// GetIamRegionOk returns a tuple with the IamRegion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetIamRegionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IamRegion.Get(), o.IamRegion.IsSet()
+}
+
+// HasIamRegion returns a boolean if a field has been set.
+func (o *BackendResponse) HasIamRegion() bool {
+	if o != nil && o.IamRegion.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIamRegion gets a reference to the given NullableString and assigns it to the IamRegion field.
+func (o *BackendResponse) SetIamRegion(v string) {
+	o.IamRegion.Set(&v)
+}
+
+// SetIamRegionNil sets the value for IamRegion to be an explicit nil
+func (o *BackendResponse) SetIamRegionNil() {
+	o.IamRegion.Set(nil)
+}
+
+// UnsetIamRegion ensures that no value is present for IamRegion, not even an explicit nil
+func (o *BackendResponse) UnsetIamRegion() {
+	o.IamRegion.Unset()
+}
+
+// GetIamRole returns the IamRole field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetIamRole() string {
+	if o == nil || o.IamRole.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.IamRole.Get()
+}
+
+// GetIamRoleOk returns a tuple with the IamRole field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetIamRoleOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IamRole.Get(), o.IamRole.IsSet()
+}
+
+// HasIamRole returns a boolean if a field has been set.
+func (o *BackendResponse) HasIamRole() bool {
+	if o != nil && o.IamRole.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIamRole gets a reference to the given NullableString and assigns it to the IamRole field.
+func (o *BackendResponse) SetIamRole(v string) {
+	o.IamRole.Set(&v)
+}
+
+// SetIamRoleNil sets the value for IamRole to be an explicit nil
+func (o *BackendResponse) SetIamRoleNil() {
+	o.IamRole.Set(nil)
+}
+
+// UnsetIamRole ensures that no value is present for IamRole, not even an explicit nil
+func (o *BackendResponse) UnsetIamRole() {
+	o.IamRole.Unset()
+}
+
+// GetIamVendor returns the IamVendor field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetIamVendor() string {
+	if o == nil || o.IamVendor.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.IamVendor.Get()
+}
+
+// GetIamVendorOk returns a tuple with the IamVendor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetIamVendorOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IamVendor.Get(), o.IamVendor.IsSet()
+}
+
+// HasIamVendor returns a boolean if a field has been set.
+func (o *BackendResponse) HasIamVendor() bool {
+	if o != nil && o.IamVendor.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIamVendor gets a reference to the given NullableString and assigns it to the IamVendor field.
+func (o *BackendResponse) SetIamVendor(v string) {
+	o.IamVendor.Set(&v)
+}
+
+// SetIamVendorNil sets the value for IamVendor to be an explicit nil
+func (o *BackendResponse) SetIamVendorNil() {
+	o.IamVendor.Set(nil)
+}
+
+// UnsetIamVendor ensures that no value is present for IamVendor, not even an explicit nil
+func (o *BackendResponse) UnsetIamVendor() {
+	o.IamVendor.Unset()
+}
+
 // GetIpv4 returns the Ipv4 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackendResponse) GetIpv4() string {
 	if o == nil || o.Ipv4.Get() == nil {
@@ -714,90 +939,90 @@ func (o *BackendResponse) UnsetMaxLifetime() {
 	o.MaxLifetime.Unset()
 }
 
-// GetMaxTlsVersion returns the MaxTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BackendResponse) GetMaxTlsVersion() string {
-	if o == nil || o.MaxTlsVersion.Get() == nil {
+// GetMaxTLSVersion returns the MaxTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetMaxTLSVersion() string {
+	if o == nil || o.MaxTLSVersion.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxTlsVersion.Get()
+	return *o.MaxTLSVersion.Get()
 }
 
-// GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field value if set, nil otherwise
+// GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BackendResponse) GetMaxTlsVersionOk() (*string, bool) {
+func (o *BackendResponse) GetMaxTLSVersionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MaxTlsVersion.Get(), o.MaxTlsVersion.IsSet()
+	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
 }
 
-// HasMaxTlsVersion returns a boolean if a field has been set.
-func (o *BackendResponse) HasMaxTlsVersion() bool {
-	if o != nil && o.MaxTlsVersion.IsSet() {
+// HasMaxTLSVersion returns a boolean if a field has been set.
+func (o *BackendResponse) HasMaxTLSVersion() bool {
+	if o != nil && o.MaxTLSVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxTlsVersion gets a reference to the given NullableString and assigns it to the MaxTlsVersion field.
-func (o *BackendResponse) SetMaxTlsVersion(v string) {
-	o.MaxTlsVersion.Set(&v)
+// SetMaxTLSVersion gets a reference to the given NullableString and assigns it to the MaxTLSVersion field.
+func (o *BackendResponse) SetMaxTLSVersion(v string) {
+	o.MaxTLSVersion.Set(&v)
 }
 
-// SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
-func (o *BackendResponse) SetMaxTlsVersionNil() {
-	o.MaxTlsVersion.Set(nil)
+// SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
+func (o *BackendResponse) SetMaxTLSVersionNil() {
+	o.MaxTLSVersion.Set(nil)
 }
 
-// UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
-func (o *BackendResponse) UnsetMaxTlsVersion() {
-	o.MaxTlsVersion.Unset()
+// UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
+func (o *BackendResponse) UnsetMaxTLSVersion() {
+	o.MaxTLSVersion.Unset()
 }
 
-// GetMinTlsVersion returns the MinTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BackendResponse) GetMinTlsVersion() string {
-	if o == nil || o.MinTlsVersion.Get() == nil {
+// GetMinTLSVersion returns the MinTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetMinTLSVersion() string {
+	if o == nil || o.MinTLSVersion.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.MinTlsVersion.Get()
+	return *o.MinTLSVersion.Get()
 }
 
-// GetMinTlsVersionOk returns a tuple with the MinTlsVersion field value if set, nil otherwise
+// GetMinTLSVersionOk returns a tuple with the MinTLSVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BackendResponse) GetMinTlsVersionOk() (*string, bool) {
+func (o *BackendResponse) GetMinTLSVersionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MinTlsVersion.Get(), o.MinTlsVersion.IsSet()
+	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
 }
 
-// HasMinTlsVersion returns a boolean if a field has been set.
-func (o *BackendResponse) HasMinTlsVersion() bool {
-	if o != nil && o.MinTlsVersion.IsSet() {
+// HasMinTLSVersion returns a boolean if a field has been set.
+func (o *BackendResponse) HasMinTLSVersion() bool {
+	if o != nil && o.MinTLSVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinTlsVersion gets a reference to the given NullableString and assigns it to the MinTlsVersion field.
-func (o *BackendResponse) SetMinTlsVersion(v string) {
-	o.MinTlsVersion.Set(&v)
+// SetMinTLSVersion gets a reference to the given NullableString and assigns it to the MinTLSVersion field.
+func (o *BackendResponse) SetMinTLSVersion(v string) {
+	o.MinTLSVersion.Set(&v)
 }
 
-// SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
-func (o *BackendResponse) SetMinTlsVersionNil() {
-	o.MinTlsVersion.Set(nil)
+// SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
+func (o *BackendResponse) SetMinTLSVersionNil() {
+	o.MinTLSVersion.Set(nil)
 }
 
-// UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
-func (o *BackendResponse) UnsetMinTlsVersion() {
-	o.MinTlsVersion.Unset()
+// UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
+func (o *BackendResponse) UnsetMinTLSVersion() {
+	o.MinTLSVersion.Unset()
 }
 
 // GetMaxUse returns the MaxUse field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1812,36 +2037,36 @@ func (o *BackendResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *BackendResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *BackendResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackendResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *BackendResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *BackendResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *BackendResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *BackendResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *BackendResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -1942,6 +2167,21 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.Hostname.IsSet() {
 		toSerialize["hostname"] = o.Hostname.Get()
 	}
+	if o.IamExternalID.IsSet() {
+		toSerialize["iam_external_id"] = o.IamExternalID.Get()
+	}
+	if o.IamProduct.IsSet() {
+		toSerialize["iam_product"] = o.IamProduct.Get()
+	}
+	if o.IamRegion.IsSet() {
+		toSerialize["iam_region"] = o.IamRegion.Get()
+	}
+	if o.IamRole.IsSet() {
+		toSerialize["iam_role"] = o.IamRole.Get()
+	}
+	if o.IamVendor.IsSet() {
+		toSerialize["iam_vendor"] = o.IamVendor.Get()
+	}
 	if o.Ipv4.IsSet() {
 		toSerialize["ipv4"] = o.Ipv4.Get()
 	}
@@ -1957,11 +2197,11 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.MaxLifetime.IsSet() {
 		toSerialize["max_lifetime"] = o.MaxLifetime.Get()
 	}
-	if o.MaxTlsVersion.IsSet() {
-		toSerialize["max_tls_version"] = o.MaxTlsVersion.Get()
+	if o.MaxTLSVersion.IsSet() {
+		toSerialize["max_tls_version"] = o.MaxTLSVersion.Get()
 	}
-	if o.MinTlsVersion.IsSet() {
-		toSerialize["min_tls_version"] = o.MinTlsVersion.Get()
+	if o.MinTLSVersion.IsSet() {
+		toSerialize["min_tls_version"] = o.MinTLSVersion.Get()
 	}
 	if o.MaxUse.IsSet() {
 		toSerialize["max_use"] = o.MaxUse.Get()
@@ -2038,8 +2278,8 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -2077,6 +2317,11 @@ func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "fetch_timeout")
 		delete(additionalProperties, "healthcheck")
 		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "iam_external_id")
+		delete(additionalProperties, "iam_product")
+		delete(additionalProperties, "iam_region")
+		delete(additionalProperties, "iam_role")
+		delete(additionalProperties, "iam_vendor")
 		delete(additionalProperties, "ipv4")
 		delete(additionalProperties, "ipv6")
 		delete(additionalProperties, "keepalive_time")

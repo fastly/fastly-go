@@ -28,7 +28,7 @@ type ConfigStoreResponse struct {
 	// The name of the config store.
 	Name *string `json:"name,omitempty"`
 	// An alphanumeric string identifying the config store.
-	Id                   *string `json:"id,omitempty"`
+	ID                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -212,36 +212,36 @@ func (o *ConfigStoreResponse) SetName(v string) {
 	o.Name = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ConfigStoreResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ConfigStoreResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigStoreResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ConfigStoreResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ConfigStoreResponse) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ConfigStoreResponse) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ConfigStoreResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ConfigStoreResponse) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -260,8 +260,8 @@ func (o ConfigStoreResponse) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {

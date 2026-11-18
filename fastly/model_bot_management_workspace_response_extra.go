@@ -20,7 +20,7 @@ import (
 // BotManagementWorkspaceResponseExtra struct for BotManagementWorkspaceResponseExtra
 type BotManagementWorkspaceResponseExtra struct {
 	// A UUID used to uniquely identify the workspace.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The IDs of the services attached to this workspace.
 	Services []string `json:"services,omitempty"`
 	// The date and time the workspace was created, in RFC 3339 format.
@@ -38,7 +38,7 @@ type _BotManagementWorkspaceResponseExtra BotManagementWorkspaceResponseExtra
 // will change when the set of required properties is changed
 func NewBotManagementWorkspaceResponseExtra(id string, createdAt time.Time, updatedAt time.Time) *BotManagementWorkspaceResponseExtra {
 	this := BotManagementWorkspaceResponseExtra{}
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -52,28 +52,28 @@ func NewBotManagementWorkspaceResponseExtraWithDefaults() *BotManagementWorkspac
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *BotManagementWorkspaceResponseExtra) GetId() string {
+// GetID returns the ID field value
+func (o *BotManagementWorkspaceResponseExtra) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementWorkspaceResponseExtra) GetIdOk() (*string, bool) {
+func (o *BotManagementWorkspaceResponseExtra) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *BotManagementWorkspaceResponseExtra) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *BotManagementWorkspaceResponseExtra) SetID(v string) {
+	o.ID = v
 }
 
 // GetServices returns the Services field value if set, zero value otherwise.
@@ -161,7 +161,7 @@ func (o *BotManagementWorkspaceResponseExtra) SetUpdatedAt(v time.Time) {
 func (o BotManagementWorkspaceResponseExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.Services != nil {
 		toSerialize["services"] = o.Services

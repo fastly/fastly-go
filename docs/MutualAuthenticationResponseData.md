@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**TypeMutualAuthentication**](TypeMutualAuthentication.md) |  | [optional] [default to TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION]
 **Attributes** | Pointer to [**MutualAuthenticationResponseAttributes**](MutualAuthenticationResponseAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**RelationshipsForMutualAuthentication**](RelationshipsForMutualAuthentication.md) |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -103,32 +103,30 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *MutualAuthenticationResponseData) GetId() string`
+`func (o *MutualAuthenticationResponseData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *MutualAuthenticationResponseData) GetIdOk() (*string, bool)`
+`func (o *MutualAuthenticationResponseData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *MutualAuthenticationResponseData) SetId(v string)`
+`func (o *MutualAuthenticationResponseData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *MutualAuthenticationResponseData) HasId() bool`
+`func (o *MutualAuthenticationResponseData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

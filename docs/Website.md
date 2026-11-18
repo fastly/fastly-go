@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Unique website identifier | [optional] 
+**ID** | Pointer to **string** | Unique website identifier | [optional] 
 **Domain** | Pointer to **string** | Website domain | [optional] 
 **PageIds** | Pointer to **[]string** | IDs of pages associated with this website | [optional] 
 **CreatedAt** | Pointer to **time.Time** |  | [optional] 
@@ -29,30 +29,30 @@ NewWebsiteWithDefaults instantiates a new Website object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *Website) GetId() string`
+`func (o *Website) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *Website) GetIdOk() (*string, bool)`
+`func (o *Website) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *Website) SetId(v string)`
+`func (o *Website) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *Website) HasId() bool`
+`func (o *Website) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetDomain
 
@@ -156,5 +156,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

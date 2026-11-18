@@ -27,153 +27,153 @@ var (
 	_ context.Context
 )
 
-// AclAPI defines an interface for interacting with the resource.
-type AclAPI interface {
+// ACLAPI defines an interface for interacting with the resource.
+type ACLAPI interface {
 
 	/*
-		CreateAcl Create a new ACL
+		CreateACL Create a new ACL
 
 		Create a new ACL attached to the specified service version. A new, empty ACL must be attached to a draft version of a service. The version associated with the ACL must be activated to be used.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @return APICreateAclRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateACLRequest
 	*/
-	CreateAcl(ctx context.Context, serviceId string, versionId int32) APICreateAclRequest
+	CreateACL(ctx context.Context, serviceID string, versionID int32) APICreateACLRequest
 
-	// CreateAclExecute executes the request
-	//  @return AclResponse
-	CreateAclExecute(r APICreateAclRequest) (*AclResponse, *http.Response, error)
+	// CreateACLExecute executes the request
+	//  @return ACLResponse
+	CreateACLExecute(r APICreateACLRequest) (*ACLResponse, *http.Response, error)
 
 	/*
-		DeleteAcl Delete an ACL
+		DeleteACL Delete an ACL
 
 		Delete an ACL from the specified service version. To remove an ACL from use, the ACL must be deleted from a draft version and the version without the ACL must be activated.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param aclName Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-		 @return APIDeleteAclRequest
+		 @return APIDeleteACLRequest
 	*/
-	DeleteAcl(ctx context.Context, serviceId string, versionId int32, aclName string) APIDeleteAclRequest
+	DeleteACL(ctx context.Context, serviceID string, versionID int32, aclName string) APIDeleteACLRequest
 
-	// DeleteAclExecute executes the request
+	// DeleteACLExecute executes the request
 	//  @return InlineResponse200
-	DeleteAclExecute(r APIDeleteAclRequest) (*InlineResponse200, *http.Response, error)
+	DeleteACLExecute(r APIDeleteACLRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		GetAcl Describe an ACL
+		GetACL Describe an ACL
 
 		Retrieve a single ACL by name for the version and service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param aclName Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-		 @return APIGetAclRequest
+		 @return APIGetACLRequest
 	*/
-	GetAcl(ctx context.Context, serviceId string, versionId int32, aclName string) APIGetAclRequest
+	GetACL(ctx context.Context, serviceID string, versionID int32, aclName string) APIGetACLRequest
 
-	// GetAclExecute executes the request
-	//  @return AclResponse
-	GetAclExecute(r APIGetAclRequest) (*AclResponse, *http.Response, error)
+	// GetACLExecute executes the request
+	//  @return ACLResponse
+	GetACLExecute(r APIGetACLRequest) (*ACLResponse, *http.Response, error)
 
 	/*
-		ListAcls List ACLs
+		ListACLs List ACLs
 
 		List ACLs.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @return APIListAclsRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListACLsRequest
 	*/
-	ListAcls(ctx context.Context, serviceId string, versionId int32) APIListAclsRequest
+	ListACLs(ctx context.Context, serviceID string, versionID int32) APIListACLsRequest
 
-	// ListAclsExecute executes the request
-	//  @return []AclResponse
-	ListAclsExecute(r APIListAclsRequest) ([]AclResponse, *http.Response, error)
+	// ListACLsExecute executes the request
+	//  @return []ACLResponse
+	ListACLsExecute(r APIListACLsRequest) ([]ACLResponse, *http.Response, error)
 
 	/*
-		UpdateAcl Update an ACL
+		UpdateACL Update an ACL
 
 		Update an ACL for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param aclName Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-		 @return APIUpdateAclRequest
+		 @return APIUpdateACLRequest
 	*/
-	UpdateAcl(ctx context.Context, serviceId string, versionId int32, aclName string) APIUpdateAclRequest
+	UpdateACL(ctx context.Context, serviceID string, versionID int32, aclName string) APIUpdateACLRequest
 
-	// UpdateAclExecute executes the request
-	//  @return AclResponse
-	UpdateAclExecute(r APIUpdateAclRequest) (*AclResponse, *http.Response, error)
+	// UpdateACLExecute executes the request
+	//  @return ACLResponse
+	UpdateACLExecute(r APIUpdateACLRequest) (*ACLResponse, *http.Response, error)
 }
 
-// AclAPIService AclAPI service
-type AclAPIService service
+// ACLAPIService ACLAPI service
+type ACLAPIService service
 
-// APICreateAclRequest represents a request for the resource.
-type APICreateAclRequest struct {
+// APICreateACLRequest represents a request for the resource.
+type APICreateACLRequest struct {
 	ctx        context.Context
-	APIService AclAPI
-	serviceId  string
-	versionId  int32
+	APIService ACLAPI
+	serviceID  string
+	versionID  int32
 	name       *string
 }
 
 // Name Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-func (r *APICreateAclRequest) Name(name string) *APICreateAclRequest {
+func (r *APICreateACLRequest) Name(name string) *APICreateACLRequest {
 	r.name = &name
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateAclRequest) Execute() (*AclResponse, *http.Response, error) {
-	return r.APIService.CreateAclExecute(r)
+func (r APICreateACLRequest) Execute() (*ACLResponse, *http.Response, error) {
+	return r.APIService.CreateACLExecute(r)
 }
 
 /*
-CreateAcl Create a new ACL
+CreateACL Create a new ACL
 
 Create a new ACL attached to the specified service version. A new, empty ACL must be attached to a draft version of a service. The version associated with the ACL must be activated to be used.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @return APICreateAclRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @return APICreateACLRequest
 */
-func (a *AclAPIService) CreateAcl(ctx context.Context, serviceId string, versionId int32) APICreateAclRequest {
-	return APICreateAclRequest{
+func (a *ACLAPIService) CreateACL(ctx context.Context, serviceID string, versionID int32) APICreateACLRequest {
+	return APICreateACLRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
-// CreateAclExecute executes the request
-//  @return AclResponse
-func (a *AclAPIService) CreateAclExecute(r APICreateAclRequest) (*AclResponse, *http.Response, error) {
+// CreateACLExecute executes the request
+//  @return ACLResponse
+func (a *ACLAPIService) CreateACLExecute(r APICreateACLRequest) (*ACLResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *AclResponse
+		localVarReturnValue *ACLResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclAPIService.CreateAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.CreateACL")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/acl"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -263,44 +263,44 @@ func (a *AclAPIService) CreateAclExecute(r APICreateAclRequest) (*AclResponse, *
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteAclRequest represents a request for the resource.
-type APIDeleteAclRequest struct {
+// APIDeleteACLRequest represents a request for the resource.
+type APIDeleteACLRequest struct {
 	ctx        context.Context
-	APIService AclAPI
-	serviceId  string
-	versionId  int32
+	APIService ACLAPI
+	serviceID  string
+	versionID  int32
 	aclName    string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteAclRequest) Execute() (*InlineResponse200, *http.Response, error) {
-	return r.APIService.DeleteAclExecute(r)
+func (r APIDeleteACLRequest) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.DeleteACLExecute(r)
 }
 
 /*
-DeleteAcl Delete an ACL
+DeleteACL Delete an ACL
 
 Delete an ACL from the specified service version. To remove an ACL from use, the ACL must be deleted from a draft version and the version without the ACL must be activated.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param aclName Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
- @return APIDeleteAclRequest
+ @return APIDeleteACLRequest
 */
-func (a *AclAPIService) DeleteAcl(ctx context.Context, serviceId string, versionId int32, aclName string) APIDeleteAclRequest {
-	return APIDeleteAclRequest{
+func (a *ACLAPIService) DeleteACL(ctx context.Context, serviceID string, versionID int32, aclName string) APIDeleteACLRequest {
+	return APIDeleteACLRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		aclName:    aclName,
 	}
 }
 
-// DeleteAclExecute executes the request
+// DeleteACLExecute executes the request
 //  @return InlineResponse200
-func (a *AclAPIService) DeleteAclExecute(r APIDeleteAclRequest) (*InlineResponse200, *http.Response, error) {
+func (a *ACLAPIService) DeleteACLExecute(r APIDeleteACLRequest) (*InlineResponse200, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
@@ -308,14 +308,14 @@ func (a *AclAPIService) DeleteAclExecute(r APIDeleteAclRequest) (*InlineResponse
 		localVarReturnValue *InlineResponse200
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclAPIService.DeleteAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.DeleteACL")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/acl/{acl_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_name"+"}", gourl.PathEscape(parameterToString(r.aclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -403,59 +403,59 @@ func (a *AclAPIService) DeleteAclExecute(r APIDeleteAclRequest) (*InlineResponse
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetAclRequest represents a request for the resource.
-type APIGetAclRequest struct {
+// APIGetACLRequest represents a request for the resource.
+type APIGetACLRequest struct {
 	ctx        context.Context
-	APIService AclAPI
-	serviceId  string
-	versionId  int32
+	APIService ACLAPI
+	serviceID  string
+	versionID  int32
 	aclName    string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAclRequest) Execute() (*AclResponse, *http.Response, error) {
-	return r.APIService.GetAclExecute(r)
+func (r APIGetACLRequest) Execute() (*ACLResponse, *http.Response, error) {
+	return r.APIService.GetACLExecute(r)
 }
 
 /*
-GetAcl Describe an ACL
+GetACL Describe an ACL
 
 Retrieve a single ACL by name for the version and service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param aclName Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
- @return APIGetAclRequest
+ @return APIGetACLRequest
 */
-func (a *AclAPIService) GetAcl(ctx context.Context, serviceId string, versionId int32, aclName string) APIGetAclRequest {
-	return APIGetAclRequest{
+func (a *ACLAPIService) GetACL(ctx context.Context, serviceID string, versionID int32, aclName string) APIGetACLRequest {
+	return APIGetACLRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		aclName:    aclName,
 	}
 }
 
-// GetAclExecute executes the request
-//  @return AclResponse
-func (a *AclAPIService) GetAclExecute(r APIGetAclRequest) (*AclResponse, *http.Response, error) {
+// GetACLExecute executes the request
+//  @return ACLResponse
+func (a *ACLAPIService) GetACLExecute(r APIGetACLRequest) (*ACLResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *AclResponse
+		localVarReturnValue *ACLResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclAPIService.GetAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.GetACL")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/acl/{acl_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_name"+"}", gourl.PathEscape(parameterToString(r.aclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -543,56 +543,56 @@ func (a *AclAPIService) GetAclExecute(r APIGetAclRequest) (*AclResponse, *http.R
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListAclsRequest represents a request for the resource.
-type APIListAclsRequest struct {
+// APIListACLsRequest represents a request for the resource.
+type APIListACLsRequest struct {
 	ctx        context.Context
-	APIService AclAPI
-	serviceId  string
-	versionId  int32
+	APIService ACLAPI
+	serviceID  string
+	versionID  int32
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListAclsRequest) Execute() ([]AclResponse, *http.Response, error) {
-	return r.APIService.ListAclsExecute(r)
+func (r APIListACLsRequest) Execute() ([]ACLResponse, *http.Response, error) {
+	return r.APIService.ListACLsExecute(r)
 }
 
 /*
-ListAcls List ACLs
+ListACLs List ACLs
 
 List ACLs.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @return APIListAclsRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @return APIListACLsRequest
 */
-func (a *AclAPIService) ListAcls(ctx context.Context, serviceId string, versionId int32) APIListAclsRequest {
-	return APIListAclsRequest{
+func (a *ACLAPIService) ListACLs(ctx context.Context, serviceID string, versionID int32) APIListACLsRequest {
+	return APIListACLsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
-// ListAclsExecute executes the request
-//  @return []AclResponse
-func (a *AclAPIService) ListAclsExecute(r APIListAclsRequest) ([]AclResponse, *http.Response, error) {
+// ListACLsExecute executes the request
+//  @return []ACLResponse
+func (a *ACLAPIService) ListACLsExecute(r APIListACLsRequest) ([]ACLResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue []AclResponse
+		localVarReturnValue []ACLResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclAPIService.ListAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.ListACLs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/acl"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -679,66 +679,66 @@ func (a *AclAPIService) ListAclsExecute(r APIListAclsRequest) ([]AclResponse, *h
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUpdateAclRequest represents a request for the resource.
-type APIUpdateAclRequest struct {
+// APIUpdateACLRequest represents a request for the resource.
+type APIUpdateACLRequest struct {
 	ctx        context.Context
-	APIService AclAPI
-	serviceId  string
-	versionId  int32
+	APIService ACLAPI
+	serviceID  string
+	versionID  int32
 	aclName    string
 	name       *string
 }
 
 // Name Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-func (r *APIUpdateAclRequest) Name(name string) *APIUpdateAclRequest {
+func (r *APIUpdateACLRequest) Name(name string) *APIUpdateACLRequest {
 	r.name = &name
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateAclRequest) Execute() (*AclResponse, *http.Response, error) {
-	return r.APIService.UpdateAclExecute(r)
+func (r APIUpdateACLRequest) Execute() (*ACLResponse, *http.Response, error) {
+	return r.APIService.UpdateACLExecute(r)
 }
 
 /*
-UpdateAcl Update an ACL
+UpdateACL Update an ACL
 
 Update an ACL for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param aclName Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
- @return APIUpdateAclRequest
+ @return APIUpdateACLRequest
 */
-func (a *AclAPIService) UpdateAcl(ctx context.Context, serviceId string, versionId int32, aclName string) APIUpdateAclRequest {
-	return APIUpdateAclRequest{
+func (a *ACLAPIService) UpdateACL(ctx context.Context, serviceID string, versionID int32, aclName string) APIUpdateACLRequest {
+	return APIUpdateACLRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		aclName:    aclName,
 	}
 }
 
-// UpdateAclExecute executes the request
-//  @return AclResponse
-func (a *AclAPIService) UpdateAclExecute(r APIUpdateAclRequest) (*AclResponse, *http.Response, error) {
+// UpdateACLExecute executes the request
+//  @return ACLResponse
+func (a *ACLAPIService) UpdateACLExecute(r APIUpdateACLRequest) (*ACLResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *AclResponse
+		localVarReturnValue *ACLResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclAPIService.UpdateAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.UpdateACL")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/acl/{acl_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_name"+"}", gourl.PathEscape(parameterToString(r.aclName, "")))
 
 	localVarHeaderParams := make(map[string]string)

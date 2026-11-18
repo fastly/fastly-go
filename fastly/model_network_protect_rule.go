@@ -19,9 +19,9 @@ import (
 
 // NetworkProtectRule One ordered firewall rule. All match fields are optional, but at least one must be provided. The action is required. Rules have no public ID; replacing the list preserves timestamps only when logical fields, comment, and position are unchanged.
 type NetworkProtectRule struct {
-	NetworkProtectRuleMatchDestinationIp    *NetworkProtectRuleMatchDestinationIp
+	NetworkProtectRuleMatchDestinationIP    *NetworkProtectRuleMatchDestinationIP
 	NetworkProtectRuleMatchDestinationPorts *NetworkProtectRuleMatchDestinationPorts
-	NetworkProtectRuleMatchIpProtocol       *NetworkProtectRuleMatchIpProtocol
+	NetworkProtectRuleMatchIPProtocol       *NetworkProtectRuleMatchIPProtocol
 	NetworkProtectRuleMatchSourcePorts      *NetworkProtectRuleMatchSourcePorts
 	NetworkProtectRuleMatchSourcePrefixList *NetworkProtectRuleMatchSourcePrefixList
 }
@@ -30,16 +30,16 @@ type NetworkProtectRule struct {
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *NetworkProtectRule) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NetworkProtectRuleMatchDestinationIp
-	err = json.Unmarshal(data, &o.NetworkProtectRuleMatchDestinationIp)
+	// try to unmarshal JSON data into NetworkProtectRuleMatchDestinationIP
+	err = json.Unmarshal(data, &o.NetworkProtectRuleMatchDestinationIP)
 	if err == nil {
-		jsonNetworkProtectRuleMatchDestinationIp, _ := json.Marshal(o.NetworkProtectRuleMatchDestinationIp)
-		if string(jsonNetworkProtectRuleMatchDestinationIp) != "{}" { // empty struct
-			return nil // data stored in o.NetworkProtectRuleMatchDestinationIp, return on the first match
+		jsonNetworkProtectRuleMatchDestinationIP, _ := json.Marshal(o.NetworkProtectRuleMatchDestinationIP)
+		if string(jsonNetworkProtectRuleMatchDestinationIP) != "{}" { // empty struct
+			return nil // data stored in o.NetworkProtectRuleMatchDestinationIP, return on the first match
 		}
-		o.NetworkProtectRuleMatchDestinationIp = nil
+		o.NetworkProtectRuleMatchDestinationIP = nil
 	} else {
-		o.NetworkProtectRuleMatchDestinationIp = nil
+		o.NetworkProtectRuleMatchDestinationIP = nil
 	}
 
 	// try to unmarshal JSON data into NetworkProtectRuleMatchDestinationPorts
@@ -54,16 +54,16 @@ func (o *NetworkProtectRule) UnmarshalJSON(data []byte) error {
 		o.NetworkProtectRuleMatchDestinationPorts = nil
 	}
 
-	// try to unmarshal JSON data into NetworkProtectRuleMatchIpProtocol
-	err = json.Unmarshal(data, &o.NetworkProtectRuleMatchIpProtocol)
+	// try to unmarshal JSON data into NetworkProtectRuleMatchIPProtocol
+	err = json.Unmarshal(data, &o.NetworkProtectRuleMatchIPProtocol)
 	if err == nil {
-		jsonNetworkProtectRuleMatchIpProtocol, _ := json.Marshal(o.NetworkProtectRuleMatchIpProtocol)
-		if string(jsonNetworkProtectRuleMatchIpProtocol) != "{}" { // empty struct
-			return nil // data stored in o.NetworkProtectRuleMatchIpProtocol, return on the first match
+		jsonNetworkProtectRuleMatchIPProtocol, _ := json.Marshal(o.NetworkProtectRuleMatchIPProtocol)
+		if string(jsonNetworkProtectRuleMatchIPProtocol) != "{}" { // empty struct
+			return nil // data stored in o.NetworkProtectRuleMatchIPProtocol, return on the first match
 		}
-		o.NetworkProtectRuleMatchIpProtocol = nil
+		o.NetworkProtectRuleMatchIPProtocol = nil
 	} else {
-		o.NetworkProtectRuleMatchIpProtocol = nil
+		o.NetworkProtectRuleMatchIPProtocol = nil
 	}
 
 	// try to unmarshal JSON data into NetworkProtectRuleMatchSourcePorts
@@ -96,16 +96,16 @@ func (o *NetworkProtectRule) UnmarshalJSON(data []byte) error {
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o *NetworkProtectRule) MarshalJSON() ([]byte, error) {
-	if o.NetworkProtectRuleMatchDestinationIp != nil {
-		return json.Marshal(&o.NetworkProtectRuleMatchDestinationIp)
+	if o.NetworkProtectRuleMatchDestinationIP != nil {
+		return json.Marshal(&o.NetworkProtectRuleMatchDestinationIP)
 	}
 
 	if o.NetworkProtectRuleMatchDestinationPorts != nil {
 		return json.Marshal(&o.NetworkProtectRuleMatchDestinationPorts)
 	}
 
-	if o.NetworkProtectRuleMatchIpProtocol != nil {
-		return json.Marshal(&o.NetworkProtectRuleMatchIpProtocol)
+	if o.NetworkProtectRuleMatchIPProtocol != nil {
+		return json.Marshal(&o.NetworkProtectRuleMatchIPProtocol)
 	}
 
 	if o.NetworkProtectRuleMatchSourcePorts != nil {

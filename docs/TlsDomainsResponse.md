@@ -1,4 +1,4 @@
-# TlsDomainsResponse
+# TLSDomainsResponse
 
 ## Properties
 
@@ -6,103 +6,101 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationMeta1**](PaginationMeta1.md) |  | [optional] 
-**Data** | Pointer to [**[]TlsDomainData**](TlsDomainData.md) |  | [optional] 
+**Data** | Pointer to [**[]TLSDomainData**](TlsDomainData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsDomainsResponse
+### NewTLSDomainsResponse
 
-`func NewTlsDomainsResponse() *TlsDomainsResponse`
+`func NewTLSDomainsResponse() *TLSDomainsResponse`
 
-NewTlsDomainsResponse instantiates a new TlsDomainsResponse object
+NewTLSDomainsResponse instantiates a new TLSDomainsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsDomainsResponseWithDefaults
+### NewTLSDomainsResponseWithDefaults
 
-`func NewTlsDomainsResponseWithDefaults() *TlsDomainsResponse`
+`func NewTLSDomainsResponseWithDefaults() *TLSDomainsResponse`
 
-NewTlsDomainsResponseWithDefaults instantiates a new TlsDomainsResponse object
+NewTLSDomainsResponseWithDefaults instantiates a new TLSDomainsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLinks
 
-`func (o *TlsDomainsResponse) GetLinks() PaginationLinks`
+`func (o *TLSDomainsResponse) GetLinks() PaginationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *TlsDomainsResponse) GetLinksOk() (*PaginationLinks, bool)`
+`func (o *TLSDomainsResponse) GetLinksOk() (*PaginationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *TlsDomainsResponse) SetLinks(v PaginationLinks)`
+`func (o *TLSDomainsResponse) SetLinks(v PaginationLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *TlsDomainsResponse) HasLinks() bool`
+`func (o *TLSDomainsResponse) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *TlsDomainsResponse) GetMeta() PaginationMeta1`
+`func (o *TLSDomainsResponse) GetMeta() PaginationMeta1`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *TlsDomainsResponse) GetMetaOk() (*PaginationMeta1, bool)`
+`func (o *TLSDomainsResponse) GetMetaOk() (*PaginationMeta1, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *TlsDomainsResponse) SetMeta(v PaginationMeta1)`
+`func (o *TLSDomainsResponse) SetMeta(v PaginationMeta1)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *TlsDomainsResponse) HasMeta() bool`
+`func (o *TLSDomainsResponse) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *TlsDomainsResponse) GetData() []TlsDomainData`
+`func (o *TLSDomainsResponse) GetData() []TLSDomainData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsDomainsResponse) GetDataOk() (*[]TlsDomainData, bool)`
+`func (o *TLSDomainsResponse) GetDataOk() (*[]TLSDomainData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsDomainsResponse) SetData(v []TlsDomainData)`
+`func (o *TLSDomainsResponse) SetData(v []TLSDomainData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsDomainsResponse) HasData() bool`
+`func (o *TLSDomainsResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

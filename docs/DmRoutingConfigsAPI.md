@@ -49,12 +49,12 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.ActivateDmRoutingConfigDraft(ctx, configId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.ActivateDmRoutingConfigDraft(ctx, configID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.ActivateDmRoutingConfigDraft`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,7 +70,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -179,13 +179,13 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
     pathCreate := *openapiclient.NewPathCreate("Path_example") // PathCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.CreateDmRoutingConfigPath(ctx, configId).PathCreate(pathCreate).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.CreateDmRoutingConfigPath(ctx, configID).PathCreate(pathCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.CreateDmRoutingConfigPath`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,7 +201,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -247,14 +247,14 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
     ruleCreate := *openapiclient.NewRuleCreate(*openapiclient.NewAction(openapiclient.action_type("service"), "Value_example"), []openapiclient.RoutingConfigCondition{*openapiclient.NewRoutingConfigCondition(openapiclient.condition_type("header"), openapiclient.condition_operator("equals"), "Value_example")}) // RuleCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.CreateDmRoutingConfigRule(ctx, configId, pathId).RuleCreate(ruleCreate).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.CreateDmRoutingConfigRule(ctx, configID, pathID).RuleCreate(ruleCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.CreateDmRoutingConfigRule`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,8 +270,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
 
 ### Other Parameters
 
@@ -317,12 +317,12 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.DeactivateDmRoutingConfig(ctx, configId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.DeactivateDmRoutingConfig(ctx, configID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.DeactivateDmRoutingConfig`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -338,7 +338,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -384,13 +384,13 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
     force := true // bool | When `true`, allows deleting a routing config that has an active version. This is destructive — traffic routing for any paths served by the config will stop immediately. (optional) (default to false)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfig(ctx, configId).Force(force).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfig(ctx, configID).Force(force).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.DeleteDmRoutingConfig`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -404,7 +404,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -450,12 +450,12 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfigInactiveVersions(ctx, configId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfigInactiveVersions(ctx, configID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.DeleteDmRoutingConfigInactiveVersions`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -469,7 +469,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -515,13 +515,13 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfigPath(ctx, configId, pathId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfigPath(ctx, configID, pathID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.DeleteDmRoutingConfigPath`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -535,8 +535,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
 
 ### Other Parameters
 
@@ -582,14 +582,14 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
-    ruleId := "ruleId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
+    ruleID := "ruleId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfigRule(ctx, configId, pathId, ruleId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.DeleteDmRoutingConfigRule(ctx, configID, pathID, ruleID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.DeleteDmRoutingConfigRule`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -603,9 +603,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
-**ruleId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
+**ruleID** | **string** |  | 
 
 ### Other Parameters
 
@@ -651,12 +651,12 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.DiscardDmRoutingConfigDraft(ctx, configId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.DiscardDmRoutingConfigDraft(ctx, configID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.DiscardDmRoutingConfigDraft`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -670,7 +670,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -716,12 +716,12 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfig(ctx, configId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfig(ctx, configID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.GetDmRoutingConfig`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -737,7 +737,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -783,12 +783,12 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfigDraftDiff(ctx, configId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfigDraftDiff(ctx, configID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.GetDmRoutingConfigDraftDiff`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -804,7 +804,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -850,13 +850,13 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfigPath(ctx, configId, pathId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfigPath(ctx, configID, pathID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.GetDmRoutingConfigPath`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -872,8 +872,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
 
 ### Other Parameters
 
@@ -919,14 +919,14 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
-    ruleId := "ruleId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
+    ruleID := "ruleId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfigRule(ctx, configId, pathId, ruleId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.GetDmRoutingConfigRule(ctx, configID, pathID, ruleID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.GetDmRoutingConfigRule`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -942,9 +942,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
-**ruleId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
+**ruleID** | **string** |  | 
 
 ### Other Parameters
 
@@ -990,7 +990,7 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
     path := "path_example" // string | Filter results by path pattern. The match strategy is controlled by the `match` parameter. (optional)
     match := "match_example" // string | How to match the value of the `path` filter against existing path patterns. Has no effect unless `path` is also provided. (optional) (default to "exact")
     sort := "sort_example" // string | The order in which to list the results. (optional) (default to "-created_at")
@@ -1000,7 +1000,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.ListDmRoutingConfigPaths(ctx, configId).Path(path).Match(match).Sort(sort).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.ListDmRoutingConfigPaths(ctx, configID).Path(path).Match(match).Sort(sort).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.ListDmRoutingConfigPaths`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1016,7 +1016,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1062,8 +1062,8 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
     sort := "sort_example" // string | The order in which to list the results. (optional) (default to "position")
     cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
     limit := int32(56) // int32 | Limit how many results are returned. (optional) (default to 20)
@@ -1071,7 +1071,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.ListDmRoutingConfigRules(ctx, configId, pathId).Sort(sort).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.ListDmRoutingConfigRules(ctx, configID, pathID).Sort(sort).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.ListDmRoutingConfigRules`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1087,8 +1087,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1134,7 +1134,7 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
     sort := "sort_example" // string | The order in which to list the results. (optional) (default to "-activated_at")
     cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
     limit := int32(56) // int32 | Limit how many results are returned. (optional) (default to 20)
@@ -1142,7 +1142,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.ListDmRoutingConfigVersions(ctx, configId).Sort(sort).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.ListDmRoutingConfigVersions(ctx, configID).Sort(sort).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.ListDmRoutingConfigVersions`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1158,7 +1158,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1270,13 +1270,13 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    versionId := "versionId_example" // string | 
+    configID := "configId_example" // string | 
+    versionID := "versionId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.ReactivateDmRoutingConfigVersion(ctx, configId, versionId).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.ReactivateDmRoutingConfigVersion(ctx, configID, versionID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.ReactivateDmRoutingConfigVersion`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1292,8 +1292,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**versionId** | **string** |  | 
+**configID** | **string** |  | 
+**versionID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1339,13 +1339,13 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
+    configID := "configId_example" // string | 
     draftUpdate := *openapiclient.NewDraftUpdate() // DraftUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.UpdateDmRoutingConfigDraft(ctx, configId).DraftUpdate(draftUpdate).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.UpdateDmRoutingConfigDraft(ctx, configID).DraftUpdate(draftUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.UpdateDmRoutingConfigDraft`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1361,7 +1361,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
+**configID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1407,14 +1407,14 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
     pathUpdate := *openapiclient.NewPathUpdate() // PathUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.UpdateDmRoutingConfigPath(ctx, configId, pathId).PathUpdate(pathUpdate).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.UpdateDmRoutingConfigPath(ctx, configID, pathID).PathUpdate(pathUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.UpdateDmRoutingConfigPath`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1430,8 +1430,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1477,15 +1477,15 @@ import (
 )
 
 func main() {
-    configId := "configId_example" // string | 
-    pathId := "pathId_example" // string | 
-    ruleId := "ruleId_example" // string | 
+    configID := "configId_example" // string | 
+    pathID := "pathId_example" // string | 
+    ruleID := "ruleId_example" // string | 
     ruleUpdate := *openapiclient.NewRuleUpdate() // RuleUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DmRoutingConfigsAPI.UpdateDmRoutingConfigRule(ctx, configId, pathId, ruleId).RuleUpdate(ruleUpdate).Execute()
+    resp, r, err := apiClient.DmRoutingConfigsAPI.UpdateDmRoutingConfigRule(ctx, configID, pathID, ruleID).RuleUpdate(ruleUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DmRoutingConfigsAPI.UpdateDmRoutingConfigRule`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1501,9 +1501,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configId** | **string** |  | 
-**pathId** | **string** |  | 
-**ruleId** | **string** |  | 
+**configID** | **string** |  | 
+**pathID** | **string** |  | 
+**ruleID** | **string** |  | 
 
 ### Other Parameters
 
@@ -1528,4 +1528,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

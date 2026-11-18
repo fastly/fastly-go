@@ -37,7 +37,7 @@ type AutomationTokenCreateRequest struct {
 	// A UTC timestamp of when the token will expire.
 	ExpiresAt NullableTime `json:"expires_at"`
 	// Indicates whether TLS access is enabled for the token. Only applicable when using the single-role `role` field. For tokens with multiple roles, assign TLS roles (`tls_admin` or `tls_viewer`) via the `roles` field instead.
-	TlsAccess            *bool `json:"tls_access,omitempty"`
+	TLSAccess            *bool `json:"tls_access,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -348,36 +348,36 @@ func (o *AutomationTokenCreateRequest) SetExpiresAt(v time.Time) {
 	o.ExpiresAt.Set(&v)
 }
 
-// GetTlsAccess returns the TlsAccess field value if set, zero value otherwise.
-func (o *AutomationTokenCreateRequest) GetTlsAccess() bool {
-	if o == nil || o.TlsAccess == nil {
+// GetTLSAccess returns the TLSAccess field value if set, zero value otherwise.
+func (o *AutomationTokenCreateRequest) GetTLSAccess() bool {
+	if o == nil || o.TLSAccess == nil {
 		var ret bool
 		return ret
 	}
-	return *o.TlsAccess
+	return *o.TLSAccess
 }
 
-// GetTlsAccessOk returns a tuple with the TlsAccess field value if set, nil otherwise
+// GetTLSAccessOk returns a tuple with the TLSAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenCreateRequest) GetTlsAccessOk() (*bool, bool) {
-	if o == nil || o.TlsAccess == nil {
+func (o *AutomationTokenCreateRequest) GetTLSAccessOk() (*bool, bool) {
+	if o == nil || o.TLSAccess == nil {
 		return nil, false
 	}
-	return o.TlsAccess, true
+	return o.TLSAccess, true
 }
 
-// HasTlsAccess returns a boolean if a field has been set.
-func (o *AutomationTokenCreateRequest) HasTlsAccess() bool {
-	if o != nil && o.TlsAccess != nil {
+// HasTLSAccess returns a boolean if a field has been set.
+func (o *AutomationTokenCreateRequest) HasTLSAccess() bool {
+	if o != nil && o.TLSAccess != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsAccess gets a reference to the given bool and assigns it to the TlsAccess field.
-func (o *AutomationTokenCreateRequest) SetTlsAccess(v bool) {
-	o.TlsAccess = &v
+// SetTLSAccess gets a reference to the given bool and assigns it to the TLSAccess field.
+func (o *AutomationTokenCreateRequest) SetTLSAccess(v bool) {
+	o.TLSAccess = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -411,8 +411,8 @@ func (o AutomationTokenCreateRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["expires_at"] = o.ExpiresAt.Get()
 	}
-	if o.TlsAccess != nil {
-		toSerialize["tls_access"] = o.TlsAccess
+	if o.TLSAccess != nil {
+		toSerialize["tls_access"] = o.TLSAccess
 	}
 
 	for key, value := range o.AdditionalProperties {

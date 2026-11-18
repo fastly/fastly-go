@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsDomainsResponseAllOf struct for TlsDomainsResponseAllOf
-type TlsDomainsResponseAllOf struct {
-	Data                 []TlsDomainData `json:"data,omitempty"`
+// TLSDomainsResponseAllOf struct for TLSDomainsResponseAllOf
+type TLSDomainsResponseAllOf struct {
+	Data                 []TLSDomainData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsDomainsResponseAllOf TlsDomainsResponseAllOf
+type _TLSDomainsResponseAllOf TLSDomainsResponseAllOf
 
-// NewTlsDomainsResponseAllOf instantiates a new TlsDomainsResponseAllOf object
+// NewTLSDomainsResponseAllOf instantiates a new TLSDomainsResponseAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsDomainsResponseAllOf() *TlsDomainsResponseAllOf {
-	this := TlsDomainsResponseAllOf{}
+func NewTLSDomainsResponseAllOf() *TLSDomainsResponseAllOf {
+	this := TLSDomainsResponseAllOf{}
 	return &this
 }
 
-// NewTlsDomainsResponseAllOfWithDefaults instantiates a new TlsDomainsResponseAllOf object
+// NewTLSDomainsResponseAllOfWithDefaults instantiates a new TLSDomainsResponseAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsDomainsResponseAllOfWithDefaults() *TlsDomainsResponseAllOf {
-	this := TlsDomainsResponseAllOf{}
+func NewTLSDomainsResponseAllOfWithDefaults() *TLSDomainsResponseAllOf {
+	this := TLSDomainsResponseAllOf{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsDomainsResponseAllOf) GetData() []TlsDomainData {
+func (o *TLSDomainsResponseAllOf) GetData() []TLSDomainData {
 	if o == nil || o.Data == nil {
-		var ret []TlsDomainData
+		var ret []TLSDomainData
 		return ret
 	}
 	return o.Data
@@ -52,7 +52,7 @@ func (o *TlsDomainsResponseAllOf) GetData() []TlsDomainData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsDomainsResponseAllOf) GetDataOk() ([]TlsDomainData, bool) {
+func (o *TLSDomainsResponseAllOf) GetDataOk() ([]TLSDomainData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TlsDomainsResponseAllOf) GetDataOk() ([]TlsDomainData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsDomainsResponseAllOf) HasData() bool {
+func (o *TLSDomainsResponseAllOf) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *TlsDomainsResponseAllOf) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []TlsDomainData and assigns it to the Data field.
-func (o *TlsDomainsResponseAllOf) SetData(v []TlsDomainData) {
+// SetData gets a reference to the given []TLSDomainData and assigns it to the Data field.
+func (o *TLSDomainsResponseAllOf) SetData(v []TLSDomainData) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsDomainsResponseAllOf) MarshalJSON() ([]byte, error) {
+func (o TLSDomainsResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o TlsDomainsResponseAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsDomainsResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsDomainsResponseAllOf := _TlsDomainsResponseAllOf{}
+func (o *TLSDomainsResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSDomainsResponseAllOf := _TLSDomainsResponseAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTlsDomainsResponseAllOf); err == nil {
-		*o = TlsDomainsResponseAllOf(varTlsDomainsResponseAllOf)
+	if err = json.Unmarshal(bytes, &varTLSDomainsResponseAllOf); err == nil {
+		*o = TLSDomainsResponseAllOf(varTLSDomainsResponseAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TlsDomainsResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsDomainsResponseAllOf is a helper abstraction for handling nullable tlsdomainsresponseallof types.
-type NullableTlsDomainsResponseAllOf struct {
-	value *TlsDomainsResponseAllOf
+// NullableTLSDomainsResponseAllOf is a helper abstraction for handling nullable tlsdomainsresponseallof types.
+type NullableTLSDomainsResponseAllOf struct {
+	value *TLSDomainsResponseAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsDomainsResponseAllOf) Get() *TlsDomainsResponseAllOf {
+func (v NullableTLSDomainsResponseAllOf) Get() *TLSDomainsResponseAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsDomainsResponseAllOf) Set(val *TlsDomainsResponseAllOf) {
+func (v *NullableTLSDomainsResponseAllOf) Set(val *TLSDomainsResponseAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsDomainsResponseAllOf) IsSet() bool {
+func (v NullableTLSDomainsResponseAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsDomainsResponseAllOf) Unset() {
+func (v *NullableTLSDomainsResponseAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsDomainsResponseAllOf returns a pointer to a new instance of NullableTlsDomainsResponseAllOf.
-func NewNullableTlsDomainsResponseAllOf(val *TlsDomainsResponseAllOf) *NullableTlsDomainsResponseAllOf {
-	return &NullableTlsDomainsResponseAllOf{value: val, isSet: true}
+// NewNullableTLSDomainsResponseAllOf returns a pointer to a new instance of NullableTLSDomainsResponseAllOf.
+func NewNullableTLSDomainsResponseAllOf(val *TLSDomainsResponseAllOf) *NullableTLSDomainsResponseAllOf {
+	return &NullableTLSDomainsResponseAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsDomainsResponseAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTLSDomainsResponseAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsDomainsResponseAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSDomainsResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

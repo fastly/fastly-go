@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to [**TypeBillingAddress**](TypeBillingAddress.md) |  | [optional] [default to TYPEBILLINGADDRESS_BILLING_ADDRESS]
-**Id** | Pointer to **string** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
 **Attributes** | Pointer to [**BillingAddressAttributes**](BillingAddressAttributes.md) |  | [optional] 
 
 ## Methods
@@ -52,30 +52,30 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *UpdateBillingAddressRequestData) GetId() string`
+`func (o *UpdateBillingAddressRequestData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *UpdateBillingAddressRequestData) GetIdOk() (*string, bool)`
+`func (o *UpdateBillingAddressRequestData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *UpdateBillingAddressRequestData) SetId(v string)`
+`func (o *UpdateBillingAddressRequestData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *UpdateBillingAddressRequestData) HasId() bool`
+`func (o *UpdateBillingAddressRequestData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetAttributes
 
@@ -104,5 +104,3 @@ HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

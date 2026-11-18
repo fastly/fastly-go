@@ -41,18 +41,18 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.AddUserGroupMembers(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.AddUserGroupMembers(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.AddUserGroupMembers`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AddUserGroupMembers`: map[string]interface{}
+    // response from `AddUserGroupMembers`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.AddUserGroupMembers`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -72,11 +72,11 @@ Other parameters are passed through a pointer to a apiAddUserGroupMembersRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -109,18 +109,18 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.AddUserGroupRoles(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.AddUserGroupRoles(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.AddUserGroupRoles`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AddUserGroupRoles`: map[string]interface{}
+    // response from `AddUserGroupRoles`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.AddUserGroupRoles`: %v\n", resp)
 }
 ```
@@ -131,7 +131,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -140,11 +140,11 @@ Other parameters are passed through a pointer to a apiAddUserGroupRolesRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -177,18 +177,18 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.AddUserGroupServiceGroups(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.AddUserGroupServiceGroups(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.AddUserGroupServiceGroups`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AddUserGroupServiceGroups`: map[string]interface{}
+    // response from `AddUserGroupServiceGroups`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.AddUserGroupServiceGroups`: %v\n", resp)
 }
 ```
@@ -199,7 +199,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -208,11 +208,11 @@ Other parameters are passed through a pointer to a apiAddUserGroupServiceGroupsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -245,7 +245,7 @@ import (
 )
 
 func main() {
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -255,7 +255,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.CreateAUserGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateAUserGroup`: map[string]interface{}
+    // response from `CreateAUserGroup`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.CreateAUserGroup`: %v\n", resp)
 }
 ```
@@ -271,11 +271,11 @@ Other parameters are passed through a pointer to a apiCreateAUserGroupRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -308,12 +308,12 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.DeleteAUserGroup(ctx, userGroupId).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.DeleteAUserGroup(ctx, userGroupID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.DeleteAUserGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -327,7 +327,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -373,17 +373,17 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.GetAUserGroup(ctx, userGroupId).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.GetAUserGroup(ctx, userGroupID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.GetAUserGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAUserGroup`: map[string]interface{}
+    // response from `GetAUserGroup`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.GetAUserGroup`: %v\n", resp)
 }
 ```
@@ -394,7 +394,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -440,19 +440,19 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
     perPage := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     page := int32(1) // int32 | Current page. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.ListUserGroupMembers(ctx, userGroupId).PerPage(perPage).Page(page).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.ListUserGroupMembers(ctx, userGroupID).PerPage(perPage).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.ListUserGroupMembers`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListUserGroupMembers`: map[string]interface{}
+    // response from `ListUserGroupMembers`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.ListUserGroupMembers`: %v\n", resp)
 }
 ```
@@ -463,7 +463,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -509,19 +509,19 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
     perPage := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     page := int32(1) // int32 | Current page. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.ListUserGroupRoles(ctx, userGroupId).PerPage(perPage).Page(page).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.ListUserGroupRoles(ctx, userGroupID).PerPage(perPage).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.ListUserGroupRoles`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListUserGroupRoles`: map[string]interface{}
+    // response from `ListUserGroupRoles`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.ListUserGroupRoles`: %v\n", resp)
 }
 ```
@@ -532,7 +532,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -578,19 +578,19 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
     perPage := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     page := int32(1) // int32 | Current page. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.ListUserGroupServiceGroups(ctx, userGroupId).PerPage(perPage).Page(page).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.ListUserGroupServiceGroups(ctx, userGroupID).PerPage(perPage).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.ListUserGroupServiceGroups`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListUserGroupServiceGroups`: map[string]interface{}
+    // response from `ListUserGroupServiceGroups`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.ListUserGroupServiceGroups`: %v\n", resp)
 }
 ```
@@ -601,7 +601,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -658,7 +658,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.ListUserGroups`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListUserGroups`: map[string]interface{}
+    // response from `ListUserGroups`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.ListUserGroups`: %v\n", resp)
 }
 ```
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -711,13 +711,13 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.RemoveUserGroupMembers(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.RemoveUserGroupMembers(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.RemoveUserGroupMembers`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -731,7 +731,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -740,7 +740,7 @@ Other parameters are passed through a pointer to a apiRemoveUserGroupMembersRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
@@ -777,13 +777,13 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.RemoveUserGroupRoles(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.RemoveUserGroupRoles(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.RemoveUserGroupRoles`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -797,7 +797,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -806,7 +806,7 @@ Other parameters are passed through a pointer to a apiRemoveUserGroupRolesReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
@@ -843,13 +843,13 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.RemoveUserGroupServiceGroups(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.RemoveUserGroupServiceGroups(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.RemoveUserGroupServiceGroups`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -863,7 +863,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -872,7 +872,7 @@ Other parameters are passed through a pointer to a apiRemoveUserGroupServiceGrou
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
@@ -909,18 +909,18 @@ import (
 )
 
 func main() {
-    userGroupId := "userGroupId_example" // string | Alphanumeric string identifying the user group.
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    userGroupID := "userGroupId_example" // string | Alphanumeric string identifying the user group.
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamUserGroupsAPI.UpdateAUserGroup(ctx, userGroupId).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamUserGroupsAPI.UpdateAUserGroup(ctx, userGroupID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserGroupsAPI.UpdateAUserGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateAUserGroup`: map[string]interface{}
+    // response from `UpdateAUserGroup`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamUserGroupsAPI.UpdateAUserGroup`: %v\n", resp)
 }
 ```
@@ -931,7 +931,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userGroupId** | **string** | Alphanumeric string identifying the user group. | 
+**userGroupID** | **string** | Alphanumeric string identifying the user group. | 
 
 ### Other Parameters
 
@@ -940,11 +940,11 @@ Other parameters are passed through a pointer to a apiUpdateAUserGroupRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -956,4 +956,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

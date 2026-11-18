@@ -21,7 +21,7 @@ type LoggingElasticsearchAdditional struct {
 	// The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
 	Index *string `json:"index,omitempty"`
 	// The URL to stream logs to. Must use HTTPS.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
 	Pipeline NullableString `json:"pipeline,omitempty"`
 	// Basic Auth username.
@@ -84,36 +84,36 @@ func (o *LoggingElasticsearchAdditional) SetIndex(v string) {
 	o.Index = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingElasticsearchAdditional) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingElasticsearchAdditional) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingElasticsearchAdditional) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingElasticsearchAdditional) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingElasticsearchAdditional) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingElasticsearchAdditional) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingElasticsearchAdditional) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingElasticsearchAdditional) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetPipeline returns the Pipeline field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -284,8 +284,8 @@ func (o LoggingElasticsearchAdditional) MarshalJSON() ([]byte, error) {
 	if o.Index != nil {
 		toSerialize["index"] = o.Index
 	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.Pipeline.IsSet() {
 		toSerialize["pipeline"] = o.Pipeline.Get()

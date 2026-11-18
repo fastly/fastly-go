@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Path** | Pointer to **NullableString** | The path to upload logs to. | [optional] [default to "null"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
 **SecretKey** | Pointer to **NullableString** | The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] [default to "null"]
-**SshKnownHosts** | Pointer to **string** | A list of host keys for all hosts we can connect to over SFTP. | [optional] 
+**SSHKnownHosts** | Pointer to **string** | A list of host keys for all hosts we can connect to over SFTP. | [optional] 
 **User** | Pointer to **string** | The username for the server. | [optional] 
 
 ## Methods
@@ -160,30 +160,30 @@ HasSecretKey returns a boolean if a field has been set.
 `func (o *LoggingSftpAdditional) UnsetSecretKey()`
 
 UnsetSecretKey ensures that no value is present for SecretKey, not even an explicit nil
-### GetSshKnownHosts
+### GetSSHKnownHosts
 
-`func (o *LoggingSftpAdditional) GetSshKnownHosts() string`
+`func (o *LoggingSftpAdditional) GetSSHKnownHosts() string`
 
-GetSshKnownHosts returns the SshKnownHosts field if non-nil, zero value otherwise.
+GetSSHKnownHosts returns the SSHKnownHosts field if non-nil, zero value otherwise.
 
-### GetSshKnownHostsOk
+### GetSSHKnownHostsOk
 
-`func (o *LoggingSftpAdditional) GetSshKnownHostsOk() (*string, bool)`
+`func (o *LoggingSftpAdditional) GetSSHKnownHostsOk() (*string, bool)`
 
-GetSshKnownHostsOk returns a tuple with the SshKnownHosts field if it's non-nil, zero value otherwise
+GetSSHKnownHostsOk returns a tuple with the SSHKnownHosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSshKnownHosts
+### SetSSHKnownHosts
 
-`func (o *LoggingSftpAdditional) SetSshKnownHosts(v string)`
+`func (o *LoggingSftpAdditional) SetSSHKnownHosts(v string)`
 
-SetSshKnownHosts sets SshKnownHosts field to given value.
+SetSSHKnownHosts sets SSHKnownHosts field to given value.
 
-### HasSshKnownHosts
+### HasSSHKnownHosts
 
-`func (o *LoggingSftpAdditional) HasSshKnownHosts() bool`
+`func (o *LoggingSftpAdditional) HasSSHKnownHosts() bool`
 
-HasSshKnownHosts returns a boolean if a field has been set.
+HasSSHKnownHosts returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -212,5 +212,3 @@ HasUser returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

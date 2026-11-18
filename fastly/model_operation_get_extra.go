@@ -20,7 +20,7 @@ import (
 // OperationGetExtra struct for OperationGetExtra
 type OperationGetExtra struct {
 	// The unique identifier of the operation.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The timestamp when the operation was created.
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// The timestamp when the operation was last updated.
@@ -42,7 +42,7 @@ type _OperationGetExtra OperationGetExtra
 // will change when the set of required properties is changed
 func NewOperationGetExtra(id string, updatedAt time.Time) *OperationGetExtra {
 	this := OperationGetExtra{}
-	this.Id = id
+	this.ID = id
 	this.UpdatedAt = updatedAt
 	return &this
 }
@@ -55,28 +55,28 @@ func NewOperationGetExtraWithDefaults() *OperationGetExtra {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *OperationGetExtra) GetId() string {
+// GetID returns the ID field value
+func (o *OperationGetExtra) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *OperationGetExtra) GetIdOk() (*string, bool) {
+func (o *OperationGetExtra) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *OperationGetExtra) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *OperationGetExtra) SetID(v string) {
+	o.ID = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -236,7 +236,7 @@ func (o *OperationGetExtra) SetStatus(v string) {
 func (o OperationGetExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

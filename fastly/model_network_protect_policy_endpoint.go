@@ -20,7 +20,7 @@ import (
 // NetworkProtectPolicyEndpoint One endpoint attached to a network policy.
 type NetworkProtectPolicyEndpoint struct {
 	// A unique identifier for a Network Protect resource.
-	EndpointId string `json:"endpoint_id"`
+	EndpointID string `json:"endpoint_id"`
 	// Delivery preference within a policy. Lower values are preferred first. Two endpoints in the same policy cannot share a value.
 	Preference int32 `json:"preference"`
 	// An ISO 8601 timestamp in UTC.
@@ -36,9 +36,9 @@ type _NetworkProtectPolicyEndpoint NetworkProtectPolicyEndpoint
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkProtectPolicyEndpoint(endpointId string, preference int32) *NetworkProtectPolicyEndpoint {
+func NewNetworkProtectPolicyEndpoint(endpointID string, preference int32) *NetworkProtectPolicyEndpoint {
 	this := NetworkProtectPolicyEndpoint{}
-	this.EndpointId = endpointId
+	this.EndpointID = endpointID
 	this.Preference = preference
 	return &this
 }
@@ -51,28 +51,28 @@ func NewNetworkProtectPolicyEndpointWithDefaults() *NetworkProtectPolicyEndpoint
 	return &this
 }
 
-// GetEndpointId returns the EndpointId field value
-func (o *NetworkProtectPolicyEndpoint) GetEndpointId() string {
+// GetEndpointID returns the EndpointID field value
+func (o *NetworkProtectPolicyEndpoint) GetEndpointID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.EndpointId
+	return o.EndpointID
 }
 
-// GetEndpointIdOk returns a tuple with the EndpointId field value
+// GetEndpointIDOk returns a tuple with the EndpointID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectPolicyEndpoint) GetEndpointIdOk() (*string, bool) {
+func (o *NetworkProtectPolicyEndpoint) GetEndpointIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.EndpointId, true
+	return &o.EndpointID, true
 }
 
-// SetEndpointId sets field value
-func (o *NetworkProtectPolicyEndpoint) SetEndpointId(v string) {
-	o.EndpointId = v
+// SetEndpointID sets field value
+func (o *NetworkProtectPolicyEndpoint) SetEndpointID(v string) {
+	o.EndpointID = v
 }
 
 // GetPreference returns the Preference field value
@@ -168,7 +168,7 @@ func (o *NetworkProtectPolicyEndpoint) SetUpdatedAt(v time.Time) {
 func (o NetworkProtectPolicyEndpoint) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["endpoint_id"] = o.EndpointId
+		toSerialize["endpoint_id"] = o.EndpointID
 	}
 	if true {
 		toSerialize["preference"] = o.Preference

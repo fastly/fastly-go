@@ -16,40 +16,40 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTlsDnsRecordsRequestDnsRecordsData struct for RelationshipTlsDnsRecordsRequestDnsRecordsData
-type RelationshipTlsDnsRecordsRequestDnsRecordsData struct {
-	Type                 *TypeTlsDnsRecord `json:"type,omitempty"`
-	Id                   *string           `json:"id,omitempty"`
+// RelationshipTLSDNSRecordsRequestDNSRecordsData struct for RelationshipTLSDNSRecordsRequestDNSRecordsData
+type RelationshipTLSDNSRecordsRequestDNSRecordsData struct {
+	Type                 *TypeTLSDNSRecord `json:"type,omitempty"`
+	ID                   *string           `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTlsDnsRecordsRequestDnsRecordsData RelationshipTlsDnsRecordsRequestDnsRecordsData
+type _RelationshipTLSDNSRecordsRequestDNSRecordsData RelationshipTLSDNSRecordsRequestDNSRecordsData
 
-// NewRelationshipTlsDnsRecordsRequestDnsRecordsData instantiates a new RelationshipTlsDnsRecordsRequestDnsRecordsData object
+// NewRelationshipTLSDNSRecordsRequestDNSRecordsData instantiates a new RelationshipTLSDNSRecordsRequestDNSRecordsData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTlsDnsRecordsRequestDnsRecordsData() *RelationshipTlsDnsRecordsRequestDnsRecordsData {
-	this := RelationshipTlsDnsRecordsRequestDnsRecordsData{}
-	var type_ TypeTlsDnsRecord = TYPETLSDNSRECORD_DNS_RECORD
-	this.Type = &type_
+func NewRelationshipTLSDNSRecordsRequestDNSRecordsData() *RelationshipTLSDNSRecordsRequestDNSRecordsData {
+	this := RelationshipTLSDNSRecordsRequestDNSRecordsData{}
+	var resourceType TypeTLSDNSRecord = TYPETLSDNSRECORD_DNS_RECORD
+	this.Type = &resourceType
 	return &this
 }
 
-// NewRelationshipTlsDnsRecordsRequestDnsRecordsDataWithDefaults instantiates a new RelationshipTlsDnsRecordsRequestDnsRecordsData object
+// NewRelationshipTLSDNSRecordsRequestDNSRecordsDataWithDefaults instantiates a new RelationshipTLSDNSRecordsRequestDNSRecordsData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTlsDnsRecordsRequestDnsRecordsDataWithDefaults() *RelationshipTlsDnsRecordsRequestDnsRecordsData {
-	this := RelationshipTlsDnsRecordsRequestDnsRecordsData{}
-	var type_ TypeTlsDnsRecord = TYPETLSDNSRECORD_DNS_RECORD
-	this.Type = &type_
+func NewRelationshipTLSDNSRecordsRequestDNSRecordsDataWithDefaults() *RelationshipTLSDNSRecordsRequestDNSRecordsData {
+	this := RelationshipTLSDNSRecordsRequestDNSRecordsData{}
+	var resourceType TypeTLSDNSRecord = TYPETLSDNSRECORD_DNS_RECORD
+	this.Type = &resourceType
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) GetType() TypeTlsDnsRecord {
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) GetType() TypeTLSDNSRecord {
 	if o == nil || o.Type == nil {
-		var ret TypeTlsDnsRecord
+		var ret TypeTLSDNSRecord
 		return ret
 	}
 	return *o.Type
@@ -57,7 +57,7 @@ func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) GetType() TypeTlsDnsRec
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) GetTypeOk() (*TypeTlsDnsRecord, bool) {
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) GetTypeOk() (*TypeTLSDNSRecord, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) GetTypeOk() (*TypeTlsDn
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) HasType() bool {
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -73,52 +73,52 @@ func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTlsDnsRecord and assigns it to the Type field.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) SetType(v TypeTlsDnsRecord) {
+// SetType gets a reference to the given TypeTLSDNSRecord and assigns it to the Type field.
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) SetType(v TypeTLSDNSRecord) {
 	o.Type = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTlsDnsRecordsRequestDnsRecordsData) MarshalJSON() ([]byte, error) {
+func (o RelationshipTLSDNSRecordsRequestDNSRecordsData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -130,11 +130,11 @@ func (o RelationshipTlsDnsRecordsRequestDnsRecordsData) MarshalJSON() ([]byte, e
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTlsDnsRecordsRequestDnsRecordsData := _RelationshipTlsDnsRecordsRequestDnsRecordsData{}
+func (o *RelationshipTLSDNSRecordsRequestDNSRecordsData) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTLSDNSRecordsRequestDNSRecordsData := _RelationshipTLSDNSRecordsRequestDNSRecordsData{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTlsDnsRecordsRequestDnsRecordsData); err == nil {
-		*o = RelationshipTlsDnsRecordsRequestDnsRecordsData(varRelationshipTlsDnsRecordsRequestDnsRecordsData)
+	if err = json.Unmarshal(bytes, &varRelationshipTLSDNSRecordsRequestDNSRecordsData); err == nil {
+		*o = RelationshipTLSDNSRecordsRequestDNSRecordsData(varRelationshipTLSDNSRecordsRequestDNSRecordsData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -148,48 +148,48 @@ func (o *RelationshipTlsDnsRecordsRequestDnsRecordsData) UnmarshalJSON(bytes []b
 	return err
 }
 
-// NullableRelationshipTlsDnsRecordsRequestDnsRecordsData is a helper abstraction for handling nullable relationshiptlsdnsrecordsrequestdnsrecordsdata types.
-type NullableRelationshipTlsDnsRecordsRequestDnsRecordsData struct {
-	value *RelationshipTlsDnsRecordsRequestDnsRecordsData
+// NullableRelationshipTLSDNSRecordsRequestDNSRecordsData is a helper abstraction for handling nullable relationshiptlsdnsrecordsrequestdnsrecordsdata types.
+type NullableRelationshipTLSDNSRecordsRequestDNSRecordsData struct {
+	value *RelationshipTLSDNSRecordsRequestDNSRecordsData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTlsDnsRecordsRequestDnsRecordsData) Get() *RelationshipTlsDnsRecordsRequestDnsRecordsData {
+func (v NullableRelationshipTLSDNSRecordsRequestDNSRecordsData) Get() *RelationshipTLSDNSRecordsRequestDNSRecordsData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTlsDnsRecordsRequestDnsRecordsData) Set(val *RelationshipTlsDnsRecordsRequestDnsRecordsData) {
+func (v *NullableRelationshipTLSDNSRecordsRequestDNSRecordsData) Set(val *RelationshipTLSDNSRecordsRequestDNSRecordsData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTlsDnsRecordsRequestDnsRecordsData) IsSet() bool {
+func (v NullableRelationshipTLSDNSRecordsRequestDNSRecordsData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTlsDnsRecordsRequestDnsRecordsData) Unset() {
+func (v *NullableRelationshipTLSDNSRecordsRequestDNSRecordsData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTlsDnsRecordsRequestDnsRecordsData returns a pointer to a new instance of NullableRelationshipTlsDnsRecordsRequestDnsRecordsData.
-func NewNullableRelationshipTlsDnsRecordsRequestDnsRecordsData(val *RelationshipTlsDnsRecordsRequestDnsRecordsData) *NullableRelationshipTlsDnsRecordsRequestDnsRecordsData {
-	return &NullableRelationshipTlsDnsRecordsRequestDnsRecordsData{value: val, isSet: true}
+// NewNullableRelationshipTLSDNSRecordsRequestDNSRecordsData returns a pointer to a new instance of NullableRelationshipTLSDNSRecordsRequestDNSRecordsData.
+func NewNullableRelationshipTLSDNSRecordsRequestDNSRecordsData(val *RelationshipTLSDNSRecordsRequestDNSRecordsData) *NullableRelationshipTLSDNSRecordsRequestDNSRecordsData {
+	return &NullableRelationshipTLSDNSRecordsRequestDNSRecordsData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTlsDnsRecordsRequestDnsRecordsData) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTLSDNSRecordsRequestDNSRecordsData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTlsDnsRecordsRequestDnsRecordsData) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTLSDNSRecordsRequestDNSRecordsData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

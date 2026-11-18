@@ -19,9 +19,9 @@ import (
 // RequestBodyForUpdate All attributes for updating a domain
 type RequestBodyForUpdate struct {
 	// The `service_id` associated with your domain or `null` if there is no association.
-	ServiceId NullableString `json:"service_id,omitempty"`
+	ServiceID NullableString `json:"service_id,omitempty"`
 	// The `routing_configuration_id` associated with your domain or `null` if there is no association.
-	RoutingConfigurationId NullableString `json:"routing_configuration_id,omitempty"`
+	RoutingConfigurationID NullableString `json:"routing_configuration_id,omitempty"`
 	// A freeform descriptive note.
 	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]any
@@ -46,90 +46,90 @@ func NewRequestBodyForUpdateWithDefaults() *RequestBodyForUpdate {
 	return &this
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RequestBodyForUpdate) GetServiceId() string {
-	if o == nil || o.ServiceId.Get() == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RequestBodyForUpdate) GetServiceID() string {
+	if o == nil || o.ServiceID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId.Get()
+	return *o.ServiceID.Get()
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RequestBodyForUpdate) GetServiceIdOk() (*string, bool) {
+func (o *RequestBodyForUpdate) GetServiceIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ServiceId.Get(), o.ServiceId.IsSet()
+	return o.ServiceID.Get(), o.ServiceID.IsSet()
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *RequestBodyForUpdate) HasServiceId() bool {
-	if o != nil && o.ServiceId.IsSet() {
+// HasServiceID returns a boolean if a field has been set.
+func (o *RequestBodyForUpdate) HasServiceID() bool {
+	if o != nil && o.ServiceID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given NullableString and assigns it to the ServiceId field.
-func (o *RequestBodyForUpdate) SetServiceId(v string) {
-	o.ServiceId.Set(&v)
+// SetServiceID gets a reference to the given NullableString and assigns it to the ServiceID field.
+func (o *RequestBodyForUpdate) SetServiceID(v string) {
+	o.ServiceID.Set(&v)
 }
 
-// SetServiceIdNil sets the value for ServiceId to be an explicit nil
-func (o *RequestBodyForUpdate) SetServiceIdNil() {
-	o.ServiceId.Set(nil)
+// SetServiceIDNil sets the value for ServiceID to be an explicit nil
+func (o *RequestBodyForUpdate) SetServiceIDNil() {
+	o.ServiceID.Set(nil)
 }
 
-// UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
-func (o *RequestBodyForUpdate) UnsetServiceId() {
-	o.ServiceId.Unset()
+// UnsetServiceID ensures that no value is present for ServiceID, not even an explicit nil
+func (o *RequestBodyForUpdate) UnsetServiceID() {
+	o.ServiceID.Unset()
 }
 
-// GetRoutingConfigurationId returns the RoutingConfigurationId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RequestBodyForUpdate) GetRoutingConfigurationId() string {
-	if o == nil || o.RoutingConfigurationId.Get() == nil {
+// GetRoutingConfigurationID returns the RoutingConfigurationID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RequestBodyForUpdate) GetRoutingConfigurationID() string {
+	if o == nil || o.RoutingConfigurationID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.RoutingConfigurationId.Get()
+	return *o.RoutingConfigurationID.Get()
 }
 
-// GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field value if set, nil otherwise
+// GetRoutingConfigurationIDOk returns a tuple with the RoutingConfigurationID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RequestBodyForUpdate) GetRoutingConfigurationIdOk() (*string, bool) {
+func (o *RequestBodyForUpdate) GetRoutingConfigurationIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.RoutingConfigurationId.Get(), o.RoutingConfigurationId.IsSet()
+	return o.RoutingConfigurationID.Get(), o.RoutingConfigurationID.IsSet()
 }
 
-// HasRoutingConfigurationId returns a boolean if a field has been set.
-func (o *RequestBodyForUpdate) HasRoutingConfigurationId() bool {
-	if o != nil && o.RoutingConfigurationId.IsSet() {
+// HasRoutingConfigurationID returns a boolean if a field has been set.
+func (o *RequestBodyForUpdate) HasRoutingConfigurationID() bool {
+	if o != nil && o.RoutingConfigurationID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRoutingConfigurationId gets a reference to the given NullableString and assigns it to the RoutingConfigurationId field.
-func (o *RequestBodyForUpdate) SetRoutingConfigurationId(v string) {
-	o.RoutingConfigurationId.Set(&v)
+// SetRoutingConfigurationID gets a reference to the given NullableString and assigns it to the RoutingConfigurationID field.
+func (o *RequestBodyForUpdate) SetRoutingConfigurationID(v string) {
+	o.RoutingConfigurationID.Set(&v)
 }
 
-// SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
-func (o *RequestBodyForUpdate) SetRoutingConfigurationIdNil() {
-	o.RoutingConfigurationId.Set(nil)
+// SetRoutingConfigurationIDNil sets the value for RoutingConfigurationID to be an explicit nil
+func (o *RequestBodyForUpdate) SetRoutingConfigurationIDNil() {
+	o.RoutingConfigurationID.Set(nil)
 }
 
-// UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
-func (o *RequestBodyForUpdate) UnsetRoutingConfigurationId() {
-	o.RoutingConfigurationId.Unset()
+// UnsetRoutingConfigurationID ensures that no value is present for RoutingConfigurationID, not even an explicit nil
+func (o *RequestBodyForUpdate) UnsetRoutingConfigurationID() {
+	o.RoutingConfigurationID.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -168,11 +168,11 @@ func (o *RequestBodyForUpdate) SetDescription(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RequestBodyForUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ServiceId.IsSet() {
-		toSerialize["service_id"] = o.ServiceId.Get()
+	if o.ServiceID.IsSet() {
+		toSerialize["service_id"] = o.ServiceID.Get()
 	}
-	if o.RoutingConfigurationId.IsSet() {
-		toSerialize["routing_configuration_id"] = o.RoutingConfigurationId.Get()
+	if o.RoutingConfigurationID.IsSet() {
+		toSerialize["routing_configuration_id"] = o.RoutingConfigurationID.Get()
 	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description

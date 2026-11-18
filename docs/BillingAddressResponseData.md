@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
 **Attributes** | Pointer to [**BillingAddressAttributes**](BillingAddressAttributes.md) |  | [optional] 
 **Type** | Pointer to [**TypeBillingAddress**](TypeBillingAddress.md) |  | [optional] [default to TYPEBILLINGADDRESS_BILLING_ADDRESS]
 **Relationships** | Pointer to [**RelationshipCustomer**](RelationshipCustomer.md) |  | [optional] 
@@ -28,30 +28,30 @@ NewBillingAddressResponseDataWithDefaults instantiates a new BillingAddressRespo
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *BillingAddressResponseData) GetId() string`
+`func (o *BillingAddressResponseData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *BillingAddressResponseData) GetIdOk() (*string, bool)`
+`func (o *BillingAddressResponseData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *BillingAddressResponseData) SetId(v string)`
+`func (o *BillingAddressResponseData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *BillingAddressResponseData) HasId() bool`
+`func (o *BillingAddressResponseData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetAttributes
 
@@ -130,5 +130,3 @@ HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

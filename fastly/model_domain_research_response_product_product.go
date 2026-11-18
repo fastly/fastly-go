@@ -19,7 +19,7 @@ import (
 // DomainResearchResponseProductProduct struct for DomainResearchResponseProductProduct
 type DomainResearchResponseProductProduct struct {
 	// Product identifier
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Name of the object
 	Object               *string `json:"object,omitempty"`
 	AdditionalProperties map[string]any
@@ -44,36 +44,36 @@ func NewDomainResearchResponseProductProductWithDefaults() *DomainResearchRespon
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *DomainResearchResponseProductProduct) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *DomainResearchResponseProductProduct) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainResearchResponseProductProduct) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *DomainResearchResponseProductProduct) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *DomainResearchResponseProductProduct) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *DomainResearchResponseProductProduct) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *DomainResearchResponseProductProduct) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *DomainResearchResponseProductProduct) SetID(v string) {
+	o.ID = &v
 }
 
 // GetObject returns the Object field value if set, zero value otherwise.
@@ -112,8 +112,8 @@ func (o *DomainResearchResponseProductProduct) SetObject(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DomainResearchResponseProductProduct) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Object != nil {
 		toSerialize["object"] = o.Object

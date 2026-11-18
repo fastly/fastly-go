@@ -79,10 +79,10 @@ type HistoricalAPI interface {
 		Fetches historical stats for a given service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetHistStatsServiceRequest
 	*/
-	GetHistStatsService(ctx context.Context, serviceId string) APIGetHistStatsServiceRequest
+	GetHistStatsService(ctx context.Context, serviceID string) APIGetHistStatsServiceRequest
 
 	// GetHistStatsServiceExecute executes the request
 	//  @return HistoricalStatsAggregatedResponse
@@ -94,11 +94,11 @@ type HistoricalAPI interface {
 		Fetches the specified field from the historical stats for a given service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @param field Name of the stats field.
 		 @return APIGetHistStatsServiceFieldRequest
 	*/
-	GetHistStatsServiceField(ctx context.Context, serviceId string, field string) APIGetHistStatsServiceFieldRequest
+	GetHistStatsServiceField(ctx context.Context, serviceID string, field string) APIGetHistStatsServiceFieldRequest
 
 	// GetHistStatsServiceFieldExecute executes the request
 	//  @return HistoricalStatsAggregatedResponse
@@ -194,7 +194,7 @@ func (r *APIGetHistStatsRequest) By(by string) *APIGetHistStatsRequest {
 	return r
 }
 
-// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.
+// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.   * &#x60;saudi_arabia&#x60; - Saudi Arabia.
 func (r *APIGetHistStatsRequest) Region(region string) *APIGetHistStatsRequest {
 	r.region = &region
 	return r
@@ -380,7 +380,7 @@ func (r *APIGetHistStatsAggregatedRequest) By(by string) *APIGetHistStatsAggrega
 	return r
 }
 
-// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.
+// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.   * &#x60;saudi_arabia&#x60; - Saudi Arabia.
 func (r *APIGetHistStatsAggregatedRequest) Region(region string) *APIGetHistStatsAggregatedRequest {
 	r.region = &region
 	return r
@@ -550,7 +550,7 @@ func (r *APIGetHistStatsFieldRequest) By(by string) *APIGetHistStatsFieldRequest
 	return r
 }
 
-// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.
+// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.   * &#x60;saudi_arabia&#x60; - Saudi Arabia.
 func (r *APIGetHistStatsFieldRequest) Region(region string) *APIGetHistStatsFieldRequest {
 	r.region = &region
 	return r
@@ -706,7 +706,7 @@ func (a *HistoricalAPIService) GetHistStatsFieldExecute(r APIGetHistStatsFieldRe
 type APIGetHistStatsServiceRequest struct {
 	ctx        context.Context
 	APIService HistoricalAPI
-	serviceId  string
+	serviceID  string
 	from       *string
 	to         *string
 	by         *string
@@ -732,7 +732,7 @@ func (r *APIGetHistStatsServiceRequest) By(by string) *APIGetHistStatsServiceReq
 	return r
 }
 
-// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.
+// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.   * &#x60;saudi_arabia&#x60; - Saudi Arabia.
 func (r *APIGetHistStatsServiceRequest) Region(region string) *APIGetHistStatsServiceRequest {
 	r.region = &region
 	return r
@@ -755,14 +755,14 @@ GetHistStatsService Get historical stats for a single service
 Fetches historical stats for a given service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetHistStatsServiceRequest
 */
-func (a *HistoricalAPIService) GetHistStatsService(ctx context.Context, serviceId string) APIGetHistStatsServiceRequest {
+func (a *HistoricalAPIService) GetHistStatsService(ctx context.Context, serviceID string) APIGetHistStatsServiceRequest {
 	return APIGetHistStatsServiceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -782,7 +782,7 @@ func (a *HistoricalAPIService) GetHistStatsServiceExecute(r APIGetHistStatsServi
 	}
 
 	localVarPath := localBasePath + "/stats/service/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -888,7 +888,7 @@ func (a *HistoricalAPIService) GetHistStatsServiceExecute(r APIGetHistStatsServi
 type APIGetHistStatsServiceFieldRequest struct {
 	ctx        context.Context
 	APIService HistoricalAPI
-	serviceId  string
+	serviceID  string
 	field      string
 	from       *string
 	to         *string
@@ -915,7 +915,7 @@ func (r *APIGetHistStatsServiceFieldRequest) By(by string) *APIGetHistStatsServi
 	return r
 }
 
-// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.
+// Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.   * &#x60;saudi_arabia&#x60; - Saudi Arabia.
 func (r *APIGetHistStatsServiceFieldRequest) Region(region string) *APIGetHistStatsServiceFieldRequest {
 	r.region = &region
 	return r
@@ -938,15 +938,15 @@ GetHistStatsServiceField Get historical stats for a single service/field combina
 Fetches the specified field from the historical stats for a given service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @param field Name of the stats field.
  @return APIGetHistStatsServiceFieldRequest
 */
-func (a *HistoricalAPIService) GetHistStatsServiceField(ctx context.Context, serviceId string, field string) APIGetHistStatsServiceFieldRequest {
+func (a *HistoricalAPIService) GetHistStatsServiceField(ctx context.Context, serviceID string, field string) APIGetHistStatsServiceFieldRequest {
 	return APIGetHistStatsServiceFieldRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 		field:      field,
 	}
 }
@@ -967,7 +967,7 @@ func (a *HistoricalAPIService) GetHistStatsServiceFieldExecute(r APIGetHistStats
 	}
 
 	localVarPath := localBasePath + "/stats/service/{service_id}/field/{field}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"field"+"}", gourl.PathEscape(parameterToString(r.field, "")))
 
 	localVarHeaderParams := make(map[string]string)

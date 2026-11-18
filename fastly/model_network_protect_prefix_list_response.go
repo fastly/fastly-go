@@ -25,7 +25,7 @@ type NetworkProtectPrefixListResponse struct {
 	// Complete canonical list contents. Bare addresses are canonicalized, CIDRs are masked, equivalent entries are deduplicated, and overlaps are retained.
 	Addresses []string `json:"addresses"`
 	// A read-only unique identifier for a Network Protect resource.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// An ISO 8601 timestamp in UTC.
 	CreatedAt time.Time `json:"created_at"`
 	// An ISO 8601 timestamp in UTC.
@@ -44,7 +44,7 @@ func NewNetworkProtectPrefixListResponse(name string, family NetworkProtectPrefi
 	this.Name = name
 	this.Family = family
 	this.Addresses = addresses
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -130,28 +130,28 @@ func (o *NetworkProtectPrefixListResponse) SetAddresses(v []string) {
 	o.Addresses = v
 }
 
-// GetId returns the Id field value
-func (o *NetworkProtectPrefixListResponse) GetId() string {
+// GetID returns the ID field value
+func (o *NetworkProtectPrefixListResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectPrefixListResponse) GetIdOk() (*string, bool) {
+func (o *NetworkProtectPrefixListResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *NetworkProtectPrefixListResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *NetworkProtectPrefixListResponse) SetID(v string) {
+	o.ID = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
@@ -216,7 +216,7 @@ func (o NetworkProtectPrefixListResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["addresses"] = o.Addresses
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["created_at"] = o.CreatedAt

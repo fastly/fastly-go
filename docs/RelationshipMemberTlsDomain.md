@@ -1,82 +1,80 @@
-# RelationshipMemberTlsDomain
+# RelationshipMemberTLSDomain
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsDomain**](TypeTlsDomain.md) |  | [optional] [default to TYPETLSDOMAIN_TLS_DOMAIN]
-**Id** | Pointer to **string** | The domain name. | [optional] [readonly] 
+**Type** | Pointer to [**TypeTLSDomain**](TypeTLSDomain.md) |  | [optional] [default to TYPETLSDOMAIN_TLS_DOMAIN]
+**ID** | Pointer to **string** | The domain name. | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTlsDomain
+### NewRelationshipMemberTLSDomain
 
-`func NewRelationshipMemberTlsDomain() *RelationshipMemberTlsDomain`
+`func NewRelationshipMemberTLSDomain() *RelationshipMemberTLSDomain`
 
-NewRelationshipMemberTlsDomain instantiates a new RelationshipMemberTlsDomain object
+NewRelationshipMemberTLSDomain instantiates a new RelationshipMemberTLSDomain object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTlsDomainWithDefaults
+### NewRelationshipMemberTLSDomainWithDefaults
 
-`func NewRelationshipMemberTlsDomainWithDefaults() *RelationshipMemberTlsDomain`
+`func NewRelationshipMemberTLSDomainWithDefaults() *RelationshipMemberTLSDomain`
 
-NewRelationshipMemberTlsDomainWithDefaults instantiates a new RelationshipMemberTlsDomain object
+NewRelationshipMemberTLSDomainWithDefaults instantiates a new RelationshipMemberTLSDomain object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTlsDomain) GetType() TypeTlsDomain`
+`func (o *RelationshipMemberTLSDomain) GetType() TypeTLSDomain`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTlsDomain) GetTypeOk() (*TypeTlsDomain, bool)`
+`func (o *RelationshipMemberTLSDomain) GetTypeOk() (*TypeTLSDomain, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTlsDomain) SetType(v TypeTlsDomain)`
+`func (o *RelationshipMemberTLSDomain) SetType(v TypeTLSDomain)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTlsDomain) HasType() bool`
+`func (o *RelationshipMemberTLSDomain) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *RelationshipMemberTlsDomain) GetId() string`
+`func (o *RelationshipMemberTLSDomain) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RelationshipMemberTlsDomain) GetIdOk() (*string, bool)`
+`func (o *RelationshipMemberTLSDomain) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RelationshipMemberTlsDomain) SetId(v string)`
+`func (o *RelationshipMemberTLSDomain) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RelationshipMemberTlsDomain) HasId() bool`
+`func (o *RelationshipMemberTLSDomain) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

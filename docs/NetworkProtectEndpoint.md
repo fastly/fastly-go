@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A human-readable name, unique within the customer. | 
-**IpAddress** | **string** | The GRE destination address, unique within the customer. It cannot be changed after endpoint creation. | 
+**IPAddress** | **string** | The GRE destination address, unique within the customer. It cannot be changed after endpoint creation. | 
 
 ## Methods
 
@@ -46,27 +46,25 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetIpAddress
+### GetIPAddress
 
-`func (o *NetworkProtectEndpoint) GetIpAddress() string`
+`func (o *NetworkProtectEndpoint) GetIPAddress() string`
 
-GetIpAddress returns the IpAddress field if non-nil, zero value otherwise.
+GetIPAddress returns the IPAddress field if non-nil, zero value otherwise.
 
-### GetIpAddressOk
+### GetIPAddressOk
 
-`func (o *NetworkProtectEndpoint) GetIpAddressOk() (*string, bool)`
+`func (o *NetworkProtectEndpoint) GetIPAddressOk() (*string, bool)`
 
-GetIpAddressOk returns a tuple with the IpAddress field if it's non-nil, zero value otherwise
+GetIPAddressOk returns a tuple with the IPAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIpAddress
+### SetIPAddress
 
-`func (o *NetworkProtectEndpoint) SetIpAddress(v string)`
+`func (o *NetworkProtectEndpoint) SetIPAddress(v string)`
 
-SetIpAddress sets IpAddress field to given value.
+SetIPAddress sets IPAddress field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

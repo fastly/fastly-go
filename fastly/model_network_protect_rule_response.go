@@ -19,11 +19,11 @@ import (
 
 // NetworkProtectRuleResponse A rule as returned by the API.
 type NetworkProtectRuleResponse struct {
-	IpProtocol NetworkProtectRuleIpProtocol `json:"ip_protocol"`
+	IPProtocol NetworkProtectRuleIPProtocol `json:"ip_protocol"`
 	// Match traffic whose source appears in this prefix list.
-	SourcePrefixListId string `json:"source_prefix_list_id"`
+	SourcePrefixListID string `json:"source_prefix_list_id"`
 	// Match traffic sent to this address; omit for any destination. An address outside a Network using this Rule Set never matches and still consumes one of the 64 rules. The API does not enforce containment in a network prefix; attached Rule Sets require a compatible IP family.
-	DestinationIpAddress string                             `json:"destination_ip_address"`
+	DestinationIPAddress string                             `json:"destination_ip_address"`
 	SourcePorts          NetworkProtectRuleSourcePorts      `json:"source_ports"`
 	DestinationPorts     NetworkProtectRuleDestinationPorts `json:"destination_ports"`
 	// An ISO 8601 timestamp in UTC.
@@ -39,11 +39,11 @@ type _NetworkProtectRuleResponse NetworkProtectRuleResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkProtectRuleResponse(ipProtocol NetworkProtectRuleIpProtocol, sourcePrefixListId string, destinationIpAddress string, sourcePorts NetworkProtectRuleSourcePorts, destinationPorts NetworkProtectRuleDestinationPorts) *NetworkProtectRuleResponse {
+func NewNetworkProtectRuleResponse(ipProtocol NetworkProtectRuleIPProtocol, sourcePrefixListID string, destinationIPAddress string, sourcePorts NetworkProtectRuleSourcePorts, destinationPorts NetworkProtectRuleDestinationPorts) *NetworkProtectRuleResponse {
 	this := NetworkProtectRuleResponse{}
-	this.IpProtocol = ipProtocol
-	this.SourcePrefixListId = sourcePrefixListId
-	this.DestinationIpAddress = destinationIpAddress
+	this.IPProtocol = ipProtocol
+	this.SourcePrefixListID = sourcePrefixListID
+	this.DestinationIPAddress = destinationIPAddress
 	this.SourcePorts = sourcePorts
 	this.DestinationPorts = destinationPorts
 	return &this
@@ -57,76 +57,76 @@ func NewNetworkProtectRuleResponseWithDefaults() *NetworkProtectRuleResponse {
 	return &this
 }
 
-// GetIpProtocol returns the IpProtocol field value
-func (o *NetworkProtectRuleResponse) GetIpProtocol() NetworkProtectRuleIpProtocol {
+// GetIPProtocol returns the IPProtocol field value
+func (o *NetworkProtectRuleResponse) GetIPProtocol() NetworkProtectRuleIPProtocol {
 	if o == nil {
-		var ret NetworkProtectRuleIpProtocol
+		var ret NetworkProtectRuleIPProtocol
 		return ret
 	}
 
-	return o.IpProtocol
+	return o.IPProtocol
 }
 
-// GetIpProtocolOk returns a tuple with the IpProtocol field value
+// GetIPProtocolOk returns a tuple with the IPProtocol field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleResponse) GetIpProtocolOk() (*NetworkProtectRuleIpProtocol, bool) {
+func (o *NetworkProtectRuleResponse) GetIPProtocolOk() (*NetworkProtectRuleIPProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.IpProtocol, true
+	return &o.IPProtocol, true
 }
 
-// SetIpProtocol sets field value
-func (o *NetworkProtectRuleResponse) SetIpProtocol(v NetworkProtectRuleIpProtocol) {
-	o.IpProtocol = v
+// SetIPProtocol sets field value
+func (o *NetworkProtectRuleResponse) SetIPProtocol(v NetworkProtectRuleIPProtocol) {
+	o.IPProtocol = v
 }
 
-// GetSourcePrefixListId returns the SourcePrefixListId field value
-func (o *NetworkProtectRuleResponse) GetSourcePrefixListId() string {
+// GetSourcePrefixListID returns the SourcePrefixListID field value
+func (o *NetworkProtectRuleResponse) GetSourcePrefixListID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.SourcePrefixListId
+	return o.SourcePrefixListID
 }
 
-// GetSourcePrefixListIdOk returns a tuple with the SourcePrefixListId field value
+// GetSourcePrefixListIDOk returns a tuple with the SourcePrefixListID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleResponse) GetSourcePrefixListIdOk() (*string, bool) {
+func (o *NetworkProtectRuleResponse) GetSourcePrefixListIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.SourcePrefixListId, true
+	return &o.SourcePrefixListID, true
 }
 
-// SetSourcePrefixListId sets field value
-func (o *NetworkProtectRuleResponse) SetSourcePrefixListId(v string) {
-	o.SourcePrefixListId = v
+// SetSourcePrefixListID sets field value
+func (o *NetworkProtectRuleResponse) SetSourcePrefixListID(v string) {
+	o.SourcePrefixListID = v
 }
 
-// GetDestinationIpAddress returns the DestinationIpAddress field value
-func (o *NetworkProtectRuleResponse) GetDestinationIpAddress() string {
+// GetDestinationIPAddress returns the DestinationIPAddress field value
+func (o *NetworkProtectRuleResponse) GetDestinationIPAddress() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.DestinationIpAddress
+	return o.DestinationIPAddress
 }
 
-// GetDestinationIpAddressOk returns a tuple with the DestinationIpAddress field value
+// GetDestinationIPAddressOk returns a tuple with the DestinationIPAddress field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleResponse) GetDestinationIpAddressOk() (*string, bool) {
+func (o *NetworkProtectRuleResponse) GetDestinationIPAddressOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DestinationIpAddress, true
+	return &o.DestinationIPAddress, true
 }
 
-// SetDestinationIpAddress sets field value
-func (o *NetworkProtectRuleResponse) SetDestinationIpAddress(v string) {
-	o.DestinationIpAddress = v
+// SetDestinationIPAddress sets field value
+func (o *NetworkProtectRuleResponse) SetDestinationIPAddress(v string) {
+	o.DestinationIPAddress = v
 }
 
 // GetSourcePorts returns the SourcePorts field value
@@ -246,13 +246,13 @@ func (o *NetworkProtectRuleResponse) SetUpdatedAt(v time.Time) {
 func (o NetworkProtectRuleResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["ip_protocol"] = o.IpProtocol
+		toSerialize["ip_protocol"] = o.IPProtocol
 	}
 	if true {
-		toSerialize["source_prefix_list_id"] = o.SourcePrefixListId
+		toSerialize["source_prefix_list_id"] = o.SourcePrefixListID
 	}
 	if true {
-		toSerialize["destination_ip_address"] = o.DestinationIpAddress
+		toSerialize["destination_ip_address"] = o.DestinationIPAddress
 	}
 	if true {
 		toSerialize["source_ports"] = o.SourcePorts

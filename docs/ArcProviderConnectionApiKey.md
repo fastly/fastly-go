@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A display name for the provider connection. Cannot match a name reserved by a built-in provider. | 
 **Models** | **[]string** | The AI model identifiers this connection is allowed to use. | 
-**BaseUrl** | **string** | The base URL of the provider&#39;s API. Must be an absolute `http` or `https` URL and must not end in `/v1`. | 
+**BaseURL** | **string** | The base URL of the provider&#39;s API. Must be an absolute `http` or `https` URL and must not end in `/v1`. | 
 **ApiKey** | **string** | The provider&#39;s secret API key. | 
 **AuthType** | Pointer to **string** | The authentication type for this connection. Omit for the default `api-key` behavior. | [optional] [default to "api-key"]
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewArcProviderConnectionApiKey
 
-`func NewArcProviderConnectionApiKey(name string, models []string, baseUrl string, apiKey string, ) *ArcProviderConnectionApiKey`
+`func NewArcProviderConnectionApiKey(name string, models []string, baseURL string, apiKey string, ) *ArcProviderConnectionApiKey`
 
 NewArcProviderConnectionApiKey instantiates a new ArcProviderConnectionApiKey object
 This constructor will assign default values to properties that have it defined,
@@ -69,24 +69,24 @@ and a boolean to check if the value has been set.
 SetModels sets Models field to given value.
 
 
-### GetBaseUrl
+### GetBaseURL
 
-`func (o *ArcProviderConnectionApiKey) GetBaseUrl() string`
+`func (o *ArcProviderConnectionApiKey) GetBaseURL() string`
 
-GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
 
-### GetBaseUrlOk
+### GetBaseURLOk
 
-`func (o *ArcProviderConnectionApiKey) GetBaseUrlOk() (*string, bool)`
+`func (o *ArcProviderConnectionApiKey) GetBaseURLOk() (*string, bool)`
 
-GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBaseUrl
+### SetBaseURL
 
-`func (o *ArcProviderConnectionApiKey) SetBaseUrl(v string)`
+`func (o *ArcProviderConnectionApiKey) SetBaseURL(v string)`
 
-SetBaseUrl sets BaseUrl field to given value.
+SetBaseURL sets BaseURL field to given value.
 
 
 ### GetApiKey
@@ -136,5 +136,3 @@ HasAuthType returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

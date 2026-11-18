@@ -18,8 +18,8 @@ import (
 
 // DictionaryItemResponseAllOf struct for DictionaryItemResponseAllOf
 type DictionaryItemResponseAllOf struct {
-	DictionaryId         *string `json:"dictionary_id,omitempty"`
-	ServiceId            *string `json:"service_id,omitempty"`
+	DictionaryID         *string `json:"dictionary_id,omitempty"`
+	ServiceID            *string `json:"service_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,79 +42,79 @@ func NewDictionaryItemResponseAllOfWithDefaults() *DictionaryItemResponseAllOf {
 	return &this
 }
 
-// GetDictionaryId returns the DictionaryId field value if set, zero value otherwise.
-func (o *DictionaryItemResponseAllOf) GetDictionaryId() string {
-	if o == nil || o.DictionaryId == nil {
+// GetDictionaryID returns the DictionaryID field value if set, zero value otherwise.
+func (o *DictionaryItemResponseAllOf) GetDictionaryID() string {
+	if o == nil || o.DictionaryID == nil {
 		var ret string
 		return ret
 	}
-	return *o.DictionaryId
+	return *o.DictionaryID
 }
 
-// GetDictionaryIdOk returns a tuple with the DictionaryId field value if set, nil otherwise
+// GetDictionaryIDOk returns a tuple with the DictionaryID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DictionaryItemResponseAllOf) GetDictionaryIdOk() (*string, bool) {
-	if o == nil || o.DictionaryId == nil {
+func (o *DictionaryItemResponseAllOf) GetDictionaryIDOk() (*string, bool) {
+	if o == nil || o.DictionaryID == nil {
 		return nil, false
 	}
-	return o.DictionaryId, true
+	return o.DictionaryID, true
 }
 
-// HasDictionaryId returns a boolean if a field has been set.
-func (o *DictionaryItemResponseAllOf) HasDictionaryId() bool {
-	if o != nil && o.DictionaryId != nil {
+// HasDictionaryID returns a boolean if a field has been set.
+func (o *DictionaryItemResponseAllOf) HasDictionaryID() bool {
+	if o != nil && o.DictionaryID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDictionaryId gets a reference to the given string and assigns it to the DictionaryId field.
-func (o *DictionaryItemResponseAllOf) SetDictionaryId(v string) {
-	o.DictionaryId = &v
+// SetDictionaryID gets a reference to the given string and assigns it to the DictionaryID field.
+func (o *DictionaryItemResponseAllOf) SetDictionaryID(v string) {
+	o.DictionaryID = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *DictionaryItemResponseAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *DictionaryItemResponseAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DictionaryItemResponseAllOf) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *DictionaryItemResponseAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *DictionaryItemResponseAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *DictionaryItemResponseAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *DictionaryItemResponseAllOf) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *DictionaryItemResponseAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DictionaryItemResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.DictionaryId != nil {
-		toSerialize["dictionary_id"] = o.DictionaryId
+	if o.DictionaryID != nil {
+		toSerialize["dictionary_id"] = o.DictionaryID
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 
 	for key, value := range o.AdditionalProperties {

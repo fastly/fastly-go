@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 
 ### NewNotification
 
-`func NewNotification(type_ string, config NotificationConfig, ) *Notification`
+`func NewNotification(resourceType string, config NotificationConfig, ) *Notification`
 
 NewNotification instantiates a new Notification object
 This constructor will assign default values to properties that have it defined,
@@ -68,5 +68,3 @@ SetConfig sets Config field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

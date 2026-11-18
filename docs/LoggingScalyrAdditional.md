@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Region** | Pointer to **string** | The region that log data will be sent to. | [optional] [default to "US"]
 **Token** | Pointer to **string** | The token to use for authentication. | [optional] 
-**ProjectId** | Pointer to **string** | The name of the logfile within Scalyr. | [optional] [default to "logplex"]
+**ProjectID** | Pointer to **string** | The name of the logfile within Scalyr. | [optional] [default to "logplex"]
 
 ## Methods
 
@@ -77,32 +77,30 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetProjectId
+### GetProjectID
 
-`func (o *LoggingScalyrAdditional) GetProjectId() string`
+`func (o *LoggingScalyrAdditional) GetProjectID() string`
 
-GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
+GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
 
-### GetProjectIdOk
+### GetProjectIDOk
 
-`func (o *LoggingScalyrAdditional) GetProjectIdOk() (*string, bool)`
+`func (o *LoggingScalyrAdditional) GetProjectIDOk() (*string, bool)`
 
-GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
+GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectId
+### SetProjectID
 
-`func (o *LoggingScalyrAdditional) SetProjectId(v string)`
+`func (o *LoggingScalyrAdditional) SetProjectID(v string)`
 
-SetProjectId sets ProjectId field to given value.
+SetProjectID sets ProjectID field to given value.
 
-### HasProjectId
+### HasProjectID
 
-`func (o *LoggingScalyrAdditional) HasProjectId() bool`
+`func (o *LoggingScalyrAdditional) HasProjectID() bool`
 
-HasProjectId returns a boolean if a field has been set.
+HasProjectID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

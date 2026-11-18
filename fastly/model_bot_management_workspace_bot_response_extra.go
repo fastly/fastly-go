@@ -19,7 +19,7 @@ import (
 // BotManagementWorkspaceBotResponseExtra struct for BotManagementWorkspaceBotResponseExtra
 type BotManagementWorkspaceBotResponseExtra struct {
 	// The ID of the category the bot belongs to.
-	CategoryId           string `json:"category_id"`
+	CategoryID           string `json:"category_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -29,9 +29,9 @@ type _BotManagementWorkspaceBotResponseExtra BotManagementWorkspaceBotResponseEx
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotManagementWorkspaceBotResponseExtra(categoryId string) *BotManagementWorkspaceBotResponseExtra {
+func NewBotManagementWorkspaceBotResponseExtra(categoryID string) *BotManagementWorkspaceBotResponseExtra {
 	this := BotManagementWorkspaceBotResponseExtra{}
-	this.CategoryId = categoryId
+	this.CategoryID = categoryID
 	return &this
 }
 
@@ -43,28 +43,28 @@ func NewBotManagementWorkspaceBotResponseExtraWithDefaults() *BotManagementWorks
 	return &this
 }
 
-// GetCategoryId returns the CategoryId field value
-func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryId() string {
+// GetCategoryID returns the CategoryID field value
+func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.CategoryId
+	return o.CategoryID
 }
 
-// GetCategoryIdOk returns a tuple with the CategoryId field value
+// GetCategoryIDOk returns a tuple with the CategoryID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryIdOk() (*string, bool) {
+func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.CategoryId, true
+	return &o.CategoryID, true
 }
 
-// SetCategoryId sets field value
-func (o *BotManagementWorkspaceBotResponseExtra) SetCategoryId(v string) {
-	o.CategoryId = v
+// SetCategoryID sets field value
+func (o *BotManagementWorkspaceBotResponseExtra) SetCategoryID(v string) {
+	o.CategoryID = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -72,7 +72,7 @@ func (o *BotManagementWorkspaceBotResponseExtra) SetCategoryId(v string) {
 func (o BotManagementWorkspaceBotResponseExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["category_id"] = o.CategoryId
+		toSerialize["category_id"] = o.CategoryID
 	}
 
 	for key, value := range o.AdditionalProperties {

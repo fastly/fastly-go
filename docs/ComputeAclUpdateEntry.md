@@ -1,4 +1,4 @@
-# ComputeAclUpdateEntry
+# ComputeACLUpdateEntry
 
 ## Properties
 
@@ -10,99 +10,97 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewComputeAclUpdateEntry
+### NewComputeACLUpdateEntry
 
-`func NewComputeAclUpdateEntry() *ComputeAclUpdateEntry`
+`func NewComputeACLUpdateEntry() *ComputeACLUpdateEntry`
 
-NewComputeAclUpdateEntry instantiates a new ComputeAclUpdateEntry object
+NewComputeACLUpdateEntry instantiates a new ComputeACLUpdateEntry object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeAclUpdateEntryWithDefaults
+### NewComputeACLUpdateEntryWithDefaults
 
-`func NewComputeAclUpdateEntryWithDefaults() *ComputeAclUpdateEntry`
+`func NewComputeACLUpdateEntryWithDefaults() *ComputeACLUpdateEntry`
 
-NewComputeAclUpdateEntryWithDefaults instantiates a new ComputeAclUpdateEntry object
+NewComputeACLUpdateEntryWithDefaults instantiates a new ComputeACLUpdateEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetOp
 
-`func (o *ComputeAclUpdateEntry) GetOp() string`
+`func (o *ComputeACLUpdateEntry) GetOp() string`
 
 GetOp returns the Op field if non-nil, zero value otherwise.
 
 ### GetOpOk
 
-`func (o *ComputeAclUpdateEntry) GetOpOk() (*string, bool)`
+`func (o *ComputeACLUpdateEntry) GetOpOk() (*string, bool)`
 
 GetOpOk returns a tuple with the Op field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOp
 
-`func (o *ComputeAclUpdateEntry) SetOp(v string)`
+`func (o *ComputeACLUpdateEntry) SetOp(v string)`
 
 SetOp sets Op field to given value.
 
 ### HasOp
 
-`func (o *ComputeAclUpdateEntry) HasOp() bool`
+`func (o *ComputeACLUpdateEntry) HasOp() bool`
 
 HasOp returns a boolean if a field has been set.
 
 ### GetPrefix
 
-`func (o *ComputeAclUpdateEntry) GetPrefix() string`
+`func (o *ComputeACLUpdateEntry) GetPrefix() string`
 
 GetPrefix returns the Prefix field if non-nil, zero value otherwise.
 
 ### GetPrefixOk
 
-`func (o *ComputeAclUpdateEntry) GetPrefixOk() (*string, bool)`
+`func (o *ComputeACLUpdateEntry) GetPrefixOk() (*string, bool)`
 
 GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrefix
 
-`func (o *ComputeAclUpdateEntry) SetPrefix(v string)`
+`func (o *ComputeACLUpdateEntry) SetPrefix(v string)`
 
 SetPrefix sets Prefix field to given value.
 
 ### HasPrefix
 
-`func (o *ComputeAclUpdateEntry) HasPrefix() bool`
+`func (o *ComputeACLUpdateEntry) HasPrefix() bool`
 
 HasPrefix returns a boolean if a field has been set.
 
 ### GetAction
 
-`func (o *ComputeAclUpdateEntry) GetAction() string`
+`func (o *ComputeACLUpdateEntry) GetAction() string`
 
 GetAction returns the Action field if non-nil, zero value otherwise.
 
 ### GetActionOk
 
-`func (o *ComputeAclUpdateEntry) GetActionOk() (*string, bool)`
+`func (o *ComputeACLUpdateEntry) GetActionOk() (*string, bool)`
 
 GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAction
 
-`func (o *ComputeAclUpdateEntry) SetAction(v string)`
+`func (o *ComputeACLUpdateEntry) SetAction(v string)`
 
 SetAction sets Action field to given value.
 
 ### HasAction
 
-`func (o *ComputeAclUpdateEntry) HasAction() bool`
+`func (o *ComputeACLUpdateEntry) HasAction() bool`
 
 HasAction returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

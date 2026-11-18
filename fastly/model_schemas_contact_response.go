@@ -20,7 +20,7 @@ import (
 // SchemasContactResponse struct for SchemasContactResponse
 type SchemasContactResponse struct {
 	// The alphanumeric string representing the user for this customer contact.
-	UserId NullableString `json:"user_id,omitempty"`
+	UserID NullableString `json:"user_id,omitempty"`
 	// The type of contact.
 	ContactType *string `json:"contact_type,omitempty"`
 	// The name of this contact, when user_id is not provided.
@@ -30,14 +30,14 @@ type SchemasContactResponse struct {
 	// The phone number for this contact. Required for primary, technical, and security contact types.
 	Phone NullableString `json:"phone,omitempty"`
 	// The alphanumeric string representing the customer for this customer contact.
-	CustomerId NullableString `json:"customer_id,omitempty"`
+	CustomerID NullableString `json:"customer_id,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	Id                   *string      `json:"id,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -60,47 +60,47 @@ func NewSchemasContactResponseWithDefaults() *SchemasContactResponse {
 	return &this
 }
 
-// GetUserId returns the UserId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SchemasContactResponse) GetUserId() string {
-	if o == nil || o.UserId.Get() == nil {
+// GetUserID returns the UserID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SchemasContactResponse) GetUserID() string {
+	if o == nil || o.UserID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserId.Get()
+	return *o.UserID.Get()
 }
 
-// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
+// GetUserIDOk returns a tuple with the UserID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SchemasContactResponse) GetUserIdOk() (*string, bool) {
+func (o *SchemasContactResponse) GetUserIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.UserId.Get(), o.UserId.IsSet()
+	return o.UserID.Get(), o.UserID.IsSet()
 }
 
-// HasUserId returns a boolean if a field has been set.
-func (o *SchemasContactResponse) HasUserId() bool {
-	if o != nil && o.UserId.IsSet() {
+// HasUserID returns a boolean if a field has been set.
+func (o *SchemasContactResponse) HasUserID() bool {
+	if o != nil && o.UserID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserId gets a reference to the given NullableString and assigns it to the UserId field.
-func (o *SchemasContactResponse) SetUserId(v string) {
-	o.UserId.Set(&v)
+// SetUserID gets a reference to the given NullableString and assigns it to the UserID field.
+func (o *SchemasContactResponse) SetUserID(v string) {
+	o.UserID.Set(&v)
 }
 
-// SetUserIdNil sets the value for UserId to be an explicit nil
-func (o *SchemasContactResponse) SetUserIdNil() {
-	o.UserId.Set(nil)
+// SetUserIDNil sets the value for UserID to be an explicit nil
+func (o *SchemasContactResponse) SetUserIDNil() {
+	o.UserID.Set(nil)
 }
 
-// UnsetUserId ensures that no value is present for UserId, not even an explicit nil
-func (o *SchemasContactResponse) UnsetUserId() {
-	o.UserId.Unset()
+// UnsetUserID ensures that no value is present for UserID, not even an explicit nil
+func (o *SchemasContactResponse) UnsetUserID() {
+	o.UserID.Unset()
 }
 
 // GetContactType returns the ContactType field value if set, zero value otherwise.
@@ -264,47 +264,47 @@ func (o *SchemasContactResponse) UnsetPhone() {
 	o.Phone.Unset()
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SchemasContactResponse) GetCustomerId() string {
-	if o == nil || o.CustomerId.Get() == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SchemasContactResponse) GetCustomerID() string {
+	if o == nil || o.CustomerID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId.Get()
+	return *o.CustomerID.Get()
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SchemasContactResponse) GetCustomerIdOk() (*string, bool) {
+func (o *SchemasContactResponse) GetCustomerIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.CustomerId.Get(), o.CustomerId.IsSet()
+	return o.CustomerID.Get(), o.CustomerID.IsSet()
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *SchemasContactResponse) HasCustomerId() bool {
-	if o != nil && o.CustomerId.IsSet() {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *SchemasContactResponse) HasCustomerID() bool {
+	if o != nil && o.CustomerID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given NullableString and assigns it to the CustomerId field.
-func (o *SchemasContactResponse) SetCustomerId(v string) {
-	o.CustomerId.Set(&v)
+// SetCustomerID gets a reference to the given NullableString and assigns it to the CustomerID field.
+func (o *SchemasContactResponse) SetCustomerID(v string) {
+	o.CustomerID.Set(&v)
 }
 
-// SetCustomerIdNil sets the value for CustomerId to be an explicit nil
-func (o *SchemasContactResponse) SetCustomerIdNil() {
-	o.CustomerId.Set(nil)
+// SetCustomerIDNil sets the value for CustomerID to be an explicit nil
+func (o *SchemasContactResponse) SetCustomerIDNil() {
+	o.CustomerID.Set(nil)
 }
 
-// UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
-func (o *SchemasContactResponse) UnsetCustomerId() {
-	o.CustomerId.Unset()
+// UnsetCustomerID ensures that no value is present for CustomerID, not even an explicit nil
+func (o *SchemasContactResponse) UnsetCustomerID() {
+	o.CustomerID.Unset()
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -436,44 +436,44 @@ func (o *SchemasContactResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SchemasContactResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *SchemasContactResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasContactResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *SchemasContactResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SchemasContactResponse) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *SchemasContactResponse) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *SchemasContactResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *SchemasContactResponse) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o SchemasContactResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.UserId.IsSet() {
-		toSerialize["user_id"] = o.UserId.Get()
+	if o.UserID.IsSet() {
+		toSerialize["user_id"] = o.UserID.Get()
 	}
 	if o.ContactType != nil {
 		toSerialize["contact_type"] = o.ContactType
@@ -487,8 +487,8 @@ func (o SchemasContactResponse) MarshalJSON() ([]byte, error) {
 	if o.Phone.IsSet() {
 		toSerialize["phone"] = o.Phone.Get()
 	}
-	if o.CustomerId.IsSet() {
-		toSerialize["customer_id"] = o.CustomerId.Get()
+	if o.CustomerID.IsSet() {
+		toSerialize["customer_id"] = o.CustomerID.Get()
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -499,8 +499,8 @@ func (o SchemasContactResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTlsBulkCertificateTlsBulkCertificate struct for RelationshipTlsBulkCertificateTlsBulkCertificate
-type RelationshipTlsBulkCertificateTlsBulkCertificate struct {
-	Data                 []RelationshipMemberTlsBulkCertificate `json:"data,omitempty"`
+// RelationshipTLSBulkCertificateTLSBulkCertificate struct for RelationshipTLSBulkCertificateTLSBulkCertificate
+type RelationshipTLSBulkCertificateTLSBulkCertificate struct {
+	Data                 []RelationshipMemberTLSBulkCertificate `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTlsBulkCertificateTlsBulkCertificate RelationshipTlsBulkCertificateTlsBulkCertificate
+type _RelationshipTLSBulkCertificateTLSBulkCertificate RelationshipTLSBulkCertificateTLSBulkCertificate
 
-// NewRelationshipTlsBulkCertificateTlsBulkCertificate instantiates a new RelationshipTlsBulkCertificateTlsBulkCertificate object
+// NewRelationshipTLSBulkCertificateTLSBulkCertificate instantiates a new RelationshipTLSBulkCertificateTLSBulkCertificate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTlsBulkCertificateTlsBulkCertificate() *RelationshipTlsBulkCertificateTlsBulkCertificate {
-	this := RelationshipTlsBulkCertificateTlsBulkCertificate{}
+func NewRelationshipTLSBulkCertificateTLSBulkCertificate() *RelationshipTLSBulkCertificateTLSBulkCertificate {
+	this := RelationshipTLSBulkCertificateTLSBulkCertificate{}
 	return &this
 }
 
-// NewRelationshipTlsBulkCertificateTlsBulkCertificateWithDefaults instantiates a new RelationshipTlsBulkCertificateTlsBulkCertificate object
+// NewRelationshipTLSBulkCertificateTLSBulkCertificateWithDefaults instantiates a new RelationshipTLSBulkCertificateTLSBulkCertificate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTlsBulkCertificateTlsBulkCertificateWithDefaults() *RelationshipTlsBulkCertificateTlsBulkCertificate {
-	this := RelationshipTlsBulkCertificateTlsBulkCertificate{}
+func NewRelationshipTLSBulkCertificateTLSBulkCertificateWithDefaults() *RelationshipTLSBulkCertificateTLSBulkCertificate {
+	this := RelationshipTLSBulkCertificateTLSBulkCertificate{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) GetData() []RelationshipMemberTlsBulkCertificate {
+func (o *RelationshipTLSBulkCertificateTLSBulkCertificate) GetData() []RelationshipMemberTLSBulkCertificate {
 	if o == nil || o.Data == nil {
-		var ret []RelationshipMemberTlsBulkCertificate
+		var ret []RelationshipMemberTLSBulkCertificate
 		return ret
 	}
 	return o.Data
@@ -52,7 +52,7 @@ func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) GetData() []Relations
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) GetDataOk() ([]RelationshipMemberTlsBulkCertificate, bool) {
+func (o *RelationshipTLSBulkCertificateTLSBulkCertificate) GetDataOk() ([]RelationshipMemberTLSBulkCertificate, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) GetDataOk() ([]Relati
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) HasData() bool {
+func (o *RelationshipTLSBulkCertificateTLSBulkCertificate) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []RelationshipMemberTlsBulkCertificate and assigns it to the Data field.
-func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) SetData(v []RelationshipMemberTlsBulkCertificate) {
+// SetData gets a reference to the given []RelationshipMemberTLSBulkCertificate and assigns it to the Data field.
+func (o *RelationshipTLSBulkCertificateTLSBulkCertificate) SetData(v []RelationshipMemberTLSBulkCertificate) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTlsBulkCertificateTlsBulkCertificate) MarshalJSON() ([]byte, error) {
+func (o RelationshipTLSBulkCertificateTLSBulkCertificate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o RelationshipTlsBulkCertificateTlsBulkCertificate) MarshalJSON() ([]byte,
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTlsBulkCertificateTlsBulkCertificate := _RelationshipTlsBulkCertificateTlsBulkCertificate{}
+func (o *RelationshipTLSBulkCertificateTLSBulkCertificate) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTLSBulkCertificateTLSBulkCertificate := _RelationshipTLSBulkCertificateTLSBulkCertificate{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTlsBulkCertificateTlsBulkCertificate); err == nil {
-		*o = RelationshipTlsBulkCertificateTlsBulkCertificate(varRelationshipTlsBulkCertificateTlsBulkCertificate)
+	if err = json.Unmarshal(bytes, &varRelationshipTLSBulkCertificateTLSBulkCertificate); err == nil {
+		*o = RelationshipTLSBulkCertificateTLSBulkCertificate(varRelationshipTLSBulkCertificateTLSBulkCertificate)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipTlsBulkCertificateTlsBulkCertificate) UnmarshalJSON(bytes [
 	return err
 }
 
-// NullableRelationshipTlsBulkCertificateTlsBulkCertificate is a helper abstraction for handling nullable relationshiptlsbulkcertificatetlsbulkcertificate types.
-type NullableRelationshipTlsBulkCertificateTlsBulkCertificate struct {
-	value *RelationshipTlsBulkCertificateTlsBulkCertificate
+// NullableRelationshipTLSBulkCertificateTLSBulkCertificate is a helper abstraction for handling nullable relationshiptlsbulkcertificatetlsbulkcertificate types.
+type NullableRelationshipTLSBulkCertificateTLSBulkCertificate struct {
+	value *RelationshipTLSBulkCertificateTLSBulkCertificate
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTlsBulkCertificateTlsBulkCertificate) Get() *RelationshipTlsBulkCertificateTlsBulkCertificate {
+func (v NullableRelationshipTLSBulkCertificateTLSBulkCertificate) Get() *RelationshipTLSBulkCertificateTLSBulkCertificate {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTlsBulkCertificateTlsBulkCertificate) Set(val *RelationshipTlsBulkCertificateTlsBulkCertificate) {
+func (v *NullableRelationshipTLSBulkCertificateTLSBulkCertificate) Set(val *RelationshipTLSBulkCertificateTLSBulkCertificate) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTlsBulkCertificateTlsBulkCertificate) IsSet() bool {
+func (v NullableRelationshipTLSBulkCertificateTLSBulkCertificate) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTlsBulkCertificateTlsBulkCertificate) Unset() {
+func (v *NullableRelationshipTLSBulkCertificateTLSBulkCertificate) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTlsBulkCertificateTlsBulkCertificate returns a pointer to a new instance of NullableRelationshipTlsBulkCertificateTlsBulkCertificate.
-func NewNullableRelationshipTlsBulkCertificateTlsBulkCertificate(val *RelationshipTlsBulkCertificateTlsBulkCertificate) *NullableRelationshipTlsBulkCertificateTlsBulkCertificate {
-	return &NullableRelationshipTlsBulkCertificateTlsBulkCertificate{value: val, isSet: true}
+// NewNullableRelationshipTLSBulkCertificateTLSBulkCertificate returns a pointer to a new instance of NullableRelationshipTLSBulkCertificateTLSBulkCertificate.
+func NewNullableRelationshipTLSBulkCertificateTLSBulkCertificate(val *RelationshipTLSBulkCertificateTLSBulkCertificate) *NullableRelationshipTLSBulkCertificateTLSBulkCertificate {
+	return &NullableRelationshipTLSBulkCertificateTLSBulkCertificate{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTlsBulkCertificateTlsBulkCertificate) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTLSBulkCertificateTLSBulkCertificate) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTlsBulkCertificateTlsBulkCertificate) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTLSBulkCertificateTLSBulkCertificate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

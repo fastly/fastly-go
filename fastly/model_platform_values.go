@@ -66,15 +66,15 @@ type PlatformValues struct {
 	// Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement).
 	Synth *int64 `json:"synth,omitempty"`
 	// Number of requests that were received over TLS.
-	Tls *int64 `json:"tls,omitempty"`
+	TLS *int64 `json:"tls,omitempty"`
 	// Number of requests received over TLS 1.0.
-	TlsV10 *int64 `json:"tls_v10,omitempty"`
+	TLSV10 *int64 `json:"tls_v10,omitempty"`
 	// Number of requests received over TLS 1.1.
-	TlsV11 *int64 `json:"tls_v11,omitempty"`
+	TLSV11 *int64 `json:"tls_v11,omitempty"`
 	// Number of requests received over TLS 1.2.
-	TlsV12 *int64 `json:"tls_v12,omitempty"`
+	TLSV12 *int64 `json:"tls_v12,omitempty"`
 	// Number of requests received over TLS 1.3.
-	TlsV13 *int64 `json:"tls_v13,omitempty"`
+	TLSV13 *int64 `json:"tls_v13,omitempty"`
 	// Number of requests sent by end users to Fastly.
 	EdgeRequests *int64 `json:"edge_requests,omitempty"`
 	// Total header bytes delivered from Fastly to the end user.
@@ -146,9 +146,9 @@ type PlatformValues struct {
 	// Total log bytes sent.
 	LogBytes *int64 `json:"log_bytes,omitempty"`
 	// Number of requests received over HTTP/2.
-	Http2 *int64 `json:"http2,omitempty"`
+	HTTP2 *int64 `json:"http2,omitempty"`
 	// Number of requests received over HTTP/3.
-	Http3 *int64 `json:"http3,omitempty"`
+	HTTP3 *int64 `json:"http3,omitempty"`
 	// Total body bytes received from requests that triggered a WAF rule.
 	AttackReqBodyBytes *int64 `json:"attack_req_body_bytes,omitempty"`
 	// Total header bytes received from requests that triggered a WAF rule.
@@ -310,7 +310,7 @@ type PlatformValues struct {
 	// Number of executions of the `vcl_predeliver` Varnish subroutine.
 	PredeliverSubCount *int64 `json:"predeliver_sub_count,omitempty"`
 	// Number of bytes transferred during TLS handshake.
-	TlsHandshakeSentBytes *int64 `json:"tls_handshake_sent_bytes,omitempty"`
+	TLSHandshakeSentBytes *int64 `json:"tls_handshake_sent_bytes,omitempty"`
 	// Total body bytes delivered for cache hits.
 	HitRespBodyBytes *int64 `json:"hit_resp_body_bytes,omitempty"`
 	// Total body bytes delivered for cache misses.
@@ -328,7 +328,7 @@ type PlatformValues struct {
 	// The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
 	ComputeRequestTimeBilledMs *float32 `json:"compute_request_time_billed_ms,omitempty"`
 	// The amount of RAM used for your service by Fastly (in bytes).
-	ComputeRamUsed *int64 `json:"compute_ram_used,omitempty"`
+	ComputeRAMUsed *int64 `json:"compute_ram_used,omitempty"`
 	// The amount of active CPU time used to process your requests (in milliseconds).
 	ComputeExecutionTimeMs *float32 `json:"compute_execution_time_ms,omitempty"`
 	// Total header bytes received by the Compute platform.
@@ -586,9 +586,9 @@ type PlatformValues struct {
 	// The number of Image Optimizer requests made from Compute services.
 	ImgoptoComputeRequests *int32 `json:"imgopto_compute_requests,omitempty"`
 	// Number of billable DNS responses (e.g., A, CNAME).
-	DnsBillableResponsesCount *int32 `json:"dns_billable_responses_count,omitempty"`
+	DNSBillableResponsesCount *int32 `json:"dns_billable_responses_count,omitempty"`
 	// Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN).
-	DnsNonbillableResponsesCount *int32 `json:"dns_nonbillable_responses_count,omitempty"`
+	DNSNonbillableResponsesCount *int32 `json:"dns_nonbillable_responses_count,omitempty"`
 	// Number of requests that resulted in a WebSocket upgrade.
 	Upgrade *int32 `json:"upgrade,omitempty"`
 	// Count of Next-Gen WAF Bot Management requests.
@@ -662,7 +662,7 @@ type PlatformValues struct {
 	// The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy.
 	ComputeHandoff *int32 `json:"compute_handoff,omitempty"`
 	// Number of backend requests from a Compute service that failed during DNS resolution.
-	ComputeServiceBereqDnsError *int32 `json:"compute_service_bereq_dns_error,omitempty"`
+	ComputeServiceBereqDNSError *int32 `json:"compute_service_bereq_dns_error,omitempty"`
 	// Number of backend requests from a Compute service where the connection to the origin timed out before being established.
 	ComputeServiceBereqConnTimeoutError *int32 `json:"compute_service_bereq_conn_timeout_error,omitempty"`
 	// Number of backend requests from a Compute service where the origin actively refused the connection.
@@ -670,19 +670,19 @@ type PlatformValues struct {
 	// Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal.
 	ComputeServiceBereqConnOtherError *int32 `json:"compute_service_bereq_conn_other_error,omitempty"`
 	// Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch).
-	ComputeServiceBereqTlsServerCertError *int32 `json:"compute_service_bereq_tls_server_cert_error,omitempty"`
+	ComputeServiceBereqTLSServerCertError *int32 `json:"compute_service_bereq_tls_server_cert_error,omitempty"`
 	// Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error.
-	ComputeServiceBereqTlsOtherError *int32 `json:"compute_service_bereq_tls_other_error,omitempty"`
+	ComputeServiceBereqTLSOtherError *int32 `json:"compute_service_bereq_tls_other_error,omitempty"`
 	// Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted.
-	ComputeServiceBereqHttpProtoV1Error *int32 `json:"compute_service_bereq_http_proto_v1_error,omitempty"`
+	ComputeServiceBereqHTTPProtoV1Error *int32 `json:"compute_service_bereq_http_proto_v1_error,omitempty"`
 	// Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a `RST_STREAM` or `GO_AWAY` from the origin.
-	ComputeServiceBereqHttpProtoV2Error *int32 `json:"compute_service_bereq_http_proto_v2_error,omitempty"`
+	ComputeServiceBereqHTTPProtoV2Error *int32 `json:"compute_service_bereq_http_proto_v2_error,omitempty"`
 	// Number of backend requests from a Compute service where the origin sent an incomplete HTTP response.
-	ComputeServiceBereqHttpIncompleteError *int32 `json:"compute_service_bereq_http_incomplete_error,omitempty"`
+	ComputeServiceBereqHTTPIncompleteError *int32 `json:"compute_service_bereq_http_incomplete_error,omitempty"`
 	// Number of backend requests from a Compute service where the origin did not respond within the configured timeout period.
-	ComputeServiceBereqHttpTimeoutError *int32 `json:"compute_service_bereq_http_timeout_error,omitempty"`
+	ComputeServiceBereqHTTPTimeoutError *int32 `json:"compute_service_bereq_http_timeout_error,omitempty"`
 	// Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category.
-	ComputeServiceBereqHttpOtherError *int32 `json:"compute_service_bereq_http_other_error,omitempty"`
+	ComputeServiceBereqHTTPOtherError *int32 `json:"compute_service_bereq_http_other_error,omitempty"`
 	// Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories.
 	ComputeServiceBereqOtherError *int32 `json:"compute_service_bereq_other_error,omitempty"`
 	// Number of backend requests from a Compute service where the origin returned a 5xx status code.
@@ -690,9 +690,9 @@ type PlatformValues struct {
 	// Number of backend requests from a Compute service that failed at the TCP connection level. Sum of `compute_service_bereq_conn_timeout_error`, `compute_service_bereq_conn_refused_error`, and `compute_service_bereq_conn_other_error`.
 	ComputeServiceBereqConnError *int32 `json:"compute_service_bereq_conn_error,omitempty"`
 	// Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`.
-	ComputeServiceBereqTlsError *int32 `json:"compute_service_bereq_tls_error,omitempty"`
+	ComputeServiceBereqTLSError *int32 `json:"compute_service_bereq_tls_error,omitempty"`
 	// Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`.
-	ComputeServiceBereqHttpError *int32 `json:"compute_service_bereq_http_error,omitempty"`
+	ComputeServiceBereqHTTPError *int32 `json:"compute_service_bereq_http_error,omitempty"`
 	// Number of Private Access Token challenges issued.
 	BotChallengesPatsIssued *int32 `json:"bot_challenges_pats_issued,omitempty"`
 	// Number of successful Private Access Token challenge solutions processed.
@@ -1506,164 +1506,164 @@ func (o *PlatformValues) SetSynth(v int64) {
 	o.Synth = &v
 }
 
-// GetTls returns the Tls field value if set, zero value otherwise.
-func (o *PlatformValues) GetTls() int64 {
-	if o == nil || o.Tls == nil {
+// GetTLS returns the TLS field value if set, zero value otherwise.
+func (o *PlatformValues) GetTLS() int64 {
+	if o == nil || o.TLS == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Tls
+	return *o.TLS
 }
 
-// GetTlsOk returns a tuple with the Tls field value if set, nil otherwise
+// GetTLSOk returns a tuple with the TLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetTlsOk() (*int64, bool) {
-	if o == nil || o.Tls == nil {
+func (o *PlatformValues) GetTLSOk() (*int64, bool) {
+	if o == nil || o.TLS == nil {
 		return nil, false
 	}
-	return o.Tls, true
+	return o.TLS, true
 }
 
-// HasTls returns a boolean if a field has been set.
-func (o *PlatformValues) HasTls() bool {
-	if o != nil && o.Tls != nil {
+// HasTLS returns a boolean if a field has been set.
+func (o *PlatformValues) HasTLS() bool {
+	if o != nil && o.TLS != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTls gets a reference to the given int64 and assigns it to the Tls field.
-func (o *PlatformValues) SetTls(v int64) {
-	o.Tls = &v
+// SetTLS gets a reference to the given int64 and assigns it to the TLS field.
+func (o *PlatformValues) SetTLS(v int64) {
+	o.TLS = &v
 }
 
-// GetTlsV10 returns the TlsV10 field value if set, zero value otherwise.
-func (o *PlatformValues) GetTlsV10() int64 {
-	if o == nil || o.TlsV10 == nil {
+// GetTLSV10 returns the TLSV10 field value if set, zero value otherwise.
+func (o *PlatformValues) GetTLSV10() int64 {
+	if o == nil || o.TLSV10 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TlsV10
+	return *o.TLSV10
 }
 
-// GetTlsV10Ok returns a tuple with the TlsV10 field value if set, nil otherwise
+// GetTLSV10Ok returns a tuple with the TLSV10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetTlsV10Ok() (*int64, bool) {
-	if o == nil || o.TlsV10 == nil {
+func (o *PlatformValues) GetTLSV10Ok() (*int64, bool) {
+	if o == nil || o.TLSV10 == nil {
 		return nil, false
 	}
-	return o.TlsV10, true
+	return o.TLSV10, true
 }
 
-// HasTlsV10 returns a boolean if a field has been set.
-func (o *PlatformValues) HasTlsV10() bool {
-	if o != nil && o.TlsV10 != nil {
+// HasTLSV10 returns a boolean if a field has been set.
+func (o *PlatformValues) HasTLSV10() bool {
+	if o != nil && o.TLSV10 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsV10 gets a reference to the given int64 and assigns it to the TlsV10 field.
-func (o *PlatformValues) SetTlsV10(v int64) {
-	o.TlsV10 = &v
+// SetTLSV10 gets a reference to the given int64 and assigns it to the TLSV10 field.
+func (o *PlatformValues) SetTLSV10(v int64) {
+	o.TLSV10 = &v
 }
 
-// GetTlsV11 returns the TlsV11 field value if set, zero value otherwise.
-func (o *PlatformValues) GetTlsV11() int64 {
-	if o == nil || o.TlsV11 == nil {
+// GetTLSV11 returns the TLSV11 field value if set, zero value otherwise.
+func (o *PlatformValues) GetTLSV11() int64 {
+	if o == nil || o.TLSV11 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TlsV11
+	return *o.TLSV11
 }
 
-// GetTlsV11Ok returns a tuple with the TlsV11 field value if set, nil otherwise
+// GetTLSV11Ok returns a tuple with the TLSV11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetTlsV11Ok() (*int64, bool) {
-	if o == nil || o.TlsV11 == nil {
+func (o *PlatformValues) GetTLSV11Ok() (*int64, bool) {
+	if o == nil || o.TLSV11 == nil {
 		return nil, false
 	}
-	return o.TlsV11, true
+	return o.TLSV11, true
 }
 
-// HasTlsV11 returns a boolean if a field has been set.
-func (o *PlatformValues) HasTlsV11() bool {
-	if o != nil && o.TlsV11 != nil {
+// HasTLSV11 returns a boolean if a field has been set.
+func (o *PlatformValues) HasTLSV11() bool {
+	if o != nil && o.TLSV11 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsV11 gets a reference to the given int64 and assigns it to the TlsV11 field.
-func (o *PlatformValues) SetTlsV11(v int64) {
-	o.TlsV11 = &v
+// SetTLSV11 gets a reference to the given int64 and assigns it to the TLSV11 field.
+func (o *PlatformValues) SetTLSV11(v int64) {
+	o.TLSV11 = &v
 }
 
-// GetTlsV12 returns the TlsV12 field value if set, zero value otherwise.
-func (o *PlatformValues) GetTlsV12() int64 {
-	if o == nil || o.TlsV12 == nil {
+// GetTLSV12 returns the TLSV12 field value if set, zero value otherwise.
+func (o *PlatformValues) GetTLSV12() int64 {
+	if o == nil || o.TLSV12 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TlsV12
+	return *o.TLSV12
 }
 
-// GetTlsV12Ok returns a tuple with the TlsV12 field value if set, nil otherwise
+// GetTLSV12Ok returns a tuple with the TLSV12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetTlsV12Ok() (*int64, bool) {
-	if o == nil || o.TlsV12 == nil {
+func (o *PlatformValues) GetTLSV12Ok() (*int64, bool) {
+	if o == nil || o.TLSV12 == nil {
 		return nil, false
 	}
-	return o.TlsV12, true
+	return o.TLSV12, true
 }
 
-// HasTlsV12 returns a boolean if a field has been set.
-func (o *PlatformValues) HasTlsV12() bool {
-	if o != nil && o.TlsV12 != nil {
+// HasTLSV12 returns a boolean if a field has been set.
+func (o *PlatformValues) HasTLSV12() bool {
+	if o != nil && o.TLSV12 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsV12 gets a reference to the given int64 and assigns it to the TlsV12 field.
-func (o *PlatformValues) SetTlsV12(v int64) {
-	o.TlsV12 = &v
+// SetTLSV12 gets a reference to the given int64 and assigns it to the TLSV12 field.
+func (o *PlatformValues) SetTLSV12(v int64) {
+	o.TLSV12 = &v
 }
 
-// GetTlsV13 returns the TlsV13 field value if set, zero value otherwise.
-func (o *PlatformValues) GetTlsV13() int64 {
-	if o == nil || o.TlsV13 == nil {
+// GetTLSV13 returns the TLSV13 field value if set, zero value otherwise.
+func (o *PlatformValues) GetTLSV13() int64 {
+	if o == nil || o.TLSV13 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TlsV13
+	return *o.TLSV13
 }
 
-// GetTlsV13Ok returns a tuple with the TlsV13 field value if set, nil otherwise
+// GetTLSV13Ok returns a tuple with the TLSV13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetTlsV13Ok() (*int64, bool) {
-	if o == nil || o.TlsV13 == nil {
+func (o *PlatformValues) GetTLSV13Ok() (*int64, bool) {
+	if o == nil || o.TLSV13 == nil {
 		return nil, false
 	}
-	return o.TlsV13, true
+	return o.TLSV13, true
 }
 
-// HasTlsV13 returns a boolean if a field has been set.
-func (o *PlatformValues) HasTlsV13() bool {
-	if o != nil && o.TlsV13 != nil {
+// HasTLSV13 returns a boolean if a field has been set.
+func (o *PlatformValues) HasTLSV13() bool {
+	if o != nil && o.TLSV13 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsV13 gets a reference to the given int64 and assigns it to the TlsV13 field.
-func (o *PlatformValues) SetTlsV13(v int64) {
-	o.TlsV13 = &v
+// SetTLSV13 gets a reference to the given int64 and assigns it to the TLSV13 field.
+func (o *PlatformValues) SetTLSV13(v int64) {
+	o.TLSV13 = &v
 }
 
 // GetEdgeRequests returns the EdgeRequests field value if set, zero value otherwise.
@@ -2786,68 +2786,68 @@ func (o *PlatformValues) SetLogBytes(v int64) {
 	o.LogBytes = &v
 }
 
-// GetHttp2 returns the Http2 field value if set, zero value otherwise.
-func (o *PlatformValues) GetHttp2() int64 {
-	if o == nil || o.Http2 == nil {
+// GetHTTP2 returns the HTTP2 field value if set, zero value otherwise.
+func (o *PlatformValues) GetHTTP2() int64 {
+	if o == nil || o.HTTP2 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Http2
+	return *o.HTTP2
 }
 
-// GetHttp2Ok returns a tuple with the Http2 field value if set, nil otherwise
+// GetHTTP2Ok returns a tuple with the HTTP2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetHttp2Ok() (*int64, bool) {
-	if o == nil || o.Http2 == nil {
+func (o *PlatformValues) GetHTTP2Ok() (*int64, bool) {
+	if o == nil || o.HTTP2 == nil {
 		return nil, false
 	}
-	return o.Http2, true
+	return o.HTTP2, true
 }
 
-// HasHttp2 returns a boolean if a field has been set.
-func (o *PlatformValues) HasHttp2() bool {
-	if o != nil && o.Http2 != nil {
+// HasHTTP2 returns a boolean if a field has been set.
+func (o *PlatformValues) HasHTTP2() bool {
+	if o != nil && o.HTTP2 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHttp2 gets a reference to the given int64 and assigns it to the Http2 field.
-func (o *PlatformValues) SetHttp2(v int64) {
-	o.Http2 = &v
+// SetHTTP2 gets a reference to the given int64 and assigns it to the HTTP2 field.
+func (o *PlatformValues) SetHTTP2(v int64) {
+	o.HTTP2 = &v
 }
 
-// GetHttp3 returns the Http3 field value if set, zero value otherwise.
-func (o *PlatformValues) GetHttp3() int64 {
-	if o == nil || o.Http3 == nil {
+// GetHTTP3 returns the HTTP3 field value if set, zero value otherwise.
+func (o *PlatformValues) GetHTTP3() int64 {
+	if o == nil || o.HTTP3 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Http3
+	return *o.HTTP3
 }
 
-// GetHttp3Ok returns a tuple with the Http3 field value if set, nil otherwise
+// GetHTTP3Ok returns a tuple with the HTTP3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetHttp3Ok() (*int64, bool) {
-	if o == nil || o.Http3 == nil {
+func (o *PlatformValues) GetHTTP3Ok() (*int64, bool) {
+	if o == nil || o.HTTP3 == nil {
 		return nil, false
 	}
-	return o.Http3, true
+	return o.HTTP3, true
 }
 
-// HasHttp3 returns a boolean if a field has been set.
-func (o *PlatformValues) HasHttp3() bool {
-	if o != nil && o.Http3 != nil {
+// HasHTTP3 returns a boolean if a field has been set.
+func (o *PlatformValues) HasHTTP3() bool {
+	if o != nil && o.HTTP3 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHttp3 gets a reference to the given int64 and assigns it to the Http3 field.
-func (o *PlatformValues) SetHttp3(v int64) {
-	o.Http3 = &v
+// SetHTTP3 gets a reference to the given int64 and assigns it to the HTTP3 field.
+func (o *PlatformValues) SetHTTP3(v int64) {
+	o.HTTP3 = &v
 }
 
 // GetAttackReqBodyBytes returns the AttackReqBodyBytes field value if set, zero value otherwise.
@@ -5410,36 +5410,36 @@ func (o *PlatformValues) SetPredeliverSubCount(v int64) {
 	o.PredeliverSubCount = &v
 }
 
-// GetTlsHandshakeSentBytes returns the TlsHandshakeSentBytes field value if set, zero value otherwise.
-func (o *PlatformValues) GetTlsHandshakeSentBytes() int64 {
-	if o == nil || o.TlsHandshakeSentBytes == nil {
+// GetTLSHandshakeSentBytes returns the TLSHandshakeSentBytes field value if set, zero value otherwise.
+func (o *PlatformValues) GetTLSHandshakeSentBytes() int64 {
+	if o == nil || o.TLSHandshakeSentBytes == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TlsHandshakeSentBytes
+	return *o.TLSHandshakeSentBytes
 }
 
-// GetTlsHandshakeSentBytesOk returns a tuple with the TlsHandshakeSentBytes field value if set, nil otherwise
+// GetTLSHandshakeSentBytesOk returns a tuple with the TLSHandshakeSentBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetTlsHandshakeSentBytesOk() (*int64, bool) {
-	if o == nil || o.TlsHandshakeSentBytes == nil {
+func (o *PlatformValues) GetTLSHandshakeSentBytesOk() (*int64, bool) {
+	if o == nil || o.TLSHandshakeSentBytes == nil {
 		return nil, false
 	}
-	return o.TlsHandshakeSentBytes, true
+	return o.TLSHandshakeSentBytes, true
 }
 
-// HasTlsHandshakeSentBytes returns a boolean if a field has been set.
-func (o *PlatformValues) HasTlsHandshakeSentBytes() bool {
-	if o != nil && o.TlsHandshakeSentBytes != nil {
+// HasTLSHandshakeSentBytes returns a boolean if a field has been set.
+func (o *PlatformValues) HasTLSHandshakeSentBytes() bool {
+	if o != nil && o.TLSHandshakeSentBytes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsHandshakeSentBytes gets a reference to the given int64 and assigns it to the TlsHandshakeSentBytes field.
-func (o *PlatformValues) SetTlsHandshakeSentBytes(v int64) {
-	o.TlsHandshakeSentBytes = &v
+// SetTLSHandshakeSentBytes gets a reference to the given int64 and assigns it to the TLSHandshakeSentBytes field.
+func (o *PlatformValues) SetTLSHandshakeSentBytes(v int64) {
+	o.TLSHandshakeSentBytes = &v
 }
 
 // GetHitRespBodyBytes returns the HitRespBodyBytes field value if set, zero value otherwise.
@@ -5698,36 +5698,36 @@ func (o *PlatformValues) SetComputeRequestTimeBilledMs(v float32) {
 	o.ComputeRequestTimeBilledMs = &v
 }
 
-// GetComputeRamUsed returns the ComputeRamUsed field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeRamUsed() int64 {
-	if o == nil || o.ComputeRamUsed == nil {
+// GetComputeRAMUsed returns the ComputeRAMUsed field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeRAMUsed() int64 {
+	if o == nil || o.ComputeRAMUsed == nil {
 		var ret int64
 		return ret
 	}
-	return *o.ComputeRamUsed
+	return *o.ComputeRAMUsed
 }
 
-// GetComputeRamUsedOk returns a tuple with the ComputeRamUsed field value if set, nil otherwise
+// GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeRamUsedOk() (*int64, bool) {
-	if o == nil || o.ComputeRamUsed == nil {
+func (o *PlatformValues) GetComputeRAMUsedOk() (*int64, bool) {
+	if o == nil || o.ComputeRAMUsed == nil {
 		return nil, false
 	}
-	return o.ComputeRamUsed, true
+	return o.ComputeRAMUsed, true
 }
 
-// HasComputeRamUsed returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeRamUsed() bool {
-	if o != nil && o.ComputeRamUsed != nil {
+// HasComputeRAMUsed returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeRAMUsed() bool {
+	if o != nil && o.ComputeRAMUsed != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeRamUsed gets a reference to the given int64 and assigns it to the ComputeRamUsed field.
-func (o *PlatformValues) SetComputeRamUsed(v int64) {
-	o.ComputeRamUsed = &v
+// SetComputeRAMUsed gets a reference to the given int64 and assigns it to the ComputeRAMUsed field.
+func (o *PlatformValues) SetComputeRAMUsed(v int64) {
+	o.ComputeRAMUsed = &v
 }
 
 // GetComputeExecutionTimeMs returns the ComputeExecutionTimeMs field value if set, zero value otherwise.
@@ -9826,68 +9826,68 @@ func (o *PlatformValues) SetImgoptoComputeRequests(v int32) {
 	o.ImgoptoComputeRequests = &v
 }
 
-// GetDnsBillableResponsesCount returns the DnsBillableResponsesCount field value if set, zero value otherwise.
-func (o *PlatformValues) GetDnsBillableResponsesCount() int32 {
-	if o == nil || o.DnsBillableResponsesCount == nil {
+// GetDNSBillableResponsesCount returns the DNSBillableResponsesCount field value if set, zero value otherwise.
+func (o *PlatformValues) GetDNSBillableResponsesCount() int32 {
+	if o == nil || o.DNSBillableResponsesCount == nil {
 		var ret int32
 		return ret
 	}
-	return *o.DnsBillableResponsesCount
+	return *o.DNSBillableResponsesCount
 }
 
-// GetDnsBillableResponsesCountOk returns a tuple with the DnsBillableResponsesCount field value if set, nil otherwise
+// GetDNSBillableResponsesCountOk returns a tuple with the DNSBillableResponsesCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetDnsBillableResponsesCountOk() (*int32, bool) {
-	if o == nil || o.DnsBillableResponsesCount == nil {
+func (o *PlatformValues) GetDNSBillableResponsesCountOk() (*int32, bool) {
+	if o == nil || o.DNSBillableResponsesCount == nil {
 		return nil, false
 	}
-	return o.DnsBillableResponsesCount, true
+	return o.DNSBillableResponsesCount, true
 }
 
-// HasDnsBillableResponsesCount returns a boolean if a field has been set.
-func (o *PlatformValues) HasDnsBillableResponsesCount() bool {
-	if o != nil && o.DnsBillableResponsesCount != nil {
+// HasDNSBillableResponsesCount returns a boolean if a field has been set.
+func (o *PlatformValues) HasDNSBillableResponsesCount() bool {
+	if o != nil && o.DNSBillableResponsesCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsBillableResponsesCount gets a reference to the given int32 and assigns it to the DnsBillableResponsesCount field.
-func (o *PlatformValues) SetDnsBillableResponsesCount(v int32) {
-	o.DnsBillableResponsesCount = &v
+// SetDNSBillableResponsesCount gets a reference to the given int32 and assigns it to the DNSBillableResponsesCount field.
+func (o *PlatformValues) SetDNSBillableResponsesCount(v int32) {
+	o.DNSBillableResponsesCount = &v
 }
 
-// GetDnsNonbillableResponsesCount returns the DnsNonbillableResponsesCount field value if set, zero value otherwise.
-func (o *PlatformValues) GetDnsNonbillableResponsesCount() int32 {
-	if o == nil || o.DnsNonbillableResponsesCount == nil {
+// GetDNSNonbillableResponsesCount returns the DNSNonbillableResponsesCount field value if set, zero value otherwise.
+func (o *PlatformValues) GetDNSNonbillableResponsesCount() int32 {
+	if o == nil || o.DNSNonbillableResponsesCount == nil {
 		var ret int32
 		return ret
 	}
-	return *o.DnsNonbillableResponsesCount
+	return *o.DNSNonbillableResponsesCount
 }
 
-// GetDnsNonbillableResponsesCountOk returns a tuple with the DnsNonbillableResponsesCount field value if set, nil otherwise
+// GetDNSNonbillableResponsesCountOk returns a tuple with the DNSNonbillableResponsesCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetDnsNonbillableResponsesCountOk() (*int32, bool) {
-	if o == nil || o.DnsNonbillableResponsesCount == nil {
+func (o *PlatformValues) GetDNSNonbillableResponsesCountOk() (*int32, bool) {
+	if o == nil || o.DNSNonbillableResponsesCount == nil {
 		return nil, false
 	}
-	return o.DnsNonbillableResponsesCount, true
+	return o.DNSNonbillableResponsesCount, true
 }
 
-// HasDnsNonbillableResponsesCount returns a boolean if a field has been set.
-func (o *PlatformValues) HasDnsNonbillableResponsesCount() bool {
-	if o != nil && o.DnsNonbillableResponsesCount != nil {
+// HasDNSNonbillableResponsesCount returns a boolean if a field has been set.
+func (o *PlatformValues) HasDNSNonbillableResponsesCount() bool {
+	if o != nil && o.DNSNonbillableResponsesCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDnsNonbillableResponsesCount gets a reference to the given int32 and assigns it to the DnsNonbillableResponsesCount field.
-func (o *PlatformValues) SetDnsNonbillableResponsesCount(v int32) {
-	o.DnsNonbillableResponsesCount = &v
+// SetDNSNonbillableResponsesCount gets a reference to the given int32 and assigns it to the DNSNonbillableResponsesCount field.
+func (o *PlatformValues) SetDNSNonbillableResponsesCount(v int32) {
+	o.DNSNonbillableResponsesCount = &v
 }
 
 // GetUpgrade returns the Upgrade field value if set, zero value otherwise.
@@ -11042,36 +11042,36 @@ func (o *PlatformValues) SetComputeHandoff(v int32) {
 	o.ComputeHandoff = &v
 }
 
-// GetComputeServiceBereqDnsError returns the ComputeServiceBereqDnsError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqDnsError() int32 {
-	if o == nil || o.ComputeServiceBereqDnsError == nil {
+// GetComputeServiceBereqDNSError returns the ComputeServiceBereqDNSError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqDNSError() int32 {
+	if o == nil || o.ComputeServiceBereqDNSError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqDnsError
+	return *o.ComputeServiceBereqDNSError
 }
 
-// GetComputeServiceBereqDnsErrorOk returns a tuple with the ComputeServiceBereqDnsError field value if set, nil otherwise
+// GetComputeServiceBereqDNSErrorOk returns a tuple with the ComputeServiceBereqDNSError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqDnsErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqDnsError == nil {
+func (o *PlatformValues) GetComputeServiceBereqDNSErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqDNSError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqDnsError, true
+	return o.ComputeServiceBereqDNSError, true
 }
 
-// HasComputeServiceBereqDnsError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqDnsError() bool {
-	if o != nil && o.ComputeServiceBereqDnsError != nil {
+// HasComputeServiceBereqDNSError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqDNSError() bool {
+	if o != nil && o.ComputeServiceBereqDNSError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqDnsError gets a reference to the given int32 and assigns it to the ComputeServiceBereqDnsError field.
-func (o *PlatformValues) SetComputeServiceBereqDnsError(v int32) {
-	o.ComputeServiceBereqDnsError = &v
+// SetComputeServiceBereqDNSError gets a reference to the given int32 and assigns it to the ComputeServiceBereqDNSError field.
+func (o *PlatformValues) SetComputeServiceBereqDNSError(v int32) {
+	o.ComputeServiceBereqDNSError = &v
 }
 
 // GetComputeServiceBereqConnTimeoutError returns the ComputeServiceBereqConnTimeoutError field value if set, zero value otherwise.
@@ -11170,228 +11170,228 @@ func (o *PlatformValues) SetComputeServiceBereqConnOtherError(v int32) {
 	o.ComputeServiceBereqConnOtherError = &v
 }
 
-// GetComputeServiceBereqTlsServerCertError returns the ComputeServiceBereqTlsServerCertError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqTlsServerCertError() int32 {
-	if o == nil || o.ComputeServiceBereqTlsServerCertError == nil {
+// GetComputeServiceBereqTLSServerCertError returns the ComputeServiceBereqTLSServerCertError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqTLSServerCertError() int32 {
+	if o == nil || o.ComputeServiceBereqTLSServerCertError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqTlsServerCertError
+	return *o.ComputeServiceBereqTLSServerCertError
 }
 
-// GetComputeServiceBereqTlsServerCertErrorOk returns a tuple with the ComputeServiceBereqTlsServerCertError field value if set, nil otherwise
+// GetComputeServiceBereqTLSServerCertErrorOk returns a tuple with the ComputeServiceBereqTLSServerCertError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqTlsServerCertErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqTlsServerCertError == nil {
+func (o *PlatformValues) GetComputeServiceBereqTLSServerCertErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqTLSServerCertError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqTlsServerCertError, true
+	return o.ComputeServiceBereqTLSServerCertError, true
 }
 
-// HasComputeServiceBereqTlsServerCertError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqTlsServerCertError() bool {
-	if o != nil && o.ComputeServiceBereqTlsServerCertError != nil {
+// HasComputeServiceBereqTLSServerCertError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqTLSServerCertError() bool {
+	if o != nil && o.ComputeServiceBereqTLSServerCertError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqTlsServerCertError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTlsServerCertError field.
-func (o *PlatformValues) SetComputeServiceBereqTlsServerCertError(v int32) {
-	o.ComputeServiceBereqTlsServerCertError = &v
+// SetComputeServiceBereqTLSServerCertError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTLSServerCertError field.
+func (o *PlatformValues) SetComputeServiceBereqTLSServerCertError(v int32) {
+	o.ComputeServiceBereqTLSServerCertError = &v
 }
 
-// GetComputeServiceBereqTlsOtherError returns the ComputeServiceBereqTlsOtherError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqTlsOtherError() int32 {
-	if o == nil || o.ComputeServiceBereqTlsOtherError == nil {
+// GetComputeServiceBereqTLSOtherError returns the ComputeServiceBereqTLSOtherError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqTLSOtherError() int32 {
+	if o == nil || o.ComputeServiceBereqTLSOtherError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqTlsOtherError
+	return *o.ComputeServiceBereqTLSOtherError
 }
 
-// GetComputeServiceBereqTlsOtherErrorOk returns a tuple with the ComputeServiceBereqTlsOtherError field value if set, nil otherwise
+// GetComputeServiceBereqTLSOtherErrorOk returns a tuple with the ComputeServiceBereqTLSOtherError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqTlsOtherErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqTlsOtherError == nil {
+func (o *PlatformValues) GetComputeServiceBereqTLSOtherErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqTLSOtherError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqTlsOtherError, true
+	return o.ComputeServiceBereqTLSOtherError, true
 }
 
-// HasComputeServiceBereqTlsOtherError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqTlsOtherError() bool {
-	if o != nil && o.ComputeServiceBereqTlsOtherError != nil {
+// HasComputeServiceBereqTLSOtherError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqTLSOtherError() bool {
+	if o != nil && o.ComputeServiceBereqTLSOtherError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqTlsOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTlsOtherError field.
-func (o *PlatformValues) SetComputeServiceBereqTlsOtherError(v int32) {
-	o.ComputeServiceBereqTlsOtherError = &v
+// SetComputeServiceBereqTLSOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTLSOtherError field.
+func (o *PlatformValues) SetComputeServiceBereqTLSOtherError(v int32) {
+	o.ComputeServiceBereqTLSOtherError = &v
 }
 
-// GetComputeServiceBereqHttpProtoV1Error returns the ComputeServiceBereqHttpProtoV1Error field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqHttpProtoV1Error() int32 {
-	if o == nil || o.ComputeServiceBereqHttpProtoV1Error == nil {
+// GetComputeServiceBereqHTTPProtoV1Error returns the ComputeServiceBereqHTTPProtoV1Error field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV1Error() int32 {
+	if o == nil || o.ComputeServiceBereqHTTPProtoV1Error == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqHttpProtoV1Error
+	return *o.ComputeServiceBereqHTTPProtoV1Error
 }
 
-// GetComputeServiceBereqHttpProtoV1ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV1Error field value if set, nil otherwise
+// GetComputeServiceBereqHTTPProtoV1ErrorOk returns a tuple with the ComputeServiceBereqHTTPProtoV1Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqHttpProtoV1ErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqHttpProtoV1Error == nil {
+func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV1ErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHTTPProtoV1Error == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqHttpProtoV1Error, true
+	return o.ComputeServiceBereqHTTPProtoV1Error, true
 }
 
-// HasComputeServiceBereqHttpProtoV1Error returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqHttpProtoV1Error() bool {
-	if o != nil && o.ComputeServiceBereqHttpProtoV1Error != nil {
+// HasComputeServiceBereqHTTPProtoV1Error returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqHTTPProtoV1Error() bool {
+	if o != nil && o.ComputeServiceBereqHTTPProtoV1Error != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqHttpProtoV1Error gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpProtoV1Error field.
-func (o *PlatformValues) SetComputeServiceBereqHttpProtoV1Error(v int32) {
-	o.ComputeServiceBereqHttpProtoV1Error = &v
+// SetComputeServiceBereqHTTPProtoV1Error gets a reference to the given int32 and assigns it to the ComputeServiceBereqHTTPProtoV1Error field.
+func (o *PlatformValues) SetComputeServiceBereqHTTPProtoV1Error(v int32) {
+	o.ComputeServiceBereqHTTPProtoV1Error = &v
 }
 
-// GetComputeServiceBereqHttpProtoV2Error returns the ComputeServiceBereqHttpProtoV2Error field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqHttpProtoV2Error() int32 {
-	if o == nil || o.ComputeServiceBereqHttpProtoV2Error == nil {
+// GetComputeServiceBereqHTTPProtoV2Error returns the ComputeServiceBereqHTTPProtoV2Error field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV2Error() int32 {
+	if o == nil || o.ComputeServiceBereqHTTPProtoV2Error == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqHttpProtoV2Error
+	return *o.ComputeServiceBereqHTTPProtoV2Error
 }
 
-// GetComputeServiceBereqHttpProtoV2ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV2Error field value if set, nil otherwise
+// GetComputeServiceBereqHTTPProtoV2ErrorOk returns a tuple with the ComputeServiceBereqHTTPProtoV2Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqHttpProtoV2ErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqHttpProtoV2Error == nil {
+func (o *PlatformValues) GetComputeServiceBereqHTTPProtoV2ErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHTTPProtoV2Error == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqHttpProtoV2Error, true
+	return o.ComputeServiceBereqHTTPProtoV2Error, true
 }
 
-// HasComputeServiceBereqHttpProtoV2Error returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqHttpProtoV2Error() bool {
-	if o != nil && o.ComputeServiceBereqHttpProtoV2Error != nil {
+// HasComputeServiceBereqHTTPProtoV2Error returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqHTTPProtoV2Error() bool {
+	if o != nil && o.ComputeServiceBereqHTTPProtoV2Error != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqHttpProtoV2Error gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpProtoV2Error field.
-func (o *PlatformValues) SetComputeServiceBereqHttpProtoV2Error(v int32) {
-	o.ComputeServiceBereqHttpProtoV2Error = &v
+// SetComputeServiceBereqHTTPProtoV2Error gets a reference to the given int32 and assigns it to the ComputeServiceBereqHTTPProtoV2Error field.
+func (o *PlatformValues) SetComputeServiceBereqHTTPProtoV2Error(v int32) {
+	o.ComputeServiceBereqHTTPProtoV2Error = &v
 }
 
-// GetComputeServiceBereqHttpIncompleteError returns the ComputeServiceBereqHttpIncompleteError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqHttpIncompleteError() int32 {
-	if o == nil || o.ComputeServiceBereqHttpIncompleteError == nil {
+// GetComputeServiceBereqHTTPIncompleteError returns the ComputeServiceBereqHTTPIncompleteError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqHTTPIncompleteError() int32 {
+	if o == nil || o.ComputeServiceBereqHTTPIncompleteError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqHttpIncompleteError
+	return *o.ComputeServiceBereqHTTPIncompleteError
 }
 
-// GetComputeServiceBereqHttpIncompleteErrorOk returns a tuple with the ComputeServiceBereqHttpIncompleteError field value if set, nil otherwise
+// GetComputeServiceBereqHTTPIncompleteErrorOk returns a tuple with the ComputeServiceBereqHTTPIncompleteError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqHttpIncompleteErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqHttpIncompleteError == nil {
+func (o *PlatformValues) GetComputeServiceBereqHTTPIncompleteErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHTTPIncompleteError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqHttpIncompleteError, true
+	return o.ComputeServiceBereqHTTPIncompleteError, true
 }
 
-// HasComputeServiceBereqHttpIncompleteError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqHttpIncompleteError() bool {
-	if o != nil && o.ComputeServiceBereqHttpIncompleteError != nil {
+// HasComputeServiceBereqHTTPIncompleteError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqHTTPIncompleteError() bool {
+	if o != nil && o.ComputeServiceBereqHTTPIncompleteError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqHttpIncompleteError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpIncompleteError field.
-func (o *PlatformValues) SetComputeServiceBereqHttpIncompleteError(v int32) {
-	o.ComputeServiceBereqHttpIncompleteError = &v
+// SetComputeServiceBereqHTTPIncompleteError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHTTPIncompleteError field.
+func (o *PlatformValues) SetComputeServiceBereqHTTPIncompleteError(v int32) {
+	o.ComputeServiceBereqHTTPIncompleteError = &v
 }
 
-// GetComputeServiceBereqHttpTimeoutError returns the ComputeServiceBereqHttpTimeoutError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqHttpTimeoutError() int32 {
-	if o == nil || o.ComputeServiceBereqHttpTimeoutError == nil {
+// GetComputeServiceBereqHTTPTimeoutError returns the ComputeServiceBereqHTTPTimeoutError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqHTTPTimeoutError() int32 {
+	if o == nil || o.ComputeServiceBereqHTTPTimeoutError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqHttpTimeoutError
+	return *o.ComputeServiceBereqHTTPTimeoutError
 }
 
-// GetComputeServiceBereqHttpTimeoutErrorOk returns a tuple with the ComputeServiceBereqHttpTimeoutError field value if set, nil otherwise
+// GetComputeServiceBereqHTTPTimeoutErrorOk returns a tuple with the ComputeServiceBereqHTTPTimeoutError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqHttpTimeoutErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqHttpTimeoutError == nil {
+func (o *PlatformValues) GetComputeServiceBereqHTTPTimeoutErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHTTPTimeoutError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqHttpTimeoutError, true
+	return o.ComputeServiceBereqHTTPTimeoutError, true
 }
 
-// HasComputeServiceBereqHttpTimeoutError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqHttpTimeoutError() bool {
-	if o != nil && o.ComputeServiceBereqHttpTimeoutError != nil {
+// HasComputeServiceBereqHTTPTimeoutError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqHTTPTimeoutError() bool {
+	if o != nil && o.ComputeServiceBereqHTTPTimeoutError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqHttpTimeoutError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpTimeoutError field.
-func (o *PlatformValues) SetComputeServiceBereqHttpTimeoutError(v int32) {
-	o.ComputeServiceBereqHttpTimeoutError = &v
+// SetComputeServiceBereqHTTPTimeoutError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHTTPTimeoutError field.
+func (o *PlatformValues) SetComputeServiceBereqHTTPTimeoutError(v int32) {
+	o.ComputeServiceBereqHTTPTimeoutError = &v
 }
 
-// GetComputeServiceBereqHttpOtherError returns the ComputeServiceBereqHttpOtherError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqHttpOtherError() int32 {
-	if o == nil || o.ComputeServiceBereqHttpOtherError == nil {
+// GetComputeServiceBereqHTTPOtherError returns the ComputeServiceBereqHTTPOtherError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqHTTPOtherError() int32 {
+	if o == nil || o.ComputeServiceBereqHTTPOtherError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqHttpOtherError
+	return *o.ComputeServiceBereqHTTPOtherError
 }
 
-// GetComputeServiceBereqHttpOtherErrorOk returns a tuple with the ComputeServiceBereqHttpOtherError field value if set, nil otherwise
+// GetComputeServiceBereqHTTPOtherErrorOk returns a tuple with the ComputeServiceBereqHTTPOtherError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqHttpOtherErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqHttpOtherError == nil {
+func (o *PlatformValues) GetComputeServiceBereqHTTPOtherErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHTTPOtherError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqHttpOtherError, true
+	return o.ComputeServiceBereqHTTPOtherError, true
 }
 
-// HasComputeServiceBereqHttpOtherError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqHttpOtherError() bool {
-	if o != nil && o.ComputeServiceBereqHttpOtherError != nil {
+// HasComputeServiceBereqHTTPOtherError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqHTTPOtherError() bool {
+	if o != nil && o.ComputeServiceBereqHTTPOtherError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqHttpOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpOtherError field.
-func (o *PlatformValues) SetComputeServiceBereqHttpOtherError(v int32) {
-	o.ComputeServiceBereqHttpOtherError = &v
+// SetComputeServiceBereqHTTPOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHTTPOtherError field.
+func (o *PlatformValues) SetComputeServiceBereqHTTPOtherError(v int32) {
+	o.ComputeServiceBereqHTTPOtherError = &v
 }
 
 // GetComputeServiceBereqOtherError returns the ComputeServiceBereqOtherError field value if set, zero value otherwise.
@@ -11490,68 +11490,68 @@ func (o *PlatformValues) SetComputeServiceBereqConnError(v int32) {
 	o.ComputeServiceBereqConnError = &v
 }
 
-// GetComputeServiceBereqTlsError returns the ComputeServiceBereqTlsError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqTlsError() int32 {
-	if o == nil || o.ComputeServiceBereqTlsError == nil {
+// GetComputeServiceBereqTLSError returns the ComputeServiceBereqTLSError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqTLSError() int32 {
+	if o == nil || o.ComputeServiceBereqTLSError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqTlsError
+	return *o.ComputeServiceBereqTLSError
 }
 
-// GetComputeServiceBereqTlsErrorOk returns a tuple with the ComputeServiceBereqTlsError field value if set, nil otherwise
+// GetComputeServiceBereqTLSErrorOk returns a tuple with the ComputeServiceBereqTLSError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqTlsErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqTlsError == nil {
+func (o *PlatformValues) GetComputeServiceBereqTLSErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqTLSError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqTlsError, true
+	return o.ComputeServiceBereqTLSError, true
 }
 
-// HasComputeServiceBereqTlsError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqTlsError() bool {
-	if o != nil && o.ComputeServiceBereqTlsError != nil {
+// HasComputeServiceBereqTLSError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqTLSError() bool {
+	if o != nil && o.ComputeServiceBereqTLSError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqTlsError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTlsError field.
-func (o *PlatformValues) SetComputeServiceBereqTlsError(v int32) {
-	o.ComputeServiceBereqTlsError = &v
+// SetComputeServiceBereqTLSError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTLSError field.
+func (o *PlatformValues) SetComputeServiceBereqTLSError(v int32) {
+	o.ComputeServiceBereqTLSError = &v
 }
 
-// GetComputeServiceBereqHttpError returns the ComputeServiceBereqHttpError field value if set, zero value otherwise.
-func (o *PlatformValues) GetComputeServiceBereqHttpError() int32 {
-	if o == nil || o.ComputeServiceBereqHttpError == nil {
+// GetComputeServiceBereqHTTPError returns the ComputeServiceBereqHTTPError field value if set, zero value otherwise.
+func (o *PlatformValues) GetComputeServiceBereqHTTPError() int32 {
+	if o == nil || o.ComputeServiceBereqHTTPError == nil {
 		var ret int32
 		return ret
 	}
-	return *o.ComputeServiceBereqHttpError
+	return *o.ComputeServiceBereqHTTPError
 }
 
-// GetComputeServiceBereqHttpErrorOk returns a tuple with the ComputeServiceBereqHttpError field value if set, nil otherwise
+// GetComputeServiceBereqHTTPErrorOk returns a tuple with the ComputeServiceBereqHTTPError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlatformValues) GetComputeServiceBereqHttpErrorOk() (*int32, bool) {
-	if o == nil || o.ComputeServiceBereqHttpError == nil {
+func (o *PlatformValues) GetComputeServiceBereqHTTPErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHTTPError == nil {
 		return nil, false
 	}
-	return o.ComputeServiceBereqHttpError, true
+	return o.ComputeServiceBereqHTTPError, true
 }
 
-// HasComputeServiceBereqHttpError returns a boolean if a field has been set.
-func (o *PlatformValues) HasComputeServiceBereqHttpError() bool {
-	if o != nil && o.ComputeServiceBereqHttpError != nil {
+// HasComputeServiceBereqHTTPError returns a boolean if a field has been set.
+func (o *PlatformValues) HasComputeServiceBereqHTTPError() bool {
+	if o != nil && o.ComputeServiceBereqHTTPError != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeServiceBereqHttpError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpError field.
-func (o *PlatformValues) SetComputeServiceBereqHttpError(v int32) {
-	o.ComputeServiceBereqHttpError = &v
+// SetComputeServiceBereqHTTPError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHTTPError field.
+func (o *PlatformValues) SetComputeServiceBereqHTTPError(v int32) {
+	o.ComputeServiceBereqHTTPError = &v
 }
 
 // GetBotChallengesPatsIssued returns the BotChallengesPatsIssued field value if set, zero value otherwise.
@@ -12331,20 +12331,20 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.Synth != nil {
 		toSerialize["synth"] = o.Synth
 	}
-	if o.Tls != nil {
-		toSerialize["tls"] = o.Tls
+	if o.TLS != nil {
+		toSerialize["tls"] = o.TLS
 	}
-	if o.TlsV10 != nil {
-		toSerialize["tls_v10"] = o.TlsV10
+	if o.TLSV10 != nil {
+		toSerialize["tls_v10"] = o.TLSV10
 	}
-	if o.TlsV11 != nil {
-		toSerialize["tls_v11"] = o.TlsV11
+	if o.TLSV11 != nil {
+		toSerialize["tls_v11"] = o.TLSV11
 	}
-	if o.TlsV12 != nil {
-		toSerialize["tls_v12"] = o.TlsV12
+	if o.TLSV12 != nil {
+		toSerialize["tls_v12"] = o.TLSV12
 	}
-	if o.TlsV13 != nil {
-		toSerialize["tls_v13"] = o.TlsV13
+	if o.TLSV13 != nil {
+		toSerialize["tls_v13"] = o.TLSV13
 	}
 	if o.EdgeRequests != nil {
 		toSerialize["edge_requests"] = o.EdgeRequests
@@ -12451,11 +12451,11 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.LogBytes != nil {
 		toSerialize["log_bytes"] = o.LogBytes
 	}
-	if o.Http2 != nil {
-		toSerialize["http2"] = o.Http2
+	if o.HTTP2 != nil {
+		toSerialize["http2"] = o.HTTP2
 	}
-	if o.Http3 != nil {
-		toSerialize["http3"] = o.Http3
+	if o.HTTP3 != nil {
+		toSerialize["http3"] = o.HTTP3
 	}
 	if o.AttackReqBodyBytes != nil {
 		toSerialize["attack_req_body_bytes"] = o.AttackReqBodyBytes
@@ -12697,8 +12697,8 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.PredeliverSubCount != nil {
 		toSerialize["predeliver_sub_count"] = o.PredeliverSubCount
 	}
-	if o.TlsHandshakeSentBytes != nil {
-		toSerialize["tls_handshake_sent_bytes"] = o.TlsHandshakeSentBytes
+	if o.TLSHandshakeSentBytes != nil {
+		toSerialize["tls_handshake_sent_bytes"] = o.TLSHandshakeSentBytes
 	}
 	if o.HitRespBodyBytes != nil {
 		toSerialize["hit_resp_body_bytes"] = o.HitRespBodyBytes
@@ -12724,8 +12724,8 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.ComputeRequestTimeBilledMs != nil {
 		toSerialize["compute_request_time_billed_ms"] = o.ComputeRequestTimeBilledMs
 	}
-	if o.ComputeRamUsed != nil {
-		toSerialize["compute_ram_used"] = o.ComputeRamUsed
+	if o.ComputeRAMUsed != nil {
+		toSerialize["compute_ram_used"] = o.ComputeRAMUsed
 	}
 	if o.ComputeExecutionTimeMs != nil {
 		toSerialize["compute_execution_time_ms"] = o.ComputeExecutionTimeMs
@@ -13111,11 +13111,11 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.ImgoptoComputeRequests != nil {
 		toSerialize["imgopto_compute_requests"] = o.ImgoptoComputeRequests
 	}
-	if o.DnsBillableResponsesCount != nil {
-		toSerialize["dns_billable_responses_count"] = o.DnsBillableResponsesCount
+	if o.DNSBillableResponsesCount != nil {
+		toSerialize["dns_billable_responses_count"] = o.DNSBillableResponsesCount
 	}
-	if o.DnsNonbillableResponsesCount != nil {
-		toSerialize["dns_nonbillable_responses_count"] = o.DnsNonbillableResponsesCount
+	if o.DNSNonbillableResponsesCount != nil {
+		toSerialize["dns_nonbillable_responses_count"] = o.DNSNonbillableResponsesCount
 	}
 	if o.Upgrade != nil {
 		toSerialize["upgrade"] = o.Upgrade
@@ -13225,8 +13225,8 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.ComputeHandoff != nil {
 		toSerialize["compute_handoff"] = o.ComputeHandoff
 	}
-	if o.ComputeServiceBereqDnsError != nil {
-		toSerialize["compute_service_bereq_dns_error"] = o.ComputeServiceBereqDnsError
+	if o.ComputeServiceBereqDNSError != nil {
+		toSerialize["compute_service_bereq_dns_error"] = o.ComputeServiceBereqDNSError
 	}
 	if o.ComputeServiceBereqConnTimeoutError != nil {
 		toSerialize["compute_service_bereq_conn_timeout_error"] = o.ComputeServiceBereqConnTimeoutError
@@ -13237,26 +13237,26 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.ComputeServiceBereqConnOtherError != nil {
 		toSerialize["compute_service_bereq_conn_other_error"] = o.ComputeServiceBereqConnOtherError
 	}
-	if o.ComputeServiceBereqTlsServerCertError != nil {
-		toSerialize["compute_service_bereq_tls_server_cert_error"] = o.ComputeServiceBereqTlsServerCertError
+	if o.ComputeServiceBereqTLSServerCertError != nil {
+		toSerialize["compute_service_bereq_tls_server_cert_error"] = o.ComputeServiceBereqTLSServerCertError
 	}
-	if o.ComputeServiceBereqTlsOtherError != nil {
-		toSerialize["compute_service_bereq_tls_other_error"] = o.ComputeServiceBereqTlsOtherError
+	if o.ComputeServiceBereqTLSOtherError != nil {
+		toSerialize["compute_service_bereq_tls_other_error"] = o.ComputeServiceBereqTLSOtherError
 	}
-	if o.ComputeServiceBereqHttpProtoV1Error != nil {
-		toSerialize["compute_service_bereq_http_proto_v1_error"] = o.ComputeServiceBereqHttpProtoV1Error
+	if o.ComputeServiceBereqHTTPProtoV1Error != nil {
+		toSerialize["compute_service_bereq_http_proto_v1_error"] = o.ComputeServiceBereqHTTPProtoV1Error
 	}
-	if o.ComputeServiceBereqHttpProtoV2Error != nil {
-		toSerialize["compute_service_bereq_http_proto_v2_error"] = o.ComputeServiceBereqHttpProtoV2Error
+	if o.ComputeServiceBereqHTTPProtoV2Error != nil {
+		toSerialize["compute_service_bereq_http_proto_v2_error"] = o.ComputeServiceBereqHTTPProtoV2Error
 	}
-	if o.ComputeServiceBereqHttpIncompleteError != nil {
-		toSerialize["compute_service_bereq_http_incomplete_error"] = o.ComputeServiceBereqHttpIncompleteError
+	if o.ComputeServiceBereqHTTPIncompleteError != nil {
+		toSerialize["compute_service_bereq_http_incomplete_error"] = o.ComputeServiceBereqHTTPIncompleteError
 	}
-	if o.ComputeServiceBereqHttpTimeoutError != nil {
-		toSerialize["compute_service_bereq_http_timeout_error"] = o.ComputeServiceBereqHttpTimeoutError
+	if o.ComputeServiceBereqHTTPTimeoutError != nil {
+		toSerialize["compute_service_bereq_http_timeout_error"] = o.ComputeServiceBereqHTTPTimeoutError
 	}
-	if o.ComputeServiceBereqHttpOtherError != nil {
-		toSerialize["compute_service_bereq_http_other_error"] = o.ComputeServiceBereqHttpOtherError
+	if o.ComputeServiceBereqHTTPOtherError != nil {
+		toSerialize["compute_service_bereq_http_other_error"] = o.ComputeServiceBereqHTTPOtherError
 	}
 	if o.ComputeServiceBereqOtherError != nil {
 		toSerialize["compute_service_bereq_other_error"] = o.ComputeServiceBereqOtherError
@@ -13267,11 +13267,11 @@ func (o PlatformValues) MarshalJSON() ([]byte, error) {
 	if o.ComputeServiceBereqConnError != nil {
 		toSerialize["compute_service_bereq_conn_error"] = o.ComputeServiceBereqConnError
 	}
-	if o.ComputeServiceBereqTlsError != nil {
-		toSerialize["compute_service_bereq_tls_error"] = o.ComputeServiceBereqTlsError
+	if o.ComputeServiceBereqTLSError != nil {
+		toSerialize["compute_service_bereq_tls_error"] = o.ComputeServiceBereqTLSError
 	}
-	if o.ComputeServiceBereqHttpError != nil {
-		toSerialize["compute_service_bereq_http_error"] = o.ComputeServiceBereqHttpError
+	if o.ComputeServiceBereqHTTPError != nil {
+		toSerialize["compute_service_bereq_http_error"] = o.ComputeServiceBereqHTTPError
 	}
 	if o.BotChallengesPatsIssued != nil {
 		toSerialize["bot_challenges_pats_issued"] = o.BotChallengesPatsIssued

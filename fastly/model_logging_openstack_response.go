@@ -47,7 +47,7 @@ type LoggingOpenstackResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceId *string      `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// Your OpenStack account access key.
 	AccessKey *string `json:"access_key,omitempty"`
@@ -58,7 +58,7 @@ type LoggingOpenstackResponse struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// Your OpenStack auth url.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// The username for your OpenStack account.
 	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
@@ -629,36 +629,36 @@ func (o *LoggingOpenstackResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingOpenstackResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingOpenstackResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingOpenstackResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingOpenstackResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingOpenstackResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingOpenstackResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingOpenstackResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingOpenstackResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -843,36 +843,36 @@ func (o *LoggingOpenstackResponse) UnsetPublicKey() {
 	o.PublicKey.Unset()
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingOpenstackResponse) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingOpenstackResponse) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingOpenstackResponse) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingOpenstackResponse) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingOpenstackResponse) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingOpenstackResponse) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingOpenstackResponse) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingOpenstackResponse) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -953,8 +953,8 @@ func (o LoggingOpenstackResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -971,8 +971,8 @@ func (o LoggingOpenstackResponse) MarshalJSON() ([]byte, error) {
 	if o.PublicKey.IsSet() {
 		toSerialize["public_key"] = o.PublicKey.Get()
 	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User

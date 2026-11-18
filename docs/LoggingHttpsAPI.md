@@ -1,19 +1,19 @@
-# LoggingHttpsAPI
+# LoggingHTTPSAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateLogHttps**](LoggingHttpsAPI.md#CreateLogHttps) | **POST** `/service/{service_id}/version/{version_id}/logging/https` | Create an HTTPS log endpoint
-[**DeleteLogHttps**](LoggingHttpsAPI.md#DeleteLogHttps) | **DELETE** `/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}` | Delete an HTTPS log endpoint
-[**GetLogHttps**](LoggingHttpsAPI.md#GetLogHttps) | **GET** `/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}` | Get an HTTPS log endpoint
-[**ListLogHttps**](LoggingHttpsAPI.md#ListLogHttps) | **GET** `/service/{service_id}/version/{version_id}/logging/https` | List HTTPS log endpoints
-[**UpdateLogHttps**](LoggingHttpsAPI.md#UpdateLogHttps) | **PUT** `/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}` | Update an HTTPS log endpoint
+[**CreateLogHTTPS**](LoggingHTTPSAPI.md#CreateLogHTTPS) | **POST** `/service/{service_id}/version/{version_id}/logging/https` | Create an HTTPS log endpoint
+[**DeleteLogHTTPS**](LoggingHTTPSAPI.md#DeleteLogHTTPS) | **DELETE** `/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}` | Delete an HTTPS log endpoint
+[**GetLogHTTPS**](LoggingHTTPSAPI.md#GetLogHTTPS) | **GET** `/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}` | Get an HTTPS log endpoint
+[**ListLogHTTPS**](LoggingHTTPSAPI.md#ListLogHTTPS) | **GET** `/service/{service_id}/version/{version_id}/logging/https` | List HTTPS log endpoints
+[**UpdateLogHTTPS**](LoggingHTTPSAPI.md#UpdateLogHTTPS) | **PUT** `/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}` | Update an HTTPS log endpoint
 
 
 
-## CreateLogHttps
+## CreateLogHTTPS
 
 Create an HTTPS log endpoint
 
@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionId := int32(56) // int32 | Integer identifying a service version.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
     name := "name_example" // string | The name for the real-time logging configuration. (optional)
     placement := "placement_example" // string | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  (optional)
     responseCondition := "responseCondition_example" // string | The name of an existing condition in the configured endpoint, or leave blank to always execute. (optional)
@@ -58,13 +58,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingHttpsAPI.CreateLogHttps(ctx, serviceId, versionId).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).TlsCaCert(tlsCaCert).TlsClientCert(tlsClientCert).TlsClientKey(tlsClientKey).TlsHostname(tlsHostname).RequestMaxEntries(requestMaxEntries).RequestMaxBytes(requestMaxBytes).Url(url).ContentType(contentType).HeaderName(headerName).MessageType(messageType).HeaderValue(headerValue).Method(method).JsonFormat(jsonFormat).Period(period).Execute()
+    resp, r, err := apiClient.LoggingHTTPSAPI.CreateLogHTTPS(ctx, serviceID, versionID).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).TLSCaCert(tlsCaCert).TLSClientCert(tlsClientCert).TLSClientKey(tlsClientKey).TLSHostname(tlsHostname).RequestMaxEntries(requestMaxEntries).RequestMaxBytes(requestMaxBytes).URL(url).ContentType(contentType).HeaderName(headerName).MessageType(messageType).HeaderValue(headerValue).Method(method).JSONFormat(jsonFormat).Period(period).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHttpsAPI.CreateLogHttps`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHTTPSAPI.CreateLogHTTPS`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateLogHttps`: LoggingHttpsResponse
-    fmt.Fprintf(os.Stdout, "Response from `LoggingHttpsAPI.CreateLogHttps`: %v\n", resp)
+    // response from `CreateLogHTTPS`: LoggingHTTPSResponse
+    fmt.Fprintf(os.Stdout, "Response from `LoggingHTTPSAPI.CreateLogHTTPS`: %v\n", resp)
 }
 ```
 
@@ -74,12 +74,12 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
-**versionId** | **int32** | Integer identifying a service version. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateLogHttpsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateLogHTTPSRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingHttpsResponse**](LoggingHttpsResponse.md)
+[**LoggingHTTPSResponse**](LoggingHTTPSResponse.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteLogHttps
+## DeleteLogHTTPS
 
 Delete an HTTPS log endpoint
 
@@ -121,20 +121,20 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionId := int32(56) // int32 | Integer identifying a service version.
-    loggingHttpsName := "loggingHttpsName_example" // string | The name for the real-time logging configuration.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    loggingHTTPSName := "loggingHTTPSName_example" // string | The name for the real-time logging configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingHttpsAPI.DeleteLogHttps(ctx, serviceId, versionId, loggingHttpsName).Execute()
+    resp, r, err := apiClient.LoggingHTTPSAPI.DeleteLogHTTPS(ctx, serviceID, versionID, loggingHTTPSName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHttpsAPI.DeleteLogHttps`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHTTPSAPI.DeleteLogHTTPS`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeleteLogHttps`: InlineResponse200
-    fmt.Fprintf(os.Stdout, "Response from `LoggingHttpsAPI.DeleteLogHttps`: %v\n", resp)
+    // response from `DeleteLogHTTPS`: InlineResponse200
+    fmt.Fprintf(os.Stdout, "Response from `LoggingHTTPSAPI.DeleteLogHTTPS`: %v\n", resp)
 }
 ```
 
@@ -144,13 +144,13 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
-**versionId** | **int32** | Integer identifying a service version. | 
-**loggingHttpsName** | **string** | The name for the real-time logging configuration. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**loggingHTTPSName** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteLogHttpsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteLogHTTPSRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetLogHttps
+## GetLogHTTPS
 
 Get an HTTPS log endpoint
 
@@ -192,20 +192,20 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionId := int32(56) // int32 | Integer identifying a service version.
-    loggingHttpsName := "loggingHttpsName_example" // string | The name for the real-time logging configuration.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    loggingHTTPSName := "loggingHTTPSName_example" // string | The name for the real-time logging configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingHttpsAPI.GetLogHttps(ctx, serviceId, versionId, loggingHttpsName).Execute()
+    resp, r, err := apiClient.LoggingHTTPSAPI.GetLogHTTPS(ctx, serviceID, versionID, loggingHTTPSName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHttpsAPI.GetLogHttps`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHTTPSAPI.GetLogHTTPS`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetLogHttps`: LoggingHttpsResponse
-    fmt.Fprintf(os.Stdout, "Response from `LoggingHttpsAPI.GetLogHttps`: %v\n", resp)
+    // response from `GetLogHTTPS`: LoggingHTTPSResponse
+    fmt.Fprintf(os.Stdout, "Response from `LoggingHTTPSAPI.GetLogHTTPS`: %v\n", resp)
 }
 ```
 
@@ -215,13 +215,13 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
-**versionId** | **int32** | Integer identifying a service version. | 
-**loggingHttpsName** | **string** | The name for the real-time logging configuration. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**loggingHTTPSName** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetLogHttpsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLogHTTPSRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingHttpsResponse**](LoggingHttpsResponse.md)
+[**LoggingHTTPSResponse**](LoggingHTTPSResponse.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ListLogHttps
+## ListLogHTTPS
 
 List HTTPS log endpoints
 
@@ -263,19 +263,19 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionId := int32(56) // int32 | Integer identifying a service version.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingHttpsAPI.ListLogHttps(ctx, serviceId, versionId).Execute()
+    resp, r, err := apiClient.LoggingHTTPSAPI.ListLogHTTPS(ctx, serviceID, versionID).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHttpsAPI.ListLogHttps`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHTTPSAPI.ListLogHTTPS`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListLogHttps`: []LoggingHttpsResponse
-    fmt.Fprintf(os.Stdout, "Response from `LoggingHttpsAPI.ListLogHttps`: %v\n", resp)
+    // response from `ListLogHTTPS`: []LoggingHTTPSResponse
+    fmt.Fprintf(os.Stdout, "Response from `LoggingHTTPSAPI.ListLogHTTPS`: %v\n", resp)
 }
 ```
 
@@ -285,12 +285,12 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
-**versionId** | **int32** | Integer identifying a service version. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListLogHttpsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListLogHTTPSRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]LoggingHttpsResponse**](LoggingHttpsResponse.md)
+[**[]LoggingHTTPSResponse**](LoggingHTTPSResponse.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## UpdateLogHttps
+## UpdateLogHTTPS
 
 Update an HTTPS log endpoint
 
@@ -332,9 +332,9 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionId := int32(56) // int32 | Integer identifying a service version.
-    loggingHttpsName := "loggingHttpsName_example" // string | The name for the real-time logging configuration.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    loggingHTTPSName := "loggingHTTPSName_example" // string | The name for the real-time logging configuration.
     name := "name_example" // string | The name for the real-time logging configuration. (optional)
     placement := "placement_example" // string | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  (optional)
     responseCondition := "responseCondition_example" // string | The name of an existing condition in the configured endpoint, or leave blank to always execute. (optional)
@@ -359,13 +359,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingHttpsAPI.UpdateLogHttps(ctx, serviceId, versionId, loggingHttpsName).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).TlsCaCert(tlsCaCert).TlsClientCert(tlsClientCert).TlsClientKey(tlsClientKey).TlsHostname(tlsHostname).RequestMaxEntries(requestMaxEntries).RequestMaxBytes(requestMaxBytes).Url(url).ContentType(contentType).HeaderName(headerName).MessageType(messageType).HeaderValue(headerValue).Method(method).JsonFormat(jsonFormat).Period(period).Execute()
+    resp, r, err := apiClient.LoggingHTTPSAPI.UpdateLogHTTPS(ctx, serviceID, versionID, loggingHTTPSName).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).TLSCaCert(tlsCaCert).TLSClientCert(tlsClientCert).TLSClientKey(tlsClientKey).TLSHostname(tlsHostname).RequestMaxEntries(requestMaxEntries).RequestMaxBytes(requestMaxBytes).URL(url).ContentType(contentType).HeaderName(headerName).MessageType(messageType).HeaderValue(headerValue).Method(method).JSONFormat(jsonFormat).Period(period).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHttpsAPI.UpdateLogHttps`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LoggingHTTPSAPI.UpdateLogHTTPS`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateLogHttps`: LoggingHttpsResponse
-    fmt.Fprintf(os.Stdout, "Response from `LoggingHttpsAPI.UpdateLogHttps`: %v\n", resp)
+    // response from `UpdateLogHTTPS`: LoggingHTTPSResponse
+    fmt.Fprintf(os.Stdout, "Response from `LoggingHTTPSAPI.UpdateLogHTTPS`: %v\n", resp)
 }
 ```
 
@@ -375,13 +375,13 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
-**versionId** | **int32** | Integer identifying a service version. | 
-**loggingHttpsName** | **string** | The name for the real-time logging configuration. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**loggingHTTPSName** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateLogHttpsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateLogHTTPSRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingHttpsResponse**](LoggingHttpsResponse.md)
+[**LoggingHTTPSResponse**](LoggingHTTPSResponse.md)
 
 ### Authorization
 
@@ -402,4 +402,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

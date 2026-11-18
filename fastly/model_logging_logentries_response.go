@@ -35,7 +35,7 @@ type LoggingLogentriesResponse struct {
 	Port *int32 `json:"port,omitempty"`
 	// Use token based authentication.
 	Token  *string              `json:"token,omitempty"`
-	UseTls *LoggingUseTlsString `json:"use_tls,omitempty"`
+	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
 	// The region to which to stream logs.
 	Region *string `json:"region,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -44,7 +44,7 @@ type LoggingLogentriesResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceId            *string      `json:"service_id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -65,8 +65,8 @@ func NewLoggingLogentriesResponse() *LoggingLogentriesResponse {
 	this.FormatVersion = &formatVersion
 	var port int32 = 20000
 	this.Port = &port
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -83,8 +83,8 @@ func NewLoggingLogentriesResponseWithDefaults() *LoggingLogentriesResponse {
 	this.FormatVersion = &formatVersion
 	var port int32 = 20000
 	this.Port = &port
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -366,36 +366,36 @@ func (o *LoggingLogentriesResponse) SetToken(v string) {
 	o.Token = &v
 }
 
-// GetUseTls returns the UseTls field value if set, zero value otherwise.
-func (o *LoggingLogentriesResponse) GetUseTls() LoggingUseTlsString {
-	if o == nil || o.UseTls == nil {
-		var ret LoggingUseTlsString
+// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
+func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLSString {
+	if o == nil || o.UseTLS == nil {
+		var ret LoggingUseTLSString
 		return ret
 	}
-	return *o.UseTls
+	return *o.UseTLS
 }
 
-// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
+// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingLogentriesResponse) GetUseTlsOk() (*LoggingUseTlsString, bool) {
-	if o == nil || o.UseTls == nil {
+func (o *LoggingLogentriesResponse) GetUseTLSOk() (*LoggingUseTLSString, bool) {
+	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
-	return o.UseTls, true
+	return o.UseTLS, true
 }
 
-// HasUseTls returns a boolean if a field has been set.
-func (o *LoggingLogentriesResponse) HasUseTls() bool {
-	if o != nil && o.UseTls != nil {
+// HasUseTLS returns a boolean if a field has been set.
+func (o *LoggingLogentriesResponse) HasUseTLS() bool {
+	if o != nil && o.UseTLS != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTls gets a reference to the given LoggingUseTlsString and assigns it to the UseTls field.
-func (o *LoggingLogentriesResponse) SetUseTls(v LoggingUseTlsString) {
-	o.UseTls = &v
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingLogentriesResponse) SetUseTLS(v LoggingUseTLSString) {
+	o.UseTLS = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -559,36 +559,36 @@ func (o *LoggingLogentriesResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingLogentriesResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingLogentriesResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingLogentriesResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingLogentriesResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingLogentriesResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingLogentriesResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingLogentriesResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingLogentriesResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -651,8 +651,8 @@ func (o LoggingLogentriesResponse) MarshalJSON() ([]byte, error) {
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
 	}
-	if o.UseTls != nil {
-		toSerialize["use_tls"] = o.UseTls
+	if o.UseTLS != nil {
+		toSerialize["use_tls"] = o.UseTLS
 	}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
@@ -666,8 +666,8 @@ func (o LoggingLogentriesResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

@@ -36,10 +36,10 @@ type ProductWebsocketsAPI interface {
 		Disable the Websockets product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIDisableProductWebsocketsRequest
 	*/
-	DisableProductWebsockets(ctx context.Context, serviceId string) APIDisableProductWebsocketsRequest
+	DisableProductWebsockets(ctx context.Context, serviceID string) APIDisableProductWebsocketsRequest
 
 	// DisableProductWebsocketsExecute executes the request
 	DisableProductWebsocketsExecute(r APIDisableProductWebsocketsRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductWebsocketsAPI interface {
 		Enable the WebSockets product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIEnableProductWebsocketsRequest
 	*/
-	EnableProductWebsockets(ctx context.Context, serviceId string) APIEnableProductWebsocketsRequest
+	EnableProductWebsockets(ctx context.Context, serviceID string) APIEnableProductWebsocketsRequest
 
 	// EnableProductWebsocketsExecute executes the request
 	//  @return WebsocketsResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductWebsocketsAPI interface {
 		Get the enablement status of the WebSockets product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetProductWebsocketsRequest
 	*/
-	GetProductWebsockets(ctx context.Context, serviceId string) APIGetProductWebsocketsRequest
+	GetProductWebsockets(ctx context.Context, serviceID string) APIGetProductWebsocketsRequest
 
 	// GetProductWebsocketsExecute executes the request
 	//  @return WebsocketsResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductWebsocketsAPIService service
 type APIDisableProductWebsocketsRequest struct {
 	ctx        context.Context
 	APIService ProductWebsocketsAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductWebsockets Disable product
 Disable the Websockets product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIDisableProductWebsocketsRequest
 */
-func (a *ProductWebsocketsAPIService) DisableProductWebsockets(ctx context.Context, serviceId string) APIDisableProductWebsocketsRequest {
+func (a *ProductWebsocketsAPIService) DisableProductWebsockets(ctx context.Context, serviceID string) APIDisableProductWebsocketsRequest {
 	return APIDisableProductWebsocketsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductWebsocketsAPIService) DisableProductWebsocketsExecute(r APIDisab
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/websockets/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductWebsocketsAPIService) DisableProductWebsocketsExecute(r APIDisab
 type APIEnableProductWebsocketsRequest struct {
 	ctx        context.Context
 	APIService ProductWebsocketsAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductWebsockets Enable product
 Enable the WebSockets product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIEnableProductWebsocketsRequest
 */
-func (a *ProductWebsocketsAPIService) EnableProductWebsockets(ctx context.Context, serviceId string) APIEnableProductWebsocketsRequest {
+func (a *ProductWebsocketsAPIService) EnableProductWebsockets(ctx context.Context, serviceID string) APIEnableProductWebsocketsRequest {
 	return APIEnableProductWebsocketsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductWebsocketsAPIService) EnableProductWebsocketsExecute(r APIEnable
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/websockets/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductWebsocketsAPIService) EnableProductWebsocketsExecute(r APIEnable
 type APIGetProductWebsocketsRequest struct {
 	ctx        context.Context
 	APIService ProductWebsocketsAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductWebsockets Get product enablement status
 Get the enablement status of the WebSockets product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetProductWebsocketsRequest
 */
-func (a *ProductWebsocketsAPIService) GetProductWebsockets(ctx context.Context, serviceId string) APIGetProductWebsocketsRequest {
+func (a *ProductWebsocketsAPIService) GetProductWebsockets(ctx context.Context, serviceID string) APIGetProductWebsocketsRequest {
 	return APIGetProductWebsocketsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductWebsocketsAPIService) GetProductWebsocketsExecute(r APIGetProduc
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/websockets/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -32,13 +32,13 @@ type ArcVirtualKeyListItemResponse struct {
 	// The tokens-per-minute limit for this key. Omit for no limit.
 	TpmLimit NullableInt32 `json:"tpm_limit,omitempty"`
 	// The unique identifier of the virtual key.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The ID of the customer account that owns the key.
-	CustomerId string `json:"customer_id"`
+	CustomerID string `json:"customer_id"`
 	// The type of the resource.
 	Type string `json:"type"`
 	// The ID of the user who created the key.
-	UserId string `json:"user_id"`
+	UserID string `json:"user_id"`
 	// The display name of the user who created the key.
 	UserName *string `json:"user_name,omitempty"`
 	// The date and time the key was last used to make a request, in RFC 3339 format. `null` if the key has never been used.
@@ -62,15 +62,15 @@ type _ArcVirtualKeyListItemResponse ArcVirtualKeyListItemResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcVirtualKeyListItemResponse(name string, id string, customerId string, type_ string, userId string, createdAt time.Time, updatedAt time.Time) *ArcVirtualKeyListItemResponse {
+func NewArcVirtualKeyListItemResponse(name string, id string, customerID string, resourceType string, userID string, createdAt time.Time, updatedAt time.Time) *ArcVirtualKeyListItemResponse {
 	this := ArcVirtualKeyListItemResponse{}
 	this.Name = name
 	var securityEnabled bool = false
 	this.SecurityEnabled = &securityEnabled
-	this.Id = id
-	this.CustomerId = customerId
-	this.Type = type_
-	this.UserId = userId
+	this.ID = id
+	this.CustomerID = customerID
+	this.Type = resourceType
+	this.UserID = userID
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -303,52 +303,52 @@ func (o *ArcVirtualKeyListItemResponse) UnsetTpmLimit() {
 	o.TpmLimit.Unset()
 }
 
-// GetId returns the Id field value
-func (o *ArcVirtualKeyListItemResponse) GetId() string {
+// GetID returns the ID field value
+func (o *ArcVirtualKeyListItemResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcVirtualKeyListItemResponse) GetIdOk() (*string, bool) {
+func (o *ArcVirtualKeyListItemResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcVirtualKeyListItemResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcVirtualKeyListItemResponse) SetID(v string) {
+	o.ID = v
 }
 
-// GetCustomerId returns the CustomerId field value
-func (o *ArcVirtualKeyListItemResponse) GetCustomerId() string {
+// GetCustomerID returns the CustomerID field value
+func (o *ArcVirtualKeyListItemResponse) GetCustomerID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.CustomerId
+	return o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value
+// GetCustomerIDOk returns a tuple with the CustomerID field value
 // and a boolean to check if the value has been set.
-func (o *ArcVirtualKeyListItemResponse) GetCustomerIdOk() (*string, bool) {
+func (o *ArcVirtualKeyListItemResponse) GetCustomerIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.CustomerId, true
+	return &o.CustomerID, true
 }
 
-// SetCustomerId sets field value
-func (o *ArcVirtualKeyListItemResponse) SetCustomerId(v string) {
-	o.CustomerId = v
+// SetCustomerID sets field value
+func (o *ArcVirtualKeyListItemResponse) SetCustomerID(v string) {
+	o.CustomerID = v
 }
 
 // GetType returns the Type field value
@@ -375,28 +375,28 @@ func (o *ArcVirtualKeyListItemResponse) SetType(v string) {
 	o.Type = v
 }
 
-// GetUserId returns the UserId field value
-func (o *ArcVirtualKeyListItemResponse) GetUserId() string {
+// GetUserID returns the UserID field value
+func (o *ArcVirtualKeyListItemResponse) GetUserID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.UserId
+	return o.UserID
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIDOk returns a tuple with the UserID field value
 // and a boolean to check if the value has been set.
-func (o *ArcVirtualKeyListItemResponse) GetUserIdOk() (*string, bool) {
+func (o *ArcVirtualKeyListItemResponse) GetUserIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.UserId, true
+	return &o.UserID, true
 }
 
-// SetUserId sets field value
-func (o *ArcVirtualKeyListItemResponse) SetUserId(v string) {
-	o.UserId = v
+// SetUserID sets field value
+func (o *ArcVirtualKeyListItemResponse) SetUserID(v string) {
+	o.UserID = v
 }
 
 // GetUserName returns the UserName field value if set, zero value otherwise.
@@ -663,16 +663,16 @@ func (o ArcVirtualKeyListItemResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["tpm_limit"] = o.TpmLimit.Get()
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
-		toSerialize["customer_id"] = o.CustomerId
+		toSerialize["customer_id"] = o.CustomerID
 	}
 	if true {
 		toSerialize["type"] = o.Type
 	}
 	if true {
-		toSerialize["user_id"] = o.UserId
+		toSerialize["user_id"] = o.UserID
 	}
 	if o.UserName != nil {
 		toSerialize["user_name"] = o.UserName

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserId** | Pointer to **NullableString** | The alphanumeric string representing the user for this customer contact. | [optional] 
+**UserID** | Pointer to **NullableString** | The alphanumeric string representing the user for this customer contact. | [optional] 
 **ContactType** | Pointer to **string** | The type of contact. | [optional] 
 **Name** | Pointer to **NullableString** | The name of this contact, when user_id is not provided. | [optional] 
 **Email** | Pointer to **NullableString** | The email of this contact, when a user_id is not provided. | [optional] 
 **Phone** | Pointer to **NullableString** | The phone number for this contact. Required for primary, technical, and security contact types. | [optional] 
-**CustomerId** | Pointer to **NullableString** | The alphanumeric string representing the customer for this customer contact. | [optional] 
+**CustomerID** | Pointer to **NullableString** | The alphanumeric string representing the customer for this customer contact. | [optional] 
 
 ## Methods
 
@@ -30,41 +30,41 @@ NewContactWithDefaults instantiates a new Contact object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserId
+### GetUserID
 
-`func (o *Contact) GetUserId() string`
+`func (o *Contact) GetUserID() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *Contact) GetUserIdOk() (*string, bool)`
+`func (o *Contact) GetUserIDOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *Contact) SetUserId(v string)`
+`func (o *Contact) SetUserID(v string)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
-### HasUserId
+### HasUserID
 
-`func (o *Contact) HasUserId() bool`
+`func (o *Contact) HasUserID() bool`
 
-HasUserId returns a boolean if a field has been set.
+HasUserID returns a boolean if a field has been set.
 
-### SetUserIdNil
+### SetUserIDNil
 
-`func (o *Contact) SetUserIdNil(b bool)`
+`func (o *Contact) SetUserIDNil(b bool)`
 
- SetUserIdNil sets the value for UserId to be an explicit nil
+ SetUserIDNil sets the value for UserID to be an explicit nil
 
-### UnsetUserId
-`func (o *Contact) UnsetUserId()`
+### UnsetUserID
+`func (o *Contact) UnsetUserID()`
 
-UnsetUserId ensures that no value is present for UserId, not even an explicit nil
+UnsetUserID ensures that no value is present for UserID, not even an explicit nil
 ### GetContactType
 
 `func (o *Contact) GetContactType() string`
@@ -195,42 +195,40 @@ HasPhone returns a boolean if a field has been set.
 `func (o *Contact) UnsetPhone()`
 
 UnsetPhone ensures that no value is present for Phone, not even an explicit nil
-### GetCustomerId
+### GetCustomerID
 
-`func (o *Contact) GetCustomerId() string`
+`func (o *Contact) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *Contact) GetCustomerIdOk() (*string, bool)`
+`func (o *Contact) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *Contact) SetCustomerId(v string)`
+`func (o *Contact) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *Contact) HasCustomerId() bool`
+`func (o *Contact) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
-### SetCustomerIdNil
+### SetCustomerIDNil
 
-`func (o *Contact) SetCustomerIdNil(b bool)`
+`func (o *Contact) SetCustomerIDNil(b bool)`
 
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+ SetCustomerIDNil sets the value for CustomerID to be an explicit nil
 
-### UnsetCustomerId
-`func (o *Contact) UnsetCustomerId()`
+### UnsetCustomerID
+`func (o *Contact) UnsetCustomerID()`
 
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+UnsetCustomerID ensures that no value is present for CustomerID, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

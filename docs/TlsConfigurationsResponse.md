@@ -1,4 +1,4 @@
-# TlsConfigurationsResponse
+# TLSConfigurationsResponse
 
 ## Properties
 
@@ -6,103 +6,101 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationMeta1**](PaginationMeta1.md) |  | [optional] 
-**Data** | Pointer to [**[]TlsConfigurationResponseData**](TlsConfigurationResponseData.md) |  | [optional] 
+**Data** | Pointer to [**[]TLSConfigurationResponseData**](TlsConfigurationResponseData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsConfigurationsResponse
+### NewTLSConfigurationsResponse
 
-`func NewTlsConfigurationsResponse() *TlsConfigurationsResponse`
+`func NewTLSConfigurationsResponse() *TLSConfigurationsResponse`
 
-NewTlsConfigurationsResponse instantiates a new TlsConfigurationsResponse object
+NewTLSConfigurationsResponse instantiates a new TLSConfigurationsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsConfigurationsResponseWithDefaults
+### NewTLSConfigurationsResponseWithDefaults
 
-`func NewTlsConfigurationsResponseWithDefaults() *TlsConfigurationsResponse`
+`func NewTLSConfigurationsResponseWithDefaults() *TLSConfigurationsResponse`
 
-NewTlsConfigurationsResponseWithDefaults instantiates a new TlsConfigurationsResponse object
+NewTLSConfigurationsResponseWithDefaults instantiates a new TLSConfigurationsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLinks
 
-`func (o *TlsConfigurationsResponse) GetLinks() PaginationLinks`
+`func (o *TLSConfigurationsResponse) GetLinks() PaginationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *TlsConfigurationsResponse) GetLinksOk() (*PaginationLinks, bool)`
+`func (o *TLSConfigurationsResponse) GetLinksOk() (*PaginationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *TlsConfigurationsResponse) SetLinks(v PaginationLinks)`
+`func (o *TLSConfigurationsResponse) SetLinks(v PaginationLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *TlsConfigurationsResponse) HasLinks() bool`
+`func (o *TLSConfigurationsResponse) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *TlsConfigurationsResponse) GetMeta() PaginationMeta1`
+`func (o *TLSConfigurationsResponse) GetMeta() PaginationMeta1`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *TlsConfigurationsResponse) GetMetaOk() (*PaginationMeta1, bool)`
+`func (o *TLSConfigurationsResponse) GetMetaOk() (*PaginationMeta1, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *TlsConfigurationsResponse) SetMeta(v PaginationMeta1)`
+`func (o *TLSConfigurationsResponse) SetMeta(v PaginationMeta1)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *TlsConfigurationsResponse) HasMeta() bool`
+`func (o *TLSConfigurationsResponse) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *TlsConfigurationsResponse) GetData() []TlsConfigurationResponseData`
+`func (o *TLSConfigurationsResponse) GetData() []TLSConfigurationResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsConfigurationsResponse) GetDataOk() (*[]TlsConfigurationResponseData, bool)`
+`func (o *TLSConfigurationsResponse) GetDataOk() (*[]TLSConfigurationResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsConfigurationsResponse) SetData(v []TlsConfigurationResponseData)`
+`func (o *TLSConfigurationsResponse) SetData(v []TLSConfigurationResponseData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsConfigurationsResponse) HasData() bool`
+`func (o *TLSConfigurationsResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

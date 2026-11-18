@@ -41,13 +41,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     operationBulkAddTags := *openapiclient.NewOperationBulkAddTags([]string{"op_abc123def456"}, []string{"tag_abc123def456"}) // OperationBulkAddTags |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityBulkAddTagsToOperations(ctx, serviceId).OperationBulkAddTags(operationBulkAddTags).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityBulkAddTagsToOperations(ctx, serviceID).OperationBulkAddTags(operationBulkAddTags).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityBulkAddTagsToOperations`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,7 +63,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -109,13 +109,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     operationBulkCreate := *openapiclient.NewOperationBulkCreate([]openapiclient.OperationBulkCreateOperations{*openapiclient.NewOperationBulkCreateOperations("GET", "www.example.com", "/api/v1/users/{var1}")}) // OperationBulkCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityBulkCreateOperations(ctx, serviceId).OperationBulkCreate(operationBulkCreate).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityBulkCreateOperations(ctx, serviceID).OperationBulkCreate(operationBulkCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityBulkCreateOperations`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,7 +131,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -177,13 +177,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     operationBulkDelete := *openapiclient.NewOperationBulkDelete([]string{"op_abc123def456"}) // OperationBulkDelete |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityBulkDeleteOperations(ctx, serviceId).OperationBulkDelete(operationBulkDelete).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityBulkDeleteOperations(ctx, serviceID).OperationBulkDelete(operationBulkDelete).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityBulkDeleteOperations`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -199,7 +199,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -245,13 +245,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     operationCreate := *openapiclient.NewOperationCreate("GET", "www.example.com", "/api/v1/users/{var1}") // OperationCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityCreateOperation(ctx, serviceId).OperationCreate(operationCreate).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityCreateOperation(ctx, serviceID).OperationCreate(operationCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityCreateOperation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,7 +267,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -313,13 +313,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     tagCreate := *openapiclient.NewTagCreate() // TagCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityCreateOperationTag(ctx, serviceId).TagCreate(tagCreate).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityCreateOperationTag(ctx, serviceID).TagCreate(tagCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityCreateOperationTag`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -335,7 +335,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -381,13 +381,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    operationId := "op_abc123def456" // string | The unique identifier of the operation.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    operationID := "op_abc123def456" // string | The unique identifier of the operation.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityDeleteOperation(ctx, serviceId, operationId).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityDeleteOperation(ctx, serviceID, operationID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityDeleteOperation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -401,8 +401,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
-**operationId** | **string** | The unique identifier of the operation. | 
+**serviceID** | **string** | The unique identifier of the service. | 
+**operationID** | **string** | The unique identifier of the operation. | 
 
 ### Other Parameters
 
@@ -448,13 +448,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    tagId := "tag_abc123def456" // string | The unique identifier of the operation tag.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    tagID := "tag_abc123def456" // string | The unique identifier of the operation tag.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityDeleteOperationTag(ctx, serviceId, tagId).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityDeleteOperationTag(ctx, serviceID, tagID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityDeleteOperationTag`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -468,8 +468,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
-**tagId** | **string** | The unique identifier of the operation tag. | 
+**serviceID** | **string** | The unique identifier of the service. | 
+**tagID** | **string** | The unique identifier of the operation tag. | 
 
 ### Other Parameters
 
@@ -515,13 +515,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    operationId := "op_abc123def456" // string | The unique identifier of the operation.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    operationID := "op_abc123def456" // string | The unique identifier of the operation.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityGetOperation(ctx, serviceId, operationId).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityGetOperation(ctx, serviceID, operationID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityGetOperation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -537,8 +537,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
-**operationId** | **string** | The unique identifier of the operation. | 
+**serviceID** | **string** | The unique identifier of the service. | 
+**operationID** | **string** | The unique identifier of the operation. | 
 
 ### Other Parameters
 
@@ -584,13 +584,13 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    tagId := "tag_abc123def456" // string | The unique identifier of the operation tag.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    tagID := "tag_abc123def456" // string | The unique identifier of the operation tag.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityGetOperationTag(ctx, serviceId, tagId).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityGetOperationTag(ctx, serviceID, tagID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityGetOperationTag`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -606,8 +606,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
-**tagId** | **string** | The unique identifier of the operation tag. | 
+**serviceID** | **string** | The unique identifier of the service. | 
+**tagID** | **string** | The unique identifier of the operation tag. | 
 
 ### Other Parameters
 
@@ -653,7 +653,7 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     method := []string{"Method_example"} // []string | Filter operations by HTTP method. (optional)
     domain := []string{"Inner_example"} // []string | Filter operations by fully-qualified domain name (exact match). (optional)
     path := "/api/v1/users" // string | Filter operations by path (exact match). (optional)
@@ -663,7 +663,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityListDiscoveredOperations(ctx, serviceId).Method(method).Domain(domain).Path(path).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityListDiscoveredOperations(ctx, serviceID).Method(method).Domain(domain).Path(path).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityListDiscoveredOperations`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -679,7 +679,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -725,14 +725,14 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
     limit := int32(100) // int32 | The maximum number of operations to return per page. (optional) (default to 100)
     page := int32(1) // int32 | The page number to return. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityListOperationTags(ctx, serviceId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityListOperationTags(ctx, serviceID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityListOperationTags`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -748,7 +748,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -794,8 +794,8 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    tagId := "tag_abc123def456" // string | Filter operations by operation tag ID. Only operations associated with this operation tag will be returned. (optional)
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    tagID := "tag_abc123def456" // string | Filter operations by operation tag ID. Only operations associated with this operation tag will be returned. (optional)
     status := "SAVED" // string | Filter operations by status. Defaults to SAVED if omitted. (optional) (default to "SAVED")
     method := []string{"Method_example"} // []string | Filter operations by HTTP method. (optional)
     domain := []string{"Inner_example"} // []string | Filter operations by fully-qualified domain name (exact match). (optional)
@@ -806,7 +806,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityListOperations(ctx, serviceId).TagId(tagId).Status(status).Method(method).Domain(domain).Path(path).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityListOperations(ctx, serviceID).TagID(tagID).Status(status).Method(method).Domain(domain).Path(path).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityListOperations`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -822,7 +822,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
+**serviceID** | **string** | The unique identifier of the service. | 
 
 ### Other Parameters
 
@@ -831,7 +831,7 @@ Other parameters are passed through a pointer to a apiApiSecurityListOperationsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tagId** | **string** | Filter operations by operation tag ID. Only operations associated with this operation tag will be returned. |  **status** | **string** | Filter operations by status. Defaults to SAVED if omitted. | [default to &quot;SAVED&quot;] **method** | **[]string** | Filter operations by HTTP method. |  **domain** | **[]string** | Filter operations by fully-qualified domain name (exact match). |  **path** | **string** | Filter operations by path (exact match). |  **limit** | **int32** | The maximum number of operations to return per page. | [default to 100] **page** | **int32** | The page number to return. | [default to 0]
+ **tagID** | **string** | Filter operations by operation tag ID. Only operations associated with this operation tag will be returned. |  **status** | **string** | Filter operations by status. Defaults to SAVED if omitted. | [default to &quot;SAVED&quot;] **method** | **[]string** | Filter operations by HTTP method. |  **domain** | **[]string** | Filter operations by fully-qualified domain name (exact match). |  **path** | **string** | Filter operations by path (exact match). |  **limit** | **int32** | The maximum number of operations to return per page. | [default to 100] **page** | **int32** | The page number to return. | [default to 0]
 
 ### Return type
 
@@ -868,14 +868,14 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    operationId := "op_abc123def456" // string | The unique identifier of the operation.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    operationID := "op_abc123def456" // string | The unique identifier of the operation.
     operationUpdate := *openapiclient.NewOperationUpdate() // OperationUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityUpdateOperation(ctx, serviceId, operationId).OperationUpdate(operationUpdate).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityUpdateOperation(ctx, serviceID, operationID).OperationUpdate(operationUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityUpdateOperation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -891,8 +891,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
-**operationId** | **string** | The unique identifier of the operation. | 
+**serviceID** | **string** | The unique identifier of the service. | 
+**operationID** | **string** | The unique identifier of the operation. | 
 
 ### Other Parameters
 
@@ -938,14 +938,14 @@ import (
 )
 
 func main() {
-    serviceId := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
-    tagId := "tag_abc123def456" // string | The unique identifier of the operation tag.
+    serviceID := "3NeCFuZNP1v0iyJ2vmYQI6" // string | The unique identifier of the service.
+    tagID := "tag_abc123def456" // string | The unique identifier of the operation tag.
     body := TagBase(987) // TagBase |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityUpdateOperationTag(ctx, serviceId, tagId).Body(body).Execute()
+    resp, r, err := apiClient.ApisecurityOperationsAPI.ApiSecurityUpdateOperationTag(ctx, serviceID, tagID).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisecurityOperationsAPI.ApiSecurityUpdateOperationTag`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -961,8 +961,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | The unique identifier of the service. | 
-**tagId** | **string** | The unique identifier of the operation tag. | 
+**serviceID** | **string** | The unique identifier of the service. | 
+**tagID** | **string** | The unique identifier of the operation tag. | 
 
 ### Other Parameters
 
@@ -987,4 +987,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

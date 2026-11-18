@@ -19,10 +19,10 @@ import (
 
 // Report struct for Report
 type Report struct {
-	Id                   *string    `json:"id,omitempty"`
-	PolicyId             *string    `json:"policy_id,omitempty"`
-	BlockedUri           *string    `json:"blocked_uri,omitempty"`
-	DocumentUri          *string    `json:"document_uri,omitempty"`
+	ID                   *string    `json:"id,omitempty"`
+	PolicyID             *string    `json:"policy_id,omitempty"`
+	BlockedURI           *string    `json:"blocked_uri,omitempty"`
+	DocumentURI          *string    `json:"document_uri,omitempty"`
 	ViolatedDirective    *string    `json:"violated_directive,omitempty"`
 	CreatedAt            *time.Time `json:"created_at,omitempty"`
 	AdditionalProperties map[string]any
@@ -47,132 +47,132 @@ func NewReportWithDefaults() *Report {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Report) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *Report) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Report) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *Report) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Report) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *Report) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Report) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *Report) SetID(v string) {
+	o.ID = &v
 }
 
-// GetPolicyId returns the PolicyId field value if set, zero value otherwise.
-func (o *Report) GetPolicyId() string {
-	if o == nil || o.PolicyId == nil {
+// GetPolicyID returns the PolicyID field value if set, zero value otherwise.
+func (o *Report) GetPolicyID() string {
+	if o == nil || o.PolicyID == nil {
 		var ret string
 		return ret
 	}
-	return *o.PolicyId
+	return *o.PolicyID
 }
 
-// GetPolicyIdOk returns a tuple with the PolicyId field value if set, nil otherwise
+// GetPolicyIDOk returns a tuple with the PolicyID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Report) GetPolicyIdOk() (*string, bool) {
-	if o == nil || o.PolicyId == nil {
+func (o *Report) GetPolicyIDOk() (*string, bool) {
+	if o == nil || o.PolicyID == nil {
 		return nil, false
 	}
-	return o.PolicyId, true
+	return o.PolicyID, true
 }
 
-// HasPolicyId returns a boolean if a field has been set.
-func (o *Report) HasPolicyId() bool {
-	if o != nil && o.PolicyId != nil {
+// HasPolicyID returns a boolean if a field has been set.
+func (o *Report) HasPolicyID() bool {
+	if o != nil && o.PolicyID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPolicyId gets a reference to the given string and assigns it to the PolicyId field.
-func (o *Report) SetPolicyId(v string) {
-	o.PolicyId = &v
+// SetPolicyID gets a reference to the given string and assigns it to the PolicyID field.
+func (o *Report) SetPolicyID(v string) {
+	o.PolicyID = &v
 }
 
-// GetBlockedUri returns the BlockedUri field value if set, zero value otherwise.
-func (o *Report) GetBlockedUri() string {
-	if o == nil || o.BlockedUri == nil {
+// GetBlockedURI returns the BlockedURI field value if set, zero value otherwise.
+func (o *Report) GetBlockedURI() string {
+	if o == nil || o.BlockedURI == nil {
 		var ret string
 		return ret
 	}
-	return *o.BlockedUri
+	return *o.BlockedURI
 }
 
-// GetBlockedUriOk returns a tuple with the BlockedUri field value if set, nil otherwise
+// GetBlockedURIOk returns a tuple with the BlockedURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Report) GetBlockedUriOk() (*string, bool) {
-	if o == nil || o.BlockedUri == nil {
+func (o *Report) GetBlockedURIOk() (*string, bool) {
+	if o == nil || o.BlockedURI == nil {
 		return nil, false
 	}
-	return o.BlockedUri, true
+	return o.BlockedURI, true
 }
 
-// HasBlockedUri returns a boolean if a field has been set.
-func (o *Report) HasBlockedUri() bool {
-	if o != nil && o.BlockedUri != nil {
+// HasBlockedURI returns a boolean if a field has been set.
+func (o *Report) HasBlockedURI() bool {
+	if o != nil && o.BlockedURI != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBlockedUri gets a reference to the given string and assigns it to the BlockedUri field.
-func (o *Report) SetBlockedUri(v string) {
-	o.BlockedUri = &v
+// SetBlockedURI gets a reference to the given string and assigns it to the BlockedURI field.
+func (o *Report) SetBlockedURI(v string) {
+	o.BlockedURI = &v
 }
 
-// GetDocumentUri returns the DocumentUri field value if set, zero value otherwise.
-func (o *Report) GetDocumentUri() string {
-	if o == nil || o.DocumentUri == nil {
+// GetDocumentURI returns the DocumentURI field value if set, zero value otherwise.
+func (o *Report) GetDocumentURI() string {
+	if o == nil || o.DocumentURI == nil {
 		var ret string
 		return ret
 	}
-	return *o.DocumentUri
+	return *o.DocumentURI
 }
 
-// GetDocumentUriOk returns a tuple with the DocumentUri field value if set, nil otherwise
+// GetDocumentURIOk returns a tuple with the DocumentURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Report) GetDocumentUriOk() (*string, bool) {
-	if o == nil || o.DocumentUri == nil {
+func (o *Report) GetDocumentURIOk() (*string, bool) {
+	if o == nil || o.DocumentURI == nil {
 		return nil, false
 	}
-	return o.DocumentUri, true
+	return o.DocumentURI, true
 }
 
-// HasDocumentUri returns a boolean if a field has been set.
-func (o *Report) HasDocumentUri() bool {
-	if o != nil && o.DocumentUri != nil {
+// HasDocumentURI returns a boolean if a field has been set.
+func (o *Report) HasDocumentURI() bool {
+	if o != nil && o.DocumentURI != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDocumentUri gets a reference to the given string and assigns it to the DocumentUri field.
-func (o *Report) SetDocumentUri(v string) {
-	o.DocumentUri = &v
+// SetDocumentURI gets a reference to the given string and assigns it to the DocumentURI field.
+func (o *Report) SetDocumentURI(v string) {
+	o.DocumentURI = &v
 }
 
 // GetViolatedDirective returns the ViolatedDirective field value if set, zero value otherwise.
@@ -243,17 +243,17 @@ func (o *Report) SetCreatedAt(v time.Time) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Report) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
-	if o.PolicyId != nil {
-		toSerialize["policy_id"] = o.PolicyId
+	if o.PolicyID != nil {
+		toSerialize["policy_id"] = o.PolicyID
 	}
-	if o.BlockedUri != nil {
-		toSerialize["blocked_uri"] = o.BlockedUri
+	if o.BlockedURI != nil {
+		toSerialize["blocked_uri"] = o.BlockedURI
 	}
-	if o.DocumentUri != nil {
-		toSerialize["document_uri"] = o.DocumentUri
+	if o.DocumentURI != nil {
+		toSerialize["document_uri"] = o.DocumentURI
 	}
 	if o.ViolatedDirective != nil {
 		toSerialize["violated_directive"] = o.ViolatedDirective

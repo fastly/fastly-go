@@ -10,19 +10,19 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
 **LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
-**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
+**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
 **RequestMaxEntries** | Pointer to **int32** | The maximum number of logs sent in one request. Defaults `0` for unbounded. | [optional] [default to 0]
 **RequestMaxBytes** | Pointer to **int32** | The maximum number of bytes sent in one request. Defaults `0` for unbounded. | [optional] [default to 0]
-**Url** | Pointer to **string** | The URL to post logs to. | [optional] 
+**URL** | Pointer to **string** | The URL to post logs to. | [optional] 
 **Token** | Pointer to **string** | A Splunk token for use in posting logs over HTTP to your collector. | [optional] 
-**UseTls** | Pointer to [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -214,146 +214,146 @@ SetFormatVersion sets FormatVersion field to given value.
 
 HasFormatVersion returns a boolean if a field has been set.
 
-### GetTlsCaCert
+### GetTLSCaCert
 
-`func (o *LoggingSplunkResponse) GetTlsCaCert() string`
+`func (o *LoggingSplunkResponse) GetTLSCaCert() string`
 
-GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
+GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
 
-### GetTlsCaCertOk
+### GetTLSCaCertOk
 
-`func (o *LoggingSplunkResponse) GetTlsCaCertOk() (*string, bool)`
+`func (o *LoggingSplunkResponse) GetTLSCaCertOk() (*string, bool)`
 
-GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
+GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCaCert
+### SetTLSCaCert
 
-`func (o *LoggingSplunkResponse) SetTlsCaCert(v string)`
+`func (o *LoggingSplunkResponse) SetTLSCaCert(v string)`
 
-SetTlsCaCert sets TlsCaCert field to given value.
+SetTLSCaCert sets TLSCaCert field to given value.
 
-### HasTlsCaCert
+### HasTLSCaCert
 
-`func (o *LoggingSplunkResponse) HasTlsCaCert() bool`
+`func (o *LoggingSplunkResponse) HasTLSCaCert() bool`
 
-HasTlsCaCert returns a boolean if a field has been set.
+HasTLSCaCert returns a boolean if a field has been set.
 
-### SetTlsCaCertNil
+### SetTLSCaCertNil
 
-`func (o *LoggingSplunkResponse) SetTlsCaCertNil(b bool)`
+`func (o *LoggingSplunkResponse) SetTLSCaCertNil(b bool)`
 
- SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+ SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 
-### UnsetTlsCaCert
-`func (o *LoggingSplunkResponse) UnsetTlsCaCert()`
+### UnsetTLSCaCert
+`func (o *LoggingSplunkResponse) UnsetTLSCaCert()`
 
-UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-### GetTlsClientCert
+UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+### GetTLSClientCert
 
-`func (o *LoggingSplunkResponse) GetTlsClientCert() string`
+`func (o *LoggingSplunkResponse) GetTLSClientCert() string`
 
-GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
+GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
 
-### GetTlsClientCertOk
+### GetTLSClientCertOk
 
-`func (o *LoggingSplunkResponse) GetTlsClientCertOk() (*string, bool)`
+`func (o *LoggingSplunkResponse) GetTLSClientCertOk() (*string, bool)`
 
-GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
+GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientCert
+### SetTLSClientCert
 
-`func (o *LoggingSplunkResponse) SetTlsClientCert(v string)`
+`func (o *LoggingSplunkResponse) SetTLSClientCert(v string)`
 
-SetTlsClientCert sets TlsClientCert field to given value.
+SetTLSClientCert sets TLSClientCert field to given value.
 
-### HasTlsClientCert
+### HasTLSClientCert
 
-`func (o *LoggingSplunkResponse) HasTlsClientCert() bool`
+`func (o *LoggingSplunkResponse) HasTLSClientCert() bool`
 
-HasTlsClientCert returns a boolean if a field has been set.
+HasTLSClientCert returns a boolean if a field has been set.
 
-### SetTlsClientCertNil
+### SetTLSClientCertNil
 
-`func (o *LoggingSplunkResponse) SetTlsClientCertNil(b bool)`
+`func (o *LoggingSplunkResponse) SetTLSClientCertNil(b bool)`
 
- SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+ SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 
-### UnsetTlsClientCert
-`func (o *LoggingSplunkResponse) UnsetTlsClientCert()`
+### UnsetTLSClientCert
+`func (o *LoggingSplunkResponse) UnsetTLSClientCert()`
 
-UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-### GetTlsClientKey
+UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+### GetTLSClientKey
 
-`func (o *LoggingSplunkResponse) GetTlsClientKey() string`
+`func (o *LoggingSplunkResponse) GetTLSClientKey() string`
 
-GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
+GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
 
-### GetTlsClientKeyOk
+### GetTLSClientKeyOk
 
-`func (o *LoggingSplunkResponse) GetTlsClientKeyOk() (*string, bool)`
+`func (o *LoggingSplunkResponse) GetTLSClientKeyOk() (*string, bool)`
 
-GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
+GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientKey
+### SetTLSClientKey
 
-`func (o *LoggingSplunkResponse) SetTlsClientKey(v string)`
+`func (o *LoggingSplunkResponse) SetTLSClientKey(v string)`
 
-SetTlsClientKey sets TlsClientKey field to given value.
+SetTLSClientKey sets TLSClientKey field to given value.
 
-### HasTlsClientKey
+### HasTLSClientKey
 
-`func (o *LoggingSplunkResponse) HasTlsClientKey() bool`
+`func (o *LoggingSplunkResponse) HasTLSClientKey() bool`
 
-HasTlsClientKey returns a boolean if a field has been set.
+HasTLSClientKey returns a boolean if a field has been set.
 
-### SetTlsClientKeyNil
+### SetTLSClientKeyNil
 
-`func (o *LoggingSplunkResponse) SetTlsClientKeyNil(b bool)`
+`func (o *LoggingSplunkResponse) SetTLSClientKeyNil(b bool)`
 
- SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+ SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 
-### UnsetTlsClientKey
-`func (o *LoggingSplunkResponse) UnsetTlsClientKey()`
+### UnsetTLSClientKey
+`func (o *LoggingSplunkResponse) UnsetTLSClientKey()`
 
-UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-### GetTlsHostname
+UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+### GetTLSHostname
 
-`func (o *LoggingSplunkResponse) GetTlsHostname() string`
+`func (o *LoggingSplunkResponse) GetTLSHostname() string`
 
-GetTlsHostname returns the TlsHostname field if non-nil, zero value otherwise.
+GetTLSHostname returns the TLSHostname field if non-nil, zero value otherwise.
 
-### GetTlsHostnameOk
+### GetTLSHostnameOk
 
-`func (o *LoggingSplunkResponse) GetTlsHostnameOk() (*string, bool)`
+`func (o *LoggingSplunkResponse) GetTLSHostnameOk() (*string, bool)`
 
-GetTlsHostnameOk returns a tuple with the TlsHostname field if it's non-nil, zero value otherwise
+GetTLSHostnameOk returns a tuple with the TLSHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsHostname
+### SetTLSHostname
 
-`func (o *LoggingSplunkResponse) SetTlsHostname(v string)`
+`func (o *LoggingSplunkResponse) SetTLSHostname(v string)`
 
-SetTlsHostname sets TlsHostname field to given value.
+SetTLSHostname sets TLSHostname field to given value.
 
-### HasTlsHostname
+### HasTLSHostname
 
-`func (o *LoggingSplunkResponse) HasTlsHostname() bool`
+`func (o *LoggingSplunkResponse) HasTLSHostname() bool`
 
-HasTlsHostname returns a boolean if a field has been set.
+HasTLSHostname returns a boolean if a field has been set.
 
-### SetTlsHostnameNil
+### SetTLSHostnameNil
 
-`func (o *LoggingSplunkResponse) SetTlsHostnameNil(b bool)`
+`func (o *LoggingSplunkResponse) SetTLSHostnameNil(b bool)`
 
- SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
+ SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 
-### UnsetTlsHostname
-`func (o *LoggingSplunkResponse) UnsetTlsHostname()`
+### UnsetTLSHostname
+`func (o *LoggingSplunkResponse) UnsetTLSHostname()`
 
-UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
+UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
 ### GetRequestMaxEntries
 
 `func (o *LoggingSplunkResponse) GetRequestMaxEntries() int32`
@@ -404,30 +404,30 @@ SetRequestMaxBytes sets RequestMaxBytes field to given value.
 
 HasRequestMaxBytes returns a boolean if a field has been set.
 
-### GetUrl
+### GetURL
 
-`func (o *LoggingSplunkResponse) GetUrl() string`
+`func (o *LoggingSplunkResponse) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LoggingSplunkResponse) GetUrlOk() (*string, bool)`
+`func (o *LoggingSplunkResponse) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LoggingSplunkResponse) SetUrl(v string)`
+`func (o *LoggingSplunkResponse) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LoggingSplunkResponse) HasUrl() bool`
+`func (o *LoggingSplunkResponse) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
 ### GetToken
 
@@ -454,30 +454,30 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetUseTls
+### GetUseTLS
 
-`func (o *LoggingSplunkResponse) GetUseTls() LoggingUseTlsString`
+`func (o *LoggingSplunkResponse) GetUseTLS() LoggingUseTLSString`
 
-GetUseTls returns the UseTls field if non-nil, zero value otherwise.
+GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
-### GetUseTlsOk
+### GetUseTLSOk
 
-`func (o *LoggingSplunkResponse) GetUseTlsOk() (*LoggingUseTlsString, bool)`
+`func (o *LoggingSplunkResponse) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
-GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
+GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTls
+### SetUseTLS
 
-`func (o *LoggingSplunkResponse) SetUseTls(v LoggingUseTlsString)`
+`func (o *LoggingSplunkResponse) SetUseTLS(v LoggingUseTLSString)`
 
-SetUseTls sets UseTls field to given value.
+SetUseTLS sets UseTLS field to given value.
 
-### HasUseTls
+### HasUseTLS
 
-`func (o *LoggingSplunkResponse) HasUseTls() bool`
+`func (o *LoggingSplunkResponse) HasUseTLS() bool`
 
-HasUseTls returns a boolean if a field has been set.
+HasUseTLS returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -584,30 +584,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingSplunkResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingSplunkResponse) GetServiceId() string`
+`func (o *LoggingSplunkResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingSplunkResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingSplunkResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingSplunkResponse) SetServiceId(v string)`
+`func (o *LoggingSplunkResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingSplunkResponse) HasServiceId() bool`
+`func (o *LoggingSplunkResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -636,5 +636,3 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

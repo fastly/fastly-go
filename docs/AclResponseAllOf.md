@@ -1,108 +1,106 @@
-# AclResponseAllOf
+# ACLResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** | String representing the number identifying a version of the service. | [optional] [readonly] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewAclResponseAllOf
+### NewACLResponseAllOf
 
-`func NewAclResponseAllOf() *AclResponseAllOf`
+`func NewACLResponseAllOf() *ACLResponseAllOf`
 
-NewAclResponseAllOf instantiates a new AclResponseAllOf object
+NewACLResponseAllOf instantiates a new ACLResponseAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAclResponseAllOfWithDefaults
+### NewACLResponseAllOfWithDefaults
 
-`func NewAclResponseAllOfWithDefaults() *AclResponseAllOf`
+`func NewACLResponseAllOfWithDefaults() *ACLResponseAllOf`
 
-NewAclResponseAllOfWithDefaults instantiates a new AclResponseAllOf object
+NewACLResponseAllOfWithDefaults instantiates a new ACLResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServiceId
+### GetServiceID
 
-`func (o *AclResponseAllOf) GetServiceId() string`
+`func (o *ACLResponseAllOf) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *AclResponseAllOf) GetServiceIdOk() (*string, bool)`
+`func (o *ACLResponseAllOf) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *AclResponseAllOf) SetServiceId(v string)`
+`func (o *ACLResponseAllOf) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *AclResponseAllOf) HasServiceId() bool`
+`func (o *ACLResponseAllOf) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *AclResponseAllOf) GetVersion() string`
+`func (o *ACLResponseAllOf) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *AclResponseAllOf) GetVersionOk() (*string, bool)`
+`func (o *ACLResponseAllOf) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *AclResponseAllOf) SetVersion(v string)`
+`func (o *ACLResponseAllOf) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 
 ### HasVersion
 
-`func (o *AclResponseAllOf) HasVersion() bool`
+`func (o *ACLResponseAllOf) HasVersion() bool`
 
 HasVersion returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *AclResponseAllOf) GetId() string`
+`func (o *ACLResponseAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *AclResponseAllOf) GetIdOk() (*string, bool)`
+`func (o *ACLResponseAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *AclResponseAllOf) SetId(v string)`
+`func (o *ACLResponseAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *AclResponseAllOf) HasId() bool`
+`func (o *ACLResponseAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

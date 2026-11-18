@@ -16,62 +16,62 @@ import (
 	"encoding/json"
 )
 
-// NetworkProtectRuleMatchIpProtocol Requires an IP protocol match field.
-type NetworkProtectRuleMatchIpProtocol struct {
-	IpProtocol           NetworkProtectRuleIpProtocol `json:"ip_protocol"`
+// NetworkProtectRuleMatchIPProtocol Requires an IP protocol match field.
+type NetworkProtectRuleMatchIPProtocol struct {
+	IPProtocol           NetworkProtectRuleIPProtocol `json:"ip_protocol"`
 	AdditionalProperties map[string]any
 }
 
-type _NetworkProtectRuleMatchIpProtocol NetworkProtectRuleMatchIpProtocol
+type _NetworkProtectRuleMatchIPProtocol NetworkProtectRuleMatchIPProtocol
 
-// NewNetworkProtectRuleMatchIpProtocol instantiates a new NetworkProtectRuleMatchIpProtocol object
+// NewNetworkProtectRuleMatchIPProtocol instantiates a new NetworkProtectRuleMatchIPProtocol object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkProtectRuleMatchIpProtocol(ipProtocol NetworkProtectRuleIpProtocol) *NetworkProtectRuleMatchIpProtocol {
-	this := NetworkProtectRuleMatchIpProtocol{}
-	this.IpProtocol = ipProtocol
+func NewNetworkProtectRuleMatchIPProtocol(ipProtocol NetworkProtectRuleIPProtocol) *NetworkProtectRuleMatchIPProtocol {
+	this := NetworkProtectRuleMatchIPProtocol{}
+	this.IPProtocol = ipProtocol
 	return &this
 }
 
-// NewNetworkProtectRuleMatchIpProtocolWithDefaults instantiates a new NetworkProtectRuleMatchIpProtocol object
+// NewNetworkProtectRuleMatchIPProtocolWithDefaults instantiates a new NetworkProtectRuleMatchIPProtocol object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewNetworkProtectRuleMatchIpProtocolWithDefaults() *NetworkProtectRuleMatchIpProtocol {
-	this := NetworkProtectRuleMatchIpProtocol{}
+func NewNetworkProtectRuleMatchIPProtocolWithDefaults() *NetworkProtectRuleMatchIPProtocol {
+	this := NetworkProtectRuleMatchIPProtocol{}
 	return &this
 }
 
-// GetIpProtocol returns the IpProtocol field value
-func (o *NetworkProtectRuleMatchIpProtocol) GetIpProtocol() NetworkProtectRuleIpProtocol {
+// GetIPProtocol returns the IPProtocol field value
+func (o *NetworkProtectRuleMatchIPProtocol) GetIPProtocol() NetworkProtectRuleIPProtocol {
 	if o == nil {
-		var ret NetworkProtectRuleIpProtocol
+		var ret NetworkProtectRuleIPProtocol
 		return ret
 	}
 
-	return o.IpProtocol
+	return o.IPProtocol
 }
 
-// GetIpProtocolOk returns a tuple with the IpProtocol field value
+// GetIPProtocolOk returns a tuple with the IPProtocol field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleMatchIpProtocol) GetIpProtocolOk() (*NetworkProtectRuleIpProtocol, bool) {
+func (o *NetworkProtectRuleMatchIPProtocol) GetIPProtocolOk() (*NetworkProtectRuleIPProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.IpProtocol, true
+	return &o.IPProtocol, true
 }
 
-// SetIpProtocol sets field value
-func (o *NetworkProtectRuleMatchIpProtocol) SetIpProtocol(v NetworkProtectRuleIpProtocol) {
-	o.IpProtocol = v
+// SetIPProtocol sets field value
+func (o *NetworkProtectRuleMatchIPProtocol) SetIPProtocol(v NetworkProtectRuleIPProtocol) {
+	o.IPProtocol = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o NetworkProtectRuleMatchIpProtocol) MarshalJSON() ([]byte, error) {
+func (o NetworkProtectRuleMatchIPProtocol) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["ip_protocol"] = o.IpProtocol
+		toSerialize["ip_protocol"] = o.IPProtocol
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -83,11 +83,11 @@ func (o NetworkProtectRuleMatchIpProtocol) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *NetworkProtectRuleMatchIpProtocol) UnmarshalJSON(bytes []byte) (err error) {
-	varNetworkProtectRuleMatchIpProtocol := _NetworkProtectRuleMatchIpProtocol{}
+func (o *NetworkProtectRuleMatchIPProtocol) UnmarshalJSON(bytes []byte) (err error) {
+	varNetworkProtectRuleMatchIPProtocol := _NetworkProtectRuleMatchIPProtocol{}
 
-	if err = json.Unmarshal(bytes, &varNetworkProtectRuleMatchIpProtocol); err == nil {
-		*o = NetworkProtectRuleMatchIpProtocol(varNetworkProtectRuleMatchIpProtocol)
+	if err = json.Unmarshal(bytes, &varNetworkProtectRuleMatchIPProtocol); err == nil {
+		*o = NetworkProtectRuleMatchIPProtocol(varNetworkProtectRuleMatchIPProtocol)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -100,48 +100,48 @@ func (o *NetworkProtectRuleMatchIpProtocol) UnmarshalJSON(bytes []byte) (err err
 	return err
 }
 
-// NullableNetworkProtectRuleMatchIpProtocol is a helper abstraction for handling nullable networkprotectrulematchipprotocol types.
-type NullableNetworkProtectRuleMatchIpProtocol struct {
-	value *NetworkProtectRuleMatchIpProtocol
+// NullableNetworkProtectRuleMatchIPProtocol is a helper abstraction for handling nullable networkprotectrulematchipprotocol types.
+type NullableNetworkProtectRuleMatchIPProtocol struct {
+	value *NetworkProtectRuleMatchIPProtocol
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableNetworkProtectRuleMatchIpProtocol) Get() *NetworkProtectRuleMatchIpProtocol {
+func (v NullableNetworkProtectRuleMatchIPProtocol) Get() *NetworkProtectRuleMatchIPProtocol {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableNetworkProtectRuleMatchIpProtocol) Set(val *NetworkProtectRuleMatchIpProtocol) {
+func (v *NullableNetworkProtectRuleMatchIPProtocol) Set(val *NetworkProtectRuleMatchIPProtocol) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableNetworkProtectRuleMatchIpProtocol) IsSet() bool {
+func (v NullableNetworkProtectRuleMatchIPProtocol) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableNetworkProtectRuleMatchIpProtocol) Unset() {
+func (v *NullableNetworkProtectRuleMatchIPProtocol) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableNetworkProtectRuleMatchIpProtocol returns a pointer to a new instance of NullableNetworkProtectRuleMatchIpProtocol.
-func NewNullableNetworkProtectRuleMatchIpProtocol(val *NetworkProtectRuleMatchIpProtocol) *NullableNetworkProtectRuleMatchIpProtocol {
-	return &NullableNetworkProtectRuleMatchIpProtocol{value: val, isSet: true}
+// NewNullableNetworkProtectRuleMatchIPProtocol returns a pointer to a new instance of NullableNetworkProtectRuleMatchIPProtocol.
+func NewNullableNetworkProtectRuleMatchIPProtocol(val *NetworkProtectRuleMatchIPProtocol) *NullableNetworkProtectRuleMatchIPProtocol {
+	return &NullableNetworkProtectRuleMatchIPProtocol{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableNetworkProtectRuleMatchIpProtocol) MarshalJSON() ([]byte, error) {
+func (v NullableNetworkProtectRuleMatchIPProtocol) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableNetworkProtectRuleMatchIpProtocol) UnmarshalJSON(src []byte) error {
+func (v *NullableNetworkProtectRuleMatchIPProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

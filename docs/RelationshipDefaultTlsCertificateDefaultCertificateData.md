@@ -1,82 +1,80 @@
-# RelationshipDefaultTlsCertificateDefaultCertificateData
+# RelationshipDefaultTLSCertificateDefaultCertificateData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] [default to TYPETLSCERTIFICATE_TLS_CERTIFICATE]
-**Id** | Pointer to **string** | Alphanumeric string identifying the default TLS certificate. | [optional] 
+**Type** | Pointer to [**TypeTLSCertificate**](TypeTLSCertificate.md) |  | [optional] [default to TYPETLSCERTIFICATE_TLS_CERTIFICATE]
+**ID** | Pointer to **string** | Alphanumeric string identifying the default TLS certificate. | [optional] 
 
 ## Methods
 
-### NewRelationshipDefaultTlsCertificateDefaultCertificateData
+### NewRelationshipDefaultTLSCertificateDefaultCertificateData
 
-`func NewRelationshipDefaultTlsCertificateDefaultCertificateData() *RelationshipDefaultTlsCertificateDefaultCertificateData`
+`func NewRelationshipDefaultTLSCertificateDefaultCertificateData() *RelationshipDefaultTLSCertificateDefaultCertificateData`
 
-NewRelationshipDefaultTlsCertificateDefaultCertificateData instantiates a new RelationshipDefaultTlsCertificateDefaultCertificateData object
+NewRelationshipDefaultTLSCertificateDefaultCertificateData instantiates a new RelationshipDefaultTLSCertificateDefaultCertificateData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipDefaultTlsCertificateDefaultCertificateDataWithDefaults
+### NewRelationshipDefaultTLSCertificateDefaultCertificateDataWithDefaults
 
-`func NewRelationshipDefaultTlsCertificateDefaultCertificateDataWithDefaults() *RelationshipDefaultTlsCertificateDefaultCertificateData`
+`func NewRelationshipDefaultTLSCertificateDefaultCertificateDataWithDefaults() *RelationshipDefaultTLSCertificateDefaultCertificateData`
 
-NewRelationshipDefaultTlsCertificateDefaultCertificateDataWithDefaults instantiates a new RelationshipDefaultTlsCertificateDefaultCertificateData object
+NewRelationshipDefaultTLSCertificateDefaultCertificateDataWithDefaults instantiates a new RelationshipDefaultTLSCertificateDefaultCertificateData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetType() TypeTlsCertificate`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetType() TypeTLSCertificate`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetTypeOk() (*TypeTlsCertificate, bool)`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetTypeOk() (*TypeTLSCertificate, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) SetType(v TypeTlsCertificate)`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) SetType(v TypeTLSCertificate)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) HasType() bool`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetId() string`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetIdOk() (*string, bool)`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) SetId(v string)`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) HasId() bool`
+`func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

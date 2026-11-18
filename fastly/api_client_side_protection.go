@@ -50,10 +50,10 @@ type ClientSideProtectionAPI interface {
 		Create a new Content Security Policy for a page.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspCreatePolicyRequest
 	*/
-	CspCreatePolicy(ctx context.Context, pageId string) APICspCreatePolicyRequest
+	CspCreatePolicy(ctx context.Context, pageID string) APICspCreatePolicyRequest
 
 	// CspCreatePolicyExecute executes the request
 	//  @return Policy
@@ -79,10 +79,10 @@ type ClientSideProtectionAPI interface {
 		Delete a page and all associated scripts and policies.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspDeletePageRequest
 	*/
-	CspDeletePage(ctx context.Context, pageId string) APICspDeletePageRequest
+	CspDeletePage(ctx context.Context, pageID string) APICspDeletePageRequest
 
 	// CspDeletePageExecute executes the request
 	CspDeletePageExecute(r APICspDeletePageRequest) (*http.Response, error)
@@ -93,10 +93,10 @@ type ClientSideProtectionAPI interface {
 		Delete a website and all associated pages, scripts, and policies.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param websiteId Website identifier
+		 @param websiteID Website identifier
 		 @return APICspDeleteWebsiteRequest
 	*/
-	CspDeleteWebsite(ctx context.Context, websiteId string) APICspDeleteWebsiteRequest
+	CspDeleteWebsite(ctx context.Context, websiteID string) APICspDeleteWebsiteRequest
 
 	// CspDeleteWebsiteExecute executes the request
 	CspDeleteWebsiteExecute(r APICspDeleteWebsiteRequest) (*http.Response, error)
@@ -107,10 +107,10 @@ type ClientSideProtectionAPI interface {
 		Get details for a specific page.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspGetPageRequest
 	*/
-	CspGetPage(ctx context.Context, pageId string) APICspGetPageRequest
+	CspGetPage(ctx context.Context, pageID string) APICspGetPageRequest
 
 	// CspGetPageExecute executes the request
 	//  @return Page
@@ -122,11 +122,11 @@ type ClientSideProtectionAPI interface {
 		Get details for a specific policy.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
-		 @param policyId Policy identifier
+		 @param pageID Page identifier
+		 @param policyID Policy identifier
 		 @return APICspGetPolicyRequest
 	*/
-	CspGetPolicy(ctx context.Context, pageId string, policyId string) APICspGetPolicyRequest
+	CspGetPolicy(ctx context.Context, pageID string, policyID string) APICspGetPolicyRequest
 
 	// CspGetPolicyExecute executes the request
 	//  @return Policy
@@ -138,11 +138,11 @@ type ClientSideProtectionAPI interface {
 		Get details for a specific script.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
-		 @param scriptId Script identifier
+		 @param pageID Page identifier
+		 @param scriptID Script identifier
 		 @return APICspGetScriptRequest
 	*/
-	CspGetScript(ctx context.Context, pageId string, scriptId string) APICspGetScriptRequest
+	CspGetScript(ctx context.Context, pageID string, scriptID string) APICspGetScriptRequest
 
 	// CspGetScriptExecute executes the request
 	//  @return Script
@@ -154,10 +154,10 @@ type ClientSideProtectionAPI interface {
 		Get details for a specific website.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param websiteId Website identifier
+		 @param websiteID Website identifier
 		 @return APICspGetWebsiteRequest
 	*/
-	CspGetWebsite(ctx context.Context, websiteId string) APICspGetWebsiteRequest
+	CspGetWebsite(ctx context.Context, websiteID string) APICspGetWebsiteRequest
 
 	// CspGetWebsiteExecute executes the request
 	//  @return Website
@@ -169,10 +169,10 @@ type ClientSideProtectionAPI interface {
 		List security header change events for a page.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspListHeaderEventsRequest
 	*/
-	CspListHeaderEvents(ctx context.Context, pageId string) APICspListHeaderEventsRequest
+	CspListHeaderEvents(ctx context.Context, pageID string) APICspListHeaderEventsRequest
 
 	// CspListHeaderEventsExecute executes the request
 	//  @return InlineResponse20011
@@ -184,10 +184,10 @@ type ClientSideProtectionAPI interface {
 		List security headers detected on a page.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspListHeadersRequest
 	*/
-	CspListHeaders(ctx context.Context, pageId string) APICspListHeadersRequest
+	CspListHeaders(ctx context.Context, pageID string) APICspListHeadersRequest
 
 	// CspListHeadersExecute executes the request
 	//  @return InlineResponse20010
@@ -213,10 +213,10 @@ type ClientSideProtectionAPI interface {
 		List all Content Security Policies for a page.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspListPoliciesRequest
 	*/
-	CspListPolicies(ctx context.Context, pageId string) APICspListPoliciesRequest
+	CspListPolicies(ctx context.Context, pageID string) APICspListPoliciesRequest
 
 	// CspListPoliciesExecute executes the request
 	//  @return InlineResponse2008
@@ -228,11 +228,11 @@ type ClientSideProtectionAPI interface {
 		List CSP violation reports for a policy.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
-		 @param policyId Policy identifier
+		 @param pageID Page identifier
+		 @param policyID Policy identifier
 		 @return APICspListPolicyReportsRequest
 	*/
-	CspListPolicyReports(ctx context.Context, pageId string, policyId string) APICspListPolicyReportsRequest
+	CspListPolicyReports(ctx context.Context, pageID string, policyID string) APICspListPolicyReportsRequest
 
 	// CspListPolicyReportsExecute executes the request
 	//  @return InlineResponse2009
@@ -244,10 +244,10 @@ type ClientSideProtectionAPI interface {
 		List all scripts detected on a page.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspListScriptsRequest
 	*/
-	CspListScripts(ctx context.Context, pageId string) APICspListScriptsRequest
+	CspListScripts(ctx context.Context, pageID string) APICspListScriptsRequest
 
 	// CspListScriptsExecute executes the request
 	//  @return InlineResponse2007
@@ -273,10 +273,10 @@ type ClientSideProtectionAPI interface {
 		Update a page's configuration.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
+		 @param pageID Page identifier
 		 @return APICspUpdatePageRequest
 	*/
-	CspUpdatePage(ctx context.Context, pageId string) APICspUpdatePageRequest
+	CspUpdatePage(ctx context.Context, pageID string) APICspUpdatePageRequest
 
 	// CspUpdatePageExecute executes the request
 	//  @return Page
@@ -288,11 +288,11 @@ type ClientSideProtectionAPI interface {
 		Update a policy's configuration.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
-		 @param policyId Policy identifier
+		 @param pageID Page identifier
+		 @param policyID Policy identifier
 		 @return APICspUpdatePolicyRequest
 	*/
-	CspUpdatePolicy(ctx context.Context, pageId string, policyId string) APICspUpdatePolicyRequest
+	CspUpdatePolicy(ctx context.Context, pageID string, policyID string) APICspUpdatePolicyRequest
 
 	// CspUpdatePolicyExecute executes the request
 	//  @return Policy
@@ -304,11 +304,11 @@ type ClientSideProtectionAPI interface {
 		Update a script's authorization status or justification.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param pageId Page identifier
-		 @param scriptId Script identifier
+		 @param pageID Page identifier
+		 @param scriptID Script identifier
 		 @return APICspUpdateScriptRequest
 	*/
-	CspUpdateScript(ctx context.Context, pageId string, scriptId string) APICspUpdateScriptRequest
+	CspUpdateScript(ctx context.Context, pageID string, scriptID string) APICspUpdateScriptRequest
 
 	// CspUpdateScriptExecute executes the request
 	//  @return Script
@@ -320,10 +320,10 @@ type ClientSideProtectionAPI interface {
 		Update a website's configuration.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param websiteId Website identifier
+		 @param websiteID Website identifier
 		 @return APICspUpdateWebsiteRequest
 	*/
-	CspUpdateWebsite(ctx context.Context, websiteId string) APICspUpdateWebsiteRequest
+	CspUpdateWebsite(ctx context.Context, websiteID string) APICspUpdateWebsiteRequest
 
 	// CspUpdateWebsiteExecute executes the request
 	//  @return Website
@@ -443,7 +443,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePageExecute(r APICspCreatePage
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -453,7 +453,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePageExecute(r APICspCreatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -463,7 +463,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePageExecute(r APICspCreatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -473,7 +473,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePageExecute(r APICspCreatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -513,7 +513,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePageExecute(r APICspCreatePage
 type APICspCreatePolicyRequest struct {
 	ctx          context.Context
 	APIService   ClientSideProtectionAPI
-	pageId       string
+	pageID       string
 	policyCreate *PolicyCreate
 }
 
@@ -534,14 +534,14 @@ CspCreatePolicy Create policy
 Create a new Content Security Policy for a page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspCreatePolicyRequest
 */
-func (a *ClientSideProtectionAPIService) CspCreatePolicy(ctx context.Context, pageId string) APICspCreatePolicyRequest {
+func (a *ClientSideProtectionAPIService) CspCreatePolicy(ctx context.Context, pageID string) APICspCreatePolicyRequest {
 	return APICspCreatePolicyRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -561,7 +561,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePolicyExecute(r APICspCreatePo
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/policies"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -623,7 +623,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePolicyExecute(r APICspCreatePo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -633,7 +633,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePolicyExecute(r APICspCreatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -643,7 +643,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePolicyExecute(r APICspCreatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -653,7 +653,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePolicyExecute(r APICspCreatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -663,7 +663,7 @@ func (a *ClientSideProtectionAPIService) CspCreatePolicyExecute(r APICspCreatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -809,7 +809,7 @@ func (a *ClientSideProtectionAPIService) CspCreateWebsiteExecute(r APICspCreateW
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -819,7 +819,7 @@ func (a *ClientSideProtectionAPIService) CspCreateWebsiteExecute(r APICspCreateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -829,7 +829,7 @@ func (a *ClientSideProtectionAPIService) CspCreateWebsiteExecute(r APICspCreateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -839,7 +839,7 @@ func (a *ClientSideProtectionAPIService) CspCreateWebsiteExecute(r APICspCreateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -879,7 +879,7 @@ func (a *ClientSideProtectionAPIService) CspCreateWebsiteExecute(r APICspCreateW
 type APICspDeletePageRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -893,14 +893,14 @@ CspDeletePage Delete page
 Delete a page and all associated scripts and policies.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspDeletePageRequest
 */
-func (a *ClientSideProtectionAPIService) CspDeletePage(ctx context.Context, pageId string) APICspDeletePageRequest {
+func (a *ClientSideProtectionAPIService) CspDeletePage(ctx context.Context, pageID string) APICspDeletePageRequest {
 	return APICspDeletePageRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -918,7 +918,7 @@ func (a *ClientSideProtectionAPIService) CspDeletePageExecute(r APICspDeletePage
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -978,7 +978,7 @@ func (a *ClientSideProtectionAPIService) CspDeletePageExecute(r APICspDeletePage
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -988,7 +988,7 @@ func (a *ClientSideProtectionAPIService) CspDeletePageExecute(r APICspDeletePage
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -998,7 +998,7 @@ func (a *ClientSideProtectionAPIService) CspDeletePageExecute(r APICspDeletePage
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1029,7 +1029,7 @@ func (a *ClientSideProtectionAPIService) CspDeletePageExecute(r APICspDeletePage
 type APICspDeleteWebsiteRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	websiteId  string
+	websiteID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -1043,14 +1043,14 @@ CspDeleteWebsite Delete website
 Delete a website and all associated pages, scripts, and policies.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param websiteId Website identifier
+ @param websiteID Website identifier
  @return APICspDeleteWebsiteRequest
 */
-func (a *ClientSideProtectionAPIService) CspDeleteWebsite(ctx context.Context, websiteId string) APICspDeleteWebsiteRequest {
+func (a *ClientSideProtectionAPIService) CspDeleteWebsite(ctx context.Context, websiteID string) APICspDeleteWebsiteRequest {
 	return APICspDeleteWebsiteRequest{
 		APIService: a,
 		ctx:        ctx,
-		websiteId:  websiteId,
+		websiteID:  websiteID,
 	}
 }
 
@@ -1068,7 +1068,7 @@ func (a *ClientSideProtectionAPIService) CspDeleteWebsiteExecute(r APICspDeleteW
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/websites/{website_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"website_id"+"}", gourl.PathEscape(parameterToString(r.websiteId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"website_id"+"}", gourl.PathEscape(parameterToString(r.websiteID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1128,7 +1128,7 @@ func (a *ClientSideProtectionAPIService) CspDeleteWebsiteExecute(r APICspDeleteW
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1138,7 +1138,7 @@ func (a *ClientSideProtectionAPIService) CspDeleteWebsiteExecute(r APICspDeleteW
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1148,7 +1148,7 @@ func (a *ClientSideProtectionAPIService) CspDeleteWebsiteExecute(r APICspDeleteW
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1179,7 +1179,7 @@ func (a *ClientSideProtectionAPIService) CspDeleteWebsiteExecute(r APICspDeleteW
 type APICspGetPageRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -1193,14 +1193,14 @@ CspGetPage Get page
 Get details for a specific page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspGetPageRequest
 */
-func (a *ClientSideProtectionAPIService) CspGetPage(ctx context.Context, pageId string) APICspGetPageRequest {
+func (a *ClientSideProtectionAPIService) CspGetPage(ctx context.Context, pageID string) APICspGetPageRequest {
 	return APICspGetPageRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -1220,7 +1220,7 @@ func (a *ClientSideProtectionAPIService) CspGetPageExecute(r APICspGetPageReques
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1280,7 +1280,7 @@ func (a *ClientSideProtectionAPIService) CspGetPageExecute(r APICspGetPageReques
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1290,7 +1290,7 @@ func (a *ClientSideProtectionAPIService) CspGetPageExecute(r APICspGetPageReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1300,7 +1300,7 @@ func (a *ClientSideProtectionAPIService) CspGetPageExecute(r APICspGetPageReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1310,7 +1310,7 @@ func (a *ClientSideProtectionAPIService) CspGetPageExecute(r APICspGetPageReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1350,8 +1350,8 @@ func (a *ClientSideProtectionAPIService) CspGetPageExecute(r APICspGetPageReques
 type APICspGetPolicyRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
-	policyId   string
+	pageID     string
+	policyID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -1365,16 +1365,16 @@ CspGetPolicy Get policy
 Get details for a specific policy.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
- @param policyId Policy identifier
+ @param pageID Page identifier
+ @param policyID Policy identifier
  @return APICspGetPolicyRequest
 */
-func (a *ClientSideProtectionAPIService) CspGetPolicy(ctx context.Context, pageId string, policyId string) APICspGetPolicyRequest {
+func (a *ClientSideProtectionAPIService) CspGetPolicy(ctx context.Context, pageID string, policyID string) APICspGetPolicyRequest {
 	return APICspGetPolicyRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
-		policyId:   policyId,
+		pageID:     pageID,
+		policyID:   policyID,
 	}
 }
 
@@ -1394,8 +1394,8 @@ func (a *ClientSideProtectionAPIService) CspGetPolicyExecute(r APICspGetPolicyRe
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/policies/{policy_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"policy_id"+"}", gourl.PathEscape(parameterToString(r.policyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"policy_id"+"}", gourl.PathEscape(parameterToString(r.policyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1455,7 +1455,7 @@ func (a *ClientSideProtectionAPIService) CspGetPolicyExecute(r APICspGetPolicyRe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1465,7 +1465,7 @@ func (a *ClientSideProtectionAPIService) CspGetPolicyExecute(r APICspGetPolicyRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1475,7 +1475,7 @@ func (a *ClientSideProtectionAPIService) CspGetPolicyExecute(r APICspGetPolicyRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1485,7 +1485,7 @@ func (a *ClientSideProtectionAPIService) CspGetPolicyExecute(r APICspGetPolicyRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1525,8 +1525,8 @@ func (a *ClientSideProtectionAPIService) CspGetPolicyExecute(r APICspGetPolicyRe
 type APICspGetScriptRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
-	scriptId   string
+	pageID     string
+	scriptID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -1540,16 +1540,16 @@ CspGetScript Get script
 Get details for a specific script.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
- @param scriptId Script identifier
+ @param pageID Page identifier
+ @param scriptID Script identifier
  @return APICspGetScriptRequest
 */
-func (a *ClientSideProtectionAPIService) CspGetScript(ctx context.Context, pageId string, scriptId string) APICspGetScriptRequest {
+func (a *ClientSideProtectionAPIService) CspGetScript(ctx context.Context, pageID string, scriptID string) APICspGetScriptRequest {
 	return APICspGetScriptRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
-		scriptId:   scriptId,
+		pageID:     pageID,
+		scriptID:   scriptID,
 	}
 }
 
@@ -1569,8 +1569,8 @@ func (a *ClientSideProtectionAPIService) CspGetScriptExecute(r APICspGetScriptRe
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/scripts/{script_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"script_id"+"}", gourl.PathEscape(parameterToString(r.scriptId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"script_id"+"}", gourl.PathEscape(parameterToString(r.scriptID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1630,7 +1630,7 @@ func (a *ClientSideProtectionAPIService) CspGetScriptExecute(r APICspGetScriptRe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1640,7 +1640,7 @@ func (a *ClientSideProtectionAPIService) CspGetScriptExecute(r APICspGetScriptRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1650,7 +1650,7 @@ func (a *ClientSideProtectionAPIService) CspGetScriptExecute(r APICspGetScriptRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1660,7 +1660,7 @@ func (a *ClientSideProtectionAPIService) CspGetScriptExecute(r APICspGetScriptRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1700,7 +1700,7 @@ func (a *ClientSideProtectionAPIService) CspGetScriptExecute(r APICspGetScriptRe
 type APICspGetWebsiteRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	websiteId  string
+	websiteID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -1714,14 +1714,14 @@ CspGetWebsite Get website
 Get details for a specific website.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param websiteId Website identifier
+ @param websiteID Website identifier
  @return APICspGetWebsiteRequest
 */
-func (a *ClientSideProtectionAPIService) CspGetWebsite(ctx context.Context, websiteId string) APICspGetWebsiteRequest {
+func (a *ClientSideProtectionAPIService) CspGetWebsite(ctx context.Context, websiteID string) APICspGetWebsiteRequest {
 	return APICspGetWebsiteRequest{
 		APIService: a,
 		ctx:        ctx,
-		websiteId:  websiteId,
+		websiteID:  websiteID,
 	}
 }
 
@@ -1741,7 +1741,7 @@ func (a *ClientSideProtectionAPIService) CspGetWebsiteExecute(r APICspGetWebsite
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/websites/{website_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"website_id"+"}", gourl.PathEscape(parameterToString(r.websiteId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"website_id"+"}", gourl.PathEscape(parameterToString(r.websiteID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1801,7 +1801,7 @@ func (a *ClientSideProtectionAPIService) CspGetWebsiteExecute(r APICspGetWebsite
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1811,7 +1811,7 @@ func (a *ClientSideProtectionAPIService) CspGetWebsiteExecute(r APICspGetWebsite
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1821,7 +1821,7 @@ func (a *ClientSideProtectionAPIService) CspGetWebsiteExecute(r APICspGetWebsite
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1831,7 +1831,7 @@ func (a *ClientSideProtectionAPIService) CspGetWebsiteExecute(r APICspGetWebsite
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1871,7 +1871,7 @@ func (a *ClientSideProtectionAPIService) CspGetWebsiteExecute(r APICspGetWebsite
 type APICspListHeaderEventsRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 	limit      *int32
 	page       *int32
 }
@@ -1899,14 +1899,14 @@ CspListHeaderEvents List header events
 List security header change events for a page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspListHeaderEventsRequest
 */
-func (a *ClientSideProtectionAPIService) CspListHeaderEvents(ctx context.Context, pageId string) APICspListHeaderEventsRequest {
+func (a *ClientSideProtectionAPIService) CspListHeaderEvents(ctx context.Context, pageID string) APICspListHeaderEventsRequest {
 	return APICspListHeaderEventsRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -1926,7 +1926,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/events"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1992,7 +1992,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2002,7 +2002,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2012,7 +2012,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2022,7 +2022,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2032,7 +2032,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2072,7 +2072,7 @@ func (a *ClientSideProtectionAPIService) CspListHeaderEventsExecute(r APICspList
 type APICspListHeadersRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 	limit      *int32
 	page       *int32
 }
@@ -2100,14 +2100,14 @@ CspListHeaders List security headers
 List security headers detected on a page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspListHeadersRequest
 */
-func (a *ClientSideProtectionAPIService) CspListHeaders(ctx context.Context, pageId string) APICspListHeadersRequest {
+func (a *ClientSideProtectionAPIService) CspListHeaders(ctx context.Context, pageID string) APICspListHeadersRequest {
 	return APICspListHeadersRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -2127,7 +2127,7 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/headers"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2193,7 +2193,7 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2203,7 +2203,7 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2213,7 +2213,7 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2223,7 +2223,7 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2233,7 +2233,7 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2273,14 +2273,14 @@ func (a *ClientSideProtectionAPIService) CspListHeadersExecute(r APICspListHeade
 type APICspListPagesRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	websiteId  *string
+	websiteID  *string
 	limit      *int32
 	page       *int32
 }
 
-// WebsiteId Filter pages by website ID
-func (r *APICspListPagesRequest) WebsiteId(websiteId string) *APICspListPagesRequest {
-	r.websiteId = &websiteId
+// WebsiteID Filter pages by website ID
+func (r *APICspListPagesRequest) WebsiteID(websiteID string) *APICspListPagesRequest {
+	r.websiteID = &websiteID
 	return r
 }
 
@@ -2337,8 +2337,8 @@ func (a *ClientSideProtectionAPIService) CspListPagesExecute(r APICspListPagesRe
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.websiteId != nil {
-		localVarQueryParams.Add("website_id", parameterToString(*r.websiteId, ""))
+	if r.websiteID != nil {
+		localVarQueryParams.Add("website_id", parameterToString(*r.websiteID, ""))
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
@@ -2400,7 +2400,7 @@ func (a *ClientSideProtectionAPIService) CspListPagesExecute(r APICspListPagesRe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2410,7 +2410,7 @@ func (a *ClientSideProtectionAPIService) CspListPagesExecute(r APICspListPagesRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2420,7 +2420,7 @@ func (a *ClientSideProtectionAPIService) CspListPagesExecute(r APICspListPagesRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2430,7 +2430,7 @@ func (a *ClientSideProtectionAPIService) CspListPagesExecute(r APICspListPagesRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2470,7 +2470,7 @@ func (a *ClientSideProtectionAPIService) CspListPagesExecute(r APICspListPagesRe
 type APICspListPoliciesRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 	limit      *int32
 	page       *int32
 }
@@ -2498,14 +2498,14 @@ CspListPolicies List policies
 List all Content Security Policies for a page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspListPoliciesRequest
 */
-func (a *ClientSideProtectionAPIService) CspListPolicies(ctx context.Context, pageId string) APICspListPoliciesRequest {
+func (a *ClientSideProtectionAPIService) CspListPolicies(ctx context.Context, pageID string) APICspListPoliciesRequest {
 	return APICspListPoliciesRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -2525,7 +2525,7 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/policies"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2591,7 +2591,7 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2601,7 +2601,7 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2611,7 +2611,7 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2621,7 +2621,7 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2631,7 +2631,7 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2671,8 +2671,8 @@ func (a *ClientSideProtectionAPIService) CspListPoliciesExecute(r APICspListPoli
 type APICspListPolicyReportsRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
-	policyId   string
+	pageID     string
+	policyID   string
 	limit      *int32
 	page       *int32
 }
@@ -2700,16 +2700,16 @@ CspListPolicyReports List policy reports
 List CSP violation reports for a policy.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
- @param policyId Policy identifier
+ @param pageID Page identifier
+ @param policyID Policy identifier
  @return APICspListPolicyReportsRequest
 */
-func (a *ClientSideProtectionAPIService) CspListPolicyReports(ctx context.Context, pageId string, policyId string) APICspListPolicyReportsRequest {
+func (a *ClientSideProtectionAPIService) CspListPolicyReports(ctx context.Context, pageID string, policyID string) APICspListPolicyReportsRequest {
 	return APICspListPolicyReportsRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
-		policyId:   policyId,
+		pageID:     pageID,
+		policyID:   policyID,
 	}
 }
 
@@ -2729,8 +2729,8 @@ func (a *ClientSideProtectionAPIService) CspListPolicyReportsExecute(r APICspLis
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/policies/{policy_id}/reports"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"policy_id"+"}", gourl.PathEscape(parameterToString(r.policyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"policy_id"+"}", gourl.PathEscape(parameterToString(r.policyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2796,7 +2796,7 @@ func (a *ClientSideProtectionAPIService) CspListPolicyReportsExecute(r APICspLis
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2806,7 +2806,7 @@ func (a *ClientSideProtectionAPIService) CspListPolicyReportsExecute(r APICspLis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2816,7 +2816,7 @@ func (a *ClientSideProtectionAPIService) CspListPolicyReportsExecute(r APICspLis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2826,7 +2826,7 @@ func (a *ClientSideProtectionAPIService) CspListPolicyReportsExecute(r APICspLis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2866,7 +2866,7 @@ func (a *ClientSideProtectionAPIService) CspListPolicyReportsExecute(r APICspLis
 type APICspListScriptsRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 	limit      *int32
 	page       *int32
 }
@@ -2894,14 +2894,14 @@ CspListScripts List scripts
 List all scripts detected on a page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspListScriptsRequest
 */
-func (a *ClientSideProtectionAPIService) CspListScripts(ctx context.Context, pageId string) APICspListScriptsRequest {
+func (a *ClientSideProtectionAPIService) CspListScripts(ctx context.Context, pageID string) APICspListScriptsRequest {
 	return APICspListScriptsRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -2921,7 +2921,7 @@ func (a *ClientSideProtectionAPIService) CspListScriptsExecute(r APICspListScrip
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/scripts"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2987,7 +2987,7 @@ func (a *ClientSideProtectionAPIService) CspListScriptsExecute(r APICspListScrip
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2997,7 +2997,7 @@ func (a *ClientSideProtectionAPIService) CspListScriptsExecute(r APICspListScrip
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3007,7 +3007,7 @@ func (a *ClientSideProtectionAPIService) CspListScriptsExecute(r APICspListScrip
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3017,7 +3017,7 @@ func (a *ClientSideProtectionAPIService) CspListScriptsExecute(r APICspListScrip
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3027,7 +3027,7 @@ func (a *ClientSideProtectionAPIService) CspListScriptsExecute(r APICspListScrip
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3184,7 +3184,7 @@ func (a *ClientSideProtectionAPIService) CspListWebsitesExecute(r APICspListWebs
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3194,7 +3194,7 @@ func (a *ClientSideProtectionAPIService) CspListWebsitesExecute(r APICspListWebs
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3204,7 +3204,7 @@ func (a *ClientSideProtectionAPIService) CspListWebsitesExecute(r APICspListWebs
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3214,7 +3214,7 @@ func (a *ClientSideProtectionAPIService) CspListWebsitesExecute(r APICspListWebs
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3254,7 +3254,7 @@ func (a *ClientSideProtectionAPIService) CspListWebsitesExecute(r APICspListWebs
 type APICspUpdatePageRequest struct {
 	ctx        context.Context
 	APIService ClientSideProtectionAPI
-	pageId     string
+	pageID     string
 	pageUpdate *PageUpdate
 }
 
@@ -3275,14 +3275,14 @@ CspUpdatePage Update page
 Update a page's configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
+ @param pageID Page identifier
  @return APICspUpdatePageRequest
 */
-func (a *ClientSideProtectionAPIService) CspUpdatePage(ctx context.Context, pageId string) APICspUpdatePageRequest {
+func (a *ClientSideProtectionAPIService) CspUpdatePage(ctx context.Context, pageID string) APICspUpdatePageRequest {
 	return APICspUpdatePageRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
+		pageID:     pageID,
 	}
 }
 
@@ -3302,7 +3302,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3364,7 +3364,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3374,7 +3374,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3384,7 +3384,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3394,7 +3394,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3404,7 +3404,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3444,8 +3444,8 @@ func (a *ClientSideProtectionAPIService) CspUpdatePageExecute(r APICspUpdatePage
 type APICspUpdatePolicyRequest struct {
 	ctx          context.Context
 	APIService   ClientSideProtectionAPI
-	pageId       string
-	policyId     string
+	pageID       string
+	policyID     string
 	policyUpdate *PolicyUpdate
 }
 
@@ -3466,16 +3466,16 @@ CspUpdatePolicy Update policy
 Update a policy's configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
- @param policyId Policy identifier
+ @param pageID Page identifier
+ @param policyID Policy identifier
  @return APICspUpdatePolicyRequest
 */
-func (a *ClientSideProtectionAPIService) CspUpdatePolicy(ctx context.Context, pageId string, policyId string) APICspUpdatePolicyRequest {
+func (a *ClientSideProtectionAPIService) CspUpdatePolicy(ctx context.Context, pageID string, policyID string) APICspUpdatePolicyRequest {
 	return APICspUpdatePolicyRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
-		policyId:   policyId,
+		pageID:     pageID,
+		policyID:   policyID,
 	}
 }
 
@@ -3495,8 +3495,8 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/policies/{policy_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"policy_id"+"}", gourl.PathEscape(parameterToString(r.policyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"policy_id"+"}", gourl.PathEscape(parameterToString(r.policyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3558,7 +3558,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3568,7 +3568,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3578,7 +3578,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3588,7 +3588,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3598,7 +3598,7 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3638,8 +3638,8 @@ func (a *ClientSideProtectionAPIService) CspUpdatePolicyExecute(r APICspUpdatePo
 type APICspUpdateScriptRequest struct {
 	ctx          context.Context
 	APIService   ClientSideProtectionAPI
-	pageId       string
-	scriptId     string
+	pageID       string
+	scriptID     string
 	scriptUpdate *ScriptUpdate
 }
 
@@ -3660,16 +3660,16 @@ CspUpdateScript Update script
 Update a script's authorization status or justification.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pageId Page identifier
- @param scriptId Script identifier
+ @param pageID Page identifier
+ @param scriptID Script identifier
  @return APICspUpdateScriptRequest
 */
-func (a *ClientSideProtectionAPIService) CspUpdateScript(ctx context.Context, pageId string, scriptId string) APICspUpdateScriptRequest {
+func (a *ClientSideProtectionAPIService) CspUpdateScript(ctx context.Context, pageID string, scriptID string) APICspUpdateScriptRequest {
 	return APICspUpdateScriptRequest{
 		APIService: a,
 		ctx:        ctx,
-		pageId:     pageId,
-		scriptId:   scriptId,
+		pageID:     pageID,
+		scriptID:   scriptID,
 	}
 }
 
@@ -3689,8 +3689,8 @@ func (a *ClientSideProtectionAPIService) CspUpdateScriptExecute(r APICspUpdateSc
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/pages/{page_id}/scripts/{script_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"script_id"+"}", gourl.PathEscape(parameterToString(r.scriptId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"page_id"+"}", gourl.PathEscape(parameterToString(r.pageID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"script_id"+"}", gourl.PathEscape(parameterToString(r.scriptID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3752,7 +3752,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateScriptExecute(r APICspUpdateSc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3762,7 +3762,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateScriptExecute(r APICspUpdateSc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3772,7 +3772,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateScriptExecute(r APICspUpdateSc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3782,7 +3782,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateScriptExecute(r APICspUpdateSc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3822,7 +3822,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateScriptExecute(r APICspUpdateSc
 type APICspUpdateWebsiteRequest struct {
 	ctx           context.Context
 	APIService    ClientSideProtectionAPI
-	websiteId     string
+	websiteID     string
 	websiteUpdate *WebsiteUpdate
 }
 
@@ -3843,14 +3843,14 @@ CspUpdateWebsite Update website
 Update a website's configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param websiteId Website identifier
+ @param websiteID Website identifier
  @return APICspUpdateWebsiteRequest
 */
-func (a *ClientSideProtectionAPIService) CspUpdateWebsite(ctx context.Context, websiteId string) APICspUpdateWebsiteRequest {
+func (a *ClientSideProtectionAPIService) CspUpdateWebsite(ctx context.Context, websiteID string) APICspUpdateWebsiteRequest {
 	return APICspUpdateWebsiteRequest{
 		APIService: a,
 		ctx:        ctx,
-		websiteId:  websiteId,
+		websiteID:  websiteID,
 	}
 }
 
@@ -3870,7 +3870,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateWebsiteExecute(r APICspUpdateW
 	}
 
 	localVarPath := localBasePath + "/client-side-protection/v1/websites/{website_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"website_id"+"}", gourl.PathEscape(parameterToString(r.websiteId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"website_id"+"}", gourl.PathEscape(parameterToString(r.websiteID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3932,7 +3932,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateWebsiteExecute(r APICspUpdateW
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3942,7 +3942,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateWebsiteExecute(r APICspUpdateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3952,7 +3952,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateWebsiteExecute(r APICspUpdateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3962,7 +3962,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateWebsiteExecute(r APICspUpdateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3972,7 +3972,7 @@ func (a *ClientSideProtectionAPIService) CspUpdateWebsiteExecute(r APICspUpdateW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

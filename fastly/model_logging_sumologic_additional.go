@@ -20,7 +20,7 @@ import (
 type LoggingSumologicAdditional struct {
 	MessageType *LoggingMessageType `json:"message_type,omitempty"`
 	// The URL to post logs to.
-	Url                  *string `json:"url,omitempty"`
+	URL                  *string `json:"url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -79,36 +79,36 @@ func (o *LoggingSumologicAdditional) SetMessageType(v LoggingMessageType) {
 	o.MessageType = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingSumologicAdditional) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingSumologicAdditional) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSumologicAdditional) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingSumologicAdditional) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingSumologicAdditional) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingSumologicAdditional) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingSumologicAdditional) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingSumologicAdditional) SetURL(v string) {
+	o.URL = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -118,8 +118,8 @@ func (o LoggingSumologicAdditional) MarshalJSON() ([]byte, error) {
 	if o.MessageType != nil {
 		toSerialize["message_type"] = o.MessageType
 	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 
 	for key, value := range o.AdditionalProperties {

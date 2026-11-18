@@ -23,7 +23,7 @@ type ArcProviderConnectionApiKey struct {
 	// The AI model identifiers this connection is allowed to use.
 	Models []string `json:"models"`
 	// The base URL of the provider's API. Must be an absolute `http` or `https` URL and must not end in `/v1`.
-	BaseUrl string `json:"base_url"`
+	BaseURL string `json:"base_url"`
 	// The provider's secret API key.
 	ApiKey string `json:"api_key"`
 	// The authentication type for this connection. Omit for the default `api-key` behavior.
@@ -37,11 +37,11 @@ type _ArcProviderConnectionApiKey ArcProviderConnectionApiKey
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcProviderConnectionApiKey(name string, models []string, baseUrl string, apiKey string) *ArcProviderConnectionApiKey {
+func NewArcProviderConnectionApiKey(name string, models []string, baseURL string, apiKey string) *ArcProviderConnectionApiKey {
 	this := ArcProviderConnectionApiKey{}
 	this.Name = name
 	this.Models = models
-	this.BaseUrl = baseUrl
+	this.BaseURL = baseURL
 	this.ApiKey = apiKey
 	var authType string = "api-key"
 	this.AuthType = &authType
@@ -106,28 +106,28 @@ func (o *ArcProviderConnectionApiKey) SetModels(v []string) {
 	o.Models = v
 }
 
-// GetBaseUrl returns the BaseUrl field value
-func (o *ArcProviderConnectionApiKey) GetBaseUrl() string {
+// GetBaseURL returns the BaseURL field value
+func (o *ArcProviderConnectionApiKey) GetBaseURL() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.BaseUrl
+	return o.BaseURL
 }
 
-// GetBaseUrlOk returns a tuple with the BaseUrl field value
+// GetBaseURLOk returns a tuple with the BaseURL field value
 // and a boolean to check if the value has been set.
-func (o *ArcProviderConnectionApiKey) GetBaseUrlOk() (*string, bool) {
+func (o *ArcProviderConnectionApiKey) GetBaseURLOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.BaseUrl, true
+	return &o.BaseURL, true
 }
 
-// SetBaseUrl sets field value
-func (o *ArcProviderConnectionApiKey) SetBaseUrl(v string) {
-	o.BaseUrl = v
+// SetBaseURL sets field value
+func (o *ArcProviderConnectionApiKey) SetBaseURL(v string) {
+	o.BaseURL = v
 }
 
 // GetApiKey returns the ApiKey field value
@@ -197,7 +197,7 @@ func (o ArcProviderConnectionApiKey) MarshalJSON() ([]byte, error) {
 		toSerialize["models"] = o.Models
 	}
 	if true {
-		toSerialize["base_url"] = o.BaseUrl
+		toSerialize["base_url"] = o.BaseURL
 	}
 	if true {
 		toSerialize["api_key"] = o.ApiKey

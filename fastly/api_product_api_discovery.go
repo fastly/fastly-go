@@ -36,10 +36,10 @@ type ProductApiDiscoveryAPI interface {
 		Disable the API Discovery product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIDisableProductApiDiscoveryRequest
 	*/
-	DisableProductApiDiscovery(ctx context.Context, serviceId string) APIDisableProductApiDiscoveryRequest
+	DisableProductApiDiscovery(ctx context.Context, serviceID string) APIDisableProductApiDiscoveryRequest
 
 	// DisableProductApiDiscoveryExecute executes the request
 	DisableProductApiDiscoveryExecute(r APIDisableProductApiDiscoveryRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductApiDiscoveryAPI interface {
 		Enable the API Discovery product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIEnableProductApiDiscoveryRequest
 	*/
-	EnableProductApiDiscovery(ctx context.Context, serviceId string) APIEnableProductApiDiscoveryRequest
+	EnableProductApiDiscovery(ctx context.Context, serviceID string) APIEnableProductApiDiscoveryRequest
 
 	// EnableProductApiDiscoveryExecute executes the request
 	//  @return ApiDiscoveryResponseEnable
@@ -65,10 +65,10 @@ type ProductApiDiscoveryAPI interface {
 		Get the enablement status of the API Discovery product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetProductApiDiscoveryRequest
 	*/
-	GetProductApiDiscovery(ctx context.Context, serviceId string) APIGetProductApiDiscoveryRequest
+	GetProductApiDiscovery(ctx context.Context, serviceID string) APIGetProductApiDiscoveryRequest
 
 	// GetProductApiDiscoveryExecute executes the request
 	//  @return ApiDiscoveryResponseEnable
@@ -96,7 +96,7 @@ type ProductApiDiscoveryAPIService service
 type APIDisableProductApiDiscoveryRequest struct {
 	ctx        context.Context
 	APIService ProductApiDiscoveryAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductApiDiscovery Disable product
 Disable the API Discovery product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIDisableProductApiDiscoveryRequest
 */
-func (a *ProductApiDiscoveryAPIService) DisableProductApiDiscovery(ctx context.Context, serviceId string) APIDisableProductApiDiscoveryRequest {
+func (a *ProductApiDiscoveryAPIService) DisableProductApiDiscovery(ctx context.Context, serviceID string) APIDisableProductApiDiscoveryRequest {
 	return APIDisableProductApiDiscoveryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductApiDiscoveryAPIService) DisableProductApiDiscoveryExecute(r APID
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/api_discovery/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductApiDiscoveryAPIService) DisableProductApiDiscoveryExecute(r APID
 type APIEnableProductApiDiscoveryRequest struct {
 	ctx        context.Context
 	APIService ProductApiDiscoveryAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductApiDiscovery Enable product
 Enable the API Discovery product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIEnableProductApiDiscoveryRequest
 */
-func (a *ProductApiDiscoveryAPIService) EnableProductApiDiscovery(ctx context.Context, serviceId string) APIEnableProductApiDiscoveryRequest {
+func (a *ProductApiDiscoveryAPIService) EnableProductApiDiscovery(ctx context.Context, serviceID string) APIEnableProductApiDiscoveryRequest {
 	return APIEnableProductApiDiscoveryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductApiDiscoveryAPIService) EnableProductApiDiscoveryExecute(r APIEn
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/api_discovery/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductApiDiscoveryAPIService) EnableProductApiDiscoveryExecute(r APIEn
 type APIGetProductApiDiscoveryRequest struct {
 	ctx        context.Context
 	APIService ProductApiDiscoveryAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductApiDiscovery Get product enablement status
 Get the enablement status of the API Discovery product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetProductApiDiscoveryRequest
 */
-func (a *ProductApiDiscoveryAPIService) GetProductApiDiscovery(ctx context.Context, serviceId string) APIGetProductApiDiscoveryRequest {
+func (a *ProductApiDiscoveryAPIService) GetProductApiDiscovery(ctx context.Context, serviceID string) APIGetProductApiDiscoveryRequest {
 	return APIGetProductApiDiscoveryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductApiDiscoveryAPIService) GetProductApiDiscoveryExecute(r APIGetPr
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/api_discovery/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -36,10 +36,10 @@ type DmRoutingConfigsAPI interface {
 		Activate the current draft version. The previously active version, if any, becomes inactive but is retained in version history.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIActivateDmRoutingConfigDraftRequest
 	*/
-	ActivateDmRoutingConfigDraft(ctx context.Context, configId string) APIActivateDmRoutingConfigDraftRequest
+	ActivateDmRoutingConfigDraft(ctx context.Context, configID string) APIActivateDmRoutingConfigDraftRequest
 
 	// ActivateDmRoutingConfigDraftExecute executes the request
 	//  @return RoutingConfigVersionResponse
@@ -65,10 +65,10 @@ type DmRoutingConfigsAPI interface {
 		Add a new path to the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APICreateDmRoutingConfigPathRequest
 	*/
-	CreateDmRoutingConfigPath(ctx context.Context, configId string) APICreateDmRoutingConfigPathRequest
+	CreateDmRoutingConfigPath(ctx context.Context, configID string) APICreateDmRoutingConfigPathRequest
 
 	// CreateDmRoutingConfigPathExecute executes the request
 	//  @return PathResponse
@@ -80,11 +80,11 @@ type DmRoutingConfigsAPI interface {
 		Add a new rule to a path on the config's draft version. If no draft exists, one is created automatically by cloning the active version. A rule with an empty `conditions` array is a default (catch-all) rule and there can be at most one default rule per path.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
+		 @param configID
+		 @param pathID
 		 @return APICreateDmRoutingConfigRuleRequest
 	*/
-	CreateDmRoutingConfigRule(ctx context.Context, configId string, pathId string) APICreateDmRoutingConfigRuleRequest
+	CreateDmRoutingConfigRule(ctx context.Context, configID string, pathID string) APICreateDmRoutingConfigRuleRequest
 
 	// CreateDmRoutingConfigRuleExecute executes the request
 	//  @return RuleResponse
@@ -96,10 +96,10 @@ type DmRoutingConfigsAPI interface {
 		Clear the active version designation. This is a bookkeeping operation only — it does not stop edge traffic. Minerva continues serving the last-activated version until the domain association is removed in Spotless. Only removing the routing config from the domain (via Spotless) triggers Neptune to drop the reference, which causes Minerva to stop fetching and eventually clean up the cached config. Idempotent: returns 200 even if already deactivated.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIDeactivateDmRoutingConfigRequest
 	*/
-	DeactivateDmRoutingConfig(ctx context.Context, configId string) APIDeactivateDmRoutingConfigRequest
+	DeactivateDmRoutingConfig(ctx context.Context, configID string) APIDeactivateDmRoutingConfigRequest
 
 	// DeactivateDmRoutingConfigExecute executes the request
 	//  @return RoutingConfigResponse
@@ -111,10 +111,10 @@ type DmRoutingConfigsAPI interface {
 		Delete a routing config. By default, configs that have an active version cannot be deleted. Pass `force=true` to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The `force` parameter does **not** bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of `force`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIDeleteDmRoutingConfigRequest
 	*/
-	DeleteDmRoutingConfig(ctx context.Context, configId string) APIDeleteDmRoutingConfigRequest
+	DeleteDmRoutingConfig(ctx context.Context, configID string) APIDeleteDmRoutingConfigRequest
 
 	// DeleteDmRoutingConfigExecute executes the request
 	DeleteDmRoutingConfigExecute(r APIDeleteDmRoutingConfigRequest) (*http.Response, error)
@@ -125,10 +125,10 @@ type DmRoutingConfigsAPI interface {
 		Delete all inactive versions for a routing config. The currently active version, if any, is retained.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIDeleteDmRoutingConfigInactiveVersionsRequest
 	*/
-	DeleteDmRoutingConfigInactiveVersions(ctx context.Context, configId string) APIDeleteDmRoutingConfigInactiveVersionsRequest
+	DeleteDmRoutingConfigInactiveVersions(ctx context.Context, configID string) APIDeleteDmRoutingConfigInactiveVersionsRequest
 
 	// DeleteDmRoutingConfigInactiveVersionsExecute executes the request
 	DeleteDmRoutingConfigInactiveVersionsExecute(r APIDeleteDmRoutingConfigInactiveVersionsRequest) (*http.Response, error)
@@ -139,11 +139,11 @@ type DmRoutingConfigsAPI interface {
 		Delete a path from the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
+		 @param configID
+		 @param pathID
 		 @return APIDeleteDmRoutingConfigPathRequest
 	*/
-	DeleteDmRoutingConfigPath(ctx context.Context, configId string, pathId string) APIDeleteDmRoutingConfigPathRequest
+	DeleteDmRoutingConfigPath(ctx context.Context, configID string, pathID string) APIDeleteDmRoutingConfigPathRequest
 
 	// DeleteDmRoutingConfigPathExecute executes the request
 	DeleteDmRoutingConfigPathExecute(r APIDeleteDmRoutingConfigPathRequest) (*http.Response, error)
@@ -154,12 +154,12 @@ type DmRoutingConfigsAPI interface {
 		Delete a rule from the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
-		 @param ruleId
+		 @param configID
+		 @param pathID
+		 @param ruleID
 		 @return APIDeleteDmRoutingConfigRuleRequest
 	*/
-	DeleteDmRoutingConfigRule(ctx context.Context, configId string, pathId string, ruleId string) APIDeleteDmRoutingConfigRuleRequest
+	DeleteDmRoutingConfigRule(ctx context.Context, configID string, pathID string, ruleID string) APIDeleteDmRoutingConfigRuleRequest
 
 	// DeleteDmRoutingConfigRuleExecute executes the request
 	DeleteDmRoutingConfigRuleExecute(r APIDeleteDmRoutingConfigRuleRequest) (*http.Response, error)
@@ -170,10 +170,10 @@ type DmRoutingConfigsAPI interface {
 		Delete the current draft version, reverting any unactivated changes.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIDiscardDmRoutingConfigDraftRequest
 	*/
-	DiscardDmRoutingConfigDraft(ctx context.Context, configId string) APIDiscardDmRoutingConfigDraftRequest
+	DiscardDmRoutingConfigDraft(ctx context.Context, configID string) APIDiscardDmRoutingConfigDraftRequest
 
 	// DiscardDmRoutingConfigDraftExecute executes the request
 	DiscardDmRoutingConfigDraftExecute(r APIDiscardDmRoutingConfigDraftRequest) (*http.Response, error)
@@ -184,10 +184,10 @@ type DmRoutingConfigsAPI interface {
 		Retrieve a single routing config by its identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIGetDmRoutingConfigRequest
 	*/
-	GetDmRoutingConfig(ctx context.Context, configId string) APIGetDmRoutingConfigRequest
+	GetDmRoutingConfig(ctx context.Context, configID string) APIGetDmRoutingConfigRequest
 
 	// GetDmRoutingConfigExecute executes the request
 	//  @return RoutingConfigResponse
@@ -199,10 +199,10 @@ type DmRoutingConfigsAPI interface {
 		Compare the current draft version against the active version and return the paths and rules that have been added, modified, or deleted.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIGetDmRoutingConfigDraftDiffRequest
 	*/
-	GetDmRoutingConfigDraftDiff(ctx context.Context, configId string) APIGetDmRoutingConfigDraftDiffRequest
+	GetDmRoutingConfigDraftDiff(ctx context.Context, configID string) APIGetDmRoutingConfigDraftDiffRequest
 
 	// GetDmRoutingConfigDraftDiffExecute executes the request
 	//  @return DraftDiff
@@ -214,11 +214,11 @@ type DmRoutingConfigsAPI interface {
 		Retrieve a single path by its stable identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
+		 @param configID
+		 @param pathID
 		 @return APIGetDmRoutingConfigPathRequest
 	*/
-	GetDmRoutingConfigPath(ctx context.Context, configId string, pathId string) APIGetDmRoutingConfigPathRequest
+	GetDmRoutingConfigPath(ctx context.Context, configID string, pathID string) APIGetDmRoutingConfigPathRequest
 
 	// GetDmRoutingConfigPathExecute executes the request
 	//  @return PathResponse
@@ -230,12 +230,12 @@ type DmRoutingConfigsAPI interface {
 		Retrieve a single rule by its stable identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
-		 @param ruleId
+		 @param configID
+		 @param pathID
+		 @param ruleID
 		 @return APIGetDmRoutingConfigRuleRequest
 	*/
-	GetDmRoutingConfigRule(ctx context.Context, configId string, pathId string, ruleId string) APIGetDmRoutingConfigRuleRequest
+	GetDmRoutingConfigRule(ctx context.Context, configID string, pathID string, ruleID string) APIGetDmRoutingConfigRuleRequest
 
 	// GetDmRoutingConfigRuleExecute executes the request
 	//  @return RuleResponse
@@ -247,10 +247,10 @@ type DmRoutingConfigsAPI interface {
 		List paths for the config. Returns paths from the active version if one exists, otherwise from the draft.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIListDmRoutingConfigPathsRequest
 	*/
-	ListDmRoutingConfigPaths(ctx context.Context, configId string) APIListDmRoutingConfigPathsRequest
+	ListDmRoutingConfigPaths(ctx context.Context, configID string) APIListDmRoutingConfigPathsRequest
 
 	// ListDmRoutingConfigPathsExecute executes the request
 	//  @return PathsResponse
@@ -262,11 +262,11 @@ type DmRoutingConfigsAPI interface {
 		List all rules for a path in evaluation order.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
+		 @param configID
+		 @param pathID
 		 @return APIListDmRoutingConfigRulesRequest
 	*/
-	ListDmRoutingConfigRules(ctx context.Context, configId string, pathId string) APIListDmRoutingConfigRulesRequest
+	ListDmRoutingConfigRules(ctx context.Context, configID string, pathID string) APIListDmRoutingConfigRulesRequest
 
 	// ListDmRoutingConfigRulesExecute executes the request
 	//  @return RulesResponse
@@ -278,10 +278,10 @@ type DmRoutingConfigsAPI interface {
 		List all versions for a routing config.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIListDmRoutingConfigVersionsRequest
 	*/
-	ListDmRoutingConfigVersions(ctx context.Context, configId string) APIListDmRoutingConfigVersionsRequest
+	ListDmRoutingConfigVersions(ctx context.Context, configID string) APIListDmRoutingConfigVersionsRequest
 
 	// ListDmRoutingConfigVersionsExecute executes the request
 	//  @return VersionsResponse
@@ -307,11 +307,11 @@ type DmRoutingConfigsAPI interface {
 		Reactivate a previously-active version. The currently active version, if any, becomes inactive but is retained in version history.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param versionId
+		 @param configID
+		 @param versionID
 		 @return APIReactivateDmRoutingConfigVersionRequest
 	*/
-	ReactivateDmRoutingConfigVersion(ctx context.Context, configId string, versionId string) APIReactivateDmRoutingConfigVersionRequest
+	ReactivateDmRoutingConfigVersion(ctx context.Context, configID string, versionID string) APIReactivateDmRoutingConfigVersionRequest
 
 	// ReactivateDmRoutingConfigVersionExecute executes the request
 	//  @return RoutingConfigVersionResponse
@@ -323,10 +323,10 @@ type DmRoutingConfigsAPI interface {
 		Update metadata on the draft version, such as its comment. If no draft exists, one is created automatically by cloning the active version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
+		 @param configID
 		 @return APIUpdateDmRoutingConfigDraftRequest
 	*/
-	UpdateDmRoutingConfigDraft(ctx context.Context, configId string) APIUpdateDmRoutingConfigDraftRequest
+	UpdateDmRoutingConfigDraft(ctx context.Context, configID string) APIUpdateDmRoutingConfigDraftRequest
 
 	// UpdateDmRoutingConfigDraftExecute executes the request
 	//  @return RoutingConfigVersionResponse
@@ -338,11 +338,11 @@ type DmRoutingConfigsAPI interface {
 		Update a path on the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
+		 @param configID
+		 @param pathID
 		 @return APIUpdateDmRoutingConfigPathRequest
 	*/
-	UpdateDmRoutingConfigPath(ctx context.Context, configId string, pathId string) APIUpdateDmRoutingConfigPathRequest
+	UpdateDmRoutingConfigPath(ctx context.Context, configID string, pathID string) APIUpdateDmRoutingConfigPathRequest
 
 	// UpdateDmRoutingConfigPathExecute executes the request
 	//  @return PathResponse
@@ -354,12 +354,12 @@ type DmRoutingConfigsAPI interface {
 		Update a rule on the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configId
-		 @param pathId
-		 @param ruleId
+		 @param configID
+		 @param pathID
+		 @param ruleID
 		 @return APIUpdateDmRoutingConfigRuleRequest
 	*/
-	UpdateDmRoutingConfigRule(ctx context.Context, configId string, pathId string, ruleId string) APIUpdateDmRoutingConfigRuleRequest
+	UpdateDmRoutingConfigRule(ctx context.Context, configID string, pathID string, ruleID string) APIUpdateDmRoutingConfigRuleRequest
 
 	// UpdateDmRoutingConfigRuleExecute executes the request
 	//  @return RuleResponse
@@ -373,7 +373,7 @@ type DmRoutingConfigsAPIService service
 type APIActivateDmRoutingConfigDraftRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -387,14 +387,14 @@ ActivateDmRoutingConfigDraft Activate the draft
 Activate the current draft version. The previously active version, if any, becomes inactive but is retained in version history.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIActivateDmRoutingConfigDraftRequest
 */
-func (a *DmRoutingConfigsAPIService) ActivateDmRoutingConfigDraft(ctx context.Context, configId string) APIActivateDmRoutingConfigDraftRequest {
+func (a *DmRoutingConfigsAPIService) ActivateDmRoutingConfigDraft(ctx context.Context, configID string) APIActivateDmRoutingConfigDraftRequest {
 	return APIActivateDmRoutingConfigDraftRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -414,7 +414,7 @@ func (a *DmRoutingConfigsAPIService) ActivateDmRoutingConfigDraftExecute(r APIAc
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/activate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -642,7 +642,7 @@ func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigExecute(r APICreateDmR
 type APICreateDmRoutingConfigPathRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 	pathCreate *PathCreate
 }
 
@@ -663,14 +663,14 @@ CreateDmRoutingConfigPath Create a path
 Add a new path to the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APICreateDmRoutingConfigPathRequest
 */
-func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigPath(ctx context.Context, configId string) APICreateDmRoutingConfigPathRequest {
+func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigPath(ctx context.Context, configID string) APICreateDmRoutingConfigPathRequest {
 	return APICreateDmRoutingConfigPathRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -690,7 +690,7 @@ func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigPathExecute(r APICreat
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -783,8 +783,8 @@ func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigPathExecute(r APICreat
 type APICreateDmRoutingConfigRuleRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
+	configID   string
+	pathID     string
 	ruleCreate *RuleCreate
 }
 
@@ -805,16 +805,16 @@ CreateDmRoutingConfigRule Create a rule
 Add a new rule to a path on the config's draft version. If no draft exists, one is created automatically by cloning the active version. A rule with an empty `conditions` array is a default (catch-all) rule and there can be at most one default rule per path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
+ @param configID
+ @param pathID
  @return APICreateDmRoutingConfigRuleRequest
 */
-func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigRule(ctx context.Context, configId string, pathId string) APICreateDmRoutingConfigRuleRequest {
+func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigRule(ctx context.Context, configID string, pathID string) APICreateDmRoutingConfigRuleRequest {
 	return APICreateDmRoutingConfigRuleRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
+		configID:   configID,
+		pathID:     pathID,
 	}
 }
 
@@ -834,8 +834,8 @@ func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigRuleExecute(r APICreat
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}/rules"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -928,7 +928,7 @@ func (a *DmRoutingConfigsAPIService) CreateDmRoutingConfigRuleExecute(r APICreat
 type APIDeactivateDmRoutingConfigRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -942,14 +942,14 @@ DeactivateDmRoutingConfig Deactivate a routing config
 Clear the active version designation. This is a bookkeeping operation only — it does not stop edge traffic. Minerva continues serving the last-activated version until the domain association is removed in Spotless. Only removing the routing config from the domain (via Spotless) triggers Neptune to drop the reference, which causes Minerva to stop fetching and eventually clean up the cached config. Idempotent: returns 200 even if already deactivated.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIDeactivateDmRoutingConfigRequest
 */
-func (a *DmRoutingConfigsAPIService) DeactivateDmRoutingConfig(ctx context.Context, configId string) APIDeactivateDmRoutingConfigRequest {
+func (a *DmRoutingConfigsAPIService) DeactivateDmRoutingConfig(ctx context.Context, configID string) APIDeactivateDmRoutingConfigRequest {
 	return APIDeactivateDmRoutingConfigRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -969,7 +969,7 @@ func (a *DmRoutingConfigsAPIService) DeactivateDmRoutingConfigExecute(r APIDeact
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/deactivate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1060,7 +1060,7 @@ func (a *DmRoutingConfigsAPIService) DeactivateDmRoutingConfigExecute(r APIDeact
 type APIDeleteDmRoutingConfigRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 	force      *bool
 }
 
@@ -1081,14 +1081,14 @@ DeleteDmRoutingConfig Delete a routing config
 Delete a routing config. By default, configs that have an active version cannot be deleted. Pass `force=true` to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The `force` parameter does **not** bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of `force`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIDeleteDmRoutingConfigRequest
 */
-func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfig(ctx context.Context, configId string) APIDeleteDmRoutingConfigRequest {
+func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfig(ctx context.Context, configID string) APIDeleteDmRoutingConfigRequest {
 	return APIDeleteDmRoutingConfigRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -1106,7 +1106,7 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigExecute(r APIDeleteDmR
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1191,7 +1191,7 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigExecute(r APIDeleteDmR
 type APIDeleteDmRoutingConfigInactiveVersionsRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -1205,14 +1205,14 @@ DeleteDmRoutingConfigInactiveVersions Delete inactive versions
 Delete all inactive versions for a routing config. The currently active version, if any, is retained.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIDeleteDmRoutingConfigInactiveVersionsRequest
 */
-func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigInactiveVersions(ctx context.Context, configId string) APIDeleteDmRoutingConfigInactiveVersionsRequest {
+func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigInactiveVersions(ctx context.Context, configID string) APIDeleteDmRoutingConfigInactiveVersionsRequest {
 	return APIDeleteDmRoutingConfigInactiveVersionsRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -1230,7 +1230,7 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigInactiveVersionsExecut
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/versions/inactive"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1312,8 +1312,8 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigInactiveVersionsExecut
 type APIDeleteDmRoutingConfigPathRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
+	configID   string
+	pathID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -1327,16 +1327,16 @@ DeleteDmRoutingConfigPath Delete a path
 Delete a path from the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
+ @param configID
+ @param pathID
  @return APIDeleteDmRoutingConfigPathRequest
 */
-func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigPath(ctx context.Context, configId string, pathId string) APIDeleteDmRoutingConfigPathRequest {
+func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigPath(ctx context.Context, configID string, pathID string) APIDeleteDmRoutingConfigPathRequest {
 	return APIDeleteDmRoutingConfigPathRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
+		configID:   configID,
+		pathID:     pathID,
 	}
 }
 
@@ -1354,8 +1354,8 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigPathExecute(r APIDelet
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1437,9 +1437,9 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigPathExecute(r APIDelet
 type APIDeleteDmRoutingConfigRuleRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
-	ruleId     string
+	configID   string
+	pathID     string
+	ruleID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -1453,18 +1453,18 @@ DeleteDmRoutingConfigRule Delete a rule
 Delete a rule from the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
- @param ruleId
+ @param configID
+ @param pathID
+ @param ruleID
  @return APIDeleteDmRoutingConfigRuleRequest
 */
-func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigRule(ctx context.Context, configId string, pathId string, ruleId string) APIDeleteDmRoutingConfigRuleRequest {
+func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigRule(ctx context.Context, configID string, pathID string, ruleID string) APIDeleteDmRoutingConfigRuleRequest {
 	return APIDeleteDmRoutingConfigRuleRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
-		ruleId:     ruleId,
+		configID:   configID,
+		pathID:     pathID,
+		ruleID:     ruleID,
 	}
 }
 
@@ -1482,9 +1482,9 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigRuleExecute(r APIDelet
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}/rules/{rule_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1566,7 +1566,7 @@ func (a *DmRoutingConfigsAPIService) DeleteDmRoutingConfigRuleExecute(r APIDelet
 type APIDiscardDmRoutingConfigDraftRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -1580,14 +1580,14 @@ DiscardDmRoutingConfigDraft Discard the draft
 Delete the current draft version, reverting any unactivated changes.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIDiscardDmRoutingConfigDraftRequest
 */
-func (a *DmRoutingConfigsAPIService) DiscardDmRoutingConfigDraft(ctx context.Context, configId string) APIDiscardDmRoutingConfigDraftRequest {
+func (a *DmRoutingConfigsAPIService) DiscardDmRoutingConfigDraft(ctx context.Context, configID string) APIDiscardDmRoutingConfigDraftRequest {
 	return APIDiscardDmRoutingConfigDraftRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -1605,7 +1605,7 @@ func (a *DmRoutingConfigsAPIService) DiscardDmRoutingConfigDraftExecute(r APIDis
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/draft"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1687,7 +1687,7 @@ func (a *DmRoutingConfigsAPIService) DiscardDmRoutingConfigDraftExecute(r APIDis
 type APIGetDmRoutingConfigRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -1701,14 +1701,14 @@ GetDmRoutingConfig Get a routing config
 Retrieve a single routing config by its identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIGetDmRoutingConfigRequest
 */
-func (a *DmRoutingConfigsAPIService) GetDmRoutingConfig(ctx context.Context, configId string) APIGetDmRoutingConfigRequest {
+func (a *DmRoutingConfigsAPIService) GetDmRoutingConfig(ctx context.Context, configID string) APIGetDmRoutingConfigRequest {
 	return APIGetDmRoutingConfigRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -1728,7 +1728,7 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigExecute(r APIGetDmRouting
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1819,7 +1819,7 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigExecute(r APIGetDmRouting
 type APIGetDmRoutingConfigDraftDiffRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -1833,14 +1833,14 @@ GetDmRoutingConfigDraftDiff Get the draft diff
 Compare the current draft version against the active version and return the paths and rules that have been added, modified, or deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIGetDmRoutingConfigDraftDiffRequest
 */
-func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigDraftDiff(ctx context.Context, configId string) APIGetDmRoutingConfigDraftDiffRequest {
+func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigDraftDiff(ctx context.Context, configID string) APIGetDmRoutingConfigDraftDiffRequest {
 	return APIGetDmRoutingConfigDraftDiffRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -1860,7 +1860,7 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigDraftDiffExecute(r APIGet
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/draft/diff"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1951,8 +1951,8 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigDraftDiffExecute(r APIGet
 type APIGetDmRoutingConfigPathRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
+	configID   string
+	pathID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -1966,16 +1966,16 @@ GetDmRoutingConfigPath Get a path
 Retrieve a single path by its stable identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
+ @param configID
+ @param pathID
  @return APIGetDmRoutingConfigPathRequest
 */
-func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigPath(ctx context.Context, configId string, pathId string) APIGetDmRoutingConfigPathRequest {
+func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigPath(ctx context.Context, configID string, pathID string) APIGetDmRoutingConfigPathRequest {
 	return APIGetDmRoutingConfigPathRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
+		configID:   configID,
+		pathID:     pathID,
 	}
 }
 
@@ -1995,8 +1995,8 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigPathExecute(r APIGetDmRou
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2087,9 +2087,9 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigPathExecute(r APIGetDmRou
 type APIGetDmRoutingConfigRuleRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
-	ruleId     string
+	configID   string
+	pathID     string
+	ruleID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -2103,18 +2103,18 @@ GetDmRoutingConfigRule Get a rule
 Retrieve a single rule by its stable identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
- @param ruleId
+ @param configID
+ @param pathID
+ @param ruleID
  @return APIGetDmRoutingConfigRuleRequest
 */
-func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigRule(ctx context.Context, configId string, pathId string, ruleId string) APIGetDmRoutingConfigRuleRequest {
+func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigRule(ctx context.Context, configID string, pathID string, ruleID string) APIGetDmRoutingConfigRuleRequest {
 	return APIGetDmRoutingConfigRuleRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
-		ruleId:     ruleId,
+		configID:   configID,
+		pathID:     pathID,
+		ruleID:     ruleID,
 	}
 }
 
@@ -2134,9 +2134,9 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigRuleExecute(r APIGetDmRou
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}/rules/{rule_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2227,7 +2227,7 @@ func (a *DmRoutingConfigsAPIService) GetDmRoutingConfigRuleExecute(r APIGetDmRou
 type APIListDmRoutingConfigPathsRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 	path       *string
 	match      *string
 	sort       *string
@@ -2276,14 +2276,14 @@ ListDmRoutingConfigPaths List paths
 List paths for the config. Returns paths from the active version if one exists, otherwise from the draft.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIListDmRoutingConfigPathsRequest
 */
-func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigPaths(ctx context.Context, configId string) APIListDmRoutingConfigPathsRequest {
+func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigPaths(ctx context.Context, configID string) APIListDmRoutingConfigPathsRequest {
 	return APIListDmRoutingConfigPathsRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -2303,7 +2303,7 @@ func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigPathsExecute(r APIListDm
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2409,8 +2409,8 @@ func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigPathsExecute(r APIListDm
 type APIListDmRoutingConfigRulesRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
+	configID   string
+	pathID     string
 	sort       *string
 	cursor     *string
 	limit      *int32
@@ -2445,16 +2445,16 @@ ListDmRoutingConfigRules List rules
 List all rules for a path in evaluation order.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
+ @param configID
+ @param pathID
  @return APIListDmRoutingConfigRulesRequest
 */
-func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigRules(ctx context.Context, configId string, pathId string) APIListDmRoutingConfigRulesRequest {
+func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigRules(ctx context.Context, configID string, pathID string) APIListDmRoutingConfigRulesRequest {
 	return APIListDmRoutingConfigRulesRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
+		configID:   configID,
+		pathID:     pathID,
 	}
 }
 
@@ -2474,8 +2474,8 @@ func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigRulesExecute(r APIListDm
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}/rules"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2575,7 +2575,7 @@ func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigRulesExecute(r APIListDm
 type APIListDmRoutingConfigVersionsRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
+	configID   string
 	sort       *string
 	cursor     *string
 	limit      *int32
@@ -2610,14 +2610,14 @@ ListDmRoutingConfigVersions List versions
 List all versions for a routing config.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIListDmRoutingConfigVersionsRequest
 */
-func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigVersions(ctx context.Context, configId string) APIListDmRoutingConfigVersionsRequest {
+func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigVersions(ctx context.Context, configID string) APIListDmRoutingConfigVersionsRequest {
 	return APIListDmRoutingConfigVersionsRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -2637,7 +2637,7 @@ func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigVersionsExecute(r APILis
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/versions"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2905,8 +2905,8 @@ func (a *DmRoutingConfigsAPIService) ListDmRoutingConfigsExecute(r APIListDmRout
 type APIReactivateDmRoutingConfigVersionRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	versionId  string
+	configID   string
+	versionID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -2920,16 +2920,16 @@ ReactivateDmRoutingConfigVersion Reactivate a version
 Reactivate a previously-active version. The currently active version, if any, becomes inactive but is retained in version history.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param versionId
+ @param configID
+ @param versionID
  @return APIReactivateDmRoutingConfigVersionRequest
 */
-func (a *DmRoutingConfigsAPIService) ReactivateDmRoutingConfigVersion(ctx context.Context, configId string, versionId string) APIReactivateDmRoutingConfigVersionRequest {
+func (a *DmRoutingConfigsAPIService) ReactivateDmRoutingConfigVersion(ctx context.Context, configID string, versionID string) APIReactivateDmRoutingConfigVersionRequest {
 	return APIReactivateDmRoutingConfigVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		versionId:  versionId,
+		configID:   configID,
+		versionID:  versionID,
 	}
 }
 
@@ -2949,8 +2949,8 @@ func (a *DmRoutingConfigsAPIService) ReactivateDmRoutingConfigVersionExecute(r A
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/versions/{version_id}/activate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3041,7 +3041,7 @@ func (a *DmRoutingConfigsAPIService) ReactivateDmRoutingConfigVersionExecute(r A
 type APIUpdateDmRoutingConfigDraftRequest struct {
 	ctx         context.Context
 	APIService  DmRoutingConfigsAPI
-	configId    string
+	configID    string
 	draftUpdate *DraftUpdate
 }
 
@@ -3062,14 +3062,14 @@ UpdateDmRoutingConfigDraft Update the draft
 Update metadata on the draft version, such as its comment. If no draft exists, one is created automatically by cloning the active version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
+ @param configID
  @return APIUpdateDmRoutingConfigDraftRequest
 */
-func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigDraft(ctx context.Context, configId string) APIUpdateDmRoutingConfigDraftRequest {
+func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigDraft(ctx context.Context, configID string) APIUpdateDmRoutingConfigDraftRequest {
 	return APIUpdateDmRoutingConfigDraftRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
+		configID:   configID,
 	}
 }
 
@@ -3089,7 +3089,7 @@ func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigDraftExecute(r APIUpda
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/draft"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3182,8 +3182,8 @@ func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigDraftExecute(r APIUpda
 type APIUpdateDmRoutingConfigPathRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
+	configID   string
+	pathID     string
 	pathUpdate *PathUpdate
 }
 
@@ -3204,16 +3204,16 @@ UpdateDmRoutingConfigPath Update a path
 Update a path on the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
+ @param configID
+ @param pathID
  @return APIUpdateDmRoutingConfigPathRequest
 */
-func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigPath(ctx context.Context, configId string, pathId string) APIUpdateDmRoutingConfigPathRequest {
+func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigPath(ctx context.Context, configID string, pathID string) APIUpdateDmRoutingConfigPathRequest {
 	return APIUpdateDmRoutingConfigPathRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
+		configID:   configID,
+		pathID:     pathID,
 	}
 }
 
@@ -3233,8 +3233,8 @@ func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigPathExecute(r APIUpdat
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3327,9 +3327,9 @@ func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigPathExecute(r APIUpdat
 type APIUpdateDmRoutingConfigRuleRequest struct {
 	ctx        context.Context
 	APIService DmRoutingConfigsAPI
-	configId   string
-	pathId     string
-	ruleId     string
+	configID   string
+	pathID     string
+	ruleID     string
 	ruleUpdate *RuleUpdate
 }
 
@@ -3350,18 +3350,18 @@ UpdateDmRoutingConfigRule Update a rule
 Update a rule on the config's draft version. If no draft exists, one is created automatically by cloning the active version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId
- @param pathId
- @param ruleId
+ @param configID
+ @param pathID
+ @param ruleID
  @return APIUpdateDmRoutingConfigRuleRequest
 */
-func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigRule(ctx context.Context, configId string, pathId string, ruleId string) APIUpdateDmRoutingConfigRuleRequest {
+func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigRule(ctx context.Context, configID string, pathID string, ruleID string) APIUpdateDmRoutingConfigRuleRequest {
 	return APIUpdateDmRoutingConfigRuleRequest{
 		APIService: a,
 		ctx:        ctx,
-		configId:   configId,
-		pathId:     pathId,
-		ruleId:     ruleId,
+		configID:   configID,
+		pathID:     pathID,
+		ruleID:     ruleID,
 	}
 }
 
@@ -3381,9 +3381,9 @@ func (a *DmRoutingConfigsAPIService) UpdateDmRoutingConfigRuleExecute(r APIUpdat
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/routing-configs/{config_id}/paths/{path_id}/rules/{rule_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_id"+"}", gourl.PathEscape(parameterToString(r.configID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"path_id"+"}", gourl.PathEscape(parameterToString(r.pathID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

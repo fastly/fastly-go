@@ -18,7 +18,7 @@ import (
 
 // MutualAuthenticationResponseDataAllOf struct for MutualAuthenticationResponseDataAllOf
 type MutualAuthenticationResponseDataAllOf struct {
-	Id                   *string                                 `json:"id,omitempty"`
+	ID                   *string                                 `json:"id,omitempty"`
 	Attributes           *MutualAuthenticationResponseAttributes `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -42,36 +42,36 @@ func NewMutualAuthenticationResponseDataAllOfWithDefaults() *MutualAuthenticatio
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *MutualAuthenticationResponseDataAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *MutualAuthenticationResponseDataAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MutualAuthenticationResponseDataAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *MutualAuthenticationResponseDataAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *MutualAuthenticationResponseDataAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *MutualAuthenticationResponseDataAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *MutualAuthenticationResponseDataAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *MutualAuthenticationResponseDataAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
@@ -110,8 +110,8 @@ func (o *MutualAuthenticationResponseDataAllOf) SetAttributes(v MutualAuthentica
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o MutualAuthenticationResponseDataAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes

@@ -30,10 +30,10 @@ type ServiceDetail struct {
 	// The name of the service.
 	Name *string `json:"name,omitempty"`
 	// Alphanumeric string identifying the customer.
-	CustomerId *string `json:"customer_id,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
 	// The type of this service.
 	Type *string `json:"type,omitempty"`
-	Id   *string `json:"id,omitempty"`
+	ID   *string `json:"id,omitempty"`
 	// Unused at this time.
 	PublishKey *string `json:"publish_key,omitempty"`
 	// Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
@@ -270,36 +270,36 @@ func (o *ServiceDetail) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *ServiceDetail) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *ServiceDetail) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDetail) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *ServiceDetail) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *ServiceDetail) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *ServiceDetail) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *ServiceDetail) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *ServiceDetail) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -334,36 +334,36 @@ func (o *ServiceDetail) SetType(v string) {
 	o.Type = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ServiceDetail) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ServiceDetail) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDetail) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ServiceDetail) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ServiceDetail) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ServiceDetail) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ServiceDetail) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ServiceDetail) SetID(v string) {
+	o.ID = &v
 }
 
 // GetPublishKey returns the PublishKey field value if set, zero value otherwise.
@@ -588,14 +588,14 @@ func (o ServiceDetail) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.PublishKey != nil {
 		toSerialize["publish_key"] = o.PublishKey

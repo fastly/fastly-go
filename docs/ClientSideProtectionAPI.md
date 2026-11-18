@@ -110,13 +110,13 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
     policyCreate := *openapiclient.NewPolicyCreate("Name_example", "Mode_example") // PolicyCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspCreatePolicy(ctx, pageId).PolicyCreate(policyCreate).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspCreatePolicy(ctx, pageID).PolicyCreate(policyCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspCreatePolicy`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +132,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -241,12 +241,12 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspDeletePage(ctx, pageId).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspDeletePage(ctx, pageID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspDeletePage`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -260,7 +260,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -306,12 +306,12 @@ import (
 )
 
 func main() {
-    websiteId := "2Xk9JgPCkf1NzVsNmKrECp" // string | Website identifier
+    websiteID := "2Xk9JgPCkf1NzVsNmKrECp" // string | Website identifier
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspDeleteWebsite(ctx, websiteId).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspDeleteWebsite(ctx, websiteID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspDeleteWebsite`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -325,7 +325,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**websiteId** | **string** | Website identifier | 
+**websiteID** | **string** | Website identifier | 
 
 ### Other Parameters
 
@@ -371,12 +371,12 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetPage(ctx, pageId).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetPage(ctx, pageID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspGetPage`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -392,7 +392,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -438,13 +438,13 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
-    policyId := "7Cp4OlUHqj6SfAwSrQwJHu" // string | Policy identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    policyID := "7Cp4OlUHqj6SfAwSrQwJHu" // string | Policy identifier
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetPolicy(ctx, pageId, policyId).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetPolicy(ctx, pageID, policyID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspGetPolicy`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,8 +460,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
-**policyId** | **string** | Policy identifier | 
+**pageID** | **string** | Page identifier | 
+**policyID** | **string** | Policy identifier | 
 
 ### Other Parameters
 
@@ -507,13 +507,13 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
-    scriptId := "5An2MjSFoh4QcYvQpNuHFs" // string | Script identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    scriptID := "5An2MjSFoh4QcYvQpNuHFs" // string | Script identifier
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetScript(ctx, pageId, scriptId).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetScript(ctx, pageID, scriptID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspGetScript`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -529,8 +529,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
-**scriptId** | **string** | Script identifier | 
+**pageID** | **string** | Page identifier | 
+**scriptID** | **string** | Script identifier | 
 
 ### Other Parameters
 
@@ -576,12 +576,12 @@ import (
 )
 
 func main() {
-    websiteId := "2Xk9JgPCkf1NzVsNmKrECp" // string | Website identifier
+    websiteID := "2Xk9JgPCkf1NzVsNmKrECp" // string | Website identifier
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetWebsite(ctx, websiteId).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspGetWebsite(ctx, websiteID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspGetWebsite`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -597,7 +597,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**websiteId** | **string** | Website identifier | 
+**websiteID** | **string** | Website identifier | 
 
 ### Other Parameters
 
@@ -643,14 +643,14 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     page := int32(1) // int32 | Page number of the collection to request. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspListHeaderEvents(ctx, pageId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspListHeaderEvents(ctx, pageID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspListHeaderEvents`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -666,7 +666,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -712,14 +712,14 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     page := int32(1) // int32 | Page number of the collection to request. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspListHeaders(ctx, pageId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspListHeaders(ctx, pageID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspListHeaders`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -735,7 +735,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -781,14 +781,14 @@ import (
 )
 
 func main() {
-    websiteId := "websiteId_example" // string | Filter pages by website ID (optional)
+    websiteID := "websiteId_example" // string | Filter pages by website ID (optional)
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     page := int32(1) // int32 | Page number of the collection to request. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspListPages(ctx).WebsiteId(websiteId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspListPages(ctx).WebsiteID(websiteID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspListPages`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -809,7 +809,7 @@ Other parameters are passed through a pointer to a apiCspListPagesRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **websiteId** | **string** | Filter pages by website ID |  **limit** | **int32** | Limit how many results are returned. | [default to 100] **page** | **int32** | Page number of the collection to request. | [default to 0]
+ **websiteID** | **string** | Filter pages by website ID |  **limit** | **int32** | Limit how many results are returned. | [default to 100] **page** | **int32** | Page number of the collection to request. | [default to 0]
 
 ### Return type
 
@@ -846,14 +846,14 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     page := int32(1) // int32 | Page number of the collection to request. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspListPolicies(ctx, pageId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspListPolicies(ctx, pageID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspListPolicies`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -869,7 +869,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -915,15 +915,15 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
-    policyId := "7Cp4OlUHqj6SfAwSrQwJHu" // string | Policy identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    policyID := "7Cp4OlUHqj6SfAwSrQwJHu" // string | Policy identifier
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     page := int32(1) // int32 | Page number of the collection to request. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspListPolicyReports(ctx, pageId, policyId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspListPolicyReports(ctx, pageID, policyID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspListPolicyReports`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -939,8 +939,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
-**policyId** | **string** | Policy identifier | 
+**pageID** | **string** | Page identifier | 
+**policyID** | **string** | Policy identifier | 
 
 ### Other Parameters
 
@@ -986,14 +986,14 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
     limit := int32(100) // int32 | Limit how many results are returned. (optional) (default to 100)
     page := int32(1) // int32 | Page number of the collection to request. (optional) (default to 0)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspListScripts(ctx, pageId).Limit(limit).Page(page).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspListScripts(ctx, pageID).Limit(limit).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspListScripts`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1009,7 +1009,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -1119,13 +1119,13 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
     pageUpdate := *openapiclient.NewPageUpdate() // PageUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdatePage(ctx, pageId).PageUpdate(pageUpdate).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdatePage(ctx, pageID).PageUpdate(pageUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspUpdatePage`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1141,7 +1141,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
+**pageID** | **string** | Page identifier | 
 
 ### Other Parameters
 
@@ -1187,14 +1187,14 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
-    policyId := "7Cp4OlUHqj6SfAwSrQwJHu" // string | Policy identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    policyID := "7Cp4OlUHqj6SfAwSrQwJHu" // string | Policy identifier
     policyUpdate := *openapiclient.NewPolicyUpdate() // PolicyUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdatePolicy(ctx, pageId, policyId).PolicyUpdate(policyUpdate).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdatePolicy(ctx, pageID, policyID).PolicyUpdate(policyUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspUpdatePolicy`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1210,8 +1210,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
-**policyId** | **string** | Policy identifier | 
+**pageID** | **string** | Page identifier | 
+**policyID** | **string** | Policy identifier | 
 
 ### Other Parameters
 
@@ -1257,14 +1257,14 @@ import (
 )
 
 func main() {
-    pageId := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
-    scriptId := "5An2MjSFoh4QcYvQpNuHFs" // string | Script identifier
+    pageID := "3Yl0KhQDlg2OaWtOnLsFDq" // string | Page identifier
+    scriptID := "5An2MjSFoh4QcYvQpNuHFs" // string | Script identifier
     scriptUpdate := *openapiclient.NewScriptUpdate() // ScriptUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdateScript(ctx, pageId, scriptId).ScriptUpdate(scriptUpdate).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdateScript(ctx, pageID, scriptID).ScriptUpdate(scriptUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspUpdateScript`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1280,8 +1280,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pageId** | **string** | Page identifier | 
-**scriptId** | **string** | Script identifier | 
+**pageID** | **string** | Page identifier | 
+**scriptID** | **string** | Script identifier | 
 
 ### Other Parameters
 
@@ -1327,13 +1327,13 @@ import (
 )
 
 func main() {
-    websiteId := "2Xk9JgPCkf1NzVsNmKrECp" // string | Website identifier
+    websiteID := "2Xk9JgPCkf1NzVsNmKrECp" // string | Website identifier
     websiteUpdate := *openapiclient.NewWebsiteUpdate() // WebsiteUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdateWebsite(ctx, websiteId).WebsiteUpdate(websiteUpdate).Execute()
+    resp, r, err := apiClient.ClientSideProtectionAPI.CspUpdateWebsite(ctx, websiteID).WebsiteUpdate(websiteUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ClientSideProtectionAPI.CspUpdateWebsite`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1349,7 +1349,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**websiteId** | **string** | Website identifier | 
+**websiteID** | **string** | Website identifier | 
 
 ### Other Parameters
 
@@ -1374,4 +1374,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

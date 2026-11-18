@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the condition. Required. | [optional] 
 **Priority** | Pointer to **string** | A numeric string. Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 **Statement** | Pointer to **string** | A conditional expression in VCL used to determine if the condition is met. | [optional] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** | A numeric string that represents the service version. | [optional] 
 **Type** | Pointer to **string** | Type of the condition. Required. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -144,30 +144,30 @@ SetStatement sets Statement field to given value.
 
 HasStatement returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceID
 
-`func (o *ConditionResponse) GetServiceId() string`
+`func (o *ConditionResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *ConditionResponse) GetServiceIdOk() (*string, bool)`
+`func (o *ConditionResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *ConditionResponse) SetServiceId(v string)`
+`func (o *ConditionResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *ConditionResponse) HasServiceId() bool`
+`func (o *ConditionResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -326,5 +326,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamPermissionsAPI.ListPermissions`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListPermissions`: map[string]interface{}
+    // response from `ListPermissions`: map[string]any
     fmt.Fprintf(os.Stdout, "Response from `IamPermissionsAPI.ListPermissions`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiListPermissionsRequest str
 
 ### Return type
 
-**map[string]interface{}**
+**map[string]any**
 
 ### Authorization
 
@@ -66,4 +66,3 @@ Other parameters are passed through a pointer to a apiListPermissionsRequest str
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

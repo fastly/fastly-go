@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CategoryId** | **string** | The ID of the category the bot belongs to. | [readonly] 
+**CategoryID** | **string** | The ID of the category the bot belongs to. | [readonly] 
 
 ## Methods
 
 ### NewBotManagementWorkspaceBotResponseExtra
 
-`func NewBotManagementWorkspaceBotResponseExtra(categoryId string, ) *BotManagementWorkspaceBotResponseExtra`
+`func NewBotManagementWorkspaceBotResponseExtra(categoryID string, ) *BotManagementWorkspaceBotResponseExtra`
 
 NewBotManagementWorkspaceBotResponseExtra instantiates a new BotManagementWorkspaceBotResponseExtra object
 This constructor will assign default values to properties that have it defined,
@@ -25,27 +25,25 @@ NewBotManagementWorkspaceBotResponseExtraWithDefaults instantiates a new BotMana
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCategoryId
+### GetCategoryID
 
-`func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryId() string`
+`func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryID() string`
 
-GetCategoryId returns the CategoryId field if non-nil, zero value otherwise.
+GetCategoryID returns the CategoryID field if non-nil, zero value otherwise.
 
-### GetCategoryIdOk
+### GetCategoryIDOk
 
-`func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryIdOk() (*string, bool)`
+`func (o *BotManagementWorkspaceBotResponseExtra) GetCategoryIDOk() (*string, bool)`
 
-GetCategoryIdOk returns a tuple with the CategoryId field if it's non-nil, zero value otherwise
+GetCategoryIDOk returns a tuple with the CategoryID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCategoryId
+### SetCategoryID
 
-`func (o *BotManagementWorkspaceBotResponseExtra) SetCategoryId(v string)`
+`func (o *BotManagementWorkspaceBotResponseExtra) SetCategoryID(v string)`
 
-SetCategoryId sets CategoryId field to given value.
+SetCategoryID sets CategoryID field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

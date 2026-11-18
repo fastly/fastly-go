@@ -33,9 +33,9 @@ type _RoutingConfigCondition RoutingConfigCondition
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoutingConfigCondition(type_ ConditionType, operator ConditionOperator, value string) *RoutingConfigCondition {
+func NewRoutingConfigCondition(resourceType ConditionType, operator ConditionOperator, value string) *RoutingConfigCondition {
 	this := RoutingConfigCondition{}
-	this.Type = type_
+	this.Type = resourceType
 	this.Operator = operator
 	this.Value = value
 	return &this

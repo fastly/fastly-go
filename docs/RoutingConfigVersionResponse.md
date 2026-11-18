@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the version. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the version. | [optional] [readonly] 
 **Comment** | Pointer to **string** | A freeform comment describing the version. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ActivatedAt** | Pointer to **NullableTime** | Timestamp of when the version was most recently activated. `null` if the version has never been activated. | [optional] [readonly] 
@@ -28,30 +28,30 @@ NewRoutingConfigVersionResponseWithDefaults instantiates a new RoutingConfigVers
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *RoutingConfigVersionResponse) GetId() string`
+`func (o *RoutingConfigVersionResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RoutingConfigVersionResponse) GetIdOk() (*string, bool)`
+`func (o *RoutingConfigVersionResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RoutingConfigVersionResponse) SetId(v string)`
+`func (o *RoutingConfigVersionResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RoutingConfigVersionResponse) HasId() bool`
+`func (o *RoutingConfigVersionResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetComment
 
@@ -150,5 +150,3 @@ HasActivatedAt returns a boolean if a field has been set.
 UnsetActivatedAt ensures that no value is present for ActivatedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

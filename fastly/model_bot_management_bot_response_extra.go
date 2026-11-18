@@ -19,7 +19,7 @@ import (
 // BotManagementBotResponseExtra struct for BotManagementBotResponseExtra
 type BotManagementBotResponseExtra struct {
 	// The unique identifier of the bot.
-	BotId string `json:"bot_id"`
+	BotID string `json:"bot_id"`
 	// The display name of the bot.
 	Name                 string `json:"name"`
 	AdditionalProperties map[string]any
@@ -31,9 +31,9 @@ type _BotManagementBotResponseExtra BotManagementBotResponseExtra
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotManagementBotResponseExtra(botId string, name string) *BotManagementBotResponseExtra {
+func NewBotManagementBotResponseExtra(botID string, name string) *BotManagementBotResponseExtra {
 	this := BotManagementBotResponseExtra{}
-	this.BotId = botId
+	this.BotID = botID
 	this.Name = name
 	return &this
 }
@@ -46,28 +46,28 @@ func NewBotManagementBotResponseExtraWithDefaults() *BotManagementBotResponseExt
 	return &this
 }
 
-// GetBotId returns the BotId field value
-func (o *BotManagementBotResponseExtra) GetBotId() string {
+// GetBotID returns the BotID field value
+func (o *BotManagementBotResponseExtra) GetBotID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.BotId
+	return o.BotID
 }
 
-// GetBotIdOk returns a tuple with the BotId field value
+// GetBotIDOk returns a tuple with the BotID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementBotResponseExtra) GetBotIdOk() (*string, bool) {
+func (o *BotManagementBotResponseExtra) GetBotIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.BotId, true
+	return &o.BotID, true
 }
 
-// SetBotId sets field value
-func (o *BotManagementBotResponseExtra) SetBotId(v string) {
-	o.BotId = v
+// SetBotID sets field value
+func (o *BotManagementBotResponseExtra) SetBotID(v string) {
+	o.BotID = v
 }
 
 // GetName returns the Name field value
@@ -99,7 +99,7 @@ func (o *BotManagementBotResponseExtra) SetName(v string) {
 func (o BotManagementBotResponseExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["bot_id"] = o.BotId
+		toSerialize["bot_id"] = o.BotID
 	}
 	if true {
 		toSerialize["name"] = o.Name

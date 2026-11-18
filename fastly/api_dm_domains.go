@@ -50,10 +50,10 @@ type DmDomainsAPI interface {
 		Delete a domain
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param domainId
+		 @param domainID
 		 @return APIDeleteDmDomainRequest
 	*/
-	DeleteDmDomain(ctx context.Context, domainId string) APIDeleteDmDomainRequest
+	DeleteDmDomain(ctx context.Context, domainID string) APIDeleteDmDomainRequest
 
 	// DeleteDmDomainExecute executes the request
 	DeleteDmDomainExecute(r APIDeleteDmDomainRequest) (*http.Response, error)
@@ -64,10 +64,10 @@ type DmDomainsAPI interface {
 		Show a domain
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param domainId
+		 @param domainID
 		 @return APIGetDmDomainRequest
 	*/
-	GetDmDomain(ctx context.Context, domainId string) APIGetDmDomainRequest
+	GetDmDomain(ctx context.Context, domainID string) APIGetDmDomainRequest
 
 	// GetDmDomainExecute executes the request
 	//  @return SuccessfulResponseAsObject
@@ -93,10 +93,10 @@ type DmDomainsAPI interface {
 		Update a domain
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param domainId
+		 @param domainID
 		 @return APIUpdateDmDomainRequest
 	*/
-	UpdateDmDomain(ctx context.Context, domainId string) APIUpdateDmDomainRequest
+	UpdateDmDomain(ctx context.Context, domainID string) APIUpdateDmDomainRequest
 
 	// UpdateDmDomainExecute executes the request
 	//  @return SuccessfulResponseAsObject
@@ -247,7 +247,7 @@ func (a *DmDomainsAPIService) CreateDmDomainExecute(r APICreateDmDomainRequest) 
 type APIDeleteDmDomainRequest struct {
 	ctx        context.Context
 	APIService DmDomainsAPI
-	domainId   string
+	domainID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -261,14 +261,14 @@ DeleteDmDomain Delete a domain
 Delete a domain
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param domainId
+ @param domainID
  @return APIDeleteDmDomainRequest
 */
-func (a *DmDomainsAPIService) DeleteDmDomain(ctx context.Context, domainId string) APIDeleteDmDomainRequest {
+func (a *DmDomainsAPIService) DeleteDmDomain(ctx context.Context, domainID string) APIDeleteDmDomainRequest {
 	return APIDeleteDmDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		domainId:   domainId,
+		domainID:   domainID,
 	}
 }
 
@@ -286,7 +286,7 @@ func (a *DmDomainsAPIService) DeleteDmDomainExecute(r APIDeleteDmDomainRequest) 
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/domains/{domain_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_id"+"}", gourl.PathEscape(parameterToString(r.domainId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_id"+"}", gourl.PathEscape(parameterToString(r.domainID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -368,7 +368,7 @@ func (a *DmDomainsAPIService) DeleteDmDomainExecute(r APIDeleteDmDomainRequest) 
 type APIGetDmDomainRequest struct {
 	ctx        context.Context
 	APIService DmDomainsAPI
-	domainId   string
+	domainID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -382,14 +382,14 @@ GetDmDomain Get a domain
 Show a domain
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param domainId
+ @param domainID
  @return APIGetDmDomainRequest
 */
-func (a *DmDomainsAPIService) GetDmDomain(ctx context.Context, domainId string) APIGetDmDomainRequest {
+func (a *DmDomainsAPIService) GetDmDomain(ctx context.Context, domainID string) APIGetDmDomainRequest {
 	return APIGetDmDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		domainId:   domainId,
+		domainID:   domainID,
 	}
 }
 
@@ -409,7 +409,7 @@ func (a *DmDomainsAPIService) GetDmDomainExecute(r APIGetDmDomainRequest) (*Succ
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/domains/{domain_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_id"+"}", gourl.PathEscape(parameterToString(r.domainId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_id"+"}", gourl.PathEscape(parameterToString(r.domainID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -502,7 +502,7 @@ type APIListDmDomainsRequest struct {
 	APIService DmDomainsAPI
 	fqdn       *string
 	fqdnMatch  *string
-	serviceId  *string
+	serviceID  *string
 	sort       *string
 	activated  *bool
 	verified   *bool
@@ -522,9 +522,9 @@ func (r *APIListDmDomainsRequest) FqdnMatch(fqdnMatch string) *APIListDmDomainsR
 	return r
 }
 
-// ServiceId Filter results based on a service_id.
-func (r *APIListDmDomainsRequest) ServiceId(serviceId string) *APIListDmDomainsRequest {
-	r.serviceId = &serviceId
+// ServiceID Filter results based on a service_id.
+func (r *APIListDmDomainsRequest) ServiceID(serviceID string) *APIListDmDomainsRequest {
+	r.serviceID = &serviceID
 	return r
 }
 
@@ -605,8 +605,8 @@ func (a *DmDomainsAPIService) ListDmDomainsExecute(r APIListDmDomainsRequest) (*
 	if r.fqdnMatch != nil {
 		localVarQueryParams.Add("fqdn_match", parameterToString(*r.fqdnMatch, ""))
 	}
-	if r.serviceId != nil {
-		localVarQueryParams.Add("service_id", parameterToString(*r.serviceId, ""))
+	if r.serviceID != nil {
+		localVarQueryParams.Add("service_id", parameterToString(*r.serviceID, ""))
 	}
 	if r.sort != nil {
 		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
@@ -708,7 +708,7 @@ func (a *DmDomainsAPIService) ListDmDomainsExecute(r APIListDmDomainsRequest) (*
 type APIUpdateDmDomainRequest struct {
 	ctx                  context.Context
 	APIService           DmDomainsAPI
-	domainId             string
+	domainID             string
 	requestBodyForUpdate *RequestBodyForUpdate
 }
 
@@ -729,14 +729,14 @@ UpdateDmDomain Update a domain
 Update a domain
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param domainId
+ @param domainID
  @return APIUpdateDmDomainRequest
 */
-func (a *DmDomainsAPIService) UpdateDmDomain(ctx context.Context, domainId string) APIUpdateDmDomainRequest {
+func (a *DmDomainsAPIService) UpdateDmDomain(ctx context.Context, domainID string) APIUpdateDmDomainRequest {
 	return APIUpdateDmDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		domainId:   domainId,
+		domainID:   domainID,
 	}
 }
 
@@ -756,7 +756,7 @@ func (a *DmDomainsAPIService) UpdateDmDomainExecute(r APIUpdateDmDomainRequest) 
 	}
 
 	localVarPath := localBasePath + "/domain-management/v1/domains/{domain_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_id"+"}", gourl.PathEscape(parameterToString(r.domainId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_id"+"}", gourl.PathEscape(parameterToString(r.domainID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

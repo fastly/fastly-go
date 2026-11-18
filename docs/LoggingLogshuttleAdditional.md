@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Token** | Pointer to **NullableString** | The data authentication token associated with this endpoint. | [optional] 
-**Url** | Pointer to **string** | The URL to stream logs to. | [optional] 
+**URL** | Pointer to **string** | The URL to stream logs to. | [optional] 
 
 ## Methods
 
@@ -61,32 +61,30 @@ HasToken returns a boolean if a field has been set.
 `func (o *LoggingLogshuttleAdditional) UnsetToken()`
 
 UnsetToken ensures that no value is present for Token, not even an explicit nil
-### GetUrl
+### GetURL
 
-`func (o *LoggingLogshuttleAdditional) GetUrl() string`
+`func (o *LoggingLogshuttleAdditional) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LoggingLogshuttleAdditional) GetUrlOk() (*string, bool)`
+`func (o *LoggingLogshuttleAdditional) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LoggingLogshuttleAdditional) SetUrl(v string)`
+`func (o *LoggingLogshuttleAdditional) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LoggingLogshuttleAdditional) HasUrl() bool`
+`func (o *LoggingLogshuttleAdditional) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

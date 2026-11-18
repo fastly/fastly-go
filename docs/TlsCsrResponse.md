@@ -1,56 +1,54 @@
-# TlsCsrResponse
+# TLSCsrResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**TlsCsrResponseData**](TlsCsrResponseData.md) |  | [optional] 
+**Data** | Pointer to [**TLSCsrResponseData**](TlsCsrResponseData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsCsrResponse
+### NewTLSCsrResponse
 
-`func NewTlsCsrResponse() *TlsCsrResponse`
+`func NewTLSCsrResponse() *TLSCsrResponse`
 
-NewTlsCsrResponse instantiates a new TlsCsrResponse object
+NewTLSCsrResponse instantiates a new TLSCsrResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsCsrResponseWithDefaults
+### NewTLSCsrResponseWithDefaults
 
-`func NewTlsCsrResponseWithDefaults() *TlsCsrResponse`
+`func NewTLSCsrResponseWithDefaults() *TLSCsrResponse`
 
-NewTlsCsrResponseWithDefaults instantiates a new TlsCsrResponse object
+NewTLSCsrResponseWithDefaults instantiates a new TLSCsrResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TlsCsrResponse) GetData() TlsCsrResponseData`
+`func (o *TLSCsrResponse) GetData() TLSCsrResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsCsrResponse) GetDataOk() (*TlsCsrResponseData, bool)`
+`func (o *TLSCsrResponse) GetDataOk() (*TLSCsrResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsCsrResponse) SetData(v TlsCsrResponseData)`
+`func (o *TLSCsrResponse) SetData(v TLSCsrResponseData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsCsrResponse) HasData() bool`
+`func (o *TLSCsrResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

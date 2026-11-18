@@ -20,7 +20,7 @@ import (
 // Website struct for Website
 type Website struct {
 	// Unique website identifier
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// Website domain
 	Domain *string `json:"domain,omitempty"`
 	// IDs of pages associated with this website
@@ -49,36 +49,36 @@ func NewWebsiteWithDefaults() *Website {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Website) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *Website) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Website) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *Website) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Website) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *Website) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Website) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *Website) SetID(v string) {
+	o.ID = &v
 }
 
 // GetDomain returns the Domain field value if set, zero value otherwise.
@@ -213,8 +213,8 @@ func (o *Website) SetUpdatedAt(v time.Time) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Website) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Domain != nil {
 		toSerialize["domain"] = o.Domain

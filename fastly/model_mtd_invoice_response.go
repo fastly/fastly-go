@@ -20,9 +20,9 @@ import (
 // MtdInvoiceResponse struct for MtdInvoiceResponse
 type MtdInvoiceResponse struct {
 	// The Customer ID associated with the invoice.
-	CustomerId *string `json:"customer_id,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
 	// An alphanumeric string identifying the invoice.
-	InvoiceId *string `json:"invoice_id,omitempty"`
+	InvoiceID *string `json:"invoice_id,omitempty"`
 	// The date and time (in ISO 8601 format) for the initiation point of a billing cycle, signifying the start of charges for a service or subscription.
 	BillingStartDate *time.Time `json:"billing_start_date,omitempty"`
 	// The date and time (in ISO 8601 format) for the termination point of a billing cycle, signifying the end of charges for a service or subscription.
@@ -52,68 +52,68 @@ func NewMtdInvoiceResponseWithDefaults() *MtdInvoiceResponse {
 	return &this
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *MtdInvoiceResponse) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *MtdInvoiceResponse) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MtdInvoiceResponse) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *MtdInvoiceResponse) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *MtdInvoiceResponse) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *MtdInvoiceResponse) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *MtdInvoiceResponse) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *MtdInvoiceResponse) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
-// GetInvoiceId returns the InvoiceId field value if set, zero value otherwise.
-func (o *MtdInvoiceResponse) GetInvoiceId() string {
-	if o == nil || o.InvoiceId == nil {
+// GetInvoiceID returns the InvoiceID field value if set, zero value otherwise.
+func (o *MtdInvoiceResponse) GetInvoiceID() string {
+	if o == nil || o.InvoiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.InvoiceId
+	return *o.InvoiceID
 }
 
-// GetInvoiceIdOk returns a tuple with the InvoiceId field value if set, nil otherwise
+// GetInvoiceIDOk returns a tuple with the InvoiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MtdInvoiceResponse) GetInvoiceIdOk() (*string, bool) {
-	if o == nil || o.InvoiceId == nil {
+func (o *MtdInvoiceResponse) GetInvoiceIDOk() (*string, bool) {
+	if o == nil || o.InvoiceID == nil {
 		return nil, false
 	}
-	return o.InvoiceId, true
+	return o.InvoiceID, true
 }
 
-// HasInvoiceId returns a boolean if a field has been set.
-func (o *MtdInvoiceResponse) HasInvoiceId() bool {
-	if o != nil && o.InvoiceId != nil {
+// HasInvoiceID returns a boolean if a field has been set.
+func (o *MtdInvoiceResponse) HasInvoiceID() bool {
+	if o != nil && o.InvoiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetInvoiceId gets a reference to the given string and assigns it to the InvoiceId field.
-func (o *MtdInvoiceResponse) SetInvoiceId(v string) {
-	o.InvoiceId = &v
+// SetInvoiceID gets a reference to the given string and assigns it to the InvoiceID field.
+func (o *MtdInvoiceResponse) SetInvoiceID(v string) {
+	o.InvoiceID = &v
 }
 
 // GetBillingStartDate returns the BillingStartDate field value if set, zero value otherwise.
@@ -248,11 +248,11 @@ func (o *MtdInvoiceResponse) SetTransactionLineItems(v []Mtdlineitems) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o MtdInvoiceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
-	if o.InvoiceId != nil {
-		toSerialize["invoice_id"] = o.InvoiceId
+	if o.InvoiceID != nil {
+		toSerialize["invoice_id"] = o.InvoiceID
 	}
 	if o.BillingStartDate != nil {
 		toSerialize["billing_start_date"] = o.BillingStartDate

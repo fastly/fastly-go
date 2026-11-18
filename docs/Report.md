@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**PolicyId** | Pointer to **string** |  | [optional] 
-**BlockedUri** | Pointer to **string** |  | [optional] 
-**DocumentUri** | Pointer to **string** |  | [optional] 
+**ID** | Pointer to **string** |  | [optional] 
+**PolicyID** | Pointer to **string** |  | [optional] 
+**BlockedURI** | Pointer to **string** |  | [optional] 
+**DocumentURI** | Pointer to **string** |  | [optional] 
 **ViolatedDirective** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **time.Time** |  | [optional] 
 
@@ -30,105 +30,105 @@ NewReportWithDefaults instantiates a new Report object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *Report) GetId() string`
+`func (o *Report) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *Report) GetIdOk() (*string, bool)`
+`func (o *Report) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *Report) SetId(v string)`
+`func (o *Report) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *Report) HasId() bool`
+`func (o *Report) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetPolicyId
+### GetPolicyID
 
-`func (o *Report) GetPolicyId() string`
+`func (o *Report) GetPolicyID() string`
 
-GetPolicyId returns the PolicyId field if non-nil, zero value otherwise.
+GetPolicyID returns the PolicyID field if non-nil, zero value otherwise.
 
-### GetPolicyIdOk
+### GetPolicyIDOk
 
-`func (o *Report) GetPolicyIdOk() (*string, bool)`
+`func (o *Report) GetPolicyIDOk() (*string, bool)`
 
-GetPolicyIdOk returns a tuple with the PolicyId field if it's non-nil, zero value otherwise
+GetPolicyIDOk returns a tuple with the PolicyID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPolicyId
+### SetPolicyID
 
-`func (o *Report) SetPolicyId(v string)`
+`func (o *Report) SetPolicyID(v string)`
 
-SetPolicyId sets PolicyId field to given value.
+SetPolicyID sets PolicyID field to given value.
 
-### HasPolicyId
+### HasPolicyID
 
-`func (o *Report) HasPolicyId() bool`
+`func (o *Report) HasPolicyID() bool`
 
-HasPolicyId returns a boolean if a field has been set.
+HasPolicyID returns a boolean if a field has been set.
 
-### GetBlockedUri
+### GetBlockedURI
 
-`func (o *Report) GetBlockedUri() string`
+`func (o *Report) GetBlockedURI() string`
 
-GetBlockedUri returns the BlockedUri field if non-nil, zero value otherwise.
+GetBlockedURI returns the BlockedURI field if non-nil, zero value otherwise.
 
-### GetBlockedUriOk
+### GetBlockedURIOk
 
-`func (o *Report) GetBlockedUriOk() (*string, bool)`
+`func (o *Report) GetBlockedURIOk() (*string, bool)`
 
-GetBlockedUriOk returns a tuple with the BlockedUri field if it's non-nil, zero value otherwise
+GetBlockedURIOk returns a tuple with the BlockedURI field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBlockedUri
+### SetBlockedURI
 
-`func (o *Report) SetBlockedUri(v string)`
+`func (o *Report) SetBlockedURI(v string)`
 
-SetBlockedUri sets BlockedUri field to given value.
+SetBlockedURI sets BlockedURI field to given value.
 
-### HasBlockedUri
+### HasBlockedURI
 
-`func (o *Report) HasBlockedUri() bool`
+`func (o *Report) HasBlockedURI() bool`
 
-HasBlockedUri returns a boolean if a field has been set.
+HasBlockedURI returns a boolean if a field has been set.
 
-### GetDocumentUri
+### GetDocumentURI
 
-`func (o *Report) GetDocumentUri() string`
+`func (o *Report) GetDocumentURI() string`
 
-GetDocumentUri returns the DocumentUri field if non-nil, zero value otherwise.
+GetDocumentURI returns the DocumentURI field if non-nil, zero value otherwise.
 
-### GetDocumentUriOk
+### GetDocumentURIOk
 
-`func (o *Report) GetDocumentUriOk() (*string, bool)`
+`func (o *Report) GetDocumentURIOk() (*string, bool)`
 
-GetDocumentUriOk returns a tuple with the DocumentUri field if it's non-nil, zero value otherwise
+GetDocumentURIOk returns a tuple with the DocumentURI field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDocumentUri
+### SetDocumentURI
 
-`func (o *Report) SetDocumentUri(v string)`
+`func (o *Report) SetDocumentURI(v string)`
 
-SetDocumentUri sets DocumentUri field to given value.
+SetDocumentURI sets DocumentURI field to given value.
 
-### HasDocumentUri
+### HasDocumentURI
 
-`func (o *Report) HasDocumentUri() bool`
+`func (o *Report) HasDocumentURI() bool`
 
-HasDocumentUri returns a boolean if a field has been set.
+HasDocumentURI returns a boolean if a field has been set.
 
 ### GetViolatedDirective
 
@@ -182,5 +182,3 @@ HasCreatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A human-readable name, unique within the customer. | 
-**IpAddress** | **string** | The GRE destination address, unique within the customer. It cannot be changed after endpoint creation. | 
-**Id** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
+**IPAddress** | **string** | The GRE destination address, unique within the customer. It cannot be changed after endpoint creation. | 
+**ID** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
 **CreatedAt** | **time.Time** | An ISO 8601 timestamp in UTC. | [readonly] 
 **UpdatedAt** | **time.Time** | An ISO 8601 timestamp in UTC. | [readonly] 
 
@@ -49,44 +49,44 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetIpAddress
+### GetIPAddress
 
-`func (o *NetworkProtectEndpointResponse) GetIpAddress() string`
+`func (o *NetworkProtectEndpointResponse) GetIPAddress() string`
 
-GetIpAddress returns the IpAddress field if non-nil, zero value otherwise.
+GetIPAddress returns the IPAddress field if non-nil, zero value otherwise.
 
-### GetIpAddressOk
+### GetIPAddressOk
 
-`func (o *NetworkProtectEndpointResponse) GetIpAddressOk() (*string, bool)`
+`func (o *NetworkProtectEndpointResponse) GetIPAddressOk() (*string, bool)`
 
-GetIpAddressOk returns a tuple with the IpAddress field if it's non-nil, zero value otherwise
+GetIPAddressOk returns a tuple with the IPAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIpAddress
+### SetIPAddress
 
-`func (o *NetworkProtectEndpointResponse) SetIpAddress(v string)`
+`func (o *NetworkProtectEndpointResponse) SetIPAddress(v string)`
 
-SetIpAddress sets IpAddress field to given value.
+SetIPAddress sets IPAddress field to given value.
 
 
-### GetId
+### GetID
 
-`func (o *NetworkProtectEndpointResponse) GetId() string`
+`func (o *NetworkProtectEndpointResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *NetworkProtectEndpointResponse) GetIdOk() (*string, bool)`
+`func (o *NetworkProtectEndpointResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *NetworkProtectEndpointResponse) SetId(v string)`
+`func (o *NetworkProtectEndpointResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetCreatedAt
@@ -131,5 +131,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// IncludedWithTlsConfiguration struct for IncludedWithTlsConfiguration
-type IncludedWithTlsConfiguration struct {
-	Included             []IncludedWithTlsConfigurationItem `json:"included,omitempty"`
+// IncludedWithTLSConfiguration struct for IncludedWithTLSConfiguration
+type IncludedWithTLSConfiguration struct {
+	Included             []IncludedWithTLSConfigurationItem `json:"included,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _IncludedWithTlsConfiguration IncludedWithTlsConfiguration
+type _IncludedWithTLSConfiguration IncludedWithTLSConfiguration
 
-// NewIncludedWithTlsConfiguration instantiates a new IncludedWithTlsConfiguration object
+// NewIncludedWithTLSConfiguration instantiates a new IncludedWithTLSConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncludedWithTlsConfiguration() *IncludedWithTlsConfiguration {
-	this := IncludedWithTlsConfiguration{}
+func NewIncludedWithTLSConfiguration() *IncludedWithTLSConfiguration {
+	this := IncludedWithTLSConfiguration{}
 	return &this
 }
 
-// NewIncludedWithTlsConfigurationWithDefaults instantiates a new IncludedWithTlsConfiguration object
+// NewIncludedWithTLSConfigurationWithDefaults instantiates a new IncludedWithTLSConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewIncludedWithTlsConfigurationWithDefaults() *IncludedWithTlsConfiguration {
-	this := IncludedWithTlsConfiguration{}
+func NewIncludedWithTLSConfigurationWithDefaults() *IncludedWithTLSConfiguration {
+	this := IncludedWithTLSConfiguration{}
 	return &this
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *IncludedWithTlsConfiguration) GetIncluded() []IncludedWithTlsConfigurationItem {
+func (o *IncludedWithTLSConfiguration) GetIncluded() []IncludedWithTLSConfigurationItem {
 	if o == nil || o.Included == nil {
-		var ret []IncludedWithTlsConfigurationItem
+		var ret []IncludedWithTLSConfigurationItem
 		return ret
 	}
 	return o.Included
@@ -52,7 +52,7 @@ func (o *IncludedWithTlsConfiguration) GetIncluded() []IncludedWithTlsConfigurat
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IncludedWithTlsConfiguration) GetIncludedOk() ([]IncludedWithTlsConfigurationItem, bool) {
+func (o *IncludedWithTLSConfiguration) GetIncludedOk() ([]IncludedWithTLSConfigurationItem, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *IncludedWithTlsConfiguration) GetIncludedOk() ([]IncludedWithTlsConfigu
 }
 
 // HasIncluded returns a boolean if a field has been set.
-func (o *IncludedWithTlsConfiguration) HasIncluded() bool {
+func (o *IncludedWithTLSConfiguration) HasIncluded() bool {
 	if o != nil && o.Included != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *IncludedWithTlsConfiguration) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []IncludedWithTlsConfigurationItem and assigns it to the Included field.
-func (o *IncludedWithTlsConfiguration) SetIncluded(v []IncludedWithTlsConfigurationItem) {
+// SetIncluded gets a reference to the given []IncludedWithTLSConfigurationItem and assigns it to the Included field.
+func (o *IncludedWithTLSConfiguration) SetIncluded(v []IncludedWithTLSConfigurationItem) {
 	o.Included = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o IncludedWithTlsConfiguration) MarshalJSON() ([]byte, error) {
+func (o IncludedWithTLSConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Included != nil {
 		toSerialize["included"] = o.Included
@@ -90,11 +90,11 @@ func (o IncludedWithTlsConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *IncludedWithTlsConfiguration) UnmarshalJSON(bytes []byte) (err error) {
-	varIncludedWithTlsConfiguration := _IncludedWithTlsConfiguration{}
+func (o *IncludedWithTLSConfiguration) UnmarshalJSON(bytes []byte) (err error) {
+	varIncludedWithTLSConfiguration := _IncludedWithTLSConfiguration{}
 
-	if err = json.Unmarshal(bytes, &varIncludedWithTlsConfiguration); err == nil {
-		*o = IncludedWithTlsConfiguration(varIncludedWithTlsConfiguration)
+	if err = json.Unmarshal(bytes, &varIncludedWithTLSConfiguration); err == nil {
+		*o = IncludedWithTLSConfiguration(varIncludedWithTLSConfiguration)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *IncludedWithTlsConfiguration) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableIncludedWithTlsConfiguration is a helper abstraction for handling nullable includedwithtlsconfiguration types.
-type NullableIncludedWithTlsConfiguration struct {
-	value *IncludedWithTlsConfiguration
+// NullableIncludedWithTLSConfiguration is a helper abstraction for handling nullable includedwithtlsconfiguration types.
+type NullableIncludedWithTLSConfiguration struct {
+	value *IncludedWithTLSConfiguration
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableIncludedWithTlsConfiguration) Get() *IncludedWithTlsConfiguration {
+func (v NullableIncludedWithTLSConfiguration) Get() *IncludedWithTLSConfiguration {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableIncludedWithTlsConfiguration) Set(val *IncludedWithTlsConfiguration) {
+func (v *NullableIncludedWithTLSConfiguration) Set(val *IncludedWithTLSConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableIncludedWithTlsConfiguration) IsSet() bool {
+func (v NullableIncludedWithTLSConfiguration) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableIncludedWithTlsConfiguration) Unset() {
+func (v *NullableIncludedWithTLSConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableIncludedWithTlsConfiguration returns a pointer to a new instance of NullableIncludedWithTlsConfiguration.
-func NewNullableIncludedWithTlsConfiguration(val *IncludedWithTlsConfiguration) *NullableIncludedWithTlsConfiguration {
-	return &NullableIncludedWithTlsConfiguration{value: val, isSet: true}
+// NewNullableIncludedWithTLSConfiguration returns a pointer to a new instance of NullableIncludedWithTLSConfiguration.
+func NewNullableIncludedWithTLSConfiguration(val *IncludedWithTLSConfiguration) *NullableIncludedWithTLSConfiguration {
+	return &NullableIncludedWithTLSConfiguration{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableIncludedWithTlsConfiguration) MarshalJSON() ([]byte, error) {
+func (v NullableIncludedWithTLSConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableIncludedWithTlsConfiguration) UnmarshalJSON(src []byte) error {
+func (v *NullableIncludedWithTLSConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

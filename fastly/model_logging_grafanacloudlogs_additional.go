@@ -23,7 +23,7 @@ type LoggingGrafanacloudlogsAdditional struct {
 	// The Grafana Cloud Logs Dataset you want to log to.
 	User *string `json:"user,omitempty"`
 	// The URL of the Loki instance in your Grafana stack.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// The Grafana Access Policy token with `logs:write` access scoped to your Loki instance.
 	Token *string `json:"token,omitempty"`
 	// The Stream Labels, a JSON string used to identify the stream.
@@ -114,36 +114,36 @@ func (o *LoggingGrafanacloudlogsAdditional) SetUser(v string) {
 	o.User = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingGrafanacloudlogsAdditional) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingGrafanacloudlogsAdditional) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGrafanacloudlogsAdditional) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingGrafanacloudlogsAdditional) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingGrafanacloudlogsAdditional) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingGrafanacloudlogsAdditional) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingGrafanacloudlogsAdditional) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingGrafanacloudlogsAdditional) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetToken returns the Token field value if set, zero value otherwise.
@@ -220,8 +220,8 @@ func (o LoggingGrafanacloudlogsAdditional) MarshalJSON() ([]byte, error) {
 	if o.User != nil {
 		toSerialize["user"] = o.User
 	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.Token != nil {
 		toSerialize["token"] = o.Token

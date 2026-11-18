@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderConnectionId** | **string** | The ID of the provider connection to retry against. | 
+**ProviderConnectionID** | **string** | The ID of the provider connection to retry against. | 
 
 ## Methods
 
 ### NewArcFailoverTarget
 
-`func NewArcFailoverTarget(providerConnectionId string, ) *ArcFailoverTarget`
+`func NewArcFailoverTarget(providerConnectionID string, ) *ArcFailoverTarget`
 
 NewArcFailoverTarget instantiates a new ArcFailoverTarget object
 This constructor will assign default values to properties that have it defined,
@@ -25,27 +25,25 @@ NewArcFailoverTargetWithDefaults instantiates a new ArcFailoverTarget object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetProviderConnectionId
+### GetProviderConnectionID
 
-`func (o *ArcFailoverTarget) GetProviderConnectionId() string`
+`func (o *ArcFailoverTarget) GetProviderConnectionID() string`
 
-GetProviderConnectionId returns the ProviderConnectionId field if non-nil, zero value otherwise.
+GetProviderConnectionID returns the ProviderConnectionID field if non-nil, zero value otherwise.
 
-### GetProviderConnectionIdOk
+### GetProviderConnectionIDOk
 
-`func (o *ArcFailoverTarget) GetProviderConnectionIdOk() (*string, bool)`
+`func (o *ArcFailoverTarget) GetProviderConnectionIDOk() (*string, bool)`
 
-GetProviderConnectionIdOk returns a tuple with the ProviderConnectionId field if it's non-nil, zero value otherwise
+GetProviderConnectionIDOk returns a tuple with the ProviderConnectionID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProviderConnectionId
+### SetProviderConnectionID
 
-`func (o *ArcFailoverTarget) SetProviderConnectionId(v string)`
+`func (o *ArcFailoverTarget) SetProviderConnectionID(v string)`
 
-SetProviderConnectionId sets ProviderConnectionId field to given value.
+SetProviderConnectionID sets ProviderConnectionID field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

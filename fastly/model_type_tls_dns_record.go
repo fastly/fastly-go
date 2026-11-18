@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTlsDnsRecord Resource type
-type TypeTlsDnsRecord string
+// TypeTLSDNSRecord Resource type
+type TypeTLSDNSRecord string
 
-// List of type_tls_dns_record
+// List of resourceTypetls_dns_record
 const (
-	TYPETLSDNSRECORD_DNS_RECORD TypeTlsDnsRecord = "dns_record"
+	TYPETLSDNSRECORD_DNS_RECORD TypeTLSDNSRecord = "dns_record"
 )
 
-// AllowedTypeTlsDnsRecordEnumValues All allowed values of TypeTlsDnsRecord enum
-var AllowedTypeTlsDnsRecordEnumValues = []TypeTlsDnsRecord{
+// AllowedTypeTLSDNSRecordEnumValues All allowed values of TypeTLSDNSRecord enum
+var AllowedTypeTLSDNSRecordEnumValues = []TypeTLSDNSRecord{
 	"dns_record",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTlsDnsRecord) UnmarshalJSON(src []byte) error {
+func (v *TypeTLSDNSRecord) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTlsDnsRecord(value)
-	for _, existing := range AllowedTypeTlsDnsRecordEnumValues {
+	enumTypeValue := TypeTLSDNSRecord(value)
+	for _, existing := range AllowedTypeTLSDNSRecordEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTlsDnsRecord", value)
+	return fmt.Errorf("%+v is not a valid TypeTLSDNSRecord", value)
 }
 
-// NewTypeTlsDnsRecordFromValue returns a pointer to a valid TypeTlsDnsRecord
+// NewTypeTLSDNSRecordFromValue returns a pointer to a valid TypeTLSDNSRecord
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTlsDnsRecordFromValue(v string) (*TypeTlsDnsRecord, error) {
-	ev := TypeTlsDnsRecord(v)
+func NewTypeTLSDNSRecordFromValue(v string) (*TypeTLSDNSRecord, error) {
+	ev := TypeTLSDNSRecord(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTlsDnsRecord: valid values are %v", v, AllowedTypeTlsDnsRecordEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTLSDNSRecord: valid values are %v", v, AllowedTypeTLSDNSRecordEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTlsDnsRecord) IsValid() bool {
-	for _, existing := range AllowedTypeTlsDnsRecordEnumValues {
+func (v TypeTLSDNSRecord) IsValid() bool {
+	for _, existing := range AllowedTypeTLSDNSRecordEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTlsDnsRecord) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to type_tls_dns_record value
-func (v TypeTlsDnsRecord) Ptr() *TypeTlsDnsRecord {
+// Ptr returns reference to resourceTypetls_dns_record value
+func (v TypeTLSDNSRecord) Ptr() *TypeTLSDNSRecord {
 	return &v
 }
 
-// NullableTypeTlsDnsRecord is a helper abstraction for handling nullable typetlsdnsrecord types.
-type NullableTypeTlsDnsRecord struct {
-	value *TypeTlsDnsRecord
+// NullableTypeTLSDNSRecord is a helper abstraction for handling nullable typetlsdnsrecord types.
+type NullableTypeTLSDNSRecord struct {
+	value *TypeTLSDNSRecord
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTlsDnsRecord) Get() *TypeTlsDnsRecord {
+func (v NullableTypeTLSDNSRecord) Get() *TypeTLSDNSRecord {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTlsDnsRecord) Set(val *TypeTlsDnsRecord) {
+func (v *NullableTypeTLSDNSRecord) Set(val *TypeTLSDNSRecord) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTlsDnsRecord) IsSet() bool {
+func (v NullableTypeTLSDNSRecord) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTlsDnsRecord) Unset() {
+func (v *NullableTypeTLSDNSRecord) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTlsDnsRecord returns a pointer to a new instance of NullableTypeTlsDnsRecord.
-func NewNullableTypeTlsDnsRecord(val *TypeTlsDnsRecord) *NullableTypeTlsDnsRecord {
-	return &NullableTypeTlsDnsRecord{value: val, isSet: true}
+// NewNullableTypeTLSDNSRecord returns a pointer to a new instance of NullableTypeTLSDNSRecord.
+func NewNullableTypeTLSDNSRecord(val *TypeTLSDNSRecord) *NullableTypeTLSDNSRecord {
+	return &NullableTypeTLSDNSRecord{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTlsDnsRecord) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTLSDNSRecord) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTlsDnsRecord) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTLSDNSRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

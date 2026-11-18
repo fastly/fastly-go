@@ -105,7 +105,7 @@ import (
 )
 
 func main() {
-    entityId := "l4c2G719JnG5z0qbt512fG" // string | Alphanumeric string identifying the entity.
+    entityID := "l4c2G719JnG5z0qbt512fG" // string | Alphanumeric string identifying the entity.
     granularity := "minutely" // string | Duration of sample windows.
     from := "2025-06-08T00:00:00.000Z" // string | A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided `granularity` value. (optional)
     to := "2025-08-02T00:00:00.000Z" // string | A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided `granularity` value. (optional)
@@ -120,7 +120,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MetricsPlatformAPI.GetPlatformMetricsEntityHistorical(ctx, entityId, granularity).From(from).To(to).Metric(metric).MetricSet(metricSet).GroupBy(groupBy).Region(region).Datacenter(datacenter).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.MetricsPlatformAPI.GetPlatformMetricsEntityHistorical(ctx, entityID, granularity).From(from).To(to).Metric(metric).MetricSet(metricSet).GroupBy(groupBy).Region(region).Datacenter(datacenter).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetricsPlatformAPI.GetPlatformMetricsEntityHistorical`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,7 +136,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**entityId** | **string** | Alphanumeric string identifying the entity. | 
+**entityID** | **string** | Alphanumeric string identifying the entity. | 
 **granularity** | **string** | Duration of sample windows. | 
 
 ### Other Parameters
@@ -162,4 +162,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

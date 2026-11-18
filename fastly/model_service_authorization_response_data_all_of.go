@@ -18,7 +18,7 @@ import (
 
 // ServiceAuthorizationResponseDataAllOf struct for ServiceAuthorizationResponseDataAllOf
 type ServiceAuthorizationResponseDataAllOf struct {
-	Id                   *string     `json:"id,omitempty"`
+	ID                   *string     `json:"id,omitempty"`
 	Attributes           *Timestamps `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -42,36 +42,36 @@ func NewServiceAuthorizationResponseDataAllOfWithDefaults() *ServiceAuthorizatio
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ServiceAuthorizationResponseDataAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ServiceAuthorizationResponseDataAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceAuthorizationResponseDataAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ServiceAuthorizationResponseDataAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ServiceAuthorizationResponseDataAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ServiceAuthorizationResponseDataAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ServiceAuthorizationResponseDataAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ServiceAuthorizationResponseDataAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
@@ -110,8 +110,8 @@ func (o *ServiceAuthorizationResponseDataAllOf) SetAttributes(v Timestamps) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ServiceAuthorizationResponseDataAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes

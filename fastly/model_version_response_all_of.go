@@ -18,7 +18,7 @@ import (
 
 // VersionResponseAllOf struct for VersionResponseAllOf
 type VersionResponseAllOf struct {
-	ServiceId *string `json:"service_id,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
 	// A list of environments where the service has been deployed.
 	Environments         []Environment `json:"environments,omitempty"`
 	AdditionalProperties map[string]any
@@ -43,36 +43,36 @@ func NewVersionResponseAllOfWithDefaults() *VersionResponseAllOf {
 	return &this
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *VersionResponseAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *VersionResponseAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VersionResponseAllOf) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *VersionResponseAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *VersionResponseAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *VersionResponseAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *VersionResponseAllOf) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *VersionResponseAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetEnvironments returns the Environments field value if set, zero value otherwise.
@@ -111,8 +111,8 @@ func (o *VersionResponseAllOf) SetEnvironments(v []Environment) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o VersionResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Environments != nil {
 		toSerialize["environments"] = o.Environments

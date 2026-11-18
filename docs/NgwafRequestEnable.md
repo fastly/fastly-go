@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkspaceId** | **string** | The workspace to link. | 
+**WorkspaceID** | **string** | The workspace to link. | 
 **TrafficRamp** | Pointer to **string** | The percentage of traffic to inspect. | [optional] 
 
 ## Methods
 
 ### NewNgwafRequestEnable
 
-`func NewNgwafRequestEnable(workspaceId string, ) *NgwafRequestEnable`
+`func NewNgwafRequestEnable(workspaceID string, ) *NgwafRequestEnable`
 
 NewNgwafRequestEnable instantiates a new NgwafRequestEnable object
 This constructor will assign default values to properties that have it defined,
@@ -26,24 +26,24 @@ NewNgwafRequestEnableWithDefaults instantiates a new NgwafRequestEnable object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWorkspaceId
+### GetWorkspaceID
 
-`func (o *NgwafRequestEnable) GetWorkspaceId() string`
+`func (o *NgwafRequestEnable) GetWorkspaceID() string`
 
-GetWorkspaceId returns the WorkspaceId field if non-nil, zero value otherwise.
+GetWorkspaceID returns the WorkspaceID field if non-nil, zero value otherwise.
 
-### GetWorkspaceIdOk
+### GetWorkspaceIDOk
 
-`func (o *NgwafRequestEnable) GetWorkspaceIdOk() (*string, bool)`
+`func (o *NgwafRequestEnable) GetWorkspaceIDOk() (*string, bool)`
 
-GetWorkspaceIdOk returns a tuple with the WorkspaceId field if it's non-nil, zero value otherwise
+GetWorkspaceIDOk returns a tuple with the WorkspaceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWorkspaceId
+### SetWorkspaceID
 
-`func (o *NgwafRequestEnable) SetWorkspaceId(v string)`
+`func (o *NgwafRequestEnable) SetWorkspaceID(v string)`
 
-SetWorkspaceId sets WorkspaceId field to given value.
+SetWorkspaceID sets WorkspaceID field to given value.
 
 
 ### GetTrafficRamp
@@ -73,5 +73,3 @@ HasTrafficRamp returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

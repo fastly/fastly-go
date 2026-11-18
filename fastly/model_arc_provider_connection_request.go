@@ -74,11 +74,12 @@ func (o *ArcProviderConnectionRequest) UnmarshalJSON(data []byte) error {
 		o.ArcProviderConnectionAwsIam = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(ArcProviderConnectionRequest)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(ArcProviderConnectionRequest)")
 	}
+	if match == 1 {
+		return nil // exactly one match
+	}
+	// no match
+	return fmt.Errorf("data failed to match schemas in oneOf(ArcProviderConnectionRequest)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.

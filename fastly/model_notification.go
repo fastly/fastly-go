@@ -30,9 +30,9 @@ type _Notification Notification
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotification(type_ string, config NotificationConfig) *Notification {
+func NewNotification(resourceType string, config NotificationConfig) *Notification {
 	this := Notification{}
-	this.Type = type_
+	this.Type = resourceType
 	this.Config = config
 	return &this
 }

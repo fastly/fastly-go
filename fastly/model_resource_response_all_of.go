@@ -19,11 +19,11 @@ import (
 // ResourceResponseAllOf struct for ResourceResponseAllOf
 type ResourceResponseAllOf struct {
 	// An alphanumeric string identifying the resource link.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// The path to the resource.
 	Href *string `json:"href,omitempty"`
 	// Alphanumeric string identifying the service.
-	ServiceId *string `json:"service_id,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
 	// Integer identifying a service version.
 	Version              *int32        `json:"version,omitempty"`
 	ResourceType         *TypeResource `json:"resource_type,omitempty"`
@@ -49,36 +49,36 @@ func NewResourceResponseAllOfWithDefaults() *ResourceResponseAllOf {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ResourceResponseAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ResourceResponseAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResourceResponseAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ResourceResponseAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ResourceResponseAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ResourceResponseAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ResourceResponseAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ResourceResponseAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -113,36 +113,36 @@ func (o *ResourceResponseAllOf) SetHref(v string) {
 	o.Href = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *ResourceResponseAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *ResourceResponseAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResourceResponseAllOf) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *ResourceResponseAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *ResourceResponseAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *ResourceResponseAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *ResourceResponseAllOf) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *ResourceResponseAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -213,14 +213,14 @@ func (o *ResourceResponseAllOf) SetResourceType(v TypeResource) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ResourceResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

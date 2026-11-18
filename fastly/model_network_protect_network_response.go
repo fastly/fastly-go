@@ -26,13 +26,13 @@ type NetworkProtectNetworkResponse struct {
 	// The CIDR block to protect, masked to its network address. It cannot be changed after creation.
 	Prefix string `json:"prefix"`
 	// The backend-assigned rule set applied to this network.
-	RuleSetId NullableString `json:"rule_set_id,omitempty"`
+	RuleSetID NullableString `json:"rule_set_id,omitempty"`
 	// Complete endpoint policy configuration. A network has at most one policy per region and may have no policies.
 	EndpointPolicies []NetworkProtectEndpointPolicy `json:"endpoint_policies"`
 	// Desired advertisement state, which is not the same as observed route state. Enabling it requires approved LOA, valid ROA, and a ready default-region delivery policy. A later ROA failure does not turn an existing advertisement off; losing LOA approval or the last ready default endpoint does.
 	Advertise bool `json:"advertise"`
 	// A read-only unique identifier for a Network Protect resource.
-	Id        string                   `json:"id"`
+	ID        string                   `json:"id"`
 	RoaStatus *NetworkProtectRoaStatus `json:"roa_status,omitempty"`
 	// When Fastly last completed a ROA check. Null while the status is pending. A failed check leaves this unchanged; an old value can indicate delayed or failing checks. Null also means the controller did not report a check time.
 	RoaCheckedAt NullableTime `json:"roa_checked_at,omitempty"`
@@ -58,7 +58,7 @@ func NewNetworkProtectNetworkResponse(name string, prefix string, endpointPolici
 	this.Prefix = prefix
 	this.EndpointPolicies = endpointPolicies
 	this.Advertise = advertise
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -165,47 +165,47 @@ func (o *NetworkProtectNetworkResponse) SetPrefix(v string) {
 	o.Prefix = v
 }
 
-// GetRuleSetId returns the RuleSetId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkProtectNetworkResponse) GetRuleSetId() string {
-	if o == nil || o.RuleSetId.Get() == nil {
+// GetRuleSetID returns the RuleSetID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkProtectNetworkResponse) GetRuleSetID() string {
+	if o == nil || o.RuleSetID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.RuleSetId.Get()
+	return *o.RuleSetID.Get()
 }
 
-// GetRuleSetIdOk returns a tuple with the RuleSetId field value if set, nil otherwise
+// GetRuleSetIDOk returns a tuple with the RuleSetID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkProtectNetworkResponse) GetRuleSetIdOk() (*string, bool) {
+func (o *NetworkProtectNetworkResponse) GetRuleSetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.RuleSetId.Get(), o.RuleSetId.IsSet()
+	return o.RuleSetID.Get(), o.RuleSetID.IsSet()
 }
 
-// HasRuleSetId returns a boolean if a field has been set.
-func (o *NetworkProtectNetworkResponse) HasRuleSetId() bool {
-	if o != nil && o.RuleSetId.IsSet() {
+// HasRuleSetID returns a boolean if a field has been set.
+func (o *NetworkProtectNetworkResponse) HasRuleSetID() bool {
+	if o != nil && o.RuleSetID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleSetId gets a reference to the given NullableString and assigns it to the RuleSetId field.
-func (o *NetworkProtectNetworkResponse) SetRuleSetId(v string) {
-	o.RuleSetId.Set(&v)
+// SetRuleSetID gets a reference to the given NullableString and assigns it to the RuleSetID field.
+func (o *NetworkProtectNetworkResponse) SetRuleSetID(v string) {
+	o.RuleSetID.Set(&v)
 }
 
-// SetRuleSetIdNil sets the value for RuleSetId to be an explicit nil
-func (o *NetworkProtectNetworkResponse) SetRuleSetIdNil() {
-	o.RuleSetId.Set(nil)
+// SetRuleSetIDNil sets the value for RuleSetID to be an explicit nil
+func (o *NetworkProtectNetworkResponse) SetRuleSetIDNil() {
+	o.RuleSetID.Set(nil)
 }
 
-// UnsetRuleSetId ensures that no value is present for RuleSetId, not even an explicit nil
-func (o *NetworkProtectNetworkResponse) UnsetRuleSetId() {
-	o.RuleSetId.Unset()
+// UnsetRuleSetID ensures that no value is present for RuleSetID, not even an explicit nil
+func (o *NetworkProtectNetworkResponse) UnsetRuleSetID() {
+	o.RuleSetID.Unset()
 }
 
 // GetEndpointPolicies returns the EndpointPolicies field value
@@ -256,28 +256,28 @@ func (o *NetworkProtectNetworkResponse) SetAdvertise(v bool) {
 	o.Advertise = v
 }
 
-// GetId returns the Id field value
-func (o *NetworkProtectNetworkResponse) GetId() string {
+// GetID returns the ID field value
+func (o *NetworkProtectNetworkResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectNetworkResponse) GetIdOk() (*string, bool) {
+func (o *NetworkProtectNetworkResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *NetworkProtectNetworkResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *NetworkProtectNetworkResponse) SetID(v string) {
+	o.ID = v
 }
 
 // GetRoaStatus returns the RoaStatus field value if set, zero value otherwise.
@@ -491,8 +491,8 @@ func (o NetworkProtectNetworkResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["prefix"] = o.Prefix
 	}
-	if o.RuleSetId.IsSet() {
-		toSerialize["rule_set_id"] = o.RuleSetId.Get()
+	if o.RuleSetID.IsSet() {
+		toSerialize["rule_set_id"] = o.RuleSetID.Get()
 	}
 	if true {
 		toSerialize["endpoint_policies"] = o.EndpointPolicies
@@ -501,7 +501,7 @@ func (o NetworkProtectNetworkResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["advertise"] = o.Advertise
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.RoaStatus != nil {
 		toSerialize["roa_status"] = o.RoaStatus

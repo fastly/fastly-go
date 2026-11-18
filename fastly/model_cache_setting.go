@@ -25,9 +25,9 @@ type CacheSetting struct {
 	// Name for the cache settings object.
 	Name *string `json:"name,omitempty"`
 	// Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
-	StaleTtl *string `json:"stale_ttl,omitempty"`
+	StaleTTL *string `json:"stale_ttl,omitempty"`
 	// Maximum time to consider the object fresh in the cache (the cache 'time to live').
-	Ttl                  *string `json:"ttl,omitempty"`
+	TTL                  *string `json:"ttl,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -168,68 +168,68 @@ func (o *CacheSetting) SetName(v string) {
 	o.Name = &v
 }
 
-// GetStaleTtl returns the StaleTtl field value if set, zero value otherwise.
-func (o *CacheSetting) GetStaleTtl() string {
-	if o == nil || o.StaleTtl == nil {
+// GetStaleTTL returns the StaleTTL field value if set, zero value otherwise.
+func (o *CacheSetting) GetStaleTTL() string {
+	if o == nil || o.StaleTTL == nil {
 		var ret string
 		return ret
 	}
-	return *o.StaleTtl
+	return *o.StaleTTL
 }
 
-// GetStaleTtlOk returns a tuple with the StaleTtl field value if set, nil otherwise
+// GetStaleTTLOk returns a tuple with the StaleTTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSetting) GetStaleTtlOk() (*string, bool) {
-	if o == nil || o.StaleTtl == nil {
+func (o *CacheSetting) GetStaleTTLOk() (*string, bool) {
+	if o == nil || o.StaleTTL == nil {
 		return nil, false
 	}
-	return o.StaleTtl, true
+	return o.StaleTTL, true
 }
 
-// HasStaleTtl returns a boolean if a field has been set.
-func (o *CacheSetting) HasStaleTtl() bool {
-	if o != nil && o.StaleTtl != nil {
+// HasStaleTTL returns a boolean if a field has been set.
+func (o *CacheSetting) HasStaleTTL() bool {
+	if o != nil && o.StaleTTL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetStaleTtl gets a reference to the given string and assigns it to the StaleTtl field.
-func (o *CacheSetting) SetStaleTtl(v string) {
-	o.StaleTtl = &v
+// SetStaleTTL gets a reference to the given string and assigns it to the StaleTTL field.
+func (o *CacheSetting) SetStaleTTL(v string) {
+	o.StaleTTL = &v
 }
 
-// GetTtl returns the Ttl field value if set, zero value otherwise.
-func (o *CacheSetting) GetTtl() string {
-	if o == nil || o.Ttl == nil {
+// GetTTL returns the TTL field value if set, zero value otherwise.
+func (o *CacheSetting) GetTTL() string {
+	if o == nil || o.TTL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Ttl
+	return *o.TTL
 }
 
-// GetTtlOk returns a tuple with the Ttl field value if set, nil otherwise
+// GetTTLOk returns a tuple with the TTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSetting) GetTtlOk() (*string, bool) {
-	if o == nil || o.Ttl == nil {
+func (o *CacheSetting) GetTTLOk() (*string, bool) {
+	if o == nil || o.TTL == nil {
 		return nil, false
 	}
-	return o.Ttl, true
+	return o.TTL, true
 }
 
-// HasTtl returns a boolean if a field has been set.
-func (o *CacheSetting) HasTtl() bool {
-	if o != nil && o.Ttl != nil {
+// HasTTL returns a boolean if a field has been set.
+func (o *CacheSetting) HasTTL() bool {
+	if o != nil && o.TTL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTtl gets a reference to the given string and assigns it to the Ttl field.
-func (o *CacheSetting) SetTtl(v string) {
-	o.Ttl = &v
+// SetTTL gets a reference to the given string and assigns it to the TTL field.
+func (o *CacheSetting) SetTTL(v string) {
+	o.TTL = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -245,11 +245,11 @@ func (o CacheSetting) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.StaleTtl != nil {
-		toSerialize["stale_ttl"] = o.StaleTtl
+	if o.StaleTTL != nil {
+		toSerialize["stale_ttl"] = o.StaleTTL
 	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
+	if o.TTL != nil {
+		toSerialize["ttl"] = o.TTL
 	}
 
 	for key, value := range o.AdditionalProperties {

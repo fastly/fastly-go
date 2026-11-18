@@ -26,8 +26,8 @@ var (
 	_ context.Context
 )
 
-// PublicIpListAPI defines an interface for interacting with the resource.
-type PublicIpListAPI interface {
+// PublicIPListAPI defines an interface for interacting with the resource.
+type PublicIPListAPI interface {
 
 	/*
 		ListFastlyIps List Fastly's public IPs
@@ -40,21 +40,21 @@ type PublicIpListAPI interface {
 	ListFastlyIps(ctx context.Context) APIListFastlyIpsRequest
 
 	// ListFastlyIpsExecute executes the request
-	//  @return PublicIpList
-	ListFastlyIpsExecute(r APIListFastlyIpsRequest) (*PublicIpList, *http.Response, error)
+	//  @return PublicIPList
+	ListFastlyIpsExecute(r APIListFastlyIpsRequest) (*PublicIPList, *http.Response, error)
 }
 
-// PublicIpListAPIService PublicIpListAPI service
-type PublicIpListAPIService service
+// PublicIPListAPIService PublicIPListAPI service
+type PublicIPListAPIService service
 
 // APIListFastlyIpsRequest represents a request for the resource.
 type APIListFastlyIpsRequest struct {
 	ctx        context.Context
-	APIService PublicIpListAPI
+	APIService PublicIPListAPI
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListFastlyIpsRequest) Execute() (*PublicIpList, *http.Response, error) {
+func (r APIListFastlyIpsRequest) Execute() (*PublicIPList, *http.Response, error) {
 	return r.APIService.ListFastlyIpsExecute(r)
 }
 
@@ -66,7 +66,7 @@ List the public IP addresses for the Fastly network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APIListFastlyIpsRequest
 */
-func (a *PublicIpListAPIService) ListFastlyIps(ctx context.Context) APIListFastlyIpsRequest {
+func (a *PublicIPListAPIService) ListFastlyIps(ctx context.Context) APIListFastlyIpsRequest {
 	return APIListFastlyIpsRequest{
 		APIService: a,
 		ctx:        ctx,
@@ -74,16 +74,16 @@ func (a *PublicIpListAPIService) ListFastlyIps(ctx context.Context) APIListFastl
 }
 
 // ListFastlyIpsExecute executes the request
-//  @return PublicIpList
-func (a *PublicIpListAPIService) ListFastlyIpsExecute(r APIListFastlyIpsRequest) (*PublicIpList, *http.Response, error) {
+//  @return PublicIPList
+func (a *PublicIPListAPIService) ListFastlyIpsExecute(r APIListFastlyIpsRequest) (*PublicIPList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *PublicIpList
+		localVarReturnValue *PublicIPList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicIpListAPIService.ListFastlyIps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicIPListAPIService.ListFastlyIps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}

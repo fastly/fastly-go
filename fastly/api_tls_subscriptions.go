@@ -27,8 +27,8 @@ var (
 	_ context.Context
 )
 
-// TlsSubscriptionsAPI defines an interface for interacting with the resource.
-type TlsSubscriptionsAPI interface {
+// TLSSubscriptionsAPI defines an interface for interacting with the resource.
+type TLSSubscriptionsAPI interface {
 
 	/*
 		CreateGlobalsignEmailChallenge Creates a GlobalSign email challenge.
@@ -37,29 +37,29 @@ type TlsSubscriptionsAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
-		 @param tlsAuthorizationId Alphanumeric string identifying a TLS subscription.
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
 		 @return APICreateGlobalsignEmailChallengeRequest
 	*/
-	CreateGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionId string, tlsAuthorizationId string) APICreateGlobalsignEmailChallengeRequest
+	CreateGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string) APICreateGlobalsignEmailChallengeRequest
 
 	// CreateGlobalsignEmailChallengeExecute executes the request
-	//  @return map[string]interface{}
-	CreateGlobalsignEmailChallengeExecute(r APICreateGlobalsignEmailChallengeRequest) (map[string]interface{}, *http.Response, error)
+	//  @return map[string]any
+	CreateGlobalsignEmailChallengeExecute(r APICreateGlobalsignEmailChallengeRequest) (map[string]any, *http.Response, error)
 
 	/*
-		CreateTlsSub Create a TLS subscription
+		CreateTLSSub Create a TLS subscription
 
 		Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APICreateTlsSubRequest
+		 @return APICreateTLSSubRequest
 	*/
-	CreateTlsSub(ctx context.Context) APICreateTlsSubRequest
+	CreateTLSSub(ctx context.Context) APICreateTLSSubRequest
 
-	// CreateTlsSubExecute executes the request
-	//  @return TlsSubscriptionResponse
-	CreateTlsSubExecute(r APICreateTlsSubRequest) (*TlsSubscriptionResponse, *http.Response, error)
+	// CreateTLSSubExecute executes the request
+	//  @return TLSSubscriptionResponse
+	CreateTLSSubExecute(r APICreateTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error)
 
 	/*
 		DeleteGlobalsignEmailChallenge Delete a GlobalSign email challenge
@@ -67,95 +67,95 @@ type TlsSubscriptionsAPI interface {
 		Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
-		 @param tlsAuthorizationId Alphanumeric string identifying a TLS subscription.
-		 @param globalsignEmailChallengeId Alphanumeric string identifying a GlobalSign email challenge.
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
+		 @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
 		 @return APIDeleteGlobalsignEmailChallengeRequest
 	*/
-	DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionId string, tlsAuthorizationId string, globalsignEmailChallengeId string) APIDeleteGlobalsignEmailChallengeRequest
+	DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string, globalsignEmailChallengeID string) APIDeleteGlobalsignEmailChallengeRequest
 
 	// DeleteGlobalsignEmailChallengeExecute executes the request
 	DeleteGlobalsignEmailChallengeExecute(r APIDeleteGlobalsignEmailChallengeRequest) (*http.Response, error)
 
 	/*
-		DeleteTlsSub Delete a TLS subscription
+		DeleteTLSSub Delete a TLS subscription
 
 		Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
-		 @return APIDeleteTlsSubRequest
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @return APIDeleteTLSSubRequest
 	*/
-	DeleteTlsSub(ctx context.Context, tlsSubscriptionId string) APIDeleteTlsSubRequest
+	DeleteTLSSub(ctx context.Context, tlsSubscriptionID string) APIDeleteTLSSubRequest
 
-	// DeleteTlsSubExecute executes the request
-	DeleteTlsSubExecute(r APIDeleteTlsSubRequest) (*http.Response, error)
+	// DeleteTLSSubExecute executes the request
+	DeleteTLSSubExecute(r APIDeleteTLSSubRequest) (*http.Response, error)
 
 	/*
-		GetTlsSub Get a TLS subscription
+		GetTLSSub Get a TLS subscription
 
 		Show a TLS subscription.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
-		 @return APIGetTlsSubRequest
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @return APIGetTLSSubRequest
 	*/
-	GetTlsSub(ctx context.Context, tlsSubscriptionId string) APIGetTlsSubRequest
+	GetTLSSub(ctx context.Context, tlsSubscriptionID string) APIGetTLSSubRequest
 
-	// GetTlsSubExecute executes the request
-	//  @return TlsSubscriptionResponse
-	GetTlsSubExecute(r APIGetTlsSubRequest) (*TlsSubscriptionResponse, *http.Response, error)
+	// GetTLSSubExecute executes the request
+	//  @return TLSSubscriptionResponse
+	GetTLSSubExecute(r APIGetTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error)
 
 	/*
-		ListTlsSubs List TLS subscriptions
+		ListTLSSubs List TLS subscriptions
 
 		List all TLS subscriptions.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIListTlsSubsRequest
+		 @return APIListTLSSubsRequest
 	*/
-	ListTlsSubs(ctx context.Context) APIListTlsSubsRequest
+	ListTLSSubs(ctx context.Context) APIListTLSSubsRequest
 
-	// ListTlsSubsExecute executes the request
-	//  @return TlsSubscriptionsResponse
-	ListTlsSubsExecute(r APIListTlsSubsRequest) (*TlsSubscriptionsResponse, *http.Response, error)
+	// ListTLSSubsExecute executes the request
+	//  @return TLSSubscriptionsResponse
+	ListTLSSubsExecute(r APIListTLSSubsRequest) (*TLSSubscriptionsResponse, *http.Response, error)
 
 	/*
-		PatchTlsSub Update a TLS subscription
+		PatchTLSSub Update a TLS subscription
 
 		Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
-		 @return APIPatchTlsSubRequest
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @return APIPatchTLSSubRequest
 	*/
-	PatchTlsSub(ctx context.Context, tlsSubscriptionId string) APIPatchTlsSubRequest
+	PatchTLSSub(ctx context.Context, tlsSubscriptionID string) APIPatchTLSSubRequest
 
-	// PatchTlsSubExecute executes the request
-	//  @return TlsSubscriptionResponse
-	PatchTlsSubExecute(r APIPatchTlsSubRequest) (*TlsSubscriptionResponse, *http.Response, error)
+	// PatchTLSSubExecute executes the request
+	//  @return TLSSubscriptionResponse
+	PatchTLSSubExecute(r APIPatchTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error)
 }
 
-// TlsSubscriptionsAPIService TlsSubscriptionsAPI service
-type TlsSubscriptionsAPIService service
+// TLSSubscriptionsAPIService TLSSubscriptionsAPI service
+type TLSSubscriptionsAPIService service
 
 // APICreateGlobalsignEmailChallengeRequest represents a request for the resource.
 type APICreateGlobalsignEmailChallengeRequest struct {
 	ctx                context.Context
-	APIService         TlsSubscriptionsAPI
-	tlsSubscriptionId  string
-	tlsAuthorizationId string
-	requestBody        *map[string]map[string]interface{}
+	APIService         TLSSubscriptionsAPI
+	tlsSubscriptionID  string
+	tlsAuthorizationID string
+	requestBody        *map[string]map[string]any
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APICreateGlobalsignEmailChallengeRequest) RequestBody(requestBody map[string]map[string]interface{}) *APICreateGlobalsignEmailChallengeRequest {
+func (r *APICreateGlobalsignEmailChallengeRequest) RequestBody(requestBody map[string]map[string]any) *APICreateGlobalsignEmailChallengeRequest {
 	r.requestBody = &requestBody
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateGlobalsignEmailChallengeRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r APICreateGlobalsignEmailChallengeRequest) Execute() (map[string]any, *http.Response, error) {
 	return r.APIService.CreateGlobalsignEmailChallengeExecute(r)
 }
 
@@ -166,37 +166,37 @@ Creates an email challenge for a domain on a GlobalSign subscription. An email c
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
- @param tlsAuthorizationId Alphanumeric string identifying a TLS subscription.
+ @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+ @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
  @return APICreateGlobalsignEmailChallengeRequest
 */
-func (a *TlsSubscriptionsAPIService) CreateGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionId string, tlsAuthorizationId string) APICreateGlobalsignEmailChallengeRequest {
+func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string) APICreateGlobalsignEmailChallengeRequest {
 	return APICreateGlobalsignEmailChallengeRequest{
 		APIService:         a,
 		ctx:                ctx,
-		tlsSubscriptionId:  tlsSubscriptionId,
-		tlsAuthorizationId: tlsAuthorizationId,
+		tlsSubscriptionID:  tlsSubscriptionID,
+		tlsAuthorizationID: tlsAuthorizationID,
 	}
 }
 
 // CreateGlobalsignEmailChallengeExecute executes the request
-//  @return map[string]interface{}
-func (a *TlsSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r APICreateGlobalsignEmailChallengeRequest) (map[string]interface{}, *http.Response, error) {
+//  @return map[string]any
+func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r APICreateGlobalsignEmailChallengeRequest) (map[string]any, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarReturnValue map[string]any
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.CreateGlobalsignEmailChallenge")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.CreateGlobalsignEmailChallenge")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_authorization_id"+"}", gourl.PathEscape(parameterToString(r.tlsAuthorizationId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_authorization_id"+"}", gourl.PathEscape(parameterToString(r.tlsAuthorizationID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -285,50 +285,50 @@ func (a *TlsSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r API
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APICreateTlsSubRequest represents a request for the resource.
-type APICreateTlsSubRequest struct {
+// APICreateTLSSubRequest represents a request for the resource.
+type APICreateTLSSubRequest struct {
 	ctx             context.Context
-	APIService      TlsSubscriptionsAPI
-	tlsSubscription *TlsSubscription
+	APIService      TLSSubscriptionsAPI
+	tlsSubscription *TLSSubscription
 }
 
-// TlsSubscription returns a pointer to a request.
-func (r *APICreateTlsSubRequest) TlsSubscription(tlsSubscription TlsSubscription) *APICreateTlsSubRequest {
+// TLSSubscription returns a pointer to a request.
+func (r *APICreateTLSSubRequest) TLSSubscription(tlsSubscription TLSSubscription) *APICreateTLSSubRequest {
 	r.tlsSubscription = &tlsSubscription
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateTlsSubRequest) Execute() (*TlsSubscriptionResponse, *http.Response, error) {
-	return r.APIService.CreateTlsSubExecute(r)
+func (r APICreateTLSSubRequest) Execute() (*TLSSubscriptionResponse, *http.Response, error) {
+	return r.APIService.CreateTLSSubExecute(r)
 }
 
 /*
-CreateTlsSub Create a TLS subscription
+CreateTLSSub Create a TLS subscription
 
 Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APICreateTlsSubRequest
+ @return APICreateTLSSubRequest
 */
-func (a *TlsSubscriptionsAPIService) CreateTlsSub(ctx context.Context) APICreateTlsSubRequest {
-	return APICreateTlsSubRequest{
+func (a *TLSSubscriptionsAPIService) CreateTLSSub(ctx context.Context) APICreateTLSSubRequest {
+	return APICreateTLSSubRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// CreateTlsSubExecute executes the request
-//  @return TlsSubscriptionResponse
-func (a *TlsSubscriptionsAPIService) CreateTlsSubExecute(r APICreateTlsSubRequest) (*TlsSubscriptionResponse, *http.Response, error) {
+// CreateTLSSubExecute executes the request
+//  @return TLSSubscriptionResponse
+func (a *TLSSubscriptionsAPIService) CreateTLSSubExecute(r APICreateTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsSubscriptionResponse
+		localVarReturnValue *TLSSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.CreateTlsSub")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.CreateTLSSub")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -425,10 +425,10 @@ func (a *TlsSubscriptionsAPIService) CreateTlsSubExecute(r APICreateTlsSubReques
 // APIDeleteGlobalsignEmailChallengeRequest represents a request for the resource.
 type APIDeleteGlobalsignEmailChallengeRequest struct {
 	ctx                        context.Context
-	APIService                 TlsSubscriptionsAPI
-	tlsSubscriptionId          string
-	tlsAuthorizationId         string
-	globalsignEmailChallengeId string
+	APIService                 TLSSubscriptionsAPI
+	tlsSubscriptionID          string
+	tlsAuthorizationID         string
+	globalsignEmailChallengeID string
 }
 
 // Execute calls the API using the request data configured.
@@ -442,38 +442,38 @@ DeleteGlobalsignEmailChallenge Delete a GlobalSign email challenge
 Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
- @param tlsAuthorizationId Alphanumeric string identifying a TLS subscription.
- @param globalsignEmailChallengeId Alphanumeric string identifying a GlobalSign email challenge.
+ @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+ @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
+ @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
  @return APIDeleteGlobalsignEmailChallengeRequest
 */
-func (a *TlsSubscriptionsAPIService) DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionId string, tlsAuthorizationId string, globalsignEmailChallengeId string) APIDeleteGlobalsignEmailChallengeRequest {
+func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string, globalsignEmailChallengeID string) APIDeleteGlobalsignEmailChallengeRequest {
 	return APIDeleteGlobalsignEmailChallengeRequest{
 		APIService:                 a,
 		ctx:                        ctx,
-		tlsSubscriptionId:          tlsSubscriptionId,
-		tlsAuthorizationId:         tlsAuthorizationId,
-		globalsignEmailChallengeId: globalsignEmailChallengeId,
+		tlsSubscriptionID:          tlsSubscriptionID,
+		tlsAuthorizationID:         tlsAuthorizationID,
+		globalsignEmailChallengeID: globalsignEmailChallengeID,
 	}
 }
 
 // DeleteGlobalsignEmailChallengeExecute executes the request
-func (a *TlsSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r APIDeleteGlobalsignEmailChallengeRequest) (*http.Response, error) {
+func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r APIDeleteGlobalsignEmailChallengeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.DeleteGlobalsignEmailChallenge")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.DeleteGlobalsignEmailChallenge")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_authorization_id"+"}", gourl.PathEscape(parameterToString(r.tlsAuthorizationId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"globalsign_email_challenge_id"+"}", gourl.PathEscape(parameterToString(r.globalsignEmailChallengeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_authorization_id"+"}", gourl.PathEscape(parameterToString(r.tlsAuthorizationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"globalsign_email_challenge_id"+"}", gourl.PathEscape(parameterToString(r.globalsignEmailChallengeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -551,50 +551,50 @@ func (a *TlsSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r API
 	return localVarHTTPResponse, nil
 }
 
-// APIDeleteTlsSubRequest represents a request for the resource.
-type APIDeleteTlsSubRequest struct {
+// APIDeleteTLSSubRequest represents a request for the resource.
+type APIDeleteTLSSubRequest struct {
 	ctx               context.Context
-	APIService        TlsSubscriptionsAPI
-	tlsSubscriptionId string
+	APIService        TLSSubscriptionsAPI
+	tlsSubscriptionID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteTlsSubRequest) Execute() (*http.Response, error) {
-	return r.APIService.DeleteTlsSubExecute(r)
+func (r APIDeleteTLSSubRequest) Execute() (*http.Response, error) {
+	return r.APIService.DeleteTLSSubExecute(r)
 }
 
 /*
-DeleteTlsSub Delete a TLS subscription
+DeleteTLSSub Delete a TLS subscription
 
 Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
- @return APIDeleteTlsSubRequest
+ @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+ @return APIDeleteTLSSubRequest
 */
-func (a *TlsSubscriptionsAPIService) DeleteTlsSub(ctx context.Context, tlsSubscriptionId string) APIDeleteTlsSubRequest {
-	return APIDeleteTlsSubRequest{
+func (a *TLSSubscriptionsAPIService) DeleteTLSSub(ctx context.Context, tlsSubscriptionID string) APIDeleteTLSSubRequest {
+	return APIDeleteTLSSubRequest{
 		APIService:        a,
 		ctx:               ctx,
-		tlsSubscriptionId: tlsSubscriptionId,
+		tlsSubscriptionID: tlsSubscriptionID,
 	}
 }
 
-// DeleteTlsSubExecute executes the request
-func (a *TlsSubscriptionsAPIService) DeleteTlsSubExecute(r APIDeleteTlsSubRequest) (*http.Response, error) {
+// DeleteTLSSubExecute executes the request
+func (a *TLSSubscriptionsAPIService) DeleteTLSSubExecute(r APIDeleteTLSSubRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.DeleteTlsSub")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.DeleteTLSSub")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/subscriptions/{tls_subscription_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -672,59 +672,59 @@ func (a *TlsSubscriptionsAPIService) DeleteTlsSubExecute(r APIDeleteTlsSubReques
 	return localVarHTTPResponse, nil
 }
 
-// APIGetTlsSubRequest represents a request for the resource.
-type APIGetTlsSubRequest struct {
+// APIGetTLSSubRequest represents a request for the resource.
+type APIGetTLSSubRequest struct {
 	ctx               context.Context
-	APIService        TlsSubscriptionsAPI
-	tlsSubscriptionId string
+	APIService        TLSSubscriptionsAPI
+	tlsSubscriptionID string
 	include           *string
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;.
-func (r *APIGetTlsSubRequest) Include(include string) *APIGetTlsSubRequest {
+func (r *APIGetTLSSubRequest) Include(include string) *APIGetTLSSubRequest {
 	r.include = &include
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetTlsSubRequest) Execute() (*TlsSubscriptionResponse, *http.Response, error) {
-	return r.APIService.GetTlsSubExecute(r)
+func (r APIGetTLSSubRequest) Execute() (*TLSSubscriptionResponse, *http.Response, error) {
+	return r.APIService.GetTLSSubExecute(r)
 }
 
 /*
-GetTlsSub Get a TLS subscription
+GetTLSSub Get a TLS subscription
 
 Show a TLS subscription.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
- @return APIGetTlsSubRequest
+ @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+ @return APIGetTLSSubRequest
 */
-func (a *TlsSubscriptionsAPIService) GetTlsSub(ctx context.Context, tlsSubscriptionId string) APIGetTlsSubRequest {
-	return APIGetTlsSubRequest{
+func (a *TLSSubscriptionsAPIService) GetTLSSub(ctx context.Context, tlsSubscriptionID string) APIGetTLSSubRequest {
+	return APIGetTLSSubRequest{
 		APIService:        a,
 		ctx:               ctx,
-		tlsSubscriptionId: tlsSubscriptionId,
+		tlsSubscriptionID: tlsSubscriptionID,
 	}
 }
 
-// GetTlsSubExecute executes the request
-//  @return TlsSubscriptionResponse
-func (a *TlsSubscriptionsAPIService) GetTlsSubExecute(r APIGetTlsSubRequest) (*TlsSubscriptionResponse, *http.Response, error) {
+// GetTLSSubExecute executes the request
+//  @return TLSSubscriptionResponse
+func (a *TLSSubscriptionsAPIService) GetTLSSubExecute(r APIGetTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsSubscriptionResponse
+		localVarReturnValue *TLSSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.GetTlsSub")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.GetTLSSub")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/subscriptions/{tls_subscription_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -814,12 +814,12 @@ func (a *TlsSubscriptionsAPIService) GetTlsSubExecute(r APIGetTlsSubRequest) (*T
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListTlsSubsRequest represents a request for the resource.
-type APIListTlsSubsRequest struct {
+// APIListTLSSubsRequest represents a request for the resource.
+type APIListTLSSubsRequest struct {
 	ctx                        context.Context
-	APIService                 TlsSubscriptionsAPI
+	APIService                 TLSSubscriptionsAPI
 	filterState                *string
-	filterTlsDomainsId         *string
+	filterTLSDomainsID         *string
 	filterHasActiveOrder       *bool
 	filterCertificateAuthority *string
 	sort                       *string
@@ -829,84 +829,84 @@ type APIListTlsSubsRequest struct {
 }
 
 // FilterState Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, &#x60;renewing&#x60;, and &#x60;failed&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;).
-func (r *APIListTlsSubsRequest) FilterState(filterState string) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) FilterState(filterState string) *APIListTLSSubsRequest {
 	r.filterState = &filterState
 	return r
 }
 
-// FilterTlsDomainsId Limit the returned subscriptions to those that include the specific domain.
-func (r *APIListTlsSubsRequest) FilterTlsDomainsId(filterTlsDomainsId string) *APIListTlsSubsRequest {
-	r.filterTlsDomainsId = &filterTlsDomainsId
+// FilterTLSDomainsID Limit the returned subscriptions to those that include the specific domain.
+func (r *APIListTLSSubsRequest) FilterTLSDomainsID(filterTLSDomainsID string) *APIListTLSSubsRequest {
+	r.filterTLSDomainsID = &filterTLSDomainsID
 	return r
 }
 
 // FilterHasActiveOrder Limit the returned subscriptions to those that have currently active orders. Permitted values: &#x60;true&#x60;.
-func (r *APIListTlsSubsRequest) FilterHasActiveOrder(filterHasActiveOrder bool) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) FilterHasActiveOrder(filterHasActiveOrder bool) *APIListTLSSubsRequest {
 	r.filterHasActiveOrder = &filterHasActiveOrder
 	return r
 }
 
 // FilterCertificateAuthority Limit the returned subscriptions to a specific certification authority. Values may include &#x60;certainly&#x60;, &#x60;lets-encrypt&#x60;, or &#x60;globalsign&#x60;.
-func (r *APIListTlsSubsRequest) FilterCertificateAuthority(filterCertificateAuthority string) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) FilterCertificateAuthority(filterCertificateAuthority string) *APIListTLSSubsRequest {
 	r.filterCertificateAuthority = &filterCertificateAuthority
 	return r
 }
 
 // Sort The order in which to list the results.
-func (r *APIListTlsSubsRequest) Sort(sort string) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) Sort(sort string) *APIListTLSSubsRequest {
 	r.sort = &sort
 	return r
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;.
-func (r *APIListTlsSubsRequest) Include(include string) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) Include(include string) *APIListTLSSubsRequest {
 	r.include = &include
 	return r
 }
 
 // PageNumber Current page.
-func (r *APIListTlsSubsRequest) PageNumber(pageNumber int32) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) PageNumber(pageNumber int32) *APIListTLSSubsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
 
 // PageSize Number of records per page.
-func (r *APIListTlsSubsRequest) PageSize(pageSize int32) *APIListTlsSubsRequest {
+func (r *APIListTLSSubsRequest) PageSize(pageSize int32) *APIListTLSSubsRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListTlsSubsRequest) Execute() (*TlsSubscriptionsResponse, *http.Response, error) {
-	return r.APIService.ListTlsSubsExecute(r)
+func (r APIListTLSSubsRequest) Execute() (*TLSSubscriptionsResponse, *http.Response, error) {
+	return r.APIService.ListTLSSubsExecute(r)
 }
 
 /*
-ListTlsSubs List TLS subscriptions
+ListTLSSubs List TLS subscriptions
 
 List all TLS subscriptions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIListTlsSubsRequest
+ @return APIListTLSSubsRequest
 */
-func (a *TlsSubscriptionsAPIService) ListTlsSubs(ctx context.Context) APIListTlsSubsRequest {
-	return APIListTlsSubsRequest{
+func (a *TLSSubscriptionsAPIService) ListTLSSubs(ctx context.Context) APIListTLSSubsRequest {
+	return APIListTLSSubsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ListTlsSubsExecute executes the request
-//  @return TlsSubscriptionsResponse
-func (a *TlsSubscriptionsAPIService) ListTlsSubsExecute(r APIListTlsSubsRequest) (*TlsSubscriptionsResponse, *http.Response, error) {
+// ListTLSSubsExecute executes the request
+//  @return TLSSubscriptionsResponse
+func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest) (*TLSSubscriptionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsSubscriptionsResponse
+		localVarReturnValue *TLSSubscriptionsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.ListTlsSubs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.ListTLSSubs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -920,8 +920,8 @@ func (a *TlsSubscriptionsAPIService) ListTlsSubsExecute(r APIListTlsSubsRequest)
 	if r.filterState != nil {
 		localVarQueryParams.Add("filter[state]", parameterToString(*r.filterState, ""))
 	}
-	if r.filterTlsDomainsId != nil {
-		localVarQueryParams.Add("filter[tls_domains.id]", parameterToString(*r.filterTlsDomainsId, ""))
+	if r.filterTLSDomainsID != nil {
+		localVarQueryParams.Add("filter[tls_domains.id]", parameterToString(*r.filterTLSDomainsID, ""))
 	}
 	if r.filterHasActiveOrder != nil {
 		localVarQueryParams.Add("filter[has_active_order]", parameterToString(*r.filterHasActiveOrder, ""))
@@ -1022,66 +1022,66 @@ func (a *TlsSubscriptionsAPIService) ListTlsSubsExecute(r APIListTlsSubsRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIPatchTlsSubRequest represents a request for the resource.
-type APIPatchTlsSubRequest struct {
+// APIPatchTLSSubRequest represents a request for the resource.
+type APIPatchTLSSubRequest struct {
 	ctx               context.Context
-	APIService        TlsSubscriptionsAPI
-	tlsSubscriptionId string
+	APIService        TLSSubscriptionsAPI
+	tlsSubscriptionID string
 	force             *bool
-	tlsSubscription   *TlsSubscription
+	tlsSubscription   *TLSSubscription
 }
 
 // Force A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.
-func (r *APIPatchTlsSubRequest) Force(force bool) *APIPatchTlsSubRequest {
+func (r *APIPatchTLSSubRequest) Force(force bool) *APIPatchTLSSubRequest {
 	r.force = &force
 	return r
 }
 
-// TlsSubscription returns a pointer to a request.
-func (r *APIPatchTlsSubRequest) TlsSubscription(tlsSubscription TlsSubscription) *APIPatchTlsSubRequest {
+// TLSSubscription returns a pointer to a request.
+func (r *APIPatchTLSSubRequest) TLSSubscription(tlsSubscription TLSSubscription) *APIPatchTLSSubRequest {
 	r.tlsSubscription = &tlsSubscription
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIPatchTlsSubRequest) Execute() (*TlsSubscriptionResponse, *http.Response, error) {
-	return r.APIService.PatchTlsSubExecute(r)
+func (r APIPatchTLSSubRequest) Execute() (*TLSSubscriptionResponse, *http.Response, error) {
+	return r.APIService.PatchTLSSubExecute(r)
 }
 
 /*
-PatchTlsSub Update a TLS subscription
+PatchTLSSub Update a TLS subscription
 
 Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsSubscriptionId Alphanumeric string identifying a TLS subscription.
- @return APIPatchTlsSubRequest
+ @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+ @return APIPatchTLSSubRequest
 */
-func (a *TlsSubscriptionsAPIService) PatchTlsSub(ctx context.Context, tlsSubscriptionId string) APIPatchTlsSubRequest {
-	return APIPatchTlsSubRequest{
+func (a *TLSSubscriptionsAPIService) PatchTLSSub(ctx context.Context, tlsSubscriptionID string) APIPatchTLSSubRequest {
+	return APIPatchTLSSubRequest{
 		APIService:        a,
 		ctx:               ctx,
-		tlsSubscriptionId: tlsSubscriptionId,
+		tlsSubscriptionID: tlsSubscriptionID,
 	}
 }
 
-// PatchTlsSubExecute executes the request
-//  @return TlsSubscriptionResponse
-func (a *TlsSubscriptionsAPIService) PatchTlsSubExecute(r APIPatchTlsSubRequest) (*TlsSubscriptionResponse, *http.Response, error) {
+// PatchTLSSubExecute executes the request
+//  @return TLSSubscriptionResponse
+func (a *TLSSubscriptionsAPIService) PatchTLSSubExecute(r APIPatchTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsSubscriptionResponse
+		localVarReturnValue *TLSSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsSubscriptionsAPIService.PatchTlsSub")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.PatchTLSSub")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/subscriptions/{tls_subscription_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

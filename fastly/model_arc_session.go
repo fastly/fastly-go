@@ -20,9 +20,9 @@ import (
 // ArcSession A session log. Other than `firewall_enabled` (always present), `firewall_*` fields are only present when AI Firewall ran on a request in this session. They're absent (not merely empty) otherwise, so their absence and an empty value mean different things.
 type ArcSession struct {
 	// The unique identifier of the session.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The ID of the virtual key used for this session.
-	VirtualKeyId string `json:"virtual_key_id"`
+	VirtualKeyID string `json:"virtual_key_id"`
 	// The display name of the virtual key used for this session.
 	VirtualKeyName *string `json:"virtual_key_name,omitempty"`
 	// The AI model identifier used.
@@ -30,7 +30,7 @@ type ArcSession struct {
 	// The name of the provider connection that ultimately served the session.
 	Provider string `json:"provider"`
 	// The ID of the provider connection that ultimately served the session.
-	ProviderConnectionId string `json:"provider_connection_id"`
+	ProviderConnectionID string `json:"provider_connection_id"`
 	// The ID of the provider connection originally requested, before any failover occurred.
 	PrimaryProvider *string `json:"primary_provider,omitempty"`
 	// The number of requests made in this session.
@@ -66,13 +66,13 @@ type _ArcSession ArcSession
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcSession(id string, virtualKeyId string, model string, provider string, providerConnectionId string, requests int32, inputTokens int32, outputTokens int32, violations int32, firewallEnabled bool, createdAt time.Time, updatedAt time.Time, logs []ArcSessionLogEntry) *ArcSession {
+func NewArcSession(id string, virtualKeyID string, model string, provider string, providerConnectionID string, requests int32, inputTokens int32, outputTokens int32, violations int32, firewallEnabled bool, createdAt time.Time, updatedAt time.Time, logs []ArcSessionLogEntry) *ArcSession {
 	this := ArcSession{}
-	this.Id = id
-	this.VirtualKeyId = virtualKeyId
+	this.ID = id
+	this.VirtualKeyID = virtualKeyID
 	this.Model = model
 	this.Provider = provider
-	this.ProviderConnectionId = providerConnectionId
+	this.ProviderConnectionID = providerConnectionID
 	this.Requests = requests
 	this.InputTokens = inputTokens
 	this.OutputTokens = outputTokens
@@ -92,52 +92,52 @@ func NewArcSessionWithDefaults() *ArcSession {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *ArcSession) GetId() string {
+// GetID returns the ID field value
+func (o *ArcSession) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcSession) GetIdOk() (*string, bool) {
+func (o *ArcSession) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcSession) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcSession) SetID(v string) {
+	o.ID = v
 }
 
-// GetVirtualKeyId returns the VirtualKeyId field value
-func (o *ArcSession) GetVirtualKeyId() string {
+// GetVirtualKeyID returns the VirtualKeyID field value
+func (o *ArcSession) GetVirtualKeyID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.VirtualKeyId
+	return o.VirtualKeyID
 }
 
-// GetVirtualKeyIdOk returns a tuple with the VirtualKeyId field value
+// GetVirtualKeyIDOk returns a tuple with the VirtualKeyID field value
 // and a boolean to check if the value has been set.
-func (o *ArcSession) GetVirtualKeyIdOk() (*string, bool) {
+func (o *ArcSession) GetVirtualKeyIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.VirtualKeyId, true
+	return &o.VirtualKeyID, true
 }
 
-// SetVirtualKeyId sets field value
-func (o *ArcSession) SetVirtualKeyId(v string) {
-	o.VirtualKeyId = v
+// SetVirtualKeyID sets field value
+func (o *ArcSession) SetVirtualKeyID(v string) {
+	o.VirtualKeyID = v
 }
 
 // GetVirtualKeyName returns the VirtualKeyName field value if set, zero value otherwise.
@@ -220,28 +220,28 @@ func (o *ArcSession) SetProvider(v string) {
 	o.Provider = v
 }
 
-// GetProviderConnectionId returns the ProviderConnectionId field value
-func (o *ArcSession) GetProviderConnectionId() string {
+// GetProviderConnectionID returns the ProviderConnectionID field value
+func (o *ArcSession) GetProviderConnectionID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.ProviderConnectionId
+	return o.ProviderConnectionID
 }
 
-// GetProviderConnectionIdOk returns a tuple with the ProviderConnectionId field value
+// GetProviderConnectionIDOk returns a tuple with the ProviderConnectionID field value
 // and a boolean to check if the value has been set.
-func (o *ArcSession) GetProviderConnectionIdOk() (*string, bool) {
+func (o *ArcSession) GetProviderConnectionIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ProviderConnectionId, true
+	return &o.ProviderConnectionID, true
 }
 
-// SetProviderConnectionId sets field value
-func (o *ArcSession) SetProviderConnectionId(v string) {
-	o.ProviderConnectionId = v
+// SetProviderConnectionID sets field value
+func (o *ArcSession) SetProviderConnectionID(v string) {
+	o.ProviderConnectionID = v
 }
 
 // GetPrimaryProvider returns the PrimaryProvider field value if set, zero value otherwise.
@@ -601,10 +601,10 @@ func (o *ArcSession) SetLogs(v []ArcSessionLogEntry) {
 func (o ArcSession) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
-		toSerialize["virtual_key_id"] = o.VirtualKeyId
+		toSerialize["virtual_key_id"] = o.VirtualKeyID
 	}
 	if o.VirtualKeyName != nil {
 		toSerialize["virtual_key_name"] = o.VirtualKeyName
@@ -616,7 +616,7 @@ func (o ArcSession) MarshalJSON() ([]byte, error) {
 		toSerialize["provider"] = o.Provider
 	}
 	if true {
-		toSerialize["provider_connection_id"] = o.ProviderConnectionId
+		toSerialize["provider_connection_id"] = o.ProviderConnectionID
 	}
 	if o.PrimaryProvider != nil {
 		toSerialize["primary_provider"] = o.PrimaryProvider

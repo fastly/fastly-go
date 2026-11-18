@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **Token** | Pointer to **string** | The Insert API key from the Account page of your New Relic account. Required. | [optional] 
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] [default to "US"]
-**Url** | Pointer to **NullableString** | (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing. | [optional] [default to "null"]
+**URL** | Pointer to **NullableString** | (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing. | [optional] [default to "null"]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -258,41 +258,41 @@ SetRegion sets Region field to given value.
 
 HasRegion returns a boolean if a field has been set.
 
-### GetUrl
+### GetURL
 
-`func (o *LoggingNewrelicotlpResponse) GetUrl() string`
+`func (o *LoggingNewrelicotlpResponse) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LoggingNewrelicotlpResponse) GetUrlOk() (*string, bool)`
+`func (o *LoggingNewrelicotlpResponse) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LoggingNewrelicotlpResponse) SetUrl(v string)`
+`func (o *LoggingNewrelicotlpResponse) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LoggingNewrelicotlpResponse) HasUrl() bool`
+`func (o *LoggingNewrelicotlpResponse) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
-### SetUrlNil
+### SetURLNil
 
-`func (o *LoggingNewrelicotlpResponse) SetUrlNil(b bool)`
+`func (o *LoggingNewrelicotlpResponse) SetURLNil(b bool)`
 
- SetUrlNil sets the value for Url to be an explicit nil
+ SetURLNil sets the value for URL to be an explicit nil
 
-### UnsetUrl
-`func (o *LoggingNewrelicotlpResponse) UnsetUrl()`
+### UnsetURL
+`func (o *LoggingNewrelicotlpResponse) UnsetURL()`
 
-UnsetUrl ensures that no value is present for Url, not even an explicit nil
+UnsetURL ensures that no value is present for URL, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *LoggingNewrelicotlpResponse) GetCreatedAt() time.Time`
@@ -398,30 +398,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingNewrelicotlpResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingNewrelicotlpResponse) GetServiceId() string`
+`func (o *LoggingNewrelicotlpResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingNewrelicotlpResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingNewrelicotlpResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingNewrelicotlpResponse) SetServiceId(v string)`
+`func (o *LoggingNewrelicotlpResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingNewrelicotlpResponse) HasServiceId() bool`
+`func (o *LoggingNewrelicotlpResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -450,5 +450,3 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**[]SuccessfulResponseAsObject**](SuccessfulResponseAsObject.md) |  | [optional] 
-**Meta** | Pointer to **interface{}** | Meta for the pagination. | [optional] 
+**Meta** | Pointer to **any** | Meta for the pagination. | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *InlineResponse20014) GetMeta() interface{}`
+`func (o *InlineResponse20014) GetMeta() any`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *InlineResponse20014) GetMetaOk() (*interface{}, bool)`
+`func (o *InlineResponse20014) GetMetaOk() (*any, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *InlineResponse20014) SetMeta(v interface{})`
+`func (o *InlineResponse20014) SetMeta(v any)`
 
 SetMeta sets Meta field to given value.
 
@@ -88,5 +88,3 @@ HasMeta returns a boolean if a field has been set.
 UnsetMeta ensures that no value is present for Meta, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

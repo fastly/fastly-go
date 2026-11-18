@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RuleId** | Pointer to **string** | Alphanumeric string identifying the rule. Stable across versions of the routing config. | [optional] [readonly] 
+**RuleID** | Pointer to **string** | Alphanumeric string identifying the rule. Stable across versions of the routing config. | [optional] [readonly] 
 **OldAction** | Pointer to [**Action**](Action.md) |  | [optional] 
 **NewAction** | Pointer to [**Action**](Action.md) |  | [optional] 
 
@@ -27,30 +27,30 @@ NewRuleChangeWithDefaults instantiates a new RuleChange object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRuleId
+### GetRuleID
 
-`func (o *RuleChange) GetRuleId() string`
+`func (o *RuleChange) GetRuleID() string`
 
-GetRuleId returns the RuleId field if non-nil, zero value otherwise.
+GetRuleID returns the RuleID field if non-nil, zero value otherwise.
 
-### GetRuleIdOk
+### GetRuleIDOk
 
-`func (o *RuleChange) GetRuleIdOk() (*string, bool)`
+`func (o *RuleChange) GetRuleIDOk() (*string, bool)`
 
-GetRuleIdOk returns a tuple with the RuleId field if it's non-nil, zero value otherwise
+GetRuleIDOk returns a tuple with the RuleID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRuleId
+### SetRuleID
 
-`func (o *RuleChange) SetRuleId(v string)`
+`func (o *RuleChange) SetRuleID(v string)`
 
-SetRuleId sets RuleId field to given value.
+SetRuleID sets RuleID field to given value.
 
-### HasRuleId
+### HasRuleID
 
-`func (o *RuleChange) HasRuleId() bool`
+`func (o *RuleChange) HasRuleID() bool`
 
-HasRuleId returns a boolean if a field has been set.
+HasRuleID returns a boolean if a field has been set.
 
 ### GetOldAction
 
@@ -104,5 +104,3 @@ HasNewAction returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -92,10 +92,10 @@ type NetworkProtectAPI interface {
 		Deletes an endpoint. The endpoint must first be removed from every network policy; active references return a `409 Conflict` error.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param endpointId Unique identifier of the Network Protect endpoint.
+		 @param endpointID Unique identifier of the Network Protect endpoint.
 		 @return APIDeleteNetworkProtectEndpointRequest
 	*/
-	DeleteNetworkProtectEndpoint(ctx context.Context, endpointId string) APIDeleteNetworkProtectEndpointRequest
+	DeleteNetworkProtectEndpoint(ctx context.Context, endpointID string) APIDeleteNetworkProtectEndpointRequest
 
 	// DeleteNetworkProtectEndpointExecute executes the request
 	DeleteNetworkProtectEndpointExecute(r APIDeleteNetworkProtectEndpointRequest) (*http.Response, error)
@@ -106,10 +106,10 @@ type NetworkProtectAPI interface {
 		Deletes a network and stops its advertisement and filtering. Endpoints and rule sets used by the network are not deleted.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param networkId Unique identifier of the Network Protect network.
+		 @param networkID Unique identifier of the Network Protect network.
 		 @return APIDeleteNetworkProtectNetworkRequest
 	*/
-	DeleteNetworkProtectNetwork(ctx context.Context, networkId string) APIDeleteNetworkProtectNetworkRequest
+	DeleteNetworkProtectNetwork(ctx context.Context, networkID string) APIDeleteNetworkProtectNetworkRequest
 
 	// DeleteNetworkProtectNetworkExecute executes the request
 	DeleteNetworkProtectNetworkExecute(r APIDeleteNetworkProtectNetworkRequest) (*http.Response, error)
@@ -120,10 +120,10 @@ type NetworkProtectAPI interface {
 		Deletes a prefix list. Active rule references must be removed first; referenced lists return a `409 Conflict` error. Unknown and foreign IDs are indistinguishable and return a `404 Not Found` error.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param prefixListId Unique identifier of the Network Protect prefix list.
+		 @param prefixListID Unique identifier of the Network Protect prefix list.
 		 @return APIDeleteNetworkProtectPrefixListRequest
 	*/
-	DeleteNetworkProtectPrefixList(ctx context.Context, prefixListId string) APIDeleteNetworkProtectPrefixListRequest
+	DeleteNetworkProtectPrefixList(ctx context.Context, prefixListID string) APIDeleteNetworkProtectPrefixListRequest
 
 	// DeleteNetworkProtectPrefixListExecute executes the request
 	DeleteNetworkProtectPrefixListExecute(r APIDeleteNetworkProtectPrefixListRequest) (*http.Response, error)
@@ -134,10 +134,10 @@ type NetworkProtectAPI interface {
 		Deletes a rule set. Attached rule sets cannot be deleted and return a `409 Conflict` error until their references are removed.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param ruleSetId Unique identifier of the Network Protect rule set.
+		 @param ruleSetID Unique identifier of the Network Protect rule set.
 		 @return APIDeleteNetworkProtectRuleSetRequest
 	*/
-	DeleteNetworkProtectRuleSet(ctx context.Context, ruleSetId string) APIDeleteNetworkProtectRuleSetRequest
+	DeleteNetworkProtectRuleSet(ctx context.Context, ruleSetID string) APIDeleteNetworkProtectRuleSetRequest
 
 	// DeleteNetworkProtectRuleSetExecute executes the request
 	DeleteNetworkProtectRuleSetExecute(r APIDeleteNetworkProtectRuleSetRequest) (*http.Response, error)
@@ -148,10 +148,10 @@ type NetworkProtectAPI interface {
 		Retrieves a single endpoint by its identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param endpointId Unique identifier of the Network Protect endpoint.
+		 @param endpointID Unique identifier of the Network Protect endpoint.
 		 @return APIGetNetworkProtectEndpointRequest
 	*/
-	GetNetworkProtectEndpoint(ctx context.Context, endpointId string) APIGetNetworkProtectEndpointRequest
+	GetNetworkProtectEndpoint(ctx context.Context, endpointID string) APIGetNetworkProtectEndpointRequest
 
 	// GetNetworkProtectEndpointExecute executes the request
 	//  @return NetworkProtectEndpointResponse
@@ -163,10 +163,10 @@ type NetworkProtectAPI interface {
 		Retrieves a single network by its identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param networkId Unique identifier of the Network Protect network.
+		 @param networkID Unique identifier of the Network Protect network.
 		 @return APIGetNetworkProtectNetworkRequest
 	*/
-	GetNetworkProtectNetwork(ctx context.Context, networkId string) APIGetNetworkProtectNetworkRequest
+	GetNetworkProtectNetwork(ctx context.Context, networkID string) APIGetNetworkProtectNetworkRequest
 
 	// GetNetworkProtectNetworkExecute executes the request
 	//  @return NetworkProtectNetworkResponse
@@ -178,10 +178,10 @@ type NetworkProtectAPI interface {
 		Retrieves a single prefix list by its identifier. Unknown and foreign IDs are indistinguishable and return a `404 Not Found` error.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param prefixListId Unique identifier of the Network Protect prefix list.
+		 @param prefixListID Unique identifier of the Network Protect prefix list.
 		 @return APIGetNetworkProtectPrefixListRequest
 	*/
-	GetNetworkProtectPrefixList(ctx context.Context, prefixListId string) APIGetNetworkProtectPrefixListRequest
+	GetNetworkProtectPrefixList(ctx context.Context, prefixListID string) APIGetNetworkProtectPrefixListRequest
 
 	// GetNetworkProtectPrefixListExecute executes the request
 	//  @return NetworkProtectPrefixListResponse
@@ -193,10 +193,10 @@ type NetworkProtectAPI interface {
 		Retrieves a single rule set with rules in evaluation order.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param ruleSetId Unique identifier of the Network Protect rule set.
+		 @param ruleSetID Unique identifier of the Network Protect rule set.
 		 @return APIGetNetworkProtectRuleSetRequest
 	*/
-	GetNetworkProtectRuleSet(ctx context.Context, ruleSetId string) APIGetNetworkProtectRuleSetRequest
+	GetNetworkProtectRuleSet(ctx context.Context, ruleSetID string) APIGetNetworkProtectRuleSetRequest
 
 	// GetNetworkProtectRuleSetExecute executes the request
 	//  @return NetworkProtectRuleSetResponse
@@ -264,10 +264,10 @@ type NetworkProtectAPI interface {
 		Updates an endpoint. Omitted fields remain unchanged. The IP address cannot be changed; create a new endpoint if the destination changes.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param endpointId Unique identifier of the Network Protect endpoint.
+		 @param endpointID Unique identifier of the Network Protect endpoint.
 		 @return APIUpdateNetworkProtectEndpointRequest
 	*/
-	UpdateNetworkProtectEndpoint(ctx context.Context, endpointId string) APIUpdateNetworkProtectEndpointRequest
+	UpdateNetworkProtectEndpoint(ctx context.Context, endpointID string) APIUpdateNetworkProtectEndpointRequest
 
 	// UpdateNetworkProtectEndpointExecute executes the request
 	//  @return NetworkProtectEndpointResponse
@@ -280,10 +280,10 @@ type NetworkProtectAPI interface {
 	Advertisement is desired state. Enabling it requires an approved LOA, a valid ROA, and a ready default-region delivery policy. A readiness failure returns a `409 Conflict` error.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param networkId Unique identifier of the Network Protect network.
+		 @param networkID Unique identifier of the Network Protect network.
 		 @return APIUpdateNetworkProtectNetworkRequest
 	*/
-	UpdateNetworkProtectNetwork(ctx context.Context, networkId string) APIUpdateNetworkProtectNetworkRequest
+	UpdateNetworkProtectNetwork(ctx context.Context, networkID string) APIUpdateNetworkProtectNetworkRequest
 
 	// UpdateNetworkProtectNetworkExecute executes the request
 	//  @return NetworkProtectNetworkResponse
@@ -295,10 +295,10 @@ type NetworkProtectAPI interface {
 		Updates a prefix list. The family cannot be changed. Sending addresses replaces the complete list; an empty array clears it when no active source-list restriction applies. Addresses are canonicalized, deduplicated, and sorted by the backend.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param prefixListId Unique identifier of the Network Protect prefix list.
+		 @param prefixListID Unique identifier of the Network Protect prefix list.
 		 @return APIUpdateNetworkProtectPrefixListRequest
 	*/
-	UpdateNetworkProtectPrefixList(ctx context.Context, prefixListId string) APIUpdateNetworkProtectPrefixListRequest
+	UpdateNetworkProtectPrefixList(ctx context.Context, prefixListID string) APIUpdateNetworkProtectPrefixListRequest
 
 	// UpdateNetworkProtectPrefixListExecute executes the request
 	//  @return NetworkProtectPrefixListResponse
@@ -310,10 +310,10 @@ type NetworkProtectAPI interface {
 		Updates a rule set. Omitted fields remain unchanged. Sending rules replaces the complete ordered list; an empty array removes every rule. Custom attachment and detachment remain restricted in this release.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param ruleSetId Unique identifier of the Network Protect rule set.
+		 @param ruleSetID Unique identifier of the Network Protect rule set.
 		 @return APIUpdateNetworkProtectRuleSetRequest
 	*/
-	UpdateNetworkProtectRuleSet(ctx context.Context, ruleSetId string) APIUpdateNetworkProtectRuleSetRequest
+	UpdateNetworkProtectRuleSet(ctx context.Context, ruleSetID string) APIUpdateNetworkProtectRuleSetRequest
 
 	// UpdateNetworkProtectRuleSetExecute executes the request
 	//  @return NetworkProtectRuleSetResponse
@@ -446,7 +446,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectEndpointExecute(r APICrea
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -456,7 +456,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectEndpointExecute(r APICrea
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -476,7 +476,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectEndpointExecute(r APICrea
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -635,7 +635,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectNetworkExecute(r APICreat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -645,7 +645,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectNetworkExecute(r APICreat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -665,7 +665,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectNetworkExecute(r APICreat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -824,7 +824,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectPrefixListExecute(r APICr
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -834,7 +834,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectPrefixListExecute(r APICr
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -854,7 +854,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectPrefixListExecute(r APICr
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1013,7 +1013,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectRuleSetExecute(r APICreat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1023,7 +1023,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectRuleSetExecute(r APICreat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1043,7 +1043,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectRuleSetExecute(r APICreat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1083,7 +1083,7 @@ func (a *NetworkProtectAPIService) CreateNetworkProtectRuleSetExecute(r APICreat
 type APIDeleteNetworkProtectEndpointRequest struct {
 	ctx        context.Context
 	APIService NetworkProtectAPI
-	endpointId string
+	endpointID string
 }
 
 // Execute calls the API using the request data configured.
@@ -1097,14 +1097,14 @@ DeleteNetworkProtectEndpoint Delete a Network Protect endpoint
 Deletes an endpoint. The endpoint must first be removed from every network policy; active references return a `409 Conflict` error.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param endpointId Unique identifier of the Network Protect endpoint.
+ @param endpointID Unique identifier of the Network Protect endpoint.
  @return APIDeleteNetworkProtectEndpointRequest
 */
-func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpoint(ctx context.Context, endpointId string) APIDeleteNetworkProtectEndpointRequest {
+func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpoint(ctx context.Context, endpointID string) APIDeleteNetworkProtectEndpointRequest {
 	return APIDeleteNetworkProtectEndpointRequest{
 		APIService: a,
 		ctx:        ctx,
-		endpointId: endpointId,
+		endpointID: endpointID,
 	}
 }
 
@@ -1122,7 +1122,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpointExecute(r APIDele
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/endpoints/{endpoint_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"endpoint_id"+"}", gourl.PathEscape(parameterToString(r.endpointId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"endpoint_id"+"}", gourl.PathEscape(parameterToString(r.endpointID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1182,7 +1182,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpointExecute(r APIDele
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1192,7 +1192,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpointExecute(r APIDele
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1202,7 +1202,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpointExecute(r APIDele
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1222,7 +1222,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpointExecute(r APIDele
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1253,7 +1253,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectEndpointExecute(r APIDele
 type APIDeleteNetworkProtectNetworkRequest struct {
 	ctx        context.Context
 	APIService NetworkProtectAPI
-	networkId  string
+	networkID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -1267,14 +1267,14 @@ DeleteNetworkProtectNetwork Delete a Network Protect network
 Deletes a network and stops its advertisement and filtering. Endpoints and rule sets used by the network are not deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param networkId Unique identifier of the Network Protect network.
+ @param networkID Unique identifier of the Network Protect network.
  @return APIDeleteNetworkProtectNetworkRequest
 */
-func (a *NetworkProtectAPIService) DeleteNetworkProtectNetwork(ctx context.Context, networkId string) APIDeleteNetworkProtectNetworkRequest {
+func (a *NetworkProtectAPIService) DeleteNetworkProtectNetwork(ctx context.Context, networkID string) APIDeleteNetworkProtectNetworkRequest {
 	return APIDeleteNetworkProtectNetworkRequest{
 		APIService: a,
 		ctx:        ctx,
-		networkId:  networkId,
+		networkID:  networkID,
 	}
 }
 
@@ -1292,7 +1292,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectNetworkExecute(r APIDelet
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/networks/{network_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"network_id"+"}", gourl.PathEscape(parameterToString(r.networkId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"network_id"+"}", gourl.PathEscape(parameterToString(r.networkID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1352,7 +1352,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectNetworkExecute(r APIDelet
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1362,7 +1362,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectNetworkExecute(r APIDelet
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1372,7 +1372,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectNetworkExecute(r APIDelet
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1382,7 +1382,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectNetworkExecute(r APIDelet
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1413,7 +1413,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectNetworkExecute(r APIDelet
 type APIDeleteNetworkProtectPrefixListRequest struct {
 	ctx          context.Context
 	APIService   NetworkProtectAPI
-	prefixListId string
+	prefixListID string
 }
 
 // Execute calls the API using the request data configured.
@@ -1427,14 +1427,14 @@ DeleteNetworkProtectPrefixList Delete a Network Protect prefix list
 Deletes a prefix list. Active rule references must be removed first; referenced lists return a `409 Conflict` error. Unknown and foreign IDs are indistinguishable and return a `404 Not Found` error.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefixListId Unique identifier of the Network Protect prefix list.
+ @param prefixListID Unique identifier of the Network Protect prefix list.
  @return APIDeleteNetworkProtectPrefixListRequest
 */
-func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixList(ctx context.Context, prefixListId string) APIDeleteNetworkProtectPrefixListRequest {
+func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixList(ctx context.Context, prefixListID string) APIDeleteNetworkProtectPrefixListRequest {
 	return APIDeleteNetworkProtectPrefixListRequest{
 		APIService:   a,
 		ctx:          ctx,
-		prefixListId: prefixListId,
+		prefixListID: prefixListID,
 	}
 }
 
@@ -1452,7 +1452,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixListExecute(r APIDe
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/prefix-lists/{prefix_list_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"prefix_list_id"+"}", gourl.PathEscape(parameterToString(r.prefixListId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"prefix_list_id"+"}", gourl.PathEscape(parameterToString(r.prefixListID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1512,7 +1512,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixListExecute(r APIDe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1522,7 +1522,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixListExecute(r APIDe
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1532,7 +1532,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixListExecute(r APIDe
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1552,7 +1552,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixListExecute(r APIDe
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1583,7 +1583,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectPrefixListExecute(r APIDe
 type APIDeleteNetworkProtectRuleSetRequest struct {
 	ctx        context.Context
 	APIService NetworkProtectAPI
-	ruleSetId  string
+	ruleSetID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -1597,14 +1597,14 @@ DeleteNetworkProtectRuleSet Delete a Network Protect rule set
 Deletes a rule set. Attached rule sets cannot be deleted and return a `409 Conflict` error until their references are removed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ruleSetId Unique identifier of the Network Protect rule set.
+ @param ruleSetID Unique identifier of the Network Protect rule set.
  @return APIDeleteNetworkProtectRuleSetRequest
 */
-func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSet(ctx context.Context, ruleSetId string) APIDeleteNetworkProtectRuleSetRequest {
+func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSet(ctx context.Context, ruleSetID string) APIDeleteNetworkProtectRuleSetRequest {
 	return APIDeleteNetworkProtectRuleSetRequest{
 		APIService: a,
 		ctx:        ctx,
-		ruleSetId:  ruleSetId,
+		ruleSetID:  ruleSetID,
 	}
 }
 
@@ -1622,7 +1622,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSetExecute(r APIDelet
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/rule-sets/{rule_set_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_set_id"+"}", gourl.PathEscape(parameterToString(r.ruleSetId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_set_id"+"}", gourl.PathEscape(parameterToString(r.ruleSetID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1682,7 +1682,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSetExecute(r APIDelet
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1692,7 +1692,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSetExecute(r APIDelet
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1702,7 +1702,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSetExecute(r APIDelet
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1722,7 +1722,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSetExecute(r APIDelet
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1753,7 +1753,7 @@ func (a *NetworkProtectAPIService) DeleteNetworkProtectRuleSetExecute(r APIDelet
 type APIGetNetworkProtectEndpointRequest struct {
 	ctx        context.Context
 	APIService NetworkProtectAPI
-	endpointId string
+	endpointID string
 }
 
 // Execute calls the API using the request data configured.
@@ -1767,14 +1767,14 @@ GetNetworkProtectEndpoint Get a Network Protect endpoint
 Retrieves a single endpoint by its identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param endpointId Unique identifier of the Network Protect endpoint.
+ @param endpointID Unique identifier of the Network Protect endpoint.
  @return APIGetNetworkProtectEndpointRequest
 */
-func (a *NetworkProtectAPIService) GetNetworkProtectEndpoint(ctx context.Context, endpointId string) APIGetNetworkProtectEndpointRequest {
+func (a *NetworkProtectAPIService) GetNetworkProtectEndpoint(ctx context.Context, endpointID string) APIGetNetworkProtectEndpointRequest {
 	return APIGetNetworkProtectEndpointRequest{
 		APIService: a,
 		ctx:        ctx,
-		endpointId: endpointId,
+		endpointID: endpointID,
 	}
 }
 
@@ -1794,7 +1794,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectEndpointExecute(r APIGetNetw
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/endpoints/{endpoint_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"endpoint_id"+"}", gourl.PathEscape(parameterToString(r.endpointId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"endpoint_id"+"}", gourl.PathEscape(parameterToString(r.endpointID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1854,7 +1854,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectEndpointExecute(r APIGetNetw
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1864,7 +1864,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectEndpointExecute(r APIGetNetw
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1874,7 +1874,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectEndpointExecute(r APIGetNetw
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1884,7 +1884,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectEndpointExecute(r APIGetNetw
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1924,7 +1924,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectEndpointExecute(r APIGetNetw
 type APIGetNetworkProtectNetworkRequest struct {
 	ctx        context.Context
 	APIService NetworkProtectAPI
-	networkId  string
+	networkID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -1938,14 +1938,14 @@ GetNetworkProtectNetwork Get a Network Protect network
 Retrieves a single network by its identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param networkId Unique identifier of the Network Protect network.
+ @param networkID Unique identifier of the Network Protect network.
  @return APIGetNetworkProtectNetworkRequest
 */
-func (a *NetworkProtectAPIService) GetNetworkProtectNetwork(ctx context.Context, networkId string) APIGetNetworkProtectNetworkRequest {
+func (a *NetworkProtectAPIService) GetNetworkProtectNetwork(ctx context.Context, networkID string) APIGetNetworkProtectNetworkRequest {
 	return APIGetNetworkProtectNetworkRequest{
 		APIService: a,
 		ctx:        ctx,
-		networkId:  networkId,
+		networkID:  networkID,
 	}
 }
 
@@ -1965,7 +1965,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectNetworkExecute(r APIGetNetwo
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/networks/{network_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"network_id"+"}", gourl.PathEscape(parameterToString(r.networkId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"network_id"+"}", gourl.PathEscape(parameterToString(r.networkID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2025,7 +2025,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectNetworkExecute(r APIGetNetwo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2035,7 +2035,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectNetworkExecute(r APIGetNetwo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2045,7 +2045,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectNetworkExecute(r APIGetNetwo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2055,7 +2055,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectNetworkExecute(r APIGetNetwo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2095,7 +2095,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectNetworkExecute(r APIGetNetwo
 type APIGetNetworkProtectPrefixListRequest struct {
 	ctx          context.Context
 	APIService   NetworkProtectAPI
-	prefixListId string
+	prefixListID string
 }
 
 // Execute calls the API using the request data configured.
@@ -2109,14 +2109,14 @@ GetNetworkProtectPrefixList Get a Network Protect prefix list
 Retrieves a single prefix list by its identifier. Unknown and foreign IDs are indistinguishable and return a `404 Not Found` error.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefixListId Unique identifier of the Network Protect prefix list.
+ @param prefixListID Unique identifier of the Network Protect prefix list.
  @return APIGetNetworkProtectPrefixListRequest
 */
-func (a *NetworkProtectAPIService) GetNetworkProtectPrefixList(ctx context.Context, prefixListId string) APIGetNetworkProtectPrefixListRequest {
+func (a *NetworkProtectAPIService) GetNetworkProtectPrefixList(ctx context.Context, prefixListID string) APIGetNetworkProtectPrefixListRequest {
 	return APIGetNetworkProtectPrefixListRequest{
 		APIService:   a,
 		ctx:          ctx,
-		prefixListId: prefixListId,
+		prefixListID: prefixListID,
 	}
 }
 
@@ -2136,7 +2136,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectPrefixListExecute(r APIGetNe
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/prefix-lists/{prefix_list_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"prefix_list_id"+"}", gourl.PathEscape(parameterToString(r.prefixListId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"prefix_list_id"+"}", gourl.PathEscape(parameterToString(r.prefixListID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2196,7 +2196,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectPrefixListExecute(r APIGetNe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2206,7 +2206,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectPrefixListExecute(r APIGetNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2216,7 +2216,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectPrefixListExecute(r APIGetNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2226,7 +2226,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectPrefixListExecute(r APIGetNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2266,7 +2266,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectPrefixListExecute(r APIGetNe
 type APIGetNetworkProtectRuleSetRequest struct {
 	ctx        context.Context
 	APIService NetworkProtectAPI
-	ruleSetId  string
+	ruleSetID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -2280,14 +2280,14 @@ GetNetworkProtectRuleSet Get a Network Protect rule set
 Retrieves a single rule set with rules in evaluation order.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ruleSetId Unique identifier of the Network Protect rule set.
+ @param ruleSetID Unique identifier of the Network Protect rule set.
  @return APIGetNetworkProtectRuleSetRequest
 */
-func (a *NetworkProtectAPIService) GetNetworkProtectRuleSet(ctx context.Context, ruleSetId string) APIGetNetworkProtectRuleSetRequest {
+func (a *NetworkProtectAPIService) GetNetworkProtectRuleSet(ctx context.Context, ruleSetID string) APIGetNetworkProtectRuleSetRequest {
 	return APIGetNetworkProtectRuleSetRequest{
 		APIService: a,
 		ctx:        ctx,
-		ruleSetId:  ruleSetId,
+		ruleSetID:  ruleSetID,
 	}
 }
 
@@ -2307,7 +2307,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectRuleSetExecute(r APIGetNetwo
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/rule-sets/{rule_set_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_set_id"+"}", gourl.PathEscape(parameterToString(r.ruleSetId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_set_id"+"}", gourl.PathEscape(parameterToString(r.ruleSetID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2367,7 +2367,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectRuleSetExecute(r APIGetNetwo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2377,7 +2377,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectRuleSetExecute(r APIGetNetwo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2387,7 +2387,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectRuleSetExecute(r APIGetNetwo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2397,7 +2397,7 @@ func (a *NetworkProtectAPIService) GetNetworkProtectRuleSetExecute(r APIGetNetwo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2564,7 +2564,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectEndpointsExecute(r APIListN
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2574,7 +2574,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectEndpointsExecute(r APIListN
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2584,7 +2584,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectEndpointsExecute(r APIListN
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2751,7 +2751,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectNetworksExecute(r APIListNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2761,7 +2761,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectNetworksExecute(r APIListNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2771,7 +2771,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectNetworksExecute(r APIListNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2938,7 +2938,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectPrefixListsExecute(r APILis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2948,7 +2948,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectPrefixListsExecute(r APILis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2958,7 +2958,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectPrefixListsExecute(r APILis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3125,7 +3125,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectRuleSetsExecute(r APIListNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3135,7 +3135,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectRuleSetsExecute(r APIListNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3145,7 +3145,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectRuleSetsExecute(r APIListNe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3185,7 +3185,7 @@ func (a *NetworkProtectAPIService) ListNetworkProtectRuleSetsExecute(r APIListNe
 type APIUpdateNetworkProtectEndpointRequest struct {
 	ctx                          context.Context
 	APIService                   NetworkProtectAPI
-	endpointId                   string
+	endpointID                   string
 	networkProtectEndpointUpdate *NetworkProtectEndpointUpdate
 }
 
@@ -3206,14 +3206,14 @@ UpdateNetworkProtectEndpoint Update a Network Protect endpoint
 Updates an endpoint. Omitted fields remain unchanged. The IP address cannot be changed; create a new endpoint if the destination changes.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param endpointId Unique identifier of the Network Protect endpoint.
+ @param endpointID Unique identifier of the Network Protect endpoint.
  @return APIUpdateNetworkProtectEndpointRequest
 */
-func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpoint(ctx context.Context, endpointId string) APIUpdateNetworkProtectEndpointRequest {
+func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpoint(ctx context.Context, endpointID string) APIUpdateNetworkProtectEndpointRequest {
 	return APIUpdateNetworkProtectEndpointRequest{
 		APIService: a,
 		ctx:        ctx,
-		endpointId: endpointId,
+		endpointID: endpointID,
 	}
 }
 
@@ -3233,7 +3233,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpointExecute(r APIUpda
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/endpoints/{endpoint_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"endpoint_id"+"}", gourl.PathEscape(parameterToString(r.endpointId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"endpoint_id"+"}", gourl.PathEscape(parameterToString(r.endpointID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3308,7 +3308,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpointExecute(r APIUpda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3318,7 +3318,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpointExecute(r APIUpda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3328,7 +3328,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpointExecute(r APIUpda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3348,7 +3348,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpointExecute(r APIUpda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3388,7 +3388,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectEndpointExecute(r APIUpda
 type APIUpdateNetworkProtectNetworkRequest struct {
 	ctx                         context.Context
 	APIService                  NetworkProtectAPI
-	networkId                   string
+	networkID                   string
 	networkProtectNetworkUpdate *NetworkProtectNetworkUpdate
 }
 
@@ -3410,14 +3410,14 @@ Updates a network. Omitted fields remain unchanged. The prefix cannot be changed
 Advertisement is desired state. Enabling it requires an approved LOA, a valid ROA, and a ready default-region delivery policy. A readiness failure returns a `409 Conflict` error.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param networkId Unique identifier of the Network Protect network.
+ @param networkID Unique identifier of the Network Protect network.
  @return APIUpdateNetworkProtectNetworkRequest
 */
-func (a *NetworkProtectAPIService) UpdateNetworkProtectNetwork(ctx context.Context, networkId string) APIUpdateNetworkProtectNetworkRequest {
+func (a *NetworkProtectAPIService) UpdateNetworkProtectNetwork(ctx context.Context, networkID string) APIUpdateNetworkProtectNetworkRequest {
 	return APIUpdateNetworkProtectNetworkRequest{
 		APIService: a,
 		ctx:        ctx,
-		networkId:  networkId,
+		networkID:  networkID,
 	}
 }
 
@@ -3437,7 +3437,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectNetworkExecute(r APIUpdat
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/networks/{network_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"network_id"+"}", gourl.PathEscape(parameterToString(r.networkId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"network_id"+"}", gourl.PathEscape(parameterToString(r.networkID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3512,7 +3512,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectNetworkExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3522,7 +3522,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectNetworkExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3532,7 +3532,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectNetworkExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3552,7 +3552,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectNetworkExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3592,7 +3592,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectNetworkExecute(r APIUpdat
 type APIUpdateNetworkProtectPrefixListRequest struct {
 	ctx                            context.Context
 	APIService                     NetworkProtectAPI
-	prefixListId                   string
+	prefixListID                   string
 	networkProtectPrefixListUpdate *NetworkProtectPrefixListUpdate
 }
 
@@ -3613,14 +3613,14 @@ UpdateNetworkProtectPrefixList Update a Network Protect prefix list
 Updates a prefix list. The family cannot be changed. Sending addresses replaces the complete list; an empty array clears it when no active source-list restriction applies. Addresses are canonicalized, deduplicated, and sorted by the backend.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefixListId Unique identifier of the Network Protect prefix list.
+ @param prefixListID Unique identifier of the Network Protect prefix list.
  @return APIUpdateNetworkProtectPrefixListRequest
 */
-func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixList(ctx context.Context, prefixListId string) APIUpdateNetworkProtectPrefixListRequest {
+func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixList(ctx context.Context, prefixListID string) APIUpdateNetworkProtectPrefixListRequest {
 	return APIUpdateNetworkProtectPrefixListRequest{
 		APIService:   a,
 		ctx:          ctx,
-		prefixListId: prefixListId,
+		prefixListID: prefixListID,
 	}
 }
 
@@ -3640,7 +3640,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixListExecute(r APIUp
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/prefix-lists/{prefix_list_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"prefix_list_id"+"}", gourl.PathEscape(parameterToString(r.prefixListId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"prefix_list_id"+"}", gourl.PathEscape(parameterToString(r.prefixListID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3715,7 +3715,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixListExecute(r APIUp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3725,7 +3725,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixListExecute(r APIUp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3735,7 +3735,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixListExecute(r APIUp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3755,7 +3755,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixListExecute(r APIUp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3795,7 +3795,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectPrefixListExecute(r APIUp
 type APIUpdateNetworkProtectRuleSetRequest struct {
 	ctx                         context.Context
 	APIService                  NetworkProtectAPI
-	ruleSetId                   string
+	ruleSetID                   string
 	networkProtectRuleSetUpdate *NetworkProtectRuleSetUpdate
 }
 
@@ -3816,14 +3816,14 @@ UpdateNetworkProtectRuleSet Update a Network Protect rule set
 Updates a rule set. Omitted fields remain unchanged. Sending rules replaces the complete ordered list; an empty array removes every rule. Custom attachment and detachment remain restricted in this release.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ruleSetId Unique identifier of the Network Protect rule set.
+ @param ruleSetID Unique identifier of the Network Protect rule set.
  @return APIUpdateNetworkProtectRuleSetRequest
 */
-func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSet(ctx context.Context, ruleSetId string) APIUpdateNetworkProtectRuleSetRequest {
+func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSet(ctx context.Context, ruleSetID string) APIUpdateNetworkProtectRuleSetRequest {
 	return APIUpdateNetworkProtectRuleSetRequest{
 		APIService: a,
 		ctx:        ctx,
-		ruleSetId:  ruleSetId,
+		ruleSetID:  ruleSetID,
 	}
 }
 
@@ -3843,7 +3843,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSetExecute(r APIUpdat
 	}
 
 	localVarPath := localBasePath + "/network-protect/v1/rule-sets/{rule_set_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_set_id"+"}", gourl.PathEscape(parameterToString(r.ruleSetId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_set_id"+"}", gourl.PathEscape(parameterToString(r.ruleSetID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -3918,7 +3918,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSetExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3928,7 +3928,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSetExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3938,7 +3938,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSetExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3958,7 +3958,7 @@ func (a *NetworkProtectAPIService) UpdateNetworkProtectRuleSetExecute(r APIUpdat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

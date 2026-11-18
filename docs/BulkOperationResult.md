@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The operation ID. | [optional] 
+**ID** | Pointer to **string** | The operation ID. | [optional] 
 **StatusCode** | Pointer to **int32** | HTTP status code for this operation. | [optional] 
 **Reason** | Pointer to **string** | Error reason if the operation failed. | [optional] 
 
@@ -27,30 +27,30 @@ NewBulkOperationResultWithDefaults instantiates a new BulkOperationResult object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *BulkOperationResult) GetId() string`
+`func (o *BulkOperationResult) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *BulkOperationResult) GetIdOk() (*string, bool)`
+`func (o *BulkOperationResult) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *BulkOperationResult) SetId(v string)`
+`func (o *BulkOperationResult) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *BulkOperationResult) HasId() bool`
+`func (o *BulkOperationResult) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetStatusCode
 
@@ -104,5 +104,3 @@ HasReason returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

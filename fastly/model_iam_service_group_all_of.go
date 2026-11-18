@@ -19,7 +19,7 @@ import (
 // IamServiceGroupAllOf struct for IamServiceGroupAllOf
 type IamServiceGroupAllOf struct {
 	// Alphanumeric string identifying the service group.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// The type of the object.
 	Object *string `json:"object,omitempty"`
 	// Name of the service group.
@@ -50,36 +50,36 @@ func NewIamServiceGroupAllOfWithDefaults() *IamServiceGroupAllOf {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *IamServiceGroupAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *IamServiceGroupAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IamServiceGroupAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *IamServiceGroupAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *IamServiceGroupAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *IamServiceGroupAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *IamServiceGroupAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *IamServiceGroupAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // GetObject returns the Object field value if set, zero value otherwise.
@@ -214,8 +214,8 @@ func (o *IamServiceGroupAllOf) SetServicesCount(v int32) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o IamServiceGroupAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Object != nil {
 		toSerialize["object"] = o.Object

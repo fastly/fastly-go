@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// BulkUpdateAclEntriesRequest struct for BulkUpdateAclEntriesRequest
-type BulkUpdateAclEntriesRequest struct {
-	Entries              []BulkUpdateAclEntry `json:"entries,omitempty"`
+// BulkUpdateACLEntriesRequest struct for BulkUpdateACLEntriesRequest
+type BulkUpdateACLEntriesRequest struct {
+	Entries              []BulkUpdateACLEntry `json:"entries,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _BulkUpdateAclEntriesRequest BulkUpdateAclEntriesRequest
+type _BulkUpdateACLEntriesRequest BulkUpdateACLEntriesRequest
 
-// NewBulkUpdateAclEntriesRequest instantiates a new BulkUpdateAclEntriesRequest object
+// NewBulkUpdateACLEntriesRequest instantiates a new BulkUpdateACLEntriesRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBulkUpdateAclEntriesRequest() *BulkUpdateAclEntriesRequest {
-	this := BulkUpdateAclEntriesRequest{}
+func NewBulkUpdateACLEntriesRequest() *BulkUpdateACLEntriesRequest {
+	this := BulkUpdateACLEntriesRequest{}
 	return &this
 }
 
-// NewBulkUpdateAclEntriesRequestWithDefaults instantiates a new BulkUpdateAclEntriesRequest object
+// NewBulkUpdateACLEntriesRequestWithDefaults instantiates a new BulkUpdateACLEntriesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBulkUpdateAclEntriesRequestWithDefaults() *BulkUpdateAclEntriesRequest {
-	this := BulkUpdateAclEntriesRequest{}
+func NewBulkUpdateACLEntriesRequestWithDefaults() *BulkUpdateACLEntriesRequest {
+	this := BulkUpdateACLEntriesRequest{}
 	return &this
 }
 
 // GetEntries returns the Entries field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntriesRequest) GetEntries() []BulkUpdateAclEntry {
+func (o *BulkUpdateACLEntriesRequest) GetEntries() []BulkUpdateACLEntry {
 	if o == nil || o.Entries == nil {
-		var ret []BulkUpdateAclEntry
+		var ret []BulkUpdateACLEntry
 		return ret
 	}
 	return o.Entries
@@ -52,7 +52,7 @@ func (o *BulkUpdateAclEntriesRequest) GetEntries() []BulkUpdateAclEntry {
 
 // GetEntriesOk returns a tuple with the Entries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntriesRequest) GetEntriesOk() ([]BulkUpdateAclEntry, bool) {
+func (o *BulkUpdateACLEntriesRequest) GetEntriesOk() ([]BulkUpdateACLEntry, bool) {
 	if o == nil || o.Entries == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *BulkUpdateAclEntriesRequest) GetEntriesOk() ([]BulkUpdateAclEntry, bool
 }
 
 // HasEntries returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntriesRequest) HasEntries() bool {
+func (o *BulkUpdateACLEntriesRequest) HasEntries() bool {
 	if o != nil && o.Entries != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *BulkUpdateAclEntriesRequest) HasEntries() bool {
 	return false
 }
 
-// SetEntries gets a reference to the given []BulkUpdateAclEntry and assigns it to the Entries field.
-func (o *BulkUpdateAclEntriesRequest) SetEntries(v []BulkUpdateAclEntry) {
+// SetEntries gets a reference to the given []BulkUpdateACLEntry and assigns it to the Entries field.
+func (o *BulkUpdateACLEntriesRequest) SetEntries(v []BulkUpdateACLEntry) {
 	o.Entries = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o BulkUpdateAclEntriesRequest) MarshalJSON() ([]byte, error) {
+func (o BulkUpdateACLEntriesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Entries != nil {
 		toSerialize["entries"] = o.Entries
@@ -90,11 +90,11 @@ func (o BulkUpdateAclEntriesRequest) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *BulkUpdateAclEntriesRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varBulkUpdateAclEntriesRequest := _BulkUpdateAclEntriesRequest{}
+func (o *BulkUpdateACLEntriesRequest) UnmarshalJSON(bytes []byte) (err error) {
+	varBulkUpdateACLEntriesRequest := _BulkUpdateACLEntriesRequest{}
 
-	if err = json.Unmarshal(bytes, &varBulkUpdateAclEntriesRequest); err == nil {
-		*o = BulkUpdateAclEntriesRequest(varBulkUpdateAclEntriesRequest)
+	if err = json.Unmarshal(bytes, &varBulkUpdateACLEntriesRequest); err == nil {
+		*o = BulkUpdateACLEntriesRequest(varBulkUpdateACLEntriesRequest)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *BulkUpdateAclEntriesRequest) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBulkUpdateAclEntriesRequest is a helper abstraction for handling nullable bulkupdateaclentriesrequest types.
-type NullableBulkUpdateAclEntriesRequest struct {
-	value *BulkUpdateAclEntriesRequest
+// NullableBulkUpdateACLEntriesRequest is a helper abstraction for handling nullable bulkupdateaclentriesrequest types.
+type NullableBulkUpdateACLEntriesRequest struct {
+	value *BulkUpdateACLEntriesRequest
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableBulkUpdateAclEntriesRequest) Get() *BulkUpdateAclEntriesRequest {
+func (v NullableBulkUpdateACLEntriesRequest) Get() *BulkUpdateACLEntriesRequest {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableBulkUpdateAclEntriesRequest) Set(val *BulkUpdateAclEntriesRequest) {
+func (v *NullableBulkUpdateACLEntriesRequest) Set(val *BulkUpdateACLEntriesRequest) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableBulkUpdateAclEntriesRequest) IsSet() bool {
+func (v NullableBulkUpdateACLEntriesRequest) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableBulkUpdateAclEntriesRequest) Unset() {
+func (v *NullableBulkUpdateACLEntriesRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableBulkUpdateAclEntriesRequest returns a pointer to a new instance of NullableBulkUpdateAclEntriesRequest.
-func NewNullableBulkUpdateAclEntriesRequest(val *BulkUpdateAclEntriesRequest) *NullableBulkUpdateAclEntriesRequest {
-	return &NullableBulkUpdateAclEntriesRequest{value: val, isSet: true}
+// NewNullableBulkUpdateACLEntriesRequest returns a pointer to a new instance of NullableBulkUpdateACLEntriesRequest.
+func NewNullableBulkUpdateACLEntriesRequest(val *BulkUpdateACLEntriesRequest) *NullableBulkUpdateACLEntriesRequest {
+	return &NullableBulkUpdateACLEntriesRequest{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableBulkUpdateAclEntriesRequest) MarshalJSON() ([]byte, error) {
+func (v NullableBulkUpdateACLEntriesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableBulkUpdateAclEntriesRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableBulkUpdateACLEntriesRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

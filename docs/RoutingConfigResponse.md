@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Id** | Pointer to **string** | Alphanumeric string identifying the routing config. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the routing config. | [optional] [readonly] 
 **Name** | Pointer to **string** | The user-defined name for the routing config. | [optional] 
 **State** | Pointer to [**RoutingConfigState**](RoutingConfigState.md) |  | [optional] 
 **ActivatedAt** | Pointer to **NullableTime** | Timestamp of when the version was most recently activated. `null` if the version has never been activated. | [optional] [readonly] 
@@ -101,30 +101,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *RoutingConfigResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *RoutingConfigResponse) GetId() string`
+`func (o *RoutingConfigResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RoutingConfigResponse) GetIdOk() (*string, bool)`
+`func (o *RoutingConfigResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RoutingConfigResponse) SetId(v string)`
+`func (o *RoutingConfigResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RoutingConfigResponse) HasId() bool`
+`func (o *RoutingConfigResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -238,5 +238,3 @@ HasLinks returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -37,10 +37,10 @@ type IamRolesAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param roleId Alphanumeric string identifying the role.
+		 @param roleID Alphanumeric string identifying the role.
 		 @return APIIamV1RolesGetRequest
 	*/
-	IamV1RolesGet(ctx context.Context, roleId string) APIIamV1RolesGetRequest
+	IamV1RolesGet(ctx context.Context, roleID string) APIIamV1RolesGetRequest
 
 	// IamV1RolesGetExecute executes the request
 	//  @return IamV1RoleResponse
@@ -69,7 +69,7 @@ type IamRolesAPIService service
 type APIIamV1RolesGetRequest struct {
 	ctx        context.Context
 	APIService IamRolesAPI
-	roleId     string
+	roleID     string
 	include    *string
 }
 
@@ -91,14 +91,14 @@ Retrieve a single IAM role by its unique identifier.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleId Alphanumeric string identifying the role.
+ @param roleID Alphanumeric string identifying the role.
  @return APIIamV1RolesGetRequest
 */
-func (a *IamRolesAPIService) IamV1RolesGet(ctx context.Context, roleId string) APIIamV1RolesGetRequest {
+func (a *IamRolesAPIService) IamV1RolesGet(ctx context.Context, roleID string) APIIamV1RolesGetRequest {
 	return APIIamV1RolesGetRequest{
 		APIService: a,
 		ctx:        ctx,
-		roleId:     roleId,
+		roleID:     roleID,
 	}
 }
 
@@ -118,7 +118,7 @@ func (a *IamRolesAPIService) IamV1RolesGetExecute(r APIIamV1RolesGetRequest) (*I
 	}
 
 	localVarPath := localBasePath + "/iam/v1/roles/{role_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"role_id"+"}", gourl.PathEscape(parameterToString(r.roleId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"role_id"+"}", gourl.PathEscape(parameterToString(r.roleID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

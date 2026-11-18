@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**ID** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Attributes** | Pointer to [**ValidatorResultDataAttributes**](ValidatorResultDataAttributes.md) |  | [optional] 
 
@@ -27,30 +27,30 @@ NewValidatorResultDataWithDefaults instantiates a new ValidatorResultData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *ValidatorResultData) GetId() string`
+`func (o *ValidatorResultData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ValidatorResultData) GetIdOk() (*string, bool)`
+`func (o *ValidatorResultData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ValidatorResultData) SetId(v string)`
+`func (o *ValidatorResultData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *ValidatorResultData) HasId() bool`
+`func (o *ValidatorResultData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetType
 
@@ -104,5 +104,3 @@ HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

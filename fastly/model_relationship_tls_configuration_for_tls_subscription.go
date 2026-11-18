@@ -16,69 +16,69 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTlsConfigurationForTlsSubscription The unique identifier for the set of TLS configuration options that apply to the enabled domains on this subscription. Write-only on create.
-type RelationshipTlsConfigurationForTlsSubscription struct {
-	TlsConfiguration     *RelationshipTlsConfigurationTlsConfiguration `json:"tls_configuration,omitempty"`
+// RelationshipTLSConfigurationForTLSSubscription The unique identifier for the set of TLS configuration options that apply to the enabled domains on this subscription. Write-only on create.
+type RelationshipTLSConfigurationForTLSSubscription struct {
+	TLSConfiguration     *RelationshipTLSConfigurationTLSConfiguration `json:"tls_configuration,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTlsConfigurationForTlsSubscription RelationshipTlsConfigurationForTlsSubscription
+type _RelationshipTLSConfigurationForTLSSubscription RelationshipTLSConfigurationForTLSSubscription
 
-// NewRelationshipTlsConfigurationForTlsSubscription instantiates a new RelationshipTlsConfigurationForTlsSubscription object
+// NewRelationshipTLSConfigurationForTLSSubscription instantiates a new RelationshipTLSConfigurationForTLSSubscription object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTlsConfigurationForTlsSubscription() *RelationshipTlsConfigurationForTlsSubscription {
-	this := RelationshipTlsConfigurationForTlsSubscription{}
+func NewRelationshipTLSConfigurationForTLSSubscription() *RelationshipTLSConfigurationForTLSSubscription {
+	this := RelationshipTLSConfigurationForTLSSubscription{}
 	return &this
 }
 
-// NewRelationshipTlsConfigurationForTlsSubscriptionWithDefaults instantiates a new RelationshipTlsConfigurationForTlsSubscription object
+// NewRelationshipTLSConfigurationForTLSSubscriptionWithDefaults instantiates a new RelationshipTLSConfigurationForTLSSubscription object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTlsConfigurationForTlsSubscriptionWithDefaults() *RelationshipTlsConfigurationForTlsSubscription {
-	this := RelationshipTlsConfigurationForTlsSubscription{}
+func NewRelationshipTLSConfigurationForTLSSubscriptionWithDefaults() *RelationshipTLSConfigurationForTLSSubscription {
+	this := RelationshipTLSConfigurationForTLSSubscription{}
 	return &this
 }
 
-// GetTlsConfiguration returns the TlsConfiguration field value if set, zero value otherwise.
-func (o *RelationshipTlsConfigurationForTlsSubscription) GetTlsConfiguration() RelationshipTlsConfigurationTlsConfiguration {
-	if o == nil || o.TlsConfiguration == nil {
-		var ret RelationshipTlsConfigurationTlsConfiguration
+// GetTLSConfiguration returns the TLSConfiguration field value if set, zero value otherwise.
+func (o *RelationshipTLSConfigurationForTLSSubscription) GetTLSConfiguration() RelationshipTLSConfigurationTLSConfiguration {
+	if o == nil || o.TLSConfiguration == nil {
+		var ret RelationshipTLSConfigurationTLSConfiguration
 		return ret
 	}
-	return *o.TlsConfiguration
+	return *o.TLSConfiguration
 }
 
-// GetTlsConfigurationOk returns a tuple with the TlsConfiguration field value if set, nil otherwise
+// GetTLSConfigurationOk returns a tuple with the TLSConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTlsConfigurationForTlsSubscription) GetTlsConfigurationOk() (*RelationshipTlsConfigurationTlsConfiguration, bool) {
-	if o == nil || o.TlsConfiguration == nil {
+func (o *RelationshipTLSConfigurationForTLSSubscription) GetTLSConfigurationOk() (*RelationshipTLSConfigurationTLSConfiguration, bool) {
+	if o == nil || o.TLSConfiguration == nil {
 		return nil, false
 	}
-	return o.TlsConfiguration, true
+	return o.TLSConfiguration, true
 }
 
-// HasTlsConfiguration returns a boolean if a field has been set.
-func (o *RelationshipTlsConfigurationForTlsSubscription) HasTlsConfiguration() bool {
-	if o != nil && o.TlsConfiguration != nil {
+// HasTLSConfiguration returns a boolean if a field has been set.
+func (o *RelationshipTLSConfigurationForTLSSubscription) HasTLSConfiguration() bool {
+	if o != nil && o.TLSConfiguration != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsConfiguration gets a reference to the given RelationshipTlsConfigurationTlsConfiguration and assigns it to the TlsConfiguration field.
-func (o *RelationshipTlsConfigurationForTlsSubscription) SetTlsConfiguration(v RelationshipTlsConfigurationTlsConfiguration) {
-	o.TlsConfiguration = &v
+// SetTLSConfiguration gets a reference to the given RelationshipTLSConfigurationTLSConfiguration and assigns it to the TLSConfiguration field.
+func (o *RelationshipTLSConfigurationForTLSSubscription) SetTLSConfiguration(v RelationshipTLSConfigurationTLSConfiguration) {
+	o.TLSConfiguration = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTlsConfigurationForTlsSubscription) MarshalJSON() ([]byte, error) {
+func (o RelationshipTLSConfigurationForTLSSubscription) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TlsConfiguration != nil {
-		toSerialize["tls_configuration"] = o.TlsConfiguration
+	if o.TLSConfiguration != nil {
+		toSerialize["tls_configuration"] = o.TLSConfiguration
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -90,11 +90,11 @@ func (o RelationshipTlsConfigurationForTlsSubscription) MarshalJSON() ([]byte, e
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTlsConfigurationForTlsSubscription) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTlsConfigurationForTlsSubscription := _RelationshipTlsConfigurationForTlsSubscription{}
+func (o *RelationshipTLSConfigurationForTLSSubscription) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTLSConfigurationForTLSSubscription := _RelationshipTLSConfigurationForTLSSubscription{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTlsConfigurationForTlsSubscription); err == nil {
-		*o = RelationshipTlsConfigurationForTlsSubscription(varRelationshipTlsConfigurationForTlsSubscription)
+	if err = json.Unmarshal(bytes, &varRelationshipTLSConfigurationForTLSSubscription); err == nil {
+		*o = RelationshipTLSConfigurationForTLSSubscription(varRelationshipTLSConfigurationForTLSSubscription)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipTlsConfigurationForTlsSubscription) UnmarshalJSON(bytes []b
 	return err
 }
 
-// NullableRelationshipTlsConfigurationForTlsSubscription is a helper abstraction for handling nullable relationshiptlsconfigurationfortlssubscription types.
-type NullableRelationshipTlsConfigurationForTlsSubscription struct {
-	value *RelationshipTlsConfigurationForTlsSubscription
+// NullableRelationshipTLSConfigurationForTLSSubscription is a helper abstraction for handling nullable relationshiptlsconfigurationfortlssubscription types.
+type NullableRelationshipTLSConfigurationForTLSSubscription struct {
+	value *RelationshipTLSConfigurationForTLSSubscription
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTlsConfigurationForTlsSubscription) Get() *RelationshipTlsConfigurationForTlsSubscription {
+func (v NullableRelationshipTLSConfigurationForTLSSubscription) Get() *RelationshipTLSConfigurationForTLSSubscription {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTlsConfigurationForTlsSubscription) Set(val *RelationshipTlsConfigurationForTlsSubscription) {
+func (v *NullableRelationshipTLSConfigurationForTLSSubscription) Set(val *RelationshipTLSConfigurationForTLSSubscription) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTlsConfigurationForTlsSubscription) IsSet() bool {
+func (v NullableRelationshipTLSConfigurationForTLSSubscription) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTlsConfigurationForTlsSubscription) Unset() {
+func (v *NullableRelationshipTLSConfigurationForTLSSubscription) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTlsConfigurationForTlsSubscription returns a pointer to a new instance of NullableRelationshipTlsConfigurationForTlsSubscription.
-func NewNullableRelationshipTlsConfigurationForTlsSubscription(val *RelationshipTlsConfigurationForTlsSubscription) *NullableRelationshipTlsConfigurationForTlsSubscription {
-	return &NullableRelationshipTlsConfigurationForTlsSubscription{value: val, isSet: true}
+// NewNullableRelationshipTLSConfigurationForTLSSubscription returns a pointer to a new instance of NullableRelationshipTLSConfigurationForTLSSubscription.
+func NewNullableRelationshipTLSConfigurationForTLSSubscription(val *RelationshipTLSConfigurationForTLSSubscription) *NullableRelationshipTLSConfigurationForTLSSubscription {
+	return &NullableRelationshipTLSConfigurationForTLSSubscription{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTlsConfigurationForTlsSubscription) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTLSConfigurationForTLSSubscription) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTlsConfigurationForTlsSubscription) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTLSConfigurationForTLSSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

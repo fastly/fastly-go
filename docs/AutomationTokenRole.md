@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The unique identifier of the role. | [optional] 
+**ID** | Pointer to **string** | The unique identifier of the role. | [optional] 
 **Name** | Pointer to **string** | The name of the role. | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewAutomationTokenRoleWithDefaults instantiates a new AutomationTokenRole object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *AutomationTokenRole) GetId() string`
+`func (o *AutomationTokenRole) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *AutomationTokenRole) GetIdOk() (*string, bool)`
+`func (o *AutomationTokenRole) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *AutomationTokenRole) SetId(v string)`
+`func (o *AutomationTokenRole) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *AutomationTokenRole) HasId() bool`
+`func (o *AutomationTokenRole) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -78,5 +78,3 @@ HasName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

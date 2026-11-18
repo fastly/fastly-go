@@ -19,7 +19,7 @@ import (
 // NetworkProtectRuleMatchSourcePrefixList Requires a source prefix-list match field.
 type NetworkProtectRuleMatchSourcePrefixList struct {
 	// Match traffic whose source appears in this prefix list.
-	SourcePrefixListId   string `json:"source_prefix_list_id"`
+	SourcePrefixListID   string `json:"source_prefix_list_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -29,9 +29,9 @@ type _NetworkProtectRuleMatchSourcePrefixList NetworkProtectRuleMatchSourcePrefi
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkProtectRuleMatchSourcePrefixList(sourcePrefixListId string) *NetworkProtectRuleMatchSourcePrefixList {
+func NewNetworkProtectRuleMatchSourcePrefixList(sourcePrefixListID string) *NetworkProtectRuleMatchSourcePrefixList {
 	this := NetworkProtectRuleMatchSourcePrefixList{}
-	this.SourcePrefixListId = sourcePrefixListId
+	this.SourcePrefixListID = sourcePrefixListID
 	return &this
 }
 
@@ -43,28 +43,28 @@ func NewNetworkProtectRuleMatchSourcePrefixListWithDefaults() *NetworkProtectRul
 	return &this
 }
 
-// GetSourcePrefixListId returns the SourcePrefixListId field value
-func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListId() string {
+// GetSourcePrefixListID returns the SourcePrefixListID field value
+func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.SourcePrefixListId
+	return o.SourcePrefixListID
 }
 
-// GetSourcePrefixListIdOk returns a tuple with the SourcePrefixListId field value
+// GetSourcePrefixListIDOk returns a tuple with the SourcePrefixListID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListIdOk() (*string, bool) {
+func (o *NetworkProtectRuleMatchSourcePrefixList) GetSourcePrefixListIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.SourcePrefixListId, true
+	return &o.SourcePrefixListID, true
 }
 
-// SetSourcePrefixListId sets field value
-func (o *NetworkProtectRuleMatchSourcePrefixList) SetSourcePrefixListId(v string) {
-	o.SourcePrefixListId = v
+// SetSourcePrefixListID sets field value
+func (o *NetworkProtectRuleMatchSourcePrefixList) SetSourcePrefixListID(v string) {
+	o.SourcePrefixListID = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -72,7 +72,7 @@ func (o *NetworkProtectRuleMatchSourcePrefixList) SetSourcePrefixListId(v string
 func (o NetworkProtectRuleMatchSourcePrefixList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["source_prefix_list_id"] = o.SourcePrefixListId
+		toSerialize["source_prefix_list_id"] = o.SourcePrefixListID
 	}
 
 	for key, value := range o.AdditionalProperties {

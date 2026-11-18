@@ -1,56 +1,54 @@
-# RelationshipTlsCertificates
+# RelationshipTLSCertificates
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsCertificates** | Pointer to [**RelationshipTlsCertificatesTlsCertificates**](RelationshipTlsCertificatesTlsCertificates.md) |  | [optional] 
+**TLSCertificates** | Pointer to [**RelationshipTLSCertificatesTLSCertificates**](RelationshipTLSCertificatesTLSCertificates.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTlsCertificates
+### NewRelationshipTLSCertificates
 
-`func NewRelationshipTlsCertificates() *RelationshipTlsCertificates`
+`func NewRelationshipTLSCertificates() *RelationshipTLSCertificates`
 
-NewRelationshipTlsCertificates instantiates a new RelationshipTlsCertificates object
+NewRelationshipTLSCertificates instantiates a new RelationshipTLSCertificates object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTlsCertificatesWithDefaults
+### NewRelationshipTLSCertificatesWithDefaults
 
-`func NewRelationshipTlsCertificatesWithDefaults() *RelationshipTlsCertificates`
+`func NewRelationshipTLSCertificatesWithDefaults() *RelationshipTLSCertificates`
 
-NewRelationshipTlsCertificatesWithDefaults instantiates a new RelationshipTlsCertificates object
+NewRelationshipTLSCertificatesWithDefaults instantiates a new RelationshipTLSCertificates object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsCertificates
+### GetTLSCertificates
 
-`func (o *RelationshipTlsCertificates) GetTlsCertificates() RelationshipTlsCertificatesTlsCertificates`
+`func (o *RelationshipTLSCertificates) GetTLSCertificates() RelationshipTLSCertificatesTLSCertificates`
 
-GetTlsCertificates returns the TlsCertificates field if non-nil, zero value otherwise.
+GetTLSCertificates returns the TLSCertificates field if non-nil, zero value otherwise.
 
-### GetTlsCertificatesOk
+### GetTLSCertificatesOk
 
-`func (o *RelationshipTlsCertificates) GetTlsCertificatesOk() (*RelationshipTlsCertificatesTlsCertificates, bool)`
+`func (o *RelationshipTLSCertificates) GetTLSCertificatesOk() (*RelationshipTLSCertificatesTLSCertificates, bool)`
 
-GetTlsCertificatesOk returns a tuple with the TlsCertificates field if it's non-nil, zero value otherwise
+GetTLSCertificatesOk returns a tuple with the TLSCertificates field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCertificates
+### SetTLSCertificates
 
-`func (o *RelationshipTlsCertificates) SetTlsCertificates(v RelationshipTlsCertificatesTlsCertificates)`
+`func (o *RelationshipTLSCertificates) SetTLSCertificates(v RelationshipTLSCertificatesTLSCertificates)`
 
-SetTlsCertificates sets TlsCertificates field to given value.
+SetTLSCertificates sets TLSCertificates field to given value.
 
-### HasTlsCertificates
+### HasTLSCertificates
 
-`func (o *RelationshipTlsCertificates) HasTlsCertificates() bool`
+`func (o *RelationshipTLSCertificates) HasTLSCertificates() bool`
 
-HasTlsCertificates returns a boolean if a field has been set.
+HasTLSCertificates returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

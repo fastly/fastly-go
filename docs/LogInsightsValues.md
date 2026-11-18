@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Region** | Pointer to **string** | The client&#39;s country subdivision code as defined by ISO 3166-2. | [optional] 
 **RegionChr** | Pointer to **float32** | The cache hit ratio for the region. | [optional] 
 **RegionErrorRate** | Pointer to **float32** | The error rate for the region. | [optional] 
-**Url** | Pointer to **string** | The HTTP request path. | [optional] 
+**URL** | Pointer to **string** | The HTTP request path. | [optional] 
 **RatePerStatus** | Pointer to **float32** | The URL accounts for this percentage of the status code in this dimension. | [optional] 
-**RatePerUrl** | Pointer to **float32** | The rate at which the reason in this dimension occurs among responses to this URL with a 503 status code. | [optional] 
-**Var503RatePerUrl** | Pointer to **float32** | The rate at which 503 status codes are returned for this URL. | [optional] 
+**RatePerURL** | Pointer to **float32** | The rate at which the reason in this dimension occurs among responses to this URL with a 503 status code. | [optional] 
+**Var503RatePerURL** | Pointer to **float32** | The rate at which 503 status codes are returned for this URL. | [optional] 
 **BrowserVersion** | Pointer to **string** | The version of the client&#39;s browser. | [optional] 
 **Rate** | Pointer to **float32** | The percentage of requests matching the value in the current dimension. | [optional] 
 **AverageBandwidthBytes** | Pointer to **float32** | The average bandwidth in bytes for responses to requests to the URL in the current dimension. | [optional] 
@@ -141,30 +141,30 @@ SetRegionErrorRate sets RegionErrorRate field to given value.
 
 HasRegionErrorRate returns a boolean if a field has been set.
 
-### GetUrl
+### GetURL
 
-`func (o *LogInsightsValues) GetUrl() string`
+`func (o *LogInsightsValues) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LogInsightsValues) GetUrlOk() (*string, bool)`
+`func (o *LogInsightsValues) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LogInsightsValues) SetUrl(v string)`
+`func (o *LogInsightsValues) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LogInsightsValues) HasUrl() bool`
+`func (o *LogInsightsValues) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
 ### GetRatePerStatus
 
@@ -191,55 +191,55 @@ SetRatePerStatus sets RatePerStatus field to given value.
 
 HasRatePerStatus returns a boolean if a field has been set.
 
-### GetRatePerUrl
+### GetRatePerURL
 
-`func (o *LogInsightsValues) GetRatePerUrl() float32`
+`func (o *LogInsightsValues) GetRatePerURL() float32`
 
-GetRatePerUrl returns the RatePerUrl field if non-nil, zero value otherwise.
+GetRatePerURL returns the RatePerURL field if non-nil, zero value otherwise.
 
-### GetRatePerUrlOk
+### GetRatePerURLOk
 
-`func (o *LogInsightsValues) GetRatePerUrlOk() (*float32, bool)`
+`func (o *LogInsightsValues) GetRatePerURLOk() (*float32, bool)`
 
-GetRatePerUrlOk returns a tuple with the RatePerUrl field if it's non-nil, zero value otherwise
+GetRatePerURLOk returns a tuple with the RatePerURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRatePerUrl
+### SetRatePerURL
 
-`func (o *LogInsightsValues) SetRatePerUrl(v float32)`
+`func (o *LogInsightsValues) SetRatePerURL(v float32)`
 
-SetRatePerUrl sets RatePerUrl field to given value.
+SetRatePerURL sets RatePerURL field to given value.
 
-### HasRatePerUrl
+### HasRatePerURL
 
-`func (o *LogInsightsValues) HasRatePerUrl() bool`
+`func (o *LogInsightsValues) HasRatePerURL() bool`
 
-HasRatePerUrl returns a boolean if a field has been set.
+HasRatePerURL returns a boolean if a field has been set.
 
-### GetVar503RatePerUrl
+### GetVar503RatePerURL
 
-`func (o *LogInsightsValues) GetVar503RatePerUrl() float32`
+`func (o *LogInsightsValues) GetVar503RatePerURL() float32`
 
-GetVar503RatePerUrl returns the Var503RatePerUrl field if non-nil, zero value otherwise.
+GetVar503RatePerURL returns the Var503RatePerURL field if non-nil, zero value otherwise.
 
-### GetVar503RatePerUrlOk
+### GetVar503RatePerURLOk
 
-`func (o *LogInsightsValues) GetVar503RatePerUrlOk() (*float32, bool)`
+`func (o *LogInsightsValues) GetVar503RatePerURLOk() (*float32, bool)`
 
-GetVar503RatePerUrlOk returns a tuple with the Var503RatePerUrl field if it's non-nil, zero value otherwise
+GetVar503RatePerURLOk returns a tuple with the Var503RatePerURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVar503RatePerUrl
+### SetVar503RatePerURL
 
-`func (o *LogInsightsValues) SetVar503RatePerUrl(v float32)`
+`func (o *LogInsightsValues) SetVar503RatePerURL(v float32)`
 
-SetVar503RatePerUrl sets Var503RatePerUrl field to given value.
+SetVar503RatePerURL sets Var503RatePerURL field to given value.
 
-### HasVar503RatePerUrl
+### HasVar503RatePerURL
 
-`func (o *LogInsightsValues) HasVar503RatePerUrl() bool`
+`func (o *LogInsightsValues) HasVar503RatePerURL() bool`
 
-HasVar503RatePerUrl returns a boolean if a field has been set.
+HasVar503RatePerURL returns a boolean if a field has been set.
 
 ### GetBrowserVersion
 
@@ -468,5 +468,3 @@ HasRequestPercentage returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

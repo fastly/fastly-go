@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**PageId** | Pointer to **string** |  | [optional] 
+**ID** | Pointer to **string** |  | [optional] 
+**PageID** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to **string** |  | [optional] 
@@ -32,55 +32,55 @@ NewPolicyWithDefaults instantiates a new Policy object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *Policy) GetId() string`
+`func (o *Policy) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *Policy) GetIdOk() (*string, bool)`
+`func (o *Policy) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *Policy) SetId(v string)`
+`func (o *Policy) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *Policy) HasId() bool`
+`func (o *Policy) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetPageId
+### GetPageID
 
-`func (o *Policy) GetPageId() string`
+`func (o *Policy) GetPageID() string`
 
-GetPageId returns the PageId field if non-nil, zero value otherwise.
+GetPageID returns the PageID field if non-nil, zero value otherwise.
 
-### GetPageIdOk
+### GetPageIDOk
 
-`func (o *Policy) GetPageIdOk() (*string, bool)`
+`func (o *Policy) GetPageIDOk() (*string, bool)`
 
-GetPageIdOk returns a tuple with the PageId field if it's non-nil, zero value otherwise
+GetPageIDOk returns a tuple with the PageID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPageId
+### SetPageID
 
-`func (o *Policy) SetPageId(v string)`
+`func (o *Policy) SetPageID(v string)`
 
-SetPageId sets PageId field to given value.
+SetPageID sets PageID field to given value.
 
-### HasPageId
+### HasPageID
 
-`func (o *Policy) HasPageId() bool`
+`func (o *Policy) HasPageID() bool`
 
-HasPageId returns a boolean if a field has been set.
+HasPageID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -234,5 +234,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

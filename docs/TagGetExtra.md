@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the operation tag. | [readonly] 
+**ID** | **string** | The unique identifier of the operation tag. | [readonly] 
 **Count** | Pointer to **int32** | The number of operations associated with this operation tag. | [optional] [readonly] 
 **CreatedAt** | Pointer to **time.Time** | The date and time the operation tag was created. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **time.Time** | The date and time the operation tag was last updated. | [optional] [readonly] 
@@ -28,24 +28,24 @@ NewTagGetExtraWithDefaults instantiates a new TagGetExtra object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *TagGetExtra) GetId() string`
+`func (o *TagGetExtra) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *TagGetExtra) GetIdOk() (*string, bool)`
+`func (o *TagGetExtra) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *TagGetExtra) SetId(v string)`
+`func (o *TagGetExtra) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetCount
@@ -125,5 +125,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

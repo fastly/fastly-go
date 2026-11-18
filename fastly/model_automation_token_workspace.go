@@ -19,7 +19,7 @@ import (
 // AutomationTokenWorkspace struct for AutomationTokenWorkspace
 type AutomationTokenWorkspace struct {
 	// Unique identifier for the workspace.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// Human-readable workspace name.
 	Name                 string `json:"name"`
 	AdditionalProperties map[string]any
@@ -33,7 +33,7 @@ type _AutomationTokenWorkspace AutomationTokenWorkspace
 // will change when the set of required properties is changed
 func NewAutomationTokenWorkspace(id string, name string) *AutomationTokenWorkspace {
 	this := AutomationTokenWorkspace{}
-	this.Id = id
+	this.ID = id
 	this.Name = name
 	return &this
 }
@@ -46,28 +46,28 @@ func NewAutomationTokenWorkspaceWithDefaults() *AutomationTokenWorkspace {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *AutomationTokenWorkspace) GetId() string {
+// GetID returns the ID field value
+func (o *AutomationTokenWorkspace) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenWorkspace) GetIdOk() (*string, bool) {
+func (o *AutomationTokenWorkspace) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *AutomationTokenWorkspace) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *AutomationTokenWorkspace) SetID(v string) {
+	o.ID = v
 }
 
 // GetName returns the Name field value
@@ -99,7 +99,7 @@ func (o *AutomationTokenWorkspace) SetName(v string) {
 func (o AutomationTokenWorkspace) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["name"] = o.Name

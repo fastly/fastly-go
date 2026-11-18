@@ -20,13 +20,13 @@ import (
 // ArcRotateVirtualKeyResponse The virtual key that was rotated, including its new access token.
 type ArcRotateVirtualKeyResponse struct {
 	// The unique identifier of the virtual key.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The ID of the customer account that owns the key.
-	CustomerId string `json:"customer_id"`
+	CustomerID string `json:"customer_id"`
 	// The display name of the virtual key.
 	Name string `json:"name"`
 	// The ID of the user who created the key.
-	UserId string `json:"user_id"`
+	UserID string `json:"user_id"`
 	// The date and time the key expires, in RFC 3339 format. `null` if the key doesn't expire.
 	ExpiresAt NullableTime `json:"expires_at,omitempty"`
 	// The date and time the key was created, in RFC 3339 format.
@@ -44,12 +44,12 @@ type _ArcRotateVirtualKeyResponse ArcRotateVirtualKeyResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcRotateVirtualKeyResponse(id string, customerId string, name string, userId string, createdAt time.Time, updatedAt time.Time, accessToken string) *ArcRotateVirtualKeyResponse {
+func NewArcRotateVirtualKeyResponse(id string, customerID string, name string, userID string, createdAt time.Time, updatedAt time.Time, accessToken string) *ArcRotateVirtualKeyResponse {
 	this := ArcRotateVirtualKeyResponse{}
-	this.Id = id
-	this.CustomerId = customerId
+	this.ID = id
+	this.CustomerID = customerID
 	this.Name = name
-	this.UserId = userId
+	this.UserID = userID
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	this.AccessToken = accessToken
@@ -64,52 +64,52 @@ func NewArcRotateVirtualKeyResponseWithDefaults() *ArcRotateVirtualKeyResponse {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *ArcRotateVirtualKeyResponse) GetId() string {
+// GetID returns the ID field value
+func (o *ArcRotateVirtualKeyResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcRotateVirtualKeyResponse) GetIdOk() (*string, bool) {
+func (o *ArcRotateVirtualKeyResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcRotateVirtualKeyResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcRotateVirtualKeyResponse) SetID(v string) {
+	o.ID = v
 }
 
-// GetCustomerId returns the CustomerId field value
-func (o *ArcRotateVirtualKeyResponse) GetCustomerId() string {
+// GetCustomerID returns the CustomerID field value
+func (o *ArcRotateVirtualKeyResponse) GetCustomerID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.CustomerId
+	return o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value
+// GetCustomerIDOk returns a tuple with the CustomerID field value
 // and a boolean to check if the value has been set.
-func (o *ArcRotateVirtualKeyResponse) GetCustomerIdOk() (*string, bool) {
+func (o *ArcRotateVirtualKeyResponse) GetCustomerIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.CustomerId, true
+	return &o.CustomerID, true
 }
 
-// SetCustomerId sets field value
-func (o *ArcRotateVirtualKeyResponse) SetCustomerId(v string) {
-	o.CustomerId = v
+// SetCustomerID sets field value
+func (o *ArcRotateVirtualKeyResponse) SetCustomerID(v string) {
+	o.CustomerID = v
 }
 
 // GetName returns the Name field value
@@ -136,28 +136,28 @@ func (o *ArcRotateVirtualKeyResponse) SetName(v string) {
 	o.Name = v
 }
 
-// GetUserId returns the UserId field value
-func (o *ArcRotateVirtualKeyResponse) GetUserId() string {
+// GetUserID returns the UserID field value
+func (o *ArcRotateVirtualKeyResponse) GetUserID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.UserId
+	return o.UserID
 }
 
-// GetUserIdOk returns a tuple with the UserId field value
+// GetUserIDOk returns a tuple with the UserID field value
 // and a boolean to check if the value has been set.
-func (o *ArcRotateVirtualKeyResponse) GetUserIdOk() (*string, bool) {
+func (o *ArcRotateVirtualKeyResponse) GetUserIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.UserId, true
+	return &o.UserID, true
 }
 
-// SetUserId sets field value
-func (o *ArcRotateVirtualKeyResponse) SetUserId(v string) {
-	o.UserId = v
+// SetUserID sets field value
+func (o *ArcRotateVirtualKeyResponse) SetUserID(v string) {
+	o.UserID = v
 }
 
 // GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -280,16 +280,16 @@ func (o *ArcRotateVirtualKeyResponse) SetAccessToken(v string) {
 func (o ArcRotateVirtualKeyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
-		toSerialize["customer_id"] = o.CustomerId
+		toSerialize["customer_id"] = o.CustomerID
 	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["user_id"] = o.UserId
+		toSerialize["user_id"] = o.UserID
 	}
 	if o.ExpiresAt.IsSet() {
 		toSerialize["expires_at"] = o.ExpiresAt.Get()

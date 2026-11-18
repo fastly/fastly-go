@@ -20,7 +20,7 @@ import (
 // RoutingConfigVersionResponse All attributes for a routing config version response.
 type RoutingConfigVersionResponse struct {
 	// Alphanumeric string identifying the version.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// A freeform comment describing the version.
 	Comment *string `json:"comment,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -49,36 +49,36 @@ func NewRoutingConfigVersionResponseWithDefaults() *RoutingConfigVersionResponse
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RoutingConfigVersionResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *RoutingConfigVersionResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutingConfigVersionResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *RoutingConfigVersionResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RoutingConfigVersionResponse) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *RoutingConfigVersionResponse) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *RoutingConfigVersionResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *RoutingConfigVersionResponse) SetID(v string) {
+	o.ID = &v
 }
 
 // GetComment returns the Comment field value if set, zero value otherwise.
@@ -203,8 +203,8 @@ func (o *RoutingConfigVersionResponse) UnsetActivatedAt() {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RoutingConfigVersionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.Comment != nil {
 		toSerialize["comment"] = o.Comment

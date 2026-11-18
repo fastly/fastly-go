@@ -1,4 +1,4 @@
-# TlsCertificateBlobResponse
+# TLSCertificateBlobResponse
 
 ## Properties
 
@@ -8,49 +8,47 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTlsCertificateBlobResponse
+### NewTLSCertificateBlobResponse
 
-`func NewTlsCertificateBlobResponse() *TlsCertificateBlobResponse`
+`func NewTLSCertificateBlobResponse() *TLSCertificateBlobResponse`
 
-NewTlsCertificateBlobResponse instantiates a new TlsCertificateBlobResponse object
+NewTLSCertificateBlobResponse instantiates a new TLSCertificateBlobResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsCertificateBlobResponseWithDefaults
+### NewTLSCertificateBlobResponseWithDefaults
 
-`func NewTlsCertificateBlobResponseWithDefaults() *TlsCertificateBlobResponse`
+`func NewTLSCertificateBlobResponseWithDefaults() *TLSCertificateBlobResponse`
 
-NewTlsCertificateBlobResponseWithDefaults instantiates a new TlsCertificateBlobResponse object
+NewTLSCertificateBlobResponseWithDefaults instantiates a new TLSCertificateBlobResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCertBlob
 
-`func (o *TlsCertificateBlobResponse) GetCertBlob() string`
+`func (o *TLSCertificateBlobResponse) GetCertBlob() string`
 
 GetCertBlob returns the CertBlob field if non-nil, zero value otherwise.
 
 ### GetCertBlobOk
 
-`func (o *TlsCertificateBlobResponse) GetCertBlobOk() (*string, bool)`
+`func (o *TLSCertificateBlobResponse) GetCertBlobOk() (*string, bool)`
 
 GetCertBlobOk returns a tuple with the CertBlob field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertBlob
 
-`func (o *TlsCertificateBlobResponse) SetCertBlob(v string)`
+`func (o *TLSCertificateBlobResponse) SetCertBlob(v string)`
 
 SetCertBlob sets CertBlob field to given value.
 
 ### HasCertBlob
 
-`func (o *TlsCertificateBlobResponse) HasCertBlob() bool`
+`func (o *TLSCertificateBlobResponse) HasCertBlob() bool`
 
 HasCertBlob returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

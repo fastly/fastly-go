@@ -51,11 +51,11 @@ type MetricsPlatformAPI interface {
 		Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param entityId Alphanumeric string identifying the entity.
+		 @param entityID Alphanumeric string identifying the entity.
 		 @param granularity Duration of sample windows.
 		 @return APIGetPlatformMetricsEntityHistoricalRequest
 	*/
-	GetPlatformMetricsEntityHistorical(ctx context.Context, entityId string, granularity string) APIGetPlatformMetricsEntityHistoricalRequest
+	GetPlatformMetricsEntityHistorical(ctx context.Context, entityID string, granularity string) APIGetPlatformMetricsEntityHistoricalRequest
 
 	// GetPlatformMetricsEntityHistoricalExecute executes the request
 	//  @return PlatformMetricsResponse
@@ -291,7 +291,7 @@ func (a *MetricsPlatformAPIService) GetPlatformMetricsAggregateHistoricalExecute
 type APIGetPlatformMetricsEntityHistoricalRequest struct {
 	ctx         context.Context
 	APIService  MetricsPlatformAPI
-	entityId    string
+	entityID    string
 	granularity string
 	from        *string
 	to          *string
@@ -369,15 +369,15 @@ GetPlatformMetricsEntityHistorical Get historical time series metrics for a sing
 Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param entityId Alphanumeric string identifying the entity.
+ @param entityID Alphanumeric string identifying the entity.
  @param granularity Duration of sample windows.
  @return APIGetPlatformMetricsEntityHistoricalRequest
 */
-func (a *MetricsPlatformAPIService) GetPlatformMetricsEntityHistorical(ctx context.Context, entityId string, granularity string) APIGetPlatformMetricsEntityHistoricalRequest {
+func (a *MetricsPlatformAPIService) GetPlatformMetricsEntityHistorical(ctx context.Context, entityID string, granularity string) APIGetPlatformMetricsEntityHistoricalRequest {
 	return APIGetPlatformMetricsEntityHistoricalRequest{
 		APIService:  a,
 		ctx:         ctx,
-		entityId:    entityId,
+		entityID:    entityID,
 		granularity: granularity,
 	}
 }
@@ -398,7 +398,7 @@ func (a *MetricsPlatformAPIService) GetPlatformMetricsEntityHistoricalExecute(r 
 	}
 
 	localVarPath := localBasePath + "/metrics/v2/platform/entities/{entity_id}/{granularity}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"entity_id"+"}", gourl.PathEscape(parameterToString(r.entityId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"entity_id"+"}", gourl.PathEscape(parameterToString(r.entityID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"granularity"+"}", gourl.PathEscape(parameterToString(r.granularity, "")))
 
 	localVarHeaderParams := make(map[string]string)

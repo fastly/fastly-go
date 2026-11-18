@@ -32,20 +32,20 @@ type LoggingKafkaResponsePost struct {
 	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *int32 `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
-	TlsCaCert NullableString `json:"tls_ca_cert,omitempty"`
+	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
 	// The client certificate used to make authenticated requests. Must be in PEM format.
-	TlsClientCert NullableString `json:"tls_client_cert,omitempty"`
+	TLSClientCert NullableString `json:"tls_client_cert,omitempty"`
 	// The client private key used to make authenticated requests. Must be in PEM format.
-	TlsClientKey NullableString `json:"tls_client_key,omitempty"`
+	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-	TlsHostname NullableString `json:"tls_hostname,omitempty"`
+	TLSHostname NullableString `json:"tls_hostname,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceId *string      `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// The Kafka topic to send logs to. Required.
 	Topic *string `json:"topic,omitempty"`
@@ -65,7 +65,7 @@ type LoggingKafkaResponsePost struct {
 	User *string `json:"user,omitempty"`
 	// SASL password.
 	Password             *string              `json:"password,omitempty"`
-	UseTls               *LoggingUseTlsString `json:"use_tls,omitempty"`
+	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -84,19 +84,19 @@ func NewLoggingKafkaResponsePost() *LoggingKafkaResponsePost {
 	var formatVersion int32 = 2
 	this.FormatVersion = &formatVersion
 	var tlsCaCert string = "null"
-	this.TlsCaCert = *NewNullableString(&tlsCaCert)
+	this.TLSCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TlsClientCert = *NewNullableString(&tlsClientCert)
+	this.TLSClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TlsClientKey = *NewNullableString(&tlsClientKey)
+	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TlsHostname = *NewNullableString(&tlsHostname)
+	this.TLSHostname = *NewNullableString(&tlsHostname)
 	var requiredAcks int32 = 1
 	this.RequiredAcks = &requiredAcks
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -112,19 +112,19 @@ func NewLoggingKafkaResponsePostWithDefaults() *LoggingKafkaResponsePost {
 	var formatVersion int32 = 2
 	this.FormatVersion = &formatVersion
 	var tlsCaCert string = "null"
-	this.TlsCaCert = *NewNullableString(&tlsCaCert)
+	this.TLSCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TlsClientCert = *NewNullableString(&tlsClientCert)
+	this.TLSClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TlsClientKey = *NewNullableString(&tlsClientKey)
+	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TlsHostname = *NewNullableString(&tlsHostname)
+	this.TLSHostname = *NewNullableString(&tlsHostname)
 	var requiredAcks int32 = 1
 	this.RequiredAcks = &requiredAcks
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -342,176 +342,176 @@ func (o *LoggingKafkaResponsePost) SetFormatVersion(v int32) {
 	o.FormatVersion = &v
 }
 
-// GetTlsCaCert returns the TlsCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingKafkaResponsePost) GetTlsCaCert() string {
-	if o == nil || o.TlsCaCert.Get() == nil {
+// GetTLSCaCert returns the TLSCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingKafkaResponsePost) GetTLSCaCert() string {
+	if o == nil || o.TLSCaCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsCaCert.Get()
+	return *o.TLSCaCert.Get()
 }
 
-// GetTlsCaCertOk returns a tuple with the TlsCaCert field value if set, nil otherwise
+// GetTLSCaCertOk returns a tuple with the TLSCaCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingKafkaResponsePost) GetTlsCaCertOk() (*string, bool) {
+func (o *LoggingKafkaResponsePost) GetTLSCaCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsCaCert.Get(), o.TlsCaCert.IsSet()
+	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
 }
 
-// HasTlsCaCert returns a boolean if a field has been set.
-func (o *LoggingKafkaResponsePost) HasTlsCaCert() bool {
-	if o != nil && o.TlsCaCert.IsSet() {
+// HasTLSCaCert returns a boolean if a field has been set.
+func (o *LoggingKafkaResponsePost) HasTLSCaCert() bool {
+	if o != nil && o.TLSCaCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsCaCert gets a reference to the given NullableString and assigns it to the TlsCaCert field.
-func (o *LoggingKafkaResponsePost) SetTlsCaCert(v string) {
-	o.TlsCaCert.Set(&v)
+// SetTLSCaCert gets a reference to the given NullableString and assigns it to the TLSCaCert field.
+func (o *LoggingKafkaResponsePost) SetTLSCaCert(v string) {
+	o.TLSCaCert.Set(&v)
 }
 
-// SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
-func (o *LoggingKafkaResponsePost) SetTlsCaCertNil() {
-	o.TlsCaCert.Set(nil)
+// SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
+func (o *LoggingKafkaResponsePost) SetTLSCaCertNil() {
+	o.TLSCaCert.Set(nil)
 }
 
-// UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-func (o *LoggingKafkaResponsePost) UnsetTlsCaCert() {
-	o.TlsCaCert.Unset()
+// UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+func (o *LoggingKafkaResponsePost) UnsetTLSCaCert() {
+	o.TLSCaCert.Unset()
 }
 
-// GetTlsClientCert returns the TlsClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingKafkaResponsePost) GetTlsClientCert() string {
-	if o == nil || o.TlsClientCert.Get() == nil {
+// GetTLSClientCert returns the TLSClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingKafkaResponsePost) GetTLSClientCert() string {
+	if o == nil || o.TLSClientCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsClientCert.Get()
+	return *o.TLSClientCert.Get()
 }
 
-// GetTlsClientCertOk returns a tuple with the TlsClientCert field value if set, nil otherwise
+// GetTLSClientCertOk returns a tuple with the TLSClientCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingKafkaResponsePost) GetTlsClientCertOk() (*string, bool) {
+func (o *LoggingKafkaResponsePost) GetTLSClientCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsClientCert.Get(), o.TlsClientCert.IsSet()
+	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
 }
 
-// HasTlsClientCert returns a boolean if a field has been set.
-func (o *LoggingKafkaResponsePost) HasTlsClientCert() bool {
-	if o != nil && o.TlsClientCert.IsSet() {
+// HasTLSClientCert returns a boolean if a field has been set.
+func (o *LoggingKafkaResponsePost) HasTLSClientCert() bool {
+	if o != nil && o.TLSClientCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsClientCert gets a reference to the given NullableString and assigns it to the TlsClientCert field.
-func (o *LoggingKafkaResponsePost) SetTlsClientCert(v string) {
-	o.TlsClientCert.Set(&v)
+// SetTLSClientCert gets a reference to the given NullableString and assigns it to the TLSClientCert field.
+func (o *LoggingKafkaResponsePost) SetTLSClientCert(v string) {
+	o.TLSClientCert.Set(&v)
 }
 
-// SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
-func (o *LoggingKafkaResponsePost) SetTlsClientCertNil() {
-	o.TlsClientCert.Set(nil)
+// SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
+func (o *LoggingKafkaResponsePost) SetTLSClientCertNil() {
+	o.TLSClientCert.Set(nil)
 }
 
-// UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-func (o *LoggingKafkaResponsePost) UnsetTlsClientCert() {
-	o.TlsClientCert.Unset()
+// UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+func (o *LoggingKafkaResponsePost) UnsetTLSClientCert() {
+	o.TLSClientCert.Unset()
 }
 
-// GetTlsClientKey returns the TlsClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingKafkaResponsePost) GetTlsClientKey() string {
-	if o == nil || o.TlsClientKey.Get() == nil {
+// GetTLSClientKey returns the TLSClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingKafkaResponsePost) GetTLSClientKey() string {
+	if o == nil || o.TLSClientKey.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsClientKey.Get()
+	return *o.TLSClientKey.Get()
 }
 
-// GetTlsClientKeyOk returns a tuple with the TlsClientKey field value if set, nil otherwise
+// GetTLSClientKeyOk returns a tuple with the TLSClientKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingKafkaResponsePost) GetTlsClientKeyOk() (*string, bool) {
+func (o *LoggingKafkaResponsePost) GetTLSClientKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsClientKey.Get(), o.TlsClientKey.IsSet()
+	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
 }
 
-// HasTlsClientKey returns a boolean if a field has been set.
-func (o *LoggingKafkaResponsePost) HasTlsClientKey() bool {
-	if o != nil && o.TlsClientKey.IsSet() {
+// HasTLSClientKey returns a boolean if a field has been set.
+func (o *LoggingKafkaResponsePost) HasTLSClientKey() bool {
+	if o != nil && o.TLSClientKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsClientKey gets a reference to the given NullableString and assigns it to the TlsClientKey field.
-func (o *LoggingKafkaResponsePost) SetTlsClientKey(v string) {
-	o.TlsClientKey.Set(&v)
+// SetTLSClientKey gets a reference to the given NullableString and assigns it to the TLSClientKey field.
+func (o *LoggingKafkaResponsePost) SetTLSClientKey(v string) {
+	o.TLSClientKey.Set(&v)
 }
 
-// SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
-func (o *LoggingKafkaResponsePost) SetTlsClientKeyNil() {
-	o.TlsClientKey.Set(nil)
+// SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
+func (o *LoggingKafkaResponsePost) SetTLSClientKeyNil() {
+	o.TLSClientKey.Set(nil)
 }
 
-// UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-func (o *LoggingKafkaResponsePost) UnsetTlsClientKey() {
-	o.TlsClientKey.Unset()
+// UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+func (o *LoggingKafkaResponsePost) UnsetTLSClientKey() {
+	o.TLSClientKey.Unset()
 }
 
-// GetTlsHostname returns the TlsHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingKafkaResponsePost) GetTlsHostname() string {
-	if o == nil || o.TlsHostname.Get() == nil {
+// GetTLSHostname returns the TLSHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingKafkaResponsePost) GetTLSHostname() string {
+	if o == nil || o.TLSHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsHostname.Get()
+	return *o.TLSHostname.Get()
 }
 
-// GetTlsHostnameOk returns a tuple with the TlsHostname field value if set, nil otherwise
+// GetTLSHostnameOk returns a tuple with the TLSHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingKafkaResponsePost) GetTlsHostnameOk() (*string, bool) {
+func (o *LoggingKafkaResponsePost) GetTLSHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsHostname.Get(), o.TlsHostname.IsSet()
+	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
 }
 
-// HasTlsHostname returns a boolean if a field has been set.
-func (o *LoggingKafkaResponsePost) HasTlsHostname() bool {
-	if o != nil && o.TlsHostname.IsSet() {
+// HasTLSHostname returns a boolean if a field has been set.
+func (o *LoggingKafkaResponsePost) HasTLSHostname() bool {
+	if o != nil && o.TLSHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsHostname gets a reference to the given NullableString and assigns it to the TlsHostname field.
-func (o *LoggingKafkaResponsePost) SetTlsHostname(v string) {
-	o.TlsHostname.Set(&v)
+// SetTLSHostname gets a reference to the given NullableString and assigns it to the TLSHostname field.
+func (o *LoggingKafkaResponsePost) SetTLSHostname(v string) {
+	o.TLSHostname.Set(&v)
 }
 
-// SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
-func (o *LoggingKafkaResponsePost) SetTlsHostnameNil() {
-	o.TlsHostname.Set(nil)
+// SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
+func (o *LoggingKafkaResponsePost) SetTLSHostnameNil() {
+	o.TLSHostname.Set(nil)
 }
 
-// UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
-func (o *LoggingKafkaResponsePost) UnsetTlsHostname() {
-	o.TlsHostname.Unset()
+// UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
+func (o *LoggingKafkaResponsePost) UnsetTLSHostname() {
+	o.TLSHostname.Unset()
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -643,36 +643,36 @@ func (o *LoggingKafkaResponsePost) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingKafkaResponsePost) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingKafkaResponsePost) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingKafkaResponsePost) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingKafkaResponsePost) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingKafkaResponsePost) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingKafkaResponsePost) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingKafkaResponsePost) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingKafkaResponsePost) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -1006,36 +1006,36 @@ func (o *LoggingKafkaResponsePost) SetPassword(v string) {
 	o.Password = &v
 }
 
-// GetUseTls returns the UseTls field value if set, zero value otherwise.
-func (o *LoggingKafkaResponsePost) GetUseTls() LoggingUseTlsString {
-	if o == nil || o.UseTls == nil {
-		var ret LoggingUseTlsString
+// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
+func (o *LoggingKafkaResponsePost) GetUseTLS() LoggingUseTLSString {
+	if o == nil || o.UseTLS == nil {
+		var ret LoggingUseTLSString
 		return ret
 	}
-	return *o.UseTls
+	return *o.UseTLS
 }
 
-// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
+// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingKafkaResponsePost) GetUseTlsOk() (*LoggingUseTlsString, bool) {
-	if o == nil || o.UseTls == nil {
+func (o *LoggingKafkaResponsePost) GetUseTLSOk() (*LoggingUseTLSString, bool) {
+	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
-	return o.UseTls, true
+	return o.UseTLS, true
 }
 
-// HasUseTls returns a boolean if a field has been set.
-func (o *LoggingKafkaResponsePost) HasUseTls() bool {
-	if o != nil && o.UseTls != nil {
+// HasUseTLS returns a boolean if a field has been set.
+func (o *LoggingKafkaResponsePost) HasUseTLS() bool {
+	if o != nil && o.UseTLS != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTls gets a reference to the given LoggingUseTlsString and assigns it to the UseTls field.
-func (o *LoggingKafkaResponsePost) SetUseTls(v LoggingUseTlsString) {
-	o.UseTls = &v
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingKafkaResponsePost) SetUseTLS(v LoggingUseTLSString) {
+	o.UseTLS = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -1060,17 +1060,17 @@ func (o LoggingKafkaResponsePost) MarshalJSON() ([]byte, error) {
 	if o.FormatVersion != nil {
 		toSerialize["format_version"] = o.FormatVersion
 	}
-	if o.TlsCaCert.IsSet() {
-		toSerialize["tls_ca_cert"] = o.TlsCaCert.Get()
+	if o.TLSCaCert.IsSet() {
+		toSerialize["tls_ca_cert"] = o.TLSCaCert.Get()
 	}
-	if o.TlsClientCert.IsSet() {
-		toSerialize["tls_client_cert"] = o.TlsClientCert.Get()
+	if o.TLSClientCert.IsSet() {
+		toSerialize["tls_client_cert"] = o.TLSClientCert.Get()
 	}
-	if o.TlsClientKey.IsSet() {
-		toSerialize["tls_client_key"] = o.TlsClientKey.Get()
+	if o.TLSClientKey.IsSet() {
+		toSerialize["tls_client_key"] = o.TLSClientKey.Get()
 	}
-	if o.TlsHostname.IsSet() {
-		toSerialize["tls_hostname"] = o.TlsHostname.Get()
+	if o.TLSHostname.IsSet() {
+		toSerialize["tls_hostname"] = o.TLSHostname.Get()
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -1081,8 +1081,8 @@ func (o LoggingKafkaResponsePost) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -1114,8 +1114,8 @@ func (o LoggingKafkaResponsePost) MarshalJSON() ([]byte, error) {
 	if o.Password != nil {
 		toSerialize["password"] = o.Password
 	}
-	if o.UseTls != nil {
-		toSerialize["use_tls"] = o.UseTls
+	if o.UseTLS != nil {
+		toSerialize["use_tls"] = o.UseTLS
 	}
 
 	for key, value := range o.AdditionalProperties {

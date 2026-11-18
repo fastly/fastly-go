@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the service group. | [optional] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the service group. | [optional] 
 **Object** | Pointer to **string** | The type of the object. | [optional] 
 **Name** | Pointer to **string** | Name of the service group. | [optional] 
 **Description** | Pointer to **string** | Description of the service group. | [optional] 
@@ -29,30 +29,30 @@ NewIamServiceGroupAllOfWithDefaults instantiates a new IamServiceGroupAllOf obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *IamServiceGroupAllOf) GetId() string`
+`func (o *IamServiceGroupAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *IamServiceGroupAllOf) GetIdOk() (*string, bool)`
+`func (o *IamServiceGroupAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *IamServiceGroupAllOf) SetId(v string)`
+`func (o *IamServiceGroupAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *IamServiceGroupAllOf) HasId() bool`
+`func (o *IamServiceGroupAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetObject
 
@@ -156,5 +156,3 @@ HasServicesCount returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

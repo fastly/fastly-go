@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Id** | Pointer to **string** | Alphanumeric string identifying the user group. | [optional] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the user group. | [optional] 
 **Name** | Pointer to **string** | Name of the user group. | [optional] 
 **Description** | Pointer to **string** | Description of the user group. | [optional] 
 **InvitationsCount** | Pointer to **int32** | Number of invitations added to the user group. | [optional] 
@@ -102,30 +102,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *IamUserGroup) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *IamUserGroup) GetId() string`
+`func (o *IamUserGroup) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *IamUserGroup) GetIdOk() (*string, bool)`
+`func (o *IamUserGroup) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *IamUserGroup) SetId(v string)`
+`func (o *IamUserGroup) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *IamUserGroup) HasId() bool`
+`func (o *IamUserGroup) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -254,5 +254,3 @@ HasRolesCount returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

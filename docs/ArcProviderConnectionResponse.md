@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the provider connection. | [readonly] 
-**SecretId** | **string** | An opaque identifier for the secret material backing this connection. Not the secret itself. | [readonly] 
+**ID** | **string** | The unique identifier of the provider connection. | [readonly] 
+**SecretID** | **string** | An opaque identifier for the secret material backing this connection. Not the secret itself. | [readonly] 
 **Name** | **string** | The display name of the provider connection. | 
 **Models** | **[]string** | The AI model identifiers this connection is allowed to use. | 
-**BaseUrl** | Pointer to **string** | The base URL of the provider&#39;s API. Present only for `api-key` connections. | [optional] 
+**BaseURL** | Pointer to **string** | The base URL of the provider&#39;s API. Present only for `api-key` connections. | [optional] 
 **AuthType** | **string** | The authentication type for this connection. | 
 **Region** | Pointer to **string** | The AWS region for Bedrock API requests. Present only for `aws-iam` connections. | [optional] 
 **CreatedAt** | **time.Time** | The date and time the connection was created, in RFC 3339 format. | [readonly] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewArcProviderConnectionResponse
 
-`func NewArcProviderConnectionResponse(id string, secretId string, name string, models []string, authType string, createdAt time.Time, updatedAt time.Time, ) *ArcProviderConnectionResponse`
+`func NewArcProviderConnectionResponse(id string, secretID string, name string, models []string, authType string, createdAt time.Time, updatedAt time.Time, ) *ArcProviderConnectionResponse`
 
 NewArcProviderConnectionResponse instantiates a new ArcProviderConnectionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,44 +33,44 @@ NewArcProviderConnectionResponseWithDefaults instantiates a new ArcProviderConne
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *ArcProviderConnectionResponse) GetId() string`
+`func (o *ArcProviderConnectionResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ArcProviderConnectionResponse) GetIdOk() (*string, bool)`
+`func (o *ArcProviderConnectionResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ArcProviderConnectionResponse) SetId(v string)`
+`func (o *ArcProviderConnectionResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
-### GetSecretId
+### GetSecretID
 
-`func (o *ArcProviderConnectionResponse) GetSecretId() string`
+`func (o *ArcProviderConnectionResponse) GetSecretID() string`
 
-GetSecretId returns the SecretId field if non-nil, zero value otherwise.
+GetSecretID returns the SecretID field if non-nil, zero value otherwise.
 
-### GetSecretIdOk
+### GetSecretIDOk
 
-`func (o *ArcProviderConnectionResponse) GetSecretIdOk() (*string, bool)`
+`func (o *ArcProviderConnectionResponse) GetSecretIDOk() (*string, bool)`
 
-GetSecretIdOk returns a tuple with the SecretId field if it's non-nil, zero value otherwise
+GetSecretIDOk returns a tuple with the SecretID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSecretId
+### SetSecretID
 
-`func (o *ArcProviderConnectionResponse) SetSecretId(v string)`
+`func (o *ArcProviderConnectionResponse) SetSecretID(v string)`
 
-SetSecretId sets SecretId field to given value.
+SetSecretID sets SecretID field to given value.
 
 
 ### GetName
@@ -113,30 +113,30 @@ and a boolean to check if the value has been set.
 SetModels sets Models field to given value.
 
 
-### GetBaseUrl
+### GetBaseURL
 
-`func (o *ArcProviderConnectionResponse) GetBaseUrl() string`
+`func (o *ArcProviderConnectionResponse) GetBaseURL() string`
 
-GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
 
-### GetBaseUrlOk
+### GetBaseURLOk
 
-`func (o *ArcProviderConnectionResponse) GetBaseUrlOk() (*string, bool)`
+`func (o *ArcProviderConnectionResponse) GetBaseURLOk() (*string, bool)`
 
-GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBaseUrl
+### SetBaseURL
 
-`func (o *ArcProviderConnectionResponse) SetBaseUrl(v string)`
+`func (o *ArcProviderConnectionResponse) SetBaseURL(v string)`
 
-SetBaseUrl sets BaseUrl field to given value.
+SetBaseURL sets BaseURL field to given value.
 
-### HasBaseUrl
+### HasBaseURL
 
-`func (o *ArcProviderConnectionResponse) HasBaseUrl() bool`
+`func (o *ArcProviderConnectionResponse) HasBaseURL() bool`
 
-HasBaseUrl returns a boolean if a field has been set.
+HasBaseURL returns a boolean if a field has been set.
 
 ### GetAuthType
 
@@ -225,5 +225,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

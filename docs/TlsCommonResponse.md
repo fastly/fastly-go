@@ -1,200 +1,198 @@
-# TlsCommonResponse
+# TLSCommonResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsCertHostname** | Pointer to **NullableString** | The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN). | [optional] [default to "null"]
-**UseTls** | Pointer to **string** | Whether to use TLS. | [optional] [default to "0"]
+**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSCertHostname** | Pointer to **NullableString** | The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN). | [optional] [default to "null"]
+**UseTLS** | Pointer to **string** | Whether to use TLS. | [optional] [default to "0"]
 
 ## Methods
 
-### NewTlsCommonResponse
+### NewTLSCommonResponse
 
-`func NewTlsCommonResponse() *TlsCommonResponse`
+`func NewTLSCommonResponse() *TLSCommonResponse`
 
-NewTlsCommonResponse instantiates a new TlsCommonResponse object
+NewTLSCommonResponse instantiates a new TLSCommonResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsCommonResponseWithDefaults
+### NewTLSCommonResponseWithDefaults
 
-`func NewTlsCommonResponseWithDefaults() *TlsCommonResponse`
+`func NewTLSCommonResponseWithDefaults() *TLSCommonResponse`
 
-NewTlsCommonResponseWithDefaults instantiates a new TlsCommonResponse object
+NewTLSCommonResponseWithDefaults instantiates a new TLSCommonResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsCaCert
+### GetTLSCaCert
 
-`func (o *TlsCommonResponse) GetTlsCaCert() string`
+`func (o *TLSCommonResponse) GetTLSCaCert() string`
 
-GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
+GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
 
-### GetTlsCaCertOk
+### GetTLSCaCertOk
 
-`func (o *TlsCommonResponse) GetTlsCaCertOk() (*string, bool)`
+`func (o *TLSCommonResponse) GetTLSCaCertOk() (*string, bool)`
 
-GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
+GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCaCert
+### SetTLSCaCert
 
-`func (o *TlsCommonResponse) SetTlsCaCert(v string)`
+`func (o *TLSCommonResponse) SetTLSCaCert(v string)`
 
-SetTlsCaCert sets TlsCaCert field to given value.
+SetTLSCaCert sets TLSCaCert field to given value.
 
-### HasTlsCaCert
+### HasTLSCaCert
 
-`func (o *TlsCommonResponse) HasTlsCaCert() bool`
+`func (o *TLSCommonResponse) HasTLSCaCert() bool`
 
-HasTlsCaCert returns a boolean if a field has been set.
+HasTLSCaCert returns a boolean if a field has been set.
 
-### SetTlsCaCertNil
+### SetTLSCaCertNil
 
-`func (o *TlsCommonResponse) SetTlsCaCertNil(b bool)`
+`func (o *TLSCommonResponse) SetTLSCaCertNil(b bool)`
 
- SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+ SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 
-### UnsetTlsCaCert
-`func (o *TlsCommonResponse) UnsetTlsCaCert()`
+### UnsetTLSCaCert
+`func (o *TLSCommonResponse) UnsetTLSCaCert()`
 
-UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-### GetTlsClientCert
+UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+### GetTLSClientCert
 
-`func (o *TlsCommonResponse) GetTlsClientCert() string`
+`func (o *TLSCommonResponse) GetTLSClientCert() string`
 
-GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
+GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
 
-### GetTlsClientCertOk
+### GetTLSClientCertOk
 
-`func (o *TlsCommonResponse) GetTlsClientCertOk() (*string, bool)`
+`func (o *TLSCommonResponse) GetTLSClientCertOk() (*string, bool)`
 
-GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
+GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientCert
+### SetTLSClientCert
 
-`func (o *TlsCommonResponse) SetTlsClientCert(v string)`
+`func (o *TLSCommonResponse) SetTLSClientCert(v string)`
 
-SetTlsClientCert sets TlsClientCert field to given value.
+SetTLSClientCert sets TLSClientCert field to given value.
 
-### HasTlsClientCert
+### HasTLSClientCert
 
-`func (o *TlsCommonResponse) HasTlsClientCert() bool`
+`func (o *TLSCommonResponse) HasTLSClientCert() bool`
 
-HasTlsClientCert returns a boolean if a field has been set.
+HasTLSClientCert returns a boolean if a field has been set.
 
-### SetTlsClientCertNil
+### SetTLSClientCertNil
 
-`func (o *TlsCommonResponse) SetTlsClientCertNil(b bool)`
+`func (o *TLSCommonResponse) SetTLSClientCertNil(b bool)`
 
- SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+ SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 
-### UnsetTlsClientCert
-`func (o *TlsCommonResponse) UnsetTlsClientCert()`
+### UnsetTLSClientCert
+`func (o *TLSCommonResponse) UnsetTLSClientCert()`
 
-UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-### GetTlsClientKey
+UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+### GetTLSClientKey
 
-`func (o *TlsCommonResponse) GetTlsClientKey() string`
+`func (o *TLSCommonResponse) GetTLSClientKey() string`
 
-GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
+GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
 
-### GetTlsClientKeyOk
+### GetTLSClientKeyOk
 
-`func (o *TlsCommonResponse) GetTlsClientKeyOk() (*string, bool)`
+`func (o *TLSCommonResponse) GetTLSClientKeyOk() (*string, bool)`
 
-GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
+GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientKey
+### SetTLSClientKey
 
-`func (o *TlsCommonResponse) SetTlsClientKey(v string)`
+`func (o *TLSCommonResponse) SetTLSClientKey(v string)`
 
-SetTlsClientKey sets TlsClientKey field to given value.
+SetTLSClientKey sets TLSClientKey field to given value.
 
-### HasTlsClientKey
+### HasTLSClientKey
 
-`func (o *TlsCommonResponse) HasTlsClientKey() bool`
+`func (o *TLSCommonResponse) HasTLSClientKey() bool`
 
-HasTlsClientKey returns a boolean if a field has been set.
+HasTLSClientKey returns a boolean if a field has been set.
 
-### SetTlsClientKeyNil
+### SetTLSClientKeyNil
 
-`func (o *TlsCommonResponse) SetTlsClientKeyNil(b bool)`
+`func (o *TLSCommonResponse) SetTLSClientKeyNil(b bool)`
 
- SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+ SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 
-### UnsetTlsClientKey
-`func (o *TlsCommonResponse) UnsetTlsClientKey()`
+### UnsetTLSClientKey
+`func (o *TLSCommonResponse) UnsetTLSClientKey()`
 
-UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-### GetTlsCertHostname
+UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+### GetTLSCertHostname
 
-`func (o *TlsCommonResponse) GetTlsCertHostname() string`
+`func (o *TLSCommonResponse) GetTLSCertHostname() string`
 
-GetTlsCertHostname returns the TlsCertHostname field if non-nil, zero value otherwise.
+GetTLSCertHostname returns the TLSCertHostname field if non-nil, zero value otherwise.
 
-### GetTlsCertHostnameOk
+### GetTLSCertHostnameOk
 
-`func (o *TlsCommonResponse) GetTlsCertHostnameOk() (*string, bool)`
+`func (o *TLSCommonResponse) GetTLSCertHostnameOk() (*string, bool)`
 
-GetTlsCertHostnameOk returns a tuple with the TlsCertHostname field if it's non-nil, zero value otherwise
+GetTLSCertHostnameOk returns a tuple with the TLSCertHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCertHostname
+### SetTLSCertHostname
 
-`func (o *TlsCommonResponse) SetTlsCertHostname(v string)`
+`func (o *TLSCommonResponse) SetTLSCertHostname(v string)`
 
-SetTlsCertHostname sets TlsCertHostname field to given value.
+SetTLSCertHostname sets TLSCertHostname field to given value.
 
-### HasTlsCertHostname
+### HasTLSCertHostname
 
-`func (o *TlsCommonResponse) HasTlsCertHostname() bool`
+`func (o *TLSCommonResponse) HasTLSCertHostname() bool`
 
-HasTlsCertHostname returns a boolean if a field has been set.
+HasTLSCertHostname returns a boolean if a field has been set.
 
-### SetTlsCertHostnameNil
+### SetTLSCertHostnameNil
 
-`func (o *TlsCommonResponse) SetTlsCertHostnameNil(b bool)`
+`func (o *TLSCommonResponse) SetTLSCertHostnameNil(b bool)`
 
- SetTlsCertHostnameNil sets the value for TlsCertHostname to be an explicit nil
+ SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
 
-### UnsetTlsCertHostname
-`func (o *TlsCommonResponse) UnsetTlsCertHostname()`
+### UnsetTLSCertHostname
+`func (o *TLSCommonResponse) UnsetTLSCertHostname()`
 
-UnsetTlsCertHostname ensures that no value is present for TlsCertHostname, not even an explicit nil
-### GetUseTls
+UnsetTLSCertHostname ensures that no value is present for TLSCertHostname, not even an explicit nil
+### GetUseTLS
 
-`func (o *TlsCommonResponse) GetUseTls() string`
+`func (o *TLSCommonResponse) GetUseTLS() string`
 
-GetUseTls returns the UseTls field if non-nil, zero value otherwise.
+GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
-### GetUseTlsOk
+### GetUseTLSOk
 
-`func (o *TlsCommonResponse) GetUseTlsOk() (*string, bool)`
+`func (o *TLSCommonResponse) GetUseTLSOk() (*string, bool)`
 
-GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
+GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTls
+### SetUseTLS
 
-`func (o *TlsCommonResponse) SetUseTls(v string)`
+`func (o *TLSCommonResponse) SetUseTLS(v string)`
 
-SetUseTls sets UseTls field to given value.
+SetUseTLS sets UseTLS field to given value.
 
-### HasUseTls
+### HasUseTLS
 
-`func (o *TlsCommonResponse) HasUseTls() bool`
+`func (o *TLSCommonResponse) HasUseTLS() bool`
 
-HasUseTls returns a boolean if a field has been set.
+HasUseTLS returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

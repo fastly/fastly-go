@@ -16,76 +16,76 @@ import (
 	"encoding/json"
 )
 
-// ReadOnlyCustomerId struct for ReadOnlyCustomerId
-type ReadOnlyCustomerId struct {
+// ReadOnlyCustomerID struct for ReadOnlyCustomerID
+type ReadOnlyCustomerID struct {
 }
 
-// NewReadOnlyCustomerId instantiates a new ReadOnlyCustomerId object
+// NewReadOnlyCustomerID instantiates a new ReadOnlyCustomerID object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReadOnlyCustomerId() *ReadOnlyCustomerId {
-	this := ReadOnlyCustomerId{}
+func NewReadOnlyCustomerID() *ReadOnlyCustomerID {
+	this := ReadOnlyCustomerID{}
 	return &this
 }
 
-// NewReadOnlyCustomerIdWithDefaults instantiates a new ReadOnlyCustomerId object
+// NewReadOnlyCustomerIDWithDefaults instantiates a new ReadOnlyCustomerID object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewReadOnlyCustomerIdWithDefaults() *ReadOnlyCustomerId {
-	this := ReadOnlyCustomerId{}
+func NewReadOnlyCustomerIDWithDefaults() *ReadOnlyCustomerID {
+	this := ReadOnlyCustomerID{}
 	return &this
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ReadOnlyCustomerId) MarshalJSON() ([]byte, error) {
+func (o ReadOnlyCustomerID) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	return json.Marshal(toSerialize)
 }
 
-// NullableReadOnlyCustomerId is a helper abstraction for handling nullable readonlycustomerid types.
-type NullableReadOnlyCustomerId struct {
-	value *ReadOnlyCustomerId
+// NullableReadOnlyCustomerID is a helper abstraction for handling nullable readonlycustomerid types.
+type NullableReadOnlyCustomerID struct {
+	value *ReadOnlyCustomerID
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableReadOnlyCustomerId) Get() *ReadOnlyCustomerId {
+func (v NullableReadOnlyCustomerID) Get() *ReadOnlyCustomerID {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableReadOnlyCustomerId) Set(val *ReadOnlyCustomerId) {
+func (v *NullableReadOnlyCustomerID) Set(val *ReadOnlyCustomerID) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableReadOnlyCustomerId) IsSet() bool {
+func (v NullableReadOnlyCustomerID) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableReadOnlyCustomerId) Unset() {
+func (v *NullableReadOnlyCustomerID) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableReadOnlyCustomerId returns a pointer to a new instance of NullableReadOnlyCustomerId.
-func NewNullableReadOnlyCustomerId(val *ReadOnlyCustomerId) *NullableReadOnlyCustomerId {
-	return &NullableReadOnlyCustomerId{value: val, isSet: true}
+// NewNullableReadOnlyCustomerID returns a pointer to a new instance of NullableReadOnlyCustomerID.
+func NewNullableReadOnlyCustomerID(val *ReadOnlyCustomerID) *NullableReadOnlyCustomerID {
+	return &NullableReadOnlyCustomerID{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableReadOnlyCustomerId) MarshalJSON() ([]byte, error) {
+func (v NullableReadOnlyCustomerID) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableReadOnlyCustomerId) UnmarshalJSON(src []byte) error {
+func (v *NullableReadOnlyCustomerID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

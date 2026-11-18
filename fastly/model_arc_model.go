@@ -19,11 +19,11 @@ import (
 // ArcModel An AI model available through AI Runtime Control.
 type ArcModel struct {
 	// The model identifier.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The human-readable name of the model.
 	DisplayName string `json:"display_name"`
 	// The ID of the provider this model belongs to.
-	ProviderId           string `json:"provider_id"`
+	ProviderID           string `json:"provider_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -33,11 +33,11 @@ type _ArcModel ArcModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcModel(id string, displayName string, providerId string) *ArcModel {
+func NewArcModel(id string, displayName string, providerID string) *ArcModel {
 	this := ArcModel{}
-	this.Id = id
+	this.ID = id
 	this.DisplayName = displayName
-	this.ProviderId = providerId
+	this.ProviderID = providerID
 	return &this
 }
 
@@ -49,28 +49,28 @@ func NewArcModelWithDefaults() *ArcModel {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *ArcModel) GetId() string {
+// GetID returns the ID field value
+func (o *ArcModel) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcModel) GetIdOk() (*string, bool) {
+func (o *ArcModel) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcModel) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcModel) SetID(v string) {
+	o.ID = v
 }
 
 // GetDisplayName returns the DisplayName field value
@@ -97,28 +97,28 @@ func (o *ArcModel) SetDisplayName(v string) {
 	o.DisplayName = v
 }
 
-// GetProviderId returns the ProviderId field value
-func (o *ArcModel) GetProviderId() string {
+// GetProviderID returns the ProviderID field value
+func (o *ArcModel) GetProviderID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.ProviderId
+	return o.ProviderID
 }
 
-// GetProviderIdOk returns a tuple with the ProviderId field value
+// GetProviderIDOk returns a tuple with the ProviderID field value
 // and a boolean to check if the value has been set.
-func (o *ArcModel) GetProviderIdOk() (*string, bool) {
+func (o *ArcModel) GetProviderIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ProviderId, true
+	return &o.ProviderID, true
 }
 
-// SetProviderId sets field value
-func (o *ArcModel) SetProviderId(v string) {
-	o.ProviderId = v
+// SetProviderID sets field value
+func (o *ArcModel) SetProviderID(v string) {
+	o.ProviderID = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -126,13 +126,13 @@ func (o *ArcModel) SetProviderId(v string) {
 func (o ArcModel) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["display_name"] = o.DisplayName
 	}
 	if true {
-		toSerialize["provider_id"] = o.ProviderId
+		toSerialize["provider_id"] = o.ProviderID
 	}
 
 	for key, value := range o.AdditionalProperties {

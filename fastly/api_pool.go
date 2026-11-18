@@ -37,11 +37,11 @@ type PoolAPI interface {
 		Creates a pool for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APICreateServerPoolRequest
 	*/
-	CreateServerPool(ctx context.Context, serviceId string, versionId int32) APICreateServerPoolRequest
+	CreateServerPool(ctx context.Context, serviceID string, versionID int32) APICreateServerPoolRequest
 
 	// CreateServerPoolExecute executes the request
 	//  @return PoolResponsePost
@@ -53,12 +53,12 @@ type PoolAPI interface {
 		Deletes a specific pool for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param poolName Name for the Pool.
 		 @return APIDeleteServerPoolRequest
 	*/
-	DeleteServerPool(ctx context.Context, serviceId string, versionId int32, poolName string) APIDeleteServerPoolRequest
+	DeleteServerPool(ctx context.Context, serviceID string, versionID int32, poolName string) APIDeleteServerPoolRequest
 
 	// DeleteServerPoolExecute executes the request
 	//  @return InlineResponse200
@@ -70,12 +70,12 @@ type PoolAPI interface {
 		Gets a single pool for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param poolName Name for the Pool.
 		 @return APIGetServerPoolRequest
 	*/
-	GetServerPool(ctx context.Context, serviceId string, versionId int32, poolName string) APIGetServerPoolRequest
+	GetServerPool(ctx context.Context, serviceID string, versionID int32, poolName string) APIGetServerPoolRequest
 
 	// GetServerPoolExecute executes the request
 	//  @return PoolResponse
@@ -87,11 +87,11 @@ type PoolAPI interface {
 		Lists all pools for a particular service and pool.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APIListServerPoolsRequest
 	*/
-	ListServerPools(ctx context.Context, serviceId string, versionId int32) APIListServerPoolsRequest
+	ListServerPools(ctx context.Context, serviceID string, versionID int32) APIListServerPoolsRequest
 
 	// ListServerPoolsExecute executes the request
 	//  @return []PoolResponse
@@ -103,12 +103,12 @@ type PoolAPI interface {
 		Updates a specific pool for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param poolName Name for the Pool.
 		 @return APIUpdateServerPoolRequest
 	*/
-	UpdateServerPool(ctx context.Context, serviceId string, versionId int32, poolName string) APIUpdateServerPoolRequest
+	UpdateServerPool(ctx context.Context, serviceID string, versionID int32, poolName string) APIUpdateServerPoolRequest
 
 	// UpdateServerPoolExecute executes the request
 	//  @return PoolResponse
@@ -122,28 +122,28 @@ type PoolAPIService service
 type APICreateServerPoolRequest struct {
 	ctx                 context.Context
 	APIService          PoolAPI
-	serviceId           string
-	versionId           int32
+	serviceID           string
+	versionID           int32
 	tlsCaCert           *string
 	tlsClientCert       *string
 	tlsClientKey        *string
 	tlsCertHostname     *string
-	useTls              *int32
+	useTLS              *int32
 	createdAt           *time.Time
 	deletedAt           *time.Time
 	updatedAt           *time.Time
-	serviceId2          *string
+	serviceID2          *string
 	version             *string
 	name                *string
 	shield              *string
 	requestCondition    *string
 	tlsCiphers          *string
 	tlsSniHostname      *string
-	minTlsVersion       *int32
-	maxTlsVersion       *int32
+	minTLSVersion       *int32
+	maxTLSVersion       *int32
 	healthcheck         *string
 	comment             *string
-	type_               *string
+	resourceType        *string
 	overrideHost        *string
 	betweenBytesTimeout *int32
 	connectTimeout      *int32
@@ -153,33 +153,33 @@ type APICreateServerPoolRequest struct {
 	tlsCheckCert        *int32
 }
 
-// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APICreateServerPoolRequest) TlsCaCert(tlsCaCert string) *APICreateServerPoolRequest {
+// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APICreateServerPoolRequest) TLSCaCert(tlsCaCert string) *APICreateServerPoolRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APICreateServerPoolRequest) TlsClientCert(tlsClientCert string) *APICreateServerPoolRequest {
+// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APICreateServerPoolRequest) TLSClientCert(tlsClientCert string) *APICreateServerPoolRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APICreateServerPoolRequest) TlsClientKey(tlsClientKey string) *APICreateServerPoolRequest {
+// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APICreateServerPoolRequest) TLSClientKey(tlsClientKey string) *APICreateServerPoolRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TlsCertHostname The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-func (r *APICreateServerPoolRequest) TlsCertHostname(tlsCertHostname string) *APICreateServerPoolRequest {
+// TLSCertHostname The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+func (r *APICreateServerPoolRequest) TLSCertHostname(tlsCertHostname string) *APICreateServerPoolRequest {
 	r.tlsCertHostname = &tlsCertHostname
 	return r
 }
 
-// UseTls Whether to use TLS.
-func (r *APICreateServerPoolRequest) UseTls(useTls int32) *APICreateServerPoolRequest {
-	r.useTls = &useTls
+// UseTLS Whether to use TLS.
+func (r *APICreateServerPoolRequest) UseTLS(useTLS int32) *APICreateServerPoolRequest {
+	r.useTLS = &useTLS
 	return r
 }
 
@@ -201,9 +201,9 @@ func (r *APICreateServerPoolRequest) UpdatedAt(updatedAt time.Time) *APICreateSe
 	return r
 }
 
-// ServiceId2 returns a pointer to a request.
-func (r *APICreateServerPoolRequest) ServiceId2(serviceId2 string) *APICreateServerPoolRequest {
-	r.serviceId2 = &serviceId2
+// ServiceID2 returns a pointer to a request.
+func (r *APICreateServerPoolRequest) ServiceID2(serviceID2 string) *APICreateServerPoolRequest {
+	r.serviceID2 = &serviceID2
 	return r
 }
 
@@ -231,27 +231,27 @@ func (r *APICreateServerPoolRequest) RequestCondition(requestCondition string) *
 	return r
 }
 
-// TlsCiphers List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
-func (r *APICreateServerPoolRequest) TlsCiphers(tlsCiphers string) *APICreateServerPoolRequest {
+// TLSCiphers List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
+func (r *APICreateServerPoolRequest) TLSCiphers(tlsCiphers string) *APICreateServerPoolRequest {
 	r.tlsCiphers = &tlsCiphers
 	return r
 }
 
-// TlsSniHostname SNI hostname. Optional.
-func (r *APICreateServerPoolRequest) TlsSniHostname(tlsSniHostname string) *APICreateServerPoolRequest {
+// TLSSniHostname SNI hostname. Optional.
+func (r *APICreateServerPoolRequest) TLSSniHostname(tlsSniHostname string) *APICreateServerPoolRequest {
 	r.tlsSniHostname = &tlsSniHostname
 	return r
 }
 
-// MinTlsVersion Minimum allowed TLS version on connections to this server. Optional.
-func (r *APICreateServerPoolRequest) MinTlsVersion(minTlsVersion int32) *APICreateServerPoolRequest {
-	r.minTlsVersion = &minTlsVersion
+// MinTLSVersion Minimum allowed TLS version on connections to this server. Optional.
+func (r *APICreateServerPoolRequest) MinTLSVersion(minTLSVersion int32) *APICreateServerPoolRequest {
+	r.minTLSVersion = &minTLSVersion
 	return r
 }
 
-// MaxTlsVersion Maximum allowed TLS version on connections to this server. Optional.
-func (r *APICreateServerPoolRequest) MaxTlsVersion(maxTlsVersion int32) *APICreateServerPoolRequest {
-	r.maxTlsVersion = &maxTlsVersion
+// MaxTLSVersion Maximum allowed TLS version on connections to this server. Optional.
+func (r *APICreateServerPoolRequest) MaxTLSVersion(maxTLSVersion int32) *APICreateServerPoolRequest {
+	r.maxTLSVersion = &maxTLSVersion
 	return r
 }
 
@@ -267,9 +267,9 @@ func (r *APICreateServerPoolRequest) Comment(comment string) *APICreateServerPoo
 	return r
 }
 
-// Type_ What type of load balance group to use.
-func (r *APICreateServerPoolRequest) Type_(type_ string) *APICreateServerPoolRequest {
-	r.type_ = &type_
+// ResourceType What type of load balance group to use.
+func (r *APICreateServerPoolRequest) ResourceType(resourceType string) *APICreateServerPoolRequest {
+	r.resourceType = &resourceType
 	return r
 }
 
@@ -309,8 +309,8 @@ func (r *APICreateServerPoolRequest) Quorum(quorum int32) *APICreateServerPoolRe
 	return r
 }
 
-// TlsCheckCert Be strict on checking TLS certs. Optional.
-func (r *APICreateServerPoolRequest) TlsCheckCert(tlsCheckCert int32) *APICreateServerPoolRequest {
+// TLSCheckCert Be strict on checking TLS certs. Optional.
+func (r *APICreateServerPoolRequest) TLSCheckCert(tlsCheckCert int32) *APICreateServerPoolRequest {
 	r.tlsCheckCert = &tlsCheckCert
 	return r
 }
@@ -326,16 +326,16 @@ CreateServerPool Create a server pool
 Creates a pool for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APICreateServerPoolRequest
 */
-func (a *PoolAPIService) CreateServerPool(ctx context.Context, serviceId string, versionId int32) APICreateServerPoolRequest {
+func (a *PoolAPIService) CreateServerPool(ctx context.Context, serviceID string, versionID int32) APICreateServerPoolRequest {
 	return APICreateServerPoolRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -355,8 +355,8 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/pool"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -391,8 +391,8 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	if r.tlsCertHostname != nil {
 		localVarFormParams.Add("tls_cert_hostname", parameterToString(*r.tlsCertHostname, ""))
 	}
-	if r.useTls != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
+	if r.useTLS != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
 	}
 	if r.createdAt != nil {
 		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
@@ -403,19 +403,19 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	if r.updatedAt != nil {
 		localVarFormParams.Add("updated_at", parameterToString(*r.updatedAt, ""))
 	}
-	if r.serviceId2 != nil {
-		paramJson, err := parameterToJSON(*r.serviceId2)
+	if r.serviceID2 != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID2)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJson)
+		localVarFormParams.Add("service_id", paramJSON)
 	}
 	if r.version != nil {
-		paramJson, err := parameterToJSON(*r.version)
+		paramJSON, err := parameterToJSON(*r.version)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("version", paramJson)
+		localVarFormParams.Add("version", paramJSON)
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -432,11 +432,11 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	if r.tlsSniHostname != nil {
 		localVarFormParams.Add("tls_sni_hostname", parameterToString(*r.tlsSniHostname, ""))
 	}
-	if r.minTlsVersion != nil {
-		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTlsVersion, ""))
+	if r.minTLSVersion != nil {
+		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTLSVersion, ""))
 	}
-	if r.maxTlsVersion != nil {
-		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTlsVersion, ""))
+	if r.maxTLSVersion != nil {
+		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTLSVersion, ""))
 	}
 	if r.healthcheck != nil {
 		localVarFormParams.Add("healthcheck", parameterToString(*r.healthcheck, ""))
@@ -444,8 +444,8 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	if r.comment != nil {
 		localVarFormParams.Add("comment", parameterToString(*r.comment, ""))
 	}
-	if r.type_ != nil {
-		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
+	if r.resourceType != nil {
+		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
 	}
 	if r.overrideHost != nil {
 		localVarFormParams.Add("override_host", parameterToString(*r.overrideHost, ""))
@@ -536,8 +536,8 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 type APIDeleteServerPoolRequest struct {
 	ctx        context.Context
 	APIService PoolAPI
-	serviceId  string
-	versionId  int32
+	serviceID  string
+	versionID  int32
 	poolName   string
 }
 
@@ -552,17 +552,17 @@ DeleteServerPool Delete a server pool
 Deletes a specific pool for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param poolName Name for the Pool.
  @return APIDeleteServerPoolRequest
 */
-func (a *PoolAPIService) DeleteServerPool(ctx context.Context, serviceId string, versionId int32, poolName string) APIDeleteServerPoolRequest {
+func (a *PoolAPIService) DeleteServerPool(ctx context.Context, serviceID string, versionID int32, poolName string) APIDeleteServerPoolRequest {
 	return APIDeleteServerPoolRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		poolName:   poolName,
 	}
 }
@@ -583,8 +583,8 @@ func (a *PoolAPIService) DeleteServerPoolExecute(r APIDeleteServerPoolRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/pool/{pool_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_name"+"}", gourl.PathEscape(parameterToString(r.poolName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -676,8 +676,8 @@ func (a *PoolAPIService) DeleteServerPoolExecute(r APIDeleteServerPoolRequest) (
 type APIGetServerPoolRequest struct {
 	ctx        context.Context
 	APIService PoolAPI
-	serviceId  string
-	versionId  int32
+	serviceID  string
+	versionID  int32
 	poolName   string
 }
 
@@ -692,17 +692,17 @@ GetServerPool Get a server pool
 Gets a single pool for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param poolName Name for the Pool.
  @return APIGetServerPoolRequest
 */
-func (a *PoolAPIService) GetServerPool(ctx context.Context, serviceId string, versionId int32, poolName string) APIGetServerPoolRequest {
+func (a *PoolAPIService) GetServerPool(ctx context.Context, serviceID string, versionID int32, poolName string) APIGetServerPoolRequest {
 	return APIGetServerPoolRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		poolName:   poolName,
 	}
 }
@@ -723,8 +723,8 @@ func (a *PoolAPIService) GetServerPoolExecute(r APIGetServerPoolRequest) (*PoolR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/pool/{pool_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_name"+"}", gourl.PathEscape(parameterToString(r.poolName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -816,8 +816,8 @@ func (a *PoolAPIService) GetServerPoolExecute(r APIGetServerPoolRequest) (*PoolR
 type APIListServerPoolsRequest struct {
 	ctx        context.Context
 	APIService PoolAPI
-	serviceId  string
-	versionId  int32
+	serviceID  string
+	versionID  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -831,16 +831,16 @@ ListServerPools List server pools
 Lists all pools for a particular service and pool.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APIListServerPoolsRequest
 */
-func (a *PoolAPIService) ListServerPools(ctx context.Context, serviceId string, versionId int32) APIListServerPoolsRequest {
+func (a *PoolAPIService) ListServerPools(ctx context.Context, serviceID string, versionID int32) APIListServerPoolsRequest {
 	return APIListServerPoolsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -860,8 +860,8 @@ func (a *PoolAPIService) ListServerPoolsExecute(r APIListServerPoolsRequest) ([]
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/pool"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -952,29 +952,29 @@ func (a *PoolAPIService) ListServerPoolsExecute(r APIListServerPoolsRequest) ([]
 type APIUpdateServerPoolRequest struct {
 	ctx                 context.Context
 	APIService          PoolAPI
-	serviceId           string
-	versionId           int32
+	serviceID           string
+	versionID           int32
 	poolName            string
 	tlsCaCert           *string
 	tlsClientCert       *string
 	tlsClientKey        *string
 	tlsCertHostname     *string
-	useTls              *int32
+	useTLS              *int32
 	createdAt           *time.Time
 	deletedAt           *time.Time
 	updatedAt           *time.Time
-	serviceId2          *string
+	serviceID2          *string
 	version             *string
 	name                *string
 	shield              *string
 	requestCondition    *string
 	tlsCiphers          *string
 	tlsSniHostname      *string
-	minTlsVersion       *int32
-	maxTlsVersion       *int32
+	minTLSVersion       *int32
+	maxTLSVersion       *int32
 	healthcheck         *string
 	comment             *string
-	type_               *string
+	resourceType        *string
 	overrideHost        *string
 	betweenBytesTimeout *int32
 	connectTimeout      *int32
@@ -984,33 +984,33 @@ type APIUpdateServerPoolRequest struct {
 	tlsCheckCert        *int32
 }
 
-// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APIUpdateServerPoolRequest) TlsCaCert(tlsCaCert string) *APIUpdateServerPoolRequest {
+// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APIUpdateServerPoolRequest) TLSCaCert(tlsCaCert string) *APIUpdateServerPoolRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateServerPoolRequest) TlsClientCert(tlsClientCert string) *APIUpdateServerPoolRequest {
+// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateServerPoolRequest) TLSClientCert(tlsClientCert string) *APIUpdateServerPoolRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateServerPoolRequest) TlsClientKey(tlsClientKey string) *APIUpdateServerPoolRequest {
+// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateServerPoolRequest) TLSClientKey(tlsClientKey string) *APIUpdateServerPoolRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TlsCertHostname The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-func (r *APIUpdateServerPoolRequest) TlsCertHostname(tlsCertHostname string) *APIUpdateServerPoolRequest {
+// TLSCertHostname The hostname used to verify a server&#39;s certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+func (r *APIUpdateServerPoolRequest) TLSCertHostname(tlsCertHostname string) *APIUpdateServerPoolRequest {
 	r.tlsCertHostname = &tlsCertHostname
 	return r
 }
 
-// UseTls Whether to use TLS.
-func (r *APIUpdateServerPoolRequest) UseTls(useTls int32) *APIUpdateServerPoolRequest {
-	r.useTls = &useTls
+// UseTLS Whether to use TLS.
+func (r *APIUpdateServerPoolRequest) UseTLS(useTLS int32) *APIUpdateServerPoolRequest {
+	r.useTLS = &useTLS
 	return r
 }
 
@@ -1032,9 +1032,9 @@ func (r *APIUpdateServerPoolRequest) UpdatedAt(updatedAt time.Time) *APIUpdateSe
 	return r
 }
 
-// ServiceId2 returns a pointer to a request.
-func (r *APIUpdateServerPoolRequest) ServiceId2(serviceId2 string) *APIUpdateServerPoolRequest {
-	r.serviceId2 = &serviceId2
+// ServiceID2 returns a pointer to a request.
+func (r *APIUpdateServerPoolRequest) ServiceID2(serviceID2 string) *APIUpdateServerPoolRequest {
+	r.serviceID2 = &serviceID2
 	return r
 }
 
@@ -1062,27 +1062,27 @@ func (r *APIUpdateServerPoolRequest) RequestCondition(requestCondition string) *
 	return r
 }
 
-// TlsCiphers List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
-func (r *APIUpdateServerPoolRequest) TlsCiphers(tlsCiphers string) *APIUpdateServerPoolRequest {
+// TLSCiphers List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
+func (r *APIUpdateServerPoolRequest) TLSCiphers(tlsCiphers string) *APIUpdateServerPoolRequest {
 	r.tlsCiphers = &tlsCiphers
 	return r
 }
 
-// TlsSniHostname SNI hostname. Optional.
-func (r *APIUpdateServerPoolRequest) TlsSniHostname(tlsSniHostname string) *APIUpdateServerPoolRequest {
+// TLSSniHostname SNI hostname. Optional.
+func (r *APIUpdateServerPoolRequest) TLSSniHostname(tlsSniHostname string) *APIUpdateServerPoolRequest {
 	r.tlsSniHostname = &tlsSniHostname
 	return r
 }
 
-// MinTlsVersion Minimum allowed TLS version on connections to this server. Optional.
-func (r *APIUpdateServerPoolRequest) MinTlsVersion(minTlsVersion int32) *APIUpdateServerPoolRequest {
-	r.minTlsVersion = &minTlsVersion
+// MinTLSVersion Minimum allowed TLS version on connections to this server. Optional.
+func (r *APIUpdateServerPoolRequest) MinTLSVersion(minTLSVersion int32) *APIUpdateServerPoolRequest {
+	r.minTLSVersion = &minTLSVersion
 	return r
 }
 
-// MaxTlsVersion Maximum allowed TLS version on connections to this server. Optional.
-func (r *APIUpdateServerPoolRequest) MaxTlsVersion(maxTlsVersion int32) *APIUpdateServerPoolRequest {
-	r.maxTlsVersion = &maxTlsVersion
+// MaxTLSVersion Maximum allowed TLS version on connections to this server. Optional.
+func (r *APIUpdateServerPoolRequest) MaxTLSVersion(maxTLSVersion int32) *APIUpdateServerPoolRequest {
+	r.maxTLSVersion = &maxTLSVersion
 	return r
 }
 
@@ -1098,9 +1098,9 @@ func (r *APIUpdateServerPoolRequest) Comment(comment string) *APIUpdateServerPoo
 	return r
 }
 
-// Type_ What type of load balance group to use.
-func (r *APIUpdateServerPoolRequest) Type_(type_ string) *APIUpdateServerPoolRequest {
-	r.type_ = &type_
+// ResourceType What type of load balance group to use.
+func (r *APIUpdateServerPoolRequest) ResourceType(resourceType string) *APIUpdateServerPoolRequest {
+	r.resourceType = &resourceType
 	return r
 }
 
@@ -1140,8 +1140,8 @@ func (r *APIUpdateServerPoolRequest) Quorum(quorum int32) *APIUpdateServerPoolRe
 	return r
 }
 
-// TlsCheckCert Be strict on checking TLS certs. Optional.
-func (r *APIUpdateServerPoolRequest) TlsCheckCert(tlsCheckCert int32) *APIUpdateServerPoolRequest {
+// TLSCheckCert Be strict on checking TLS certs. Optional.
+func (r *APIUpdateServerPoolRequest) TLSCheckCert(tlsCheckCert int32) *APIUpdateServerPoolRequest {
 	r.tlsCheckCert = &tlsCheckCert
 	return r
 }
@@ -1157,17 +1157,17 @@ UpdateServerPool Update a server pool
 Updates a specific pool for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param poolName Name for the Pool.
  @return APIUpdateServerPoolRequest
 */
-func (a *PoolAPIService) UpdateServerPool(ctx context.Context, serviceId string, versionId int32, poolName string) APIUpdateServerPoolRequest {
+func (a *PoolAPIService) UpdateServerPool(ctx context.Context, serviceID string, versionID int32, poolName string) APIUpdateServerPoolRequest {
 	return APIUpdateServerPoolRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		poolName:   poolName,
 	}
 }
@@ -1188,8 +1188,8 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/pool/{pool_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_name"+"}", gourl.PathEscape(parameterToString(r.poolName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1225,8 +1225,8 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	if r.tlsCertHostname != nil {
 		localVarFormParams.Add("tls_cert_hostname", parameterToString(*r.tlsCertHostname, ""))
 	}
-	if r.useTls != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
+	if r.useTLS != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
 	}
 	if r.createdAt != nil {
 		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
@@ -1237,19 +1237,19 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	if r.updatedAt != nil {
 		localVarFormParams.Add("updated_at", parameterToString(*r.updatedAt, ""))
 	}
-	if r.serviceId2 != nil {
-		paramJson, err := parameterToJSON(*r.serviceId2)
+	if r.serviceID2 != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID2)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJson)
+		localVarFormParams.Add("service_id", paramJSON)
 	}
 	if r.version != nil {
-		paramJson, err := parameterToJSON(*r.version)
+		paramJSON, err := parameterToJSON(*r.version)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("version", paramJson)
+		localVarFormParams.Add("version", paramJSON)
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -1266,11 +1266,11 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	if r.tlsSniHostname != nil {
 		localVarFormParams.Add("tls_sni_hostname", parameterToString(*r.tlsSniHostname, ""))
 	}
-	if r.minTlsVersion != nil {
-		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTlsVersion, ""))
+	if r.minTLSVersion != nil {
+		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTLSVersion, ""))
 	}
-	if r.maxTlsVersion != nil {
-		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTlsVersion, ""))
+	if r.maxTLSVersion != nil {
+		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTLSVersion, ""))
 	}
 	if r.healthcheck != nil {
 		localVarFormParams.Add("healthcheck", parameterToString(*r.healthcheck, ""))
@@ -1278,8 +1278,8 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	if r.comment != nil {
 		localVarFormParams.Add("comment", parameterToString(*r.comment, ""))
 	}
-	if r.type_ != nil {
-		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
+	if r.resourceType != nil {
+		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
 	}
 	if r.overrideHost != nil {
 		localVarFormParams.Add("override_host", parameterToString(*r.overrideHost, ""))

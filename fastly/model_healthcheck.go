@@ -29,7 +29,7 @@ type Healthcheck struct {
 	// Which host to check.
 	Host *string `json:"host,omitempty"`
 	// Whether to use version 1.0 or 1.1 HTTP.
-	HttpVersion *string `json:"http_version,omitempty"`
+	HTTPVersion *string `json:"http_version,omitempty"`
 	// When loading a config, the initial number of probes to be seen as OK.
 	Initial *int32 `json:"initial,omitempty"`
 	// Which HTTP method to use.
@@ -237,36 +237,36 @@ func (o *Healthcheck) SetHost(v string) {
 	o.Host = &v
 }
 
-// GetHttpVersion returns the HttpVersion field value if set, zero value otherwise.
-func (o *Healthcheck) GetHttpVersion() string {
-	if o == nil || o.HttpVersion == nil {
+// GetHTTPVersion returns the HTTPVersion field value if set, zero value otherwise.
+func (o *Healthcheck) GetHTTPVersion() string {
+	if o == nil || o.HTTPVersion == nil {
 		var ret string
 		return ret
 	}
-	return *o.HttpVersion
+	return *o.HTTPVersion
 }
 
-// GetHttpVersionOk returns a tuple with the HttpVersion field value if set, nil otherwise
+// GetHTTPVersionOk returns a tuple with the HTTPVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Healthcheck) GetHttpVersionOk() (*string, bool) {
-	if o == nil || o.HttpVersion == nil {
+func (o *Healthcheck) GetHTTPVersionOk() (*string, bool) {
+	if o == nil || o.HTTPVersion == nil {
 		return nil, false
 	}
-	return o.HttpVersion, true
+	return o.HTTPVersion, true
 }
 
-// HasHttpVersion returns a boolean if a field has been set.
-func (o *Healthcheck) HasHttpVersion() bool {
-	if o != nil && o.HttpVersion != nil {
+// HasHTTPVersion returns a boolean if a field has been set.
+func (o *Healthcheck) HasHTTPVersion() bool {
+	if o != nil && o.HTTPVersion != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHttpVersion gets a reference to the given string and assigns it to the HttpVersion field.
-func (o *Healthcheck) SetHttpVersion(v string) {
-	o.HttpVersion = &v
+// SetHTTPVersion gets a reference to the given string and assigns it to the HTTPVersion field.
+func (o *Healthcheck) SetHTTPVersion(v string) {
+	o.HTTPVersion = &v
 }
 
 // GetInitial returns the Initial field value if set, zero value otherwise.
@@ -512,8 +512,8 @@ func (o Healthcheck) MarshalJSON() ([]byte, error) {
 	if o.Host != nil {
 		toSerialize["host"] = o.Host
 	}
-	if o.HttpVersion != nil {
-		toSerialize["http_version"] = o.HttpVersion
+	if o.HTTPVersion != nil {
+		toSerialize["http_version"] = o.HTTPVersion
 	}
 	if o.Initial != nil {
 		toSerialize["initial"] = o.Initial

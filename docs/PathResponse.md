@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Id** | Pointer to **string** | Alphanumeric string identifying the path. Stable across versions of the routing config. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the path. Stable across versions of the routing config. | [optional] [readonly] 
 **Path** | Pointer to **string** | The URL path pattern, beginning with `/`. Maximum 2048 characters. | [optional] 
 **Links** | Pointer to **map[string]string** | HATEOAS links to related resources. | [optional] [readonly] 
 
@@ -99,30 +99,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *PathResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *PathResponse) GetId() string`
+`func (o *PathResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *PathResponse) GetIdOk() (*string, bool)`
+`func (o *PathResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *PathResponse) SetId(v string)`
+`func (o *PathResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *PathResponse) HasId() bool`
+`func (o *PathResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -176,5 +176,3 @@ HasLinks returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -36,11 +36,11 @@ type ServerAPI interface {
 		Creates a single server for a particular service and pool.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param poolId Alphanumeric string identifying a Pool.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
 		 @return APICreatePoolServerRequest
 	*/
-	CreatePoolServer(ctx context.Context, serviceId string, poolId string) APICreatePoolServerRequest
+	CreatePoolServer(ctx context.Context, serviceID string, poolID string) APICreatePoolServerRequest
 
 	// CreatePoolServerExecute executes the request
 	//  @return ServerResponse
@@ -52,12 +52,12 @@ type ServerAPI interface {
 		Deletes a single server for a particular service and pool.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param poolId Alphanumeric string identifying a Pool.
-		 @param serverId Alphanumeric string identifying a Server.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @param serverID Alphanumeric string identifying a Server.
 		 @return APIDeletePoolServerRequest
 	*/
-	DeletePoolServer(ctx context.Context, serviceId string, poolId string, serverId string) APIDeletePoolServerRequest
+	DeletePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIDeletePoolServerRequest
 
 	// DeletePoolServerExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type ServerAPI interface {
 		Gets a single server for a particular service and pool.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param poolId Alphanumeric string identifying a Pool.
-		 @param serverId Alphanumeric string identifying a Server.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @param serverID Alphanumeric string identifying a Server.
 		 @return APIGetPoolServerRequest
 	*/
-	GetPoolServer(ctx context.Context, serviceId string, poolId string, serverId string) APIGetPoolServerRequest
+	GetPoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIGetPoolServerRequest
 
 	// GetPoolServerExecute executes the request
 	//  @return ServerResponse
@@ -86,11 +86,11 @@ type ServerAPI interface {
 		Lists all servers for a particular service and pool.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param poolId Alphanumeric string identifying a Pool.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
 		 @return APIListPoolServersRequest
 	*/
-	ListPoolServers(ctx context.Context, serviceId string, poolId string) APIListPoolServersRequest
+	ListPoolServers(ctx context.Context, serviceID string, poolID string) APIListPoolServersRequest
 
 	// ListPoolServersExecute executes the request
 	//  @return []ServerResponse
@@ -102,12 +102,12 @@ type ServerAPI interface {
 		Updates a single server for a particular service and pool.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param poolId Alphanumeric string identifying a Pool.
-		 @param serverId Alphanumeric string identifying a Server.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @param serverID Alphanumeric string identifying a Server.
 		 @return APIUpdatePoolServerRequest
 	*/
-	UpdatePoolServer(ctx context.Context, serviceId string, poolId string, serverId string) APIUpdatePoolServerRequest
+	UpdatePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIUpdatePoolServerRequest
 
 	// UpdatePoolServerExecute executes the request
 	//  @return ServerResponse
@@ -121,8 +121,8 @@ type ServerAPIService service
 type APICreatePoolServerRequest struct {
 	ctx          context.Context
 	APIService   ServerAPI
-	serviceId    string
-	poolId       string
+	serviceID    string
+	poolID       string
 	weight       *int32
 	maxConn      *int32
 	port         *int32
@@ -185,16 +185,16 @@ CreatePoolServer Add a server to a pool
 Creates a single server for a particular service and pool.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param poolId Alphanumeric string identifying a Pool.
+ @param serviceID Alphanumeric string identifying the service.
+ @param poolID Alphanumeric string identifying a Pool.
  @return APICreatePoolServerRequest
 */
-func (a *ServerAPIService) CreatePoolServer(ctx context.Context, serviceId string, poolId string) APICreatePoolServerRequest {
+func (a *ServerAPIService) CreatePoolServer(ctx context.Context, serviceID string, poolID string) APICreatePoolServerRequest {
 	return APICreatePoolServerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		poolId:     poolId,
+		serviceID:  serviceID,
+		poolID:     poolID,
 	}
 }
 
@@ -214,8 +214,8 @@ func (a *ServerAPIService) CreatePoolServerExecute(r APICreatePoolServerRequest)
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/pool/{pool_id}/server"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -327,9 +327,9 @@ func (a *ServerAPIService) CreatePoolServerExecute(r APICreatePoolServerRequest)
 type APIDeletePoolServerRequest struct {
 	ctx        context.Context
 	APIService ServerAPI
-	serviceId  string
-	poolId     string
-	serverId   string
+	serviceID  string
+	poolID     string
+	serverID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -343,18 +343,18 @@ DeletePoolServer Delete a server from a pool
 Deletes a single server for a particular service and pool.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param poolId Alphanumeric string identifying a Pool.
- @param serverId Alphanumeric string identifying a Server.
+ @param serviceID Alphanumeric string identifying the service.
+ @param poolID Alphanumeric string identifying a Pool.
+ @param serverID Alphanumeric string identifying a Server.
  @return APIDeletePoolServerRequest
 */
-func (a *ServerAPIService) DeletePoolServer(ctx context.Context, serviceId string, poolId string, serverId string) APIDeletePoolServerRequest {
+func (a *ServerAPIService) DeletePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIDeletePoolServerRequest {
 	return APIDeletePoolServerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		poolId:     poolId,
-		serverId:   serverId,
+		serviceID:  serviceID,
+		poolID:     poolID,
+		serverID:   serverID,
 	}
 }
 
@@ -374,9 +374,9 @@ func (a *ServerAPIService) DeletePoolServerExecute(r APIDeletePoolServerRequest)
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/pool/{pool_id}/server/{server_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"server_id"+"}", gourl.PathEscape(parameterToString(r.serverId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"server_id"+"}", gourl.PathEscape(parameterToString(r.serverID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -467,9 +467,9 @@ func (a *ServerAPIService) DeletePoolServerExecute(r APIDeletePoolServerRequest)
 type APIGetPoolServerRequest struct {
 	ctx        context.Context
 	APIService ServerAPI
-	serviceId  string
-	poolId     string
-	serverId   string
+	serviceID  string
+	poolID     string
+	serverID   string
 }
 
 // Execute calls the API using the request data configured.
@@ -483,18 +483,18 @@ GetPoolServer Get a pool server
 Gets a single server for a particular service and pool.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param poolId Alphanumeric string identifying a Pool.
- @param serverId Alphanumeric string identifying a Server.
+ @param serviceID Alphanumeric string identifying the service.
+ @param poolID Alphanumeric string identifying a Pool.
+ @param serverID Alphanumeric string identifying a Server.
  @return APIGetPoolServerRequest
 */
-func (a *ServerAPIService) GetPoolServer(ctx context.Context, serviceId string, poolId string, serverId string) APIGetPoolServerRequest {
+func (a *ServerAPIService) GetPoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIGetPoolServerRequest {
 	return APIGetPoolServerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		poolId:     poolId,
-		serverId:   serverId,
+		serviceID:  serviceID,
+		poolID:     poolID,
+		serverID:   serverID,
 	}
 }
 
@@ -514,9 +514,9 @@ func (a *ServerAPIService) GetPoolServerExecute(r APIGetPoolServerRequest) (*Ser
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/pool/{pool_id}/server/{server_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"server_id"+"}", gourl.PathEscape(parameterToString(r.serverId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"server_id"+"}", gourl.PathEscape(parameterToString(r.serverID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -607,8 +607,8 @@ func (a *ServerAPIService) GetPoolServerExecute(r APIGetPoolServerRequest) (*Ser
 type APIListPoolServersRequest struct {
 	ctx        context.Context
 	APIService ServerAPI
-	serviceId  string
-	poolId     string
+	serviceID  string
+	poolID     string
 }
 
 // Execute calls the API using the request data configured.
@@ -622,16 +622,16 @@ ListPoolServers List servers in a pool
 Lists all servers for a particular service and pool.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param poolId Alphanumeric string identifying a Pool.
+ @param serviceID Alphanumeric string identifying the service.
+ @param poolID Alphanumeric string identifying a Pool.
  @return APIListPoolServersRequest
 */
-func (a *ServerAPIService) ListPoolServers(ctx context.Context, serviceId string, poolId string) APIListPoolServersRequest {
+func (a *ServerAPIService) ListPoolServers(ctx context.Context, serviceID string, poolID string) APIListPoolServersRequest {
 	return APIListPoolServersRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		poolId:     poolId,
+		serviceID:  serviceID,
+		poolID:     poolID,
 	}
 }
 
@@ -651,8 +651,8 @@ func (a *ServerAPIService) ListPoolServersExecute(r APIListPoolServersRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/pool/{pool_id}/servers"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -743,9 +743,9 @@ func (a *ServerAPIService) ListPoolServersExecute(r APIListPoolServersRequest) (
 type APIUpdatePoolServerRequest struct {
 	ctx          context.Context
 	APIService   ServerAPI
-	serviceId    string
-	poolId       string
-	serverId     string
+	serviceID    string
+	poolID       string
+	serverID     string
 	weight       *int32
 	maxConn      *int32
 	port         *int32
@@ -808,18 +808,18 @@ UpdatePoolServer Update a server
 Updates a single server for a particular service and pool.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param poolId Alphanumeric string identifying a Pool.
- @param serverId Alphanumeric string identifying a Server.
+ @param serviceID Alphanumeric string identifying the service.
+ @param poolID Alphanumeric string identifying a Pool.
+ @param serverID Alphanumeric string identifying a Server.
  @return APIUpdatePoolServerRequest
 */
-func (a *ServerAPIService) UpdatePoolServer(ctx context.Context, serviceId string, poolId string, serverId string) APIUpdatePoolServerRequest {
+func (a *ServerAPIService) UpdatePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIUpdatePoolServerRequest {
 	return APIUpdatePoolServerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		poolId:     poolId,
-		serverId:   serverId,
+		serviceID:  serviceID,
+		poolID:     poolID,
+		serverID:   serverID,
 	}
 }
 
@@ -839,9 +839,9 @@ func (a *ServerAPIService) UpdatePoolServerExecute(r APIUpdatePoolServerRequest)
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/pool/{pool_id}/server/{server_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"server_id"+"}", gourl.PathEscape(parameterToString(r.serverId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"pool_id"+"}", gourl.PathEscape(parameterToString(r.poolID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"server_id"+"}", gourl.PathEscape(parameterToString(r.serverID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -36,12 +36,12 @@ type BotManagementAPI interface {
 		Get the attributes of a bot in a category.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
-		 @param categoryId The ID of the bot category.
-		 @param botId The ID of the bot.
+		 @param workspaceID The ID of the bot management workspace.
+		 @param categoryID The ID of the bot category.
+		 @param botID The ID of the bot.
 		 @return APIBotManagementGetBotRequest
 	*/
-	BotManagementGetBot(ctx context.Context, workspaceId string, categoryId string, botId string) APIBotManagementGetBotRequest
+	BotManagementGetBot(ctx context.Context, workspaceID string, categoryID string, botID string) APIBotManagementGetBotRequest
 
 	// BotManagementGetBotExecute executes the request
 	//  @return BotManagementBotResponse
@@ -53,11 +53,11 @@ type BotManagementAPI interface {
 		Get the attributes of a bot category.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
-		 @param categoryId The ID of the bot category.
+		 @param workspaceID The ID of the bot management workspace.
+		 @param categoryID The ID of the bot category.
 		 @return APIBotManagementGetCategoryRequest
 	*/
-	BotManagementGetCategory(ctx context.Context, workspaceId string, categoryId string) APIBotManagementGetCategoryRequest
+	BotManagementGetCategory(ctx context.Context, workspaceID string, categoryID string) APIBotManagementGetCategoryRequest
 
 	// BotManagementGetCategoryExecute executes the request
 	//  @return BotManagementCategoryResponse
@@ -69,10 +69,10 @@ type BotManagementAPI interface {
 		Retrieve a bot management workspace.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
+		 @param workspaceID The ID of the bot management workspace.
 		 @return APIBotManagementGetWorkspaceRequest
 	*/
-	BotManagementGetWorkspace(ctx context.Context, workspaceId string) APIBotManagementGetWorkspaceRequest
+	BotManagementGetWorkspace(ctx context.Context, workspaceID string) APIBotManagementGetWorkspaceRequest
 
 	// BotManagementGetWorkspaceExecute executes the request
 	//  @return BotManagementWorkspaceResponse
@@ -84,10 +84,10 @@ type BotManagementAPI interface {
 		List all bots in a workspace's policy across all categories.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
+		 @param workspaceID The ID of the bot management workspace.
 		 @return APIBotManagementListBotsRequest
 	*/
-	BotManagementListBots(ctx context.Context, workspaceId string) APIBotManagementListBotsRequest
+	BotManagementListBots(ctx context.Context, workspaceID string) APIBotManagementListBotsRequest
 
 	// BotManagementListBotsExecute executes the request
 	//  @return BotManagementWorkspaceBotsResponse
@@ -96,13 +96,13 @@ type BotManagementAPI interface {
 	/*
 		BotManagementListCategories List categories
 
-		List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
+		List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category that is set to `inherit`. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
+		 @param workspaceID The ID of the bot management workspace.
 		 @return APIBotManagementListCategoriesRequest
 	*/
-	BotManagementListCategories(ctx context.Context, workspaceId string) APIBotManagementListCategoriesRequest
+	BotManagementListCategories(ctx context.Context, workspaceID string) APIBotManagementListCategoriesRequest
 
 	// BotManagementListCategoriesExecute executes the request
 	//  @return BotManagementCategoriesResponse
@@ -114,11 +114,11 @@ type BotManagementAPI interface {
 		List all bots in a bot category.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
-		 @param categoryId The ID of the bot category.
+		 @param workspaceID The ID of the bot management workspace.
+		 @param categoryID The ID of the bot category.
 		 @return APIBotManagementListCategoryBotsRequest
 	*/
-	BotManagementListCategoryBots(ctx context.Context, workspaceId string, categoryId string) APIBotManagementListCategoryBotsRequest
+	BotManagementListCategoryBots(ctx context.Context, workspaceID string, categoryID string) APIBotManagementListCategoryBotsRequest
 
 	// BotManagementListCategoryBotsExecute executes the request
 	//  @return BotManagementBotsResponse
@@ -144,12 +144,12 @@ type BotManagementAPI interface {
 		Set the action for a bot. Set the action to 'inherit' to apply the category's action or to a specific value to override the category's action.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
-		 @param categoryId The ID of the bot category.
-		 @param botId The ID of the bot.
+		 @param workspaceID The ID of the bot management workspace.
+		 @param categoryID The ID of the bot category.
+		 @param botID The ID of the bot.
 		 @return APIBotManagementUpdateBotRequest
 	*/
-	BotManagementUpdateBot(ctx context.Context, workspaceId string, categoryId string, botId string) APIBotManagementUpdateBotRequest
+	BotManagementUpdateBot(ctx context.Context, workspaceID string, categoryID string, botID string) APIBotManagementUpdateBotRequest
 
 	// BotManagementUpdateBotExecute executes the request
 	//  @return BotManagementBotResponse
@@ -158,18 +158,34 @@ type BotManagementAPI interface {
 	/*
 		BotManagementUpdateCategory Set a category action
 
-		Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.
+		Set the default action for a bot category. Bots set to `inherit` follow this action. Bots with their own action keep it. To remove every bot's own action in the category, use [set the action for all bots in a category](#bot-management-update-category-bots).
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
-		 @param categoryId The ID of the bot category.
+		 @param workspaceID The ID of the bot management workspace.
+		 @param categoryID The ID of the bot category.
 		 @return APIBotManagementUpdateCategoryRequest
 	*/
-	BotManagementUpdateCategory(ctx context.Context, workspaceId string, categoryId string) APIBotManagementUpdateCategoryRequest
+	BotManagementUpdateCategory(ctx context.Context, workspaceID string, categoryID string) APIBotManagementUpdateCategoryRequest
 
 	// BotManagementUpdateCategoryExecute executes the request
 	//  @return BotManagementCategoryResponse
 	BotManagementUpdateCategoryExecute(r APIBotManagementUpdateCategoryRequest) (*BotManagementCategoryResponse, *http.Response, error)
+
+	/*
+		BotManagementUpdateCategoryBots Set the action for all bots in a category
+
+		Set the action for every bot in a category. Setting `inherit` removes each bot's own action, so every bot follows the category's action. The category's own action is unchanged. The update applies to every bot in the category or to none, and repeating it gives the same result. The response lists every bot in the category, including bots that already inherited, and is not paginated.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param workspaceID The ID of the bot management workspace.
+		 @param categoryID The ID of the bot category.
+		 @return APIBotManagementUpdateCategoryBotsRequest
+	*/
+	BotManagementUpdateCategoryBots(ctx context.Context, workspaceID string, categoryID string) APIBotManagementUpdateCategoryBotsRequest
+
+	// BotManagementUpdateCategoryBotsExecute executes the request
+	//  @return BotManagementBotsResponse
+	BotManagementUpdateCategoryBotsExecute(r APIBotManagementUpdateCategoryBotsRequest) (*BotManagementBotsResponse, *http.Response, error)
 
 	/*
 		BotManagementUpdateWorkspace Update a workspace
@@ -177,10 +193,10 @@ type BotManagementAPI interface {
 		Update the attributes of a bot management workspace.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the bot management workspace.
+		 @param workspaceID The ID of the bot management workspace.
 		 @return APIBotManagementUpdateWorkspaceRequest
 	*/
-	BotManagementUpdateWorkspace(ctx context.Context, workspaceId string) APIBotManagementUpdateWorkspaceRequest
+	BotManagementUpdateWorkspace(ctx context.Context, workspaceID string) APIBotManagementUpdateWorkspaceRequest
 
 	// BotManagementUpdateWorkspaceExecute executes the request
 	//  @return BotManagementWorkspaceResponse
@@ -194,9 +210,9 @@ type BotManagementAPIService service
 type APIBotManagementGetBotRequest struct {
 	ctx         context.Context
 	APIService  BotManagementAPI
-	workspaceId string
-	categoryId  string
-	botId       string
+	workspaceID string
+	categoryID  string
+	botID       string
 }
 
 // Execute calls the API using the request data configured.
@@ -210,18 +226,18 @@ BotManagementGetBot Get a bot
 Get the attributes of a bot in a category.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
- @param categoryId The ID of the bot category.
- @param botId The ID of the bot.
+ @param workspaceID The ID of the bot management workspace.
+ @param categoryID The ID of the bot category.
+ @param botID The ID of the bot.
  @return APIBotManagementGetBotRequest
 */
-func (a *BotManagementAPIService) BotManagementGetBot(ctx context.Context, workspaceId string, categoryId string, botId string) APIBotManagementGetBotRequest {
+func (a *BotManagementAPIService) BotManagementGetBot(ctx context.Context, workspaceID string, categoryID string, botID string) APIBotManagementGetBotRequest {
 	return APIBotManagementGetBotRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
-		categoryId:  categoryId,
-		botId:       botId,
+		workspaceID: workspaceID,
+		categoryID:  categoryID,
+		botID:       botID,
 	}
 }
 
@@ -241,9 +257,9 @@ func (a *BotManagementAPIService) BotManagementGetBotExecute(r APIBotManagementG
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots/{bot_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"bot_id"+"}", gourl.PathEscape(parameterToString(r.botId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"bot_id"+"}", gourl.PathEscape(parameterToString(r.botID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -383,8 +399,8 @@ func (a *BotManagementAPIService) BotManagementGetBotExecute(r APIBotManagementG
 type APIBotManagementGetCategoryRequest struct {
 	ctx         context.Context
 	APIService  BotManagementAPI
-	workspaceId string
-	categoryId  string
+	workspaceID string
+	categoryID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -398,16 +414,16 @@ BotManagementGetCategory Get a category
 Get the attributes of a bot category.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
- @param categoryId The ID of the bot category.
+ @param workspaceID The ID of the bot management workspace.
+ @param categoryID The ID of the bot category.
  @return APIBotManagementGetCategoryRequest
 */
-func (a *BotManagementAPIService) BotManagementGetCategory(ctx context.Context, workspaceId string, categoryId string) APIBotManagementGetCategoryRequest {
+func (a *BotManagementAPIService) BotManagementGetCategory(ctx context.Context, workspaceID string, categoryID string) APIBotManagementGetCategoryRequest {
 	return APIBotManagementGetCategoryRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
-		categoryId:  categoryId,
+		workspaceID: workspaceID,
+		categoryID:  categoryID,
 	}
 }
 
@@ -427,8 +443,8 @@ func (a *BotManagementAPIService) BotManagementGetCategoryExecute(r APIBotManage
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -568,7 +584,7 @@ func (a *BotManagementAPIService) BotManagementGetCategoryExecute(r APIBotManage
 type APIBotManagementGetWorkspaceRequest struct {
 	ctx         context.Context
 	APIService  BotManagementAPI
-	workspaceId string
+	workspaceID string
 }
 
 // Execute calls the API using the request data configured.
@@ -582,14 +598,14 @@ BotManagementGetWorkspace Get a workspace
 Retrieve a bot management workspace.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
+ @param workspaceID The ID of the bot management workspace.
  @return APIBotManagementGetWorkspaceRequest
 */
-func (a *BotManagementAPIService) BotManagementGetWorkspace(ctx context.Context, workspaceId string) APIBotManagementGetWorkspaceRequest {
+func (a *BotManagementAPIService) BotManagementGetWorkspace(ctx context.Context, workspaceID string) APIBotManagementGetWorkspaceRequest {
 	return APIBotManagementGetWorkspaceRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
+		workspaceID: workspaceID,
 	}
 }
 
@@ -609,7 +625,7 @@ func (a *BotManagementAPIService) BotManagementGetWorkspaceExecute(r APIBotManag
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -749,7 +765,7 @@ func (a *BotManagementAPIService) BotManagementGetWorkspaceExecute(r APIBotManag
 type APIBotManagementListBotsRequest struct {
 	ctx         context.Context
 	APIService  BotManagementAPI
-	workspaceId string
+	workspaceID string
 	limit       *int32
 	cursor      *string
 }
@@ -777,14 +793,14 @@ BotManagementListBots List all bots in a workspace
 List all bots in a workspace's policy across all categories.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
+ @param workspaceID The ID of the bot management workspace.
  @return APIBotManagementListBotsRequest
 */
-func (a *BotManagementAPIService) BotManagementListBots(ctx context.Context, workspaceId string) APIBotManagementListBotsRequest {
+func (a *BotManagementAPIService) BotManagementListBots(ctx context.Context, workspaceID string) APIBotManagementListBotsRequest {
 	return APIBotManagementListBotsRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
+		workspaceID: workspaceID,
 	}
 }
 
@@ -804,7 +820,7 @@ func (a *BotManagementAPIService) BotManagementListBotsExecute(r APIBotManagemen
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/bots"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -950,7 +966,7 @@ func (a *BotManagementAPIService) BotManagementListBotsExecute(r APIBotManagemen
 type APIBotManagementListCategoriesRequest struct {
 	ctx         context.Context
 	APIService  BotManagementAPI
-	workspaceId string
+	workspaceID string
 	limit       *int32
 	cursor      *string
 }
@@ -975,17 +991,17 @@ func (r APIBotManagementListCategoriesRequest) Execute() (*BotManagementCategori
 /*
 BotManagementListCategories List categories
 
-List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
+List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category that is set to `inherit`. To list the bots themselves, use [list all bots in a workspace](#bot-management-list-bots) or [list bots in a category](#bot-management-list-category-bots).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
+ @param workspaceID The ID of the bot management workspace.
  @return APIBotManagementListCategoriesRequest
 */
-func (a *BotManagementAPIService) BotManagementListCategories(ctx context.Context, workspaceId string) APIBotManagementListCategoriesRequest {
+func (a *BotManagementAPIService) BotManagementListCategories(ctx context.Context, workspaceID string) APIBotManagementListCategoriesRequest {
 	return APIBotManagementListCategoriesRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
+		workspaceID: workspaceID,
 	}
 }
 
@@ -1005,7 +1021,7 @@ func (a *BotManagementAPIService) BotManagementListCategoriesExecute(r APIBotMan
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1151,8 +1167,8 @@ func (a *BotManagementAPIService) BotManagementListCategoriesExecute(r APIBotMan
 type APIBotManagementListCategoryBotsRequest struct {
 	ctx         context.Context
 	APIService  BotManagementAPI
-	workspaceId string
-	categoryId  string
+	workspaceID string
+	categoryID  string
 	limit       *int32
 	cursor      *string
 }
@@ -1180,16 +1196,16 @@ BotManagementListCategoryBots List bots in a category
 List all bots in a bot category.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
- @param categoryId The ID of the bot category.
+ @param workspaceID The ID of the bot management workspace.
+ @param categoryID The ID of the bot category.
  @return APIBotManagementListCategoryBotsRequest
 */
-func (a *BotManagementAPIService) BotManagementListCategoryBots(ctx context.Context, workspaceId string, categoryId string) APIBotManagementListCategoryBotsRequest {
+func (a *BotManagementAPIService) BotManagementListCategoryBots(ctx context.Context, workspaceID string, categoryID string) APIBotManagementListCategoryBotsRequest {
 	return APIBotManagementListCategoryBotsRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
-		categoryId:  categoryId,
+		workspaceID: workspaceID,
+		categoryID:  categoryID,
 	}
 }
 
@@ -1209,8 +1225,8 @@ func (a *BotManagementAPIService) BotManagementListCategoryBotsExecute(r APIBotM
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1356,14 +1372,14 @@ func (a *BotManagementAPIService) BotManagementListCategoryBotsExecute(r APIBotM
 type APIBotManagementListWorkspacesRequest struct {
 	ctx        context.Context
 	APIService BotManagementAPI
-	serviceId  *string
+	serviceID  *string
 	limit      *int32
 	cursor     *string
 }
 
-// ServiceId Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace.
-func (r *APIBotManagementListWorkspacesRequest) ServiceId(serviceId string) *APIBotManagementListWorkspacesRequest {
-	r.serviceId = &serviceId
+// ServiceID Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace.
+func (r *APIBotManagementListWorkspacesRequest) ServiceID(serviceID string) *APIBotManagementListWorkspacesRequest {
+	r.serviceID = &serviceID
 	return r
 }
 
@@ -1420,8 +1436,8 @@ func (a *BotManagementAPIService) BotManagementListWorkspacesExecute(r APIBotMan
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.serviceId != nil {
-		localVarQueryParams.Add("service_id", parameterToString(*r.serviceId, ""))
+	if r.serviceID != nil {
+		localVarQueryParams.Add("service_id", parameterToString(*r.serviceID, ""))
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
@@ -1553,9 +1569,9 @@ func (a *BotManagementAPIService) BotManagementListWorkspacesExecute(r APIBotMan
 type APIBotManagementUpdateBotRequest struct {
 	ctx              context.Context
 	APIService       BotManagementAPI
-	workspaceId      string
-	categoryId       string
-	botId            string
+	workspaceID      string
+	categoryID       string
+	botID            string
 	botManagementBot *BotManagementBot
 }
 
@@ -1576,18 +1592,18 @@ BotManagementUpdateBot Set a bot action
 Set the action for a bot. Set the action to 'inherit' to apply the category's action or to a specific value to override the category's action.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
- @param categoryId The ID of the bot category.
- @param botId The ID of the bot.
+ @param workspaceID The ID of the bot management workspace.
+ @param categoryID The ID of the bot category.
+ @param botID The ID of the bot.
  @return APIBotManagementUpdateBotRequest
 */
-func (a *BotManagementAPIService) BotManagementUpdateBot(ctx context.Context, workspaceId string, categoryId string, botId string) APIBotManagementUpdateBotRequest {
+func (a *BotManagementAPIService) BotManagementUpdateBot(ctx context.Context, workspaceID string, categoryID string, botID string) APIBotManagementUpdateBotRequest {
 	return APIBotManagementUpdateBotRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
-		categoryId:  categoryId,
-		botId:       botId,
+		workspaceID: workspaceID,
+		categoryID:  categoryID,
+		botID:       botID,
 	}
 }
 
@@ -1607,9 +1623,9 @@ func (a *BotManagementAPIService) BotManagementUpdateBotExecute(r APIBotManageme
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots/{bot_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"bot_id"+"}", gourl.PathEscape(parameterToString(r.botId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"bot_id"+"}", gourl.PathEscape(parameterToString(r.botID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1754,8 +1770,8 @@ func (a *BotManagementAPIService) BotManagementUpdateBotExecute(r APIBotManageme
 type APIBotManagementUpdateCategoryRequest struct {
 	ctx                   context.Context
 	APIService            BotManagementAPI
-	workspaceId           string
-	categoryId            string
+	workspaceID           string
+	categoryID            string
 	botManagementCategory *BotManagementCategory
 }
 
@@ -1773,19 +1789,19 @@ func (r APIBotManagementUpdateCategoryRequest) Execute() (*BotManagementCategory
 /*
 BotManagementUpdateCategory Set a category action
 
-Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.
+Set the default action for a bot category. Bots set to `inherit` follow this action. Bots with their own action keep it. To remove every bot's own action in the category, use [set the action for all bots in a category](#bot-management-update-category-bots).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
- @param categoryId The ID of the bot category.
+ @param workspaceID The ID of the bot management workspace.
+ @param categoryID The ID of the bot category.
  @return APIBotManagementUpdateCategoryRequest
 */
-func (a *BotManagementAPIService) BotManagementUpdateCategory(ctx context.Context, workspaceId string, categoryId string) APIBotManagementUpdateCategoryRequest {
+func (a *BotManagementAPIService) BotManagementUpdateCategory(ctx context.Context, workspaceID string, categoryID string) APIBotManagementUpdateCategoryRequest {
 	return APIBotManagementUpdateCategoryRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
-		categoryId:  categoryId,
+		workspaceID: workspaceID,
+		categoryID:  categoryID,
 	}
 }
 
@@ -1805,8 +1821,8 @@ func (a *BotManagementAPIService) BotManagementUpdateCategoryExecute(r APIBotMan
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1947,11 +1963,208 @@ func (a *BotManagementAPIService) BotManagementUpdateCategoryExecute(r APIBotMan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+// APIBotManagementUpdateCategoryBotsRequest represents a request for the resource.
+type APIBotManagementUpdateCategoryBotsRequest struct {
+	ctx                       context.Context
+	APIService                BotManagementAPI
+	workspaceID               string
+	categoryID                string
+	botManagementCategoryBots *BotManagementCategoryBots
+}
+
+// BotManagementCategoryBots returns a pointer to a request.
+func (r *APIBotManagementUpdateCategoryBotsRequest) BotManagementCategoryBots(botManagementCategoryBots BotManagementCategoryBots) *APIBotManagementUpdateCategoryBotsRequest {
+	r.botManagementCategoryBots = &botManagementCategoryBots
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIBotManagementUpdateCategoryBotsRequest) Execute() (*BotManagementBotsResponse, *http.Response, error) {
+	return r.APIService.BotManagementUpdateCategoryBotsExecute(r)
+}
+
+/*
+BotManagementUpdateCategoryBots Set the action for all bots in a category
+
+Set the action for every bot in a category. Setting `inherit` removes each bot's own action, so every bot follows the category's action. The category's own action is unchanged. The update applies to every bot in the category or to none, and repeating it gives the same result. The response lists every bot in the category, including bots that already inherited, and is not paginated.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param workspaceID The ID of the bot management workspace.
+ @param categoryID The ID of the bot category.
+ @return APIBotManagementUpdateCategoryBotsRequest
+*/
+func (a *BotManagementAPIService) BotManagementUpdateCategoryBots(ctx context.Context, workspaceID string, categoryID string) APIBotManagementUpdateCategoryBotsRequest {
+	return APIBotManagementUpdateCategoryBotsRequest{
+		APIService:  a,
+		ctx:         ctx,
+		workspaceID: workspaceID,
+		categoryID:  categoryID,
+	}
+}
+
+// BotManagementUpdateCategoryBotsExecute executes the request
+//  @return BotManagementBotsResponse
+func (a *BotManagementAPIService) BotManagementUpdateCategoryBotsExecute(r APIBotManagementUpdateCategoryBotsRequest) (*BotManagementBotsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *BotManagementBotsResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BotManagementAPIService.BotManagementUpdateCategoryBots")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}/policy/categories/{category_id}/bots"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"category_id"+"}", gourl.PathEscape(parameterToString(r.categoryID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+	if r.botManagementCategoryBots == nil {
+		return localVarReturnValue, nil, reportError("botManagementCategoryBots is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.botManagementCategoryBots
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v BotManagementInvalidRequestError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v BotManagementNotAuthenticatedError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v BotManagementNotAllowedError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v BotManagementNotFoundError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v BotManagementRateLimitError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 // APIBotManagementUpdateWorkspaceRequest represents a request for the resource.
 type APIBotManagementUpdateWorkspaceRequest struct {
 	ctx                    context.Context
 	APIService             BotManagementAPI
-	workspaceId            string
+	workspaceID            string
 	botManagementWorkspace *BotManagementWorkspace
 }
 
@@ -1972,14 +2185,14 @@ BotManagementUpdateWorkspace Update a workspace
 Update the attributes of a bot management workspace.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the bot management workspace.
+ @param workspaceID The ID of the bot management workspace.
  @return APIBotManagementUpdateWorkspaceRequest
 */
-func (a *BotManagementAPIService) BotManagementUpdateWorkspace(ctx context.Context, workspaceId string) APIBotManagementUpdateWorkspaceRequest {
+func (a *BotManagementAPIService) BotManagementUpdateWorkspace(ctx context.Context, workspaceID string) APIBotManagementUpdateWorkspaceRequest {
 	return APIBotManagementUpdateWorkspaceRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
+		workspaceID: workspaceID,
 	}
 }
 
@@ -1999,7 +2212,7 @@ func (a *BotManagementAPIService) BotManagementUpdateWorkspaceExecute(r APIBotMa
 	}
 
 	localVarPath := localBasePath + "/bot-management/v1/workspaces/{workspace_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

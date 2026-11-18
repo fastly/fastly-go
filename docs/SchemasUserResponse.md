@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **EmailHash** | Pointer to **string** | The alphanumeric string identifying a email login. | [optional] [readonly] 
-**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -399,30 +399,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *SchemasUserResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetId
+### GetID
 
-`func (o *SchemasUserResponse) GetId() string`
+`func (o *SchemasUserResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *SchemasUserResponse) GetIdOk() (*string, bool)`
+`func (o *SchemasUserResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *SchemasUserResponse) SetId(v string)`
+`func (o *SchemasUserResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *SchemasUserResponse) HasId() bool`
+`func (o *SchemasUserResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetEmailHash
 
@@ -449,32 +449,30 @@ SetEmailHash sets EmailHash field to given value.
 
 HasEmailHash returns a boolean if a field has been set.
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *SchemasUserResponse) GetCustomerId() string`
+`func (o *SchemasUserResponse) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *SchemasUserResponse) GetCustomerIdOk() (*string, bool)`
+`func (o *SchemasUserResponse) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *SchemasUserResponse) SetCustomerId(v string)`
+`func (o *SchemasUserResponse) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *SchemasUserResponse) HasCustomerId() bool`
+`func (o *SchemasUserResponse) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

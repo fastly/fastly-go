@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TlsSubscriptionsResponse struct for TlsSubscriptionsResponse
-type TlsSubscriptionsResponse struct {
+// TLSSubscriptionsResponse struct for TLSSubscriptionsResponse
+type TLSSubscriptionsResponse struct {
 	Links                *PaginationLinks          `json:"links,omitempty"`
 	Meta                 *PaginationMeta1          `json:"meta,omitempty"`
-	Data                 []TlsSubscriptionResponse `json:"data,omitempty"`
+	Data                 []TLSSubscriptionResponse `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsSubscriptionsResponse TlsSubscriptionsResponse
+type _TLSSubscriptionsResponse TLSSubscriptionsResponse
 
-// NewTlsSubscriptionsResponse instantiates a new TlsSubscriptionsResponse object
+// NewTLSSubscriptionsResponse instantiates a new TLSSubscriptionsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsSubscriptionsResponse() *TlsSubscriptionsResponse {
-	this := TlsSubscriptionsResponse{}
+func NewTLSSubscriptionsResponse() *TLSSubscriptionsResponse {
+	this := TLSSubscriptionsResponse{}
 	return &this
 }
 
-// NewTlsSubscriptionsResponseWithDefaults instantiates a new TlsSubscriptionsResponse object
+// NewTLSSubscriptionsResponseWithDefaults instantiates a new TLSSubscriptionsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsSubscriptionsResponseWithDefaults() *TlsSubscriptionsResponse {
-	this := TlsSubscriptionsResponse{}
+func NewTLSSubscriptionsResponseWithDefaults() *TLSSubscriptionsResponse {
+	this := TLSSubscriptionsResponse{}
 	return &this
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *TlsSubscriptionsResponse) GetLinks() PaginationLinks {
+func (o *TLSSubscriptionsResponse) GetLinks() PaginationLinks {
 	if o == nil || o.Links == nil {
 		var ret PaginationLinks
 		return ret
@@ -54,7 +54,7 @@ func (o *TlsSubscriptionsResponse) GetLinks() PaginationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsSubscriptionsResponse) GetLinksOk() (*PaginationLinks, bool) {
+func (o *TLSSubscriptionsResponse) GetLinksOk() (*PaginationLinks, bool) {
 	if o == nil || o.Links == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *TlsSubscriptionsResponse) GetLinksOk() (*PaginationLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *TlsSubscriptionsResponse) HasLinks() bool {
+func (o *TLSSubscriptionsResponse) HasLinks() bool {
 	if o != nil && o.Links != nil {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *TlsSubscriptionsResponse) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given PaginationLinks and assigns it to the Links field.
-func (o *TlsSubscriptionsResponse) SetLinks(v PaginationLinks) {
+func (o *TLSSubscriptionsResponse) SetLinks(v PaginationLinks) {
 	o.Links = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *TlsSubscriptionsResponse) GetMeta() PaginationMeta1 {
+func (o *TLSSubscriptionsResponse) GetMeta() PaginationMeta1 {
 	if o == nil || o.Meta == nil {
 		var ret PaginationMeta1
 		return ret
@@ -86,7 +86,7 @@ func (o *TlsSubscriptionsResponse) GetMeta() PaginationMeta1 {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsSubscriptionsResponse) GetMetaOk() (*PaginationMeta1, bool) {
+func (o *TLSSubscriptionsResponse) GetMetaOk() (*PaginationMeta1, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *TlsSubscriptionsResponse) GetMetaOk() (*PaginationMeta1, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *TlsSubscriptionsResponse) HasMeta() bool {
+func (o *TLSSubscriptionsResponse) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -103,14 +103,14 @@ func (o *TlsSubscriptionsResponse) HasMeta() bool {
 }
 
 // SetMeta gets a reference to the given PaginationMeta1 and assigns it to the Meta field.
-func (o *TlsSubscriptionsResponse) SetMeta(v PaginationMeta1) {
+func (o *TLSSubscriptionsResponse) SetMeta(v PaginationMeta1) {
 	o.Meta = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TlsSubscriptionsResponse) GetData() []TlsSubscriptionResponse {
+func (o *TLSSubscriptionsResponse) GetData() []TLSSubscriptionResponse {
 	if o == nil || o.Data == nil {
-		var ret []TlsSubscriptionResponse
+		var ret []TLSSubscriptionResponse
 		return ret
 	}
 	return o.Data
@@ -118,7 +118,7 @@ func (o *TlsSubscriptionsResponse) GetData() []TlsSubscriptionResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsSubscriptionsResponse) GetDataOk() ([]TlsSubscriptionResponse, bool) {
+func (o *TLSSubscriptionsResponse) GetDataOk() ([]TLSSubscriptionResponse, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *TlsSubscriptionsResponse) GetDataOk() ([]TlsSubscriptionResponse, bool)
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TlsSubscriptionsResponse) HasData() bool {
+func (o *TLSSubscriptionsResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -134,14 +134,14 @@ func (o *TlsSubscriptionsResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []TlsSubscriptionResponse and assigns it to the Data field.
-func (o *TlsSubscriptionsResponse) SetData(v []TlsSubscriptionResponse) {
+// SetData gets a reference to the given []TLSSubscriptionResponse and assigns it to the Data field.
+func (o *TLSSubscriptionsResponse) SetData(v []TLSSubscriptionResponse) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsSubscriptionsResponse) MarshalJSON() ([]byte, error) {
+func (o TLSSubscriptionsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
@@ -162,11 +162,11 @@ func (o TlsSubscriptionsResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsSubscriptionsResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsSubscriptionsResponse := _TlsSubscriptionsResponse{}
+func (o *TLSSubscriptionsResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSSubscriptionsResponse := _TLSSubscriptionsResponse{}
 
-	if err = json.Unmarshal(bytes, &varTlsSubscriptionsResponse); err == nil {
-		*o = TlsSubscriptionsResponse(varTlsSubscriptionsResponse)
+	if err = json.Unmarshal(bytes, &varTLSSubscriptionsResponse); err == nil {
+		*o = TLSSubscriptionsResponse(varTLSSubscriptionsResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -181,48 +181,48 @@ func (o *TlsSubscriptionsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsSubscriptionsResponse is a helper abstraction for handling nullable tlssubscriptionsresponse types.
-type NullableTlsSubscriptionsResponse struct {
-	value *TlsSubscriptionsResponse
+// NullableTLSSubscriptionsResponse is a helper abstraction for handling nullable tlssubscriptionsresponse types.
+type NullableTLSSubscriptionsResponse struct {
+	value *TLSSubscriptionsResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsSubscriptionsResponse) Get() *TlsSubscriptionsResponse {
+func (v NullableTLSSubscriptionsResponse) Get() *TLSSubscriptionsResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsSubscriptionsResponse) Set(val *TlsSubscriptionsResponse) {
+func (v *NullableTLSSubscriptionsResponse) Set(val *TLSSubscriptionsResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsSubscriptionsResponse) IsSet() bool {
+func (v NullableTLSSubscriptionsResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsSubscriptionsResponse) Unset() {
+func (v *NullableTLSSubscriptionsResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsSubscriptionsResponse returns a pointer to a new instance of NullableTlsSubscriptionsResponse.
-func NewNullableTlsSubscriptionsResponse(val *TlsSubscriptionsResponse) *NullableTlsSubscriptionsResponse {
-	return &NullableTlsSubscriptionsResponse{value: val, isSet: true}
+// NewNullableTLSSubscriptionsResponse returns a pointer to a new instance of NullableTLSSubscriptionsResponse.
+func NewNullableTLSSubscriptionsResponse(val *TLSSubscriptionsResponse) *NullableTLSSubscriptionsResponse {
+	return &NullableTLSSubscriptionsResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsSubscriptionsResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTLSSubscriptionsResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsSubscriptionsResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSSubscriptionsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

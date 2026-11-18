@@ -33,12 +33,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductDdosProtectionAPI.DisableProductDdosProtection(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductDdosProtectionAPI.DisableProductDdosProtection(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.DisableProductDdosProtection`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -98,13 +98,13 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     ddosProtectionRequestEnableMode := *openapiclient.NewDdosProtectionRequestEnableMode() // DdosProtectionRequestEnableMode |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductDdosProtectionAPI.EnableProductDdosProtection(ctx, serviceId).DdosProtectionRequestEnableMode(ddosProtectionRequestEnableMode).Execute()
+    resp, r, err := apiClient.ProductDdosProtectionAPI.EnableProductDdosProtection(ctx, serviceID).DdosProtectionRequestEnableMode(ddosProtectionRequestEnableMode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.EnableProductDdosProtection`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -166,12 +166,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductDdosProtectionAPI.GetProductDdosProtection(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductDdosProtectionAPI.GetProductDdosProtection(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.GetProductDdosProtection`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -187,7 +187,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -233,12 +233,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductDdosProtectionAPI.GetProductDdosProtectionConfiguration(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductDdosProtectionAPI.GetProductDdosProtectionConfiguration(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.GetProductDdosProtectionConfiguration`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -254,7 +254,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -359,13 +359,13 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     ddosProtectionRequestUpdateConfiguration := *openapiclient.NewDdosProtectionRequestUpdateConfiguration("Mode_example") // DdosProtectionRequestUpdateConfiguration |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductDdosProtectionAPI.SetProductDdosProtectionConfiguration(ctx, serviceId).DdosProtectionRequestUpdateConfiguration(ddosProtectionRequestUpdateConfiguration).Execute()
+    resp, r, err := apiClient.ProductDdosProtectionAPI.SetProductDdosProtectionConfiguration(ctx, serviceID).DdosProtectionRequestUpdateConfiguration(ddosProtectionRequestUpdateConfiguration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.SetProductDdosProtectionConfiguration`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -381,7 +381,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -406,4 +406,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

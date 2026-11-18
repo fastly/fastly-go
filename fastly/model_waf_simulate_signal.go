@@ -41,9 +41,9 @@ type _WafSimulateSignal WafSimulateSignal
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWafSimulateSignal(type_ string, detector string, detectorScope string, redaction string) *WafSimulateSignal {
+func NewWafSimulateSignal(resourceType string, detector string, detectorScope string, redaction string) *WafSimulateSignal {
 	this := WafSimulateSignal{}
-	this.Type = type_
+	this.Type = resourceType
 	this.Detector = detector
 	this.DetectorScope = detectorScope
 	this.Redaction = redaction

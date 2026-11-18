@@ -1,56 +1,54 @@
-# RelationshipTlsConfigurationForTlsSubscription
+# RelationshipTLSConfigurationForTLSSubscription
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsConfiguration** | Pointer to [**RelationshipTlsConfigurationTlsConfiguration**](RelationshipTlsConfigurationTlsConfiguration.md) |  | [optional] 
+**TLSConfiguration** | Pointer to [**RelationshipTLSConfigurationTLSConfiguration**](RelationshipTLSConfigurationTLSConfiguration.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTlsConfigurationForTlsSubscription
+### NewRelationshipTLSConfigurationForTLSSubscription
 
-`func NewRelationshipTlsConfigurationForTlsSubscription() *RelationshipTlsConfigurationForTlsSubscription`
+`func NewRelationshipTLSConfigurationForTLSSubscription() *RelationshipTLSConfigurationForTLSSubscription`
 
-NewRelationshipTlsConfigurationForTlsSubscription instantiates a new RelationshipTlsConfigurationForTlsSubscription object
+NewRelationshipTLSConfigurationForTLSSubscription instantiates a new RelationshipTLSConfigurationForTLSSubscription object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTlsConfigurationForTlsSubscriptionWithDefaults
+### NewRelationshipTLSConfigurationForTLSSubscriptionWithDefaults
 
-`func NewRelationshipTlsConfigurationForTlsSubscriptionWithDefaults() *RelationshipTlsConfigurationForTlsSubscription`
+`func NewRelationshipTLSConfigurationForTLSSubscriptionWithDefaults() *RelationshipTLSConfigurationForTLSSubscription`
 
-NewRelationshipTlsConfigurationForTlsSubscriptionWithDefaults instantiates a new RelationshipTlsConfigurationForTlsSubscription object
+NewRelationshipTLSConfigurationForTLSSubscriptionWithDefaults instantiates a new RelationshipTLSConfigurationForTLSSubscription object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsConfiguration
+### GetTLSConfiguration
 
-`func (o *RelationshipTlsConfigurationForTlsSubscription) GetTlsConfiguration() RelationshipTlsConfigurationTlsConfiguration`
+`func (o *RelationshipTLSConfigurationForTLSSubscription) GetTLSConfiguration() RelationshipTLSConfigurationTLSConfiguration`
 
-GetTlsConfiguration returns the TlsConfiguration field if non-nil, zero value otherwise.
+GetTLSConfiguration returns the TLSConfiguration field if non-nil, zero value otherwise.
 
-### GetTlsConfigurationOk
+### GetTLSConfigurationOk
 
-`func (o *RelationshipTlsConfigurationForTlsSubscription) GetTlsConfigurationOk() (*RelationshipTlsConfigurationTlsConfiguration, bool)`
+`func (o *RelationshipTLSConfigurationForTLSSubscription) GetTLSConfigurationOk() (*RelationshipTLSConfigurationTLSConfiguration, bool)`
 
-GetTlsConfigurationOk returns a tuple with the TlsConfiguration field if it's non-nil, zero value otherwise
+GetTLSConfigurationOk returns a tuple with the TLSConfiguration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsConfiguration
+### SetTLSConfiguration
 
-`func (o *RelationshipTlsConfigurationForTlsSubscription) SetTlsConfiguration(v RelationshipTlsConfigurationTlsConfiguration)`
+`func (o *RelationshipTLSConfigurationForTLSSubscription) SetTLSConfiguration(v RelationshipTLSConfigurationTLSConfiguration)`
 
-SetTlsConfiguration sets TlsConfiguration field to given value.
+SetTLSConfiguration sets TLSConfiguration field to given value.
 
-### HasTlsConfiguration
+### HasTLSConfiguration
 
-`func (o *RelationshipTlsConfigurationForTlsSubscription) HasTlsConfiguration() bool`
+`func (o *RelationshipTLSConfigurationForTLSSubscription) HasTLSConfiguration() bool`
 
-HasTlsConfiguration returns a boolean if a field has been set.
+HasTLSConfiguration returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

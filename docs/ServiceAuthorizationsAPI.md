@@ -97,12 +97,12 @@ import (
 )
 
 func main() {
-    serviceAuthorizationId := "serviceAuthorizationId_example" // string | Alphanumeric string identifying a service authorization.
+    serviceAuthorizationID := "serviceAuthorizationId_example" // string | Alphanumeric string identifying a service authorization.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAuthorizationsAPI.DeleteServiceAuthorization(ctx, serviceAuthorizationId).Execute()
+    resp, r, err := apiClient.ServiceAuthorizationsAPI.DeleteServiceAuthorization(ctx, serviceAuthorizationID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthorizationsAPI.DeleteServiceAuthorization`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -116,7 +116,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceAuthorizationId** | **string** | Alphanumeric string identifying a service authorization. | 
+**serviceAuthorizationID** | **string** | Alphanumeric string identifying a service authorization. | 
 
 ### Other Parameters
 
@@ -162,7 +162,7 @@ import (
 )
 
 func main() {
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -188,7 +188,7 @@ Other parameters are passed through a pointer to a apiDeleteServiceAuthorization
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
@@ -289,12 +289,12 @@ import (
 )
 
 func main() {
-    serviceAuthorizationId := "serviceAuthorizationId_example" // string | Alphanumeric string identifying a service authorization.
+    serviceAuthorizationID := "serviceAuthorizationId_example" // string | Alphanumeric string identifying a service authorization.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAuthorizationsAPI.ShowServiceAuthorization(ctx, serviceAuthorizationId).Execute()
+    resp, r, err := apiClient.ServiceAuthorizationsAPI.ShowServiceAuthorization(ctx, serviceAuthorizationID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthorizationsAPI.ShowServiceAuthorization`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -310,7 +310,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceAuthorizationId** | **string** | Alphanumeric string identifying a service authorization. | 
+**serviceAuthorizationID** | **string** | Alphanumeric string identifying a service authorization. | 
 
 ### Other Parameters
 
@@ -356,13 +356,13 @@ import (
 )
 
 func main() {
-    serviceAuthorizationId := "serviceAuthorizationId_example" // string | Alphanumeric string identifying a service authorization.
+    serviceAuthorizationID := "serviceAuthorizationId_example" // string | Alphanumeric string identifying a service authorization.
     serviceAuthorization := *openapiclient.NewServiceAuthorization() // ServiceAuthorization |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAuthorizationsAPI.UpdateServiceAuthorization(ctx, serviceAuthorizationId).ServiceAuthorization(serviceAuthorization).Execute()
+    resp, r, err := apiClient.ServiceAuthorizationsAPI.UpdateServiceAuthorization(ctx, serviceAuthorizationID).ServiceAuthorization(serviceAuthorization).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthorizationsAPI.UpdateServiceAuthorization`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -378,7 +378,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceAuthorizationId** | **string** | Alphanumeric string identifying a service authorization. | 
+**serviceAuthorizationID** | **string** | Alphanumeric string identifying a service authorization. | 
 
 ### Other Parameters
 
@@ -424,7 +424,7 @@ import (
 )
 
 func main() {
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
+    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -450,7 +450,7 @@ Other parameters are passed through a pointer to a apiUpdateServiceAuthorization
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]map[string]any** |  | 
 
 ### Return type
 
@@ -466,4 +466,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json; ext=bulk
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

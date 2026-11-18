@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the user group. | [optional] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the user group. | [optional] 
 **Name** | Pointer to **string** | Name of the user group. | [optional] 
 **Description** | Pointer to **string** | Description of the user group. | [optional] 
 **InvitationsCount** | Pointer to **int32** | Number of invitations added to the user group. | [optional] 
@@ -30,30 +30,30 @@ NewIamUserGroupAllOfWithDefaults instantiates a new IamUserGroupAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *IamUserGroupAllOf) GetId() string`
+`func (o *IamUserGroupAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *IamUserGroupAllOf) GetIdOk() (*string, bool)`
+`func (o *IamUserGroupAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *IamUserGroupAllOf) SetId(v string)`
+`func (o *IamUserGroupAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *IamUserGroupAllOf) HasId() bool`
+`func (o *IamUserGroupAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -182,5 +182,3 @@ HasRolesCount returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

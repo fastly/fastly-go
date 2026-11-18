@@ -36,10 +36,10 @@ type NgwafAgentKeysAPI interface {
 		List agent keys for a workspace.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the workspace.
+		 @param workspaceID The ID of the workspace.
 		 @return APINgwafListAgentKeysRequest
 	*/
-	NgwafListAgentKeys(ctx context.Context, workspaceId string) APINgwafListAgentKeysRequest
+	NgwafListAgentKeys(ctx context.Context, workspaceID string) APINgwafListAgentKeysRequest
 
 	// NgwafListAgentKeysExecute executes the request
 	//  @return InlineResponse20019
@@ -53,7 +53,7 @@ type NgwafAgentKeysAPIService service
 type APINgwafListAgentKeysRequest struct {
 	ctx         context.Context
 	APIService  NgwafAgentKeysAPI
-	workspaceId string
+	workspaceID string
 }
 
 // Execute calls the API using the request data configured.
@@ -67,14 +67,14 @@ NgwafListAgentKeys List agent keys for a workspace
 List agent keys for a workspace.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the workspace.
+ @param workspaceID The ID of the workspace.
  @return APINgwafListAgentKeysRequest
 */
-func (a *NgwafAgentKeysAPIService) NgwafListAgentKeys(ctx context.Context, workspaceId string) APINgwafListAgentKeysRequest {
+func (a *NgwafAgentKeysAPIService) NgwafListAgentKeys(ctx context.Context, workspaceID string) APINgwafListAgentKeysRequest {
 	return APINgwafListAgentKeysRequest{
 		APIService:  a,
 		ctx:         ctx,
-		workspaceId: workspaceId,
+		workspaceID: workspaceID,
 	}
 }
 
@@ -94,7 +94,7 @@ func (a *NgwafAgentKeysAPIService) NgwafListAgentKeysExecute(r APINgwafListAgent
 	}
 
 	localVarPath := localBasePath + "/ngwaf/v1/workspaces/{workspace_id}/agent-keys"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -154,7 +154,7 @@ func (a *NgwafAgentKeysAPIService) NgwafListAgentKeysExecute(r APINgwafListAgent
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -164,7 +164,7 @@ func (a *NgwafAgentKeysAPIService) NgwafListAgentKeysExecute(r APINgwafListAgent
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -174,7 +174,7 @@ func (a *NgwafAgentKeysAPIService) NgwafListAgentKeysExecute(r APINgwafListAgent
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -184,7 +184,7 @@ func (a *NgwafAgentKeysAPIService) NgwafListAgentKeysExecute(r APINgwafListAgent
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -194,7 +194,7 @@ func (a *NgwafAgentKeysAPIService) NgwafListAgentKeysExecute(r APINgwafListAgent
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

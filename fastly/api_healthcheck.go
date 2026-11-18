@@ -36,11 +36,11 @@ type HealthcheckAPI interface {
 		Create a health check for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APICreateHealthcheckRequest
 	*/
-	CreateHealthcheck(ctx context.Context, serviceId string, versionId int32) APICreateHealthcheckRequest
+	CreateHealthcheck(ctx context.Context, serviceID string, versionID int32) APICreateHealthcheckRequest
 
 	// CreateHealthcheckExecute executes the request
 	//  @return HealthcheckResponse
@@ -52,12 +52,12 @@ type HealthcheckAPI interface {
 		Delete the health check for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param healthcheckName The name of the health check.
 		 @return APIDeleteHealthcheckRequest
 	*/
-	DeleteHealthcheck(ctx context.Context, serviceId string, versionId int32, healthcheckName string) APIDeleteHealthcheckRequest
+	DeleteHealthcheck(ctx context.Context, serviceID string, versionID int32, healthcheckName string) APIDeleteHealthcheckRequest
 
 	// DeleteHealthcheckExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type HealthcheckAPI interface {
 		Get the health check for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param healthcheckName The name of the health check.
 		 @return APIGetHealthcheckRequest
 	*/
-	GetHealthcheck(ctx context.Context, serviceId string, versionId int32, healthcheckName string) APIGetHealthcheckRequest
+	GetHealthcheck(ctx context.Context, serviceID string, versionID int32, healthcheckName string) APIGetHealthcheckRequest
 
 	// GetHealthcheckExecute executes the request
 	//  @return HealthcheckResponse
@@ -86,11 +86,11 @@ type HealthcheckAPI interface {
 		List all of the health checks for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APIListHealthchecksRequest
 	*/
-	ListHealthchecks(ctx context.Context, serviceId string, versionId int32) APIListHealthchecksRequest
+	ListHealthchecks(ctx context.Context, serviceID string, versionID int32) APIListHealthchecksRequest
 
 	// ListHealthchecksExecute executes the request
 	//  @return []HealthcheckResponse
@@ -102,12 +102,12 @@ type HealthcheckAPI interface {
 		Update the health check for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @param healthcheckName The name of the health check.
 		 @return APIUpdateHealthcheckRequest
 	*/
-	UpdateHealthcheck(ctx context.Context, serviceId string, versionId int32, healthcheckName string) APIUpdateHealthcheckRequest
+	UpdateHealthcheck(ctx context.Context, serviceID string, versionID int32, healthcheckName string) APIUpdateHealthcheckRequest
 
 	// UpdateHealthcheckExecute executes the request
 	//  @return HealthcheckResponse
@@ -121,8 +121,8 @@ type HealthcheckAPIService service
 type APICreateHealthcheckRequest struct {
 	ctx              context.Context
 	APIService       HealthcheckAPI
-	serviceId        string
-	versionId        int32
+	serviceID        string
+	versionID        int32
 	checkInterval    *int32
 	comment          *string
 	expectedResponse *int32
@@ -168,8 +168,8 @@ func (r *APICreateHealthcheckRequest) Host(host string) *APICreateHealthcheckReq
 	return r
 }
 
-// HttpVersion Whether to use version 1.0 or 1.1 HTTP.
-func (r *APICreateHealthcheckRequest) HttpVersion(httpVersion string) *APICreateHealthcheckRequest {
+// HTTPVersion Whether to use version 1.0 or 1.1 HTTP.
+func (r *APICreateHealthcheckRequest) HTTPVersion(httpVersion string) *APICreateHealthcheckRequest {
 	r.httpVersion = &httpVersion
 	return r
 }
@@ -227,16 +227,16 @@ CreateHealthcheck Create a health check
 Create a health check for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APICreateHealthcheckRequest
 */
-func (a *HealthcheckAPIService) CreateHealthcheck(ctx context.Context, serviceId string, versionId int32) APICreateHealthcheckRequest {
+func (a *HealthcheckAPIService) CreateHealthcheck(ctx context.Context, serviceID string, versionID int32) APICreateHealthcheckRequest {
 	return APICreateHealthcheckRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -256,8 +256,8 @@ func (a *HealthcheckAPIService) CreateHealthcheckExecute(r APICreateHealthcheckR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/healthcheck"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -387,8 +387,8 @@ func (a *HealthcheckAPIService) CreateHealthcheckExecute(r APICreateHealthcheckR
 type APIDeleteHealthcheckRequest struct {
 	ctx             context.Context
 	APIService      HealthcheckAPI
-	serviceId       string
-	versionId       int32
+	serviceID       string
+	versionID       int32
 	healthcheckName string
 }
 
@@ -403,17 +403,17 @@ DeleteHealthcheck Delete a health check
 Delete the health check for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param healthcheckName The name of the health check.
  @return APIDeleteHealthcheckRequest
 */
-func (a *HealthcheckAPIService) DeleteHealthcheck(ctx context.Context, serviceId string, versionId int32, healthcheckName string) APIDeleteHealthcheckRequest {
+func (a *HealthcheckAPIService) DeleteHealthcheck(ctx context.Context, serviceID string, versionID int32, healthcheckName string) APIDeleteHealthcheckRequest {
 	return APIDeleteHealthcheckRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceId:       serviceId,
-		versionId:       versionId,
+		serviceID:       serviceID,
+		versionID:       versionID,
 		healthcheckName: healthcheckName,
 	}
 }
@@ -434,8 +434,8 @@ func (a *HealthcheckAPIService) DeleteHealthcheckExecute(r APIDeleteHealthcheckR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"healthcheck_name"+"}", gourl.PathEscape(parameterToString(r.healthcheckName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -527,8 +527,8 @@ func (a *HealthcheckAPIService) DeleteHealthcheckExecute(r APIDeleteHealthcheckR
 type APIGetHealthcheckRequest struct {
 	ctx             context.Context
 	APIService      HealthcheckAPI
-	serviceId       string
-	versionId       int32
+	serviceID       string
+	versionID       int32
 	healthcheckName string
 }
 
@@ -543,17 +543,17 @@ GetHealthcheck Get a health check
 Get the health check for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param healthcheckName The name of the health check.
  @return APIGetHealthcheckRequest
 */
-func (a *HealthcheckAPIService) GetHealthcheck(ctx context.Context, serviceId string, versionId int32, healthcheckName string) APIGetHealthcheckRequest {
+func (a *HealthcheckAPIService) GetHealthcheck(ctx context.Context, serviceID string, versionID int32, healthcheckName string) APIGetHealthcheckRequest {
 	return APIGetHealthcheckRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceId:       serviceId,
-		versionId:       versionId,
+		serviceID:       serviceID,
+		versionID:       versionID,
 		healthcheckName: healthcheckName,
 	}
 }
@@ -574,8 +574,8 @@ func (a *HealthcheckAPIService) GetHealthcheckExecute(r APIGetHealthcheckRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"healthcheck_name"+"}", gourl.PathEscape(parameterToString(r.healthcheckName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -667,8 +667,8 @@ func (a *HealthcheckAPIService) GetHealthcheckExecute(r APIGetHealthcheckRequest
 type APIListHealthchecksRequest struct {
 	ctx        context.Context
 	APIService HealthcheckAPI
-	serviceId  string
-	versionId  int32
+	serviceID  string
+	versionID  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -682,16 +682,16 @@ ListHealthchecks List health checks
 List all of the health checks for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APIListHealthchecksRequest
 */
-func (a *HealthcheckAPIService) ListHealthchecks(ctx context.Context, serviceId string, versionId int32) APIListHealthchecksRequest {
+func (a *HealthcheckAPIService) ListHealthchecks(ctx context.Context, serviceID string, versionID int32) APIListHealthchecksRequest {
 	return APIListHealthchecksRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -711,8 +711,8 @@ func (a *HealthcheckAPIService) ListHealthchecksExecute(r APIListHealthchecksReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/healthcheck"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -803,8 +803,8 @@ func (a *HealthcheckAPIService) ListHealthchecksExecute(r APIListHealthchecksReq
 type APIUpdateHealthcheckRequest struct {
 	ctx              context.Context
 	APIService       HealthcheckAPI
-	serviceId        string
-	versionId        int32
+	serviceID        string
+	versionID        int32
 	healthcheckName  string
 	checkInterval    *int32
 	comment          *string
@@ -851,8 +851,8 @@ func (r *APIUpdateHealthcheckRequest) Host(host string) *APIUpdateHealthcheckReq
 	return r
 }
 
-// HttpVersion Whether to use version 1.0 or 1.1 HTTP.
-func (r *APIUpdateHealthcheckRequest) HttpVersion(httpVersion string) *APIUpdateHealthcheckRequest {
+// HTTPVersion Whether to use version 1.0 or 1.1 HTTP.
+func (r *APIUpdateHealthcheckRequest) HTTPVersion(httpVersion string) *APIUpdateHealthcheckRequest {
 	r.httpVersion = &httpVersion
 	return r
 }
@@ -910,17 +910,17 @@ UpdateHealthcheck Update a health check
 Update the health check for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @param healthcheckName The name of the health check.
  @return APIUpdateHealthcheckRequest
 */
-func (a *HealthcheckAPIService) UpdateHealthcheck(ctx context.Context, serviceId string, versionId int32, healthcheckName string) APIUpdateHealthcheckRequest {
+func (a *HealthcheckAPIService) UpdateHealthcheck(ctx context.Context, serviceID string, versionID int32, healthcheckName string) APIUpdateHealthcheckRequest {
 	return APIUpdateHealthcheckRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceId:       serviceId,
-		versionId:       versionId,
+		serviceID:       serviceID,
+		versionID:       versionID,
 		healthcheckName: healthcheckName,
 	}
 }
@@ -941,8 +941,8 @@ func (a *HealthcheckAPIService) UpdateHealthcheckExecute(r APIUpdateHealthcheckR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"healthcheck_name"+"}", gourl.PathEscape(parameterToString(r.healthcheckName, "")))
 
 	localVarHeaderParams := make(map[string]string)

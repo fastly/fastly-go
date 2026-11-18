@@ -19,7 +19,7 @@ import (
 // PathChange Modifications to an existing path between versions.
 type PathChange struct {
 	// Alphanumeric string identifying the path. Stable across versions of the routing config.
-	PathId *string `json:"path_id,omitempty"`
+	PathID *string `json:"path_id,omitempty"`
 	// The current path pattern.
 	Path *string `json:"path,omitempty"`
 	// The previous path pattern, if it changed.
@@ -52,36 +52,36 @@ func NewPathChangeWithDefaults() *PathChange {
 	return &this
 }
 
-// GetPathId returns the PathId field value if set, zero value otherwise.
-func (o *PathChange) GetPathId() string {
-	if o == nil || o.PathId == nil {
+// GetPathID returns the PathID field value if set, zero value otherwise.
+func (o *PathChange) GetPathID() string {
+	if o == nil || o.PathID == nil {
 		var ret string
 		return ret
 	}
-	return *o.PathId
+	return *o.PathID
 }
 
-// GetPathIdOk returns a tuple with the PathId field value if set, nil otherwise
+// GetPathIDOk returns a tuple with the PathID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PathChange) GetPathIdOk() (*string, bool) {
-	if o == nil || o.PathId == nil {
+func (o *PathChange) GetPathIDOk() (*string, bool) {
+	if o == nil || o.PathID == nil {
 		return nil, false
 	}
-	return o.PathId, true
+	return o.PathID, true
 }
 
-// HasPathId returns a boolean if a field has been set.
-func (o *PathChange) HasPathId() bool {
-	if o != nil && o.PathId != nil {
+// HasPathID returns a boolean if a field has been set.
+func (o *PathChange) HasPathID() bool {
+	if o != nil && o.PathID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPathId gets a reference to the given string and assigns it to the PathId field.
-func (o *PathChange) SetPathId(v string) {
-	o.PathId = &v
+// SetPathID gets a reference to the given string and assigns it to the PathID field.
+func (o *PathChange) SetPathID(v string) {
+	o.PathID = &v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -248,8 +248,8 @@ func (o *PathChange) SetRulesDeleted(v []RuleResponse) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PathChange) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.PathId != nil {
-		toSerialize["path_id"] = o.PathId
+	if o.PathID != nil {
+		toSerialize["path_id"] = o.PathID
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path

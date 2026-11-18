@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Unique script identifier | [optional] 
-**PageId** | Pointer to **string** | Parent page ID | [optional] 
+**ID** | Pointer to **string** | Unique script identifier | [optional] 
+**PageID** | Pointer to **string** | Parent page ID | [optional] 
 **Source** | Pointer to **string** | Script source (inline or external URL) | [optional] 
 **Urls** | Pointer to **[]string** | URLs where this script was observed | [optional] 
 **FirstSeenAt** | Pointer to **time.Time** |  | [optional] 
@@ -35,55 +35,55 @@ NewScriptWithDefaults instantiates a new Script object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *Script) GetId() string`
+`func (o *Script) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *Script) GetIdOk() (*string, bool)`
+`func (o *Script) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *Script) SetId(v string)`
+`func (o *Script) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *Script) HasId() bool`
+`func (o *Script) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetPageId
+### GetPageID
 
-`func (o *Script) GetPageId() string`
+`func (o *Script) GetPageID() string`
 
-GetPageId returns the PageId field if non-nil, zero value otherwise.
+GetPageID returns the PageID field if non-nil, zero value otherwise.
 
-### GetPageIdOk
+### GetPageIDOk
 
-`func (o *Script) GetPageIdOk() (*string, bool)`
+`func (o *Script) GetPageIDOk() (*string, bool)`
 
-GetPageIdOk returns a tuple with the PageId field if it's non-nil, zero value otherwise
+GetPageIDOk returns a tuple with the PageID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPageId
+### SetPageID
 
-`func (o *Script) SetPageId(v string)`
+`func (o *Script) SetPageID(v string)`
 
-SetPageId sets PageId field to given value.
+SetPageID sets PageID field to given value.
 
-### HasPageId
+### HasPageID
 
-`func (o *Script) HasPageId() bool`
+`func (o *Script) HasPageID() bool`
 
-HasPageId returns a boolean if a field has been set.
+HasPageID returns a boolean if a field has been set.
 
 ### GetSource
 
@@ -312,5 +312,3 @@ HasAuthorizedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

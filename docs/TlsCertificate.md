@@ -1,56 +1,54 @@
-# TlsCertificate
+# TLSCertificate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**TlsCertificateData**](TlsCertificateData.md) |  | [optional] 
+**Data** | Pointer to [**TLSCertificateData**](TlsCertificateData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsCertificate
+### NewTLSCertificate
 
-`func NewTlsCertificate() *TlsCertificate`
+`func NewTLSCertificate() *TLSCertificate`
 
-NewTlsCertificate instantiates a new TlsCertificate object
+NewTLSCertificate instantiates a new TLSCertificate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsCertificateWithDefaults
+### NewTLSCertificateWithDefaults
 
-`func NewTlsCertificateWithDefaults() *TlsCertificate`
+`func NewTLSCertificateWithDefaults() *TLSCertificate`
 
-NewTlsCertificateWithDefaults instantiates a new TlsCertificate object
+NewTLSCertificateWithDefaults instantiates a new TLSCertificate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TlsCertificate) GetData() TlsCertificateData`
+`func (o *TLSCertificate) GetData() TLSCertificateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsCertificate) GetDataOk() (*TlsCertificateData, bool)`
+`func (o *TLSCertificate) GetDataOk() (*TLSCertificateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsCertificate) SetData(v TlsCertificateData)`
+`func (o *TLSCertificate) SetData(v TLSCertificateData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsCertificate) HasData() bool`
+`func (o *TLSCertificate) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

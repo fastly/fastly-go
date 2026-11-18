@@ -19,11 +19,11 @@ import (
 // ArcProvider An AI provider supported by AI Runtime Control.
 type ArcProvider struct {
 	// The provider identifier.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The human-readable name of the provider.
 	DisplayName string `json:"display_name"`
 	// The default API base URL for the provider.
-	DefaultBaseUrl string `json:"default_base_url"`
+	DefaultBaseURL string `json:"default_base_url"`
 	// The models available from this provider.
 	Models               []ArcModel `json:"models"`
 	AdditionalProperties map[string]any
@@ -35,11 +35,11 @@ type _ArcProvider ArcProvider
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcProvider(id string, displayName string, defaultBaseUrl string, models []ArcModel) *ArcProvider {
+func NewArcProvider(id string, displayName string, defaultBaseURL string, models []ArcModel) *ArcProvider {
 	this := ArcProvider{}
-	this.Id = id
+	this.ID = id
 	this.DisplayName = displayName
-	this.DefaultBaseUrl = defaultBaseUrl
+	this.DefaultBaseURL = defaultBaseURL
 	this.Models = models
 	return &this
 }
@@ -52,28 +52,28 @@ func NewArcProviderWithDefaults() *ArcProvider {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *ArcProvider) GetId() string {
+// GetID returns the ID field value
+func (o *ArcProvider) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcProvider) GetIdOk() (*string, bool) {
+func (o *ArcProvider) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcProvider) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcProvider) SetID(v string) {
+	o.ID = v
 }
 
 // GetDisplayName returns the DisplayName field value
@@ -100,28 +100,28 @@ func (o *ArcProvider) SetDisplayName(v string) {
 	o.DisplayName = v
 }
 
-// GetDefaultBaseUrl returns the DefaultBaseUrl field value
-func (o *ArcProvider) GetDefaultBaseUrl() string {
+// GetDefaultBaseURL returns the DefaultBaseURL field value
+func (o *ArcProvider) GetDefaultBaseURL() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.DefaultBaseUrl
+	return o.DefaultBaseURL
 }
 
-// GetDefaultBaseUrlOk returns a tuple with the DefaultBaseUrl field value
+// GetDefaultBaseURLOk returns a tuple with the DefaultBaseURL field value
 // and a boolean to check if the value has been set.
-func (o *ArcProvider) GetDefaultBaseUrlOk() (*string, bool) {
+func (o *ArcProvider) GetDefaultBaseURLOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DefaultBaseUrl, true
+	return &o.DefaultBaseURL, true
 }
 
-// SetDefaultBaseUrl sets field value
-func (o *ArcProvider) SetDefaultBaseUrl(v string) {
-	o.DefaultBaseUrl = v
+// SetDefaultBaseURL sets field value
+func (o *ArcProvider) SetDefaultBaseURL(v string) {
+	o.DefaultBaseURL = v
 }
 
 // GetModels returns the Models field value
@@ -153,13 +153,13 @@ func (o *ArcProvider) SetModels(v []ArcModel) {
 func (o ArcProvider) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["display_name"] = o.DisplayName
 	}
 	if true {
-		toSerialize["default_base_url"] = o.DefaultBaseUrl
+		toSerialize["default_base_url"] = o.DefaultBaseURL
 	}
 	if true {
 		toSerialize["models"] = o.Models

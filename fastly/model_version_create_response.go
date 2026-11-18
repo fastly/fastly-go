@@ -19,7 +19,7 @@ import (
 // VersionCreateResponse struct for VersionCreateResponse
 type VersionCreateResponse struct {
 	Number               *int32  `json:"number,omitempty"`
-	ServiceId            *string `json:"service_id,omitempty"`
+	ServiceID            *string `json:"service_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -74,36 +74,36 @@ func (o *VersionCreateResponse) SetNumber(v int32) {
 	o.Number = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *VersionCreateResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *VersionCreateResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VersionCreateResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *VersionCreateResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *VersionCreateResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *VersionCreateResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *VersionCreateResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *VersionCreateResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -113,8 +113,8 @@ func (o VersionCreateResponse) MarshalJSON() ([]byte, error) {
 	if o.Number != nil {
 		toSerialize["number"] = o.Number
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 
 	for key, value := range o.AdditionalProperties {

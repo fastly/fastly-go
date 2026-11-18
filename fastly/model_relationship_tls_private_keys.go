@@ -16,69 +16,69 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTlsPrivateKeys struct for RelationshipTlsPrivateKeys
-type RelationshipTlsPrivateKeys struct {
-	TlsPrivateKeys       *RelationshipTlsPrivateKeysTlsPrivateKeys `json:"tls_private_keys,omitempty"`
+// RelationshipTLSPrivateKeys struct for RelationshipTLSPrivateKeys
+type RelationshipTLSPrivateKeys struct {
+	TLSPrivateKeys       *RelationshipTLSPrivateKeysTLSPrivateKeys `json:"tls_private_keys,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTlsPrivateKeys RelationshipTlsPrivateKeys
+type _RelationshipTLSPrivateKeys RelationshipTLSPrivateKeys
 
-// NewRelationshipTlsPrivateKeys instantiates a new RelationshipTlsPrivateKeys object
+// NewRelationshipTLSPrivateKeys instantiates a new RelationshipTLSPrivateKeys object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTlsPrivateKeys() *RelationshipTlsPrivateKeys {
-	this := RelationshipTlsPrivateKeys{}
+func NewRelationshipTLSPrivateKeys() *RelationshipTLSPrivateKeys {
+	this := RelationshipTLSPrivateKeys{}
 	return &this
 }
 
-// NewRelationshipTlsPrivateKeysWithDefaults instantiates a new RelationshipTlsPrivateKeys object
+// NewRelationshipTLSPrivateKeysWithDefaults instantiates a new RelationshipTLSPrivateKeys object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTlsPrivateKeysWithDefaults() *RelationshipTlsPrivateKeys {
-	this := RelationshipTlsPrivateKeys{}
+func NewRelationshipTLSPrivateKeysWithDefaults() *RelationshipTLSPrivateKeys {
+	this := RelationshipTLSPrivateKeys{}
 	return &this
 }
 
-// GetTlsPrivateKeys returns the TlsPrivateKeys field value if set, zero value otherwise.
-func (o *RelationshipTlsPrivateKeys) GetTlsPrivateKeys() RelationshipTlsPrivateKeysTlsPrivateKeys {
-	if o == nil || o.TlsPrivateKeys == nil {
-		var ret RelationshipTlsPrivateKeysTlsPrivateKeys
+// GetTLSPrivateKeys returns the TLSPrivateKeys field value if set, zero value otherwise.
+func (o *RelationshipTLSPrivateKeys) GetTLSPrivateKeys() RelationshipTLSPrivateKeysTLSPrivateKeys {
+	if o == nil || o.TLSPrivateKeys == nil {
+		var ret RelationshipTLSPrivateKeysTLSPrivateKeys
 		return ret
 	}
-	return *o.TlsPrivateKeys
+	return *o.TLSPrivateKeys
 }
 
-// GetTlsPrivateKeysOk returns a tuple with the TlsPrivateKeys field value if set, nil otherwise
+// GetTLSPrivateKeysOk returns a tuple with the TLSPrivateKeys field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTlsPrivateKeys) GetTlsPrivateKeysOk() (*RelationshipTlsPrivateKeysTlsPrivateKeys, bool) {
-	if o == nil || o.TlsPrivateKeys == nil {
+func (o *RelationshipTLSPrivateKeys) GetTLSPrivateKeysOk() (*RelationshipTLSPrivateKeysTLSPrivateKeys, bool) {
+	if o == nil || o.TLSPrivateKeys == nil {
 		return nil, false
 	}
-	return o.TlsPrivateKeys, true
+	return o.TLSPrivateKeys, true
 }
 
-// HasTlsPrivateKeys returns a boolean if a field has been set.
-func (o *RelationshipTlsPrivateKeys) HasTlsPrivateKeys() bool {
-	if o != nil && o.TlsPrivateKeys != nil {
+// HasTLSPrivateKeys returns a boolean if a field has been set.
+func (o *RelationshipTLSPrivateKeys) HasTLSPrivateKeys() bool {
+	if o != nil && o.TLSPrivateKeys != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsPrivateKeys gets a reference to the given RelationshipTlsPrivateKeysTlsPrivateKeys and assigns it to the TlsPrivateKeys field.
-func (o *RelationshipTlsPrivateKeys) SetTlsPrivateKeys(v RelationshipTlsPrivateKeysTlsPrivateKeys) {
-	o.TlsPrivateKeys = &v
+// SetTLSPrivateKeys gets a reference to the given RelationshipTLSPrivateKeysTLSPrivateKeys and assigns it to the TLSPrivateKeys field.
+func (o *RelationshipTLSPrivateKeys) SetTLSPrivateKeys(v RelationshipTLSPrivateKeysTLSPrivateKeys) {
+	o.TLSPrivateKeys = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTlsPrivateKeys) MarshalJSON() ([]byte, error) {
+func (o RelationshipTLSPrivateKeys) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TlsPrivateKeys != nil {
-		toSerialize["tls_private_keys"] = o.TlsPrivateKeys
+	if o.TLSPrivateKeys != nil {
+		toSerialize["tls_private_keys"] = o.TLSPrivateKeys
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -90,11 +90,11 @@ func (o RelationshipTlsPrivateKeys) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTlsPrivateKeys) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTlsPrivateKeys := _RelationshipTlsPrivateKeys{}
+func (o *RelationshipTLSPrivateKeys) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTLSPrivateKeys := _RelationshipTLSPrivateKeys{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTlsPrivateKeys); err == nil {
-		*o = RelationshipTlsPrivateKeys(varRelationshipTlsPrivateKeys)
+	if err = json.Unmarshal(bytes, &varRelationshipTLSPrivateKeys); err == nil {
+		*o = RelationshipTLSPrivateKeys(varRelationshipTLSPrivateKeys)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipTlsPrivateKeys) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRelationshipTlsPrivateKeys is a helper abstraction for handling nullable relationshiptlsprivatekeys types.
-type NullableRelationshipTlsPrivateKeys struct {
-	value *RelationshipTlsPrivateKeys
+// NullableRelationshipTLSPrivateKeys is a helper abstraction for handling nullable relationshiptlsprivatekeys types.
+type NullableRelationshipTLSPrivateKeys struct {
+	value *RelationshipTLSPrivateKeys
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTlsPrivateKeys) Get() *RelationshipTlsPrivateKeys {
+func (v NullableRelationshipTLSPrivateKeys) Get() *RelationshipTLSPrivateKeys {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTlsPrivateKeys) Set(val *RelationshipTlsPrivateKeys) {
+func (v *NullableRelationshipTLSPrivateKeys) Set(val *RelationshipTLSPrivateKeys) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTlsPrivateKeys) IsSet() bool {
+func (v NullableRelationshipTLSPrivateKeys) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTlsPrivateKeys) Unset() {
+func (v *NullableRelationshipTLSPrivateKeys) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTlsPrivateKeys returns a pointer to a new instance of NullableRelationshipTlsPrivateKeys.
-func NewNullableRelationshipTlsPrivateKeys(val *RelationshipTlsPrivateKeys) *NullableRelationshipTlsPrivateKeys {
-	return &NullableRelationshipTlsPrivateKeys{value: val, isSet: true}
+// NewNullableRelationshipTLSPrivateKeys returns a pointer to a new instance of NullableRelationshipTLSPrivateKeys.
+func NewNullableRelationshipTLSPrivateKeys(val *RelationshipTLSPrivateKeys) *NullableRelationshipTLSPrivateKeys {
+	return &NullableRelationshipTLSPrivateKeys{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTlsPrivateKeys) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTLSPrivateKeys) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTlsPrivateKeys) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTLSPrivateKeys) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

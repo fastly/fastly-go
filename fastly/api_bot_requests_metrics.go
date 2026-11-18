@@ -37,10 +37,10 @@ type BotRequestsMetricsAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param granularity Duration of sample windows.
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetBotRequestMetricsServiceHistoricalRequest
 	*/
-	GetBotRequestMetricsServiceHistorical(ctx context.Context, granularity string, serviceId string) APIGetBotRequestMetricsServiceHistoricalRequest
+	GetBotRequestMetricsServiceHistorical(ctx context.Context, granularity string, serviceID string) APIGetBotRequestMetricsServiceHistoricalRequest
 
 	// GetBotRequestMetricsServiceHistoricalExecute executes the request
 	//  @return BotRequestMetricsResponse
@@ -55,7 +55,7 @@ type APIGetBotRequestMetricsServiceHistoricalRequest struct {
 	ctx         context.Context
 	APIService  BotRequestsMetricsAPI
 	granularity string
-	serviceId   string
+	serviceID   string
 	from        *string
 	to          *string
 	groupBy     *string
@@ -140,15 +140,15 @@ Return historical time series metrics for bot requests broken down by bot-type.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param granularity Duration of sample windows.
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetBotRequestMetricsServiceHistoricalRequest
 */
-func (a *BotRequestsMetricsAPIService) GetBotRequestMetricsServiceHistorical(ctx context.Context, granularity string, serviceId string) APIGetBotRequestMetricsServiceHistoricalRequest {
+func (a *BotRequestsMetricsAPIService) GetBotRequestMetricsServiceHistorical(ctx context.Context, granularity string, serviceID string) APIGetBotRequestMetricsServiceHistoricalRequest {
 	return APIGetBotRequestMetricsServiceHistoricalRequest{
 		APIService:  a,
 		ctx:         ctx,
 		granularity: granularity,
-		serviceId:   serviceId,
+		serviceID:   serviceID,
 	}
 }
 
@@ -169,7 +169,7 @@ func (a *BotRequestsMetricsAPIService) GetBotRequestMetricsServiceHistoricalExec
 
 	localVarPath := localBasePath + "/metrics/bots/entities/{service_id}/{granularity}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"granularity"+"}", gourl.PathEscape(parameterToString(r.granularity, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

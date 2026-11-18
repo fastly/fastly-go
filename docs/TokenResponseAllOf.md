@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
-**UserId** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
+**UserID** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **string** | Time-stamp (UTC) of when the token was created. | [optional] 
 **LastUsedAt** | Pointer to **string** | Time-stamp (UTC) of when the token was last used. | [optional] [readonly] 
 **ExpiresAt** | Pointer to **string** | Time-stamp (UTC) of when the token will expire (optional). | [optional] 
-**Ip** | Pointer to **string** | IP Address of the client that last used the token. | [optional] 
+**IP** | Pointer to **string** | IP Address of the client that last used the token. | [optional] 
 **UserAgent** | Pointer to **string** | User-Agent header of the client that last used the token. | [optional] 
 
 ## Methods
@@ -31,55 +31,55 @@ NewTokenResponseAllOfWithDefaults instantiates a new TokenResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *TokenResponseAllOf) GetId() string`
+`func (o *TokenResponseAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *TokenResponseAllOf) GetIdOk() (*string, bool)`
+`func (o *TokenResponseAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *TokenResponseAllOf) SetId(v string)`
+`func (o *TokenResponseAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *TokenResponseAllOf) HasId() bool`
+`func (o *TokenResponseAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetUserId
+### GetUserID
 
-`func (o *TokenResponseAllOf) GetUserId() string`
+`func (o *TokenResponseAllOf) GetUserID() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *TokenResponseAllOf) GetUserIdOk() (*string, bool)`
+`func (o *TokenResponseAllOf) GetUserIDOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *TokenResponseAllOf) SetUserId(v string)`
+`func (o *TokenResponseAllOf) SetUserID(v string)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
-### HasUserId
+### HasUserID
 
-`func (o *TokenResponseAllOf) HasUserId() bool`
+`func (o *TokenResponseAllOf) HasUserID() bool`
 
-HasUserId returns a boolean if a field has been set.
+HasUserID returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -156,30 +156,30 @@ SetExpiresAt sets ExpiresAt field to given value.
 
 HasExpiresAt returns a boolean if a field has been set.
 
-### GetIp
+### GetIP
 
-`func (o *TokenResponseAllOf) GetIp() string`
+`func (o *TokenResponseAllOf) GetIP() string`
 
-GetIp returns the Ip field if non-nil, zero value otherwise.
+GetIP returns the IP field if non-nil, zero value otherwise.
 
-### GetIpOk
+### GetIPOk
 
-`func (o *TokenResponseAllOf) GetIpOk() (*string, bool)`
+`func (o *TokenResponseAllOf) GetIPOk() (*string, bool)`
 
-GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
+GetIPOk returns a tuple with the IP field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIp
+### SetIP
 
-`func (o *TokenResponseAllOf) SetIp(v string)`
+`func (o *TokenResponseAllOf) SetIP(v string)`
 
-SetIp sets Ip field to given value.
+SetIP sets IP field to given value.
 
-### HasIp
+### HasIP
 
-`func (o *TokenResponseAllOf) HasIp() bool`
+`func (o *TokenResponseAllOf) HasIP() bool`
 
-HasIp returns a boolean if a field has been set.
+HasIP returns a boolean if a field has been set.
 
 ### GetUserAgent
 
@@ -208,5 +208,3 @@ HasUserAgent returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -20,7 +20,7 @@ import (
 type InlineResponse20014 struct {
 	Data []SuccessfulResponseAsObject `json:"data,omitempty"`
 	// Meta for the pagination.
-	Meta                 interface{} `json:"meta,omitempty"`
+	Meta                 any `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,9 +76,9 @@ func (o *InlineResponse20014) SetData(v []SuccessfulResponseAsObject) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InlineResponse20014) GetMeta() interface{} {
+func (o *InlineResponse20014) GetMeta() any {
 	if o == nil {
-		var ret interface{}
+		var ret any
 		return ret
 	}
 	return o.Meta
@@ -87,7 +87,7 @@ func (o *InlineResponse20014) GetMeta() interface{} {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InlineResponse20014) GetMetaOk() (*interface{}, bool) {
+func (o *InlineResponse20014) GetMetaOk() (*any, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *InlineResponse20014) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given interface{} and assigns it to the Meta field.
-func (o *InlineResponse20014) SetMeta(v interface{}) {
+// SetMeta gets a reference to the given any and assigns it to the Meta field.
+func (o *InlineResponse20014) SetMeta(v any) {
 	o.Meta = v
 }
 

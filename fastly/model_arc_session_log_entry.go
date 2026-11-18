@@ -23,7 +23,7 @@ type ArcSessionLogEntry struct {
 	// The raw response data.
 	Response *string `json:"response,omitempty"`
 	// Additional attributes recorded for this request/response pair.
-	Attrs                map[string]map[string]interface{} `json:"attrs,omitempty"`
+	Attrs                map[string]map[string]any `json:"attrs,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -111,9 +111,9 @@ func (o *ArcSessionLogEntry) SetResponse(v string) {
 }
 
 // GetAttrs returns the Attrs field value if set, zero value otherwise.
-func (o *ArcSessionLogEntry) GetAttrs() map[string]map[string]interface{} {
+func (o *ArcSessionLogEntry) GetAttrs() map[string]map[string]any {
 	if o == nil || o.Attrs == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]map[string]any
 		return ret
 	}
 	return o.Attrs
@@ -121,7 +121,7 @@ func (o *ArcSessionLogEntry) GetAttrs() map[string]map[string]interface{} {
 
 // GetAttrsOk returns a tuple with the Attrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArcSessionLogEntry) GetAttrsOk() (map[string]map[string]interface{}, bool) {
+func (o *ArcSessionLogEntry) GetAttrsOk() (map[string]map[string]any, bool) {
 	if o == nil || o.Attrs == nil {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *ArcSessionLogEntry) HasAttrs() bool {
 	return false
 }
 
-// SetAttrs gets a reference to the given map[string]map[string]interface{} and assigns it to the Attrs field.
-func (o *ArcSessionLogEntry) SetAttrs(v map[string]map[string]interface{}) {
+// SetAttrs gets a reference to the given map[string]map[string]any and assigns it to the Attrs field.
+func (o *ArcSessionLogEntry) SetAttrs(v map[string]map[string]any) {
 	o.Attrs = v
 }
 

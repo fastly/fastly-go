@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 
 ### NewAction
 
-`func NewAction(type_ ActionType, value string, ) *Action`
+`func NewAction(resourceType ActionType, value string, ) *Action`
 
 NewAction instantiates a new Action object
 This constructor will assign default values to properties that have it defined,
@@ -68,5 +68,3 @@ SetValue sets Value field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

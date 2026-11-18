@@ -16,40 +16,40 @@ import (
 	"encoding/json"
 )
 
-// TlsConfigurationResponseAttributesAllOf struct for TlsConfigurationResponseAttributesAllOf
-type TlsConfigurationResponseAttributesAllOf struct {
+// TLSConfigurationResponseAttributesAllOf struct for TLSConfigurationResponseAttributesAllOf
+type TLSConfigurationResponseAttributesAllOf struct {
 	// Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
 	Default *bool `json:"default,omitempty"`
 	// HTTP protocols available on your configuration.
-	HttpProtocols []string `json:"http_protocols,omitempty"`
+	HTTPProtocols []string `json:"http_protocols,omitempty"`
 	// TLS protocols available on your configuration.
-	TlsProtocols []string `json:"tls_protocols,omitempty"`
+	TLSProtocols []string `json:"tls_protocols,omitempty"`
 	// Signifies whether the configuration is used for Platform TLS or not.
 	Bulk                 *bool `json:"bulk,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsConfigurationResponseAttributesAllOf TlsConfigurationResponseAttributesAllOf
+type _TLSConfigurationResponseAttributesAllOf TLSConfigurationResponseAttributesAllOf
 
-// NewTlsConfigurationResponseAttributesAllOf instantiates a new TlsConfigurationResponseAttributesAllOf object
+// NewTLSConfigurationResponseAttributesAllOf instantiates a new TLSConfigurationResponseAttributesAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsConfigurationResponseAttributesAllOf() *TlsConfigurationResponseAttributesAllOf {
-	this := TlsConfigurationResponseAttributesAllOf{}
+func NewTLSConfigurationResponseAttributesAllOf() *TLSConfigurationResponseAttributesAllOf {
+	this := TLSConfigurationResponseAttributesAllOf{}
 	return &this
 }
 
-// NewTlsConfigurationResponseAttributesAllOfWithDefaults instantiates a new TlsConfigurationResponseAttributesAllOf object
+// NewTLSConfigurationResponseAttributesAllOfWithDefaults instantiates a new TLSConfigurationResponseAttributesAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsConfigurationResponseAttributesAllOfWithDefaults() *TlsConfigurationResponseAttributesAllOf {
-	this := TlsConfigurationResponseAttributesAllOf{}
+func NewTLSConfigurationResponseAttributesAllOfWithDefaults() *TLSConfigurationResponseAttributesAllOf {
+	this := TLSConfigurationResponseAttributesAllOf{}
 	return &this
 }
 
 // GetDefault returns the Default field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributesAllOf) GetDefault() bool {
+func (o *TLSConfigurationResponseAttributesAllOf) GetDefault() bool {
 	if o == nil || o.Default == nil {
 		var ret bool
 		return ret
@@ -59,7 +59,7 @@ func (o *TlsConfigurationResponseAttributesAllOf) GetDefault() bool {
 
 // GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) GetDefaultOk() (*bool, bool) {
+func (o *TLSConfigurationResponseAttributesAllOf) GetDefaultOk() (*bool, bool) {
 	if o == nil || o.Default == nil {
 		return nil, false
 	}
@@ -67,7 +67,7 @@ func (o *TlsConfigurationResponseAttributesAllOf) GetDefaultOk() (*bool, bool) {
 }
 
 // HasDefault returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) HasDefault() bool {
+func (o *TLSConfigurationResponseAttributesAllOf) HasDefault() bool {
 	if o != nil && o.Default != nil {
 		return true
 	}
@@ -76,76 +76,76 @@ func (o *TlsConfigurationResponseAttributesAllOf) HasDefault() bool {
 }
 
 // SetDefault gets a reference to the given bool and assigns it to the Default field.
-func (o *TlsConfigurationResponseAttributesAllOf) SetDefault(v bool) {
+func (o *TLSConfigurationResponseAttributesAllOf) SetDefault(v bool) {
 	o.Default = &v
 }
 
-// GetHttpProtocols returns the HttpProtocols field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributesAllOf) GetHttpProtocols() []string {
-	if o == nil || o.HttpProtocols == nil {
+// GetHTTPProtocols returns the HTTPProtocols field value if set, zero value otherwise.
+func (o *TLSConfigurationResponseAttributesAllOf) GetHTTPProtocols() []string {
+	if o == nil || o.HTTPProtocols == nil {
 		var ret []string
 		return ret
 	}
-	return o.HttpProtocols
+	return o.HTTPProtocols
 }
 
-// GetHttpProtocolsOk returns a tuple with the HttpProtocols field value if set, nil otherwise
+// GetHTTPProtocolsOk returns a tuple with the HTTPProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) GetHttpProtocolsOk() ([]string, bool) {
-	if o == nil || o.HttpProtocols == nil {
+func (o *TLSConfigurationResponseAttributesAllOf) GetHTTPProtocolsOk() ([]string, bool) {
+	if o == nil || o.HTTPProtocols == nil {
 		return nil, false
 	}
-	return o.HttpProtocols, true
+	return o.HTTPProtocols, true
 }
 
-// HasHttpProtocols returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) HasHttpProtocols() bool {
-	if o != nil && o.HttpProtocols != nil {
+// HasHTTPProtocols returns a boolean if a field has been set.
+func (o *TLSConfigurationResponseAttributesAllOf) HasHTTPProtocols() bool {
+	if o != nil && o.HTTPProtocols != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHttpProtocols gets a reference to the given []string and assigns it to the HttpProtocols field.
-func (o *TlsConfigurationResponseAttributesAllOf) SetHttpProtocols(v []string) {
-	o.HttpProtocols = v
+// SetHTTPProtocols gets a reference to the given []string and assigns it to the HTTPProtocols field.
+func (o *TLSConfigurationResponseAttributesAllOf) SetHTTPProtocols(v []string) {
+	o.HTTPProtocols = v
 }
 
-// GetTlsProtocols returns the TlsProtocols field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributesAllOf) GetTlsProtocols() []string {
-	if o == nil || o.TlsProtocols == nil {
+// GetTLSProtocols returns the TLSProtocols field value if set, zero value otherwise.
+func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []string {
+	if o == nil || o.TLSProtocols == nil {
 		var ret []string
 		return ret
 	}
-	return o.TlsProtocols
+	return o.TLSProtocols
 }
 
-// GetTlsProtocolsOk returns a tuple with the TlsProtocols field value if set, nil otherwise
+// GetTLSProtocolsOk returns a tuple with the TLSProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) GetTlsProtocolsOk() ([]string, bool) {
-	if o == nil || o.TlsProtocols == nil {
+func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocolsOk() ([]string, bool) {
+	if o == nil || o.TLSProtocols == nil {
 		return nil, false
 	}
-	return o.TlsProtocols, true
+	return o.TLSProtocols, true
 }
 
-// HasTlsProtocols returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) HasTlsProtocols() bool {
-	if o != nil && o.TlsProtocols != nil {
+// HasTLSProtocols returns a boolean if a field has been set.
+func (o *TLSConfigurationResponseAttributesAllOf) HasTLSProtocols() bool {
+	if o != nil && o.TLSProtocols != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsProtocols gets a reference to the given []string and assigns it to the TlsProtocols field.
-func (o *TlsConfigurationResponseAttributesAllOf) SetTlsProtocols(v []string) {
-	o.TlsProtocols = v
+// SetTLSProtocols gets a reference to the given []string and assigns it to the TLSProtocols field.
+func (o *TLSConfigurationResponseAttributesAllOf) SetTLSProtocols(v []string) {
+	o.TLSProtocols = v
 }
 
 // GetBulk returns the Bulk field value if set, zero value otherwise.
-func (o *TlsConfigurationResponseAttributesAllOf) GetBulk() bool {
+func (o *TLSConfigurationResponseAttributesAllOf) GetBulk() bool {
 	if o == nil || o.Bulk == nil {
 		var ret bool
 		return ret
@@ -155,7 +155,7 @@ func (o *TlsConfigurationResponseAttributesAllOf) GetBulk() bool {
 
 // GetBulkOk returns a tuple with the Bulk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) GetBulkOk() (*bool, bool) {
+func (o *TLSConfigurationResponseAttributesAllOf) GetBulkOk() (*bool, bool) {
 	if o == nil || o.Bulk == nil {
 		return nil, false
 	}
@@ -163,7 +163,7 @@ func (o *TlsConfigurationResponseAttributesAllOf) GetBulkOk() (*bool, bool) {
 }
 
 // HasBulk returns a boolean if a field has been set.
-func (o *TlsConfigurationResponseAttributesAllOf) HasBulk() bool {
+func (o *TLSConfigurationResponseAttributesAllOf) HasBulk() bool {
 	if o != nil && o.Bulk != nil {
 		return true
 	}
@@ -172,22 +172,22 @@ func (o *TlsConfigurationResponseAttributesAllOf) HasBulk() bool {
 }
 
 // SetBulk gets a reference to the given bool and assigns it to the Bulk field.
-func (o *TlsConfigurationResponseAttributesAllOf) SetBulk(v bool) {
+func (o *TLSConfigurationResponseAttributesAllOf) SetBulk(v bool) {
 	o.Bulk = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsConfigurationResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (o TLSConfigurationResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Default != nil {
 		toSerialize["default"] = o.Default
 	}
-	if o.HttpProtocols != nil {
-		toSerialize["http_protocols"] = o.HttpProtocols
+	if o.HTTPProtocols != nil {
+		toSerialize["http_protocols"] = o.HTTPProtocols
 	}
-	if o.TlsProtocols != nil {
-		toSerialize["tls_protocols"] = o.TlsProtocols
+	if o.TLSProtocols != nil {
+		toSerialize["tls_protocols"] = o.TLSProtocols
 	}
 	if o.Bulk != nil {
 		toSerialize["bulk"] = o.Bulk
@@ -202,11 +202,11 @@ func (o TlsConfigurationResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsConfigurationResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsConfigurationResponseAttributesAllOf := _TlsConfigurationResponseAttributesAllOf{}
+func (o *TLSConfigurationResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSConfigurationResponseAttributesAllOf := _TLSConfigurationResponseAttributesAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTlsConfigurationResponseAttributesAllOf); err == nil {
-		*o = TlsConfigurationResponseAttributesAllOf(varTlsConfigurationResponseAttributesAllOf)
+	if err = json.Unmarshal(bytes, &varTLSConfigurationResponseAttributesAllOf); err == nil {
+		*o = TLSConfigurationResponseAttributesAllOf(varTLSConfigurationResponseAttributesAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -222,48 +222,48 @@ func (o *TlsConfigurationResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (e
 	return err
 }
 
-// NullableTlsConfigurationResponseAttributesAllOf is a helper abstraction for handling nullable tlsconfigurationresponseattributesallof types.
-type NullableTlsConfigurationResponseAttributesAllOf struct {
-	value *TlsConfigurationResponseAttributesAllOf
+// NullableTLSConfigurationResponseAttributesAllOf is a helper abstraction for handling nullable tlsconfigurationresponseattributesallof types.
+type NullableTLSConfigurationResponseAttributesAllOf struct {
+	value *TLSConfigurationResponseAttributesAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsConfigurationResponseAttributesAllOf) Get() *TlsConfigurationResponseAttributesAllOf {
+func (v NullableTLSConfigurationResponseAttributesAllOf) Get() *TLSConfigurationResponseAttributesAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsConfigurationResponseAttributesAllOf) Set(val *TlsConfigurationResponseAttributesAllOf) {
+func (v *NullableTLSConfigurationResponseAttributesAllOf) Set(val *TLSConfigurationResponseAttributesAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsConfigurationResponseAttributesAllOf) IsSet() bool {
+func (v NullableTLSConfigurationResponseAttributesAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsConfigurationResponseAttributesAllOf) Unset() {
+func (v *NullableTLSConfigurationResponseAttributesAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsConfigurationResponseAttributesAllOf returns a pointer to a new instance of NullableTlsConfigurationResponseAttributesAllOf.
-func NewNullableTlsConfigurationResponseAttributesAllOf(val *TlsConfigurationResponseAttributesAllOf) *NullableTlsConfigurationResponseAttributesAllOf {
-	return &NullableTlsConfigurationResponseAttributesAllOf{value: val, isSet: true}
+// NewNullableTLSConfigurationResponseAttributesAllOf returns a pointer to a new instance of NullableTLSConfigurationResponseAttributesAllOf.
+func NewNullableTLSConfigurationResponseAttributesAllOf(val *TLSConfigurationResponseAttributesAllOf) *NullableTLSConfigurationResponseAttributesAllOf {
+	return &NullableTLSConfigurationResponseAttributesAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsConfigurationResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTLSConfigurationResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsConfigurationResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSConfigurationResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

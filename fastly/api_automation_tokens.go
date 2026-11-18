@@ -45,49 +45,49 @@ type AutomationTokensAPI interface {
 	CreateAutomationTokenExecute(r APICreateAutomationTokenRequest) (*AutomationTokenCreateResponse, *http.Response, error)
 
 	/*
-		GetAutomationTokenId Retrieve an Automation Token by ID
+		GetAutomationTokenID Retrieve an Automation Token by ID
 
 		Retrieves an automation token by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param id
-		 @return APIGetAutomationTokenIdRequest
+		 @return APIGetAutomationTokenIDRequest
 	*/
-	GetAutomationTokenId(ctx context.Context, id string) APIGetAutomationTokenIdRequest
+	GetAutomationTokenID(ctx context.Context, id string) APIGetAutomationTokenIDRequest
 
-	// GetAutomationTokenIdExecute executes the request
+	// GetAutomationTokenIDExecute executes the request
 	//  @return AutomationTokenResponse
-	GetAutomationTokenIdExecute(r APIGetAutomationTokenIdRequest) (*AutomationTokenResponse, *http.Response, error)
+	GetAutomationTokenIDExecute(r APIGetAutomationTokenIDRequest) (*AutomationTokenResponse, *http.Response, error)
 
 	/*
-		GetAutomationTokensIdServices List Automation Token Services
+		GetAutomationTokensIDServices List Automation Token Services
 
 		List of services associated with the automation token.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param id
-		 @return APIGetAutomationTokensIdServicesRequest
+		 @return APIGetAutomationTokensIDServicesRequest
 	*/
-	GetAutomationTokensIdServices(ctx context.Context, id string) APIGetAutomationTokensIdServicesRequest
+	GetAutomationTokensIDServices(ctx context.Context, id string) APIGetAutomationTokensIDServicesRequest
 
-	// GetAutomationTokensIdServicesExecute executes the request
+	// GetAutomationTokensIDServicesExecute executes the request
 	//  @return InlineResponse2004
-	GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2004, *http.Response, error)
+	GetAutomationTokensIDServicesExecute(r APIGetAutomationTokensIDServicesRequest) (*InlineResponse2004, *http.Response, error)
 
 	/*
-		GetAutomationTokensIdWorkspaces List Automation Token Workspaces
+		GetAutomationTokensIDWorkspaces List Automation Token Workspaces
 
 		Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param id The alphanumeric string identifying the automation token.
-		 @return APIGetAutomationTokensIdWorkspacesRequest
+		 @return APIGetAutomationTokensIDWorkspacesRequest
 	*/
-	GetAutomationTokensIdWorkspaces(ctx context.Context, id string) APIGetAutomationTokensIdWorkspacesRequest
+	GetAutomationTokensIDWorkspaces(ctx context.Context, id string) APIGetAutomationTokensIDWorkspacesRequest
 
-	// GetAutomationTokensIdWorkspacesExecute executes the request
+	// GetAutomationTokensIDWorkspacesExecute executes the request
 	//  @return AutomationTokenWorkspacesResponse
-	GetAutomationTokensIdWorkspacesExecute(r APIGetAutomationTokensIdWorkspacesRequest) (*AutomationTokenWorkspacesResponse, *http.Response, error)
+	GetAutomationTokensIDWorkspacesExecute(r APIGetAutomationTokensIDWorkspacesRequest) (*AutomationTokenWorkspacesResponse, *http.Response, error)
 
 	/*
 		ListAutomationTokens List Customer Automation Tokens
@@ -104,19 +104,19 @@ type AutomationTokensAPI interface {
 	ListAutomationTokensExecute(r APIListAutomationTokensRequest) ([]AutomationTokenResponse, *http.Response, error)
 
 	/*
-		RevokeAutomationTokenId Revoke an Automation Token by ID
+		RevokeAutomationTokenID Revoke an Automation Token by ID
 
 		Revoke an automation token by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param id
-		 @return APIRevokeAutomationTokenIdRequest
+		 @return APIRevokeAutomationTokenIDRequest
 	*/
-	RevokeAutomationTokenId(ctx context.Context, id string) APIRevokeAutomationTokenIdRequest
+	RevokeAutomationTokenID(ctx context.Context, id string) APIRevokeAutomationTokenIDRequest
 
-	// RevokeAutomationTokenIdExecute executes the request
+	// RevokeAutomationTokenIDExecute executes the request
 	//  @return AutomationTokenErrorResponse
-	RevokeAutomationTokenIdExecute(r APIRevokeAutomationTokenIdRequest) (*AutomationTokenErrorResponse, *http.Response, error)
+	RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*AutomationTokenErrorResponse, *http.Response, error)
 }
 
 // AutomationTokensAPIService AutomationTokensAPI service
@@ -288,38 +288,38 @@ func (a *AutomationTokensAPIService) CreateAutomationTokenExecute(r APICreateAut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetAutomationTokenIdRequest represents a request for the resource.
-type APIGetAutomationTokenIdRequest struct {
+// APIGetAutomationTokenIDRequest represents a request for the resource.
+type APIGetAutomationTokenIDRequest struct {
 	ctx        context.Context
 	APIService AutomationTokensAPI
 	id         string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAutomationTokenIdRequest) Execute() (*AutomationTokenResponse, *http.Response, error) {
-	return r.APIService.GetAutomationTokenIdExecute(r)
+func (r APIGetAutomationTokenIDRequest) Execute() (*AutomationTokenResponse, *http.Response, error) {
+	return r.APIService.GetAutomationTokenIDExecute(r)
 }
 
 /*
-GetAutomationTokenId Retrieve an Automation Token by ID
+GetAutomationTokenID Retrieve an Automation Token by ID
 
 Retrieves an automation token by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return APIGetAutomationTokenIdRequest
+ @return APIGetAutomationTokenIDRequest
 */
-func (a *AutomationTokensAPIService) GetAutomationTokenId(ctx context.Context, id string) APIGetAutomationTokenIdRequest {
-	return APIGetAutomationTokenIdRequest{
+func (a *AutomationTokensAPIService) GetAutomationTokenID(ctx context.Context, id string) APIGetAutomationTokenIDRequest {
+	return APIGetAutomationTokenIDRequest{
 		APIService: a,
 		ctx:        ctx,
 		id:         id,
 	}
 }
 
-// GetAutomationTokenIdExecute executes the request
+// GetAutomationTokenIDExecute executes the request
 //  @return AutomationTokenResponse
-func (a *AutomationTokensAPIService) GetAutomationTokenIdExecute(r APIGetAutomationTokenIdRequest) (*AutomationTokenResponse, *http.Response, error) {
+func (a *AutomationTokensAPIService) GetAutomationTokenIDExecute(r APIGetAutomationTokenIDRequest) (*AutomationTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
@@ -327,7 +327,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokenIdExecute(r APIGetAutomat
 		localVarReturnValue *AutomationTokenResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokenId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokenID")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -439,8 +439,8 @@ func (a *AutomationTokensAPIService) GetAutomationTokenIdExecute(r APIGetAutomat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetAutomationTokensIdServicesRequest represents a request for the resource.
-type APIGetAutomationTokensIdServicesRequest struct {
+// APIGetAutomationTokensIDServicesRequest represents a request for the resource.
+type APIGetAutomationTokensIDServicesRequest struct {
 	ctx        context.Context
 	APIService AutomationTokensAPI
 	id         string
@@ -449,42 +449,42 @@ type APIGetAutomationTokensIdServicesRequest struct {
 }
 
 // PerPage returns a pointer to a request.
-func (r *APIGetAutomationTokensIdServicesRequest) PerPage(perPage int32) *APIGetAutomationTokensIdServicesRequest {
+func (r *APIGetAutomationTokensIDServicesRequest) PerPage(perPage int32) *APIGetAutomationTokensIDServicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // Page returns a pointer to a request.
-func (r *APIGetAutomationTokensIdServicesRequest) Page(page int32) *APIGetAutomationTokensIdServicesRequest {
+func (r *APIGetAutomationTokensIDServicesRequest) Page(page int32) *APIGetAutomationTokensIDServicesRequest {
 	r.page = &page
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAutomationTokensIdServicesRequest) Execute() (*InlineResponse2004, *http.Response, error) {
-	return r.APIService.GetAutomationTokensIdServicesExecute(r)
+func (r APIGetAutomationTokensIDServicesRequest) Execute() (*InlineResponse2004, *http.Response, error) {
+	return r.APIService.GetAutomationTokensIDServicesExecute(r)
 }
 
 /*
-GetAutomationTokensIdServices List Automation Token Services
+GetAutomationTokensIDServices List Automation Token Services
 
 List of services associated with the automation token.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return APIGetAutomationTokensIdServicesRequest
+ @return APIGetAutomationTokensIDServicesRequest
 */
-func (a *AutomationTokensAPIService) GetAutomationTokensIdServices(ctx context.Context, id string) APIGetAutomationTokensIdServicesRequest {
-	return APIGetAutomationTokensIdServicesRequest{
+func (a *AutomationTokensAPIService) GetAutomationTokensIDServices(ctx context.Context, id string) APIGetAutomationTokensIDServicesRequest {
+	return APIGetAutomationTokensIDServicesRequest{
 		APIService: a,
 		ctx:        ctx,
 		id:         id,
 	}
 }
 
-// GetAutomationTokensIdServicesExecute executes the request
+// GetAutomationTokensIDServicesExecute executes the request
 //  @return InlineResponse2004
-func (a *AutomationTokensAPIService) GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2004, *http.Response, error) {
+func (a *AutomationTokensAPIService) GetAutomationTokensIDServicesExecute(r APIGetAutomationTokensIDServicesRequest) (*InlineResponse2004, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
@@ -492,7 +492,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIdServicesExecute(r APIG
 		localVarReturnValue *InlineResponse2004
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIdServices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIDServices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -610,8 +610,8 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIdServicesExecute(r APIG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetAutomationTokensIdWorkspacesRequest represents a request for the resource.
-type APIGetAutomationTokensIdWorkspacesRequest struct {
+// APIGetAutomationTokensIDWorkspacesRequest represents a request for the resource.
+type APIGetAutomationTokensIDWorkspacesRequest struct {
 	ctx        context.Context
 	APIService AutomationTokensAPI
 	id         string
@@ -620,42 +620,42 @@ type APIGetAutomationTokensIdWorkspacesRequest struct {
 }
 
 // Limit Maximum number of workspaces to return per page.
-func (r *APIGetAutomationTokensIdWorkspacesRequest) Limit(limit int32) *APIGetAutomationTokensIdWorkspacesRequest {
+func (r *APIGetAutomationTokensIDWorkspacesRequest) Limit(limit int32) *APIGetAutomationTokensIDWorkspacesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Cursor Pagination cursor from a previous response. Pass the &#x60;next_cursor&#x60; value to retrieve the next page, or &#x60;previous_cursor&#x60; to go back.
-func (r *APIGetAutomationTokensIdWorkspacesRequest) Cursor(cursor string) *APIGetAutomationTokensIdWorkspacesRequest {
+func (r *APIGetAutomationTokensIDWorkspacesRequest) Cursor(cursor string) *APIGetAutomationTokensIDWorkspacesRequest {
 	r.cursor = &cursor
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAutomationTokensIdWorkspacesRequest) Execute() (*AutomationTokenWorkspacesResponse, *http.Response, error) {
-	return r.APIService.GetAutomationTokensIdWorkspacesExecute(r)
+func (r APIGetAutomationTokensIDWorkspacesRequest) Execute() (*AutomationTokenWorkspacesResponse, *http.Response, error) {
+	return r.APIService.GetAutomationTokensIDWorkspacesExecute(r)
 }
 
 /*
-GetAutomationTokensIdWorkspaces List Automation Token Workspaces
+GetAutomationTokensIDWorkspaces List Automation Token Workspaces
 
 Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id The alphanumeric string identifying the automation token.
- @return APIGetAutomationTokensIdWorkspacesRequest
+ @return APIGetAutomationTokensIDWorkspacesRequest
 */
-func (a *AutomationTokensAPIService) GetAutomationTokensIdWorkspaces(ctx context.Context, id string) APIGetAutomationTokensIdWorkspacesRequest {
-	return APIGetAutomationTokensIdWorkspacesRequest{
+func (a *AutomationTokensAPIService) GetAutomationTokensIDWorkspaces(ctx context.Context, id string) APIGetAutomationTokensIDWorkspacesRequest {
+	return APIGetAutomationTokensIDWorkspacesRequest{
 		APIService: a,
 		ctx:        ctx,
 		id:         id,
 	}
 }
 
-// GetAutomationTokensIdWorkspacesExecute executes the request
+// GetAutomationTokensIDWorkspacesExecute executes the request
 //  @return AutomationTokenWorkspacesResponse
-func (a *AutomationTokensAPIService) GetAutomationTokensIdWorkspacesExecute(r APIGetAutomationTokensIdWorkspacesRequest) (*AutomationTokenWorkspacesResponse, *http.Response, error) {
+func (a *AutomationTokensAPIService) GetAutomationTokensIDWorkspacesExecute(r APIGetAutomationTokensIDWorkspacesRequest) (*AutomationTokenWorkspacesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
@@ -663,7 +663,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIdWorkspacesExecute(r AP
 		localVarReturnValue *AutomationTokenWorkspacesResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIdWorkspaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIDWorkspaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -958,38 +958,38 @@ func (a *AutomationTokensAPIService) ListAutomationTokensExecute(r APIListAutoma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIRevokeAutomationTokenIdRequest represents a request for the resource.
-type APIRevokeAutomationTokenIdRequest struct {
+// APIRevokeAutomationTokenIDRequest represents a request for the resource.
+type APIRevokeAutomationTokenIDRequest struct {
 	ctx        context.Context
 	APIService AutomationTokensAPI
 	id         string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIRevokeAutomationTokenIdRequest) Execute() (*AutomationTokenErrorResponse, *http.Response, error) {
-	return r.APIService.RevokeAutomationTokenIdExecute(r)
+func (r APIRevokeAutomationTokenIDRequest) Execute() (*AutomationTokenErrorResponse, *http.Response, error) {
+	return r.APIService.RevokeAutomationTokenIDExecute(r)
 }
 
 /*
-RevokeAutomationTokenId Revoke an Automation Token by ID
+RevokeAutomationTokenID Revoke an Automation Token by ID
 
 Revoke an automation token by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return APIRevokeAutomationTokenIdRequest
+ @return APIRevokeAutomationTokenIDRequest
 */
-func (a *AutomationTokensAPIService) RevokeAutomationTokenId(ctx context.Context, id string) APIRevokeAutomationTokenIdRequest {
-	return APIRevokeAutomationTokenIdRequest{
+func (a *AutomationTokensAPIService) RevokeAutomationTokenID(ctx context.Context, id string) APIRevokeAutomationTokenIDRequest {
+	return APIRevokeAutomationTokenIDRequest{
 		APIService: a,
 		ctx:        ctx,
 		id:         id,
 	}
 }
 
-// RevokeAutomationTokenIdExecute executes the request
+// RevokeAutomationTokenIDExecute executes the request
 //  @return AutomationTokenErrorResponse
-func (a *AutomationTokensAPIService) RevokeAutomationTokenIdExecute(r APIRevokeAutomationTokenIdRequest) (*AutomationTokenErrorResponse, *http.Response, error) {
+func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*AutomationTokenErrorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
@@ -997,7 +997,7 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenIdExecute(r APIRevokeA
 		localVarReturnValue *AutomationTokenErrorResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.RevokeAutomationTokenId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.RevokeAutomationTokenID")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceId** | Pointer to **NullableString** | The `service_id` associated with your domain or `null` if there is no association. | [optional] 
-**RoutingConfigurationId** | Pointer to **NullableString** | The `routing_configuration_id` associated with your domain or `null` if there is no association. | [optional] 
+**ServiceID** | Pointer to **NullableString** | The `service_id` associated with your domain or `null` if there is no association. | [optional] 
+**RoutingConfigurationID** | Pointer to **NullableString** | The `routing_configuration_id` associated with your domain or `null` if there is no association. | [optional] 
 **Description** | Pointer to **string** | A freeform descriptive note. | [optional] 
 
 ## Methods
@@ -27,76 +27,76 @@ NewRequestBodyForUpdateWithDefaults instantiates a new RequestBodyForUpdate obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServiceId
+### GetServiceID
 
-`func (o *RequestBodyForUpdate) GetServiceId() string`
+`func (o *RequestBodyForUpdate) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *RequestBodyForUpdate) GetServiceIdOk() (*string, bool)`
+`func (o *RequestBodyForUpdate) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *RequestBodyForUpdate) SetServiceId(v string)`
+`func (o *RequestBodyForUpdate) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *RequestBodyForUpdate) HasServiceId() bool`
+`func (o *RequestBodyForUpdate) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
-### SetServiceIdNil
+### SetServiceIDNil
 
-`func (o *RequestBodyForUpdate) SetServiceIdNil(b bool)`
+`func (o *RequestBodyForUpdate) SetServiceIDNil(b bool)`
 
- SetServiceIdNil sets the value for ServiceId to be an explicit nil
+ SetServiceIDNil sets the value for ServiceID to be an explicit nil
 
-### UnsetServiceId
-`func (o *RequestBodyForUpdate) UnsetServiceId()`
+### UnsetServiceID
+`func (o *RequestBodyForUpdate) UnsetServiceID()`
 
-UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
-### GetRoutingConfigurationId
+UnsetServiceID ensures that no value is present for ServiceID, not even an explicit nil
+### GetRoutingConfigurationID
 
-`func (o *RequestBodyForUpdate) GetRoutingConfigurationId() string`
+`func (o *RequestBodyForUpdate) GetRoutingConfigurationID() string`
 
-GetRoutingConfigurationId returns the RoutingConfigurationId field if non-nil, zero value otherwise.
+GetRoutingConfigurationID returns the RoutingConfigurationID field if non-nil, zero value otherwise.
 
-### GetRoutingConfigurationIdOk
+### GetRoutingConfigurationIDOk
 
-`func (o *RequestBodyForUpdate) GetRoutingConfigurationIdOk() (*string, bool)`
+`func (o *RequestBodyForUpdate) GetRoutingConfigurationIDOk() (*string, bool)`
 
-GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field if it's non-nil, zero value otherwise
+GetRoutingConfigurationIDOk returns a tuple with the RoutingConfigurationID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingConfigurationId
+### SetRoutingConfigurationID
 
-`func (o *RequestBodyForUpdate) SetRoutingConfigurationId(v string)`
+`func (o *RequestBodyForUpdate) SetRoutingConfigurationID(v string)`
 
-SetRoutingConfigurationId sets RoutingConfigurationId field to given value.
+SetRoutingConfigurationID sets RoutingConfigurationID field to given value.
 
-### HasRoutingConfigurationId
+### HasRoutingConfigurationID
 
-`func (o *RequestBodyForUpdate) HasRoutingConfigurationId() bool`
+`func (o *RequestBodyForUpdate) HasRoutingConfigurationID() bool`
 
-HasRoutingConfigurationId returns a boolean if a field has been set.
+HasRoutingConfigurationID returns a boolean if a field has been set.
 
-### SetRoutingConfigurationIdNil
+### SetRoutingConfigurationIDNil
 
-`func (o *RequestBodyForUpdate) SetRoutingConfigurationIdNil(b bool)`
+`func (o *RequestBodyForUpdate) SetRoutingConfigurationIDNil(b bool)`
 
- SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
+ SetRoutingConfigurationIDNil sets the value for RoutingConfigurationID to be an explicit nil
 
-### UnsetRoutingConfigurationId
-`func (o *RequestBodyForUpdate) UnsetRoutingConfigurationId()`
+### UnsetRoutingConfigurationID
+`func (o *RequestBodyForUpdate) UnsetRoutingConfigurationID()`
 
-UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
+UnsetRoutingConfigurationID ensures that no value is present for RoutingConfigurationID, not even an explicit nil
 ### GetDescription
 
 `func (o *RequestBodyForUpdate) GetDescription() string`
@@ -124,5 +124,3 @@ HasDescription returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

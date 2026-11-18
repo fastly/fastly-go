@@ -1,56 +1,54 @@
-# TlsCommonResponseAllOf1
+# TLSCommonResponseAllOf1
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UseTls** | Pointer to **string** | Whether to use TLS. | [optional] [default to "0"]
+**UseTLS** | Pointer to **string** | Whether to use TLS. | [optional] [default to "0"]
 
 ## Methods
 
-### NewTlsCommonResponseAllOf1
+### NewTLSCommonResponseAllOf1
 
-`func NewTlsCommonResponseAllOf1() *TlsCommonResponseAllOf1`
+`func NewTLSCommonResponseAllOf1() *TLSCommonResponseAllOf1`
 
-NewTlsCommonResponseAllOf1 instantiates a new TlsCommonResponseAllOf1 object
+NewTLSCommonResponseAllOf1 instantiates a new TLSCommonResponseAllOf1 object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsCommonResponseAllOf1WithDefaults
+### NewTLSCommonResponseAllOf1WithDefaults
 
-`func NewTlsCommonResponseAllOf1WithDefaults() *TlsCommonResponseAllOf1`
+`func NewTLSCommonResponseAllOf1WithDefaults() *TLSCommonResponseAllOf1`
 
-NewTlsCommonResponseAllOf1WithDefaults instantiates a new TlsCommonResponseAllOf1 object
+NewTLSCommonResponseAllOf1WithDefaults instantiates a new TLSCommonResponseAllOf1 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUseTls
+### GetUseTLS
 
-`func (o *TlsCommonResponseAllOf1) GetUseTls() string`
+`func (o *TLSCommonResponseAllOf1) GetUseTLS() string`
 
-GetUseTls returns the UseTls field if non-nil, zero value otherwise.
+GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
-### GetUseTlsOk
+### GetUseTLSOk
 
-`func (o *TlsCommonResponseAllOf1) GetUseTlsOk() (*string, bool)`
+`func (o *TLSCommonResponseAllOf1) GetUseTLSOk() (*string, bool)`
 
-GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
+GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTls
+### SetUseTLS
 
-`func (o *TlsCommonResponseAllOf1) SetUseTls(v string)`
+`func (o *TLSCommonResponseAllOf1) SetUseTLS(v string)`
 
-SetUseTls sets UseTls field to given value.
+SetUseTLS sets UseTLS field to given value.
 
-### HasUseTls
+### HasUseTLS
 
-`func (o *TlsCommonResponseAllOf1) HasUseTls() bool`
+`func (o *TLSCommonResponseAllOf1) HasUseTLS() bool`
 
-HasUseTls returns a boolean if a field has been set.
+HasUseTLS returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

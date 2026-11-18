@@ -19,7 +19,7 @@ import (
 // NgwafRequestEnable struct for NgwafRequestEnable
 type NgwafRequestEnable struct {
 	// The workspace to link.
-	WorkspaceId string `json:"workspace_id"`
+	WorkspaceID string `json:"workspace_id"`
 	// The percentage of traffic to inspect.
 	TrafficRamp          *string `json:"traffic_ramp,omitempty"`
 	AdditionalProperties map[string]any
@@ -31,9 +31,9 @@ type _NgwafRequestEnable NgwafRequestEnable
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNgwafRequestEnable(workspaceId string) *NgwafRequestEnable {
+func NewNgwafRequestEnable(workspaceID string) *NgwafRequestEnable {
 	this := NgwafRequestEnable{}
-	this.WorkspaceId = workspaceId
+	this.WorkspaceID = workspaceID
 	return &this
 }
 
@@ -45,28 +45,28 @@ func NewNgwafRequestEnableWithDefaults() *NgwafRequestEnable {
 	return &this
 }
 
-// GetWorkspaceId returns the WorkspaceId field value
-func (o *NgwafRequestEnable) GetWorkspaceId() string {
+// GetWorkspaceID returns the WorkspaceID field value
+func (o *NgwafRequestEnable) GetWorkspaceID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.WorkspaceId
+	return o.WorkspaceID
 }
 
-// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value
+// GetWorkspaceIDOk returns a tuple with the WorkspaceID field value
 // and a boolean to check if the value has been set.
-func (o *NgwafRequestEnable) GetWorkspaceIdOk() (*string, bool) {
+func (o *NgwafRequestEnable) GetWorkspaceIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.WorkspaceId, true
+	return &o.WorkspaceID, true
 }
 
-// SetWorkspaceId sets field value
-func (o *NgwafRequestEnable) SetWorkspaceId(v string) {
-	o.WorkspaceId = v
+// SetWorkspaceID sets field value
+func (o *NgwafRequestEnable) SetWorkspaceID(v string) {
+	o.WorkspaceID = v
 }
 
 // GetTrafficRamp returns the TrafficRamp field value if set, zero value otherwise.
@@ -106,7 +106,7 @@ func (o *NgwafRequestEnable) SetTrafficRamp(v string) {
 func (o NgwafRequestEnable) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["workspace_id"] = o.WorkspaceId
+		toSerialize["workspace_id"] = o.WorkspaceID
 	}
 	if o.TrafficRamp != nil {
 		toSerialize["traffic_ramp"] = o.TrafficRamp

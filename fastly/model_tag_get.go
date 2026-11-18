@@ -24,7 +24,7 @@ type TagGet struct {
 	// A description of the operation tag.
 	Description *string `json:"description,omitempty"`
 	// The unique identifier of the operation tag.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The number of operations associated with this operation tag.
 	Count *int32 `json:"count,omitempty"`
 	// The date and time the operation tag was created.
@@ -43,7 +43,7 @@ type _TagGet TagGet
 func NewTagGet(name string, id string) *TagGet {
 	this := TagGet{}
 	this.Name = name
-	this.Id = id
+	this.ID = id
 	return &this
 }
 
@@ -111,28 +111,28 @@ func (o *TagGet) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetId returns the Id field value
-func (o *TagGet) GetId() string {
+// GetID returns the ID field value
+func (o *TagGet) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *TagGet) GetIdOk() (*string, bool) {
+func (o *TagGet) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *TagGet) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *TagGet) SetID(v string) {
+	o.ID = v
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
@@ -242,7 +242,7 @@ func (o TagGet) MarshalJSON() ([]byte, error) {
 		toSerialize["description"] = o.Description
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.Count != nil {
 		toSerialize["count"] = o.Count

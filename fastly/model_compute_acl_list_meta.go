@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// ComputeAclListMeta Meta for the total of ACLs.
-type ComputeAclListMeta struct {
+// ComputeACLListMeta Meta for the total of ACLs.
+type ComputeACLListMeta struct {
 	// Total of ACLs.
 	Total                *int32 `json:"total,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ComputeAclListMeta ComputeAclListMeta
+type _ComputeACLListMeta ComputeACLListMeta
 
-// NewComputeAclListMeta instantiates a new ComputeAclListMeta object
+// NewComputeACLListMeta instantiates a new ComputeACLListMeta object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeAclListMeta() *ComputeAclListMeta {
-	this := ComputeAclListMeta{}
+func NewComputeACLListMeta() *ComputeACLListMeta {
+	this := ComputeACLListMeta{}
 	return &this
 }
 
-// NewComputeAclListMetaWithDefaults instantiates a new ComputeAclListMeta object
+// NewComputeACLListMetaWithDefaults instantiates a new ComputeACLListMeta object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeAclListMetaWithDefaults() *ComputeAclListMeta {
-	this := ComputeAclListMeta{}
+func NewComputeACLListMetaWithDefaults() *ComputeACLListMeta {
+	this := ComputeACLListMeta{}
 	return &this
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
-func (o *ComputeAclListMeta) GetTotal() int32 {
+func (o *ComputeACLListMeta) GetTotal() int32 {
 	if o == nil || o.Total == nil {
 		var ret int32
 		return ret
@@ -53,7 +53,7 @@ func (o *ComputeAclListMeta) GetTotal() int32 {
 
 // GetTotalOk returns a tuple with the Total field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeAclListMeta) GetTotalOk() (*int32, bool) {
+func (o *ComputeACLListMeta) GetTotalOk() (*int32, bool) {
 	if o == nil || o.Total == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ComputeAclListMeta) GetTotalOk() (*int32, bool) {
 }
 
 // HasTotal returns a boolean if a field has been set.
-func (o *ComputeAclListMeta) HasTotal() bool {
+func (o *ComputeACLListMeta) HasTotal() bool {
 	if o != nil && o.Total != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *ComputeAclListMeta) HasTotal() bool {
 }
 
 // SetTotal gets a reference to the given int32 and assigns it to the Total field.
-func (o *ComputeAclListMeta) SetTotal(v int32) {
+func (o *ComputeACLListMeta) SetTotal(v int32) {
 	o.Total = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeAclListMeta) MarshalJSON() ([]byte, error) {
+func (o ComputeACLListMeta) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Total != nil {
 		toSerialize["total"] = o.Total
@@ -91,11 +91,11 @@ func (o ComputeAclListMeta) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeAclListMeta) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeAclListMeta := _ComputeAclListMeta{}
+func (o *ComputeACLListMeta) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeACLListMeta := _ComputeACLListMeta{}
 
-	if err = json.Unmarshal(bytes, &varComputeAclListMeta); err == nil {
-		*o = ComputeAclListMeta(varComputeAclListMeta)
+	if err = json.Unmarshal(bytes, &varComputeACLListMeta); err == nil {
+		*o = ComputeACLListMeta(varComputeACLListMeta)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *ComputeAclListMeta) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeAclListMeta is a helper abstraction for handling nullable computeacllistmeta types.
-type NullableComputeAclListMeta struct {
-	value *ComputeAclListMeta
+// NullableComputeACLListMeta is a helper abstraction for handling nullable computeacllistmeta types.
+type NullableComputeACLListMeta struct {
+	value *ComputeACLListMeta
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeAclListMeta) Get() *ComputeAclListMeta {
+func (v NullableComputeACLListMeta) Get() *ComputeACLListMeta {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeAclListMeta) Set(val *ComputeAclListMeta) {
+func (v *NullableComputeACLListMeta) Set(val *ComputeACLListMeta) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeAclListMeta) IsSet() bool {
+func (v NullableComputeACLListMeta) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeAclListMeta) Unset() {
+func (v *NullableComputeACLListMeta) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeAclListMeta returns a pointer to a new instance of NullableComputeAclListMeta.
-func NewNullableComputeAclListMeta(val *ComputeAclListMeta) *NullableComputeAclListMeta {
-	return &NullableComputeAclListMeta{value: val, isSet: true}
+// NewNullableComputeACLListMeta returns a pointer to a new instance of NullableComputeACLListMeta.
+func NewNullableComputeACLListMeta(val *ComputeACLListMeta) *NullableComputeACLListMeta {
+	return &NullableComputeACLListMeta{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeAclListMeta) MarshalJSON() ([]byte, error) {
+func (v NullableComputeACLListMeta) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeAclListMeta) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeACLListMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

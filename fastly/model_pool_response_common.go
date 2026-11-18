@@ -27,8 +27,8 @@ type PoolResponseCommon struct {
 	// Maximum number of connections.
 	MaxConnDefault *string `json:"max_conn_default,omitempty"`
 	// Be strict on checking TLS certs.
-	TlsCheckCert         NullableString `json:"tls_check_cert,omitempty"`
-	Id                   *string        `json:"id,omitempty"`
+	TLSCheckCert         NullableString `json:"tls_check_cert,omitempty"`
+	ID                   *string        `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -183,79 +183,79 @@ func (o *PoolResponseCommon) SetMaxConnDefault(v string) {
 	o.MaxConnDefault = &v
 }
 
-// GetTlsCheckCert returns the TlsCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponseCommon) GetTlsCheckCert() string {
-	if o == nil || o.TlsCheckCert.Get() == nil {
+// GetTLSCheckCert returns the TLSCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponseCommon) GetTLSCheckCert() string {
+	if o == nil || o.TLSCheckCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsCheckCert.Get()
+	return *o.TLSCheckCert.Get()
 }
 
-// GetTlsCheckCertOk returns a tuple with the TlsCheckCert field value if set, nil otherwise
+// GetTLSCheckCertOk returns a tuple with the TLSCheckCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponseCommon) GetTlsCheckCertOk() (*string, bool) {
+func (o *PoolResponseCommon) GetTLSCheckCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsCheckCert.Get(), o.TlsCheckCert.IsSet()
+	return o.TLSCheckCert.Get(), o.TLSCheckCert.IsSet()
 }
 
-// HasTlsCheckCert returns a boolean if a field has been set.
-func (o *PoolResponseCommon) HasTlsCheckCert() bool {
-	if o != nil && o.TlsCheckCert.IsSet() {
+// HasTLSCheckCert returns a boolean if a field has been set.
+func (o *PoolResponseCommon) HasTLSCheckCert() bool {
+	if o != nil && o.TLSCheckCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsCheckCert gets a reference to the given NullableString and assigns it to the TlsCheckCert field.
-func (o *PoolResponseCommon) SetTlsCheckCert(v string) {
-	o.TlsCheckCert.Set(&v)
+// SetTLSCheckCert gets a reference to the given NullableString and assigns it to the TLSCheckCert field.
+func (o *PoolResponseCommon) SetTLSCheckCert(v string) {
+	o.TLSCheckCert.Set(&v)
 }
 
-// SetTlsCheckCertNil sets the value for TlsCheckCert to be an explicit nil
-func (o *PoolResponseCommon) SetTlsCheckCertNil() {
-	o.TlsCheckCert.Set(nil)
+// SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
+func (o *PoolResponseCommon) SetTLSCheckCertNil() {
+	o.TLSCheckCert.Set(nil)
 }
 
-// UnsetTlsCheckCert ensures that no value is present for TlsCheckCert, not even an explicit nil
-func (o *PoolResponseCommon) UnsetTlsCheckCert() {
-	o.TlsCheckCert.Unset()
+// UnsetTLSCheckCert ensures that no value is present for TLSCheckCert, not even an explicit nil
+func (o *PoolResponseCommon) UnsetTLSCheckCert() {
+	o.TLSCheckCert.Unset()
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PoolResponseCommon) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *PoolResponseCommon) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponseCommon) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *PoolResponseCommon) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *PoolResponseCommon) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *PoolResponseCommon) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PoolResponseCommon) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *PoolResponseCommon) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -274,11 +274,11 @@ func (o PoolResponseCommon) MarshalJSON() ([]byte, error) {
 	if o.MaxConnDefault != nil {
 		toSerialize["max_conn_default"] = o.MaxConnDefault
 	}
-	if o.TlsCheckCert.IsSet() {
-		toSerialize["tls_check_cert"] = o.TlsCheckCert.Get()
+	if o.TLSCheckCert.IsSet() {
+		toSerialize["tls_check_cert"] = o.TLSCheckCert.Get()
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {

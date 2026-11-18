@@ -6,11 +6,11 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateAutomationToken**](AutomationTokensAPI.md#CreateAutomationToken) | **POST** `/automation-tokens` | Create Automation Token
-[**GetAutomationTokenId**](AutomationTokensAPI.md#GetAutomationTokenId) | **GET** `/automation-tokens/{id}` | Retrieve an Automation Token by ID
-[**GetAutomationTokensIdServices**](AutomationTokensAPI.md#GetAutomationTokensIdServices) | **GET** `/automation-tokens/{id}/services` | List Automation Token Services
-[**GetAutomationTokensIdWorkspaces**](AutomationTokensAPI.md#GetAutomationTokensIdWorkspaces) | **GET** `/automation-tokens/{id}/workspaces` | List Automation Token Workspaces
+[**GetAutomationTokenID**](AutomationTokensAPI.md#GetAutomationTokenID) | **GET** `/automation-tokens/{id}` | Retrieve an Automation Token by ID
+[**GetAutomationTokensIDServices**](AutomationTokensAPI.md#GetAutomationTokensIDServices) | **GET** `/automation-tokens/{id}/services` | List Automation Token Services
+[**GetAutomationTokensIDWorkspaces**](AutomationTokensAPI.md#GetAutomationTokensIDWorkspaces) | **GET** `/automation-tokens/{id}/workspaces` | List Automation Token Workspaces
 [**ListAutomationTokens**](AutomationTokensAPI.md#ListAutomationTokens) | **GET** `/automation-tokens` | List Customer Automation Tokens
-[**RevokeAutomationTokenId**](AutomationTokensAPI.md#RevokeAutomationTokenId) | **DELETE** `/automation-tokens/{id}` | Revoke an Automation Token by ID
+[**RevokeAutomationTokenID**](AutomationTokensAPI.md#RevokeAutomationTokenID) | **DELETE** `/automation-tokens/{id}` | Revoke an Automation Token by ID
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetAutomationTokenId
+## GetAutomationTokenID
 
 Retrieve an Automation Token by ID
 
@@ -102,13 +102,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokenId(ctx, id).Execute()
+    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokenID(ctx, id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokenId`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokenID`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAutomationTokenId`: AutomationTokenResponse
-    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokenId`: %v\n", resp)
+    // response from `GetAutomationTokenID`: AutomationTokenResponse
+    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokenID`: %v\n", resp)
 }
 ```
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAutomationTokenIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAutomationTokenIDRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetAutomationTokensIdServices
+## GetAutomationTokensIDServices
 
 List Automation Token Services
 
@@ -171,13 +171,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokensIdServices(ctx, id).PerPage(perPage).Page(page).Execute()
+    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokensIDServices(ctx, id).PerPage(perPage).Page(page).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokensIdServices`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokensIDServices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAutomationTokensIdServices`: InlineResponse2004
-    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokensIdServices`: %v\n", resp)
+    // response from `GetAutomationTokensIDServices`: InlineResponse2004
+    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokensIDServices`: %v\n", resp)
 }
 ```
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAutomationTokensIdServicesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAutomationTokensIDServicesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetAutomationTokensIdWorkspaces
+## GetAutomationTokensIDWorkspaces
 
 List Automation Token Workspaces
 
@@ -240,13 +240,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokensIdWorkspaces(ctx, id).Limit(limit).Cursor(cursor).Execute()
+    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokensIDWorkspaces(ctx, id).Limit(limit).Cursor(cursor).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokensIdWorkspaces`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokensIDWorkspaces`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAutomationTokensIdWorkspaces`: AutomationTokenWorkspacesResponse
-    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokensIdWorkspaces`: %v\n", resp)
+    // response from `GetAutomationTokensIDWorkspaces`: AutomationTokenWorkspacesResponse
+    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokensIDWorkspaces`: %v\n", resp)
 }
 ```
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAutomationTokensIdWorkspacesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAutomationTokensIDWorkspacesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## RevokeAutomationTokenId
+## RevokeAutomationTokenID
 
 Revoke an Automation Token by ID
 
@@ -371,13 +371,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AutomationTokensAPI.RevokeAutomationTokenId(ctx, id).Execute()
+    resp, r, err := apiClient.AutomationTokensAPI.RevokeAutomationTokenID(ctx, id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.RevokeAutomationTokenId`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.RevokeAutomationTokenID`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `RevokeAutomationTokenId`: AutomationTokenErrorResponse
-    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.RevokeAutomationTokenId`: %v\n", resp)
+    // response from `RevokeAutomationTokenID`: AutomationTokenErrorResponse
+    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.RevokeAutomationTokenID`: %v\n", resp)
 }
 ```
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRevokeAutomationTokenIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRevokeAutomationTokenIDRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -412,4 +412,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

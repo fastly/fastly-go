@@ -56,10 +56,10 @@ type AiRuntimeControlProvidersAPI interface {
 		Returns the models available for a specific provider.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param providerId The ID of the provider.
+		 @param providerID The ID of the provider.
 		 @return APIArcGetModelsForProviderRequest
 	*/
-	ArcGetModelsForProvider(ctx context.Context, providerId string) APIArcGetModelsForProviderRequest
+	ArcGetModelsForProvider(ctx context.Context, providerID string) APIArcGetModelsForProviderRequest
 
 	// ArcGetModelsForProviderExecute executes the request
 	//  @return ArcModelsResponse
@@ -250,7 +250,7 @@ func (a *AiRuntimeControlProvidersAPIService) ArcGetBedrockSetupExecute(r APIArc
 type APIArcGetModelsForProviderRequest struct {
 	ctx        context.Context
 	APIService AiRuntimeControlProvidersAPI
-	providerId string
+	providerID string
 }
 
 // Execute calls the API using the request data configured.
@@ -264,14 +264,14 @@ ArcGetModelsForProvider Get models for a provider
 Returns the models available for a specific provider.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param providerId The ID of the provider.
+ @param providerID The ID of the provider.
  @return APIArcGetModelsForProviderRequest
 */
-func (a *AiRuntimeControlProvidersAPIService) ArcGetModelsForProvider(ctx context.Context, providerId string) APIArcGetModelsForProviderRequest {
+func (a *AiRuntimeControlProvidersAPIService) ArcGetModelsForProvider(ctx context.Context, providerID string) APIArcGetModelsForProviderRequest {
 	return APIArcGetModelsForProviderRequest{
 		APIService: a,
 		ctx:        ctx,
-		providerId: providerId,
+		providerID: providerID,
 	}
 }
 
@@ -291,7 +291,7 @@ func (a *AiRuntimeControlProvidersAPIService) ArcGetModelsForProviderExecute(r A
 	}
 
 	localVarPath := localBasePath + "/ai-runtime-control/v1/providers/{provider_id}/models"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"provider_id"+"}", gourl.PathEscape(parameterToString(r.providerId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"provider_id"+"}", gourl.PathEscape(parameterToString(r.providerID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

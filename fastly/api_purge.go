@@ -37,10 +37,10 @@ type PurgeAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIBulkPurgeTagRequest
 	*/
-	BulkPurgeTag(ctx context.Context, serviceId string) APIBulkPurgeTagRequest
+	BulkPurgeTag(ctx context.Context, serviceID string) APIBulkPurgeTagRequest
 
 	// BulkPurgeTagExecute executes the request
 	//  @return map[string]string
@@ -55,29 +55,29 @@ type PurgeAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIPurgeAllRequest
 	*/
-	PurgeAll(ctx context.Context, serviceId string) APIPurgeAllRequest
+	PurgeAll(ctx context.Context, serviceID string) APIPurgeAllRequest
 
 	// PurgeAllExecute executes the request
 	//  @return InlineResponse200
 	PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		PurgeSingleUrl Purge a URL
+		PurgeSingleURL Purge a URL
 
 		Instant Purge an individual URL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param cachedUrl URL of object in cache to be purged.
-		 @return APIPurgeSingleUrlRequest
+		 @param cachedURL URL of object in cache to be purged.
+		 @return APIPurgeSingleURLRequest
 	*/
-	PurgeSingleUrl(ctx context.Context, cachedUrl string) APIPurgeSingleUrlRequest
+	PurgeSingleURL(ctx context.Context, cachedURL string) APIPurgeSingleURLRequest
 
-	// PurgeSingleUrlExecute executes the request
+	// PurgeSingleURLExecute executes the request
 	//  @return PurgeResponse
-	PurgeSingleUrlExecute(r APIPurgeSingleUrlRequest) (*PurgeResponse, *http.Response, error)
+	PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*PurgeResponse, *http.Response, error)
 
 	/*
 		PurgeTag Purge by surrogate key tag
@@ -85,11 +85,11 @@ type PurgeAPI interface {
 		Instant Purge a particular service of items tagged with a Surrogate Key. Only one surrogate key can be purged at a time. Multiple keys can be purged using a batch surrogate key purge request.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @param surrogateKey Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
 		 @return APIPurgeTagRequest
 	*/
-	PurgeTag(ctx context.Context, serviceId string, surrogateKey string) APIPurgeTagRequest
+	PurgeTag(ctx context.Context, serviceID string, surrogateKey string) APIPurgeTagRequest
 
 	// PurgeTagExecute executes the request
 	//  @return PurgeResponse
@@ -103,7 +103,7 @@ type PurgeAPIService service
 type APIBulkPurgeTagRequest struct {
 	ctx                    context.Context
 	APIService             PurgeAPI
-	serviceId              string
+	serviceID              string
 	fastlySoftPurge        *int32
 	fastlyPurgeEnvironment *string
 	surrogateKey           *string
@@ -146,14 +146,14 @@ Instant Purge a particular service of items tagged with surrogate keys. Up to 25
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIBulkPurgeTagRequest
 */
-func (a *PurgeAPIService) BulkPurgeTag(ctx context.Context, serviceId string) APIBulkPurgeTagRequest {
+func (a *PurgeAPIService) BulkPurgeTag(ctx context.Context, serviceID string) APIBulkPurgeTagRequest {
 	return APIBulkPurgeTagRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -173,7 +173,7 @@ func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[str
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/purge"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -275,7 +275,7 @@ func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[str
 type APIPurgeAllRequest struct {
 	ctx                    context.Context
 	APIService             PurgeAPI
-	serviceId              string
+	serviceID              string
 	fastlyPurgeEnvironment *string
 }
 
@@ -299,14 +299,14 @@ Purge-all requests cannot be done in soft mode and will always immediately inval
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIPurgeAllRequest
 */
-func (a *PurgeAPIService) PurgeAll(ctx context.Context, serviceId string) APIPurgeAllRequest {
+func (a *PurgeAPIService) PurgeAll(ctx context.Context, serviceID string) APIPurgeAllRequest {
 	return APIPurgeAllRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -326,7 +326,7 @@ func (a *PurgeAPIService) PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/purge_all"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -416,45 +416,45 @@ func (a *PurgeAPIService) PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIPurgeSingleUrlRequest represents a request for the resource.
-type APIPurgeSingleUrlRequest struct {
+// APIPurgeSingleURLRequest represents a request for the resource.
+type APIPurgeSingleURLRequest struct {
 	ctx             context.Context
 	APIService      PurgeAPI
-	cachedUrl       string
+	cachedURL       string
 	fastlySoftPurge *int32
 }
 
 // FastlySoftPurge If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important.
-func (r *APIPurgeSingleUrlRequest) FastlySoftPurge(fastlySoftPurge int32) *APIPurgeSingleUrlRequest {
+func (r *APIPurgeSingleURLRequest) FastlySoftPurge(fastlySoftPurge int32) *APIPurgeSingleURLRequest {
 	r.fastlySoftPurge = &fastlySoftPurge
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIPurgeSingleUrlRequest) Execute() (*PurgeResponse, *http.Response, error) {
-	return r.APIService.PurgeSingleUrlExecute(r)
+func (r APIPurgeSingleURLRequest) Execute() (*PurgeResponse, *http.Response, error) {
+	return r.APIService.PurgeSingleURLExecute(r)
 }
 
 /*
-PurgeSingleUrl Purge a URL
+PurgeSingleURL Purge a URL
 
 Instant Purge an individual URL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cachedUrl URL of object in cache to be purged.
- @return APIPurgeSingleUrlRequest
+ @param cachedURL URL of object in cache to be purged.
+ @return APIPurgeSingleURLRequest
 */
-func (a *PurgeAPIService) PurgeSingleUrl(ctx context.Context, cachedUrl string) APIPurgeSingleUrlRequest {
-	return APIPurgeSingleUrlRequest{
+func (a *PurgeAPIService) PurgeSingleURL(ctx context.Context, cachedURL string) APIPurgeSingleURLRequest {
+	return APIPurgeSingleURLRequest{
 		APIService: a,
 		ctx:        ctx,
-		cachedUrl:  cachedUrl,
+		cachedURL:  cachedURL,
 	}
 }
 
-// PurgeSingleUrlExecute executes the request
+// PurgeSingleURLExecute executes the request
 //  @return PurgeResponse
-func (a *PurgeAPIService) PurgeSingleUrlExecute(r APIPurgeSingleUrlRequest) (*PurgeResponse, *http.Response, error) {
+func (a *PurgeAPIService) PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*PurgeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
@@ -462,13 +462,13 @@ func (a *PurgeAPIService) PurgeSingleUrlExecute(r APIPurgeSingleUrlRequest) (*Pu
 		localVarReturnValue *PurgeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PurgeAPIService.PurgeSingleUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PurgeAPIService.PurgeSingleURL")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/purge/{cached_url}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cached_url"+"}", parameterToString(r.cachedUrl, ""))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cached_url"+"}", parameterToString(r.cachedURL, ""))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -562,7 +562,7 @@ func (a *PurgeAPIService) PurgeSingleUrlExecute(r APIPurgeSingleUrlRequest) (*Pu
 type APIPurgeTagRequest struct {
 	ctx                    context.Context
 	APIService             PurgeAPI
-	serviceId              string
+	serviceID              string
 	surrogateKey           string
 	fastlySoftPurge        *int32
 	fastlyPurgeEnvironment *string
@@ -591,15 +591,15 @@ PurgeTag Purge by surrogate key tag
 Instant Purge a particular service of items tagged with a Surrogate Key. Only one surrogate key can be purged at a time. Multiple keys can be purged using a batch surrogate key purge request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @param surrogateKey Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
  @return APIPurgeTagRequest
 */
-func (a *PurgeAPIService) PurgeTag(ctx context.Context, serviceId string, surrogateKey string) APIPurgeTagRequest {
+func (a *PurgeAPIService) PurgeTag(ctx context.Context, serviceID string, surrogateKey string) APIPurgeTagRequest {
 	return APIPurgeTagRequest{
 		APIService:   a,
 		ctx:          ctx,
-		serviceId:    serviceId,
+		serviceID:    serviceID,
 		surrogateKey: surrogateKey,
 	}
 }
@@ -620,7 +620,7 @@ func (a *PurgeAPIService) PurgeTagExecute(r APIPurgeTagRequest) (*PurgeResponse,
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/purge/{surrogate_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"surrogate_key"+"}", parameterToString(r.surrogateKey, ""))
 
 	localVarHeaderParams := make(map[string]string)

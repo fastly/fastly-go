@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The provider identifier. | 
+**ID** | **string** | The provider identifier. | 
 **DisplayName** | **string** | The human-readable name of the provider. | 
-**DefaultBaseUrl** | **string** | The default API base URL for the provider. | 
+**DefaultBaseURL** | **string** | The default API base URL for the provider. | 
 **Models** | [**[]ArcModel**](ArcModel.md) | The models available from this provider. | 
 
 ## Methods
 
 ### NewArcProvider
 
-`func NewArcProvider(id string, displayName string, defaultBaseUrl string, models []ArcModel, ) *ArcProvider`
+`func NewArcProvider(id string, displayName string, defaultBaseURL string, models []ArcModel, ) *ArcProvider`
 
 NewArcProvider instantiates a new ArcProvider object
 This constructor will assign default values to properties that have it defined,
@@ -28,24 +28,24 @@ NewArcProviderWithDefaults instantiates a new ArcProvider object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *ArcProvider) GetId() string`
+`func (o *ArcProvider) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ArcProvider) GetIdOk() (*string, bool)`
+`func (o *ArcProvider) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ArcProvider) SetId(v string)`
+`func (o *ArcProvider) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetDisplayName
@@ -68,24 +68,24 @@ and a boolean to check if the value has been set.
 SetDisplayName sets DisplayName field to given value.
 
 
-### GetDefaultBaseUrl
+### GetDefaultBaseURL
 
-`func (o *ArcProvider) GetDefaultBaseUrl() string`
+`func (o *ArcProvider) GetDefaultBaseURL() string`
 
-GetDefaultBaseUrl returns the DefaultBaseUrl field if non-nil, zero value otherwise.
+GetDefaultBaseURL returns the DefaultBaseURL field if non-nil, zero value otherwise.
 
-### GetDefaultBaseUrlOk
+### GetDefaultBaseURLOk
 
-`func (o *ArcProvider) GetDefaultBaseUrlOk() (*string, bool)`
+`func (o *ArcProvider) GetDefaultBaseURLOk() (*string, bool)`
 
-GetDefaultBaseUrlOk returns a tuple with the DefaultBaseUrl field if it's non-nil, zero value otherwise
+GetDefaultBaseURLOk returns a tuple with the DefaultBaseURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDefaultBaseUrl
+### SetDefaultBaseURL
 
-`func (o *ArcProvider) SetDefaultBaseUrl(v string)`
+`func (o *ArcProvider) SetDefaultBaseURL(v string)`
 
-SetDefaultBaseUrl sets DefaultBaseUrl field to given value.
+SetDefaultBaseURL sets DefaultBaseURL field to given value.
 
 
 ### GetModels
@@ -110,5 +110,3 @@ SetModels sets Models field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

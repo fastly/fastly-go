@@ -29,9 +29,9 @@ type _BotManagementBotAction BotManagementBotAction
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotManagementBotAction(type_ string) *BotManagementBotAction {
+func NewBotManagementBotAction(resourceType string) *BotManagementBotAction {
 	this := BotManagementBotAction{}
-	this.Type = type_
+	this.Type = resourceType
 	return &this
 }
 

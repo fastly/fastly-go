@@ -1,51 +1,49 @@
-# NetworkProtectRuleMatchIpProtocol
+# NetworkProtectRuleMatchIPProtocol
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IpProtocol** | [**NetworkProtectRuleIpProtocol**](NetworkProtectRuleIpProtocol.md) |  | 
+**IPProtocol** | [**NetworkProtectRuleIPProtocol**](NetworkProtectRuleIPProtocol.md) |  | 
 
 ## Methods
 
-### NewNetworkProtectRuleMatchIpProtocol
+### NewNetworkProtectRuleMatchIPProtocol
 
-`func NewNetworkProtectRuleMatchIpProtocol(ipProtocol NetworkProtectRuleIpProtocol, ) *NetworkProtectRuleMatchIpProtocol`
+`func NewNetworkProtectRuleMatchIPProtocol(ipProtocol NetworkProtectRuleIPProtocol, ) *NetworkProtectRuleMatchIPProtocol`
 
-NewNetworkProtectRuleMatchIpProtocol instantiates a new NetworkProtectRuleMatchIpProtocol object
+NewNetworkProtectRuleMatchIPProtocol instantiates a new NetworkProtectRuleMatchIPProtocol object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNetworkProtectRuleMatchIpProtocolWithDefaults
+### NewNetworkProtectRuleMatchIPProtocolWithDefaults
 
-`func NewNetworkProtectRuleMatchIpProtocolWithDefaults() *NetworkProtectRuleMatchIpProtocol`
+`func NewNetworkProtectRuleMatchIPProtocolWithDefaults() *NetworkProtectRuleMatchIPProtocol`
 
-NewNetworkProtectRuleMatchIpProtocolWithDefaults instantiates a new NetworkProtectRuleMatchIpProtocol object
+NewNetworkProtectRuleMatchIPProtocolWithDefaults instantiates a new NetworkProtectRuleMatchIPProtocol object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIpProtocol
+### GetIPProtocol
 
-`func (o *NetworkProtectRuleMatchIpProtocol) GetIpProtocol() NetworkProtectRuleIpProtocol`
+`func (o *NetworkProtectRuleMatchIPProtocol) GetIPProtocol() NetworkProtectRuleIPProtocol`
 
-GetIpProtocol returns the IpProtocol field if non-nil, zero value otherwise.
+GetIPProtocol returns the IPProtocol field if non-nil, zero value otherwise.
 
-### GetIpProtocolOk
+### GetIPProtocolOk
 
-`func (o *NetworkProtectRuleMatchIpProtocol) GetIpProtocolOk() (*NetworkProtectRuleIpProtocol, bool)`
+`func (o *NetworkProtectRuleMatchIPProtocol) GetIPProtocolOk() (*NetworkProtectRuleIPProtocol, bool)`
 
-GetIpProtocolOk returns a tuple with the IpProtocol field if it's non-nil, zero value otherwise
+GetIPProtocolOk returns a tuple with the IPProtocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIpProtocol
+### SetIPProtocol
 
-`func (o *NetworkProtectRuleMatchIpProtocol) SetIpProtocol(v NetworkProtectRuleIpProtocol)`
+`func (o *NetworkProtectRuleMatchIPProtocol) SetIPProtocol(v NetworkProtectRuleIPProtocol)`
 
-SetIpProtocol sets IpProtocol field to given value.
+SetIPProtocol sets IPProtocol field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

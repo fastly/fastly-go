@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | ID of the store. | [optional] 
+**ID** | Pointer to **string** | ID of the store. | [optional] 
 **Name** | Pointer to **string** | A human-readable name for the store. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
@@ -27,30 +27,30 @@ NewSecretStoreResponseWithDefaults instantiates a new SecretStoreResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *SecretStoreResponse) GetId() string`
+`func (o *SecretStoreResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *SecretStoreResponse) GetIdOk() (*string, bool)`
+`func (o *SecretStoreResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *SecretStoreResponse) SetId(v string)`
+`func (o *SecretStoreResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *SecretStoreResponse) HasId() bool`
+`func (o *SecretStoreResponse) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -114,5 +114,3 @@ HasCreatedAt returns a boolean if a field has been set.
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

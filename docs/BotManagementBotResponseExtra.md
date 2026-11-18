@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BotId** | **string** | The unique identifier of the bot. | [readonly] 
+**BotID** | **string** | The unique identifier of the bot. | [readonly] 
 **Name** | **string** | The display name of the bot. | [readonly] 
 
 ## Methods
 
 ### NewBotManagementBotResponseExtra
 
-`func NewBotManagementBotResponseExtra(botId string, name string, ) *BotManagementBotResponseExtra`
+`func NewBotManagementBotResponseExtra(botID string, name string, ) *BotManagementBotResponseExtra`
 
 NewBotManagementBotResponseExtra instantiates a new BotManagementBotResponseExtra object
 This constructor will assign default values to properties that have it defined,
@@ -26,24 +26,24 @@ NewBotManagementBotResponseExtraWithDefaults instantiates a new BotManagementBot
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetBotId
+### GetBotID
 
-`func (o *BotManagementBotResponseExtra) GetBotId() string`
+`func (o *BotManagementBotResponseExtra) GetBotID() string`
 
-GetBotId returns the BotId field if non-nil, zero value otherwise.
+GetBotID returns the BotID field if non-nil, zero value otherwise.
 
-### GetBotIdOk
+### GetBotIDOk
 
-`func (o *BotManagementBotResponseExtra) GetBotIdOk() (*string, bool)`
+`func (o *BotManagementBotResponseExtra) GetBotIDOk() (*string, bool)`
 
-GetBotIdOk returns a tuple with the BotId field if it's non-nil, zero value otherwise
+GetBotIDOk returns a tuple with the BotID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBotId
+### SetBotID
 
-`func (o *BotManagementBotResponseExtra) SetBotId(v string)`
+`func (o *BotManagementBotResponseExtra) SetBotID(v string)`
 
-SetBotId sets BotId field to given value.
+SetBotID sets BotID field to given value.
 
 
 ### GetName
@@ -68,5 +68,3 @@ SetName sets Name field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

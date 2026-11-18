@@ -37,10 +37,10 @@ type ApisecurityOperationsAPI interface {
 		Add tags to multiple operations in a single request.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityBulkAddTagsToOperationsRequest
 	*/
-	ApiSecurityBulkAddTagsToOperations(ctx context.Context, serviceId string) APIApiSecurityBulkAddTagsToOperationsRequest
+	ApiSecurityBulkAddTagsToOperations(ctx context.Context, serviceID string) APIApiSecurityBulkAddTagsToOperationsRequest
 
 	// ApiSecurityBulkAddTagsToOperationsExecute executes the request
 	//  @return InlineResponse2071
@@ -52,10 +52,10 @@ type ApisecurityOperationsAPI interface {
 		Create multiple operations associated with a specific service in a single request.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityBulkCreateOperationsRequest
 	*/
-	ApiSecurityBulkCreateOperations(ctx context.Context, serviceId string) APIApiSecurityBulkCreateOperationsRequest
+	ApiSecurityBulkCreateOperations(ctx context.Context, serviceID string) APIApiSecurityBulkCreateOperationsRequest
 
 	// ApiSecurityBulkCreateOperationsExecute executes the request
 	//  @return InlineResponse207
@@ -67,10 +67,10 @@ type ApisecurityOperationsAPI interface {
 		Delete multiple operations in a single request.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityBulkDeleteOperationsRequest
 	*/
-	ApiSecurityBulkDeleteOperations(ctx context.Context, serviceId string) APIApiSecurityBulkDeleteOperationsRequest
+	ApiSecurityBulkDeleteOperations(ctx context.Context, serviceID string) APIApiSecurityBulkDeleteOperationsRequest
 
 	// ApiSecurityBulkDeleteOperationsExecute executes the request
 	//  @return InlineResponse2071
@@ -82,10 +82,10 @@ type ApisecurityOperationsAPI interface {
 		Create a new operation associated with a specific service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityCreateOperationRequest
 	*/
-	ApiSecurityCreateOperation(ctx context.Context, serviceId string) APIApiSecurityCreateOperationRequest
+	ApiSecurityCreateOperation(ctx context.Context, serviceID string) APIApiSecurityCreateOperationRequest
 
 	// ApiSecurityCreateOperationExecute executes the request
 	//  @return OperationGet
@@ -97,10 +97,10 @@ type ApisecurityOperationsAPI interface {
 		Create a new operation tag associated with a specific service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityCreateOperationTagRequest
 	*/
-	ApiSecurityCreateOperationTag(ctx context.Context, serviceId string) APIApiSecurityCreateOperationTagRequest
+	ApiSecurityCreateOperationTag(ctx context.Context, serviceID string) APIApiSecurityCreateOperationTagRequest
 
 	// ApiSecurityCreateOperationTagExecute executes the request
 	//  @return TagGet
@@ -112,11 +112,11 @@ type ApisecurityOperationsAPI interface {
 		Delete an existing operation associated with a specific service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
-		 @param operationId The unique identifier of the operation.
+		 @param serviceID The unique identifier of the service.
+		 @param operationID The unique identifier of the operation.
 		 @return APIApiSecurityDeleteOperationRequest
 	*/
-	ApiSecurityDeleteOperation(ctx context.Context, serviceId string, operationId string) APIApiSecurityDeleteOperationRequest
+	ApiSecurityDeleteOperation(ctx context.Context, serviceID string, operationID string) APIApiSecurityDeleteOperationRequest
 
 	// ApiSecurityDeleteOperationExecute executes the request
 	ApiSecurityDeleteOperationExecute(r APIApiSecurityDeleteOperationRequest) (*http.Response, error)
@@ -127,11 +127,11 @@ type ApisecurityOperationsAPI interface {
 		Delete an existing operation tag.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
-		 @param tagId The unique identifier of the operation tag.
+		 @param serviceID The unique identifier of the service.
+		 @param tagID The unique identifier of the operation tag.
 		 @return APIApiSecurityDeleteOperationTagRequest
 	*/
-	ApiSecurityDeleteOperationTag(ctx context.Context, serviceId string, tagId string) APIApiSecurityDeleteOperationTagRequest
+	ApiSecurityDeleteOperationTag(ctx context.Context, serviceID string, tagID string) APIApiSecurityDeleteOperationTagRequest
 
 	// ApiSecurityDeleteOperationTagExecute executes the request
 	ApiSecurityDeleteOperationTagExecute(r APIApiSecurityDeleteOperationTagRequest) (*http.Response, error)
@@ -142,11 +142,11 @@ type ApisecurityOperationsAPI interface {
 		Get a specific operation associated with a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
-		 @param operationId The unique identifier of the operation.
+		 @param serviceID The unique identifier of the service.
+		 @param operationID The unique identifier of the operation.
 		 @return APIApiSecurityGetOperationRequest
 	*/
-	ApiSecurityGetOperation(ctx context.Context, serviceId string, operationId string) APIApiSecurityGetOperationRequest
+	ApiSecurityGetOperation(ctx context.Context, serviceID string, operationID string) APIApiSecurityGetOperationRequest
 
 	// ApiSecurityGetOperationExecute executes the request
 	//  @return OperationGet
@@ -158,11 +158,11 @@ type ApisecurityOperationsAPI interface {
 		Get a specific operation tag by its unique identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
-		 @param tagId The unique identifier of the operation tag.
+		 @param serviceID The unique identifier of the service.
+		 @param tagID The unique identifier of the operation tag.
 		 @return APIApiSecurityGetOperationTagRequest
 	*/
-	ApiSecurityGetOperationTag(ctx context.Context, serviceId string, tagId string) APIApiSecurityGetOperationTagRequest
+	ApiSecurityGetOperationTag(ctx context.Context, serviceID string, tagID string) APIApiSecurityGetOperationTagRequest
 
 	// ApiSecurityGetOperationTagExecute executes the request
 	//  @return TagGet
@@ -174,10 +174,10 @@ type ApisecurityOperationsAPI interface {
 		List all discovered operations associated with a specific service. Optionally filter operations by status.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityListDiscoveredOperationsRequest
 	*/
-	ApiSecurityListDiscoveredOperations(ctx context.Context, serviceId string) APIApiSecurityListDiscoveredOperationsRequest
+	ApiSecurityListDiscoveredOperations(ctx context.Context, serviceID string) APIApiSecurityListDiscoveredOperationsRequest
 
 	// ApiSecurityListDiscoveredOperationsExecute executes the request
 	//  @return InlineResponse2001
@@ -189,10 +189,10 @@ type ApisecurityOperationsAPI interface {
 		List all operation tags associated with a specific service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityListOperationTagsRequest
 	*/
-	ApiSecurityListOperationTags(ctx context.Context, serviceId string) APIApiSecurityListOperationTagsRequest
+	ApiSecurityListOperationTags(ctx context.Context, serviceID string) APIApiSecurityListOperationTagsRequest
 
 	// ApiSecurityListOperationTagsExecute executes the request
 	//  @return InlineResponse2003
@@ -204,10 +204,10 @@ type ApisecurityOperationsAPI interface {
 		List all operations associated with a specific service. Optionally filter operations by tag ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
+		 @param serviceID The unique identifier of the service.
 		 @return APIApiSecurityListOperationsRequest
 	*/
-	ApiSecurityListOperations(ctx context.Context, serviceId string) APIApiSecurityListOperationsRequest
+	ApiSecurityListOperations(ctx context.Context, serviceID string) APIApiSecurityListOperationsRequest
 
 	// ApiSecurityListOperationsExecute executes the request
 	//  @return InlineResponse2002
@@ -219,11 +219,11 @@ type ApisecurityOperationsAPI interface {
 		Partially update an existing operation associated with a specific service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
-		 @param operationId The unique identifier of the operation.
+		 @param serviceID The unique identifier of the service.
+		 @param operationID The unique identifier of the operation.
 		 @return APIApiSecurityUpdateOperationRequest
 	*/
-	ApiSecurityUpdateOperation(ctx context.Context, serviceId string, operationId string) APIApiSecurityUpdateOperationRequest
+	ApiSecurityUpdateOperation(ctx context.Context, serviceID string, operationID string) APIApiSecurityUpdateOperationRequest
 
 	// ApiSecurityUpdateOperationExecute executes the request
 	//  @return OperationGet
@@ -235,11 +235,11 @@ type ApisecurityOperationsAPI interface {
 		Partially update an existing operation tag.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId The unique identifier of the service.
-		 @param tagId The unique identifier of the operation tag.
+		 @param serviceID The unique identifier of the service.
+		 @param tagID The unique identifier of the operation tag.
 		 @return APIApiSecurityUpdateOperationTagRequest
 	*/
-	ApiSecurityUpdateOperationTag(ctx context.Context, serviceId string, tagId string) APIApiSecurityUpdateOperationTagRequest
+	ApiSecurityUpdateOperationTag(ctx context.Context, serviceID string, tagID string) APIApiSecurityUpdateOperationTagRequest
 
 	// ApiSecurityUpdateOperationTagExecute executes the request
 	//  @return TagGet
@@ -253,7 +253,7 @@ type ApisecurityOperationsAPIService service
 type APIApiSecurityBulkAddTagsToOperationsRequest struct {
 	ctx                  context.Context
 	APIService           ApisecurityOperationsAPI
-	serviceId            string
+	serviceID            string
 	operationBulkAddTags *OperationBulkAddTags
 }
 
@@ -274,14 +274,14 @@ ApiSecurityBulkAddTagsToOperations Bulk add tags to operations
 Add tags to multiple operations in a single request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityBulkAddTagsToOperationsRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperations(ctx context.Context, serviceId string) APIApiSecurityBulkAddTagsToOperationsRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperations(ctx context.Context, serviceID string) APIApiSecurityBulkAddTagsToOperationsRequest {
 	return APIApiSecurityBulkAddTagsToOperationsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -301,7 +301,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations-bulk-tags"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -363,7 +363,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -373,7 +373,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -383,7 +383,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -393,7 +393,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -403,7 +403,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -443,7 +443,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExec
 type APIApiSecurityBulkCreateOperationsRequest struct {
 	ctx                 context.Context
 	APIService          ApisecurityOperationsAPI
-	serviceId           string
+	serviceID           string
 	operationBulkCreate *OperationBulkCreate
 }
 
@@ -464,14 +464,14 @@ ApiSecurityBulkCreateOperations Bulk create operations
 Create multiple operations associated with a specific service in a single request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityBulkCreateOperationsRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperations(ctx context.Context, serviceId string) APIApiSecurityBulkCreateOperationsRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperations(ctx context.Context, serviceID string) APIApiSecurityBulkCreateOperationsRequest {
 	return APIApiSecurityBulkCreateOperationsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -491,7 +491,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations-bulk"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -553,7 +553,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -563,7 +563,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -573,7 +573,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -583,7 +583,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -593,7 +593,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -633,7 +633,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute
 type APIApiSecurityBulkDeleteOperationsRequest struct {
 	ctx                 context.Context
 	APIService          ApisecurityOperationsAPI
-	serviceId           string
+	serviceID           string
 	operationBulkDelete *OperationBulkDelete
 }
 
@@ -654,14 +654,14 @@ ApiSecurityBulkDeleteOperations Bulk delete operations
 Delete multiple operations in a single request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityBulkDeleteOperationsRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperations(ctx context.Context, serviceId string) APIApiSecurityBulkDeleteOperationsRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperations(ctx context.Context, serviceID string) APIApiSecurityBulkDeleteOperationsRequest {
 	return APIApiSecurityBulkDeleteOperationsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -681,7 +681,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations-bulk"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -743,7 +743,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -753,7 +753,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -763,7 +763,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -773,7 +773,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -783,7 +783,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -823,7 +823,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute
 type APIApiSecurityCreateOperationRequest struct {
 	ctx             context.Context
 	APIService      ApisecurityOperationsAPI
-	serviceId       string
+	serviceID       string
 	operationCreate *OperationCreate
 }
 
@@ -844,14 +844,14 @@ ApiSecurityCreateOperation Create operation
 Create a new operation associated with a specific service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityCreateOperationRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperation(ctx context.Context, serviceId string) APIApiSecurityCreateOperationRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperation(ctx context.Context, serviceID string) APIApiSecurityCreateOperationRequest {
 	return APIApiSecurityCreateOperationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -871,7 +871,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -933,7 +933,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -943,7 +943,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -953,7 +953,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -963,7 +963,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -973,7 +973,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1013,7 +1013,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationExecute(r AP
 type APIApiSecurityCreateOperationTagRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
+	serviceID  string
 	tagCreate  *TagCreate
 }
 
@@ -1034,14 +1034,14 @@ ApiSecurityCreateOperationTag Create operation tag
 Create a new operation tag associated with a specific service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityCreateOperationTagRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTag(ctx context.Context, serviceId string) APIApiSecurityCreateOperationTagRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTag(ctx context.Context, serviceID string) APIApiSecurityCreateOperationTagRequest {
 	return APIApiSecurityCreateOperationTagRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -1061,7 +1061,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTagExecute(r
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/tags"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1123,7 +1123,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTagExecute(r
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1133,7 +1133,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1143,7 +1143,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1153,7 +1153,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1193,8 +1193,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityCreateOperationTagExecute(r
 type APIApiSecurityDeleteOperationRequest struct {
 	ctx         context.Context
 	APIService  ApisecurityOperationsAPI
-	serviceId   string
-	operationId string
+	serviceID   string
+	operationID string
 }
 
 // Execute calls the API using the request data configured.
@@ -1208,16 +1208,16 @@ ApiSecurityDeleteOperation Delete operation
 Delete an existing operation associated with a specific service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
- @param operationId The unique identifier of the operation.
+ @param serviceID The unique identifier of the service.
+ @param operationID The unique identifier of the operation.
  @return APIApiSecurityDeleteOperationRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperation(ctx context.Context, serviceId string, operationId string) APIApiSecurityDeleteOperationRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperation(ctx context.Context, serviceID string, operationID string) APIApiSecurityDeleteOperationRequest {
 	return APIApiSecurityDeleteOperationRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceId:   serviceId,
-		operationId: operationId,
+		serviceID:   serviceID,
+		operationID: operationID,
 	}
 }
 
@@ -1235,8 +1235,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations/{operation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"operation_id"+"}", gourl.PathEscape(parameterToString(r.operationId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"operation_id"+"}", gourl.PathEscape(parameterToString(r.operationID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1296,7 +1296,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1306,7 +1306,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1316,7 +1316,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1326,7 +1326,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1336,7 +1336,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1367,8 +1367,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationExecute(r AP
 type APIApiSecurityDeleteOperationTagRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
-	tagId      string
+	serviceID  string
+	tagID      string
 }
 
 // Execute calls the API using the request data configured.
@@ -1382,16 +1382,16 @@ ApiSecurityDeleteOperationTag Delete operation tag
 Delete an existing operation tag.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
- @param tagId The unique identifier of the operation tag.
+ @param serviceID The unique identifier of the service.
+ @param tagID The unique identifier of the operation tag.
  @return APIApiSecurityDeleteOperationTagRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTag(ctx context.Context, serviceId string, tagId string) APIApiSecurityDeleteOperationTagRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTag(ctx context.Context, serviceID string, tagID string) APIApiSecurityDeleteOperationTagRequest {
 	return APIApiSecurityDeleteOperationTagRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		tagId:      tagId,
+		serviceID:  serviceID,
+		tagID:      tagID,
 	}
 }
 
@@ -1409,8 +1409,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/tags/{tag_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tag_id"+"}", gourl.PathEscape(parameterToString(r.tagId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tag_id"+"}", gourl.PathEscape(parameterToString(r.tagID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1470,7 +1470,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1480,7 +1480,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1490,7 +1490,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1500,7 +1500,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1510,7 +1510,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1541,8 +1541,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityDeleteOperationTagExecute(r
 type APIApiSecurityGetOperationRequest struct {
 	ctx         context.Context
 	APIService  ApisecurityOperationsAPI
-	serviceId   string
-	operationId string
+	serviceID   string
+	operationID string
 }
 
 // Execute calls the API using the request data configured.
@@ -1556,16 +1556,16 @@ ApiSecurityGetOperation Retrieve operation
 Get a specific operation associated with a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
- @param operationId The unique identifier of the operation.
+ @param serviceID The unique identifier of the service.
+ @param operationID The unique identifier of the operation.
  @return APIApiSecurityGetOperationRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperation(ctx context.Context, serviceId string, operationId string) APIApiSecurityGetOperationRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperation(ctx context.Context, serviceID string, operationID string) APIApiSecurityGetOperationRequest {
 	return APIApiSecurityGetOperationRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceId:   serviceId,
-		operationId: operationId,
+		serviceID:   serviceID,
+		operationID: operationID,
 	}
 }
 
@@ -1585,8 +1585,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations/{operation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"operation_id"+"}", gourl.PathEscape(parameterToString(r.operationId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"operation_id"+"}", gourl.PathEscape(parameterToString(r.operationID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1646,7 +1646,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1656,7 +1656,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1666,7 +1666,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1676,7 +1676,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1686,7 +1686,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1726,8 +1726,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationExecute(r APIAp
 type APIApiSecurityGetOperationTagRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
-	tagId      string
+	serviceID  string
+	tagID      string
 }
 
 // Execute calls the API using the request data configured.
@@ -1741,16 +1741,16 @@ ApiSecurityGetOperationTag Retrieve operation tag
 Get a specific operation tag by its unique identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
- @param tagId The unique identifier of the operation tag.
+ @param serviceID The unique identifier of the service.
+ @param tagID The unique identifier of the operation tag.
  @return APIApiSecurityGetOperationTagRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTag(ctx context.Context, serviceId string, tagId string) APIApiSecurityGetOperationTagRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTag(ctx context.Context, serviceID string, tagID string) APIApiSecurityGetOperationTagRequest {
 	return APIApiSecurityGetOperationTagRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		tagId:      tagId,
+		serviceID:  serviceID,
+		tagID:      tagID,
 	}
 }
 
@@ -1770,8 +1770,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/tags/{tag_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tag_id"+"}", gourl.PathEscape(parameterToString(r.tagId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tag_id"+"}", gourl.PathEscape(parameterToString(r.tagID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1831,7 +1831,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1841,7 +1841,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1851,7 +1851,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1861,7 +1861,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1871,7 +1871,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1911,7 +1911,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityGetOperationTagExecute(r AP
 type APIApiSecurityListDiscoveredOperationsRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
+	serviceID  string
 	method     *[]string
 	domain     *[]string
 	path       *string
@@ -1960,14 +1960,14 @@ ApiSecurityListDiscoveredOperations List discovered operations
 List all discovered operations associated with a specific service. Optionally filter operations by status.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityListDiscoveredOperationsRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperations(ctx context.Context, serviceId string) APIApiSecurityListDiscoveredOperationsRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperations(ctx context.Context, serviceID string) APIApiSecurityListDiscoveredOperationsRequest {
 	return APIApiSecurityListDiscoveredOperationsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -1987,7 +1987,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/discovered-operations"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2078,7 +2078,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2088,7 +2088,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2098,7 +2098,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2108,7 +2108,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2118,7 +2118,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2158,7 +2158,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 type APIApiSecurityListOperationTagsRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
+	serviceID  string
 	limit      *int32
 	page       *int32
 }
@@ -2186,14 +2186,14 @@ ApiSecurityListOperationTags List operation tags
 List all operation tags associated with a specific service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityListOperationTagsRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTags(ctx context.Context, serviceId string) APIApiSecurityListOperationTagsRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTags(ctx context.Context, serviceID string) APIApiSecurityListOperationTagsRequest {
 	return APIApiSecurityListOperationTagsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -2213,7 +2213,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/tags"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2279,7 +2279,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2289,7 +2289,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2299,7 +2299,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2309,7 +2309,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2349,8 +2349,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 type APIApiSecurityListOperationsRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
-	tagId      *string
+	serviceID  string
+	tagID      *string
 	status     *string
 	method     *[]string
 	domain     *[]string
@@ -2359,9 +2359,9 @@ type APIApiSecurityListOperationsRequest struct {
 	page       *int32
 }
 
-// TagId Filter operations by operation tag ID. Only operations associated with this operation tag will be returned.
-func (r *APIApiSecurityListOperationsRequest) TagId(tagId string) *APIApiSecurityListOperationsRequest {
-	r.tagId = &tagId
+// TagID Filter operations by operation tag ID. Only operations associated with this operation tag will be returned.
+func (r *APIApiSecurityListOperationsRequest) TagID(tagID string) *APIApiSecurityListOperationsRequest {
+	r.tagID = &tagID
 	return r
 }
 
@@ -2412,14 +2412,14 @@ ApiSecurityListOperations List operations
 List all operations associated with a specific service. Optionally filter operations by tag ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
+ @param serviceID The unique identifier of the service.
  @return APIApiSecurityListOperationsRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityListOperations(ctx context.Context, serviceId string) APIApiSecurityListOperationsRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityListOperations(ctx context.Context, serviceID string) APIApiSecurityListOperationsRequest {
 	return APIApiSecurityListOperationsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -2439,14 +2439,14 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.tagId != nil {
-		localVarQueryParams.Add("tag_id", parameterToString(*r.tagId, ""))
+	if r.tagID != nil {
+		localVarQueryParams.Add("tag_id", parameterToString(*r.tagID, ""))
 	}
 	if r.status != nil {
 		localVarQueryParams.Add("status", parameterToString(*r.status, ""))
@@ -2536,7 +2536,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2546,7 +2546,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2556,7 +2556,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2566,7 +2566,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2576,7 +2576,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2616,8 +2616,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 type APIApiSecurityUpdateOperationRequest struct {
 	ctx             context.Context
 	APIService      ApisecurityOperationsAPI
-	serviceId       string
-	operationId     string
+	serviceID       string
+	operationID     string
 	operationUpdate *OperationUpdate
 }
 
@@ -2638,16 +2638,16 @@ ApiSecurityUpdateOperation Update operation
 Partially update an existing operation associated with a specific service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
- @param operationId The unique identifier of the operation.
+ @param serviceID The unique identifier of the service.
+ @param operationID The unique identifier of the operation.
  @return APIApiSecurityUpdateOperationRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperation(ctx context.Context, serviceId string, operationId string) APIApiSecurityUpdateOperationRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperation(ctx context.Context, serviceID string, operationID string) APIApiSecurityUpdateOperationRequest {
 	return APIApiSecurityUpdateOperationRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceId:   serviceId,
-		operationId: operationId,
+		serviceID:   serviceID,
+		operationID: operationID,
 	}
 }
 
@@ -2667,8 +2667,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations/{operation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"operation_id"+"}", gourl.PathEscape(parameterToString(r.operationId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"operation_id"+"}", gourl.PathEscape(parameterToString(r.operationID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2730,7 +2730,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2740,7 +2740,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2750,7 +2750,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2760,7 +2760,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2770,7 +2770,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2810,8 +2810,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationExecute(r AP
 type APIApiSecurityUpdateOperationTagRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
-	serviceId  string
-	tagId      string
+	serviceID  string
+	tagID      string
 	body       *TagBase
 }
 
@@ -2832,16 +2832,16 @@ ApiSecurityUpdateOperationTag Update operation tag
 Partially update an existing operation tag.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId The unique identifier of the service.
- @param tagId The unique identifier of the operation tag.
+ @param serviceID The unique identifier of the service.
+ @param tagID The unique identifier of the operation tag.
  @return APIApiSecurityUpdateOperationTagRequest
 */
-func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTag(ctx context.Context, serviceId string, tagId string) APIApiSecurityUpdateOperationTagRequest {
+func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTag(ctx context.Context, serviceID string, tagID string) APIApiSecurityUpdateOperationTagRequest {
 	return APIApiSecurityUpdateOperationTagRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		tagId:      tagId,
+		serviceID:  serviceID,
+		tagID:      tagID,
 	}
 }
 
@@ -2861,8 +2861,8 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTagExecute(r
 	}
 
 	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/tags/{tag_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tag_id"+"}", gourl.PathEscape(parameterToString(r.tagId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tag_id"+"}", gourl.PathEscape(parameterToString(r.tagID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -2924,7 +2924,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTagExecute(r
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2934,7 +2934,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2944,7 +2944,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2954,7 +2954,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2964,7 +2964,7 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityUpdateOperationTagExecute(r
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v any
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

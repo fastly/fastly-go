@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Date** | **string** | The date (or hour) the usage was measured. Formatted as `YYYY-MM-DD` when `granularity` is `daily`, or `YYYY-MM-DD HH:00:00` when `granularity` is `hourly`.  | 
 **UsageType** | **string** | The type of usage being measured. | 
 **Quantity** | **int32** | The quantity of the usage type for this date. | 
-**VirtualKeyId** | Pointer to **string** | The ID of the virtual key this usage is attributed to. | [optional] 
+**VirtualKeyID** | Pointer to **string** | The ID of the virtual key this usage is attributed to. | [optional] 
 **VirtualKeyName** | Pointer to **string** | The display name of the virtual key this usage is attributed to. | [optional] 
 **PrimaryProvider** | Pointer to **string** | The ID of the provider connection originally requested, before any failover occurred. | [optional] 
 **Provider** | Pointer to **string** | The name of the provider connection that ultimately served the request. | [optional] 
-**ProviderConnectionId** | Pointer to **string** | The ID of the provider connection that ultimately served the request. | [optional] 
+**ProviderConnectionID** | Pointer to **string** | The ID of the provider connection that ultimately served the request. | [optional] 
 **Model** | Pointer to **string** | The AI model identifier used. | [optional] 
 
 ## Methods
@@ -93,30 +93,30 @@ and a boolean to check if the value has been set.
 SetQuantity sets Quantity field to given value.
 
 
-### GetVirtualKeyId
+### GetVirtualKeyID
 
-`func (o *ArcUsageMetric) GetVirtualKeyId() string`
+`func (o *ArcUsageMetric) GetVirtualKeyID() string`
 
-GetVirtualKeyId returns the VirtualKeyId field if non-nil, zero value otherwise.
+GetVirtualKeyID returns the VirtualKeyID field if non-nil, zero value otherwise.
 
-### GetVirtualKeyIdOk
+### GetVirtualKeyIDOk
 
-`func (o *ArcUsageMetric) GetVirtualKeyIdOk() (*string, bool)`
+`func (o *ArcUsageMetric) GetVirtualKeyIDOk() (*string, bool)`
 
-GetVirtualKeyIdOk returns a tuple with the VirtualKeyId field if it's non-nil, zero value otherwise
+GetVirtualKeyIDOk returns a tuple with the VirtualKeyID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVirtualKeyId
+### SetVirtualKeyID
 
-`func (o *ArcUsageMetric) SetVirtualKeyId(v string)`
+`func (o *ArcUsageMetric) SetVirtualKeyID(v string)`
 
-SetVirtualKeyId sets VirtualKeyId field to given value.
+SetVirtualKeyID sets VirtualKeyID field to given value.
 
-### HasVirtualKeyId
+### HasVirtualKeyID
 
-`func (o *ArcUsageMetric) HasVirtualKeyId() bool`
+`func (o *ArcUsageMetric) HasVirtualKeyID() bool`
 
-HasVirtualKeyId returns a boolean if a field has been set.
+HasVirtualKeyID returns a boolean if a field has been set.
 
 ### GetVirtualKeyName
 
@@ -193,30 +193,30 @@ SetProvider sets Provider field to given value.
 
 HasProvider returns a boolean if a field has been set.
 
-### GetProviderConnectionId
+### GetProviderConnectionID
 
-`func (o *ArcUsageMetric) GetProviderConnectionId() string`
+`func (o *ArcUsageMetric) GetProviderConnectionID() string`
 
-GetProviderConnectionId returns the ProviderConnectionId field if non-nil, zero value otherwise.
+GetProviderConnectionID returns the ProviderConnectionID field if non-nil, zero value otherwise.
 
-### GetProviderConnectionIdOk
+### GetProviderConnectionIDOk
 
-`func (o *ArcUsageMetric) GetProviderConnectionIdOk() (*string, bool)`
+`func (o *ArcUsageMetric) GetProviderConnectionIDOk() (*string, bool)`
 
-GetProviderConnectionIdOk returns a tuple with the ProviderConnectionId field if it's non-nil, zero value otherwise
+GetProviderConnectionIDOk returns a tuple with the ProviderConnectionID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProviderConnectionId
+### SetProviderConnectionID
 
-`func (o *ArcUsageMetric) SetProviderConnectionId(v string)`
+`func (o *ArcUsageMetric) SetProviderConnectionID(v string)`
 
-SetProviderConnectionId sets ProviderConnectionId field to given value.
+SetProviderConnectionID sets ProviderConnectionID field to given value.
 
-### HasProviderConnectionId
+### HasProviderConnectionID
 
-`func (o *ArcUsageMetric) HasProviderConnectionId() bool`
+`func (o *ArcUsageMetric) HasProviderConnectionID() bool`
 
-HasProviderConnectionId returns a boolean if a field has been set.
+HasProviderConnectionID returns a boolean if a field has been set.
 
 ### GetModel
 
@@ -245,5 +245,3 @@ HasModel returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

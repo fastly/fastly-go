@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique identifier for the workspace. | 
+**ID** | **string** | Unique identifier for the workspace. | 
 **Name** | **string** | Human-readable workspace name. | 
 
 ## Methods
@@ -26,24 +26,24 @@ NewAutomationTokenWorkspaceWithDefaults instantiates a new AutomationTokenWorksp
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *AutomationTokenWorkspace) GetId() string`
+`func (o *AutomationTokenWorkspace) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *AutomationTokenWorkspace) GetIdOk() (*string, bool)`
+`func (o *AutomationTokenWorkspace) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *AutomationTokenWorkspace) SetId(v string)`
+`func (o *AutomationTokenWorkspace) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetName
@@ -68,5 +68,3 @@ SetName sets Name field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

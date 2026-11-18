@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WebsiteId** | **string** |  | 
+**WebsiteID** | **string** |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Notifications** | Pointer to [**[]Notification**](Notification.md) |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewPageCreate
 
-`func NewPageCreate(websiteId string, name string, ) *PageCreate`
+`func NewPageCreate(websiteID string, name string, ) *PageCreate`
 
 NewPageCreate instantiates a new PageCreate object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,24 @@ NewPageCreateWithDefaults instantiates a new PageCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWebsiteId
+### GetWebsiteID
 
-`func (o *PageCreate) GetWebsiteId() string`
+`func (o *PageCreate) GetWebsiteID() string`
 
-GetWebsiteId returns the WebsiteId field if non-nil, zero value otherwise.
+GetWebsiteID returns the WebsiteID field if non-nil, zero value otherwise.
 
-### GetWebsiteIdOk
+### GetWebsiteIDOk
 
-`func (o *PageCreate) GetWebsiteIdOk() (*string, bool)`
+`func (o *PageCreate) GetWebsiteIDOk() (*string, bool)`
 
-GetWebsiteIdOk returns a tuple with the WebsiteId field if it's non-nil, zero value otherwise
+GetWebsiteIDOk returns a tuple with the WebsiteID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWebsiteId
+### SetWebsiteID
 
-`func (o *PageCreate) SetWebsiteId(v string)`
+`func (o *PageCreate) SetWebsiteID(v string)`
 
-SetWebsiteId sets WebsiteId field to given value.
+SetWebsiteID sets WebsiteID field to given value.
 
 
 ### GetName
@@ -146,5 +146,3 @@ HasPaths returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

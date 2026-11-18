@@ -1,56 +1,54 @@
-# RelationshipTlsDomains
+# RelationshipTLSDomains
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsDomains** | Pointer to [**RelationshipTlsDomainsTlsDomains**](RelationshipTlsDomainsTlsDomains.md) |  | [optional] 
+**TLSDomains** | Pointer to [**RelationshipTLSDomainsTLSDomains**](RelationshipTLSDomainsTLSDomains.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTlsDomains
+### NewRelationshipTLSDomains
 
-`func NewRelationshipTlsDomains() *RelationshipTlsDomains`
+`func NewRelationshipTLSDomains() *RelationshipTLSDomains`
 
-NewRelationshipTlsDomains instantiates a new RelationshipTlsDomains object
+NewRelationshipTLSDomains instantiates a new RelationshipTLSDomains object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTlsDomainsWithDefaults
+### NewRelationshipTLSDomainsWithDefaults
 
-`func NewRelationshipTlsDomainsWithDefaults() *RelationshipTlsDomains`
+`func NewRelationshipTLSDomainsWithDefaults() *RelationshipTLSDomains`
 
-NewRelationshipTlsDomainsWithDefaults instantiates a new RelationshipTlsDomains object
+NewRelationshipTLSDomainsWithDefaults instantiates a new RelationshipTLSDomains object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsDomains
+### GetTLSDomains
 
-`func (o *RelationshipTlsDomains) GetTlsDomains() RelationshipTlsDomainsTlsDomains`
+`func (o *RelationshipTLSDomains) GetTLSDomains() RelationshipTLSDomainsTLSDomains`
 
-GetTlsDomains returns the TlsDomains field if non-nil, zero value otherwise.
+GetTLSDomains returns the TLSDomains field if non-nil, zero value otherwise.
 
-### GetTlsDomainsOk
+### GetTLSDomainsOk
 
-`func (o *RelationshipTlsDomains) GetTlsDomainsOk() (*RelationshipTlsDomainsTlsDomains, bool)`
+`func (o *RelationshipTLSDomains) GetTLSDomainsOk() (*RelationshipTLSDomainsTLSDomains, bool)`
 
-GetTlsDomainsOk returns a tuple with the TlsDomains field if it's non-nil, zero value otherwise
+GetTLSDomainsOk returns a tuple with the TLSDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsDomains
+### SetTLSDomains
 
-`func (o *RelationshipTlsDomains) SetTlsDomains(v RelationshipTlsDomainsTlsDomains)`
+`func (o *RelationshipTLSDomains) SetTLSDomains(v RelationshipTLSDomainsTLSDomains)`
 
-SetTlsDomains sets TlsDomains field to given value.
+SetTLSDomains sets TLSDomains field to given value.
 
-### HasTlsDomains
+### HasTLSDomains
 
-`func (o *RelationshipTlsDomains) HasTlsDomains() bool`
+`func (o *RelationshipTLSDomains) HasTLSDomains() bool`
 
-HasTlsDomains returns a boolean if a field has been set.
+HasTLSDomains returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

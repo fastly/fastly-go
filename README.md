@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.52
+	github.com/fastly/fastly-go 1.0.0-beta.53
 )
 ```
 
@@ -80,13 +80,13 @@ Class | Method | Description
 *ACLEntryAPI* | [**GetACLEntry**](docs/AclEntryAPI.md#getaclentry) | Describe an ACL entry
 *ACLEntryAPI* | [**ListACLEntries**](docs/AclEntryAPI.md#listaclentries) | List ACL entries
 *ACLEntryAPI* | [**UpdateACLEntry**](docs/AclEntryAPI.md#updateaclentry) | Update an ACL entry
-*ACLsInComputeAPI* | [**ComputeACLCreateAcls**](docs/AclsInComputeAPI.md#computeaclcreateacls) | Create a new ACL
-*ACLsInComputeAPI* | [**ComputeACLDeleteSAclID**](docs/AclsInComputeAPI.md#computeacldeletesaclid) | Delete an ACL
-*ACLsInComputeAPI* | [**ComputeACLListAclEntries**](docs/AclsInComputeAPI.md#computeacllistaclentries) | List an ACL
-*ACLsInComputeAPI* | [**ComputeACLListAcls**](docs/AclsInComputeAPI.md#computeacllistacls) | List ACLs
-*ACLsInComputeAPI* | [**ComputeACLListAclsSAclID**](docs/AclsInComputeAPI.md#computeacllistaclssaclid) | Describe an ACL
-*ACLsInComputeAPI* | [**ComputeACLLookupAcls**](docs/AclsInComputeAPI.md#computeacllookupacls) | Lookup an ACL
-*ACLsInComputeAPI* | [**ComputeACLUpdateAcls**](docs/AclsInComputeAPI.md#computeaclupdateacls) | Update an ACL
+*ACLsInComputeAPI* | [**ComputeACLCreateACLs**](docs/AclsInComputeAPI.md#computeaclcreateacls) | Create a new ACL
+*ACLsInComputeAPI* | [**ComputeACLDeleteSACLID**](docs/AclsInComputeAPI.md#computeacldeletesaclid) | Delete an ACL
+*ACLsInComputeAPI* | [**ComputeACLListACLEntries**](docs/AclsInComputeAPI.md#computeacllistaclentries) | List an ACL
+*ACLsInComputeAPI* | [**ComputeACLListACLs**](docs/AclsInComputeAPI.md#computeacllistacls) | List ACLs
+*ACLsInComputeAPI* | [**ComputeACLListACLsSAclID**](docs/AclsInComputeAPI.md#computeacllistaclssaclid) | Describe an ACL
+*ACLsInComputeAPI* | [**ComputeACLLookupACLs**](docs/AclsInComputeAPI.md#computeacllookupacls) | Lookup an ACL
+*ACLsInComputeAPI* | [**ComputeACLUpdateACLs**](docs/AclsInComputeAPI.md#computeaclupdateacls) | Update an ACL
 *AiRuntimeControlProviderConnectionsAPI* | [**ArcCreateProviderConnection**](docs/AiRuntimeControlProviderConnectionsAPI.md#arccreateproviderconnection) | Create a provider connection
 *AiRuntimeControlProviderConnectionsAPI* | [**ArcDeleteProviderConnection**](docs/AiRuntimeControlProviderConnectionsAPI.md#arcdeleteproviderconnection) | Delete a provider connection
 *AiRuntimeControlProviderConnectionsAPI* | [**ArcGetProviderConnection**](docs/AiRuntimeControlProviderConnectionsAPI.md#arcgetproviderconnection) | Get a provider connection
@@ -154,6 +154,7 @@ Class | Method | Description
 *BotManagementAPI* | [**BotManagementListWorkspaces**](docs/BotManagementAPI.md#botmanagementlistworkspaces) | List workspaces
 *BotManagementAPI* | [**BotManagementUpdateBot**](docs/BotManagementAPI.md#botmanagementupdatebot) | Set a bot action
 *BotManagementAPI* | [**BotManagementUpdateCategory**](docs/BotManagementAPI.md#botmanagementupdatecategory) | Set a category action
+*BotManagementAPI* | [**BotManagementUpdateCategoryBots**](docs/BotManagementAPI.md#botmanagementupdatecategorybots) | Set the action for all bots in a category
 *BotManagementAPI* | [**BotManagementUpdateWorkspace**](docs/BotManagementAPI.md#botmanagementupdateworkspace) | Update a workspace
 *BotRequestsMetricsAPI* | [**GetBotRequestMetricsServiceHistorical**](docs/BotRequestsMetricsAPI.md#getbotrequestmetricsservicehistorical) | Get per-service historical time series metrics for bot requests broken down by bot-type.
 *CacheSettingsAPI* | [**CreateCacheSettings**](docs/CacheSettingsAPI.md#createcachesettings) | Create a cache settings object
@@ -795,6 +796,8 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/iam/v1/organizations/{organization_id}/invitations/{invitation_id}/notifications`](https://www.fastly.com/documentation/reference/api/) (POST)
 - [`/iam/v1/organizations/{organization_id}/invitations/{invitation_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/iam/v1/organizations/{organization_id}/invitations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/iam/v1/organizations/{organization_id}/memberships/{membership_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/iam/v1/organizations/{organization_id}/memberships`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/iam/v1/organizations/{organization_id}/options`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/iam/v1/organizations/{organization_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/model/{modelID}/invoke-with-response-stream`](https://www.fastly.com/documentation/reference/api/ai-runtime-control/gateway) (POST)

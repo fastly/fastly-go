@@ -20,7 +20,7 @@ import (
 // NetworkProtectNetworkResponseFields Read-only fields and required fields in a network response.
 type NetworkProtectNetworkResponseFields struct {
 	// A read-only unique identifier for a Network Protect resource.
-	Id        string                   `json:"id"`
+	ID        string                   `json:"id"`
 	RoaStatus *NetworkProtectRoaStatus `json:"roa_status,omitempty"`
 	// When Fastly last completed a ROA check. Null while the status is pending. A failed check leaves this unchanged; an old value can indicate delayed or failing checks. Null also means the controller did not report a check time.
 	RoaCheckedAt NullableTime `json:"roa_checked_at,omitempty"`
@@ -42,7 +42,7 @@ type _NetworkProtectNetworkResponseFields NetworkProtectNetworkResponseFields
 // will change when the set of required properties is changed
 func NewNetworkProtectNetworkResponseFields(id string, createdAt time.Time, updatedAt time.Time) *NetworkProtectNetworkResponseFields {
 	this := NetworkProtectNetworkResponseFields{}
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -56,28 +56,28 @@ func NewNetworkProtectNetworkResponseFieldsWithDefaults() *NetworkProtectNetwork
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *NetworkProtectNetworkResponseFields) GetId() string {
+// GetID returns the ID field value
+func (o *NetworkProtectNetworkResponseFields) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectNetworkResponseFields) GetIdOk() (*string, bool) {
+func (o *NetworkProtectNetworkResponseFields) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *NetworkProtectNetworkResponseFields) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *NetworkProtectNetworkResponseFields) SetID(v string) {
+	o.ID = v
 }
 
 // GetRoaStatus returns the RoaStatus field value if set, zero value otherwise.
@@ -283,7 +283,7 @@ func (o *NetworkProtectNetworkResponseFields) SetUpdatedAt(v time.Time) {
 func (o NetworkProtectNetworkResponseFields) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.RoaStatus != nil {
 		toSerialize["roa_status"] = o.RoaStatus

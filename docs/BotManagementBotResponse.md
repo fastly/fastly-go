@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | [**BotManagementBotAction**](BotManagementBotAction.md) |  | 
-**BotId** | **string** | The unique identifier of the bot. | [readonly] 
+**BotID** | **string** | The unique identifier of the bot. | [readonly] 
 **Name** | **string** | The display name of the bot. | [readonly] 
 
 ## Methods
 
 ### NewBotManagementBotResponse
 
-`func NewBotManagementBotResponse(action BotManagementBotAction, botId string, name string, ) *BotManagementBotResponse`
+`func NewBotManagementBotResponse(action BotManagementBotAction, botID string, name string, ) *BotManagementBotResponse`
 
 NewBotManagementBotResponse instantiates a new BotManagementBotResponse object
 This constructor will assign default values to properties that have it defined,
@@ -47,24 +47,24 @@ and a boolean to check if the value has been set.
 SetAction sets Action field to given value.
 
 
-### GetBotId
+### GetBotID
 
-`func (o *BotManagementBotResponse) GetBotId() string`
+`func (o *BotManagementBotResponse) GetBotID() string`
 
-GetBotId returns the BotId field if non-nil, zero value otherwise.
+GetBotID returns the BotID field if non-nil, zero value otherwise.
 
-### GetBotIdOk
+### GetBotIDOk
 
-`func (o *BotManagementBotResponse) GetBotIdOk() (*string, bool)`
+`func (o *BotManagementBotResponse) GetBotIDOk() (*string, bool)`
 
-GetBotIdOk returns a tuple with the BotId field if it's non-nil, zero value otherwise
+GetBotIDOk returns a tuple with the BotID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBotId
+### SetBotID
 
-`func (o *BotManagementBotResponse) SetBotId(v string)`
+`func (o *BotManagementBotResponse) SetBotID(v string)`
 
-SetBotId sets BotId field to given value.
+SetBotID sets BotID field to given value.
 
 
 ### GetName
@@ -89,5 +89,3 @@ SetName sets Name field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the path. Stable across versions of the routing config. | [optional] [readonly] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the path. Stable across versions of the routing config. | [optional] [readonly] 
 **Path** | Pointer to **string** | The URL path pattern, beginning with `/`. Maximum 2048 characters. | [optional] 
 **Links** | Pointer to **map[string]string** | HATEOAS links to related resources. | [optional] [readonly] 
 
@@ -27,30 +27,30 @@ NewPathResponseAllOfWithDefaults instantiates a new PathResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *PathResponseAllOf) GetId() string`
+`func (o *PathResponseAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *PathResponseAllOf) GetIdOk() (*string, bool)`
+`func (o *PathResponseAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *PathResponseAllOf) SetId(v string)`
+`func (o *PathResponseAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *PathResponseAllOf) HasId() bool`
+`func (o *PathResponseAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -104,5 +104,3 @@ HasLinks returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

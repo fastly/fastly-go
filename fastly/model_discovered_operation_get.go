@@ -26,7 +26,7 @@ type DiscoveredOperationGet struct {
 	// The path for the operation, which may include path parameters.
 	Path string `json:"path"`
 	// The unique identifier of the discovered operation.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The timestamp when the operation was last updated.
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 	// The timestamp when the operation was last seen in traffic.
@@ -47,7 +47,7 @@ func NewDiscoveredOperationGet(method string, domain string, path string, id str
 	this.Method = method
 	this.Domain = domain
 	this.Path = path
-	this.Id = id
+	this.ID = id
 	return &this
 }
 
@@ -131,28 +131,28 @@ func (o *DiscoveredOperationGet) SetPath(v string) {
 	o.Path = v
 }
 
-// GetId returns the Id field value
-func (o *DiscoveredOperationGet) GetId() string {
+// GetID returns the ID field value
+func (o *DiscoveredOperationGet) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *DiscoveredOperationGet) GetIdOk() (*string, bool) {
+func (o *DiscoveredOperationGet) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *DiscoveredOperationGet) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *DiscoveredOperationGet) SetID(v string) {
+	o.ID = v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
@@ -265,7 +265,7 @@ func (o DiscoveredOperationGet) MarshalJSON() ([]byte, error) {
 		toSerialize["path"] = o.Path
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.UpdatedAt != nil {
 		toSerialize["updated_at"] = o.UpdatedAt

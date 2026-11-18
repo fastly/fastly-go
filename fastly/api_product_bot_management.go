@@ -36,10 +36,10 @@ type ProductBotManagementAPI interface {
 		Disable the Bot Management product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIDisableProductBotManagementRequest
 	*/
-	DisableProductBotManagement(ctx context.Context, serviceId string) APIDisableProductBotManagementRequest
+	DisableProductBotManagement(ctx context.Context, serviceID string) APIDisableProductBotManagementRequest
 
 	// DisableProductBotManagementExecute executes the request
 	DisableProductBotManagementExecute(r APIDisableProductBotManagementRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductBotManagementAPI interface {
 		Enable the Bot Management product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIEnableProductBotManagementRequest
 	*/
-	EnableProductBotManagement(ctx context.Context, serviceId string) APIEnableProductBotManagementRequest
+	EnableProductBotManagement(ctx context.Context, serviceID string) APIEnableProductBotManagementRequest
 
 	// EnableProductBotManagementExecute executes the request
 	//  @return BotManagementResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductBotManagementAPI interface {
 		Get the enablement status of the Bot Management product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetProductBotManagementRequest
 	*/
-	GetProductBotManagement(ctx context.Context, serviceId string) APIGetProductBotManagementRequest
+	GetProductBotManagement(ctx context.Context, serviceID string) APIGetProductBotManagementRequest
 
 	// GetProductBotManagementExecute executes the request
 	//  @return BotManagementResponseBodyEnable
@@ -80,10 +80,10 @@ type ProductBotManagementAPI interface {
 		Get the configuration of the Bot Management product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APIGetProductBotManagementConfigurationRequest
 	*/
-	GetProductBotManagementConfiguration(ctx context.Context, serviceId string) APIGetProductBotManagementConfigurationRequest
+	GetProductBotManagementConfiguration(ctx context.Context, serviceID string) APIGetProductBotManagementConfigurationRequest
 
 	// GetProductBotManagementConfigurationExecute executes the request
 	//  @return BotManagementResponseConfigure
@@ -109,10 +109,10 @@ type ProductBotManagementAPI interface {
 		Update the configuration of the Bot Management product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
+		 @param serviceID Alphanumeric string identifying the service.
 		 @return APISetProductBotManagementConfigurationRequest
 	*/
-	SetProductBotManagementConfiguration(ctx context.Context, serviceId string) APISetProductBotManagementConfigurationRequest
+	SetProductBotManagementConfiguration(ctx context.Context, serviceID string) APISetProductBotManagementConfigurationRequest
 
 	// SetProductBotManagementConfigurationExecute executes the request
 	//  @return BotManagementResponseConfigure
@@ -126,7 +126,7 @@ type ProductBotManagementAPIService service
 type APIDisableProductBotManagementRequest struct {
 	ctx        context.Context
 	APIService ProductBotManagementAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -140,14 +140,14 @@ DisableProductBotManagement Disable product
 Disable the Bot Management product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIDisableProductBotManagementRequest
 */
-func (a *ProductBotManagementAPIService) DisableProductBotManagement(ctx context.Context, serviceId string) APIDisableProductBotManagementRequest {
+func (a *ProductBotManagementAPIService) DisableProductBotManagement(ctx context.Context, serviceID string) APIDisableProductBotManagementRequest {
 	return APIDisableProductBotManagementRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -165,7 +165,7 @@ func (a *ProductBotManagementAPIService) DisableProductBotManagementExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/bot_management/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -247,7 +247,7 @@ func (a *ProductBotManagementAPIService) DisableProductBotManagementExecute(r AP
 type APIEnableProductBotManagementRequest struct {
 	ctx        context.Context
 	APIService ProductBotManagementAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -261,14 +261,14 @@ EnableProductBotManagement Enable product
 Enable the Bot Management product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIEnableProductBotManagementRequest
 */
-func (a *ProductBotManagementAPIService) EnableProductBotManagement(ctx context.Context, serviceId string) APIEnableProductBotManagementRequest {
+func (a *ProductBotManagementAPIService) EnableProductBotManagement(ctx context.Context, serviceID string) APIEnableProductBotManagementRequest {
 	return APIEnableProductBotManagementRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -288,7 +288,7 @@ func (a *ProductBotManagementAPIService) EnableProductBotManagementExecute(r API
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/bot_management/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -379,7 +379,7 @@ func (a *ProductBotManagementAPIService) EnableProductBotManagementExecute(r API
 type APIGetProductBotManagementRequest struct {
 	ctx        context.Context
 	APIService ProductBotManagementAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -393,14 +393,14 @@ GetProductBotManagement Get product enablement status
 Get the enablement status of the Bot Management product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetProductBotManagementRequest
 */
-func (a *ProductBotManagementAPIService) GetProductBotManagement(ctx context.Context, serviceId string) APIGetProductBotManagementRequest {
+func (a *ProductBotManagementAPIService) GetProductBotManagement(ctx context.Context, serviceID string) APIGetProductBotManagementRequest {
 	return APIGetProductBotManagementRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -420,7 +420,7 @@ func (a *ProductBotManagementAPIService) GetProductBotManagementExecute(r APIGet
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/bot_management/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -511,7 +511,7 @@ func (a *ProductBotManagementAPIService) GetProductBotManagementExecute(r APIGet
 type APIGetProductBotManagementConfigurationRequest struct {
 	ctx        context.Context
 	APIService ProductBotManagementAPI
-	serviceId  string
+	serviceID  string
 }
 
 // Execute calls the API using the request data configured.
@@ -525,14 +525,14 @@ GetProductBotManagementConfiguration Get configuration
 Get the configuration of the Bot Management product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APIGetProductBotManagementConfigurationRequest
 */
-func (a *ProductBotManagementAPIService) GetProductBotManagementConfiguration(ctx context.Context, serviceId string) APIGetProductBotManagementConfigurationRequest {
+func (a *ProductBotManagementAPIService) GetProductBotManagementConfiguration(ctx context.Context, serviceID string) APIGetProductBotManagementConfigurationRequest {
 	return APIGetProductBotManagementConfigurationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -552,7 +552,7 @@ func (a *ProductBotManagementAPIService) GetProductBotManagementConfigurationExe
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/bot_management/services/{service_id}/configuration"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -771,7 +771,7 @@ func (a *ProductBotManagementAPIService) GetServicesProductBotManagementExecute(
 type APISetProductBotManagementConfigurationRequest struct {
 	ctx                                     context.Context
 	APIService                              ProductBotManagementAPI
-	serviceId                               string
+	serviceID                               string
 	botManagementRequestUpdateConfiguration *BotManagementRequestUpdateConfiguration
 }
 
@@ -792,14 +792,14 @@ SetProductBotManagementConfiguration Update configuration
 Update the configuration of the Bot Management product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
+ @param serviceID Alphanumeric string identifying the service.
  @return APISetProductBotManagementConfigurationRequest
 */
-func (a *ProductBotManagementAPIService) SetProductBotManagementConfiguration(ctx context.Context, serviceId string) APISetProductBotManagementConfigurationRequest {
+func (a *ProductBotManagementAPIService) SetProductBotManagementConfiguration(ctx context.Context, serviceID string) APISetProductBotManagementConfigurationRequest {
 	return APISetProductBotManagementConfigurationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -819,7 +819,7 @@ func (a *ProductBotManagementAPIService) SetProductBotManagementConfigurationExe
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/bot_management/services/{service_id}/configuration"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

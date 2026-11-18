@@ -21,7 +21,7 @@ type MutualAuthenticationResponseData struct {
 	Type                 *TypeMutualAuthentication               `json:"type,omitempty"`
 	Attributes           *MutualAuthenticationResponseAttributes `json:"attributes,omitempty"`
 	Relationships        *RelationshipsForMutualAuthentication   `json:"relationships,omitempty"`
-	Id                   *string                                 `json:"id,omitempty"`
+	ID                   *string                                 `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -33,8 +33,8 @@ type _MutualAuthenticationResponseData MutualAuthenticationResponseData
 // will change when the set of required properties is changed
 func NewMutualAuthenticationResponseData() *MutualAuthenticationResponseData {
 	this := MutualAuthenticationResponseData{}
-	var type_ TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
-	this.Type = &type_
+	var resourceType TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
+	this.Type = &resourceType
 	return &this
 }
 
@@ -43,8 +43,8 @@ func NewMutualAuthenticationResponseData() *MutualAuthenticationResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewMutualAuthenticationResponseDataWithDefaults() *MutualAuthenticationResponseData {
 	this := MutualAuthenticationResponseData{}
-	var type_ TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
-	this.Type = &type_
+	var resourceType TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
+	this.Type = &resourceType
 	return &this
 }
 
@@ -144,36 +144,36 @@ func (o *MutualAuthenticationResponseData) SetRelationships(v RelationshipsForMu
 	o.Relationships = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *MutualAuthenticationResponseData) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *MutualAuthenticationResponseData) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MutualAuthenticationResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *MutualAuthenticationResponseData) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *MutualAuthenticationResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *MutualAuthenticationResponseData) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *MutualAuthenticationResponseData) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *MutualAuthenticationResponseData) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -189,8 +189,8 @@ func (o MutualAuthenticationResponseData) MarshalJSON() ([]byte, error) {
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {

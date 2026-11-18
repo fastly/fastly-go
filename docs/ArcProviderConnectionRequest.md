@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The provider name. Must be `bedrock` for `aws-iam` connections. | 
 **Models** | **[]string** | The Bedrock model identifiers this connection is allowed to use. | 
-**BaseUrl** | **string** | The base URL of the provider&#39;s API. Must be an absolute `http` or `https` URL and must not end in `/v1`. | 
+**BaseURL** | **string** | The base URL of the provider&#39;s API. Must be an absolute `http` or `https` URL and must not end in `/v1`. | 
 **ApiKey** | **string** | The provider&#39;s secret API key. | 
 **AuthType** | **string** | The authentication type for this connection. | 
 **CustomerRoleArn** | **string** | The ARN of the IAM role in your AWS account that AI Runtime Control assumes to access Bedrock. See [get Bedrock setup information](https://www.fastly.com/documentation/reference/api/ai-runtime-control/providers#arc-get-bedrock-setup) for the role ARN and external ID your trust policy must reference. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewArcProviderConnectionRequest
 
-`func NewArcProviderConnectionRequest(name string, models []string, baseUrl string, apiKey string, authType string, customerRoleArn string, region string, ) *ArcProviderConnectionRequest`
+`func NewArcProviderConnectionRequest(name string, models []string, baseURL string, apiKey string, authType string, customerRoleArn string, region string, ) *ArcProviderConnectionRequest`
 
 NewArcProviderConnectionRequest instantiates a new ArcProviderConnectionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,24 +71,24 @@ and a boolean to check if the value has been set.
 SetModels sets Models field to given value.
 
 
-### GetBaseUrl
+### GetBaseURL
 
-`func (o *ArcProviderConnectionRequest) GetBaseUrl() string`
+`func (o *ArcProviderConnectionRequest) GetBaseURL() string`
 
-GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
 
-### GetBaseUrlOk
+### GetBaseURLOk
 
-`func (o *ArcProviderConnectionRequest) GetBaseUrlOk() (*string, bool)`
+`func (o *ArcProviderConnectionRequest) GetBaseURLOk() (*string, bool)`
 
-GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBaseUrl
+### SetBaseURL
 
-`func (o *ArcProviderConnectionRequest) SetBaseUrl(v string)`
+`func (o *ArcProviderConnectionRequest) SetBaseURL(v string)`
 
-SetBaseUrl sets BaseUrl field to given value.
+SetBaseURL sets BaseURL field to given value.
 
 
 ### GetApiKey
@@ -173,5 +173,3 @@ SetRegion sets Region field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

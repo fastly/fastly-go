@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Topic** | Pointer to **string** | The Google Cloud Pub/Sub topic to which logs will be published. Required. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
-**ProjectId** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
+**ProjectID** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
 
 ## Methods
 
@@ -77,32 +77,30 @@ SetFormat sets Format field to given value.
 
 HasFormat returns a boolean if a field has been set.
 
-### GetProjectId
+### GetProjectID
 
-`func (o *LoggingGooglePubsubAdditional) GetProjectId() string`
+`func (o *LoggingGooglePubsubAdditional) GetProjectID() string`
 
-GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
+GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
 
-### GetProjectIdOk
+### GetProjectIDOk
 
-`func (o *LoggingGooglePubsubAdditional) GetProjectIdOk() (*string, bool)`
+`func (o *LoggingGooglePubsubAdditional) GetProjectIDOk() (*string, bool)`
 
-GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
+GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectId
+### SetProjectID
 
-`func (o *LoggingGooglePubsubAdditional) SetProjectId(v string)`
+`func (o *LoggingGooglePubsubAdditional) SetProjectID(v string)`
 
-SetProjectId sets ProjectId field to given value.
+SetProjectID sets ProjectID field to given value.
 
-### HasProjectId
+### HasProjectID
 
-`func (o *LoggingGooglePubsubAdditional) HasProjectId() bool`
+`func (o *LoggingGooglePubsubAdditional) HasProjectID() bool`
 
-HasProjectId returns a boolean if a field has been set.
+HasProjectID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

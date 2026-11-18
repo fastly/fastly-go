@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndpointId** | **string** | A unique identifier for a Network Protect resource. | 
+**EndpointID** | **string** | A unique identifier for a Network Protect resource. | 
 **Preference** | **int32** | Delivery preference within a policy. Lower values are preferred first. Two endpoints in the same policy cannot share a value. | 
 **CreatedAt** | Pointer to **time.Time** | An ISO 8601 timestamp in UTC. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **time.Time** | An ISO 8601 timestamp in UTC. | [optional] [readonly] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewNetworkProtectPolicyEndpoint
 
-`func NewNetworkProtectPolicyEndpoint(endpointId string, preference int32, ) *NetworkProtectPolicyEndpoint`
+`func NewNetworkProtectPolicyEndpoint(endpointID string, preference int32, ) *NetworkProtectPolicyEndpoint`
 
 NewNetworkProtectPolicyEndpoint instantiates a new NetworkProtectPolicyEndpoint object
 This constructor will assign default values to properties that have it defined,
@@ -28,24 +28,24 @@ NewNetworkProtectPolicyEndpointWithDefaults instantiates a new NetworkProtectPol
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEndpointId
+### GetEndpointID
 
-`func (o *NetworkProtectPolicyEndpoint) GetEndpointId() string`
+`func (o *NetworkProtectPolicyEndpoint) GetEndpointID() string`
 
-GetEndpointId returns the EndpointId field if non-nil, zero value otherwise.
+GetEndpointID returns the EndpointID field if non-nil, zero value otherwise.
 
-### GetEndpointIdOk
+### GetEndpointIDOk
 
-`func (o *NetworkProtectPolicyEndpoint) GetEndpointIdOk() (*string, bool)`
+`func (o *NetworkProtectPolicyEndpoint) GetEndpointIDOk() (*string, bool)`
 
-GetEndpointIdOk returns a tuple with the EndpointId field if it's non-nil, zero value otherwise
+GetEndpointIDOk returns a tuple with the EndpointID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEndpointId
+### SetEndpointID
 
-`func (o *NetworkProtectPolicyEndpoint) SetEndpointId(v string)`
+`func (o *NetworkProtectPolicyEndpoint) SetEndpointID(v string)`
 
-SetEndpointId sets EndpointId field to given value.
+SetEndpointID sets EndpointID field to given value.
 
 
 ### GetPreference
@@ -120,5 +120,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

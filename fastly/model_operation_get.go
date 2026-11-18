@@ -30,7 +30,7 @@ type OperationGet struct {
 	// An array of operation tag IDs associated with this operation.
 	TagIds []string `json:"tag_ids,omitempty"`
 	// The unique identifier of the operation.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The timestamp when the operation was created.
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// The timestamp when the operation was last updated.
@@ -55,7 +55,7 @@ func NewOperationGet(method string, domain string, path string, id string, updat
 	this.Method = method
 	this.Domain = domain
 	this.Path = path
-	this.Id = id
+	this.ID = id
 	this.UpdatedAt = updatedAt
 	return &this
 }
@@ -204,28 +204,28 @@ func (o *OperationGet) SetTagIds(v []string) {
 	o.TagIds = v
 }
 
-// GetId returns the Id field value
-func (o *OperationGet) GetId() string {
+// GetID returns the ID field value
+func (o *OperationGet) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *OperationGet) GetIdOk() (*string, bool) {
+func (o *OperationGet) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *OperationGet) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *OperationGet) SetID(v string) {
+	o.ID = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -400,7 +400,7 @@ func (o OperationGet) MarshalJSON() ([]byte, error) {
 		toSerialize["tag_ids"] = o.TagIds
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

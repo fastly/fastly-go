@@ -19,7 +19,7 @@ import (
 // NgwafResponseConfigurationConfiguration struct for NgwafResponseConfigurationConfiguration
 type NgwafResponseConfigurationConfiguration struct {
 	// Workspace ID
-	WorkspaceId *string `json:"workspace_id,omitempty"`
+	WorkspaceID *string `json:"workspace_id,omitempty"`
 	// The percentage of traffic to inspect.
 	TrafficRamp          *string `json:"traffic_ramp,omitempty"`
 	AdditionalProperties map[string]any
@@ -44,36 +44,36 @@ func NewNgwafResponseConfigurationConfigurationWithDefaults() *NgwafResponseConf
 	return &this
 }
 
-// GetWorkspaceId returns the WorkspaceId field value if set, zero value otherwise.
-func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceId() string {
-	if o == nil || o.WorkspaceId == nil {
+// GetWorkspaceID returns the WorkspaceID field value if set, zero value otherwise.
+func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceID() string {
+	if o == nil || o.WorkspaceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.WorkspaceId
+	return *o.WorkspaceID
 }
 
-// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value if set, nil otherwise
+// GetWorkspaceIDOk returns a tuple with the WorkspaceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceIdOk() (*string, bool) {
-	if o == nil || o.WorkspaceId == nil {
+func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceIDOk() (*string, bool) {
+	if o == nil || o.WorkspaceID == nil {
 		return nil, false
 	}
-	return o.WorkspaceId, true
+	return o.WorkspaceID, true
 }
 
-// HasWorkspaceId returns a boolean if a field has been set.
-func (o *NgwafResponseConfigurationConfiguration) HasWorkspaceId() bool {
-	if o != nil && o.WorkspaceId != nil {
+// HasWorkspaceID returns a boolean if a field has been set.
+func (o *NgwafResponseConfigurationConfiguration) HasWorkspaceID() bool {
+	if o != nil && o.WorkspaceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetWorkspaceId gets a reference to the given string and assigns it to the WorkspaceId field.
-func (o *NgwafResponseConfigurationConfiguration) SetWorkspaceId(v string) {
-	o.WorkspaceId = &v
+// SetWorkspaceID gets a reference to the given string and assigns it to the WorkspaceID field.
+func (o *NgwafResponseConfigurationConfiguration) SetWorkspaceID(v string) {
+	o.WorkspaceID = &v
 }
 
 // GetTrafficRamp returns the TrafficRamp field value if set, zero value otherwise.
@@ -112,8 +112,8 @@ func (o *NgwafResponseConfigurationConfiguration) SetTrafficRamp(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o NgwafResponseConfigurationConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.WorkspaceId != nil {
-		toSerialize["workspace_id"] = o.WorkspaceId
+	if o.WorkspaceID != nil {
+		toSerialize["workspace_id"] = o.WorkspaceID
 	}
 	if o.TrafficRamp != nil {
 		toSerialize["traffic_ramp"] = o.TrafficRamp

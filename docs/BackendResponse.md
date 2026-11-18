@@ -14,13 +14,18 @@ Name | Type | Description | Notes
 **FetchTimeout** | Pointer to **int32** | Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`. | [optional] 
 **Healthcheck** | Pointer to **NullableString** | The name of the healthcheck to use with this backend. | [optional] 
 **Hostname** | Pointer to **NullableString** | The hostname of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
+**IamExternalID** | Pointer to **NullableString** | If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set. | [optional] 
+**IamProduct** | Pointer to **NullableString** | If the backend is using IAM authentication, the IAM signature will use this as the product element. | [optional] 
+**IamRegion** | Pointer to **NullableString** | If the backend is using IAM authentication, this region will be used for signing and access. | [optional] 
+**IamRole** | Pointer to **NullableString** | If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor. | [optional] 
+**IamVendor** | Pointer to **NullableString** | A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value. | [optional] 
 **Ipv4** | Pointer to **NullableString** | IPv4 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **Ipv6** | Pointer to **NullableString** | IPv6 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **KeepaliveTime** | Pointer to **NullableInt32** | How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can. | [optional] 
 **MaxConn** | Pointer to **int32** | Maximum number of concurrent connections this backend will accept. | [optional] 
 **MaxLifetime** | Pointer to **NullableInt32** | Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited. | [optional] 
-**MaxTlsVersion** | Pointer to **NullableString** | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
-**MinTlsVersion** | Pointer to **NullableString** | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
+**MaxTLSVersion** | Pointer to **NullableString** | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
+**MinTLSVersion** | Pointer to **NullableString** | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **MaxUse** | Pointer to **NullableInt32** | Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited. | [optional] 
 **Name** | Pointer to **string** | The name of the backend. | [optional] 
 **OverrideHost** | Pointer to **NullableString** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional] 
@@ -46,7 +51,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 **Locked** | Pointer to **bool** | Indicates whether the version of the service this backend is attached to accepts edits. | [optional] [readonly] 
 
@@ -359,6 +364,181 @@ HasHostname returns a boolean if a field has been set.
 `func (o *BackendResponse) UnsetHostname()`
 
 UnsetHostname ensures that no value is present for Hostname, not even an explicit nil
+### GetIamExternalID
+
+`func (o *BackendResponse) GetIamExternalID() string`
+
+GetIamExternalID returns the IamExternalID field if non-nil, zero value otherwise.
+
+### GetIamExternalIDOk
+
+`func (o *BackendResponse) GetIamExternalIDOk() (*string, bool)`
+
+GetIamExternalIDOk returns a tuple with the IamExternalID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIamExternalID
+
+`func (o *BackendResponse) SetIamExternalID(v string)`
+
+SetIamExternalID sets IamExternalID field to given value.
+
+### HasIamExternalID
+
+`func (o *BackendResponse) HasIamExternalID() bool`
+
+HasIamExternalID returns a boolean if a field has been set.
+
+### SetIamExternalIDNil
+
+`func (o *BackendResponse) SetIamExternalIDNil(b bool)`
+
+ SetIamExternalIDNil sets the value for IamExternalID to be an explicit nil
+
+### UnsetIamExternalID
+`func (o *BackendResponse) UnsetIamExternalID()`
+
+UnsetIamExternalID ensures that no value is present for IamExternalID, not even an explicit nil
+### GetIamProduct
+
+`func (o *BackendResponse) GetIamProduct() string`
+
+GetIamProduct returns the IamProduct field if non-nil, zero value otherwise.
+
+### GetIamProductOk
+
+`func (o *BackendResponse) GetIamProductOk() (*string, bool)`
+
+GetIamProductOk returns a tuple with the IamProduct field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIamProduct
+
+`func (o *BackendResponse) SetIamProduct(v string)`
+
+SetIamProduct sets IamProduct field to given value.
+
+### HasIamProduct
+
+`func (o *BackendResponse) HasIamProduct() bool`
+
+HasIamProduct returns a boolean if a field has been set.
+
+### SetIamProductNil
+
+`func (o *BackendResponse) SetIamProductNil(b bool)`
+
+ SetIamProductNil sets the value for IamProduct to be an explicit nil
+
+### UnsetIamProduct
+`func (o *BackendResponse) UnsetIamProduct()`
+
+UnsetIamProduct ensures that no value is present for IamProduct, not even an explicit nil
+### GetIamRegion
+
+`func (o *BackendResponse) GetIamRegion() string`
+
+GetIamRegion returns the IamRegion field if non-nil, zero value otherwise.
+
+### GetIamRegionOk
+
+`func (o *BackendResponse) GetIamRegionOk() (*string, bool)`
+
+GetIamRegionOk returns a tuple with the IamRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIamRegion
+
+`func (o *BackendResponse) SetIamRegion(v string)`
+
+SetIamRegion sets IamRegion field to given value.
+
+### HasIamRegion
+
+`func (o *BackendResponse) HasIamRegion() bool`
+
+HasIamRegion returns a boolean if a field has been set.
+
+### SetIamRegionNil
+
+`func (o *BackendResponse) SetIamRegionNil(b bool)`
+
+ SetIamRegionNil sets the value for IamRegion to be an explicit nil
+
+### UnsetIamRegion
+`func (o *BackendResponse) UnsetIamRegion()`
+
+UnsetIamRegion ensures that no value is present for IamRegion, not even an explicit nil
+### GetIamRole
+
+`func (o *BackendResponse) GetIamRole() string`
+
+GetIamRole returns the IamRole field if non-nil, zero value otherwise.
+
+### GetIamRoleOk
+
+`func (o *BackendResponse) GetIamRoleOk() (*string, bool)`
+
+GetIamRoleOk returns a tuple with the IamRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIamRole
+
+`func (o *BackendResponse) SetIamRole(v string)`
+
+SetIamRole sets IamRole field to given value.
+
+### HasIamRole
+
+`func (o *BackendResponse) HasIamRole() bool`
+
+HasIamRole returns a boolean if a field has been set.
+
+### SetIamRoleNil
+
+`func (o *BackendResponse) SetIamRoleNil(b bool)`
+
+ SetIamRoleNil sets the value for IamRole to be an explicit nil
+
+### UnsetIamRole
+`func (o *BackendResponse) UnsetIamRole()`
+
+UnsetIamRole ensures that no value is present for IamRole, not even an explicit nil
+### GetIamVendor
+
+`func (o *BackendResponse) GetIamVendor() string`
+
+GetIamVendor returns the IamVendor field if non-nil, zero value otherwise.
+
+### GetIamVendorOk
+
+`func (o *BackendResponse) GetIamVendorOk() (*string, bool)`
+
+GetIamVendorOk returns a tuple with the IamVendor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIamVendor
+
+`func (o *BackendResponse) SetIamVendor(v string)`
+
+SetIamVendor sets IamVendor field to given value.
+
+### HasIamVendor
+
+`func (o *BackendResponse) HasIamVendor() bool`
+
+HasIamVendor returns a boolean if a field has been set.
+
+### SetIamVendorNil
+
+`func (o *BackendResponse) SetIamVendorNil(b bool)`
+
+ SetIamVendorNil sets the value for IamVendor to be an explicit nil
+
+### UnsetIamVendor
+`func (o *BackendResponse) UnsetIamVendor()`
+
+UnsetIamVendor ensures that no value is present for IamVendor, not even an explicit nil
 ### GetIpv4
 
 `func (o *BackendResponse) GetIpv4() string`
@@ -524,76 +704,76 @@ HasMaxLifetime returns a boolean if a field has been set.
 `func (o *BackendResponse) UnsetMaxLifetime()`
 
 UnsetMaxLifetime ensures that no value is present for MaxLifetime, not even an explicit nil
-### GetMaxTlsVersion
+### GetMaxTLSVersion
 
-`func (o *BackendResponse) GetMaxTlsVersion() string`
+`func (o *BackendResponse) GetMaxTLSVersion() string`
 
-GetMaxTlsVersion returns the MaxTlsVersion field if non-nil, zero value otherwise.
+GetMaxTLSVersion returns the MaxTLSVersion field if non-nil, zero value otherwise.
 
-### GetMaxTlsVersionOk
+### GetMaxTLSVersionOk
 
-`func (o *BackendResponse) GetMaxTlsVersionOk() (*string, bool)`
+`func (o *BackendResponse) GetMaxTLSVersionOk() (*string, bool)`
 
-GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field if it's non-nil, zero value otherwise
+GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxTlsVersion
+### SetMaxTLSVersion
 
-`func (o *BackendResponse) SetMaxTlsVersion(v string)`
+`func (o *BackendResponse) SetMaxTLSVersion(v string)`
 
-SetMaxTlsVersion sets MaxTlsVersion field to given value.
+SetMaxTLSVersion sets MaxTLSVersion field to given value.
 
-### HasMaxTlsVersion
+### HasMaxTLSVersion
 
-`func (o *BackendResponse) HasMaxTlsVersion() bool`
+`func (o *BackendResponse) HasMaxTLSVersion() bool`
 
-HasMaxTlsVersion returns a boolean if a field has been set.
+HasMaxTLSVersion returns a boolean if a field has been set.
 
-### SetMaxTlsVersionNil
+### SetMaxTLSVersionNil
 
-`func (o *BackendResponse) SetMaxTlsVersionNil(b bool)`
+`func (o *BackendResponse) SetMaxTLSVersionNil(b bool)`
 
- SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
+ SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
 
-### UnsetMaxTlsVersion
-`func (o *BackendResponse) UnsetMaxTlsVersion()`
+### UnsetMaxTLSVersion
+`func (o *BackendResponse) UnsetMaxTLSVersion()`
 
-UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
-### GetMinTlsVersion
+UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
+### GetMinTLSVersion
 
-`func (o *BackendResponse) GetMinTlsVersion() string`
+`func (o *BackendResponse) GetMinTLSVersion() string`
 
-GetMinTlsVersion returns the MinTlsVersion field if non-nil, zero value otherwise.
+GetMinTLSVersion returns the MinTLSVersion field if non-nil, zero value otherwise.
 
-### GetMinTlsVersionOk
+### GetMinTLSVersionOk
 
-`func (o *BackendResponse) GetMinTlsVersionOk() (*string, bool)`
+`func (o *BackendResponse) GetMinTLSVersionOk() (*string, bool)`
 
-GetMinTlsVersionOk returns a tuple with the MinTlsVersion field if it's non-nil, zero value otherwise
+GetMinTLSVersionOk returns a tuple with the MinTLSVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMinTlsVersion
+### SetMinTLSVersion
 
-`func (o *BackendResponse) SetMinTlsVersion(v string)`
+`func (o *BackendResponse) SetMinTLSVersion(v string)`
 
-SetMinTlsVersion sets MinTlsVersion field to given value.
+SetMinTLSVersion sets MinTLSVersion field to given value.
 
-### HasMinTlsVersion
+### HasMinTLSVersion
 
-`func (o *BackendResponse) HasMinTlsVersion() bool`
+`func (o *BackendResponse) HasMinTLSVersion() bool`
 
-HasMinTlsVersion returns a boolean if a field has been set.
+HasMinTLSVersion returns a boolean if a field has been set.
 
-### SetMinTlsVersionNil
+### SetMinTLSVersionNil
 
-`func (o *BackendResponse) SetMinTlsVersionNil(b bool)`
+`func (o *BackendResponse) SetMinTLSVersionNil(b bool)`
 
- SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
+ SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
 
-### UnsetMinTlsVersion
-`func (o *BackendResponse) UnsetMinTlsVersion()`
+### UnsetMinTLSVersion
+`func (o *BackendResponse) UnsetMinTLSVersion()`
 
-UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
+UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
 ### GetMaxUse
 
 `func (o *BackendResponse) GetMaxUse() int32`
@@ -1409,30 +1589,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *BackendResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *BackendResponse) GetServiceId() string`
+`func (o *BackendResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *BackendResponse) GetServiceIdOk() (*string, bool)`
+`func (o *BackendResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *BackendResponse) SetServiceId(v string)`
+`func (o *BackendResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *BackendResponse) HasServiceId() bool`
+`func (o *BackendResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -1486,5 +1666,3 @@ HasLocked returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Alphanumeric string identifying the permission. | [optional] 
+**ID** | Pointer to **string** | Alphanumeric string identifying the permission. | [optional] 
 **Object** | Pointer to **string** | The type of the object. | [optional] 
 **Name** | Pointer to **string** | Name of the permission. | [optional] 
 **Description** | Pointer to **string** | The description of the permission. | [optional] 
@@ -31,30 +31,30 @@ NewIamPermissionWithDefaults instantiates a new IamPermission object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *IamPermission) GetId() string`
+`func (o *IamPermission) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *IamPermission) GetIdOk() (*string, bool)`
+`func (o *IamPermission) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *IamPermission) SetId(v string)`
+`func (o *IamPermission) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *IamPermission) HasId() bool`
+`func (o *IamPermission) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetObject
 
@@ -208,5 +208,3 @@ HasScope returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

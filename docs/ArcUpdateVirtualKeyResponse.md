@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the virtual key. | [readonly] 
-**CustomerId** | **string** | The ID of the customer account that owns the key. | [readonly] 
+**ID** | **string** | The unique identifier of the virtual key. | [readonly] 
+**CustomerID** | **string** | The ID of the customer account that owns the key. | [readonly] 
 **Name** | **string** | The display name of the virtual key. | 
-**UserId** | **string** | The ID of the user who created the key. | [readonly] 
+**UserID** | **string** | The ID of the user who created the key. | [readonly] 
 **ExpiresAt** | Pointer to **NullableTime** | The date and time the key expires, in RFC 3339 format. `null` if the key doesn&#39;t expire. | [optional] 
 **RpmLimit** | Pointer to **NullableInt32** | The requests-per-minute limit for this key. `null` if there is no limit. | [optional] 
 **TpmLimit** | Pointer to **NullableInt32** | The tokens-per-minute limit for this key. `null` if there is no limit. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewArcUpdateVirtualKeyResponse
 
-`func NewArcUpdateVirtualKeyResponse(id string, customerId string, name string, userId string, createdAt time.Time, updatedAt time.Time, ) *ArcUpdateVirtualKeyResponse`
+`func NewArcUpdateVirtualKeyResponse(id string, customerID string, name string, userID string, createdAt time.Time, updatedAt time.Time, ) *ArcUpdateVirtualKeyResponse`
 
 NewArcUpdateVirtualKeyResponse instantiates a new ArcUpdateVirtualKeyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -35,44 +35,44 @@ NewArcUpdateVirtualKeyResponseWithDefaults instantiates a new ArcUpdateVirtualKe
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *ArcUpdateVirtualKeyResponse) GetId() string`
+`func (o *ArcUpdateVirtualKeyResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ArcUpdateVirtualKeyResponse) GetIdOk() (*string, bool)`
+`func (o *ArcUpdateVirtualKeyResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ArcUpdateVirtualKeyResponse) SetId(v string)`
+`func (o *ArcUpdateVirtualKeyResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *ArcUpdateVirtualKeyResponse) GetCustomerId() string`
+`func (o *ArcUpdateVirtualKeyResponse) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *ArcUpdateVirtualKeyResponse) GetCustomerIdOk() (*string, bool)`
+`func (o *ArcUpdateVirtualKeyResponse) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *ArcUpdateVirtualKeyResponse) SetCustomerId(v string)`
+`func (o *ArcUpdateVirtualKeyResponse) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
 
 ### GetName
@@ -95,24 +95,24 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetUserId
+### GetUserID
 
-`func (o *ArcUpdateVirtualKeyResponse) GetUserId() string`
+`func (o *ArcUpdateVirtualKeyResponse) GetUserID() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *ArcUpdateVirtualKeyResponse) GetUserIdOk() (*string, bool)`
+`func (o *ArcUpdateVirtualKeyResponse) GetUserIDOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *ArcUpdateVirtualKeyResponse) SetUserId(v string)`
+`func (o *ArcUpdateVirtualKeyResponse) SetUserID(v string)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
 
 ### GetExpiresAt
@@ -322,5 +322,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

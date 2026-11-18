@@ -1,108 +1,106 @@
-# TlsSubscriptionData
+# TLSSubscriptionData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] [default to TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION]
-**Attributes** | Pointer to [**TlsSubscriptionDataAttributes**](TlsSubscriptionDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**RelationshipsForTlsSubscription**](RelationshipsForTlsSubscription.md) |  | [optional] 
+**Type** | Pointer to [**TypeTLSSubscription**](TypeTLSSubscription.md) |  | [optional] [default to TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION]
+**Attributes** | Pointer to [**TLSSubscriptionDataAttributes**](TlsSubscriptionDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**RelationshipsForTLSSubscription**](RelationshipsForTLSSubscription.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsSubscriptionData
+### NewTLSSubscriptionData
 
-`func NewTlsSubscriptionData() *TlsSubscriptionData`
+`func NewTLSSubscriptionData() *TLSSubscriptionData`
 
-NewTlsSubscriptionData instantiates a new TlsSubscriptionData object
+NewTLSSubscriptionData instantiates a new TLSSubscriptionData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsSubscriptionDataWithDefaults
+### NewTLSSubscriptionDataWithDefaults
 
-`func NewTlsSubscriptionDataWithDefaults() *TlsSubscriptionData`
+`func NewTLSSubscriptionDataWithDefaults() *TLSSubscriptionData`
 
-NewTlsSubscriptionDataWithDefaults instantiates a new TlsSubscriptionData object
+NewTLSSubscriptionDataWithDefaults instantiates a new TLSSubscriptionData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TlsSubscriptionData) GetType() TypeTlsSubscription`
+`func (o *TLSSubscriptionData) GetType() TypeTLSSubscription`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TlsSubscriptionData) GetTypeOk() (*TypeTlsSubscription, bool)`
+`func (o *TLSSubscriptionData) GetTypeOk() (*TypeTLSSubscription, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TlsSubscriptionData) SetType(v TypeTlsSubscription)`
+`func (o *TLSSubscriptionData) SetType(v TypeTLSSubscription)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TlsSubscriptionData) HasType() bool`
+`func (o *TLSSubscriptionData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TlsSubscriptionData) GetAttributes() TlsSubscriptionDataAttributes`
+`func (o *TLSSubscriptionData) GetAttributes() TLSSubscriptionDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TlsSubscriptionData) GetAttributesOk() (*TlsSubscriptionDataAttributes, bool)`
+`func (o *TLSSubscriptionData) GetAttributesOk() (*TLSSubscriptionDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TlsSubscriptionData) SetAttributes(v TlsSubscriptionDataAttributes)`
+`func (o *TLSSubscriptionData) SetAttributes(v TLSSubscriptionDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TlsSubscriptionData) HasAttributes() bool`
+`func (o *TLSSubscriptionData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *TlsSubscriptionData) GetRelationships() RelationshipsForTlsSubscription`
+`func (o *TLSSubscriptionData) GetRelationships() RelationshipsForTLSSubscription`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TlsSubscriptionData) GetRelationshipsOk() (*RelationshipsForTlsSubscription, bool)`
+`func (o *TLSSubscriptionData) GetRelationshipsOk() (*RelationshipsForTLSSubscription, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TlsSubscriptionData) SetRelationships(v RelationshipsForTlsSubscription)`
+`func (o *TLSSubscriptionData) SetRelationships(v RelationshipsForTLSSubscription)`
 
 SetRelationships sets Relationships field to given value.
 
 ### HasRelationships
 
-`func (o *TlsSubscriptionData) HasRelationships() bool`
+`func (o *TLSSubscriptionData) HasRelationships() bool`
 
 HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

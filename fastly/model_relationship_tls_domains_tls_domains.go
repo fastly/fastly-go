@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTlsDomainsTlsDomains struct for RelationshipTlsDomainsTlsDomains
-type RelationshipTlsDomainsTlsDomains struct {
-	Data                 []RelationshipMemberTlsDomain `json:"data,omitempty"`
+// RelationshipTLSDomainsTLSDomains struct for RelationshipTLSDomainsTLSDomains
+type RelationshipTLSDomainsTLSDomains struct {
+	Data                 []RelationshipMemberTLSDomain `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTlsDomainsTlsDomains RelationshipTlsDomainsTlsDomains
+type _RelationshipTLSDomainsTLSDomains RelationshipTLSDomainsTLSDomains
 
-// NewRelationshipTlsDomainsTlsDomains instantiates a new RelationshipTlsDomainsTlsDomains object
+// NewRelationshipTLSDomainsTLSDomains instantiates a new RelationshipTLSDomainsTLSDomains object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTlsDomainsTlsDomains() *RelationshipTlsDomainsTlsDomains {
-	this := RelationshipTlsDomainsTlsDomains{}
+func NewRelationshipTLSDomainsTLSDomains() *RelationshipTLSDomainsTLSDomains {
+	this := RelationshipTLSDomainsTLSDomains{}
 	return &this
 }
 
-// NewRelationshipTlsDomainsTlsDomainsWithDefaults instantiates a new RelationshipTlsDomainsTlsDomains object
+// NewRelationshipTLSDomainsTLSDomainsWithDefaults instantiates a new RelationshipTLSDomainsTLSDomains object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTlsDomainsTlsDomainsWithDefaults() *RelationshipTlsDomainsTlsDomains {
-	this := RelationshipTlsDomainsTlsDomains{}
+func NewRelationshipTLSDomainsTLSDomainsWithDefaults() *RelationshipTLSDomainsTLSDomains {
+	this := RelationshipTLSDomainsTLSDomains{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *RelationshipTlsDomainsTlsDomains) GetData() []RelationshipMemberTlsDomain {
+func (o *RelationshipTLSDomainsTLSDomains) GetData() []RelationshipMemberTLSDomain {
 	if o == nil || o.Data == nil {
-		var ret []RelationshipMemberTlsDomain
+		var ret []RelationshipMemberTLSDomain
 		return ret
 	}
 	return o.Data
@@ -52,7 +52,7 @@ func (o *RelationshipTlsDomainsTlsDomains) GetData() []RelationshipMemberTlsDoma
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTlsDomainsTlsDomains) GetDataOk() ([]RelationshipMemberTlsDomain, bool) {
+func (o *RelationshipTLSDomainsTLSDomains) GetDataOk() ([]RelationshipMemberTLSDomain, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *RelationshipTlsDomainsTlsDomains) GetDataOk() ([]RelationshipMemberTlsD
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *RelationshipTlsDomainsTlsDomains) HasData() bool {
+func (o *RelationshipTLSDomainsTLSDomains) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *RelationshipTlsDomainsTlsDomains) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []RelationshipMemberTlsDomain and assigns it to the Data field.
-func (o *RelationshipTlsDomainsTlsDomains) SetData(v []RelationshipMemberTlsDomain) {
+// SetData gets a reference to the given []RelationshipMemberTLSDomain and assigns it to the Data field.
+func (o *RelationshipTLSDomainsTLSDomains) SetData(v []RelationshipMemberTLSDomain) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTlsDomainsTlsDomains) MarshalJSON() ([]byte, error) {
+func (o RelationshipTLSDomainsTLSDomains) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o RelationshipTlsDomainsTlsDomains) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTlsDomainsTlsDomains) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTlsDomainsTlsDomains := _RelationshipTlsDomainsTlsDomains{}
+func (o *RelationshipTLSDomainsTLSDomains) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTLSDomainsTLSDomains := _RelationshipTLSDomainsTLSDomains{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTlsDomainsTlsDomains); err == nil {
-		*o = RelationshipTlsDomainsTlsDomains(varRelationshipTlsDomainsTlsDomains)
+	if err = json.Unmarshal(bytes, &varRelationshipTLSDomainsTLSDomains); err == nil {
+		*o = RelationshipTLSDomainsTLSDomains(varRelationshipTLSDomainsTLSDomains)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipTlsDomainsTlsDomains) UnmarshalJSON(bytes []byte) (err erro
 	return err
 }
 
-// NullableRelationshipTlsDomainsTlsDomains is a helper abstraction for handling nullable relationshiptlsdomainstlsdomains types.
-type NullableRelationshipTlsDomainsTlsDomains struct {
-	value *RelationshipTlsDomainsTlsDomains
+// NullableRelationshipTLSDomainsTLSDomains is a helper abstraction for handling nullable relationshiptlsdomainstlsdomains types.
+type NullableRelationshipTLSDomainsTLSDomains struct {
+	value *RelationshipTLSDomainsTLSDomains
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTlsDomainsTlsDomains) Get() *RelationshipTlsDomainsTlsDomains {
+func (v NullableRelationshipTLSDomainsTLSDomains) Get() *RelationshipTLSDomainsTLSDomains {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTlsDomainsTlsDomains) Set(val *RelationshipTlsDomainsTlsDomains) {
+func (v *NullableRelationshipTLSDomainsTLSDomains) Set(val *RelationshipTLSDomainsTLSDomains) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTlsDomainsTlsDomains) IsSet() bool {
+func (v NullableRelationshipTLSDomainsTLSDomains) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTlsDomainsTlsDomains) Unset() {
+func (v *NullableRelationshipTLSDomainsTLSDomains) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTlsDomainsTlsDomains returns a pointer to a new instance of NullableRelationshipTlsDomainsTlsDomains.
-func NewNullableRelationshipTlsDomainsTlsDomains(val *RelationshipTlsDomainsTlsDomains) *NullableRelationshipTlsDomainsTlsDomains {
-	return &NullableRelationshipTlsDomainsTlsDomains{value: val, isSet: true}
+// NewNullableRelationshipTLSDomainsTLSDomains returns a pointer to a new instance of NullableRelationshipTLSDomainsTLSDomains.
+func NewNullableRelationshipTLSDomainsTLSDomains(val *RelationshipTLSDomainsTLSDomains) *NullableRelationshipTLSDomainsTLSDomains {
+	return &NullableRelationshipTLSDomainsTLSDomains{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTlsDomainsTlsDomains) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTLSDomainsTLSDomains) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTlsDomainsTlsDomains) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTLSDomainsTLSDomains) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

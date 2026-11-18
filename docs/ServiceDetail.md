@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
 **Name** | Pointer to **string** | The name of the service. | [optional] 
-**CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
+**CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
 **Type** | Pointer to **string** | The type of this service. | [optional] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **PublishKey** | Pointer to **string** | Unused at this time. | [optional] 
 **Paused** | Pointer to **bool** | Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated. | [optional] 
 **Versions** | Pointer to [**[]SchemasVersionResponse**](SchemasVersionResponse.md) | A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service. | [optional] 
@@ -203,30 +203,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *ServiceDetail) GetCustomerId() string`
+`func (o *ServiceDetail) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *ServiceDetail) GetCustomerIdOk() (*string, bool)`
+`func (o *ServiceDetail) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *ServiceDetail) SetCustomerId(v string)`
+`func (o *ServiceDetail) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *ServiceDetail) HasCustomerId() bool`
+`func (o *ServiceDetail) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
 ### GetType
 
@@ -253,30 +253,30 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *ServiceDetail) GetId() string`
+`func (o *ServiceDetail) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ServiceDetail) GetIdOk() (*string, bool)`
+`func (o *ServiceDetail) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ServiceDetail) SetId(v string)`
+`func (o *ServiceDetail) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *ServiceDetail) HasId() bool`
+`func (o *ServiceDetail) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetPublishKey
 
@@ -440,5 +440,3 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -64,10 +64,10 @@ type SecretStoreAPI interface {
 		Delete a secret store and all of its contents.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeId
+		 @param storeID
 		 @return APIDeleteSecretStoreRequest
 	*/
-	DeleteSecretStore(ctx context.Context, storeId string) APIDeleteSecretStoreRequest
+	DeleteSecretStore(ctx context.Context, storeID string) APIDeleteSecretStoreRequest
 
 	// DeleteSecretStoreExecute executes the request
 	DeleteSecretStoreExecute(r APIDeleteSecretStoreRequest) (*http.Response, error)
@@ -78,10 +78,10 @@ type SecretStoreAPI interface {
 		Get a secret store by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeId
+		 @param storeID
 		 @return APIGetSecretStoreRequest
 	*/
-	GetSecretStore(ctx context.Context, storeId string) APIGetSecretStoreRequest
+	GetSecretStore(ctx context.Context, storeID string) APIGetSecretStoreRequest
 
 	// GetSecretStoreExecute executes the request
 	//  @return SecretStoreResponse
@@ -388,7 +388,7 @@ func (a *SecretStoreAPIService) CreateSecretStoreExecute(r APICreateSecretStoreR
 type APIDeleteSecretStoreRequest struct {
 	ctx        context.Context
 	APIService SecretStoreAPI
-	storeId    string
+	storeID    string
 }
 
 // Execute calls the API using the request data configured.
@@ -402,14 +402,14 @@ DeleteSecretStore Delete secret store
 Delete a secret store and all of its contents.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeId
+ @param storeID
  @return APIDeleteSecretStoreRequest
 */
-func (a *SecretStoreAPIService) DeleteSecretStore(ctx context.Context, storeId string) APIDeleteSecretStoreRequest {
+func (a *SecretStoreAPIService) DeleteSecretStore(ctx context.Context, storeID string) APIDeleteSecretStoreRequest {
 	return APIDeleteSecretStoreRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeId:    storeId,
+		storeID:    storeID,
 	}
 }
 
@@ -427,7 +427,7 @@ func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreR
 	}
 
 	localVarPath := localBasePath + "/resources/stores/secret/{store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -509,7 +509,7 @@ func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreR
 type APIGetSecretStoreRequest struct {
 	ctx        context.Context
 	APIService SecretStoreAPI
-	storeId    string
+	storeID    string
 }
 
 // Execute calls the API using the request data configured.
@@ -523,14 +523,14 @@ GetSecretStore Get secret store by ID
 Get a secret store by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeId
+ @param storeID
  @return APIGetSecretStoreRequest
 */
-func (a *SecretStoreAPIService) GetSecretStore(ctx context.Context, storeId string) APIGetSecretStoreRequest {
+func (a *SecretStoreAPIService) GetSecretStore(ctx context.Context, storeID string) APIGetSecretStoreRequest {
 	return APIGetSecretStoreRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeId:    storeId,
+		storeID:    storeID,
 	}
 }
 
@@ -550,7 +550,7 @@ func (a *SecretStoreAPIService) GetSecretStoreExecute(r APIGetSecretStoreRequest
 	}
 
 	localVarPath := localBasePath + "/resources/stores/secret/{store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

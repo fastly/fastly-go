@@ -19,7 +19,7 @@ import (
 // BulkOperationResult struct for BulkOperationResult
 type BulkOperationResult struct {
 	// The operation ID.
-	Id *string `json:"id,omitempty"`
+	ID *string `json:"id,omitempty"`
 	// HTTP status code for this operation.
 	StatusCode *int32 `json:"status_code,omitempty"`
 	// Error reason if the operation failed.
@@ -46,36 +46,36 @@ func NewBulkOperationResultWithDefaults() *BulkOperationResult {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *BulkOperationResult) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *BulkOperationResult) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkOperationResult) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *BulkOperationResult) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *BulkOperationResult) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *BulkOperationResult) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *BulkOperationResult) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *BulkOperationResult) SetID(v string) {
+	o.ID = &v
 }
 
 // GetStatusCode returns the StatusCode field value if set, zero value otherwise.
@@ -146,8 +146,8 @@ func (o *BulkOperationResult) SetReason(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o BulkOperationResult) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 	if o.StatusCode != nil {
 		toSerialize["status_code"] = o.StatusCode

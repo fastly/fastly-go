@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsActivations** | Pointer to [**RelationshipTlsActivationTlsActivation**](RelationshipTlsActivationTlsActivation.md) |  | [optional] 
+**TLSActivations** | Pointer to [**RelationshipTLSActivationTLSActivation**](RelationshipTLSActivationTLSActivation.md) |  | [optional] 
 
 ## Methods
 
@@ -25,32 +25,30 @@ NewRelationshipsForMutualAuthenticationWithDefaults instantiates a new Relations
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsActivations
+### GetTLSActivations
 
-`func (o *RelationshipsForMutualAuthentication) GetTlsActivations() RelationshipTlsActivationTlsActivation`
+`func (o *RelationshipsForMutualAuthentication) GetTLSActivations() RelationshipTLSActivationTLSActivation`
 
-GetTlsActivations returns the TlsActivations field if non-nil, zero value otherwise.
+GetTLSActivations returns the TLSActivations field if non-nil, zero value otherwise.
 
-### GetTlsActivationsOk
+### GetTLSActivationsOk
 
-`func (o *RelationshipsForMutualAuthentication) GetTlsActivationsOk() (*RelationshipTlsActivationTlsActivation, bool)`
+`func (o *RelationshipsForMutualAuthentication) GetTLSActivationsOk() (*RelationshipTLSActivationTLSActivation, bool)`
 
-GetTlsActivationsOk returns a tuple with the TlsActivations field if it's non-nil, zero value otherwise
+GetTLSActivationsOk returns a tuple with the TLSActivations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsActivations
+### SetTLSActivations
 
-`func (o *RelationshipsForMutualAuthentication) SetTlsActivations(v RelationshipTlsActivationTlsActivation)`
+`func (o *RelationshipsForMutualAuthentication) SetTLSActivations(v RelationshipTLSActivationTLSActivation)`
 
-SetTlsActivations sets TlsActivations field to given value.
+SetTLSActivations sets TLSActivations field to given value.
 
-### HasTlsActivations
+### HasTLSActivations
 
-`func (o *RelationshipsForMutualAuthentication) HasTlsActivations() bool`
+`func (o *RelationshipsForMutualAuthentication) HasTLSActivations() bool`
 
-HasTlsActivations returns a boolean if a field has been set.
+HasTLSActivations returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

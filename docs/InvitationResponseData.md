@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to [**TypeInvitation**](TypeInvitation.md) |  | [optional] [default to TYPEINVITATION_INVITATION]
 **Attributes** | Pointer to [**Timestamps**](Timestamps.md) |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **Relationships** | Pointer to [**RelationshipsForInvitation**](RelationshipsForInvitation.md) |  | [optional] 
 
 ## Methods
@@ -78,30 +78,30 @@ SetAttributes sets Attributes field to given value.
 
 HasAttributes returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *InvitationResponseData) GetId() string`
+`func (o *InvitationResponseData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *InvitationResponseData) GetIdOk() (*string, bool)`
+`func (o *InvitationResponseData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *InvitationResponseData) SetId(v string)`
+`func (o *InvitationResponseData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *InvitationResponseData) HasId() bool`
+`func (o *InvitationResponseData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetRelationships
 
@@ -130,5 +130,3 @@ HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

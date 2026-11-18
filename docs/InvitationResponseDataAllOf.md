@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **Attributes** | Pointer to [**Timestamps**](Timestamps.md) |  | [optional] 
 **Relationships** | Pointer to [**RelationshipsForInvitation**](RelationshipsForInvitation.md) |  | [optional] 
 
@@ -27,30 +27,30 @@ NewInvitationResponseDataAllOfWithDefaults instantiates a new InvitationResponse
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *InvitationResponseDataAllOf) GetId() string`
+`func (o *InvitationResponseDataAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *InvitationResponseDataAllOf) GetIdOk() (*string, bool)`
+`func (o *InvitationResponseDataAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *InvitationResponseDataAllOf) SetId(v string)`
+`func (o *InvitationResponseDataAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *InvitationResponseDataAllOf) HasId() bool`
+`func (o *InvitationResponseDataAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetAttributes
 
@@ -104,5 +104,3 @@ HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

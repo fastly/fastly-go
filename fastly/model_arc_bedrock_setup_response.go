@@ -21,7 +21,7 @@ type ArcBedrockSetupResponse struct {
 	// The ARN of the AI Runtime Control IAM role your AWS account's trust policy must trust.
 	ArcRoleArn string `json:"arc_role_arn"`
 	// The external ID to require in your trust policy. This is your Fastly customer ID.
-	ExternalId           string `json:"external_id"`
+	ExternalID           string `json:"external_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -31,10 +31,10 @@ type _ArcBedrockSetupResponse ArcBedrockSetupResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcBedrockSetupResponse(arcRoleArn string, externalId string) *ArcBedrockSetupResponse {
+func NewArcBedrockSetupResponse(arcRoleArn string, externalID string) *ArcBedrockSetupResponse {
 	this := ArcBedrockSetupResponse{}
 	this.ArcRoleArn = arcRoleArn
-	this.ExternalId = externalId
+	this.ExternalID = externalID
 	return &this
 }
 
@@ -70,28 +70,28 @@ func (o *ArcBedrockSetupResponse) SetArcRoleArn(v string) {
 	o.ArcRoleArn = v
 }
 
-// GetExternalId returns the ExternalId field value
-func (o *ArcBedrockSetupResponse) GetExternalId() string {
+// GetExternalID returns the ExternalID field value
+func (o *ArcBedrockSetupResponse) GetExternalID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.ExternalId
+	return o.ExternalID
 }
 
-// GetExternalIdOk returns a tuple with the ExternalId field value
+// GetExternalIDOk returns a tuple with the ExternalID field value
 // and a boolean to check if the value has been set.
-func (o *ArcBedrockSetupResponse) GetExternalIdOk() (*string, bool) {
+func (o *ArcBedrockSetupResponse) GetExternalIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ExternalId, true
+	return &o.ExternalID, true
 }
 
-// SetExternalId sets field value
-func (o *ArcBedrockSetupResponse) SetExternalId(v string) {
-	o.ExternalId = v
+// SetExternalID sets field value
+func (o *ArcBedrockSetupResponse) SetExternalID(v string) {
+	o.ExternalID = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -102,7 +102,7 @@ func (o ArcBedrockSetupResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["arc_role_arn"] = o.ArcRoleArn
 	}
 	if true {
-		toSerialize["external_id"] = o.ExternalId
+		toSerialize["external_id"] = o.ExternalID
 	}
 
 	for key, value := range o.AdditionalProperties {

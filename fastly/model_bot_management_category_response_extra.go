@@ -19,7 +19,7 @@ import (
 // BotManagementCategoryResponseExtra struct for BotManagementCategoryResponseExtra
 type BotManagementCategoryResponseExtra struct {
 	// The unique identifier of the category.
-	CategoryId string `json:"category_id"`
+	CategoryID string `json:"category_id"`
 	// The display name of the category.
 	Name string `json:"name"`
 	// A description of the bots the category contains.
@@ -33,9 +33,9 @@ type _BotManagementCategoryResponseExtra BotManagementCategoryResponseExtra
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotManagementCategoryResponseExtra(categoryId string, name string) *BotManagementCategoryResponseExtra {
+func NewBotManagementCategoryResponseExtra(categoryID string, name string) *BotManagementCategoryResponseExtra {
 	this := BotManagementCategoryResponseExtra{}
-	this.CategoryId = categoryId
+	this.CategoryID = categoryID
 	this.Name = name
 	return &this
 }
@@ -48,28 +48,28 @@ func NewBotManagementCategoryResponseExtraWithDefaults() *BotManagementCategoryR
 	return &this
 }
 
-// GetCategoryId returns the CategoryId field value
-func (o *BotManagementCategoryResponseExtra) GetCategoryId() string {
+// GetCategoryID returns the CategoryID field value
+func (o *BotManagementCategoryResponseExtra) GetCategoryID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.CategoryId
+	return o.CategoryID
 }
 
-// GetCategoryIdOk returns a tuple with the CategoryId field value
+// GetCategoryIDOk returns a tuple with the CategoryID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementCategoryResponseExtra) GetCategoryIdOk() (*string, bool) {
+func (o *BotManagementCategoryResponseExtra) GetCategoryIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.CategoryId, true
+	return &o.CategoryID, true
 }
 
-// SetCategoryId sets field value
-func (o *BotManagementCategoryResponseExtra) SetCategoryId(v string) {
-	o.CategoryId = v
+// SetCategoryID sets field value
+func (o *BotManagementCategoryResponseExtra) SetCategoryID(v string) {
+	o.CategoryID = v
 }
 
 // GetName returns the Name field value
@@ -133,7 +133,7 @@ func (o *BotManagementCategoryResponseExtra) SetDescription(v string) {
 func (o BotManagementCategoryResponseExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["category_id"] = o.CategoryId
+		toSerialize["category_id"] = o.CategoryID
 	}
 	if true {
 		toSerialize["name"] = o.Name

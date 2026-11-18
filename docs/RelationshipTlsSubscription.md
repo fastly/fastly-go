@@ -1,56 +1,54 @@
-# RelationshipTlsSubscription
+# RelationshipTLSSubscription
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsSubscription** | Pointer to [**RelationshipTlsSubscriptionTlsSubscription**](RelationshipTlsSubscriptionTlsSubscription.md) |  | [optional] 
+**TLSSubscription** | Pointer to [**RelationshipTLSSubscriptionTLSSubscription**](RelationshipTLSSubscriptionTLSSubscription.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTlsSubscription
+### NewRelationshipTLSSubscription
 
-`func NewRelationshipTlsSubscription() *RelationshipTlsSubscription`
+`func NewRelationshipTLSSubscription() *RelationshipTLSSubscription`
 
-NewRelationshipTlsSubscription instantiates a new RelationshipTlsSubscription object
+NewRelationshipTLSSubscription instantiates a new RelationshipTLSSubscription object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTlsSubscriptionWithDefaults
+### NewRelationshipTLSSubscriptionWithDefaults
 
-`func NewRelationshipTlsSubscriptionWithDefaults() *RelationshipTlsSubscription`
+`func NewRelationshipTLSSubscriptionWithDefaults() *RelationshipTLSSubscription`
 
-NewRelationshipTlsSubscriptionWithDefaults instantiates a new RelationshipTlsSubscription object
+NewRelationshipTLSSubscriptionWithDefaults instantiates a new RelationshipTLSSubscription object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsSubscription
+### GetTLSSubscription
 
-`func (o *RelationshipTlsSubscription) GetTlsSubscription() RelationshipTlsSubscriptionTlsSubscription`
+`func (o *RelationshipTLSSubscription) GetTLSSubscription() RelationshipTLSSubscriptionTLSSubscription`
 
-GetTlsSubscription returns the TlsSubscription field if non-nil, zero value otherwise.
+GetTLSSubscription returns the TLSSubscription field if non-nil, zero value otherwise.
 
-### GetTlsSubscriptionOk
+### GetTLSSubscriptionOk
 
-`func (o *RelationshipTlsSubscription) GetTlsSubscriptionOk() (*RelationshipTlsSubscriptionTlsSubscription, bool)`
+`func (o *RelationshipTLSSubscription) GetTLSSubscriptionOk() (*RelationshipTLSSubscriptionTLSSubscription, bool)`
 
-GetTlsSubscriptionOk returns a tuple with the TlsSubscription field if it's non-nil, zero value otherwise
+GetTLSSubscriptionOk returns a tuple with the TLSSubscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsSubscription
+### SetTLSSubscription
 
-`func (o *RelationshipTlsSubscription) SetTlsSubscription(v RelationshipTlsSubscriptionTlsSubscription)`
+`func (o *RelationshipTLSSubscription) SetTLSSubscription(v RelationshipTLSSubscriptionTLSSubscription)`
 
-SetTlsSubscription sets TlsSubscription field to given value.
+SetTLSSubscription sets TLSSubscription field to given value.
 
-### HasTlsSubscription
+### HasTLSSubscription
 
-`func (o *RelationshipTlsSubscription) HasTlsSubscription() bool`
+`func (o *RelationshipTLSSubscription) HasTLSSubscription() bool`
 
-HasTlsSubscription returns a boolean if a field has been set.
+HasTLSSubscription returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -1,4 +1,4 @@
-# LoggingHttpsResponse
+# LoggingHTTPSResponse
 
 ## Properties
 
@@ -10,791 +10,789 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
 **LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
-**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
+**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
 **RequestMaxEntries** | Pointer to **int32** | The maximum number of logs sent in one request. Defaults `0` (10k). | [optional] [default to 0]
 **RequestMaxBytes** | Pointer to **int32** | The maximum number of bytes sent in one request. Defaults `0` (100MB). | [optional] [default to 0]
-**Url** | Pointer to **string** | The URL to send logs to. Must use HTTPS. Required. | [optional] 
+**URL** | Pointer to **string** | The URL to send logs to. Must use HTTPS. Required. | [optional] 
 **ContentType** | Pointer to **NullableString** | Content type of the header sent with the request. | [optional] [default to "null"]
 **HeaderName** | Pointer to **NullableString** | Name of the custom header sent with the request. | [optional] [default to "null"]
 **MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_BLANK]
 **HeaderValue** | Pointer to **NullableString** | Value of the custom header sent with the request. | [optional] [default to "null"]
 **Method** | Pointer to **string** | HTTP method used for request. | [optional] [default to "POST"]
-**JsonFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 
+**JSONFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 
 **Period** | Pointer to **int32** | How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds. | [optional] [default to 5]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewLoggingHttpsResponse
+### NewLoggingHTTPSResponse
 
-`func NewLoggingHttpsResponse() *LoggingHttpsResponse`
+`func NewLoggingHTTPSResponse() *LoggingHTTPSResponse`
 
-NewLoggingHttpsResponse instantiates a new LoggingHttpsResponse object
+NewLoggingHTTPSResponse instantiates a new LoggingHTTPSResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLoggingHttpsResponseWithDefaults
+### NewLoggingHTTPSResponseWithDefaults
 
-`func NewLoggingHttpsResponseWithDefaults() *LoggingHttpsResponse`
+`func NewLoggingHTTPSResponseWithDefaults() *LoggingHTTPSResponse`
 
-NewLoggingHttpsResponseWithDefaults instantiates a new LoggingHttpsResponse object
+NewLoggingHTTPSResponseWithDefaults instantiates a new LoggingHTTPSResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *LoggingHttpsResponse) GetName() string`
+`func (o *LoggingHTTPSResponse) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *LoggingHttpsResponse) GetNameOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *LoggingHttpsResponse) SetName(v string)`
+`func (o *LoggingHTTPSResponse) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *LoggingHttpsResponse) HasName() bool`
+`func (o *LoggingHTTPSResponse) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetPlacement
 
-`func (o *LoggingHttpsResponse) GetPlacement() string`
+`func (o *LoggingHTTPSResponse) GetPlacement() string`
 
 GetPlacement returns the Placement field if non-nil, zero value otherwise.
 
 ### GetPlacementOk
 
-`func (o *LoggingHttpsResponse) GetPlacementOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetPlacementOk() (*string, bool)`
 
 GetPlacementOk returns a tuple with the Placement field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlacement
 
-`func (o *LoggingHttpsResponse) SetPlacement(v string)`
+`func (o *LoggingHTTPSResponse) SetPlacement(v string)`
 
 SetPlacement sets Placement field to given value.
 
 ### HasPlacement
 
-`func (o *LoggingHttpsResponse) HasPlacement() bool`
+`func (o *LoggingHTTPSResponse) HasPlacement() bool`
 
 HasPlacement returns a boolean if a field has been set.
 
 ### SetPlacementNil
 
-`func (o *LoggingHttpsResponse) SetPlacementNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetPlacementNil(b bool)`
 
  SetPlacementNil sets the value for Placement to be an explicit nil
 
 ### UnsetPlacement
-`func (o *LoggingHttpsResponse) UnsetPlacement()`
+`func (o *LoggingHTTPSResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
 ### GetResponseCondition
 
-`func (o *LoggingHttpsResponse) GetResponseCondition() string`
+`func (o *LoggingHTTPSResponse) GetResponseCondition() string`
 
 GetResponseCondition returns the ResponseCondition field if non-nil, zero value otherwise.
 
 ### GetResponseConditionOk
 
-`func (o *LoggingHttpsResponse) GetResponseConditionOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetResponseConditionOk() (*string, bool)`
 
 GetResponseConditionOk returns a tuple with the ResponseCondition field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponseCondition
 
-`func (o *LoggingHttpsResponse) SetResponseCondition(v string)`
+`func (o *LoggingHTTPSResponse) SetResponseCondition(v string)`
 
 SetResponseCondition sets ResponseCondition field to given value.
 
 ### HasResponseCondition
 
-`func (o *LoggingHttpsResponse) HasResponseCondition() bool`
+`func (o *LoggingHTTPSResponse) HasResponseCondition() bool`
 
 HasResponseCondition returns a boolean if a field has been set.
 
 ### SetResponseConditionNil
 
-`func (o *LoggingHttpsResponse) SetResponseConditionNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetResponseConditionNil(b bool)`
 
  SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 
 ### UnsetResponseCondition
-`func (o *LoggingHttpsResponse) UnsetResponseCondition()`
+`func (o *LoggingHTTPSResponse) UnsetResponseCondition()`
 
 UnsetResponseCondition ensures that no value is present for ResponseCondition, not even an explicit nil
 ### GetFormat
 
-`func (o *LoggingHttpsResponse) GetFormat() string`
+`func (o *LoggingHTTPSResponse) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *LoggingHttpsResponse) GetFormatOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *LoggingHttpsResponse) SetFormat(v string)`
+`func (o *LoggingHTTPSResponse) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 ### HasFormat
 
-`func (o *LoggingHttpsResponse) HasFormat() bool`
+`func (o *LoggingHTTPSResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
 ### GetLogProcessingRegion
 
-`func (o *LoggingHttpsResponse) GetLogProcessingRegion() string`
+`func (o *LoggingHTTPSResponse) GetLogProcessingRegion() string`
 
 GetLogProcessingRegion returns the LogProcessingRegion field if non-nil, zero value otherwise.
 
 ### GetLogProcessingRegionOk
 
-`func (o *LoggingHttpsResponse) GetLogProcessingRegionOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetLogProcessingRegionOk() (*string, bool)`
 
 GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogProcessingRegion
 
-`func (o *LoggingHttpsResponse) SetLogProcessingRegion(v string)`
+`func (o *LoggingHTTPSResponse) SetLogProcessingRegion(v string)`
 
 SetLogProcessingRegion sets LogProcessingRegion field to given value.
 
 ### HasLogProcessingRegion
 
-`func (o *LoggingHttpsResponse) HasLogProcessingRegion() bool`
+`func (o *LoggingHTTPSResponse) HasLogProcessingRegion() bool`
 
 HasLogProcessingRegion returns a boolean if a field has been set.
 
 ### GetFormatVersion
 
-`func (o *LoggingHttpsResponse) GetFormatVersion() string`
+`func (o *LoggingHTTPSResponse) GetFormatVersion() string`
 
 GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
 
 ### GetFormatVersionOk
 
-`func (o *LoggingHttpsResponse) GetFormatVersionOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetFormatVersionOk() (*string, bool)`
 
 GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormatVersion
 
-`func (o *LoggingHttpsResponse) SetFormatVersion(v string)`
+`func (o *LoggingHTTPSResponse) SetFormatVersion(v string)`
 
 SetFormatVersion sets FormatVersion field to given value.
 
 ### HasFormatVersion
 
-`func (o *LoggingHttpsResponse) HasFormatVersion() bool`
+`func (o *LoggingHTTPSResponse) HasFormatVersion() bool`
 
 HasFormatVersion returns a boolean if a field has been set.
 
-### GetTlsCaCert
+### GetTLSCaCert
 
-`func (o *LoggingHttpsResponse) GetTlsCaCert() string`
+`func (o *LoggingHTTPSResponse) GetTLSCaCert() string`
 
-GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
+GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
 
-### GetTlsCaCertOk
+### GetTLSCaCertOk
 
-`func (o *LoggingHttpsResponse) GetTlsCaCertOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetTLSCaCertOk() (*string, bool)`
 
-GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
+GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCaCert
+### SetTLSCaCert
 
-`func (o *LoggingHttpsResponse) SetTlsCaCert(v string)`
+`func (o *LoggingHTTPSResponse) SetTLSCaCert(v string)`
 
-SetTlsCaCert sets TlsCaCert field to given value.
+SetTLSCaCert sets TLSCaCert field to given value.
 
-### HasTlsCaCert
+### HasTLSCaCert
 
-`func (o *LoggingHttpsResponse) HasTlsCaCert() bool`
+`func (o *LoggingHTTPSResponse) HasTLSCaCert() bool`
 
-HasTlsCaCert returns a boolean if a field has been set.
+HasTLSCaCert returns a boolean if a field has been set.
 
-### SetTlsCaCertNil
+### SetTLSCaCertNil
 
-`func (o *LoggingHttpsResponse) SetTlsCaCertNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetTLSCaCertNil(b bool)`
 
- SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+ SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 
-### UnsetTlsCaCert
-`func (o *LoggingHttpsResponse) UnsetTlsCaCert()`
+### UnsetTLSCaCert
+`func (o *LoggingHTTPSResponse) UnsetTLSCaCert()`
 
-UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-### GetTlsClientCert
+UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+### GetTLSClientCert
 
-`func (o *LoggingHttpsResponse) GetTlsClientCert() string`
+`func (o *LoggingHTTPSResponse) GetTLSClientCert() string`
 
-GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
+GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
 
-### GetTlsClientCertOk
+### GetTLSClientCertOk
 
-`func (o *LoggingHttpsResponse) GetTlsClientCertOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetTLSClientCertOk() (*string, bool)`
 
-GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
+GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientCert
+### SetTLSClientCert
 
-`func (o *LoggingHttpsResponse) SetTlsClientCert(v string)`
+`func (o *LoggingHTTPSResponse) SetTLSClientCert(v string)`
 
-SetTlsClientCert sets TlsClientCert field to given value.
+SetTLSClientCert sets TLSClientCert field to given value.
 
-### HasTlsClientCert
+### HasTLSClientCert
 
-`func (o *LoggingHttpsResponse) HasTlsClientCert() bool`
+`func (o *LoggingHTTPSResponse) HasTLSClientCert() bool`
 
-HasTlsClientCert returns a boolean if a field has been set.
+HasTLSClientCert returns a boolean if a field has been set.
 
-### SetTlsClientCertNil
+### SetTLSClientCertNil
 
-`func (o *LoggingHttpsResponse) SetTlsClientCertNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetTLSClientCertNil(b bool)`
 
- SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+ SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 
-### UnsetTlsClientCert
-`func (o *LoggingHttpsResponse) UnsetTlsClientCert()`
+### UnsetTLSClientCert
+`func (o *LoggingHTTPSResponse) UnsetTLSClientCert()`
 
-UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-### GetTlsClientKey
+UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+### GetTLSClientKey
 
-`func (o *LoggingHttpsResponse) GetTlsClientKey() string`
+`func (o *LoggingHTTPSResponse) GetTLSClientKey() string`
 
-GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
+GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
 
-### GetTlsClientKeyOk
+### GetTLSClientKeyOk
 
-`func (o *LoggingHttpsResponse) GetTlsClientKeyOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetTLSClientKeyOk() (*string, bool)`
 
-GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
+GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientKey
+### SetTLSClientKey
 
-`func (o *LoggingHttpsResponse) SetTlsClientKey(v string)`
+`func (o *LoggingHTTPSResponse) SetTLSClientKey(v string)`
 
-SetTlsClientKey sets TlsClientKey field to given value.
+SetTLSClientKey sets TLSClientKey field to given value.
 
-### HasTlsClientKey
+### HasTLSClientKey
 
-`func (o *LoggingHttpsResponse) HasTlsClientKey() bool`
+`func (o *LoggingHTTPSResponse) HasTLSClientKey() bool`
 
-HasTlsClientKey returns a boolean if a field has been set.
+HasTLSClientKey returns a boolean if a field has been set.
 
-### SetTlsClientKeyNil
+### SetTLSClientKeyNil
 
-`func (o *LoggingHttpsResponse) SetTlsClientKeyNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetTLSClientKeyNil(b bool)`
 
- SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+ SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 
-### UnsetTlsClientKey
-`func (o *LoggingHttpsResponse) UnsetTlsClientKey()`
+### UnsetTLSClientKey
+`func (o *LoggingHTTPSResponse) UnsetTLSClientKey()`
 
-UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-### GetTlsHostname
+UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+### GetTLSHostname
 
-`func (o *LoggingHttpsResponse) GetTlsHostname() string`
+`func (o *LoggingHTTPSResponse) GetTLSHostname() string`
 
-GetTlsHostname returns the TlsHostname field if non-nil, zero value otherwise.
+GetTLSHostname returns the TLSHostname field if non-nil, zero value otherwise.
 
-### GetTlsHostnameOk
+### GetTLSHostnameOk
 
-`func (o *LoggingHttpsResponse) GetTlsHostnameOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetTLSHostnameOk() (*string, bool)`
 
-GetTlsHostnameOk returns a tuple with the TlsHostname field if it's non-nil, zero value otherwise
+GetTLSHostnameOk returns a tuple with the TLSHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsHostname
+### SetTLSHostname
 
-`func (o *LoggingHttpsResponse) SetTlsHostname(v string)`
+`func (o *LoggingHTTPSResponse) SetTLSHostname(v string)`
 
-SetTlsHostname sets TlsHostname field to given value.
+SetTLSHostname sets TLSHostname field to given value.
 
-### HasTlsHostname
+### HasTLSHostname
 
-`func (o *LoggingHttpsResponse) HasTlsHostname() bool`
+`func (o *LoggingHTTPSResponse) HasTLSHostname() bool`
 
-HasTlsHostname returns a boolean if a field has been set.
+HasTLSHostname returns a boolean if a field has been set.
 
-### SetTlsHostnameNil
+### SetTLSHostnameNil
 
-`func (o *LoggingHttpsResponse) SetTlsHostnameNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetTLSHostnameNil(b bool)`
 
- SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
+ SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 
-### UnsetTlsHostname
-`func (o *LoggingHttpsResponse) UnsetTlsHostname()`
+### UnsetTLSHostname
+`func (o *LoggingHTTPSResponse) UnsetTLSHostname()`
 
-UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
+UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
 ### GetRequestMaxEntries
 
-`func (o *LoggingHttpsResponse) GetRequestMaxEntries() int32`
+`func (o *LoggingHTTPSResponse) GetRequestMaxEntries() int32`
 
 GetRequestMaxEntries returns the RequestMaxEntries field if non-nil, zero value otherwise.
 
 ### GetRequestMaxEntriesOk
 
-`func (o *LoggingHttpsResponse) GetRequestMaxEntriesOk() (*int32, bool)`
+`func (o *LoggingHTTPSResponse) GetRequestMaxEntriesOk() (*int32, bool)`
 
 GetRequestMaxEntriesOk returns a tuple with the RequestMaxEntries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestMaxEntries
 
-`func (o *LoggingHttpsResponse) SetRequestMaxEntries(v int32)`
+`func (o *LoggingHTTPSResponse) SetRequestMaxEntries(v int32)`
 
 SetRequestMaxEntries sets RequestMaxEntries field to given value.
 
 ### HasRequestMaxEntries
 
-`func (o *LoggingHttpsResponse) HasRequestMaxEntries() bool`
+`func (o *LoggingHTTPSResponse) HasRequestMaxEntries() bool`
 
 HasRequestMaxEntries returns a boolean if a field has been set.
 
 ### GetRequestMaxBytes
 
-`func (o *LoggingHttpsResponse) GetRequestMaxBytes() int32`
+`func (o *LoggingHTTPSResponse) GetRequestMaxBytes() int32`
 
 GetRequestMaxBytes returns the RequestMaxBytes field if non-nil, zero value otherwise.
 
 ### GetRequestMaxBytesOk
 
-`func (o *LoggingHttpsResponse) GetRequestMaxBytesOk() (*int32, bool)`
+`func (o *LoggingHTTPSResponse) GetRequestMaxBytesOk() (*int32, bool)`
 
 GetRequestMaxBytesOk returns a tuple with the RequestMaxBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestMaxBytes
 
-`func (o *LoggingHttpsResponse) SetRequestMaxBytes(v int32)`
+`func (o *LoggingHTTPSResponse) SetRequestMaxBytes(v int32)`
 
 SetRequestMaxBytes sets RequestMaxBytes field to given value.
 
 ### HasRequestMaxBytes
 
-`func (o *LoggingHttpsResponse) HasRequestMaxBytes() bool`
+`func (o *LoggingHTTPSResponse) HasRequestMaxBytes() bool`
 
 HasRequestMaxBytes returns a boolean if a field has been set.
 
-### GetUrl
+### GetURL
 
-`func (o *LoggingHttpsResponse) GetUrl() string`
+`func (o *LoggingHTTPSResponse) GetURL() string`
 
-GetUrl returns the Url field if non-nil, zero value otherwise.
+GetURL returns the URL field if non-nil, zero value otherwise.
 
-### GetUrlOk
+### GetURLOk
 
-`func (o *LoggingHttpsResponse) GetUrlOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetURLOk() (*string, bool)`
 
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrl
+### SetURL
 
-`func (o *LoggingHttpsResponse) SetUrl(v string)`
+`func (o *LoggingHTTPSResponse) SetURL(v string)`
 
-SetUrl sets Url field to given value.
+SetURL sets URL field to given value.
 
-### HasUrl
+### HasURL
 
-`func (o *LoggingHttpsResponse) HasUrl() bool`
+`func (o *LoggingHTTPSResponse) HasURL() bool`
 
-HasUrl returns a boolean if a field has been set.
+HasURL returns a boolean if a field has been set.
 
 ### GetContentType
 
-`func (o *LoggingHttpsResponse) GetContentType() string`
+`func (o *LoggingHTTPSResponse) GetContentType() string`
 
 GetContentType returns the ContentType field if non-nil, zero value otherwise.
 
 ### GetContentTypeOk
 
-`func (o *LoggingHttpsResponse) GetContentTypeOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetContentTypeOk() (*string, bool)`
 
 GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContentType
 
-`func (o *LoggingHttpsResponse) SetContentType(v string)`
+`func (o *LoggingHTTPSResponse) SetContentType(v string)`
 
 SetContentType sets ContentType field to given value.
 
 ### HasContentType
 
-`func (o *LoggingHttpsResponse) HasContentType() bool`
+`func (o *LoggingHTTPSResponse) HasContentType() bool`
 
 HasContentType returns a boolean if a field has been set.
 
 ### SetContentTypeNil
 
-`func (o *LoggingHttpsResponse) SetContentTypeNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetContentTypeNil(b bool)`
 
  SetContentTypeNil sets the value for ContentType to be an explicit nil
 
 ### UnsetContentType
-`func (o *LoggingHttpsResponse) UnsetContentType()`
+`func (o *LoggingHTTPSResponse) UnsetContentType()`
 
 UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
 ### GetHeaderName
 
-`func (o *LoggingHttpsResponse) GetHeaderName() string`
+`func (o *LoggingHTTPSResponse) GetHeaderName() string`
 
 GetHeaderName returns the HeaderName field if non-nil, zero value otherwise.
 
 ### GetHeaderNameOk
 
-`func (o *LoggingHttpsResponse) GetHeaderNameOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetHeaderNameOk() (*string, bool)`
 
 GetHeaderNameOk returns a tuple with the HeaderName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaderName
 
-`func (o *LoggingHttpsResponse) SetHeaderName(v string)`
+`func (o *LoggingHTTPSResponse) SetHeaderName(v string)`
 
 SetHeaderName sets HeaderName field to given value.
 
 ### HasHeaderName
 
-`func (o *LoggingHttpsResponse) HasHeaderName() bool`
+`func (o *LoggingHTTPSResponse) HasHeaderName() bool`
 
 HasHeaderName returns a boolean if a field has been set.
 
 ### SetHeaderNameNil
 
-`func (o *LoggingHttpsResponse) SetHeaderNameNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetHeaderNameNil(b bool)`
 
  SetHeaderNameNil sets the value for HeaderName to be an explicit nil
 
 ### UnsetHeaderName
-`func (o *LoggingHttpsResponse) UnsetHeaderName()`
+`func (o *LoggingHTTPSResponse) UnsetHeaderName()`
 
 UnsetHeaderName ensures that no value is present for HeaderName, not even an explicit nil
 ### GetMessageType
 
-`func (o *LoggingHttpsResponse) GetMessageType() LoggingMessageType`
+`func (o *LoggingHTTPSResponse) GetMessageType() LoggingMessageType`
 
 GetMessageType returns the MessageType field if non-nil, zero value otherwise.
 
 ### GetMessageTypeOk
 
-`func (o *LoggingHttpsResponse) GetMessageTypeOk() (*LoggingMessageType, bool)`
+`func (o *LoggingHTTPSResponse) GetMessageTypeOk() (*LoggingMessageType, bool)`
 
 GetMessageTypeOk returns a tuple with the MessageType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageType
 
-`func (o *LoggingHttpsResponse) SetMessageType(v LoggingMessageType)`
+`func (o *LoggingHTTPSResponse) SetMessageType(v LoggingMessageType)`
 
 SetMessageType sets MessageType field to given value.
 
 ### HasMessageType
 
-`func (o *LoggingHttpsResponse) HasMessageType() bool`
+`func (o *LoggingHTTPSResponse) HasMessageType() bool`
 
 HasMessageType returns a boolean if a field has been set.
 
 ### GetHeaderValue
 
-`func (o *LoggingHttpsResponse) GetHeaderValue() string`
+`func (o *LoggingHTTPSResponse) GetHeaderValue() string`
 
 GetHeaderValue returns the HeaderValue field if non-nil, zero value otherwise.
 
 ### GetHeaderValueOk
 
-`func (o *LoggingHttpsResponse) GetHeaderValueOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetHeaderValueOk() (*string, bool)`
 
 GetHeaderValueOk returns a tuple with the HeaderValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaderValue
 
-`func (o *LoggingHttpsResponse) SetHeaderValue(v string)`
+`func (o *LoggingHTTPSResponse) SetHeaderValue(v string)`
 
 SetHeaderValue sets HeaderValue field to given value.
 
 ### HasHeaderValue
 
-`func (o *LoggingHttpsResponse) HasHeaderValue() bool`
+`func (o *LoggingHTTPSResponse) HasHeaderValue() bool`
 
 HasHeaderValue returns a boolean if a field has been set.
 
 ### SetHeaderValueNil
 
-`func (o *LoggingHttpsResponse) SetHeaderValueNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetHeaderValueNil(b bool)`
 
  SetHeaderValueNil sets the value for HeaderValue to be an explicit nil
 
 ### UnsetHeaderValue
-`func (o *LoggingHttpsResponse) UnsetHeaderValue()`
+`func (o *LoggingHTTPSResponse) UnsetHeaderValue()`
 
 UnsetHeaderValue ensures that no value is present for HeaderValue, not even an explicit nil
 ### GetMethod
 
-`func (o *LoggingHttpsResponse) GetMethod() string`
+`func (o *LoggingHTTPSResponse) GetMethod() string`
 
 GetMethod returns the Method field if non-nil, zero value otherwise.
 
 ### GetMethodOk
 
-`func (o *LoggingHttpsResponse) GetMethodOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetMethodOk() (*string, bool)`
 
 GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMethod
 
-`func (o *LoggingHttpsResponse) SetMethod(v string)`
+`func (o *LoggingHTTPSResponse) SetMethod(v string)`
 
 SetMethod sets Method field to given value.
 
 ### HasMethod
 
-`func (o *LoggingHttpsResponse) HasMethod() bool`
+`func (o *LoggingHTTPSResponse) HasMethod() bool`
 
 HasMethod returns a boolean if a field has been set.
 
-### GetJsonFormat
+### GetJSONFormat
 
-`func (o *LoggingHttpsResponse) GetJsonFormat() string`
+`func (o *LoggingHTTPSResponse) GetJSONFormat() string`
 
-GetJsonFormat returns the JsonFormat field if non-nil, zero value otherwise.
+GetJSONFormat returns the JSONFormat field if non-nil, zero value otherwise.
 
-### GetJsonFormatOk
+### GetJSONFormatOk
 
-`func (o *LoggingHttpsResponse) GetJsonFormatOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetJSONFormatOk() (*string, bool)`
 
-GetJsonFormatOk returns a tuple with the JsonFormat field if it's non-nil, zero value otherwise
+GetJSONFormatOk returns a tuple with the JSONFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetJsonFormat
+### SetJSONFormat
 
-`func (o *LoggingHttpsResponse) SetJsonFormat(v string)`
+`func (o *LoggingHTTPSResponse) SetJSONFormat(v string)`
 
-SetJsonFormat sets JsonFormat field to given value.
+SetJSONFormat sets JSONFormat field to given value.
 
-### HasJsonFormat
+### HasJSONFormat
 
-`func (o *LoggingHttpsResponse) HasJsonFormat() bool`
+`func (o *LoggingHTTPSResponse) HasJSONFormat() bool`
 
-HasJsonFormat returns a boolean if a field has been set.
+HasJSONFormat returns a boolean if a field has been set.
 
 ### GetPeriod
 
-`func (o *LoggingHttpsResponse) GetPeriod() int32`
+`func (o *LoggingHTTPSResponse) GetPeriod() int32`
 
 GetPeriod returns the Period field if non-nil, zero value otherwise.
 
 ### GetPeriodOk
 
-`func (o *LoggingHttpsResponse) GetPeriodOk() (*int32, bool)`
+`func (o *LoggingHTTPSResponse) GetPeriodOk() (*int32, bool)`
 
 GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeriod
 
-`func (o *LoggingHttpsResponse) SetPeriod(v int32)`
+`func (o *LoggingHTTPSResponse) SetPeriod(v int32)`
 
 SetPeriod sets Period field to given value.
 
 ### HasPeriod
 
-`func (o *LoggingHttpsResponse) HasPeriod() bool`
+`func (o *LoggingHTTPSResponse) HasPeriod() bool`
 
 HasPeriod returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
-`func (o *LoggingHttpsResponse) GetCreatedAt() time.Time`
+`func (o *LoggingHTTPSResponse) GetCreatedAt() time.Time`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *LoggingHttpsResponse) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *LoggingHTTPSResponse) GetCreatedAtOk() (*time.Time, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *LoggingHttpsResponse) SetCreatedAt(v time.Time)`
+`func (o *LoggingHTTPSResponse) SetCreatedAt(v time.Time)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *LoggingHttpsResponse) HasCreatedAt() bool`
+`func (o *LoggingHTTPSResponse) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### SetCreatedAtNil
 
-`func (o *LoggingHttpsResponse) SetCreatedAtNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetCreatedAtNil(b bool)`
 
  SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
 ### UnsetCreatedAt
-`func (o *LoggingHttpsResponse) UnsetCreatedAt()`
+`func (o *LoggingHTTPSResponse) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetDeletedAt
 
-`func (o *LoggingHttpsResponse) GetDeletedAt() time.Time`
+`func (o *LoggingHTTPSResponse) GetDeletedAt() time.Time`
 
 GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
 
 ### GetDeletedAtOk
 
-`func (o *LoggingHttpsResponse) GetDeletedAtOk() (*time.Time, bool)`
+`func (o *LoggingHTTPSResponse) GetDeletedAtOk() (*time.Time, bool)`
 
 GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedAt
 
-`func (o *LoggingHttpsResponse) SetDeletedAt(v time.Time)`
+`func (o *LoggingHTTPSResponse) SetDeletedAt(v time.Time)`
 
 SetDeletedAt sets DeletedAt field to given value.
 
 ### HasDeletedAt
 
-`func (o *LoggingHttpsResponse) HasDeletedAt() bool`
+`func (o *LoggingHTTPSResponse) HasDeletedAt() bool`
 
 HasDeletedAt returns a boolean if a field has been set.
 
 ### SetDeletedAtNil
 
-`func (o *LoggingHttpsResponse) SetDeletedAtNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetDeletedAtNil(b bool)`
 
  SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 
 ### UnsetDeletedAt
-`func (o *LoggingHttpsResponse) UnsetDeletedAt()`
+`func (o *LoggingHTTPSResponse) UnsetDeletedAt()`
 
 UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
 ### GetUpdatedAt
 
-`func (o *LoggingHttpsResponse) GetUpdatedAt() time.Time`
+`func (o *LoggingHTTPSResponse) GetUpdatedAt() time.Time`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *LoggingHttpsResponse) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *LoggingHTTPSResponse) GetUpdatedAtOk() (*time.Time, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *LoggingHttpsResponse) SetUpdatedAt(v time.Time)`
+`func (o *LoggingHTTPSResponse) SetUpdatedAt(v time.Time)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *LoggingHttpsResponse) HasUpdatedAt() bool`
+`func (o *LoggingHTTPSResponse) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 
 ### SetUpdatedAtNil
 
-`func (o *LoggingHttpsResponse) SetUpdatedAtNil(b bool)`
+`func (o *LoggingHTTPSResponse) SetUpdatedAtNil(b bool)`
 
  SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
 ### UnsetUpdatedAt
-`func (o *LoggingHttpsResponse) UnsetUpdatedAt()`
+`func (o *LoggingHTTPSResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingHttpsResponse) GetServiceId() string`
+`func (o *LoggingHTTPSResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingHttpsResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingHttpsResponse) SetServiceId(v string)`
+`func (o *LoggingHTTPSResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingHttpsResponse) HasServiceId() bool`
+`func (o *LoggingHTTPSResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *LoggingHttpsResponse) GetVersion() string`
+`func (o *LoggingHTTPSResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *LoggingHttpsResponse) GetVersionOk() (*string, bool)`
+`func (o *LoggingHTTPSResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *LoggingHttpsResponse) SetVersion(v string)`
+`func (o *LoggingHTTPSResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 
 ### HasVersion
 
-`func (o *LoggingHttpsResponse) HasVersion() bool`
+`func (o *LoggingHTTPSResponse) HasVersion() bool`
 
 HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

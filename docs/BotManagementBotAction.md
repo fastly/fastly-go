@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 
 ### NewBotManagementBotAction
 
-`func NewBotManagementBotAction(type_ string, ) *BotManagementBotAction`
+`func NewBotManagementBotAction(resourceType string, ) *BotManagementBotAction`
 
 NewBotManagementBotAction instantiates a new BotManagementBotAction object
 This constructor will assign default values to properties that have it defined,
@@ -47,5 +47,3 @@ SetType sets Type field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

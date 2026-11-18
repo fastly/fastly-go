@@ -1,82 +1,80 @@
-# RelationshipMemberTlsActivation
+# RelationshipMemberTLSActivation
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] [default to TYPETLSACTIVATION_TLS_ACTIVATION]
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTLSActivation**](TypeTLSActivation.md) |  | [optional] [default to TYPETLSACTIVATION_TLS_ACTIVATION]
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTlsActivation
+### NewRelationshipMemberTLSActivation
 
-`func NewRelationshipMemberTlsActivation() *RelationshipMemberTlsActivation`
+`func NewRelationshipMemberTLSActivation() *RelationshipMemberTLSActivation`
 
-NewRelationshipMemberTlsActivation instantiates a new RelationshipMemberTlsActivation object
+NewRelationshipMemberTLSActivation instantiates a new RelationshipMemberTLSActivation object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTlsActivationWithDefaults
+### NewRelationshipMemberTLSActivationWithDefaults
 
-`func NewRelationshipMemberTlsActivationWithDefaults() *RelationshipMemberTlsActivation`
+`func NewRelationshipMemberTLSActivationWithDefaults() *RelationshipMemberTLSActivation`
 
-NewRelationshipMemberTlsActivationWithDefaults instantiates a new RelationshipMemberTlsActivation object
+NewRelationshipMemberTLSActivationWithDefaults instantiates a new RelationshipMemberTLSActivation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTlsActivation) GetType() TypeTlsActivation`
+`func (o *RelationshipMemberTLSActivation) GetType() TypeTLSActivation`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTlsActivation) GetTypeOk() (*TypeTlsActivation, bool)`
+`func (o *RelationshipMemberTLSActivation) GetTypeOk() (*TypeTLSActivation, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTlsActivation) SetType(v TypeTlsActivation)`
+`func (o *RelationshipMemberTLSActivation) SetType(v TypeTLSActivation)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTlsActivation) HasType() bool`
+`func (o *RelationshipMemberTLSActivation) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *RelationshipMemberTlsActivation) GetId() string`
+`func (o *RelationshipMemberTLSActivation) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RelationshipMemberTlsActivation) GetIdOk() (*string, bool)`
+`func (o *RelationshipMemberTLSActivation) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RelationshipMemberTlsActivation) SetId(v string)`
+`func (o *RelationshipMemberTLSActivation) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RelationshipMemberTlsActivation) HasId() bool`
+`func (o *RelationshipMemberTLSActivation) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

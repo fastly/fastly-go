@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTlsSubscription Resource type
-type TypeTlsSubscription string
+// TypeTLSSubscription Resource type
+type TypeTLSSubscription string
 
-// List of type_tls_subscription
+// List of resourceTypetls_subscription
 const (
-	TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION TypeTlsSubscription = "tls_subscription"
+	TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION TypeTLSSubscription = "tls_subscription"
 )
 
-// AllowedTypeTlsSubscriptionEnumValues All allowed values of TypeTlsSubscription enum
-var AllowedTypeTlsSubscriptionEnumValues = []TypeTlsSubscription{
+// AllowedTypeTLSSubscriptionEnumValues All allowed values of TypeTLSSubscription enum
+var AllowedTypeTLSSubscriptionEnumValues = []TypeTLSSubscription{
 	"tls_subscription",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTlsSubscription) UnmarshalJSON(src []byte) error {
+func (v *TypeTLSSubscription) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTlsSubscription(value)
-	for _, existing := range AllowedTypeTlsSubscriptionEnumValues {
+	enumTypeValue := TypeTLSSubscription(value)
+	for _, existing := range AllowedTypeTLSSubscriptionEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTlsSubscription", value)
+	return fmt.Errorf("%+v is not a valid TypeTLSSubscription", value)
 }
 
-// NewTypeTlsSubscriptionFromValue returns a pointer to a valid TypeTlsSubscription
+// NewTypeTLSSubscriptionFromValue returns a pointer to a valid TypeTLSSubscription
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTlsSubscriptionFromValue(v string) (*TypeTlsSubscription, error) {
-	ev := TypeTlsSubscription(v)
+func NewTypeTLSSubscriptionFromValue(v string) (*TypeTLSSubscription, error) {
+	ev := TypeTLSSubscription(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTlsSubscription: valid values are %v", v, AllowedTypeTlsSubscriptionEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTLSSubscription: valid values are %v", v, AllowedTypeTLSSubscriptionEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTlsSubscription) IsValid() bool {
-	for _, existing := range AllowedTypeTlsSubscriptionEnumValues {
+func (v TypeTLSSubscription) IsValid() bool {
+	for _, existing := range AllowedTypeTLSSubscriptionEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTlsSubscription) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to type_tls_subscription value
-func (v TypeTlsSubscription) Ptr() *TypeTlsSubscription {
+// Ptr returns reference to resourceTypetls_subscription value
+func (v TypeTLSSubscription) Ptr() *TypeTLSSubscription {
 	return &v
 }
 
-// NullableTypeTlsSubscription is a helper abstraction for handling nullable typetlssubscription types.
-type NullableTypeTlsSubscription struct {
-	value *TypeTlsSubscription
+// NullableTypeTLSSubscription is a helper abstraction for handling nullable typetlssubscription types.
+type NullableTypeTLSSubscription struct {
+	value *TypeTLSSubscription
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTlsSubscription) Get() *TypeTlsSubscription {
+func (v NullableTypeTLSSubscription) Get() *TypeTLSSubscription {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTlsSubscription) Set(val *TypeTlsSubscription) {
+func (v *NullableTypeTLSSubscription) Set(val *TypeTLSSubscription) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTlsSubscription) IsSet() bool {
+func (v NullableTypeTLSSubscription) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTlsSubscription) Unset() {
+func (v *NullableTypeTLSSubscription) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTlsSubscription returns a pointer to a new instance of NullableTypeTlsSubscription.
-func NewNullableTypeTlsSubscription(val *TypeTlsSubscription) *NullableTypeTlsSubscription {
-	return &NullableTypeTlsSubscription{value: val, isSet: true}
+// NewNullableTypeTLSSubscription returns a pointer to a new instance of NullableTypeTLSSubscription.
+func NewNullableTypeTLSSubscription(val *TypeTLSSubscription) *NullableTypeTLSSubscription {
+	return &NullableTypeTLSSubscription{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTlsSubscription) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTLSSubscription) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTlsSubscription) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTLSSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

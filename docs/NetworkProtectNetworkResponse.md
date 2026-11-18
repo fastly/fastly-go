@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** | Optional descriptive text for the network. This metadata does not change traffic handling. Null clears it on update. | [optional] 
 **Name** | **string** | A human-readable name, unique within the customer. | 
 **Prefix** | **string** | The CIDR block to protect, masked to its network address. It cannot be changed after creation. | 
-**RuleSetId** | Pointer to **NullableString** | The backend-assigned rule set applied to this network. | [optional] 
+**RuleSetID** | Pointer to **NullableString** | The backend-assigned rule set applied to this network. | [optional] 
 **EndpointPolicies** | [**[]NetworkProtectEndpointPolicy**](NetworkProtectEndpointPolicy.md) | Complete endpoint policy configuration. A network has at most one policy per region and may have no policies. | 
 **Advertise** | **bool** | Desired advertisement state, which is not the same as observed route state. Enabling it requires approved LOA, valid ROA, and a ready default-region delivery policy. A later ROA failure does not turn an existing advertisement off; losing LOA approval or the last ready default endpoint does. | [default to false]
-**Id** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
+**ID** | **string** | A read-only unique identifier for a Network Protect resource. | [readonly] 
 **RoaStatus** | Pointer to [**NetworkProtectRoaStatus**](NetworkProtectRoaStatus.md) |  | [optional] 
 **RoaCheckedAt** | Pointer to **NullableTime** | When Fastly last completed a ROA check. Null while the status is pending. A failed check leaves this unchanged; an old value can indicate delayed or failing checks. Null also means the controller did not report a check time. | [optional] [readonly] 
 **RoaDataAsOf** | Pointer to **NullableTime** | When the RPKI dataset used by the last check was built. This is not the same as `roa_checked_at`; a recent check can use an older dataset. Null while the status is pending or when no dataset build time was reported. | [optional] [readonly] 
@@ -112,41 +112,41 @@ and a boolean to check if the value has been set.
 SetPrefix sets Prefix field to given value.
 
 
-### GetRuleSetId
+### GetRuleSetID
 
-`func (o *NetworkProtectNetworkResponse) GetRuleSetId() string`
+`func (o *NetworkProtectNetworkResponse) GetRuleSetID() string`
 
-GetRuleSetId returns the RuleSetId field if non-nil, zero value otherwise.
+GetRuleSetID returns the RuleSetID field if non-nil, zero value otherwise.
 
-### GetRuleSetIdOk
+### GetRuleSetIDOk
 
-`func (o *NetworkProtectNetworkResponse) GetRuleSetIdOk() (*string, bool)`
+`func (o *NetworkProtectNetworkResponse) GetRuleSetIDOk() (*string, bool)`
 
-GetRuleSetIdOk returns a tuple with the RuleSetId field if it's non-nil, zero value otherwise
+GetRuleSetIDOk returns a tuple with the RuleSetID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRuleSetId
+### SetRuleSetID
 
-`func (o *NetworkProtectNetworkResponse) SetRuleSetId(v string)`
+`func (o *NetworkProtectNetworkResponse) SetRuleSetID(v string)`
 
-SetRuleSetId sets RuleSetId field to given value.
+SetRuleSetID sets RuleSetID field to given value.
 
-### HasRuleSetId
+### HasRuleSetID
 
-`func (o *NetworkProtectNetworkResponse) HasRuleSetId() bool`
+`func (o *NetworkProtectNetworkResponse) HasRuleSetID() bool`
 
-HasRuleSetId returns a boolean if a field has been set.
+HasRuleSetID returns a boolean if a field has been set.
 
-### SetRuleSetIdNil
+### SetRuleSetIDNil
 
-`func (o *NetworkProtectNetworkResponse) SetRuleSetIdNil(b bool)`
+`func (o *NetworkProtectNetworkResponse) SetRuleSetIDNil(b bool)`
 
- SetRuleSetIdNil sets the value for RuleSetId to be an explicit nil
+ SetRuleSetIDNil sets the value for RuleSetID to be an explicit nil
 
-### UnsetRuleSetId
-`func (o *NetworkProtectNetworkResponse) UnsetRuleSetId()`
+### UnsetRuleSetID
+`func (o *NetworkProtectNetworkResponse) UnsetRuleSetID()`
 
-UnsetRuleSetId ensures that no value is present for RuleSetId, not even an explicit nil
+UnsetRuleSetID ensures that no value is present for RuleSetID, not even an explicit nil
 ### GetEndpointPolicies
 
 `func (o *NetworkProtectNetworkResponse) GetEndpointPolicies() []NetworkProtectEndpointPolicy`
@@ -187,24 +187,24 @@ and a boolean to check if the value has been set.
 SetAdvertise sets Advertise field to given value.
 
 
-### GetId
+### GetID
 
-`func (o *NetworkProtectNetworkResponse) GetId() string`
+`func (o *NetworkProtectNetworkResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *NetworkProtectNetworkResponse) GetIdOk() (*string, bool)`
+`func (o *NetworkProtectNetworkResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *NetworkProtectNetworkResponse) SetId(v string)`
+`func (o *NetworkProtectNetworkResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetRoaStatus
@@ -369,5 +369,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -39,9 +39,9 @@ type ServerResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceId            *string      `json:"service_id,omitempty"`
-	Id                   *string      `json:"id,omitempty"`
-	PoolId               *string      `json:"pool_id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
+	PoolID               *string      `json:"pool_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -459,100 +459,100 @@ func (o *ServerResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *ServerResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *ServerResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *ServerResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *ServerResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *ServerResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *ServerResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *ServerResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ServerResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ServerResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ServerResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ServerResponse) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ServerResponse) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ServerResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ServerResponse) SetID(v string) {
+	o.ID = &v
 }
 
-// GetPoolId returns the PoolId field value if set, zero value otherwise.
-func (o *ServerResponse) GetPoolId() string {
-	if o == nil || o.PoolId == nil {
+// GetPoolID returns the PoolID field value if set, zero value otherwise.
+func (o *ServerResponse) GetPoolID() string {
+	if o == nil || o.PoolID == nil {
 		var ret string
 		return ret
 	}
-	return *o.PoolId
+	return *o.PoolID
 }
 
-// GetPoolIdOk returns a tuple with the PoolId field value if set, nil otherwise
+// GetPoolIDOk returns a tuple with the PoolID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerResponse) GetPoolIdOk() (*string, bool) {
-	if o == nil || o.PoolId == nil {
+func (o *ServerResponse) GetPoolIDOk() (*string, bool) {
+	if o == nil || o.PoolID == nil {
 		return nil, false
 	}
-	return o.PoolId, true
+	return o.PoolID, true
 }
 
-// HasPoolId returns a boolean if a field has been set.
-func (o *ServerResponse) HasPoolId() bool {
-	if o != nil && o.PoolId != nil {
+// HasPoolID returns a boolean if a field has been set.
+func (o *ServerResponse) HasPoolID() bool {
+	if o != nil && o.PoolID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPoolId gets a reference to the given string and assigns it to the PoolId field.
-func (o *ServerResponse) SetPoolId(v string) {
-	o.PoolId = &v
+// SetPoolID gets a reference to the given string and assigns it to the PoolID field.
+func (o *ServerResponse) SetPoolID(v string) {
+	o.PoolID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -589,14 +589,14 @@ func (o ServerResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
-	if o.PoolId != nil {
-		toSerialize["pool_id"] = o.PoolId
+	if o.PoolID != nil {
+		toSerialize["pool_id"] = o.PoolID
 	}
 
 	for key, value := range o.AdditionalProperties {

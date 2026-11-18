@@ -25,7 +25,7 @@ type NetworkProtectNetworkCreate struct {
 	// The CIDR block to protect, masked to its network address. It cannot be changed after creation.
 	Prefix string `json:"prefix"`
 	// Custom rule-set attachment is unavailable. Omit this value or send an empty string to use the backend-assigned default rule set.
-	RuleSetId *string `json:"rule_set_id,omitempty"`
+	RuleSetID *string `json:"rule_set_id,omitempty"`
 	// Complete endpoint policy configuration. A network has at most one policy per region and may have no policies.
 	EndpointPolicies     []NetworkProtectEndpointPolicy `json:"endpoint_policies,omitempty"`
 	AdditionalProperties map[string]any
@@ -143,36 +143,36 @@ func (o *NetworkProtectNetworkCreate) SetPrefix(v string) {
 	o.Prefix = v
 }
 
-// GetRuleSetId returns the RuleSetId field value if set, zero value otherwise.
-func (o *NetworkProtectNetworkCreate) GetRuleSetId() string {
-	if o == nil || o.RuleSetId == nil {
+// GetRuleSetID returns the RuleSetID field value if set, zero value otherwise.
+func (o *NetworkProtectNetworkCreate) GetRuleSetID() string {
+	if o == nil || o.RuleSetID == nil {
 		var ret string
 		return ret
 	}
-	return *o.RuleSetId
+	return *o.RuleSetID
 }
 
-// GetRuleSetIdOk returns a tuple with the RuleSetId field value if set, nil otherwise
+// GetRuleSetIDOk returns a tuple with the RuleSetID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectNetworkCreate) GetRuleSetIdOk() (*string, bool) {
-	if o == nil || o.RuleSetId == nil {
+func (o *NetworkProtectNetworkCreate) GetRuleSetIDOk() (*string, bool) {
+	if o == nil || o.RuleSetID == nil {
 		return nil, false
 	}
-	return o.RuleSetId, true
+	return o.RuleSetID, true
 }
 
-// HasRuleSetId returns a boolean if a field has been set.
-func (o *NetworkProtectNetworkCreate) HasRuleSetId() bool {
-	if o != nil && o.RuleSetId != nil {
+// HasRuleSetID returns a boolean if a field has been set.
+func (o *NetworkProtectNetworkCreate) HasRuleSetID() bool {
+	if o != nil && o.RuleSetID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleSetId gets a reference to the given string and assigns it to the RuleSetId field.
-func (o *NetworkProtectNetworkCreate) SetRuleSetId(v string) {
-	o.RuleSetId = &v
+// SetRuleSetID gets a reference to the given string and assigns it to the RuleSetID field.
+func (o *NetworkProtectNetworkCreate) SetRuleSetID(v string) {
+	o.RuleSetID = &v
 }
 
 // GetEndpointPolicies returns the EndpointPolicies field value if set, zero value otherwise.
@@ -220,8 +220,8 @@ func (o NetworkProtectNetworkCreate) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["prefix"] = o.Prefix
 	}
-	if o.RuleSetId != nil {
-		toSerialize["rule_set_id"] = o.RuleSetId
+	if o.RuleSetID != nil {
+		toSerialize["rule_set_id"] = o.RuleSetID
 	}
 	if o.EndpointPolicies != nil {
 		toSerialize["endpoint_policies"] = o.EndpointPolicies

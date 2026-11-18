@@ -1,82 +1,80 @@
-# RelationshipMemberTlsBulkCertificate
+# RelationshipMemberTLSBulkCertificate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] [default to TYPETLSBULKCERTIFICATE_TLS_BULK_CERTIFICATE]
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTLSBulkCertificate**](TypeTLSBulkCertificate.md) |  | [optional] [default to TYPETLSBULKCERTIFICATE_TLS_BULK_CERTIFICATE]
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTlsBulkCertificate
+### NewRelationshipMemberTLSBulkCertificate
 
-`func NewRelationshipMemberTlsBulkCertificate() *RelationshipMemberTlsBulkCertificate`
+`func NewRelationshipMemberTLSBulkCertificate() *RelationshipMemberTLSBulkCertificate`
 
-NewRelationshipMemberTlsBulkCertificate instantiates a new RelationshipMemberTlsBulkCertificate object
+NewRelationshipMemberTLSBulkCertificate instantiates a new RelationshipMemberTLSBulkCertificate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTlsBulkCertificateWithDefaults
+### NewRelationshipMemberTLSBulkCertificateWithDefaults
 
-`func NewRelationshipMemberTlsBulkCertificateWithDefaults() *RelationshipMemberTlsBulkCertificate`
+`func NewRelationshipMemberTLSBulkCertificateWithDefaults() *RelationshipMemberTLSBulkCertificate`
 
-NewRelationshipMemberTlsBulkCertificateWithDefaults instantiates a new RelationshipMemberTlsBulkCertificate object
+NewRelationshipMemberTLSBulkCertificateWithDefaults instantiates a new RelationshipMemberTLSBulkCertificate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTlsBulkCertificate) GetType() TypeTlsBulkCertificate`
+`func (o *RelationshipMemberTLSBulkCertificate) GetType() TypeTLSBulkCertificate`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTlsBulkCertificate) GetTypeOk() (*TypeTlsBulkCertificate, bool)`
+`func (o *RelationshipMemberTLSBulkCertificate) GetTypeOk() (*TypeTLSBulkCertificate, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTlsBulkCertificate) SetType(v TypeTlsBulkCertificate)`
+`func (o *RelationshipMemberTLSBulkCertificate) SetType(v TypeTLSBulkCertificate)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTlsBulkCertificate) HasType() bool`
+`func (o *RelationshipMemberTLSBulkCertificate) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *RelationshipMemberTlsBulkCertificate) GetId() string`
+`func (o *RelationshipMemberTLSBulkCertificate) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RelationshipMemberTlsBulkCertificate) GetIdOk() (*string, bool)`
+`func (o *RelationshipMemberTLSBulkCertificate) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RelationshipMemberTlsBulkCertificate) SetId(v string)`
+`func (o *RelationshipMemberTLSBulkCertificate) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RelationshipMemberTlsBulkCertificate) HasId() bool`
+`func (o *RelationshipMemberTLSBulkCertificate) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

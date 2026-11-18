@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The display name of the workspace. | 
 **Description** | Pointer to **string** | A description of the workspace. | [optional] 
 **ProtectionMode** | [**BotManagementProtectionMode**](BotManagementProtectionMode.md) |  | 
-**Id** | **string** | A UUID used to uniquely identify the workspace. | [readonly] 
+**ID** | **string** | A UUID used to uniquely identify the workspace. | [readonly] 
 **Services** | Pointer to **[]string** | The IDs of the services attached to this workspace. | [optional] [readonly] 
 **CreatedAt** | **time.Time** | The date and time the workspace was created, in RFC 3339 format. | [readonly] 
 **UpdatedAt** | **time.Time** | The date and time the workspace was last updated, in RFC 3339 format. | [readonly] 
@@ -96,24 +96,24 @@ and a boolean to check if the value has been set.
 SetProtectionMode sets ProtectionMode field to given value.
 
 
-### GetId
+### GetID
 
-`func (o *BotManagementWorkspaceResponse) GetId() string`
+`func (o *BotManagementWorkspaceResponse) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *BotManagementWorkspaceResponse) GetIdOk() (*string, bool)`
+`func (o *BotManagementWorkspaceResponse) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *BotManagementWorkspaceResponse) SetId(v string)`
+`func (o *BotManagementWorkspaceResponse) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetServices
@@ -183,5 +183,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

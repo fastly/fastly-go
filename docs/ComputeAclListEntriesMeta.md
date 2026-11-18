@@ -1,4 +1,4 @@
-# ComputeAclListEntriesMeta
+# ComputeACLListEntriesMeta
 
 ## Properties
 
@@ -9,74 +9,72 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewComputeAclListEntriesMeta
+### NewComputeACLListEntriesMeta
 
-`func NewComputeAclListEntriesMeta() *ComputeAclListEntriesMeta`
+`func NewComputeACLListEntriesMeta() *ComputeACLListEntriesMeta`
 
-NewComputeAclListEntriesMeta instantiates a new ComputeAclListEntriesMeta object
+NewComputeACLListEntriesMeta instantiates a new ComputeACLListEntriesMeta object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeAclListEntriesMetaWithDefaults
+### NewComputeACLListEntriesMetaWithDefaults
 
-`func NewComputeAclListEntriesMetaWithDefaults() *ComputeAclListEntriesMeta`
+`func NewComputeACLListEntriesMetaWithDefaults() *ComputeACLListEntriesMeta`
 
-NewComputeAclListEntriesMetaWithDefaults instantiates a new ComputeAclListEntriesMeta object
+NewComputeACLListEntriesMetaWithDefaults instantiates a new ComputeACLListEntriesMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLimit
 
-`func (o *ComputeAclListEntriesMeta) GetLimit() int32`
+`func (o *ComputeACLListEntriesMeta) GetLimit() int32`
 
 GetLimit returns the Limit field if non-nil, zero value otherwise.
 
 ### GetLimitOk
 
-`func (o *ComputeAclListEntriesMeta) GetLimitOk() (*int32, bool)`
+`func (o *ComputeACLListEntriesMeta) GetLimitOk() (*int32, bool)`
 
 GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLimit
 
-`func (o *ComputeAclListEntriesMeta) SetLimit(v int32)`
+`func (o *ComputeACLListEntriesMeta) SetLimit(v int32)`
 
 SetLimit sets Limit field to given value.
 
 ### HasLimit
 
-`func (o *ComputeAclListEntriesMeta) HasLimit() bool`
+`func (o *ComputeACLListEntriesMeta) HasLimit() bool`
 
 HasLimit returns a boolean if a field has been set.
 
 ### GetNextCursor
 
-`func (o *ComputeAclListEntriesMeta) GetNextCursor() string`
+`func (o *ComputeACLListEntriesMeta) GetNextCursor() string`
 
 GetNextCursor returns the NextCursor field if non-nil, zero value otherwise.
 
 ### GetNextCursorOk
 
-`func (o *ComputeAclListEntriesMeta) GetNextCursorOk() (*string, bool)`
+`func (o *ComputeACLListEntriesMeta) GetNextCursorOk() (*string, bool)`
 
 GetNextCursorOk returns a tuple with the NextCursor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextCursor
 
-`func (o *ComputeAclListEntriesMeta) SetNextCursor(v string)`
+`func (o *ComputeACLListEntriesMeta) SetNextCursor(v string)`
 
 SetNextCursor sets NextCursor field to given value.
 
 ### HasNextCursor
 
-`func (o *ComputeAclListEntriesMeta) HasNextCursor() bool`
+`func (o *ComputeACLListEntriesMeta) HasNextCursor() bool`
 
 HasNextCursor returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

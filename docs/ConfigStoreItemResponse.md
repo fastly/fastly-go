@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**StoreId** | Pointer to **string** |  | [optional] [readonly] 
+**StoreID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -185,32 +185,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *ConfigStoreItemResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetStoreId
+### GetStoreID
 
-`func (o *ConfigStoreItemResponse) GetStoreId() string`
+`func (o *ConfigStoreItemResponse) GetStoreID() string`
 
-GetStoreId returns the StoreId field if non-nil, zero value otherwise.
+GetStoreID returns the StoreID field if non-nil, zero value otherwise.
 
-### GetStoreIdOk
+### GetStoreIDOk
 
-`func (o *ConfigStoreItemResponse) GetStoreIdOk() (*string, bool)`
+`func (o *ConfigStoreItemResponse) GetStoreIDOk() (*string, bool)`
 
-GetStoreIdOk returns a tuple with the StoreId field if it's non-nil, zero value otherwise
+GetStoreIDOk returns a tuple with the StoreID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStoreId
+### SetStoreID
 
-`func (o *ConfigStoreItemResponse) SetStoreId(v string)`
+`func (o *ConfigStoreItemResponse) SetStoreID(v string)`
 
-SetStoreId sets StoreId field to given value.
+SetStoreID sets StoreID field to given value.
 
-### HasStoreId
+### HasStoreID
 
-`func (o *ConfigStoreItemResponse) HasStoreId() bool`
+`func (o *ConfigStoreItemResponse) HasStoreID() bool`
 
-HasStoreId returns a boolean if a field has been set.
+HasStoreID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

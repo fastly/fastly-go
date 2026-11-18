@@ -16,241 +16,241 @@ import (
 	"encoding/json"
 )
 
-// LoggingTlsCommon struct for LoggingTlsCommon
-type LoggingTlsCommon struct {
+// LoggingTLSCommon struct for LoggingTLSCommon
+type LoggingTLSCommon struct {
 	// A secure certificate to authenticate a server with. Must be in PEM format.
-	TlsCaCert NullableString `json:"tls_ca_cert,omitempty"`
+	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
 	// The client certificate used to make authenticated requests. Must be in PEM format.
-	TlsClientCert NullableString `json:"tls_client_cert,omitempty"`
+	TLSClientCert NullableString `json:"tls_client_cert,omitempty"`
 	// The client private key used to make authenticated requests. Must be in PEM format.
-	TlsClientKey NullableString `json:"tls_client_key,omitempty"`
+	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-	TlsHostname          NullableString `json:"tls_hostname,omitempty"`
+	TLSHostname          NullableString `json:"tls_hostname,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _LoggingTlsCommon LoggingTlsCommon
+type _LoggingTLSCommon LoggingTLSCommon
 
-// NewLoggingTlsCommon instantiates a new LoggingTlsCommon object
+// NewLoggingTLSCommon instantiates a new LoggingTLSCommon object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoggingTlsCommon() *LoggingTlsCommon {
-	this := LoggingTlsCommon{}
+func NewLoggingTLSCommon() *LoggingTLSCommon {
+	this := LoggingTLSCommon{}
 	var tlsCaCert string = "null"
-	this.TlsCaCert = *NewNullableString(&tlsCaCert)
+	this.TLSCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TlsClientCert = *NewNullableString(&tlsClientCert)
+	this.TLSClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TlsClientKey = *NewNullableString(&tlsClientKey)
+	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TlsHostname = *NewNullableString(&tlsHostname)
+	this.TLSHostname = *NewNullableString(&tlsHostname)
 	return &this
 }
 
-// NewLoggingTlsCommonWithDefaults instantiates a new LoggingTlsCommon object
+// NewLoggingTLSCommonWithDefaults instantiates a new LoggingTLSCommon object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLoggingTlsCommonWithDefaults() *LoggingTlsCommon {
-	this := LoggingTlsCommon{}
+func NewLoggingTLSCommonWithDefaults() *LoggingTLSCommon {
+	this := LoggingTLSCommon{}
 	var tlsCaCert string = "null"
-	this.TlsCaCert = *NewNullableString(&tlsCaCert)
+	this.TLSCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TlsClientCert = *NewNullableString(&tlsClientCert)
+	this.TLSClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TlsClientKey = *NewNullableString(&tlsClientKey)
+	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TlsHostname = *NewNullableString(&tlsHostname)
+	this.TLSHostname = *NewNullableString(&tlsHostname)
 	return &this
 }
 
-// GetTlsCaCert returns the TlsCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingTlsCommon) GetTlsCaCert() string {
-	if o == nil || o.TlsCaCert.Get() == nil {
+// GetTLSCaCert returns the TLSCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingTLSCommon) GetTLSCaCert() string {
+	if o == nil || o.TLSCaCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsCaCert.Get()
+	return *o.TLSCaCert.Get()
 }
 
-// GetTlsCaCertOk returns a tuple with the TlsCaCert field value if set, nil otherwise
+// GetTLSCaCertOk returns a tuple with the TLSCaCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingTlsCommon) GetTlsCaCertOk() (*string, bool) {
+func (o *LoggingTLSCommon) GetTLSCaCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsCaCert.Get(), o.TlsCaCert.IsSet()
+	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
 }
 
-// HasTlsCaCert returns a boolean if a field has been set.
-func (o *LoggingTlsCommon) HasTlsCaCert() bool {
-	if o != nil && o.TlsCaCert.IsSet() {
+// HasTLSCaCert returns a boolean if a field has been set.
+func (o *LoggingTLSCommon) HasTLSCaCert() bool {
+	if o != nil && o.TLSCaCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsCaCert gets a reference to the given NullableString and assigns it to the TlsCaCert field.
-func (o *LoggingTlsCommon) SetTlsCaCert(v string) {
-	o.TlsCaCert.Set(&v)
+// SetTLSCaCert gets a reference to the given NullableString and assigns it to the TLSCaCert field.
+func (o *LoggingTLSCommon) SetTLSCaCert(v string) {
+	o.TLSCaCert.Set(&v)
 }
 
-// SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
-func (o *LoggingTlsCommon) SetTlsCaCertNil() {
-	o.TlsCaCert.Set(nil)
+// SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
+func (o *LoggingTLSCommon) SetTLSCaCertNil() {
+	o.TLSCaCert.Set(nil)
 }
 
-// UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-func (o *LoggingTlsCommon) UnsetTlsCaCert() {
-	o.TlsCaCert.Unset()
+// UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+func (o *LoggingTLSCommon) UnsetTLSCaCert() {
+	o.TLSCaCert.Unset()
 }
 
-// GetTlsClientCert returns the TlsClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingTlsCommon) GetTlsClientCert() string {
-	if o == nil || o.TlsClientCert.Get() == nil {
+// GetTLSClientCert returns the TLSClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingTLSCommon) GetTLSClientCert() string {
+	if o == nil || o.TLSClientCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsClientCert.Get()
+	return *o.TLSClientCert.Get()
 }
 
-// GetTlsClientCertOk returns a tuple with the TlsClientCert field value if set, nil otherwise
+// GetTLSClientCertOk returns a tuple with the TLSClientCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingTlsCommon) GetTlsClientCertOk() (*string, bool) {
+func (o *LoggingTLSCommon) GetTLSClientCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsClientCert.Get(), o.TlsClientCert.IsSet()
+	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
 }
 
-// HasTlsClientCert returns a boolean if a field has been set.
-func (o *LoggingTlsCommon) HasTlsClientCert() bool {
-	if o != nil && o.TlsClientCert.IsSet() {
+// HasTLSClientCert returns a boolean if a field has been set.
+func (o *LoggingTLSCommon) HasTLSClientCert() bool {
+	if o != nil && o.TLSClientCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsClientCert gets a reference to the given NullableString and assigns it to the TlsClientCert field.
-func (o *LoggingTlsCommon) SetTlsClientCert(v string) {
-	o.TlsClientCert.Set(&v)
+// SetTLSClientCert gets a reference to the given NullableString and assigns it to the TLSClientCert field.
+func (o *LoggingTLSCommon) SetTLSClientCert(v string) {
+	o.TLSClientCert.Set(&v)
 }
 
-// SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
-func (o *LoggingTlsCommon) SetTlsClientCertNil() {
-	o.TlsClientCert.Set(nil)
+// SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
+func (o *LoggingTLSCommon) SetTLSClientCertNil() {
+	o.TLSClientCert.Set(nil)
 }
 
-// UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-func (o *LoggingTlsCommon) UnsetTlsClientCert() {
-	o.TlsClientCert.Unset()
+// UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+func (o *LoggingTLSCommon) UnsetTLSClientCert() {
+	o.TLSClientCert.Unset()
 }
 
-// GetTlsClientKey returns the TlsClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingTlsCommon) GetTlsClientKey() string {
-	if o == nil || o.TlsClientKey.Get() == nil {
+// GetTLSClientKey returns the TLSClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingTLSCommon) GetTLSClientKey() string {
+	if o == nil || o.TLSClientKey.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsClientKey.Get()
+	return *o.TLSClientKey.Get()
 }
 
-// GetTlsClientKeyOk returns a tuple with the TlsClientKey field value if set, nil otherwise
+// GetTLSClientKeyOk returns a tuple with the TLSClientKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingTlsCommon) GetTlsClientKeyOk() (*string, bool) {
+func (o *LoggingTLSCommon) GetTLSClientKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsClientKey.Get(), o.TlsClientKey.IsSet()
+	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
 }
 
-// HasTlsClientKey returns a boolean if a field has been set.
-func (o *LoggingTlsCommon) HasTlsClientKey() bool {
-	if o != nil && o.TlsClientKey.IsSet() {
+// HasTLSClientKey returns a boolean if a field has been set.
+func (o *LoggingTLSCommon) HasTLSClientKey() bool {
+	if o != nil && o.TLSClientKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsClientKey gets a reference to the given NullableString and assigns it to the TlsClientKey field.
-func (o *LoggingTlsCommon) SetTlsClientKey(v string) {
-	o.TlsClientKey.Set(&v)
+// SetTLSClientKey gets a reference to the given NullableString and assigns it to the TLSClientKey field.
+func (o *LoggingTLSCommon) SetTLSClientKey(v string) {
+	o.TLSClientKey.Set(&v)
 }
 
-// SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
-func (o *LoggingTlsCommon) SetTlsClientKeyNil() {
-	o.TlsClientKey.Set(nil)
+// SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
+func (o *LoggingTLSCommon) SetTLSClientKeyNil() {
+	o.TLSClientKey.Set(nil)
 }
 
-// UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-func (o *LoggingTlsCommon) UnsetTlsClientKey() {
-	o.TlsClientKey.Unset()
+// UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+func (o *LoggingTLSCommon) UnsetTLSClientKey() {
+	o.TLSClientKey.Unset()
 }
 
-// GetTlsHostname returns the TlsHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingTlsCommon) GetTlsHostname() string {
-	if o == nil || o.TlsHostname.Get() == nil {
+// GetTLSHostname returns the TLSHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingTLSCommon) GetTLSHostname() string {
+	if o == nil || o.TLSHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TlsHostname.Get()
+	return *o.TLSHostname.Get()
 }
 
-// GetTlsHostnameOk returns a tuple with the TlsHostname field value if set, nil otherwise
+// GetTLSHostnameOk returns a tuple with the TLSHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingTlsCommon) GetTlsHostnameOk() (*string, bool) {
+func (o *LoggingTLSCommon) GetTLSHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TlsHostname.Get(), o.TlsHostname.IsSet()
+	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
 }
 
-// HasTlsHostname returns a boolean if a field has been set.
-func (o *LoggingTlsCommon) HasTlsHostname() bool {
-	if o != nil && o.TlsHostname.IsSet() {
+// HasTLSHostname returns a boolean if a field has been set.
+func (o *LoggingTLSCommon) HasTLSHostname() bool {
+	if o != nil && o.TLSHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTlsHostname gets a reference to the given NullableString and assigns it to the TlsHostname field.
-func (o *LoggingTlsCommon) SetTlsHostname(v string) {
-	o.TlsHostname.Set(&v)
+// SetTLSHostname gets a reference to the given NullableString and assigns it to the TLSHostname field.
+func (o *LoggingTLSCommon) SetTLSHostname(v string) {
+	o.TLSHostname.Set(&v)
 }
 
-// SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
-func (o *LoggingTlsCommon) SetTlsHostnameNil() {
-	o.TlsHostname.Set(nil)
+// SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
+func (o *LoggingTLSCommon) SetTLSHostnameNil() {
+	o.TLSHostname.Set(nil)
 }
 
-// UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
-func (o *LoggingTlsCommon) UnsetTlsHostname() {
-	o.TlsHostname.Unset()
+// UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
+func (o *LoggingTLSCommon) UnsetTLSHostname() {
+	o.TLSHostname.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o LoggingTlsCommon) MarshalJSON() ([]byte, error) {
+func (o LoggingTLSCommon) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TlsCaCert.IsSet() {
-		toSerialize["tls_ca_cert"] = o.TlsCaCert.Get()
+	if o.TLSCaCert.IsSet() {
+		toSerialize["tls_ca_cert"] = o.TLSCaCert.Get()
 	}
-	if o.TlsClientCert.IsSet() {
-		toSerialize["tls_client_cert"] = o.TlsClientCert.Get()
+	if o.TLSClientCert.IsSet() {
+		toSerialize["tls_client_cert"] = o.TLSClientCert.Get()
 	}
-	if o.TlsClientKey.IsSet() {
-		toSerialize["tls_client_key"] = o.TlsClientKey.Get()
+	if o.TLSClientKey.IsSet() {
+		toSerialize["tls_client_key"] = o.TLSClientKey.Get()
 	}
-	if o.TlsHostname.IsSet() {
-		toSerialize["tls_hostname"] = o.TlsHostname.Get()
+	if o.TLSHostname.IsSet() {
+		toSerialize["tls_hostname"] = o.TLSHostname.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -262,11 +262,11 @@ func (o LoggingTlsCommon) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *LoggingTlsCommon) UnmarshalJSON(bytes []byte) (err error) {
-	varLoggingTlsCommon := _LoggingTlsCommon{}
+func (o *LoggingTLSCommon) UnmarshalJSON(bytes []byte) (err error) {
+	varLoggingTLSCommon := _LoggingTLSCommon{}
 
-	if err = json.Unmarshal(bytes, &varLoggingTlsCommon); err == nil {
-		*o = LoggingTlsCommon(varLoggingTlsCommon)
+	if err = json.Unmarshal(bytes, &varLoggingTLSCommon); err == nil {
+		*o = LoggingTLSCommon(varLoggingTLSCommon)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -282,48 +282,48 @@ func (o *LoggingTlsCommon) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingTlsCommon is a helper abstraction for handling nullable loggingtlscommon types.
-type NullableLoggingTlsCommon struct {
-	value *LoggingTlsCommon
+// NullableLoggingTLSCommon is a helper abstraction for handling nullable loggingtlscommon types.
+type NullableLoggingTLSCommon struct {
+	value *LoggingTLSCommon
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableLoggingTlsCommon) Get() *LoggingTlsCommon {
+func (v NullableLoggingTLSCommon) Get() *LoggingTLSCommon {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableLoggingTlsCommon) Set(val *LoggingTlsCommon) {
+func (v *NullableLoggingTLSCommon) Set(val *LoggingTLSCommon) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableLoggingTlsCommon) IsSet() bool {
+func (v NullableLoggingTLSCommon) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableLoggingTlsCommon) Unset() {
+func (v *NullableLoggingTLSCommon) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableLoggingTlsCommon returns a pointer to a new instance of NullableLoggingTlsCommon.
-func NewNullableLoggingTlsCommon(val *LoggingTlsCommon) *NullableLoggingTlsCommon {
-	return &NullableLoggingTlsCommon{value: val, isSet: true}
+// NewNullableLoggingTLSCommon returns a pointer to a new instance of NullableLoggingTLSCommon.
+func NewNullableLoggingTLSCommon(val *LoggingTLSCommon) *NullableLoggingTLSCommon {
+	return &NullableLoggingTLSCommon{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableLoggingTlsCommon) MarshalJSON() ([]byte, error) {
+func (v NullableLoggingTLSCommon) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableLoggingTlsCommon) UnmarshalJSON(src []byte) error {
+func (v *NullableLoggingTLSCommon) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

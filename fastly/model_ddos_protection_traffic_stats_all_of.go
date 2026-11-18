@@ -19,9 +19,9 @@ import (
 // DdosProtectionTrafficStatsAllOf struct for DdosProtectionTrafficStatsAllOf
 type DdosProtectionTrafficStatsAllOf struct {
 	// Alphanumeric string identifying the customer.
-	CustomerId *string `json:"customer_id,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
 	// Alphanumeric string identifying the service.
-	ServiceId  *string                        `json:"service_id,omitempty"`
+	ServiceID  *string                        `json:"service_id,omitempty"`
 	Attributes []DdosProtectionAttributeStats `json:"attributes,omitempty"`
 	// Rule traffic percentage for the event.
 	TrafficPercentage    *float32 `json:"traffic_percentage,omitempty"`
@@ -47,68 +47,68 @@ func NewDdosProtectionTrafficStatsAllOfWithDefaults() *DdosProtectionTrafficStat
 	return &this
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *DdosProtectionTrafficStatsAllOf) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *DdosProtectionTrafficStatsAllOf) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionTrafficStatsAllOf) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *DdosProtectionTrafficStatsAllOf) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *DdosProtectionTrafficStatsAllOf) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *DdosProtectionTrafficStatsAllOf) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *DdosProtectionTrafficStatsAllOf) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *DdosProtectionTrafficStatsAllOf) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *DdosProtectionTrafficStatsAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *DdosProtectionTrafficStatsAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionTrafficStatsAllOf) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *DdosProtectionTrafficStatsAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *DdosProtectionTrafficStatsAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *DdosProtectionTrafficStatsAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *DdosProtectionTrafficStatsAllOf) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *DdosProtectionTrafficStatsAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
@@ -179,11 +179,11 @@ func (o *DdosProtectionTrafficStatsAllOf) SetTrafficPercentage(v float32) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DdosProtectionTrafficStatsAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes

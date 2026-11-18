@@ -20,7 +20,7 @@ import (
 // DiscoveredOperationGetExtra struct for DiscoveredOperationGetExtra
 type DiscoveredOperationGetExtra struct {
 	// The unique identifier of the discovered operation.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The timestamp when the operation was last updated.
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 	// The timestamp when the operation was last seen in traffic.
@@ -38,7 +38,7 @@ type _DiscoveredOperationGetExtra DiscoveredOperationGetExtra
 // will change when the set of required properties is changed
 func NewDiscoveredOperationGetExtra(id string) *DiscoveredOperationGetExtra {
 	this := DiscoveredOperationGetExtra{}
-	this.Id = id
+	this.ID = id
 	return &this
 }
 
@@ -50,28 +50,28 @@ func NewDiscoveredOperationGetExtraWithDefaults() *DiscoveredOperationGetExtra {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *DiscoveredOperationGetExtra) GetId() string {
+// GetID returns the ID field value
+func (o *DiscoveredOperationGetExtra) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *DiscoveredOperationGetExtra) GetIdOk() (*string, bool) {
+func (o *DiscoveredOperationGetExtra) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *DiscoveredOperationGetExtra) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *DiscoveredOperationGetExtra) SetID(v string) {
+	o.ID = v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
@@ -175,7 +175,7 @@ func (o *DiscoveredOperationGetExtra) SetRps(v float32) {
 func (o DiscoveredOperationGetExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.UpdatedAt != nil {
 		toSerialize["updated_at"] = o.UpdatedAt

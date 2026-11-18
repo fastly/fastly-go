@@ -40,14 +40,14 @@ type LoggingGooglePubsubResponse struct {
 	// The Google Cloud Pub/Sub topic to which logs will be published. Required.
 	Topic *string `json:"topic,omitempty"`
 	// Your Google Cloud Platform project ID. Required
-	ProjectId *string `json:"project_id,omitempty"`
+	ProjectID *string `json:"project_id,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceId            *string      `json:"service_id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -425,36 +425,36 @@ func (o *LoggingGooglePubsubResponse) SetTopic(v string) {
 	o.Topic = &v
 }
 
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
-func (o *LoggingGooglePubsubResponse) GetProjectId() string {
-	if o == nil || o.ProjectId == nil {
+// GetProjectID returns the ProjectID field value if set, zero value otherwise.
+func (o *LoggingGooglePubsubResponse) GetProjectID() string {
+	if o == nil || o.ProjectID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectId
+	return *o.ProjectID
 }
 
-// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGooglePubsubResponse) GetProjectIdOk() (*string, bool) {
-	if o == nil || o.ProjectId == nil {
+func (o *LoggingGooglePubsubResponse) GetProjectIDOk() (*string, bool) {
+	if o == nil || o.ProjectID == nil {
 		return nil, false
 	}
-	return o.ProjectId, true
+	return o.ProjectID, true
 }
 
-// HasProjectId returns a boolean if a field has been set.
-func (o *LoggingGooglePubsubResponse) HasProjectId() bool {
-	if o != nil && o.ProjectId != nil {
+// HasProjectID returns a boolean if a field has been set.
+func (o *LoggingGooglePubsubResponse) HasProjectID() bool {
+	if o != nil && o.ProjectID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
-func (o *LoggingGooglePubsubResponse) SetProjectId(v string) {
-	o.ProjectId = &v
+// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
+func (o *LoggingGooglePubsubResponse) SetProjectID(v string) {
+	o.ProjectID = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -586,36 +586,36 @@ func (o *LoggingGooglePubsubResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingGooglePubsubResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingGooglePubsubResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGooglePubsubResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingGooglePubsubResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingGooglePubsubResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingGooglePubsubResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingGooglePubsubResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingGooglePubsubResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -684,8 +684,8 @@ func (o LoggingGooglePubsubResponse) MarshalJSON() ([]byte, error) {
 	if o.Topic != nil {
 		toSerialize["topic"] = o.Topic
 	}
-	if o.ProjectId != nil {
-		toSerialize["project_id"] = o.ProjectId
+	if o.ProjectID != nil {
+		toSerialize["project_id"] = o.ProjectID
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -696,8 +696,8 @@ func (o LoggingGooglePubsubResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

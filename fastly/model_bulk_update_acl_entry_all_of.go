@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// BulkUpdateAclEntryAllOf struct for BulkUpdateAclEntryAllOf
-type BulkUpdateAclEntryAllOf struct {
+// BulkUpdateACLEntryAllOf struct for BulkUpdateACLEntryAllOf
+type BulkUpdateACLEntryAllOf struct {
 	Op                   *string `json:"op,omitempty"`
-	Id                   *string `json:"id,omitempty"`
+	ID                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _BulkUpdateAclEntryAllOf BulkUpdateAclEntryAllOf
+type _BulkUpdateACLEntryAllOf BulkUpdateACLEntryAllOf
 
-// NewBulkUpdateAclEntryAllOf instantiates a new BulkUpdateAclEntryAllOf object
+// NewBulkUpdateACLEntryAllOf instantiates a new BulkUpdateACLEntryAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBulkUpdateAclEntryAllOf() *BulkUpdateAclEntryAllOf {
-	this := BulkUpdateAclEntryAllOf{}
+func NewBulkUpdateACLEntryAllOf() *BulkUpdateACLEntryAllOf {
+	this := BulkUpdateACLEntryAllOf{}
 	return &this
 }
 
-// NewBulkUpdateAclEntryAllOfWithDefaults instantiates a new BulkUpdateAclEntryAllOf object
+// NewBulkUpdateACLEntryAllOfWithDefaults instantiates a new BulkUpdateACLEntryAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBulkUpdateAclEntryAllOfWithDefaults() *BulkUpdateAclEntryAllOf {
-	this := BulkUpdateAclEntryAllOf{}
+func NewBulkUpdateACLEntryAllOfWithDefaults() *BulkUpdateACLEntryAllOf {
+	this := BulkUpdateACLEntryAllOf{}
 	return &this
 }
 
 // GetOp returns the Op field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntryAllOf) GetOp() string {
+func (o *BulkUpdateACLEntryAllOf) GetOp() string {
 	if o == nil || o.Op == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *BulkUpdateAclEntryAllOf) GetOp() string {
 
 // GetOpOk returns a tuple with the Op field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntryAllOf) GetOpOk() (*string, bool) {
+func (o *BulkUpdateACLEntryAllOf) GetOpOk() (*string, bool) {
 	if o == nil || o.Op == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *BulkUpdateAclEntryAllOf) GetOpOk() (*string, bool) {
 }
 
 // HasOp returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntryAllOf) HasOp() bool {
+func (o *BulkUpdateACLEntryAllOf) HasOp() bool {
 	if o != nil && o.Op != nil {
 		return true
 	}
@@ -70,51 +70,51 @@ func (o *BulkUpdateAclEntryAllOf) HasOp() bool {
 }
 
 // SetOp gets a reference to the given string and assigns it to the Op field.
-func (o *BulkUpdateAclEntryAllOf) SetOp(v string) {
+func (o *BulkUpdateACLEntryAllOf) SetOp(v string) {
 	o.Op = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *BulkUpdateAclEntryAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *BulkUpdateACLEntryAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateAclEntryAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *BulkUpdateACLEntryAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *BulkUpdateAclEntryAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *BulkUpdateACLEntryAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *BulkUpdateAclEntryAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *BulkUpdateACLEntryAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o BulkUpdateAclEntryAllOf) MarshalJSON() ([]byte, error) {
+func (o BulkUpdateACLEntryAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Op != nil {
 		toSerialize["op"] = o.Op
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -126,11 +126,11 @@ func (o BulkUpdateAclEntryAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *BulkUpdateAclEntryAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varBulkUpdateAclEntryAllOf := _BulkUpdateAclEntryAllOf{}
+func (o *BulkUpdateACLEntryAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varBulkUpdateACLEntryAllOf := _BulkUpdateACLEntryAllOf{}
 
-	if err = json.Unmarshal(bytes, &varBulkUpdateAclEntryAllOf); err == nil {
-		*o = BulkUpdateAclEntryAllOf(varBulkUpdateAclEntryAllOf)
+	if err = json.Unmarshal(bytes, &varBulkUpdateACLEntryAllOf); err == nil {
+		*o = BulkUpdateACLEntryAllOf(varBulkUpdateACLEntryAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -144,48 +144,48 @@ func (o *BulkUpdateAclEntryAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBulkUpdateAclEntryAllOf is a helper abstraction for handling nullable bulkupdateaclentryallof types.
-type NullableBulkUpdateAclEntryAllOf struct {
-	value *BulkUpdateAclEntryAllOf
+// NullableBulkUpdateACLEntryAllOf is a helper abstraction for handling nullable bulkupdateaclentryallof types.
+type NullableBulkUpdateACLEntryAllOf struct {
+	value *BulkUpdateACLEntryAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableBulkUpdateAclEntryAllOf) Get() *BulkUpdateAclEntryAllOf {
+func (v NullableBulkUpdateACLEntryAllOf) Get() *BulkUpdateACLEntryAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableBulkUpdateAclEntryAllOf) Set(val *BulkUpdateAclEntryAllOf) {
+func (v *NullableBulkUpdateACLEntryAllOf) Set(val *BulkUpdateACLEntryAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableBulkUpdateAclEntryAllOf) IsSet() bool {
+func (v NullableBulkUpdateACLEntryAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableBulkUpdateAclEntryAllOf) Unset() {
+func (v *NullableBulkUpdateACLEntryAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableBulkUpdateAclEntryAllOf returns a pointer to a new instance of NullableBulkUpdateAclEntryAllOf.
-func NewNullableBulkUpdateAclEntryAllOf(val *BulkUpdateAclEntryAllOf) *NullableBulkUpdateAclEntryAllOf {
-	return &NullableBulkUpdateAclEntryAllOf{value: val, isSet: true}
+// NewNullableBulkUpdateACLEntryAllOf returns a pointer to a new instance of NullableBulkUpdateACLEntryAllOf.
+func NewNullableBulkUpdateACLEntryAllOf(val *BulkUpdateACLEntryAllOf) *NullableBulkUpdateACLEntryAllOf {
+	return &NullableBulkUpdateACLEntryAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableBulkUpdateAclEntryAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableBulkUpdateACLEntryAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableBulkUpdateAclEntryAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableBulkUpdateACLEntryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

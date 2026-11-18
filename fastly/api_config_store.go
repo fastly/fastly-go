@@ -50,10 +50,10 @@ type ConfigStoreAPI interface {
 		Delete a config store.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreId An alphanumeric string identifying the config store.
+		 @param configStoreID An alphanumeric string identifying the config store.
 		 @return APIDeleteConfigStoreRequest
 	*/
-	DeleteConfigStore(ctx context.Context, configStoreId string) APIDeleteConfigStoreRequest
+	DeleteConfigStore(ctx context.Context, configStoreID string) APIDeleteConfigStoreRequest
 
 	// DeleteConfigStoreExecute executes the request
 	//  @return InlineResponse200
@@ -65,10 +65,10 @@ type ConfigStoreAPI interface {
 		Describe a config store by its identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreId An alphanumeric string identifying the config store.
+		 @param configStoreID An alphanumeric string identifying the config store.
 		 @return APIGetConfigStoreRequest
 	*/
-	GetConfigStore(ctx context.Context, configStoreId string) APIGetConfigStoreRequest
+	GetConfigStore(ctx context.Context, configStoreID string) APIGetConfigStoreRequest
 
 	// GetConfigStoreExecute executes the request
 	//  @return ConfigStoreResponse
@@ -80,10 +80,10 @@ type ConfigStoreAPI interface {
 		Retrieve metadata for a single config store.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreId An alphanumeric string identifying the config store.
+		 @param configStoreID An alphanumeric string identifying the config store.
 		 @return APIGetConfigStoreInfoRequest
 	*/
-	GetConfigStoreInfo(ctx context.Context, configStoreId string) APIGetConfigStoreInfoRequest
+	GetConfigStoreInfo(ctx context.Context, configStoreID string) APIGetConfigStoreInfoRequest
 
 	// GetConfigStoreInfoExecute executes the request
 	//  @return ConfigStoreInfoResponse
@@ -95,14 +95,14 @@ type ConfigStoreAPI interface {
 		List services linked to a config store
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreId An alphanumeric string identifying the config store.
+		 @param configStoreID An alphanumeric string identifying the config store.
 		 @return APIListConfigStoreServicesRequest
 	*/
-	ListConfigStoreServices(ctx context.Context, configStoreId string) APIListConfigStoreServicesRequest
+	ListConfigStoreServices(ctx context.Context, configStoreID string) APIListConfigStoreServicesRequest
 
 	// ListConfigStoreServicesExecute executes the request
-	//  @return map[string]interface{}
-	ListConfigStoreServicesExecute(r APIListConfigStoreServicesRequest) (map[string]interface{}, *http.Response, error)
+	//  @return map[string]any
+	ListConfigStoreServicesExecute(r APIListConfigStoreServicesRequest) (map[string]any, *http.Response, error)
 
 	/*
 		ListConfigStores List config stores
@@ -124,10 +124,10 @@ type ConfigStoreAPI interface {
 		Update a config store.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreId An alphanumeric string identifying the config store.
+		 @param configStoreID An alphanumeric string identifying the config store.
 		 @return APIUpdateConfigStoreRequest
 	*/
-	UpdateConfigStore(ctx context.Context, configStoreId string) APIUpdateConfigStoreRequest
+	UpdateConfigStore(ctx context.Context, configStoreID string) APIUpdateConfigStoreRequest
 
 	// UpdateConfigStoreExecute executes the request
 	//  @return ConfigStoreResponse
@@ -279,7 +279,7 @@ func (a *ConfigStoreAPIService) CreateConfigStoreExecute(r APICreateConfigStoreR
 type APIDeleteConfigStoreRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreAPI
-	configStoreId string
+	configStoreID string
 }
 
 // Execute calls the API using the request data configured.
@@ -293,14 +293,14 @@ DeleteConfigStore Delete a config store
 Delete a config store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreId An alphanumeric string identifying the config store.
+ @param configStoreID An alphanumeric string identifying the config store.
  @return APIDeleteConfigStoreRequest
 */
-func (a *ConfigStoreAPIService) DeleteConfigStore(ctx context.Context, configStoreId string) APIDeleteConfigStoreRequest {
+func (a *ConfigStoreAPIService) DeleteConfigStore(ctx context.Context, configStoreID string) APIDeleteConfigStoreRequest {
 	return APIDeleteConfigStoreRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreId: configStoreId,
+		configStoreID: configStoreID,
 	}
 }
 
@@ -320,7 +320,7 @@ func (a *ConfigStoreAPIService) DeleteConfigStoreExecute(r APIDeleteConfigStoreR
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -411,7 +411,7 @@ func (a *ConfigStoreAPIService) DeleteConfigStoreExecute(r APIDeleteConfigStoreR
 type APIGetConfigStoreRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreAPI
-	configStoreId string
+	configStoreID string
 }
 
 // Execute calls the API using the request data configured.
@@ -425,14 +425,14 @@ GetConfigStore Describe a config store
 Describe a config store by its identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreId An alphanumeric string identifying the config store.
+ @param configStoreID An alphanumeric string identifying the config store.
  @return APIGetConfigStoreRequest
 */
-func (a *ConfigStoreAPIService) GetConfigStore(ctx context.Context, configStoreId string) APIGetConfigStoreRequest {
+func (a *ConfigStoreAPIService) GetConfigStore(ctx context.Context, configStoreID string) APIGetConfigStoreRequest {
 	return APIGetConfigStoreRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreId: configStoreId,
+		configStoreID: configStoreID,
 	}
 }
 
@@ -452,7 +452,7 @@ func (a *ConfigStoreAPIService) GetConfigStoreExecute(r APIGetConfigStoreRequest
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -543,7 +543,7 @@ func (a *ConfigStoreAPIService) GetConfigStoreExecute(r APIGetConfigStoreRequest
 type APIGetConfigStoreInfoRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreAPI
-	configStoreId string
+	configStoreID string
 }
 
 // Execute calls the API using the request data configured.
@@ -557,14 +557,14 @@ GetConfigStoreInfo Get config store metadata
 Retrieve metadata for a single config store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreId An alphanumeric string identifying the config store.
+ @param configStoreID An alphanumeric string identifying the config store.
  @return APIGetConfigStoreInfoRequest
 */
-func (a *ConfigStoreAPIService) GetConfigStoreInfo(ctx context.Context, configStoreId string) APIGetConfigStoreInfoRequest {
+func (a *ConfigStoreAPIService) GetConfigStoreInfo(ctx context.Context, configStoreID string) APIGetConfigStoreInfoRequest {
 	return APIGetConfigStoreInfoRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreId: configStoreId,
+		configStoreID: configStoreID,
 	}
 }
 
@@ -584,7 +584,7 @@ func (a *ConfigStoreAPIService) GetConfigStoreInfoExecute(r APIGetConfigStoreInf
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/info"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -675,11 +675,11 @@ func (a *ConfigStoreAPIService) GetConfigStoreInfoExecute(r APIGetConfigStoreInf
 type APIListConfigStoreServicesRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreAPI
-	configStoreId string
+	configStoreID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListConfigStoreServicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r APIListConfigStoreServicesRequest) Execute() (map[string]any, *http.Response, error) {
 	return r.APIService.ListConfigStoreServicesExecute(r)
 }
 
@@ -689,25 +689,25 @@ ListConfigStoreServices List linked services
 List services linked to a config store
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreId An alphanumeric string identifying the config store.
+ @param configStoreID An alphanumeric string identifying the config store.
  @return APIListConfigStoreServicesRequest
 */
-func (a *ConfigStoreAPIService) ListConfigStoreServices(ctx context.Context, configStoreId string) APIListConfigStoreServicesRequest {
+func (a *ConfigStoreAPIService) ListConfigStoreServices(ctx context.Context, configStoreID string) APIListConfigStoreServicesRequest {
 	return APIListConfigStoreServicesRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreId: configStoreId,
+		configStoreID: configStoreID,
 	}
 }
 
 // ListConfigStoreServicesExecute executes the request
-//  @return map[string]interface{}
-func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigStoreServicesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return map[string]any
+func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigStoreServicesRequest) (map[string]any, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]interface{}
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.ListConfigStoreServices")
@@ -716,7 +716,7 @@ func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigSt
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/services"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -945,7 +945,7 @@ func (a *ConfigStoreAPIService) ListConfigStoresExecute(r APIListConfigStoresReq
 type APIUpdateConfigStoreRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreAPI
-	configStoreId string
+	configStoreID string
 	name          *string
 }
 
@@ -966,14 +966,14 @@ UpdateConfigStore Update a config store
 Update a config store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreId An alphanumeric string identifying the config store.
+ @param configStoreID An alphanumeric string identifying the config store.
  @return APIUpdateConfigStoreRequest
 */
-func (a *ConfigStoreAPIService) UpdateConfigStore(ctx context.Context, configStoreId string) APIUpdateConfigStoreRequest {
+func (a *ConfigStoreAPIService) UpdateConfigStore(ctx context.Context, configStoreID string) APIUpdateConfigStoreRequest {
 	return APIUpdateConfigStoreRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreId: configStoreId,
+		configStoreID: configStoreID,
 	}
 }
 
@@ -993,7 +993,7 @@ func (a *ConfigStoreAPIService) UpdateConfigStoreExecute(r APIUpdateConfigStoreR
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

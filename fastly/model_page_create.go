@@ -18,7 +18,7 @@ import (
 
 // PageCreate struct for PageCreate
 type PageCreate struct {
-	WebsiteId            string         `json:"website_id"`
+	WebsiteID            string         `json:"website_id"`
 	Name                 string         `json:"name"`
 	Description          *string        `json:"description,omitempty"`
 	Notifications        []Notification `json:"notifications,omitempty"`
@@ -32,9 +32,9 @@ type _PageCreate PageCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPageCreate(websiteId string, name string) *PageCreate {
+func NewPageCreate(websiteID string, name string) *PageCreate {
 	this := PageCreate{}
-	this.WebsiteId = websiteId
+	this.WebsiteID = websiteID
 	this.Name = name
 	return &this
 }
@@ -47,28 +47,28 @@ func NewPageCreateWithDefaults() *PageCreate {
 	return &this
 }
 
-// GetWebsiteId returns the WebsiteId field value
-func (o *PageCreate) GetWebsiteId() string {
+// GetWebsiteID returns the WebsiteID field value
+func (o *PageCreate) GetWebsiteID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.WebsiteId
+	return o.WebsiteID
 }
 
-// GetWebsiteIdOk returns a tuple with the WebsiteId field value
+// GetWebsiteIDOk returns a tuple with the WebsiteID field value
 // and a boolean to check if the value has been set.
-func (o *PageCreate) GetWebsiteIdOk() (*string, bool) {
+func (o *PageCreate) GetWebsiteIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.WebsiteId, true
+	return &o.WebsiteID, true
 }
 
-// SetWebsiteId sets field value
-func (o *PageCreate) SetWebsiteId(v string) {
-	o.WebsiteId = v
+// SetWebsiteID sets field value
+func (o *PageCreate) SetWebsiteID(v string) {
+	o.WebsiteID = v
 }
 
 // GetName returns the Name field value
@@ -196,7 +196,7 @@ func (o *PageCreate) SetPaths(v []string) {
 func (o PageCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["website_id"] = o.WebsiteId
+		toSerialize["website_id"] = o.WebsiteID
 	}
 	if true {
 		toSerialize["name"] = o.Name

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | [**BotManagementAction**](BotManagementAction.md) |  | 
-**CategoryId** | **string** | The unique identifier of the category. | [readonly] 
+**CategoryID** | **string** | The unique identifier of the category. | [readonly] 
 **Name** | **string** | The display name of the category. | [readonly] 
 **Description** | Pointer to **string** | A description of the bots the category contains. | [optional] [readonly] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewBotManagementCategoryResponse
 
-`func NewBotManagementCategoryResponse(action BotManagementAction, categoryId string, name string, ) *BotManagementCategoryResponse`
+`func NewBotManagementCategoryResponse(action BotManagementAction, categoryID string, name string, ) *BotManagementCategoryResponse`
 
 NewBotManagementCategoryResponse instantiates a new BotManagementCategoryResponse object
 This constructor will assign default values to properties that have it defined,
@@ -48,24 +48,24 @@ and a boolean to check if the value has been set.
 SetAction sets Action field to given value.
 
 
-### GetCategoryId
+### GetCategoryID
 
-`func (o *BotManagementCategoryResponse) GetCategoryId() string`
+`func (o *BotManagementCategoryResponse) GetCategoryID() string`
 
-GetCategoryId returns the CategoryId field if non-nil, zero value otherwise.
+GetCategoryID returns the CategoryID field if non-nil, zero value otherwise.
 
-### GetCategoryIdOk
+### GetCategoryIDOk
 
-`func (o *BotManagementCategoryResponse) GetCategoryIdOk() (*string, bool)`
+`func (o *BotManagementCategoryResponse) GetCategoryIDOk() (*string, bool)`
 
-GetCategoryIdOk returns a tuple with the CategoryId field if it's non-nil, zero value otherwise
+GetCategoryIDOk returns a tuple with the CategoryID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCategoryId
+### SetCategoryID
 
-`func (o *BotManagementCategoryResponse) SetCategoryId(v string)`
+`func (o *BotManagementCategoryResponse) SetCategoryID(v string)`
 
-SetCategoryId sets CategoryId field to given value.
+SetCategoryID sets CategoryID field to given value.
 
 
 ### GetName
@@ -115,5 +115,3 @@ HasDescription returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

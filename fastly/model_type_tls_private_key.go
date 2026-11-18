@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTlsPrivateKey Resource type
-type TypeTlsPrivateKey string
+// TypeTLSPrivateKey Resource type
+type TypeTLSPrivateKey string
 
-// List of type_tls_private_key
+// List of resourceTypetls_private_key
 const (
-	TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY TypeTlsPrivateKey = "tls_private_key"
+	TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY TypeTLSPrivateKey = "tls_private_key"
 )
 
-// AllowedTypeTlsPrivateKeyEnumValues All allowed values of TypeTlsPrivateKey enum
-var AllowedTypeTlsPrivateKeyEnumValues = []TypeTlsPrivateKey{
+// AllowedTypeTLSPrivateKeyEnumValues All allowed values of TypeTLSPrivateKey enum
+var AllowedTypeTLSPrivateKeyEnumValues = []TypeTLSPrivateKey{
 	"tls_private_key",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTlsPrivateKey) UnmarshalJSON(src []byte) error {
+func (v *TypeTLSPrivateKey) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTlsPrivateKey(value)
-	for _, existing := range AllowedTypeTlsPrivateKeyEnumValues {
+	enumTypeValue := TypeTLSPrivateKey(value)
+	for _, existing := range AllowedTypeTLSPrivateKeyEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTlsPrivateKey", value)
+	return fmt.Errorf("%+v is not a valid TypeTLSPrivateKey", value)
 }
 
-// NewTypeTlsPrivateKeyFromValue returns a pointer to a valid TypeTlsPrivateKey
+// NewTypeTLSPrivateKeyFromValue returns a pointer to a valid TypeTLSPrivateKey
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTlsPrivateKeyFromValue(v string) (*TypeTlsPrivateKey, error) {
-	ev := TypeTlsPrivateKey(v)
+func NewTypeTLSPrivateKeyFromValue(v string) (*TypeTLSPrivateKey, error) {
+	ev := TypeTLSPrivateKey(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTlsPrivateKey: valid values are %v", v, AllowedTypeTlsPrivateKeyEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTLSPrivateKey: valid values are %v", v, AllowedTypeTLSPrivateKeyEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTlsPrivateKey) IsValid() bool {
-	for _, existing := range AllowedTypeTlsPrivateKeyEnumValues {
+func (v TypeTLSPrivateKey) IsValid() bool {
+	for _, existing := range AllowedTypeTLSPrivateKeyEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTlsPrivateKey) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to type_tls_private_key value
-func (v TypeTlsPrivateKey) Ptr() *TypeTlsPrivateKey {
+// Ptr returns reference to resourceTypetls_private_key value
+func (v TypeTLSPrivateKey) Ptr() *TypeTLSPrivateKey {
 	return &v
 }
 
-// NullableTypeTlsPrivateKey is a helper abstraction for handling nullable typetlsprivatekey types.
-type NullableTypeTlsPrivateKey struct {
-	value *TypeTlsPrivateKey
+// NullableTypeTLSPrivateKey is a helper abstraction for handling nullable typetlsprivatekey types.
+type NullableTypeTLSPrivateKey struct {
+	value *TypeTLSPrivateKey
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTlsPrivateKey) Get() *TypeTlsPrivateKey {
+func (v NullableTypeTLSPrivateKey) Get() *TypeTLSPrivateKey {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTlsPrivateKey) Set(val *TypeTlsPrivateKey) {
+func (v *NullableTypeTLSPrivateKey) Set(val *TypeTLSPrivateKey) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTlsPrivateKey) IsSet() bool {
+func (v NullableTypeTLSPrivateKey) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTlsPrivateKey) Unset() {
+func (v *NullableTypeTLSPrivateKey) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTlsPrivateKey returns a pointer to a new instance of NullableTypeTlsPrivateKey.
-func NewNullableTypeTlsPrivateKey(val *TypeTlsPrivateKey) *NullableTypeTlsPrivateKey {
-	return &NullableTypeTlsPrivateKey{value: val, isSet: true}
+// NewNullableTypeTLSPrivateKey returns a pointer to a new instance of NullableTypeTLSPrivateKey.
+func NewNullableTypeTLSPrivateKey(val *TypeTLSPrivateKey) *NullableTypeTLSPrivateKey {
+	return &NullableTypeTLSPrivateKey{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTlsPrivateKey) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTLSPrivateKey) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTlsPrivateKey) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTLSPrivateKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

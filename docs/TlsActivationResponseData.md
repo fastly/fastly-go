@@ -1,134 +1,132 @@
-# TlsActivationResponseData
+# TLSActivationResponseData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] [default to TYPETLSACTIVATION_TLS_ACTIVATION]
-**Relationships** | Pointer to [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTLSActivation**](TypeTLSActivation.md) |  | [optional] [default to TYPETLSACTIVATION_TLS_ACTIVATION]
+**Relationships** | Pointer to [**RelationshipsForTLSActivation**](RelationshipsForTLSActivation.md) |  | [optional] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **Attributes** | Pointer to [**Timestamps**](Timestamps.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsActivationResponseData
+### NewTLSActivationResponseData
 
-`func NewTlsActivationResponseData() *TlsActivationResponseData`
+`func NewTLSActivationResponseData() *TLSActivationResponseData`
 
-NewTlsActivationResponseData instantiates a new TlsActivationResponseData object
+NewTLSActivationResponseData instantiates a new TLSActivationResponseData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsActivationResponseDataWithDefaults
+### NewTLSActivationResponseDataWithDefaults
 
-`func NewTlsActivationResponseDataWithDefaults() *TlsActivationResponseData`
+`func NewTLSActivationResponseDataWithDefaults() *TLSActivationResponseData`
 
-NewTlsActivationResponseDataWithDefaults instantiates a new TlsActivationResponseData object
+NewTLSActivationResponseDataWithDefaults instantiates a new TLSActivationResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TlsActivationResponseData) GetType() TypeTlsActivation`
+`func (o *TLSActivationResponseData) GetType() TypeTLSActivation`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TlsActivationResponseData) GetTypeOk() (*TypeTlsActivation, bool)`
+`func (o *TLSActivationResponseData) GetTypeOk() (*TypeTLSActivation, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TlsActivationResponseData) SetType(v TypeTlsActivation)`
+`func (o *TLSActivationResponseData) SetType(v TypeTLSActivation)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TlsActivationResponseData) HasType() bool`
+`func (o *TLSActivationResponseData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *TlsActivationResponseData) GetRelationships() RelationshipsForTlsActivation`
+`func (o *TLSActivationResponseData) GetRelationships() RelationshipsForTLSActivation`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TlsActivationResponseData) GetRelationshipsOk() (*RelationshipsForTlsActivation, bool)`
+`func (o *TLSActivationResponseData) GetRelationshipsOk() (*RelationshipsForTLSActivation, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TlsActivationResponseData) SetRelationships(v RelationshipsForTlsActivation)`
+`func (o *TLSActivationResponseData) SetRelationships(v RelationshipsForTLSActivation)`
 
 SetRelationships sets Relationships field to given value.
 
 ### HasRelationships
 
-`func (o *TlsActivationResponseData) HasRelationships() bool`
+`func (o *TLSActivationResponseData) HasRelationships() bool`
 
 HasRelationships returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *TlsActivationResponseData) GetId() string`
+`func (o *TLSActivationResponseData) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *TlsActivationResponseData) GetIdOk() (*string, bool)`
+`func (o *TLSActivationResponseData) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *TlsActivationResponseData) SetId(v string)`
+`func (o *TLSActivationResponseData) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *TlsActivationResponseData) HasId() bool`
+`func (o *TLSActivationResponseData) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TlsActivationResponseData) GetAttributes() Timestamps`
+`func (o *TLSActivationResponseData) GetAttributes() Timestamps`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TlsActivationResponseData) GetAttributesOk() (*Timestamps, bool)`
+`func (o *TLSActivationResponseData) GetAttributesOk() (*Timestamps, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TlsActivationResponseData) SetAttributes(v Timestamps)`
+`func (o *TLSActivationResponseData) SetAttributes(v Timestamps)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TlsActivationResponseData) HasAttributes() bool`
+`func (o *TLSActivationResponseData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

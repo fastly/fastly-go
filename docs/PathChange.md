@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PathId** | Pointer to **string** | Alphanumeric string identifying the path. Stable across versions of the routing config. | [optional] [readonly] 
+**PathID** | Pointer to **string** | Alphanumeric string identifying the path. Stable across versions of the routing config. | [optional] [readonly] 
 **Path** | Pointer to **string** | The current path pattern. | [optional] 
 **OldPath** | Pointer to **string** | The previous path pattern, if it changed. | [optional] 
 **RulesAdded** | Pointer to [**[]RuleResponse**](RuleResponse.md) | Rules that were added to this path. | [optional] 
@@ -30,30 +30,30 @@ NewPathChangeWithDefaults instantiates a new PathChange object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetPathId
+### GetPathID
 
-`func (o *PathChange) GetPathId() string`
+`func (o *PathChange) GetPathID() string`
 
-GetPathId returns the PathId field if non-nil, zero value otherwise.
+GetPathID returns the PathID field if non-nil, zero value otherwise.
 
-### GetPathIdOk
+### GetPathIDOk
 
-`func (o *PathChange) GetPathIdOk() (*string, bool)`
+`func (o *PathChange) GetPathIDOk() (*string, bool)`
 
-GetPathIdOk returns a tuple with the PathId field if it's non-nil, zero value otherwise
+GetPathIDOk returns a tuple with the PathID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPathId
+### SetPathID
 
-`func (o *PathChange) SetPathId(v string)`
+`func (o *PathChange) SetPathID(v string)`
 
-SetPathId sets PathId field to given value.
+SetPathID sets PathID field to given value.
 
-### HasPathId
+### HasPathID
 
-`func (o *PathChange) HasPathId() bool`
+`func (o *PathChange) HasPathID() bool`
 
-HasPathId returns a boolean if a field has been set.
+HasPathID returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -182,5 +182,3 @@ HasRulesDeleted returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

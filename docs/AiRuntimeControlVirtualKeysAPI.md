@@ -98,12 +98,12 @@ import (
 )
 
 func main() {
-    keyId := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
+    keyID := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcDeleteVirtualKey(ctx, keyId).Execute()
+    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcDeleteVirtualKey(ctx, keyID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlVirtualKeysAPI.ArcDeleteVirtualKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyId** | **string** | The ID of the virtual key. | 
+**keyID** | **string** | The ID of the virtual key. | 
 
 ### Other Parameters
 
@@ -163,12 +163,12 @@ import (
 )
 
 func main() {
-    keyId := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
+    keyID := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcGetVirtualKey(ctx, keyId).Execute()
+    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcGetVirtualKey(ctx, keyID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlVirtualKeysAPI.ArcGetVirtualKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -184,7 +184,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyId** | **string** | The ID of the virtual key. | 
+**keyID** | **string** | The ID of the virtual key. | 
 
 ### Other Parameters
 
@@ -230,12 +230,12 @@ import (
 )
 
 func main() {
-    keyId := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
+    keyID := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcGetVirtualKeyFailover(ctx, keyId).Execute()
+    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcGetVirtualKeyFailover(ctx, keyID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlVirtualKeysAPI.ArcGetVirtualKeyFailover`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyId** | **string** | The ID of the virtual key. | 
+**keyID** | **string** | The ID of the virtual key. | 
 
 ### Other Parameters
 
@@ -364,13 +364,13 @@ import (
 )
 
 func main() {
-    keyId := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
+    keyID := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
     arcRotateVirtualKeyRequest := *openapiclient.NewArcRotateVirtualKeyRequest() // ArcRotateVirtualKeyRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcRotateVirtualKey(ctx, keyId).ArcRotateVirtualKeyRequest(arcRotateVirtualKeyRequest).Execute()
+    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcRotateVirtualKey(ctx, keyID).ArcRotateVirtualKeyRequest(arcRotateVirtualKeyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlVirtualKeysAPI.ArcRotateVirtualKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -386,7 +386,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyId** | **string** | The ID of the virtual key. | 
+**keyID** | **string** | The ID of the virtual key. | 
 
 ### Other Parameters
 
@@ -432,13 +432,13 @@ import (
 )
 
 func main() {
-    keyId := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
+    keyID := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
     arcUpdateVirtualKeyRequest := *openapiclient.NewArcUpdateVirtualKeyRequest() // ArcUpdateVirtualKeyRequest | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcUpdateVirtualKey(ctx, keyId).ArcUpdateVirtualKeyRequest(arcUpdateVirtualKeyRequest).Execute()
+    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcUpdateVirtualKey(ctx, keyID).ArcUpdateVirtualKeyRequest(arcUpdateVirtualKeyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlVirtualKeysAPI.ArcUpdateVirtualKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -454,7 +454,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyId** | **string** | The ID of the virtual key. | 
+**keyID** | **string** | The ID of the virtual key. | 
 
 ### Other Parameters
 
@@ -500,13 +500,13 @@ import (
 )
 
 func main() {
-    keyId := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
+    keyID := "7fVVQb1nZaJgnzCn4B4v3B" // string | The ID of the virtual key.
     arcVirtualKeyFailoverRequest := *openapiclient.NewArcVirtualKeyFailoverRequest([]openapiclient.ArcFailoverTarget{*openapiclient.NewArcFailoverTarget("pTfnUUBcU1yv8SoRJn5PZ2")}) // ArcVirtualKeyFailoverRequest | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcUpdateVirtualKeyFailover(ctx, keyId).ArcVirtualKeyFailoverRequest(arcVirtualKeyFailoverRequest).Execute()
+    resp, r, err := apiClient.AiRuntimeControlVirtualKeysAPI.ArcUpdateVirtualKeyFailover(ctx, keyID).ArcVirtualKeyFailoverRequest(arcVirtualKeyFailoverRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AiRuntimeControlVirtualKeysAPI.ArcUpdateVirtualKeyFailover`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -522,7 +522,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyId** | **string** | The ID of the virtual key. | 
+**keyID** | **string** | The ID of the virtual key. | 
 
 ### Other Parameters
 
@@ -547,4 +547,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

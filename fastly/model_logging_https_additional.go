@@ -16,10 +16,10 @@ import (
 	"encoding/json"
 )
 
-// LoggingHttpsAdditional struct for LoggingHttpsAdditional
-type LoggingHttpsAdditional struct {
+// LoggingHTTPSAdditional struct for LoggingHTTPSAdditional
+type LoggingHTTPSAdditional struct {
 	// The URL to send logs to. Must use HTTPS. Required.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// The maximum number of logs sent in one request. Defaults `0` (10k).
 	RequestMaxEntries *int32 `json:"request_max_entries,omitempty"`
 	// The maximum number of bytes sent in one request. Defaults `0` (100MB).
@@ -34,7 +34,7 @@ type LoggingHttpsAdditional struct {
 	// HTTP method used for request.
 	Method *string `json:"method,omitempty"`
 	// Enforces valid JSON formatting for log entries.
-	JsonFormat *string `json:"json_format,omitempty"`
+	JSONFormat *string `json:"json_format,omitempty"`
 	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 	Format *string `json:"format,omitempty"`
 	// How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds.
@@ -42,14 +42,14 @@ type LoggingHttpsAdditional struct {
 	AdditionalProperties map[string]any
 }
 
-type _LoggingHttpsAdditional LoggingHttpsAdditional
+type _LoggingHTTPSAdditional LoggingHTTPSAdditional
 
-// NewLoggingHttpsAdditional instantiates a new LoggingHttpsAdditional object
+// NewLoggingHTTPSAdditional instantiates a new LoggingHTTPSAdditional object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoggingHttpsAdditional() *LoggingHttpsAdditional {
-	this := LoggingHttpsAdditional{}
+func NewLoggingHTTPSAdditional() *LoggingHTTPSAdditional {
+	this := LoggingHTTPSAdditional{}
 	var requestMaxEntries int32 = 0
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
@@ -71,11 +71,11 @@ func NewLoggingHttpsAdditional() *LoggingHttpsAdditional {
 	return &this
 }
 
-// NewLoggingHttpsAdditionalWithDefaults instantiates a new LoggingHttpsAdditional object
+// NewLoggingHTTPSAdditionalWithDefaults instantiates a new LoggingHTTPSAdditional object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLoggingHttpsAdditionalWithDefaults() *LoggingHttpsAdditional {
-	this := LoggingHttpsAdditional{}
+func NewLoggingHTTPSAdditionalWithDefaults() *LoggingHTTPSAdditional {
+	this := LoggingHTTPSAdditional{}
 	var requestMaxEntries int32 = 0
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
@@ -97,40 +97,40 @@ func NewLoggingHttpsAdditionalWithDefaults() *LoggingHttpsAdditional {
 	return &this
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingHTTPSAdditional) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingHTTPSAdditional) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingHTTPSAdditional) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingHttpsAdditional) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingHTTPSAdditional) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetRequestMaxEntries returns the RequestMaxEntries field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetRequestMaxEntries() int32 {
+func (o *LoggingHTTPSAdditional) GetRequestMaxEntries() int32 {
 	if o == nil || o.RequestMaxEntries == nil {
 		var ret int32
 		return ret
@@ -140,7 +140,7 @@ func (o *LoggingHttpsAdditional) GetRequestMaxEntries() int32 {
 
 // GetRequestMaxEntriesOk returns a tuple with the RequestMaxEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetRequestMaxEntriesOk() (*int32, bool) {
+func (o *LoggingHTTPSAdditional) GetRequestMaxEntriesOk() (*int32, bool) {
 	if o == nil || o.RequestMaxEntries == nil {
 		return nil, false
 	}
@@ -148,7 +148,7 @@ func (o *LoggingHttpsAdditional) GetRequestMaxEntriesOk() (*int32, bool) {
 }
 
 // HasRequestMaxEntries returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasRequestMaxEntries() bool {
+func (o *LoggingHTTPSAdditional) HasRequestMaxEntries() bool {
 	if o != nil && o.RequestMaxEntries != nil {
 		return true
 	}
@@ -157,12 +157,12 @@ func (o *LoggingHttpsAdditional) HasRequestMaxEntries() bool {
 }
 
 // SetRequestMaxEntries gets a reference to the given int32 and assigns it to the RequestMaxEntries field.
-func (o *LoggingHttpsAdditional) SetRequestMaxEntries(v int32) {
+func (o *LoggingHTTPSAdditional) SetRequestMaxEntries(v int32) {
 	o.RequestMaxEntries = &v
 }
 
 // GetRequestMaxBytes returns the RequestMaxBytes field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetRequestMaxBytes() int32 {
+func (o *LoggingHTTPSAdditional) GetRequestMaxBytes() int32 {
 	if o == nil || o.RequestMaxBytes == nil {
 		var ret int32
 		return ret
@@ -172,7 +172,7 @@ func (o *LoggingHttpsAdditional) GetRequestMaxBytes() int32 {
 
 // GetRequestMaxBytesOk returns a tuple with the RequestMaxBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetRequestMaxBytesOk() (*int32, bool) {
+func (o *LoggingHTTPSAdditional) GetRequestMaxBytesOk() (*int32, bool) {
 	if o == nil || o.RequestMaxBytes == nil {
 		return nil, false
 	}
@@ -180,7 +180,7 @@ func (o *LoggingHttpsAdditional) GetRequestMaxBytesOk() (*int32, bool) {
 }
 
 // HasRequestMaxBytes returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasRequestMaxBytes() bool {
+func (o *LoggingHTTPSAdditional) HasRequestMaxBytes() bool {
 	if o != nil && o.RequestMaxBytes != nil {
 		return true
 	}
@@ -189,12 +189,12 @@ func (o *LoggingHttpsAdditional) HasRequestMaxBytes() bool {
 }
 
 // SetRequestMaxBytes gets a reference to the given int32 and assigns it to the RequestMaxBytes field.
-func (o *LoggingHttpsAdditional) SetRequestMaxBytes(v int32) {
+func (o *LoggingHTTPSAdditional) SetRequestMaxBytes(v int32) {
 	o.RequestMaxBytes = &v
 }
 
 // GetContentType returns the ContentType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsAdditional) GetContentType() string {
+func (o *LoggingHTTPSAdditional) GetContentType() string {
 	if o == nil || o.ContentType.Get() == nil {
 		var ret string
 		return ret
@@ -205,7 +205,7 @@ func (o *LoggingHttpsAdditional) GetContentType() string {
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsAdditional) GetContentTypeOk() (*string, bool) {
+func (o *LoggingHTTPSAdditional) GetContentTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -213,7 +213,7 @@ func (o *LoggingHttpsAdditional) GetContentTypeOk() (*string, bool) {
 }
 
 // HasContentType returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasContentType() bool {
+func (o *LoggingHTTPSAdditional) HasContentType() bool {
 	if o != nil && o.ContentType.IsSet() {
 		return true
 	}
@@ -222,22 +222,22 @@ func (o *LoggingHttpsAdditional) HasContentType() bool {
 }
 
 // SetContentType gets a reference to the given NullableString and assigns it to the ContentType field.
-func (o *LoggingHttpsAdditional) SetContentType(v string) {
+func (o *LoggingHTTPSAdditional) SetContentType(v string) {
 	o.ContentType.Set(&v)
 }
 
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
-func (o *LoggingHttpsAdditional) SetContentTypeNil() {
+func (o *LoggingHTTPSAdditional) SetContentTypeNil() {
 	o.ContentType.Set(nil)
 }
 
 // UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
-func (o *LoggingHttpsAdditional) UnsetContentType() {
+func (o *LoggingHTTPSAdditional) UnsetContentType() {
 	o.ContentType.Unset()
 }
 
 // GetHeaderName returns the HeaderName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsAdditional) GetHeaderName() string {
+func (o *LoggingHTTPSAdditional) GetHeaderName() string {
 	if o == nil || o.HeaderName.Get() == nil {
 		var ret string
 		return ret
@@ -248,7 +248,7 @@ func (o *LoggingHttpsAdditional) GetHeaderName() string {
 // GetHeaderNameOk returns a tuple with the HeaderName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsAdditional) GetHeaderNameOk() (*string, bool) {
+func (o *LoggingHTTPSAdditional) GetHeaderNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -256,7 +256,7 @@ func (o *LoggingHttpsAdditional) GetHeaderNameOk() (*string, bool) {
 }
 
 // HasHeaderName returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasHeaderName() bool {
+func (o *LoggingHTTPSAdditional) HasHeaderName() bool {
 	if o != nil && o.HeaderName.IsSet() {
 		return true
 	}
@@ -265,22 +265,22 @@ func (o *LoggingHttpsAdditional) HasHeaderName() bool {
 }
 
 // SetHeaderName gets a reference to the given NullableString and assigns it to the HeaderName field.
-func (o *LoggingHttpsAdditional) SetHeaderName(v string) {
+func (o *LoggingHTTPSAdditional) SetHeaderName(v string) {
 	o.HeaderName.Set(&v)
 }
 
 // SetHeaderNameNil sets the value for HeaderName to be an explicit nil
-func (o *LoggingHttpsAdditional) SetHeaderNameNil() {
+func (o *LoggingHTTPSAdditional) SetHeaderNameNil() {
 	o.HeaderName.Set(nil)
 }
 
 // UnsetHeaderName ensures that no value is present for HeaderName, not even an explicit nil
-func (o *LoggingHttpsAdditional) UnsetHeaderName() {
+func (o *LoggingHTTPSAdditional) UnsetHeaderName() {
 	o.HeaderName.Unset()
 }
 
 // GetMessageType returns the MessageType field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetMessageType() LoggingMessageType {
+func (o *LoggingHTTPSAdditional) GetMessageType() LoggingMessageType {
 	if o == nil || o.MessageType == nil {
 		var ret LoggingMessageType
 		return ret
@@ -290,7 +290,7 @@ func (o *LoggingHttpsAdditional) GetMessageType() LoggingMessageType {
 
 // GetMessageTypeOk returns a tuple with the MessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetMessageTypeOk() (*LoggingMessageType, bool) {
+func (o *LoggingHTTPSAdditional) GetMessageTypeOk() (*LoggingMessageType, bool) {
 	if o == nil || o.MessageType == nil {
 		return nil, false
 	}
@@ -298,7 +298,7 @@ func (o *LoggingHttpsAdditional) GetMessageTypeOk() (*LoggingMessageType, bool) 
 }
 
 // HasMessageType returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasMessageType() bool {
+func (o *LoggingHTTPSAdditional) HasMessageType() bool {
 	if o != nil && o.MessageType != nil {
 		return true
 	}
@@ -307,12 +307,12 @@ func (o *LoggingHttpsAdditional) HasMessageType() bool {
 }
 
 // SetMessageType gets a reference to the given LoggingMessageType and assigns it to the MessageType field.
-func (o *LoggingHttpsAdditional) SetMessageType(v LoggingMessageType) {
+func (o *LoggingHTTPSAdditional) SetMessageType(v LoggingMessageType) {
 	o.MessageType = &v
 }
 
 // GetHeaderValue returns the HeaderValue field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingHttpsAdditional) GetHeaderValue() string {
+func (o *LoggingHTTPSAdditional) GetHeaderValue() string {
 	if o == nil || o.HeaderValue.Get() == nil {
 		var ret string
 		return ret
@@ -323,7 +323,7 @@ func (o *LoggingHttpsAdditional) GetHeaderValue() string {
 // GetHeaderValueOk returns a tuple with the HeaderValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingHttpsAdditional) GetHeaderValueOk() (*string, bool) {
+func (o *LoggingHTTPSAdditional) GetHeaderValueOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -331,7 +331,7 @@ func (o *LoggingHttpsAdditional) GetHeaderValueOk() (*string, bool) {
 }
 
 // HasHeaderValue returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasHeaderValue() bool {
+func (o *LoggingHTTPSAdditional) HasHeaderValue() bool {
 	if o != nil && o.HeaderValue.IsSet() {
 		return true
 	}
@@ -340,22 +340,22 @@ func (o *LoggingHttpsAdditional) HasHeaderValue() bool {
 }
 
 // SetHeaderValue gets a reference to the given NullableString and assigns it to the HeaderValue field.
-func (o *LoggingHttpsAdditional) SetHeaderValue(v string) {
+func (o *LoggingHTTPSAdditional) SetHeaderValue(v string) {
 	o.HeaderValue.Set(&v)
 }
 
 // SetHeaderValueNil sets the value for HeaderValue to be an explicit nil
-func (o *LoggingHttpsAdditional) SetHeaderValueNil() {
+func (o *LoggingHTTPSAdditional) SetHeaderValueNil() {
 	o.HeaderValue.Set(nil)
 }
 
 // UnsetHeaderValue ensures that no value is present for HeaderValue, not even an explicit nil
-func (o *LoggingHttpsAdditional) UnsetHeaderValue() {
+func (o *LoggingHTTPSAdditional) UnsetHeaderValue() {
 	o.HeaderValue.Unset()
 }
 
 // GetMethod returns the Method field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetMethod() string {
+func (o *LoggingHTTPSAdditional) GetMethod() string {
 	if o == nil || o.Method == nil {
 		var ret string
 		return ret
@@ -365,7 +365,7 @@ func (o *LoggingHttpsAdditional) GetMethod() string {
 
 // GetMethodOk returns a tuple with the Method field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetMethodOk() (*string, bool) {
+func (o *LoggingHTTPSAdditional) GetMethodOk() (*string, bool) {
 	if o == nil || o.Method == nil {
 		return nil, false
 	}
@@ -373,7 +373,7 @@ func (o *LoggingHttpsAdditional) GetMethodOk() (*string, bool) {
 }
 
 // HasMethod returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasMethod() bool {
+func (o *LoggingHTTPSAdditional) HasMethod() bool {
 	if o != nil && o.Method != nil {
 		return true
 	}
@@ -382,44 +382,44 @@ func (o *LoggingHttpsAdditional) HasMethod() bool {
 }
 
 // SetMethod gets a reference to the given string and assigns it to the Method field.
-func (o *LoggingHttpsAdditional) SetMethod(v string) {
+func (o *LoggingHTTPSAdditional) SetMethod(v string) {
 	o.Method = &v
 }
 
-// GetJsonFormat returns the JsonFormat field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetJsonFormat() string {
-	if o == nil || o.JsonFormat == nil {
+// GetJSONFormat returns the JSONFormat field value if set, zero value otherwise.
+func (o *LoggingHTTPSAdditional) GetJSONFormat() string {
+	if o == nil || o.JSONFormat == nil {
 		var ret string
 		return ret
 	}
-	return *o.JsonFormat
+	return *o.JSONFormat
 }
 
-// GetJsonFormatOk returns a tuple with the JsonFormat field value if set, nil otherwise
+// GetJSONFormatOk returns a tuple with the JSONFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetJsonFormatOk() (*string, bool) {
-	if o == nil || o.JsonFormat == nil {
+func (o *LoggingHTTPSAdditional) GetJSONFormatOk() (*string, bool) {
+	if o == nil || o.JSONFormat == nil {
 		return nil, false
 	}
-	return o.JsonFormat, true
+	return o.JSONFormat, true
 }
 
-// HasJsonFormat returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasJsonFormat() bool {
-	if o != nil && o.JsonFormat != nil {
+// HasJSONFormat returns a boolean if a field has been set.
+func (o *LoggingHTTPSAdditional) HasJSONFormat() bool {
+	if o != nil && o.JSONFormat != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetJsonFormat gets a reference to the given string and assigns it to the JsonFormat field.
-func (o *LoggingHttpsAdditional) SetJsonFormat(v string) {
-	o.JsonFormat = &v
+// SetJSONFormat gets a reference to the given string and assigns it to the JSONFormat field.
+func (o *LoggingHTTPSAdditional) SetJSONFormat(v string) {
+	o.JSONFormat = &v
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetFormat() string {
+func (o *LoggingHTTPSAdditional) GetFormat() string {
 	if o == nil || o.Format == nil {
 		var ret string
 		return ret
@@ -429,7 +429,7 @@ func (o *LoggingHttpsAdditional) GetFormat() string {
 
 // GetFormatOk returns a tuple with the Format field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetFormatOk() (*string, bool) {
+func (o *LoggingHTTPSAdditional) GetFormatOk() (*string, bool) {
 	if o == nil || o.Format == nil {
 		return nil, false
 	}
@@ -437,7 +437,7 @@ func (o *LoggingHttpsAdditional) GetFormatOk() (*string, bool) {
 }
 
 // HasFormat returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasFormat() bool {
+func (o *LoggingHTTPSAdditional) HasFormat() bool {
 	if o != nil && o.Format != nil {
 		return true
 	}
@@ -446,12 +446,12 @@ func (o *LoggingHttpsAdditional) HasFormat() bool {
 }
 
 // SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *LoggingHttpsAdditional) SetFormat(v string) {
+func (o *LoggingHTTPSAdditional) SetFormat(v string) {
 	o.Format = &v
 }
 
 // GetPeriod returns the Period field value if set, zero value otherwise.
-func (o *LoggingHttpsAdditional) GetPeriod() int32 {
+func (o *LoggingHTTPSAdditional) GetPeriod() int32 {
 	if o == nil || o.Period == nil {
 		var ret int32
 		return ret
@@ -461,7 +461,7 @@ func (o *LoggingHttpsAdditional) GetPeriod() int32 {
 
 // GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHttpsAdditional) GetPeriodOk() (*int32, bool) {
+func (o *LoggingHTTPSAdditional) GetPeriodOk() (*int32, bool) {
 	if o == nil || o.Period == nil {
 		return nil, false
 	}
@@ -469,7 +469,7 @@ func (o *LoggingHttpsAdditional) GetPeriodOk() (*int32, bool) {
 }
 
 // HasPeriod returns a boolean if a field has been set.
-func (o *LoggingHttpsAdditional) HasPeriod() bool {
+func (o *LoggingHTTPSAdditional) HasPeriod() bool {
 	if o != nil && o.Period != nil {
 		return true
 	}
@@ -478,16 +478,16 @@ func (o *LoggingHttpsAdditional) HasPeriod() bool {
 }
 
 // SetPeriod gets a reference to the given int32 and assigns it to the Period field.
-func (o *LoggingHttpsAdditional) SetPeriod(v int32) {
+func (o *LoggingHTTPSAdditional) SetPeriod(v int32) {
 	o.Period = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o LoggingHttpsAdditional) MarshalJSON() ([]byte, error) {
+func (o LoggingHTTPSAdditional) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.RequestMaxEntries != nil {
 		toSerialize["request_max_entries"] = o.RequestMaxEntries
@@ -510,8 +510,8 @@ func (o LoggingHttpsAdditional) MarshalJSON() ([]byte, error) {
 	if o.Method != nil {
 		toSerialize["method"] = o.Method
 	}
-	if o.JsonFormat != nil {
-		toSerialize["json_format"] = o.JsonFormat
+	if o.JSONFormat != nil {
+		toSerialize["json_format"] = o.JSONFormat
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
@@ -529,11 +529,11 @@ func (o LoggingHttpsAdditional) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *LoggingHttpsAdditional) UnmarshalJSON(bytes []byte) (err error) {
-	varLoggingHttpsAdditional := _LoggingHttpsAdditional{}
+func (o *LoggingHTTPSAdditional) UnmarshalJSON(bytes []byte) (err error) {
+	varLoggingHTTPSAdditional := _LoggingHTTPSAdditional{}
 
-	if err = json.Unmarshal(bytes, &varLoggingHttpsAdditional); err == nil {
-		*o = LoggingHttpsAdditional(varLoggingHttpsAdditional)
+	if err = json.Unmarshal(bytes, &varLoggingHTTPSAdditional); err == nil {
+		*o = LoggingHTTPSAdditional(varLoggingHTTPSAdditional)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -556,48 +556,48 @@ func (o *LoggingHttpsAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingHttpsAdditional is a helper abstraction for handling nullable logginghttpsadditional types.
-type NullableLoggingHttpsAdditional struct {
-	value *LoggingHttpsAdditional
+// NullableLoggingHTTPSAdditional is a helper abstraction for handling nullable logginghttpsadditional types.
+type NullableLoggingHTTPSAdditional struct {
+	value *LoggingHTTPSAdditional
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableLoggingHttpsAdditional) Get() *LoggingHttpsAdditional {
+func (v NullableLoggingHTTPSAdditional) Get() *LoggingHTTPSAdditional {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableLoggingHttpsAdditional) Set(val *LoggingHttpsAdditional) {
+func (v *NullableLoggingHTTPSAdditional) Set(val *LoggingHTTPSAdditional) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableLoggingHttpsAdditional) IsSet() bool {
+func (v NullableLoggingHTTPSAdditional) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableLoggingHttpsAdditional) Unset() {
+func (v *NullableLoggingHTTPSAdditional) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableLoggingHttpsAdditional returns a pointer to a new instance of NullableLoggingHttpsAdditional.
-func NewNullableLoggingHttpsAdditional(val *LoggingHttpsAdditional) *NullableLoggingHttpsAdditional {
-	return &NullableLoggingHttpsAdditional{value: val, isSet: true}
+// NewNullableLoggingHTTPSAdditional returns a pointer to a new instance of NullableLoggingHTTPSAdditional.
+func NewNullableLoggingHTTPSAdditional(val *LoggingHTTPSAdditional) *NullableLoggingHTTPSAdditional {
+	return &NullableLoggingHTTPSAdditional{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableLoggingHttpsAdditional) MarshalJSON() ([]byte, error) {
+func (v NullableLoggingHTTPSAdditional) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableLoggingHttpsAdditional) UnmarshalJSON(src []byte) error {
+func (v *NullableLoggingHTTPSAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

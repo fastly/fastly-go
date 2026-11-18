@@ -37,11 +37,11 @@ type ApexRedirectAPI interface {
 		Create an apex redirect for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APICreateApexRedirectRequest
 	*/
-	CreateApexRedirect(ctx context.Context, serviceId string, versionId int32) APICreateApexRedirectRequest
+	CreateApexRedirect(ctx context.Context, serviceID string, versionID int32) APICreateApexRedirectRequest
 
 	// CreateApexRedirectExecute executes the request
 	//  @return ApexRedirect
@@ -53,10 +53,10 @@ type ApexRedirectAPI interface {
 		Delete an apex redirect by its ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param apexRedirectId
+		 @param apexRedirectID
 		 @return APIDeleteApexRedirectRequest
 	*/
-	DeleteApexRedirect(ctx context.Context, apexRedirectId string) APIDeleteApexRedirectRequest
+	DeleteApexRedirect(ctx context.Context, apexRedirectID string) APIDeleteApexRedirectRequest
 
 	// DeleteApexRedirectExecute executes the request
 	//  @return InlineResponse200
@@ -68,10 +68,10 @@ type ApexRedirectAPI interface {
 		Get an apex redirect by its ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param apexRedirectId
+		 @param apexRedirectID
 		 @return APIGetApexRedirectRequest
 	*/
-	GetApexRedirect(ctx context.Context, apexRedirectId string) APIGetApexRedirectRequest
+	GetApexRedirect(ctx context.Context, apexRedirectID string) APIGetApexRedirectRequest
 
 	// GetApexRedirectExecute executes the request
 	//  @return ApexRedirect
@@ -83,11 +83,11 @@ type ApexRedirectAPI interface {
 		List all apex redirects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
 		 @return APIListApexRedirectsRequest
 	*/
-	ListApexRedirects(ctx context.Context, serviceId string, versionId int32) APIListApexRedirectsRequest
+	ListApexRedirects(ctx context.Context, serviceID string, versionID int32) APIListApexRedirectsRequest
 
 	// ListApexRedirectsExecute executes the request
 	//  @return []ApexRedirect
@@ -99,10 +99,10 @@ type ApexRedirectAPI interface {
 		Update an apex redirect by its ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param apexRedirectId
+		 @param apexRedirectID
 		 @return APIUpdateApexRedirectRequest
 	*/
-	UpdateApexRedirect(ctx context.Context, apexRedirectId string) APIUpdateApexRedirectRequest
+	UpdateApexRedirect(ctx context.Context, apexRedirectID string) APIUpdateApexRedirectRequest
 
 	// UpdateApexRedirectExecute executes the request
 	//  @return ApexRedirect
@@ -116,9 +116,9 @@ type ApexRedirectAPIService service
 type APICreateApexRedirectRequest struct {
 	ctx             context.Context
 	APIService      ApexRedirectAPI
-	serviceId       string
-	versionId       int32
-	serviceId2      *string
+	serviceID       string
+	versionID       int32
+	serviceID2      *string
 	version         *int32
 	createdAt       *time.Time
 	deletedAt       *time.Time
@@ -128,9 +128,9 @@ type APICreateApexRedirectRequest struct {
 	featureRevision *int32
 }
 
-// ServiceId2 returns a pointer to a request.
-func (r *APICreateApexRedirectRequest) ServiceId2(serviceId2 string) *APICreateApexRedirectRequest {
-	r.serviceId2 = &serviceId2
+// ServiceID2 returns a pointer to a request.
+func (r *APICreateApexRedirectRequest) ServiceID2(serviceID2 string) *APICreateApexRedirectRequest {
+	r.serviceID2 = &serviceID2
 	return r
 }
 
@@ -187,16 +187,16 @@ CreateApexRedirect Create an apex redirect
 Create an apex redirect for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APICreateApexRedirectRequest
 */
-func (a *ApexRedirectAPIService) CreateApexRedirect(ctx context.Context, serviceId string, versionId int32) APICreateApexRedirectRequest {
+func (a *ApexRedirectAPIService) CreateApexRedirect(ctx context.Context, serviceID string, versionID int32) APICreateApexRedirectRequest {
 	return APICreateApexRedirectRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -216,8 +216,8 @@ func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedire
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/apex-redirects"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -240,19 +240,19 @@ func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedire
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.serviceId2 != nil {
-		paramJson, err := parameterToJSON(*r.serviceId2)
+	if r.serviceID2 != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID2)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJson)
+		localVarFormParams.Add("service_id", paramJSON)
 	}
 	if r.version != nil {
-		paramJson, err := parameterToJSON(*r.version)
+		paramJSON, err := parameterToJSON(*r.version)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("version", paramJson)
+		localVarFormParams.Add("version", paramJSON)
 	}
 	if r.createdAt != nil {
 		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
@@ -340,7 +340,7 @@ func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedire
 type APIDeleteApexRedirectRequest struct {
 	ctx            context.Context
 	APIService     ApexRedirectAPI
-	apexRedirectId string
+	apexRedirectID string
 }
 
 // Execute calls the API using the request data configured.
@@ -354,14 +354,14 @@ DeleteApexRedirect Delete an apex redirect
 Delete an apex redirect by its ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apexRedirectId
+ @param apexRedirectID
  @return APIDeleteApexRedirectRequest
 */
-func (a *ApexRedirectAPIService) DeleteApexRedirect(ctx context.Context, apexRedirectId string) APIDeleteApexRedirectRequest {
+func (a *ApexRedirectAPIService) DeleteApexRedirect(ctx context.Context, apexRedirectID string) APIDeleteApexRedirectRequest {
 	return APIDeleteApexRedirectRequest{
 		APIService:     a,
 		ctx:            ctx,
-		apexRedirectId: apexRedirectId,
+		apexRedirectID: apexRedirectID,
 	}
 }
 
@@ -381,7 +381,7 @@ func (a *ApexRedirectAPIService) DeleteApexRedirectExecute(r APIDeleteApexRedire
 	}
 
 	localVarPath := localBasePath + "/apex-redirects/{apex_redirect_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"apex_redirect_id"+"}", gourl.PathEscape(parameterToString(r.apexRedirectId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"apex_redirect_id"+"}", gourl.PathEscape(parameterToString(r.apexRedirectID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -472,7 +472,7 @@ func (a *ApexRedirectAPIService) DeleteApexRedirectExecute(r APIDeleteApexRedire
 type APIGetApexRedirectRequest struct {
 	ctx            context.Context
 	APIService     ApexRedirectAPI
-	apexRedirectId string
+	apexRedirectID string
 }
 
 // Execute calls the API using the request data configured.
@@ -486,14 +486,14 @@ GetApexRedirect Get an apex redirect
 Get an apex redirect by its ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apexRedirectId
+ @param apexRedirectID
  @return APIGetApexRedirectRequest
 */
-func (a *ApexRedirectAPIService) GetApexRedirect(ctx context.Context, apexRedirectId string) APIGetApexRedirectRequest {
+func (a *ApexRedirectAPIService) GetApexRedirect(ctx context.Context, apexRedirectID string) APIGetApexRedirectRequest {
 	return APIGetApexRedirectRequest{
 		APIService:     a,
 		ctx:            ctx,
-		apexRedirectId: apexRedirectId,
+		apexRedirectID: apexRedirectID,
 	}
 }
 
@@ -513,7 +513,7 @@ func (a *ApexRedirectAPIService) GetApexRedirectExecute(r APIGetApexRedirectRequ
 	}
 
 	localVarPath := localBasePath + "/apex-redirects/{apex_redirect_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"apex_redirect_id"+"}", gourl.PathEscape(parameterToString(r.apexRedirectId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"apex_redirect_id"+"}", gourl.PathEscape(parameterToString(r.apexRedirectID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -604,8 +604,8 @@ func (a *ApexRedirectAPIService) GetApexRedirectExecute(r APIGetApexRedirectRequ
 type APIListApexRedirectsRequest struct {
 	ctx        context.Context
 	APIService ApexRedirectAPI
-	serviceId  string
-	versionId  int32
+	serviceID  string
+	versionID  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -619,16 +619,16 @@ ListApexRedirects List apex redirects
 List all apex redirects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
  @return APIListApexRedirectsRequest
 */
-func (a *ApexRedirectAPIService) ListApexRedirects(ctx context.Context, serviceId string, versionId int32) APIListApexRedirectsRequest {
+func (a *ApexRedirectAPIService) ListApexRedirects(ctx context.Context, serviceID string, versionID int32) APIListApexRedirectsRequest {
 	return APIListApexRedirectsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -648,8 +648,8 @@ func (a *ApexRedirectAPIService) ListApexRedirectsExecute(r APIListApexRedirects
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/apex-redirects"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -740,8 +740,8 @@ func (a *ApexRedirectAPIService) ListApexRedirectsExecute(r APIListApexRedirects
 type APIUpdateApexRedirectRequest struct {
 	ctx             context.Context
 	APIService      ApexRedirectAPI
-	apexRedirectId  string
-	serviceId       *string
+	apexRedirectID  string
+	serviceID       *string
 	version         *int32
 	createdAt       *time.Time
 	deletedAt       *time.Time
@@ -751,9 +751,9 @@ type APIUpdateApexRedirectRequest struct {
 	featureRevision *int32
 }
 
-// ServiceId returns a pointer to a request.
-func (r *APIUpdateApexRedirectRequest) ServiceId(serviceId string) *APIUpdateApexRedirectRequest {
-	r.serviceId = &serviceId
+// ServiceID returns a pointer to a request.
+func (r *APIUpdateApexRedirectRequest) ServiceID(serviceID string) *APIUpdateApexRedirectRequest {
+	r.serviceID = &serviceID
 	return r
 }
 
@@ -810,14 +810,14 @@ UpdateApexRedirect Update an apex redirect
 Update an apex redirect by its ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apexRedirectId
+ @param apexRedirectID
  @return APIUpdateApexRedirectRequest
 */
-func (a *ApexRedirectAPIService) UpdateApexRedirect(ctx context.Context, apexRedirectId string) APIUpdateApexRedirectRequest {
+func (a *ApexRedirectAPIService) UpdateApexRedirect(ctx context.Context, apexRedirectID string) APIUpdateApexRedirectRequest {
 	return APIUpdateApexRedirectRequest{
 		APIService:     a,
 		ctx:            ctx,
-		apexRedirectId: apexRedirectId,
+		apexRedirectID: apexRedirectID,
 	}
 }
 
@@ -837,7 +837,7 @@ func (a *ApexRedirectAPIService) UpdateApexRedirectExecute(r APIUpdateApexRedire
 	}
 
 	localVarPath := localBasePath + "/apex-redirects/{apex_redirect_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"apex_redirect_id"+"}", gourl.PathEscape(parameterToString(r.apexRedirectId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"apex_redirect_id"+"}", gourl.PathEscape(parameterToString(r.apexRedirectID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -860,19 +860,19 @@ func (a *ApexRedirectAPIService) UpdateApexRedirectExecute(r APIUpdateApexRedire
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.serviceId != nil {
-		paramJson, err := parameterToJSON(*r.serviceId)
+	if r.serviceID != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJson)
+		localVarFormParams.Add("service_id", paramJSON)
 	}
 	if r.version != nil {
-		paramJson, err := parameterToJSON(*r.version)
+		paramJSON, err := parameterToJSON(*r.version)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("version", paramJson)
+		localVarFormParams.Add("version", paramJSON)
 	}
 	if r.createdAt != nil {
 		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))

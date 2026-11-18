@@ -17,19 +17,19 @@ import (
 	"fmt"
 )
 
-// NetworkProtectRuleIpProtocol The IP protocol to match. Omit to match any protocol.
-type NetworkProtectRuleIpProtocol string
+// NetworkProtectRuleIPProtocol The IP protocol to match. Omit to match any protocol.
+type NetworkProtectRuleIPProtocol string
 
 // List of network_protect_rule_ip_protocol
 const (
-	NETWORKPROTECTRULEIPPROTOCOL_TCP    NetworkProtectRuleIpProtocol = "tcp"
-	NETWORKPROTECTRULEIPPROTOCOL_UDP    NetworkProtectRuleIpProtocol = "udp"
-	NETWORKPROTECTRULEIPPROTOCOL_ICMP   NetworkProtectRuleIpProtocol = "icmp"
-	NETWORKPROTECTRULEIPPROTOCOL_ICMPV6 NetworkProtectRuleIpProtocol = "icmpv6"
+	NETWORKPROTECTRULEIPPROTOCOL_TCP    NetworkProtectRuleIPProtocol = "tcp"
+	NETWORKPROTECTRULEIPPROTOCOL_UDP    NetworkProtectRuleIPProtocol = "udp"
+	NETWORKPROTECTRULEIPPROTOCOL_ICMP   NetworkProtectRuleIPProtocol = "icmp"
+	NETWORKPROTECTRULEIPPROTOCOL_ICMPV6 NetworkProtectRuleIPProtocol = "icmpv6"
 )
 
-// AllowedNetworkProtectRuleIpProtocolEnumValues All allowed values of NetworkProtectRuleIpProtocol enum
-var AllowedNetworkProtectRuleIpProtocolEnumValues = []NetworkProtectRuleIpProtocol{
+// AllowedNetworkProtectRuleIPProtocolEnumValues All allowed values of NetworkProtectRuleIPProtocol enum
+var AllowedNetworkProtectRuleIPProtocolEnumValues = []NetworkProtectRuleIPProtocol{
 	"tcp",
 	"udp",
 	"icmp",
@@ -38,36 +38,36 @@ var AllowedNetworkProtectRuleIpProtocolEnumValues = []NetworkProtectRuleIpProtoc
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NetworkProtectRuleIpProtocol) UnmarshalJSON(src []byte) error {
+func (v *NetworkProtectRuleIPProtocol) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := NetworkProtectRuleIpProtocol(value)
-	for _, existing := range AllowedNetworkProtectRuleIpProtocolEnumValues {
+	enumTypeValue := NetworkProtectRuleIPProtocol(value)
+	for _, existing := range AllowedNetworkProtectRuleIPProtocolEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid NetworkProtectRuleIpProtocol", value)
+	return fmt.Errorf("%+v is not a valid NetworkProtectRuleIPProtocol", value)
 }
 
-// NewNetworkProtectRuleIpProtocolFromValue returns a pointer to a valid NetworkProtectRuleIpProtocol
+// NewNetworkProtectRuleIPProtocolFromValue returns a pointer to a valid NetworkProtectRuleIPProtocol
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewNetworkProtectRuleIpProtocolFromValue(v string) (*NetworkProtectRuleIpProtocol, error) {
-	ev := NetworkProtectRuleIpProtocol(v)
+func NewNetworkProtectRuleIPProtocolFromValue(v string) (*NetworkProtectRuleIPProtocol, error) {
+	ev := NetworkProtectRuleIPProtocol(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for NetworkProtectRuleIpProtocol: valid values are %v", v, AllowedNetworkProtectRuleIpProtocolEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for NetworkProtectRuleIPProtocol: valid values are %v", v, AllowedNetworkProtectRuleIPProtocolEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v NetworkProtectRuleIpProtocol) IsValid() bool {
-	for _, existing := range AllowedNetworkProtectRuleIpProtocolEnumValues {
+func (v NetworkProtectRuleIPProtocol) IsValid() bool {
+	for _, existing := range AllowedNetworkProtectRuleIPProtocolEnumValues {
 		if existing == v {
 			return true
 		}
@@ -76,52 +76,52 @@ func (v NetworkProtectRuleIpProtocol) IsValid() bool {
 }
 
 // Ptr returns reference to network_protect_rule_ip_protocol value
-func (v NetworkProtectRuleIpProtocol) Ptr() *NetworkProtectRuleIpProtocol {
+func (v NetworkProtectRuleIPProtocol) Ptr() *NetworkProtectRuleIPProtocol {
 	return &v
 }
 
-// NullableNetworkProtectRuleIpProtocol is a helper abstraction for handling nullable networkprotectruleipprotocol types.
-type NullableNetworkProtectRuleIpProtocol struct {
-	value *NetworkProtectRuleIpProtocol
+// NullableNetworkProtectRuleIPProtocol is a helper abstraction for handling nullable networkprotectruleipprotocol types.
+type NullableNetworkProtectRuleIPProtocol struct {
+	value *NetworkProtectRuleIPProtocol
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableNetworkProtectRuleIpProtocol) Get() *NetworkProtectRuleIpProtocol {
+func (v NullableNetworkProtectRuleIPProtocol) Get() *NetworkProtectRuleIPProtocol {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableNetworkProtectRuleIpProtocol) Set(val *NetworkProtectRuleIpProtocol) {
+func (v *NullableNetworkProtectRuleIPProtocol) Set(val *NetworkProtectRuleIPProtocol) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableNetworkProtectRuleIpProtocol) IsSet() bool {
+func (v NullableNetworkProtectRuleIPProtocol) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableNetworkProtectRuleIpProtocol) Unset() {
+func (v *NullableNetworkProtectRuleIPProtocol) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableNetworkProtectRuleIpProtocol returns a pointer to a new instance of NullableNetworkProtectRuleIpProtocol.
-func NewNullableNetworkProtectRuleIpProtocol(val *NetworkProtectRuleIpProtocol) *NullableNetworkProtectRuleIpProtocol {
-	return &NullableNetworkProtectRuleIpProtocol{value: val, isSet: true}
+// NewNullableNetworkProtectRuleIPProtocol returns a pointer to a new instance of NullableNetworkProtectRuleIPProtocol.
+func NewNullableNetworkProtectRuleIPProtocol(val *NetworkProtectRuleIPProtocol) *NullableNetworkProtectRuleIPProtocol {
+	return &NullableNetworkProtectRuleIPProtocol{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableNetworkProtectRuleIpProtocol) MarshalJSON() ([]byte, error) {
+func (v NullableNetworkProtectRuleIPProtocol) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableNetworkProtectRuleIpProtocol) UnmarshalJSON(src []byte) error {
+func (v *NullableNetworkProtectRuleIPProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

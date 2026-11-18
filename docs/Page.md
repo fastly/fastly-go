@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Unique page identifier | [optional] 
-**WebsiteId** | Pointer to **string** | Parent website ID | [optional] 
+**ID** | Pointer to **string** | Unique page identifier | [optional] 
+**WebsiteID** | Pointer to **string** | Parent website ID | [optional] 
 **Name** | Pointer to **string** | Page name | [optional] 
 **Description** | Pointer to **string** | Page description | [optional] 
 **Notifications** | Pointer to [**[]Notification**](Notification.md) | Notification configurations for this page | [optional] 
@@ -32,55 +32,55 @@ NewPageWithDefaults instantiates a new Page object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *Page) GetId() string`
+`func (o *Page) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *Page) GetIdOk() (*string, bool)`
+`func (o *Page) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *Page) SetId(v string)`
+`func (o *Page) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *Page) HasId() bool`
+`func (o *Page) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetWebsiteId
+### GetWebsiteID
 
-`func (o *Page) GetWebsiteId() string`
+`func (o *Page) GetWebsiteID() string`
 
-GetWebsiteId returns the WebsiteId field if non-nil, zero value otherwise.
+GetWebsiteID returns the WebsiteID field if non-nil, zero value otherwise.
 
-### GetWebsiteIdOk
+### GetWebsiteIDOk
 
-`func (o *Page) GetWebsiteIdOk() (*string, bool)`
+`func (o *Page) GetWebsiteIDOk() (*string, bool)`
 
-GetWebsiteIdOk returns a tuple with the WebsiteId field if it's non-nil, zero value otherwise
+GetWebsiteIDOk returns a tuple with the WebsiteID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWebsiteId
+### SetWebsiteID
 
-`func (o *Page) SetWebsiteId(v string)`
+`func (o *Page) SetWebsiteID(v string)`
 
-SetWebsiteId sets WebsiteId field to given value.
+SetWebsiteID sets WebsiteID field to given value.
 
-### HasWebsiteId
+### HasWebsiteID
 
-`func (o *Page) HasWebsiteId() bool`
+`func (o *Page) HasWebsiteID() bool`
 
-HasWebsiteId returns a boolean if a field has been set.
+HasWebsiteID returns a boolean if a field has been set.
 
 ### GetName
 
@@ -234,5 +234,3 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

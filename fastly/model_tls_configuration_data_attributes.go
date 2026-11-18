@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// TlsConfigurationDataAttributes struct for TlsConfigurationDataAttributes
-type TlsConfigurationDataAttributes struct {
+// TLSConfigurationDataAttributes struct for TLSConfigurationDataAttributes
+type TLSConfigurationDataAttributes struct {
 	// A custom name for your TLS configuration.
 	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsConfigurationDataAttributes TlsConfigurationDataAttributes
+type _TLSConfigurationDataAttributes TLSConfigurationDataAttributes
 
-// NewTlsConfigurationDataAttributes instantiates a new TlsConfigurationDataAttributes object
+// NewTLSConfigurationDataAttributes instantiates a new TLSConfigurationDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsConfigurationDataAttributes() *TlsConfigurationDataAttributes {
-	this := TlsConfigurationDataAttributes{}
+func NewTLSConfigurationDataAttributes() *TLSConfigurationDataAttributes {
+	this := TLSConfigurationDataAttributes{}
 	return &this
 }
 
-// NewTlsConfigurationDataAttributesWithDefaults instantiates a new TlsConfigurationDataAttributes object
+// NewTLSConfigurationDataAttributesWithDefaults instantiates a new TLSConfigurationDataAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsConfigurationDataAttributesWithDefaults() *TlsConfigurationDataAttributes {
-	this := TlsConfigurationDataAttributes{}
+func NewTLSConfigurationDataAttributesWithDefaults() *TLSConfigurationDataAttributes {
+	this := TLSConfigurationDataAttributes{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *TlsConfigurationDataAttributes) GetName() string {
+func (o *TLSConfigurationDataAttributes) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *TlsConfigurationDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsConfigurationDataAttributes) GetNameOk() (*string, bool) {
+func (o *TLSConfigurationDataAttributes) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *TlsConfigurationDataAttributes) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *TlsConfigurationDataAttributes) HasName() bool {
+func (o *TLSConfigurationDataAttributes) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *TlsConfigurationDataAttributes) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *TlsConfigurationDataAttributes) SetName(v string) {
+func (o *TLSConfigurationDataAttributes) SetName(v string) {
 	o.Name = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsConfigurationDataAttributes) MarshalJSON() ([]byte, error) {
+func (o TLSConfigurationDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -91,11 +91,11 @@ func (o TlsConfigurationDataAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsConfigurationDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsConfigurationDataAttributes := _TlsConfigurationDataAttributes{}
+func (o *TLSConfigurationDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSConfigurationDataAttributes := _TLSConfigurationDataAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTlsConfigurationDataAttributes); err == nil {
-		*o = TlsConfigurationDataAttributes(varTlsConfigurationDataAttributes)
+	if err = json.Unmarshal(bytes, &varTLSConfigurationDataAttributes); err == nil {
+		*o = TLSConfigurationDataAttributes(varTLSConfigurationDataAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *TlsConfigurationDataAttributes) UnmarshalJSON(bytes []byte) (err error)
 	return err
 }
 
-// NullableTlsConfigurationDataAttributes is a helper abstraction for handling nullable tlsconfigurationdataattributes types.
-type NullableTlsConfigurationDataAttributes struct {
-	value *TlsConfigurationDataAttributes
+// NullableTLSConfigurationDataAttributes is a helper abstraction for handling nullable tlsconfigurationdataattributes types.
+type NullableTLSConfigurationDataAttributes struct {
+	value *TLSConfigurationDataAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsConfigurationDataAttributes) Get() *TlsConfigurationDataAttributes {
+func (v NullableTLSConfigurationDataAttributes) Get() *TLSConfigurationDataAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsConfigurationDataAttributes) Set(val *TlsConfigurationDataAttributes) {
+func (v *NullableTLSConfigurationDataAttributes) Set(val *TLSConfigurationDataAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsConfigurationDataAttributes) IsSet() bool {
+func (v NullableTLSConfigurationDataAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsConfigurationDataAttributes) Unset() {
+func (v *NullableTLSConfigurationDataAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsConfigurationDataAttributes returns a pointer to a new instance of NullableTlsConfigurationDataAttributes.
-func NewNullableTlsConfigurationDataAttributes(val *TlsConfigurationDataAttributes) *NullableTlsConfigurationDataAttributes {
-	return &NullableTlsConfigurationDataAttributes{value: val, isSet: true}
+// NewNullableTLSConfigurationDataAttributes returns a pointer to a new instance of NullableTLSConfigurationDataAttributes.
+func NewNullableTLSConfigurationDataAttributes(val *TLSConfigurationDataAttributes) *NullableTLSConfigurationDataAttributes {
+	return &NullableTLSConfigurationDataAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsConfigurationDataAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTLSConfigurationDataAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsConfigurationDataAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSConfigurationDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

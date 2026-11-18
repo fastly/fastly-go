@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
-**ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
+**CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
+**ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **Attributes** | Pointer to [**[]DdosProtectionAttributeStats**](DdosProtectionAttributeStats.md) |  | [optional] 
 **TrafficPercentage** | Pointer to **float32** | Rule traffic percentage for the event. | [optional] 
 
@@ -28,55 +28,55 @@ NewDdosProtectionTrafficStatsAllOfWithDefaults instantiates a new DdosProtection
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *DdosProtectionTrafficStatsAllOf) GetCustomerId() string`
+`func (o *DdosProtectionTrafficStatsAllOf) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *DdosProtectionTrafficStatsAllOf) GetCustomerIdOk() (*string, bool)`
+`func (o *DdosProtectionTrafficStatsAllOf) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *DdosProtectionTrafficStatsAllOf) SetCustomerId(v string)`
+`func (o *DdosProtectionTrafficStatsAllOf) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *DdosProtectionTrafficStatsAllOf) HasCustomerId() bool`
+`func (o *DdosProtectionTrafficStatsAllOf) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceID
 
-`func (o *DdosProtectionTrafficStatsAllOf) GetServiceId() string`
+`func (o *DdosProtectionTrafficStatsAllOf) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *DdosProtectionTrafficStatsAllOf) GetServiceIdOk() (*string, bool)`
+`func (o *DdosProtectionTrafficStatsAllOf) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *DdosProtectionTrafficStatsAllOf) SetServiceId(v string)`
+`func (o *DdosProtectionTrafficStatsAllOf) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *DdosProtectionTrafficStatsAllOf) HasServiceId() bool`
+`func (o *DdosProtectionTrafficStatsAllOf) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetAttributes
 
@@ -130,5 +130,3 @@ HasTrafficPercentage returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | [**BotManagementBotAction**](BotManagementBotAction.md) |  | 
-**BotId** | **string** | The unique identifier of the bot. | [readonly] 
+**BotID** | **string** | The unique identifier of the bot. | [readonly] 
 **Name** | **string** | The display name of the bot. | [readonly] 
-**CategoryId** | **string** | The ID of the category the bot belongs to. | [readonly] 
+**CategoryID** | **string** | The ID of the category the bot belongs to. | [readonly] 
 
 ## Methods
 
 ### NewBotManagementWorkspaceBotResponse
 
-`func NewBotManagementWorkspaceBotResponse(action BotManagementBotAction, botId string, name string, categoryId string, ) *BotManagementWorkspaceBotResponse`
+`func NewBotManagementWorkspaceBotResponse(action BotManagementBotAction, botID string, name string, categoryID string, ) *BotManagementWorkspaceBotResponse`
 
 NewBotManagementWorkspaceBotResponse instantiates a new BotManagementWorkspaceBotResponse object
 This constructor will assign default values to properties that have it defined,
@@ -48,24 +48,24 @@ and a boolean to check if the value has been set.
 SetAction sets Action field to given value.
 
 
-### GetBotId
+### GetBotID
 
-`func (o *BotManagementWorkspaceBotResponse) GetBotId() string`
+`func (o *BotManagementWorkspaceBotResponse) GetBotID() string`
 
-GetBotId returns the BotId field if non-nil, zero value otherwise.
+GetBotID returns the BotID field if non-nil, zero value otherwise.
 
-### GetBotIdOk
+### GetBotIDOk
 
-`func (o *BotManagementWorkspaceBotResponse) GetBotIdOk() (*string, bool)`
+`func (o *BotManagementWorkspaceBotResponse) GetBotIDOk() (*string, bool)`
 
-GetBotIdOk returns a tuple with the BotId field if it's non-nil, zero value otherwise
+GetBotIDOk returns a tuple with the BotID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBotId
+### SetBotID
 
-`func (o *BotManagementWorkspaceBotResponse) SetBotId(v string)`
+`func (o *BotManagementWorkspaceBotResponse) SetBotID(v string)`
 
-SetBotId sets BotId field to given value.
+SetBotID sets BotID field to given value.
 
 
 ### GetName
@@ -88,27 +88,25 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetCategoryId
+### GetCategoryID
 
-`func (o *BotManagementWorkspaceBotResponse) GetCategoryId() string`
+`func (o *BotManagementWorkspaceBotResponse) GetCategoryID() string`
 
-GetCategoryId returns the CategoryId field if non-nil, zero value otherwise.
+GetCategoryID returns the CategoryID field if non-nil, zero value otherwise.
 
-### GetCategoryIdOk
+### GetCategoryIDOk
 
-`func (o *BotManagementWorkspaceBotResponse) GetCategoryIdOk() (*string, bool)`
+`func (o *BotManagementWorkspaceBotResponse) GetCategoryIDOk() (*string, bool)`
 
-GetCategoryIdOk returns a tuple with the CategoryId field if it's non-nil, zero value otherwise
+GetCategoryIDOk returns a tuple with the CategoryID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCategoryId
+### SetCategoryID
 
-`func (o *BotManagementWorkspaceBotResponse) SetCategoryId(v string)`
+`func (o *BotManagementWorkspaceBotResponse) SetCategoryID(v string)`
 
-SetCategoryId sets CategoryId field to given value.
+SetCategoryID sets CategoryID field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

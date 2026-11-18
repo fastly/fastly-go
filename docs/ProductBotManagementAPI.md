@@ -33,12 +33,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductBotManagementAPI.DisableProductBotManagement(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductBotManagementAPI.DisableProductBotManagement(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.DisableProductBotManagement`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -98,12 +98,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductBotManagementAPI.EnableProductBotManagement(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductBotManagementAPI.EnableProductBotManagement(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.EnableProductBotManagement`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,7 +119,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -165,12 +165,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductBotManagementAPI.GetProductBotManagement(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductBotManagementAPI.GetProductBotManagement(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.GetProductBotManagement`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -186,7 +186,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -232,12 +232,12 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductBotManagementAPI.GetProductBotManagementConfiguration(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductBotManagementAPI.GetProductBotManagementConfiguration(ctx, serviceID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.GetProductBotManagementConfiguration`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -358,13 +358,13 @@ import (
 )
 
 func main() {
-    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     botManagementRequestUpdateConfiguration := *openapiclient.NewBotManagementRequestUpdateConfiguration("Contentguard_example") // BotManagementRequestUpdateConfiguration |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductBotManagementAPI.SetProductBotManagementConfiguration(ctx, serviceId).BotManagementRequestUpdateConfiguration(botManagementRequestUpdateConfiguration).Execute()
+    resp, r, err := apiClient.ProductBotManagementAPI.SetProductBotManagementConfiguration(ctx, serviceID).BotManagementRequestUpdateConfiguration(botManagementRequestUpdateConfiguration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.SetProductBotManagementConfiguration`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -380,7 +380,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -405,4 +405,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

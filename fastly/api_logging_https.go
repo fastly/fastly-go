@@ -27,102 +27,102 @@ var (
 	_ context.Context
 )
 
-// LoggingHttpsAPI defines an interface for interacting with the resource.
-type LoggingHttpsAPI interface {
+// LoggingHTTPSAPI defines an interface for interacting with the resource.
+type LoggingHTTPSAPI interface {
 
 	/*
-		CreateLogHttps Create an HTTPS log endpoint
+		CreateLogHTTPS Create an HTTPS log endpoint
 
 		Create an HTTPS object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @return APICreateLogHttpsRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogHTTPSRequest
 	*/
-	CreateLogHttps(ctx context.Context, serviceId string, versionId int32) APICreateLogHttpsRequest
+	CreateLogHTTPS(ctx context.Context, serviceID string, versionID int32) APICreateLogHTTPSRequest
 
-	// CreateLogHttpsExecute executes the request
-	//  @return LoggingHttpsResponse
-	CreateLogHttpsExecute(r APICreateLogHttpsRequest) (*LoggingHttpsResponse, *http.Response, error)
+	// CreateLogHTTPSExecute executes the request
+	//  @return LoggingHTTPSResponse
+	CreateLogHTTPSExecute(r APICreateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error)
 
 	/*
-		DeleteLogHttps Delete an HTTPS log endpoint
+		DeleteLogHTTPS Delete an HTTPS log endpoint
 
 		Delete the HTTPS object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @param loggingHttpsName The name for the real-time logging configuration.
-		 @return APIDeleteLogHttpsRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHTTPSName The name for the real-time logging configuration.
+		 @return APIDeleteLogHTTPSRequest
 	*/
-	DeleteLogHttps(ctx context.Context, serviceId string, versionId int32, loggingHttpsName string) APIDeleteLogHttpsRequest
+	DeleteLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIDeleteLogHTTPSRequest
 
-	// DeleteLogHttpsExecute executes the request
+	// DeleteLogHTTPSExecute executes the request
 	//  @return InlineResponse200
-	DeleteLogHttpsExecute(r APIDeleteLogHttpsRequest) (*InlineResponse200, *http.Response, error)
+	DeleteLogHTTPSExecute(r APIDeleteLogHTTPSRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		GetLogHttps Get an HTTPS log endpoint
+		GetLogHTTPS Get an HTTPS log endpoint
 
 		Get the HTTPS object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @param loggingHttpsName The name for the real-time logging configuration.
-		 @return APIGetLogHttpsRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHTTPSName The name for the real-time logging configuration.
+		 @return APIGetLogHTTPSRequest
 	*/
-	GetLogHttps(ctx context.Context, serviceId string, versionId int32, loggingHttpsName string) APIGetLogHttpsRequest
+	GetLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIGetLogHTTPSRequest
 
-	// GetLogHttpsExecute executes the request
-	//  @return LoggingHttpsResponse
-	GetLogHttpsExecute(r APIGetLogHttpsRequest) (*LoggingHttpsResponse, *http.Response, error)
+	// GetLogHTTPSExecute executes the request
+	//  @return LoggingHTTPSResponse
+	GetLogHTTPSExecute(r APIGetLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error)
 
 	/*
-		ListLogHttps List HTTPS log endpoints
+		ListLogHTTPS List HTTPS log endpoints
 
 		List all of the HTTPS objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @return APIListLogHttpsRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogHTTPSRequest
 	*/
-	ListLogHttps(ctx context.Context, serviceId string, versionId int32) APIListLogHttpsRequest
+	ListLogHTTPS(ctx context.Context, serviceID string, versionID int32) APIListLogHTTPSRequest
 
-	// ListLogHttpsExecute executes the request
-	//  @return []LoggingHttpsResponse
-	ListLogHttpsExecute(r APIListLogHttpsRequest) ([]LoggingHttpsResponse, *http.Response, error)
+	// ListLogHTTPSExecute executes the request
+	//  @return []LoggingHTTPSResponse
+	ListLogHTTPSExecute(r APIListLogHTTPSRequest) ([]LoggingHTTPSResponse, *http.Response, error)
 
 	/*
-		UpdateLogHttps Update an HTTPS log endpoint
+		UpdateLogHTTPS Update an HTTPS log endpoint
 
 		Update the HTTPS object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param versionId Integer identifying a service version.
-		 @param loggingHttpsName The name for the real-time logging configuration.
-		 @return APIUpdateLogHttpsRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHTTPSName The name for the real-time logging configuration.
+		 @return APIUpdateLogHTTPSRequest
 	*/
-	UpdateLogHttps(ctx context.Context, serviceId string, versionId int32, loggingHttpsName string) APIUpdateLogHttpsRequest
+	UpdateLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIUpdateLogHTTPSRequest
 
-	// UpdateLogHttpsExecute executes the request
-	//  @return LoggingHttpsResponse
-	UpdateLogHttpsExecute(r APIUpdateLogHttpsRequest) (*LoggingHttpsResponse, *http.Response, error)
+	// UpdateLogHTTPSExecute executes the request
+	//  @return LoggingHTTPSResponse
+	UpdateLogHTTPSExecute(r APIUpdateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error)
 }
 
-// LoggingHttpsAPIService LoggingHttpsAPI service
-type LoggingHttpsAPIService service
+// LoggingHTTPSAPIService LoggingHTTPSAPI service
+type LoggingHTTPSAPIService service
 
-// APICreateLogHttpsRequest represents a request for the resource.
-type APICreateLogHttpsRequest struct {
+// APICreateLogHTTPSRequest represents a request for the resource.
+type APICreateLogHTTPSRequest struct {
 	ctx                 context.Context
-	APIService          LoggingHttpsAPI
-	serviceId           string
-	versionId           int32
+	APIService          LoggingHTTPSAPI
+	serviceID           string
+	versionID           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -146,167 +146,167 @@ type APICreateLogHttpsRequest struct {
 }
 
 // Name The name for the real-time logging configuration.
-func (r *APICreateLogHttpsRequest) Name(name string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) Name(name string) *APICreateLogHTTPSRequest {
 	r.name = &name
 	return r
 }
 
 // Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
-func (r *APICreateLogHttpsRequest) Placement(placement string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) Placement(placement string) *APICreateLogHTTPSRequest {
 	r.placement = &placement
 	return r
 }
 
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
-func (r *APICreateLogHttpsRequest) ResponseCondition(responseCondition string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) ResponseCondition(responseCondition string) *APICreateLogHTTPSRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
 
 // Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
-func (r *APICreateLogHttpsRequest) Format(format string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) Format(format string) *APICreateLogHTTPSRequest {
 	r.format = &format
 	return r
 }
 
 // LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
-func (r *APICreateLogHttpsRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogHTTPSRequest {
 	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
 // FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
-func (r *APICreateLogHttpsRequest) FormatVersion(formatVersion int32) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) FormatVersion(formatVersion int32) *APICreateLogHTTPSRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
 
-// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APICreateLogHttpsRequest) TlsCaCert(tlsCaCert string) *APICreateLogHttpsRequest {
+// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APICreateLogHTTPSRequest) TLSCaCert(tlsCaCert string) *APICreateLogHTTPSRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogHttpsRequest) TlsClientCert(tlsClientCert string) *APICreateLogHttpsRequest {
+// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogHTTPSRequest) TLSClientCert(tlsClientCert string) *APICreateLogHTTPSRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogHttpsRequest) TlsClientKey(tlsClientKey string) *APICreateLogHttpsRequest {
+// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogHTTPSRequest) TLSClientKey(tlsClientKey string) *APICreateLogHTTPSRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APICreateLogHttpsRequest) TlsHostname(tlsHostname string) *APICreateLogHttpsRequest {
+// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APICreateLogHTTPSRequest) TLSHostname(tlsHostname string) *APICreateLogHTTPSRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
 
 // RequestMaxEntries The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (10k).
-func (r *APICreateLogHttpsRequest) RequestMaxEntries(requestMaxEntries int32) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) RequestMaxEntries(requestMaxEntries int32) *APICreateLogHTTPSRequest {
 	r.requestMaxEntries = &requestMaxEntries
 	return r
 }
 
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (100MB).
-func (r *APICreateLogHttpsRequest) RequestMaxBytes(requestMaxBytes int32) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) RequestMaxBytes(requestMaxBytes int32) *APICreateLogHTTPSRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
 
-// Url The URL to send logs to. Must use HTTPS. Required.
-func (r *APICreateLogHttpsRequest) Url(url string) *APICreateLogHttpsRequest {
+// URL The URL to send logs to. Must use HTTPS. Required.
+func (r *APICreateLogHTTPSRequest) URL(url string) *APICreateLogHTTPSRequest {
 	r.url = &url
 	return r
 }
 
 // ContentType Content type of the header sent with the request.
-func (r *APICreateLogHttpsRequest) ContentType(contentType string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) ContentType(contentType string) *APICreateLogHTTPSRequest {
 	r.contentType = &contentType
 	return r
 }
 
 // HeaderName Name of the custom header sent with the request.
-func (r *APICreateLogHttpsRequest) HeaderName(headerName string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) HeaderName(headerName string) *APICreateLogHTTPSRequest {
 	r.headerName = &headerName
 	return r
 }
 
 // MessageType returns a pointer to a request.
-func (r *APICreateLogHttpsRequest) MessageType(messageType LoggingMessageType) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) MessageType(messageType LoggingMessageType) *APICreateLogHTTPSRequest {
 	r.messageType = &messageType
 	return r
 }
 
 // HeaderValue Value of the custom header sent with the request.
-func (r *APICreateLogHttpsRequest) HeaderValue(headerValue string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) HeaderValue(headerValue string) *APICreateLogHTTPSRequest {
 	r.headerValue = &headerValue
 	return r
 }
 
 // Method HTTP method used for request.
-func (r *APICreateLogHttpsRequest) Method(method string) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) Method(method string) *APICreateLogHTTPSRequest {
 	r.method = &method
 	return r
 }
 
-// JsonFormat Enforces valid JSON formatting for log entries.
-func (r *APICreateLogHttpsRequest) JsonFormat(jsonFormat string) *APICreateLogHttpsRequest {
+// JSONFormat Enforces valid JSON formatting for log entries.
+func (r *APICreateLogHTTPSRequest) JSONFormat(jsonFormat string) *APICreateLogHTTPSRequest {
 	r.jsonFormat = &jsonFormat
 	return r
 }
 
 // Period How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of &#x60;0&#x60; sends logs at the same interval as the default, which is &#x60;5&#x60; seconds.
-func (r *APICreateLogHttpsRequest) Period(period int32) *APICreateLogHttpsRequest {
+func (r *APICreateLogHTTPSRequest) Period(period int32) *APICreateLogHTTPSRequest {
 	r.period = &period
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateLogHttpsRequest) Execute() (*LoggingHttpsResponse, *http.Response, error) {
-	return r.APIService.CreateLogHttpsExecute(r)
+func (r APICreateLogHTTPSRequest) Execute() (*LoggingHTTPSResponse, *http.Response, error) {
+	return r.APIService.CreateLogHTTPSExecute(r)
 }
 
 /*
-CreateLogHttps Create an HTTPS log endpoint
+CreateLogHTTPS Create an HTTPS log endpoint
 
 Create an HTTPS object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @return APICreateLogHttpsRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @return APICreateLogHTTPSRequest
 */
-func (a *LoggingHttpsAPIService) CreateLogHttps(ctx context.Context, serviceId string, versionId int32) APICreateLogHttpsRequest {
-	return APICreateLogHttpsRequest{
+func (a *LoggingHTTPSAPIService) CreateLogHTTPS(ctx context.Context, serviceID string, versionID int32) APICreateLogHTTPSRequest {
+	return APICreateLogHTTPSRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
-// CreateLogHttpsExecute executes the request
-//  @return LoggingHttpsResponse
-func (a *LoggingHttpsAPIService) CreateLogHttpsExecute(r APICreateLogHttpsRequest) (*LoggingHttpsResponse, *http.Response, error) {
+// CreateLogHTTPSExecute executes the request
+//  @return LoggingHTTPSResponse
+func (a *LoggingHTTPSAPIService) CreateLogHTTPSExecute(r APICreateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *LoggingHttpsResponse
+		localVarReturnValue *LoggingHTTPSResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHttpsAPIService.CreateLogHttps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.CreateLogHTTPS")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/https"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -453,44 +453,44 @@ func (a *LoggingHttpsAPIService) CreateLogHttpsExecute(r APICreateLogHttpsReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteLogHttpsRequest represents a request for the resource.
-type APIDeleteLogHttpsRequest struct {
+// APIDeleteLogHTTPSRequest represents a request for the resource.
+type APIDeleteLogHTTPSRequest struct {
 	ctx              context.Context
-	APIService       LoggingHttpsAPI
-	serviceId        string
-	versionId        int32
-	loggingHttpsName string
+	APIService       LoggingHTTPSAPI
+	serviceID        string
+	versionID        int32
+	loggingHTTPSName string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteLogHttpsRequest) Execute() (*InlineResponse200, *http.Response, error) {
-	return r.APIService.DeleteLogHttpsExecute(r)
+func (r APIDeleteLogHTTPSRequest) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.DeleteLogHTTPSExecute(r)
 }
 
 /*
-DeleteLogHttps Delete an HTTPS log endpoint
+DeleteLogHTTPS Delete an HTTPS log endpoint
 
 Delete the HTTPS object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @param loggingHttpsName The name for the real-time logging configuration.
- @return APIDeleteLogHttpsRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param loggingHTTPSName The name for the real-time logging configuration.
+ @return APIDeleteLogHTTPSRequest
 */
-func (a *LoggingHttpsAPIService) DeleteLogHttps(ctx context.Context, serviceId string, versionId int32, loggingHttpsName string) APIDeleteLogHttpsRequest {
-	return APIDeleteLogHttpsRequest{
+func (a *LoggingHTTPSAPIService) DeleteLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIDeleteLogHTTPSRequest {
+	return APIDeleteLogHTTPSRequest{
 		APIService:       a,
 		ctx:              ctx,
-		serviceId:        serviceId,
-		versionId:        versionId,
-		loggingHttpsName: loggingHttpsName,
+		serviceID:        serviceID,
+		versionID:        versionID,
+		loggingHTTPSName: loggingHTTPSName,
 	}
 }
 
-// DeleteLogHttpsExecute executes the request
+// DeleteLogHTTPSExecute executes the request
 //  @return InlineResponse200
-func (a *LoggingHttpsAPIService) DeleteLogHttpsExecute(r APIDeleteLogHttpsRequest) (*InlineResponse200, *http.Response, error) {
+func (a *LoggingHTTPSAPIService) DeleteLogHTTPSExecute(r APIDeleteLogHTTPSRequest) (*InlineResponse200, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
@@ -498,15 +498,15 @@ func (a *LoggingHttpsAPIService) DeleteLogHttpsExecute(r APIDeleteLogHttpsReques
 		localVarReturnValue *InlineResponse200
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHttpsAPIService.DeleteLogHttps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.DeleteLogHTTPS")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_https_name"+"}", gourl.PathEscape(parameterToString(r.loggingHttpsName, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_https_name"+"}", gourl.PathEscape(parameterToString(r.loggingHTTPSName, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -593,60 +593,60 @@ func (a *LoggingHttpsAPIService) DeleteLogHttpsExecute(r APIDeleteLogHttpsReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetLogHttpsRequest represents a request for the resource.
-type APIGetLogHttpsRequest struct {
+// APIGetLogHTTPSRequest represents a request for the resource.
+type APIGetLogHTTPSRequest struct {
 	ctx              context.Context
-	APIService       LoggingHttpsAPI
-	serviceId        string
-	versionId        int32
-	loggingHttpsName string
+	APIService       LoggingHTTPSAPI
+	serviceID        string
+	versionID        int32
+	loggingHTTPSName string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetLogHttpsRequest) Execute() (*LoggingHttpsResponse, *http.Response, error) {
-	return r.APIService.GetLogHttpsExecute(r)
+func (r APIGetLogHTTPSRequest) Execute() (*LoggingHTTPSResponse, *http.Response, error) {
+	return r.APIService.GetLogHTTPSExecute(r)
 }
 
 /*
-GetLogHttps Get an HTTPS log endpoint
+GetLogHTTPS Get an HTTPS log endpoint
 
 Get the HTTPS object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @param loggingHttpsName The name for the real-time logging configuration.
- @return APIGetLogHttpsRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param loggingHTTPSName The name for the real-time logging configuration.
+ @return APIGetLogHTTPSRequest
 */
-func (a *LoggingHttpsAPIService) GetLogHttps(ctx context.Context, serviceId string, versionId int32, loggingHttpsName string) APIGetLogHttpsRequest {
-	return APIGetLogHttpsRequest{
+func (a *LoggingHTTPSAPIService) GetLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIGetLogHTTPSRequest {
+	return APIGetLogHTTPSRequest{
 		APIService:       a,
 		ctx:              ctx,
-		serviceId:        serviceId,
-		versionId:        versionId,
-		loggingHttpsName: loggingHttpsName,
+		serviceID:        serviceID,
+		versionID:        versionID,
+		loggingHTTPSName: loggingHTTPSName,
 	}
 }
 
-// GetLogHttpsExecute executes the request
-//  @return LoggingHttpsResponse
-func (a *LoggingHttpsAPIService) GetLogHttpsExecute(r APIGetLogHttpsRequest) (*LoggingHttpsResponse, *http.Response, error) {
+// GetLogHTTPSExecute executes the request
+//  @return LoggingHTTPSResponse
+func (a *LoggingHTTPSAPIService) GetLogHTTPSExecute(r APIGetLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *LoggingHttpsResponse
+		localVarReturnValue *LoggingHTTPSResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHttpsAPIService.GetLogHttps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.GetLogHTTPS")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_https_name"+"}", gourl.PathEscape(parameterToString(r.loggingHttpsName, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_https_name"+"}", gourl.PathEscape(parameterToString(r.loggingHTTPSName, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -733,56 +733,56 @@ func (a *LoggingHttpsAPIService) GetLogHttpsExecute(r APIGetLogHttpsRequest) (*L
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListLogHttpsRequest represents a request for the resource.
-type APIListLogHttpsRequest struct {
+// APIListLogHTTPSRequest represents a request for the resource.
+type APIListLogHTTPSRequest struct {
 	ctx        context.Context
-	APIService LoggingHttpsAPI
-	serviceId  string
-	versionId  int32
+	APIService LoggingHTTPSAPI
+	serviceID  string
+	versionID  int32
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListLogHttpsRequest) Execute() ([]LoggingHttpsResponse, *http.Response, error) {
-	return r.APIService.ListLogHttpsExecute(r)
+func (r APIListLogHTTPSRequest) Execute() ([]LoggingHTTPSResponse, *http.Response, error) {
+	return r.APIService.ListLogHTTPSExecute(r)
 }
 
 /*
-ListLogHttps List HTTPS log endpoints
+ListLogHTTPS List HTTPS log endpoints
 
 List all of the HTTPS objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @return APIListLogHttpsRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @return APIListLogHTTPSRequest
 */
-func (a *LoggingHttpsAPIService) ListLogHttps(ctx context.Context, serviceId string, versionId int32) APIListLogHttpsRequest {
-	return APIListLogHttpsRequest{
+func (a *LoggingHTTPSAPIService) ListLogHTTPS(ctx context.Context, serviceID string, versionID int32) APIListLogHTTPSRequest {
+	return APIListLogHTTPSRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		versionId:  versionId,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
-// ListLogHttpsExecute executes the request
-//  @return []LoggingHttpsResponse
-func (a *LoggingHttpsAPIService) ListLogHttpsExecute(r APIListLogHttpsRequest) ([]LoggingHttpsResponse, *http.Response, error) {
+// ListLogHTTPSExecute executes the request
+//  @return []LoggingHTTPSResponse
+func (a *LoggingHTTPSAPIService) ListLogHTTPSExecute(r APIListLogHTTPSRequest) ([]LoggingHTTPSResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue []LoggingHttpsResponse
+		localVarReturnValue []LoggingHTTPSResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHttpsAPIService.ListLogHttps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.ListLogHTTPS")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/https"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -869,13 +869,13 @@ func (a *LoggingHttpsAPIService) ListLogHttpsExecute(r APIListLogHttpsRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUpdateLogHttpsRequest represents a request for the resource.
-type APIUpdateLogHttpsRequest struct {
+// APIUpdateLogHTTPSRequest represents a request for the resource.
+type APIUpdateLogHTTPSRequest struct {
 	ctx                 context.Context
-	APIService          LoggingHttpsAPI
-	serviceId           string
-	versionId           int32
-	loggingHttpsName    string
+	APIService          LoggingHTTPSAPI
+	serviceID           string
+	versionID           int32
+	loggingHTTPSName    string
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -899,170 +899,170 @@ type APIUpdateLogHttpsRequest struct {
 }
 
 // Name The name for the real-time logging configuration.
-func (r *APIUpdateLogHttpsRequest) Name(name string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) Name(name string) *APIUpdateLogHTTPSRequest {
 	r.name = &name
 	return r
 }
 
 // Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
-func (r *APIUpdateLogHttpsRequest) Placement(placement string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) Placement(placement string) *APIUpdateLogHTTPSRequest {
 	r.placement = &placement
 	return r
 }
 
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
-func (r *APIUpdateLogHttpsRequest) ResponseCondition(responseCondition string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) ResponseCondition(responseCondition string) *APIUpdateLogHTTPSRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
 
 // Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
-func (r *APIUpdateLogHttpsRequest) Format(format string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) Format(format string) *APIUpdateLogHTTPSRequest {
 	r.format = &format
 	return r
 }
 
 // LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
-func (r *APIUpdateLogHttpsRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogHTTPSRequest {
 	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
 // FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
-func (r *APIUpdateLogHttpsRequest) FormatVersion(formatVersion int32) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) FormatVersion(formatVersion int32) *APIUpdateLogHTTPSRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
 
-// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APIUpdateLogHttpsRequest) TlsCaCert(tlsCaCert string) *APIUpdateLogHttpsRequest {
+// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APIUpdateLogHTTPSRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogHTTPSRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogHttpsRequest) TlsClientCert(tlsClientCert string) *APIUpdateLogHttpsRequest {
+// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogHTTPSRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogHTTPSRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogHttpsRequest) TlsClientKey(tlsClientKey string) *APIUpdateLogHttpsRequest {
+// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogHTTPSRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogHTTPSRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APIUpdateLogHttpsRequest) TlsHostname(tlsHostname string) *APIUpdateLogHttpsRequest {
+// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APIUpdateLogHTTPSRequest) TLSHostname(tlsHostname string) *APIUpdateLogHTTPSRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
 
 // RequestMaxEntries The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (10k).
-func (r *APIUpdateLogHttpsRequest) RequestMaxEntries(requestMaxEntries int32) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) RequestMaxEntries(requestMaxEntries int32) *APIUpdateLogHTTPSRequest {
 	r.requestMaxEntries = &requestMaxEntries
 	return r
 }
 
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (100MB).
-func (r *APIUpdateLogHttpsRequest) RequestMaxBytes(requestMaxBytes int32) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) RequestMaxBytes(requestMaxBytes int32) *APIUpdateLogHTTPSRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
 
-// Url The URL to send logs to. Must use HTTPS. Required.
-func (r *APIUpdateLogHttpsRequest) Url(url string) *APIUpdateLogHttpsRequest {
+// URL The URL to send logs to. Must use HTTPS. Required.
+func (r *APIUpdateLogHTTPSRequest) URL(url string) *APIUpdateLogHTTPSRequest {
 	r.url = &url
 	return r
 }
 
 // ContentType Content type of the header sent with the request.
-func (r *APIUpdateLogHttpsRequest) ContentType(contentType string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) ContentType(contentType string) *APIUpdateLogHTTPSRequest {
 	r.contentType = &contentType
 	return r
 }
 
 // HeaderName Name of the custom header sent with the request.
-func (r *APIUpdateLogHttpsRequest) HeaderName(headerName string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) HeaderName(headerName string) *APIUpdateLogHTTPSRequest {
 	r.headerName = &headerName
 	return r
 }
 
 // MessageType returns a pointer to a request.
-func (r *APIUpdateLogHttpsRequest) MessageType(messageType LoggingMessageType) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) MessageType(messageType LoggingMessageType) *APIUpdateLogHTTPSRequest {
 	r.messageType = &messageType
 	return r
 }
 
 // HeaderValue Value of the custom header sent with the request.
-func (r *APIUpdateLogHttpsRequest) HeaderValue(headerValue string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) HeaderValue(headerValue string) *APIUpdateLogHTTPSRequest {
 	r.headerValue = &headerValue
 	return r
 }
 
 // Method HTTP method used for request.
-func (r *APIUpdateLogHttpsRequest) Method(method string) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) Method(method string) *APIUpdateLogHTTPSRequest {
 	r.method = &method
 	return r
 }
 
-// JsonFormat Enforces valid JSON formatting for log entries.
-func (r *APIUpdateLogHttpsRequest) JsonFormat(jsonFormat string) *APIUpdateLogHttpsRequest {
+// JSONFormat Enforces valid JSON formatting for log entries.
+func (r *APIUpdateLogHTTPSRequest) JSONFormat(jsonFormat string) *APIUpdateLogHTTPSRequest {
 	r.jsonFormat = &jsonFormat
 	return r
 }
 
 // Period How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of &#x60;0&#x60; sends logs at the same interval as the default, which is &#x60;5&#x60; seconds.
-func (r *APIUpdateLogHttpsRequest) Period(period int32) *APIUpdateLogHttpsRequest {
+func (r *APIUpdateLogHTTPSRequest) Period(period int32) *APIUpdateLogHTTPSRequest {
 	r.period = &period
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateLogHttpsRequest) Execute() (*LoggingHttpsResponse, *http.Response, error) {
-	return r.APIService.UpdateLogHttpsExecute(r)
+func (r APIUpdateLogHTTPSRequest) Execute() (*LoggingHTTPSResponse, *http.Response, error) {
+	return r.APIService.UpdateLogHTTPSExecute(r)
 }
 
 /*
-UpdateLogHttps Update an HTTPS log endpoint
+UpdateLogHTTPS Update an HTTPS log endpoint
 
 Update the HTTPS object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param versionId Integer identifying a service version.
- @param loggingHttpsName The name for the real-time logging configuration.
- @return APIUpdateLogHttpsRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param loggingHTTPSName The name for the real-time logging configuration.
+ @return APIUpdateLogHTTPSRequest
 */
-func (a *LoggingHttpsAPIService) UpdateLogHttps(ctx context.Context, serviceId string, versionId int32, loggingHttpsName string) APIUpdateLogHttpsRequest {
-	return APIUpdateLogHttpsRequest{
+func (a *LoggingHTTPSAPIService) UpdateLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIUpdateLogHTTPSRequest {
+	return APIUpdateLogHTTPSRequest{
 		APIService:       a,
 		ctx:              ctx,
-		serviceId:        serviceId,
-		versionId:        versionId,
-		loggingHttpsName: loggingHttpsName,
+		serviceID:        serviceID,
+		versionID:        versionID,
+		loggingHTTPSName: loggingHTTPSName,
 	}
 }
 
-// UpdateLogHttpsExecute executes the request
-//  @return LoggingHttpsResponse
-func (a *LoggingHttpsAPIService) UpdateLogHttpsExecute(r APIUpdateLogHttpsRequest) (*LoggingHttpsResponse, *http.Response, error) {
+// UpdateLogHTTPSExecute executes the request
+//  @return LoggingHTTPSResponse
+func (a *LoggingHTTPSAPIService) UpdateLogHTTPSExecute(r APIUpdateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *LoggingHttpsResponse
+		localVarReturnValue *LoggingHTTPSResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHttpsAPIService.UpdateLogHttps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.UpdateLogHTTPS")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_https_name"+"}", gourl.PathEscape(parameterToString(r.loggingHttpsName, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_https_name"+"}", gourl.PathEscape(parameterToString(r.loggingHTTPSName, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

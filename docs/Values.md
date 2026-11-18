@@ -131,12 +131,12 @@ Name | Type | Description | Notes
 **ComputeRespStatus505** | Pointer to **int64** | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. | [optional] 
 **ComputeRespStatus530** | Pointer to **int64** | Number of responses delivered with status code 530 by the Compute platform. | [optional] 
 **ComputeRespStatus5xx** | Pointer to **int64** | Number of \&quot;Server Error\&quot; category status codes delivered by the Compute platform. | [optional] 
-**Http2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
-**Http3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
-**TlsV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
-**TlsV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
-**TlsV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
-**TlsV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
+**HTTP2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
+**HTTP3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
+**TLSV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
+**TLSV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
+**TLSV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
+**TLSV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
 **Status499** | Pointer to **int64** | Number of responses sent with status code 499 (Client Disconnected). | [optional] 
 
 ## Methods
@@ -3333,155 +3333,155 @@ SetComputeRespStatus5xx sets ComputeRespStatus5xx field to given value.
 
 HasComputeRespStatus5xx returns a boolean if a field has been set.
 
-### GetHttp2
+### GetHTTP2
 
-`func (o *Values) GetHttp2() int64`
+`func (o *Values) GetHTTP2() int64`
 
-GetHttp2 returns the Http2 field if non-nil, zero value otherwise.
+GetHTTP2 returns the HTTP2 field if non-nil, zero value otherwise.
 
-### GetHttp2Ok
+### GetHTTP2Ok
 
-`func (o *Values) GetHttp2Ok() (*int64, bool)`
+`func (o *Values) GetHTTP2Ok() (*int64, bool)`
 
-GetHttp2Ok returns a tuple with the Http2 field if it's non-nil, zero value otherwise
+GetHTTP2Ok returns a tuple with the HTTP2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHttp2
+### SetHTTP2
 
-`func (o *Values) SetHttp2(v int64)`
+`func (o *Values) SetHTTP2(v int64)`
 
-SetHttp2 sets Http2 field to given value.
+SetHTTP2 sets HTTP2 field to given value.
 
-### HasHttp2
+### HasHTTP2
 
-`func (o *Values) HasHttp2() bool`
+`func (o *Values) HasHTTP2() bool`
 
-HasHttp2 returns a boolean if a field has been set.
+HasHTTP2 returns a boolean if a field has been set.
 
-### GetHttp3
+### GetHTTP3
 
-`func (o *Values) GetHttp3() int64`
+`func (o *Values) GetHTTP3() int64`
 
-GetHttp3 returns the Http3 field if non-nil, zero value otherwise.
+GetHTTP3 returns the HTTP3 field if non-nil, zero value otherwise.
 
-### GetHttp3Ok
+### GetHTTP3Ok
 
-`func (o *Values) GetHttp3Ok() (*int64, bool)`
+`func (o *Values) GetHTTP3Ok() (*int64, bool)`
 
-GetHttp3Ok returns a tuple with the Http3 field if it's non-nil, zero value otherwise
+GetHTTP3Ok returns a tuple with the HTTP3 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHttp3
+### SetHTTP3
 
-`func (o *Values) SetHttp3(v int64)`
+`func (o *Values) SetHTTP3(v int64)`
 
-SetHttp3 sets Http3 field to given value.
+SetHTTP3 sets HTTP3 field to given value.
 
-### HasHttp3
+### HasHTTP3
 
-`func (o *Values) HasHttp3() bool`
+`func (o *Values) HasHTTP3() bool`
 
-HasHttp3 returns a boolean if a field has been set.
+HasHTTP3 returns a boolean if a field has been set.
 
-### GetTlsV10
+### GetTLSV10
 
-`func (o *Values) GetTlsV10() int64`
+`func (o *Values) GetTLSV10() int64`
 
-GetTlsV10 returns the TlsV10 field if non-nil, zero value otherwise.
+GetTLSV10 returns the TLSV10 field if non-nil, zero value otherwise.
 
-### GetTlsV10Ok
+### GetTLSV10Ok
 
-`func (o *Values) GetTlsV10Ok() (*int64, bool)`
+`func (o *Values) GetTLSV10Ok() (*int64, bool)`
 
-GetTlsV10Ok returns a tuple with the TlsV10 field if it's non-nil, zero value otherwise
+GetTLSV10Ok returns a tuple with the TLSV10 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV10
+### SetTLSV10
 
-`func (o *Values) SetTlsV10(v int64)`
+`func (o *Values) SetTLSV10(v int64)`
 
-SetTlsV10 sets TlsV10 field to given value.
+SetTLSV10 sets TLSV10 field to given value.
 
-### HasTlsV10
+### HasTLSV10
 
-`func (o *Values) HasTlsV10() bool`
+`func (o *Values) HasTLSV10() bool`
 
-HasTlsV10 returns a boolean if a field has been set.
+HasTLSV10 returns a boolean if a field has been set.
 
-### GetTlsV11
+### GetTLSV11
 
-`func (o *Values) GetTlsV11() int64`
+`func (o *Values) GetTLSV11() int64`
 
-GetTlsV11 returns the TlsV11 field if non-nil, zero value otherwise.
+GetTLSV11 returns the TLSV11 field if non-nil, zero value otherwise.
 
-### GetTlsV11Ok
+### GetTLSV11Ok
 
-`func (o *Values) GetTlsV11Ok() (*int64, bool)`
+`func (o *Values) GetTLSV11Ok() (*int64, bool)`
 
-GetTlsV11Ok returns a tuple with the TlsV11 field if it's non-nil, zero value otherwise
+GetTLSV11Ok returns a tuple with the TLSV11 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV11
+### SetTLSV11
 
-`func (o *Values) SetTlsV11(v int64)`
+`func (o *Values) SetTLSV11(v int64)`
 
-SetTlsV11 sets TlsV11 field to given value.
+SetTLSV11 sets TLSV11 field to given value.
 
-### HasTlsV11
+### HasTLSV11
 
-`func (o *Values) HasTlsV11() bool`
+`func (o *Values) HasTLSV11() bool`
 
-HasTlsV11 returns a boolean if a field has been set.
+HasTLSV11 returns a boolean if a field has been set.
 
-### GetTlsV12
+### GetTLSV12
 
-`func (o *Values) GetTlsV12() int64`
+`func (o *Values) GetTLSV12() int64`
 
-GetTlsV12 returns the TlsV12 field if non-nil, zero value otherwise.
+GetTLSV12 returns the TLSV12 field if non-nil, zero value otherwise.
 
-### GetTlsV12Ok
+### GetTLSV12Ok
 
-`func (o *Values) GetTlsV12Ok() (*int64, bool)`
+`func (o *Values) GetTLSV12Ok() (*int64, bool)`
 
-GetTlsV12Ok returns a tuple with the TlsV12 field if it's non-nil, zero value otherwise
+GetTLSV12Ok returns a tuple with the TLSV12 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV12
+### SetTLSV12
 
-`func (o *Values) SetTlsV12(v int64)`
+`func (o *Values) SetTLSV12(v int64)`
 
-SetTlsV12 sets TlsV12 field to given value.
+SetTLSV12 sets TLSV12 field to given value.
 
-### HasTlsV12
+### HasTLSV12
 
-`func (o *Values) HasTlsV12() bool`
+`func (o *Values) HasTLSV12() bool`
 
-HasTlsV12 returns a boolean if a field has been set.
+HasTLSV12 returns a boolean if a field has been set.
 
-### GetTlsV13
+### GetTLSV13
 
-`func (o *Values) GetTlsV13() int64`
+`func (o *Values) GetTLSV13() int64`
 
-GetTlsV13 returns the TlsV13 field if non-nil, zero value otherwise.
+GetTLSV13 returns the TLSV13 field if non-nil, zero value otherwise.
 
-### GetTlsV13Ok
+### GetTLSV13Ok
 
-`func (o *Values) GetTlsV13Ok() (*int64, bool)`
+`func (o *Values) GetTLSV13Ok() (*int64, bool)`
 
-GetTlsV13Ok returns a tuple with the TlsV13 field if it's non-nil, zero value otherwise
+GetTLSV13Ok returns a tuple with the TLSV13 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsV13
+### SetTLSV13
 
-`func (o *Values) SetTlsV13(v int64)`
+`func (o *Values) SetTLSV13(v int64)`
 
-SetTlsV13 sets TlsV13 field to given value.
+SetTLSV13 sets TLSV13 field to given value.
 
-### HasTlsV13
+### HasTLSV13
 
-`func (o *Values) HasTlsV13() bool`
+`func (o *Values) HasTLSV13() bool`
 
-HasTlsV13 returns a boolean if a field has been set.
+HasTLSV13 returns a boolean if a field has been set.
 
 ### GetStatus499
 
@@ -3510,5 +3510,3 @@ HasStatus499 returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

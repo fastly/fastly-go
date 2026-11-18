@@ -20,7 +20,7 @@ import (
 // TypeInvitation Resource type
 type TypeInvitation string
 
-// List of type_invitation
+// List of resourceTypeinvitation
 const (
 	TYPEINVITATION_INVITATION TypeInvitation = "invitation"
 )
@@ -69,7 +69,7 @@ func (v TypeInvitation) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to type_invitation value
+// Ptr returns reference to resourceTypeinvitation value
 func (v TypeInvitation) Ptr() *TypeInvitation {
 	return &v
 }

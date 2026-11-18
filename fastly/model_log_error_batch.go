@@ -19,7 +19,7 @@ import (
 // LogErrorBatch struct for LogErrorBatch
 type LogErrorBatch struct {
 	// Unique identifier for this batch of logs.
-	BatchId              *string    `json:"batch_id,omitempty"`
+	BatchID              *string    `json:"batch_id,omitempty"`
 	Logs                 []LogError `json:"logs,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,36 +43,36 @@ func NewLogErrorBatchWithDefaults() *LogErrorBatch {
 	return &this
 }
 
-// GetBatchId returns the BatchId field value if set, zero value otherwise.
-func (o *LogErrorBatch) GetBatchId() string {
-	if o == nil || o.BatchId == nil {
+// GetBatchID returns the BatchID field value if set, zero value otherwise.
+func (o *LogErrorBatch) GetBatchID() string {
+	if o == nil || o.BatchID == nil {
 		var ret string
 		return ret
 	}
-	return *o.BatchId
+	return *o.BatchID
 }
 
-// GetBatchIdOk returns a tuple with the BatchId field value if set, nil otherwise
+// GetBatchIDOk returns a tuple with the BatchID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogErrorBatch) GetBatchIdOk() (*string, bool) {
-	if o == nil || o.BatchId == nil {
+func (o *LogErrorBatch) GetBatchIDOk() (*string, bool) {
+	if o == nil || o.BatchID == nil {
 		return nil, false
 	}
-	return o.BatchId, true
+	return o.BatchID, true
 }
 
-// HasBatchId returns a boolean if a field has been set.
-func (o *LogErrorBatch) HasBatchId() bool {
-	if o != nil && o.BatchId != nil {
+// HasBatchID returns a boolean if a field has been set.
+func (o *LogErrorBatch) HasBatchID() bool {
+	if o != nil && o.BatchID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBatchId gets a reference to the given string and assigns it to the BatchId field.
-func (o *LogErrorBatch) SetBatchId(v string) {
-	o.BatchId = &v
+// SetBatchID gets a reference to the given string and assigns it to the BatchID field.
+func (o *LogErrorBatch) SetBatchID(v string) {
+	o.BatchID = &v
 }
 
 // GetLogs returns the Logs field value if set, zero value otherwise.
@@ -111,8 +111,8 @@ func (o *LogErrorBatch) SetLogs(v []LogError) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o LogErrorBatch) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.BatchId != nil {
-		toSerialize["batch_id"] = o.BatchId
+	if o.BatchID != nil {
+		toSerialize["batch_id"] = o.BatchID
 	}
 	if o.Logs != nil {
 		toSerialize["logs"] = o.Logs

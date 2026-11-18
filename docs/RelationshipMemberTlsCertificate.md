@@ -1,82 +1,80 @@
-# RelationshipMemberTlsCertificate
+# RelationshipMemberTLSCertificate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] [default to TYPETLSCERTIFICATE_TLS_CERTIFICATE]
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTLSCertificate**](TypeTLSCertificate.md) |  | [optional] [default to TYPETLSCERTIFICATE_TLS_CERTIFICATE]
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTlsCertificate
+### NewRelationshipMemberTLSCertificate
 
-`func NewRelationshipMemberTlsCertificate() *RelationshipMemberTlsCertificate`
+`func NewRelationshipMemberTLSCertificate() *RelationshipMemberTLSCertificate`
 
-NewRelationshipMemberTlsCertificate instantiates a new RelationshipMemberTlsCertificate object
+NewRelationshipMemberTLSCertificate instantiates a new RelationshipMemberTLSCertificate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTlsCertificateWithDefaults
+### NewRelationshipMemberTLSCertificateWithDefaults
 
-`func NewRelationshipMemberTlsCertificateWithDefaults() *RelationshipMemberTlsCertificate`
+`func NewRelationshipMemberTLSCertificateWithDefaults() *RelationshipMemberTLSCertificate`
 
-NewRelationshipMemberTlsCertificateWithDefaults instantiates a new RelationshipMemberTlsCertificate object
+NewRelationshipMemberTLSCertificateWithDefaults instantiates a new RelationshipMemberTLSCertificate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTlsCertificate) GetType() TypeTlsCertificate`
+`func (o *RelationshipMemberTLSCertificate) GetType() TypeTLSCertificate`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTlsCertificate) GetTypeOk() (*TypeTlsCertificate, bool)`
+`func (o *RelationshipMemberTLSCertificate) GetTypeOk() (*TypeTLSCertificate, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTlsCertificate) SetType(v TypeTlsCertificate)`
+`func (o *RelationshipMemberTLSCertificate) SetType(v TypeTLSCertificate)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTlsCertificate) HasType() bool`
+`func (o *RelationshipMemberTLSCertificate) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *RelationshipMemberTlsCertificate) GetId() string`
+`func (o *RelationshipMemberTLSCertificate) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *RelationshipMemberTlsCertificate) GetIdOk() (*string, bool)`
+`func (o *RelationshipMemberTLSCertificate) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *RelationshipMemberTlsCertificate) SetId(v string)`
+`func (o *RelationshipMemberTLSCertificate) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *RelationshipMemberTlsCertificate) HasId() bool`
+`func (o *RelationshipMemberTLSCertificate) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -19,7 +19,7 @@ import (
 // RuleChange A modification to an existing rule's action between versions.
 type RuleChange struct {
 	// Alphanumeric string identifying the rule. Stable across versions of the routing config.
-	RuleId               *string `json:"rule_id,omitempty"`
+	RuleID               *string `json:"rule_id,omitempty"`
 	OldAction            *Action `json:"old_action,omitempty"`
 	NewAction            *Action `json:"new_action,omitempty"`
 	AdditionalProperties map[string]any
@@ -44,36 +44,36 @@ func NewRuleChangeWithDefaults() *RuleChange {
 	return &this
 }
 
-// GetRuleId returns the RuleId field value if set, zero value otherwise.
-func (o *RuleChange) GetRuleId() string {
-	if o == nil || o.RuleId == nil {
+// GetRuleID returns the RuleID field value if set, zero value otherwise.
+func (o *RuleChange) GetRuleID() string {
+	if o == nil || o.RuleID == nil {
 		var ret string
 		return ret
 	}
-	return *o.RuleId
+	return *o.RuleID
 }
 
-// GetRuleIdOk returns a tuple with the RuleId field value if set, nil otherwise
+// GetRuleIDOk returns a tuple with the RuleID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RuleChange) GetRuleIdOk() (*string, bool) {
-	if o == nil || o.RuleId == nil {
+func (o *RuleChange) GetRuleIDOk() (*string, bool) {
+	if o == nil || o.RuleID == nil {
 		return nil, false
 	}
-	return o.RuleId, true
+	return o.RuleID, true
 }
 
-// HasRuleId returns a boolean if a field has been set.
-func (o *RuleChange) HasRuleId() bool {
-	if o != nil && o.RuleId != nil {
+// HasRuleID returns a boolean if a field has been set.
+func (o *RuleChange) HasRuleID() bool {
+	if o != nil && o.RuleID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleId gets a reference to the given string and assigns it to the RuleId field.
-func (o *RuleChange) SetRuleId(v string) {
-	o.RuleId = &v
+// SetRuleID gets a reference to the given string and assigns it to the RuleID field.
+func (o *RuleChange) SetRuleID(v string) {
+	o.RuleID = &v
 }
 
 // GetOldAction returns the OldAction field value if set, zero value otherwise.
@@ -144,8 +144,8 @@ func (o *RuleChange) SetNewAction(v Action) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RuleChange) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.RuleId != nil {
-		toSerialize["rule_id"] = o.RuleId
+	if o.RuleID != nil {
+		toSerialize["rule_id"] = o.RuleID
 	}
 	if o.OldAction != nil {
 		toSerialize["old_action"] = o.OldAction

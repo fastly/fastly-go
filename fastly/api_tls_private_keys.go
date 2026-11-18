@@ -27,114 +27,114 @@ var (
 	_ context.Context
 )
 
-// TlsPrivateKeysAPI defines an interface for interacting with the resource.
-type TlsPrivateKeysAPI interface {
+// TLSPrivateKeysAPI defines an interface for interacting with the resource.
+type TLSPrivateKeysAPI interface {
 
 	/*
-		CreateTlsKey Create a TLS private key
+		CreateTLSKey Create a TLS private key
 
 		Create a TLS private key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APICreateTlsKeyRequest
+		 @return APICreateTLSKeyRequest
 	*/
-	CreateTlsKey(ctx context.Context) APICreateTlsKeyRequest
+	CreateTLSKey(ctx context.Context) APICreateTLSKeyRequest
 
-	// CreateTlsKeyExecute executes the request
-	//  @return TlsPrivateKeyResponse
-	CreateTlsKeyExecute(r APICreateTlsKeyRequest) (*TlsPrivateKeyResponse, *http.Response, error)
+	// CreateTLSKeyExecute executes the request
+	//  @return TLSPrivateKeyResponse
+	CreateTLSKeyExecute(r APICreateTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error)
 
 	/*
-		DeleteTlsKey Delete a TLS private key
+		DeleteTLSKey Delete a TLS private key
 
 		Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsPrivateKeyId Alphanumeric string identifying a private Key.
-		 @return APIDeleteTlsKeyRequest
+		 @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
+		 @return APIDeleteTLSKeyRequest
 	*/
-	DeleteTlsKey(ctx context.Context, tlsPrivateKeyId string) APIDeleteTlsKeyRequest
+	DeleteTLSKey(ctx context.Context, tlsPrivateKeyID string) APIDeleteTLSKeyRequest
 
-	// DeleteTlsKeyExecute executes the request
-	DeleteTlsKeyExecute(r APIDeleteTlsKeyRequest) (*http.Response, error)
+	// DeleteTLSKeyExecute executes the request
+	DeleteTLSKeyExecute(r APIDeleteTLSKeyRequest) (*http.Response, error)
 
 	/*
-		GetTlsKey Get a TLS private key
+		GetTLSKey Get a TLS private key
 
 		Show a TLS private key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsPrivateKeyId Alphanumeric string identifying a private Key.
-		 @return APIGetTlsKeyRequest
+		 @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
+		 @return APIGetTLSKeyRequest
 	*/
-	GetTlsKey(ctx context.Context, tlsPrivateKeyId string) APIGetTlsKeyRequest
+	GetTLSKey(ctx context.Context, tlsPrivateKeyID string) APIGetTLSKeyRequest
 
-	// GetTlsKeyExecute executes the request
-	//  @return TlsPrivateKeyResponse
-	GetTlsKeyExecute(r APIGetTlsKeyRequest) (*TlsPrivateKeyResponse, *http.Response, error)
+	// GetTLSKeyExecute executes the request
+	//  @return TLSPrivateKeyResponse
+	GetTLSKeyExecute(r APIGetTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error)
 
 	/*
-		ListTlsKeys List TLS private keys
+		ListTLSKeys List TLS private keys
 
 		List all TLS private keys.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIListTlsKeysRequest
+		 @return APIListTLSKeysRequest
 	*/
-	ListTlsKeys(ctx context.Context) APIListTlsKeysRequest
+	ListTLSKeys(ctx context.Context) APIListTLSKeysRequest
 
-	// ListTlsKeysExecute executes the request
-	//  @return TlsPrivateKeysResponse
-	ListTlsKeysExecute(r APIListTlsKeysRequest) (*TlsPrivateKeysResponse, *http.Response, error)
+	// ListTLSKeysExecute executes the request
+	//  @return TLSPrivateKeysResponse
+	ListTLSKeysExecute(r APIListTLSKeysRequest) (*TLSPrivateKeysResponse, *http.Response, error)
 }
 
-// TlsPrivateKeysAPIService TlsPrivateKeysAPI service
-type TlsPrivateKeysAPIService service
+// TLSPrivateKeysAPIService TLSPrivateKeysAPI service
+type TLSPrivateKeysAPIService service
 
-// APICreateTlsKeyRequest represents a request for the resource.
-type APICreateTlsKeyRequest struct {
+// APICreateTLSKeyRequest represents a request for the resource.
+type APICreateTLSKeyRequest struct {
 	ctx           context.Context
-	APIService    TlsPrivateKeysAPI
-	tlsPrivateKey *TlsPrivateKey
+	APIService    TLSPrivateKeysAPI
+	tlsPrivateKey *TLSPrivateKey
 }
 
-// TlsPrivateKey returns a pointer to a request.
-func (r *APICreateTlsKeyRequest) TlsPrivateKey(tlsPrivateKey TlsPrivateKey) *APICreateTlsKeyRequest {
+// TLSPrivateKey returns a pointer to a request.
+func (r *APICreateTLSKeyRequest) TLSPrivateKey(tlsPrivateKey TLSPrivateKey) *APICreateTLSKeyRequest {
 	r.tlsPrivateKey = &tlsPrivateKey
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateTlsKeyRequest) Execute() (*TlsPrivateKeyResponse, *http.Response, error) {
-	return r.APIService.CreateTlsKeyExecute(r)
+func (r APICreateTLSKeyRequest) Execute() (*TLSPrivateKeyResponse, *http.Response, error) {
+	return r.APIService.CreateTLSKeyExecute(r)
 }
 
 /*
-CreateTlsKey Create a TLS private key
+CreateTLSKey Create a TLS private key
 
 Create a TLS private key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APICreateTlsKeyRequest
+ @return APICreateTLSKeyRequest
 */
-func (a *TlsPrivateKeysAPIService) CreateTlsKey(ctx context.Context) APICreateTlsKeyRequest {
-	return APICreateTlsKeyRequest{
+func (a *TLSPrivateKeysAPIService) CreateTLSKey(ctx context.Context) APICreateTLSKeyRequest {
+	return APICreateTLSKeyRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// CreateTlsKeyExecute executes the request
-//  @return TlsPrivateKeyResponse
-func (a *TlsPrivateKeysAPIService) CreateTlsKeyExecute(r APICreateTlsKeyRequest) (*TlsPrivateKeyResponse, *http.Response, error) {
+// CreateTLSKeyExecute executes the request
+//  @return TLSPrivateKeyResponse
+func (a *TLSPrivateKeysAPIService) CreateTLSKeyExecute(r APICreateTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsPrivateKeyResponse
+		localVarReturnValue *TLSPrivateKeyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsPrivateKeysAPIService.CreateTlsKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.CreateTLSKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -228,50 +228,50 @@ func (a *TlsPrivateKeysAPIService) CreateTlsKeyExecute(r APICreateTlsKeyRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteTlsKeyRequest represents a request for the resource.
-type APIDeleteTlsKeyRequest struct {
+// APIDeleteTLSKeyRequest represents a request for the resource.
+type APIDeleteTLSKeyRequest struct {
 	ctx             context.Context
-	APIService      TlsPrivateKeysAPI
-	tlsPrivateKeyId string
+	APIService      TLSPrivateKeysAPI
+	tlsPrivateKeyID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteTlsKeyRequest) Execute() (*http.Response, error) {
-	return r.APIService.DeleteTlsKeyExecute(r)
+func (r APIDeleteTLSKeyRequest) Execute() (*http.Response, error) {
+	return r.APIService.DeleteTLSKeyExecute(r)
 }
 
 /*
-DeleteTlsKey Delete a TLS private key
+DeleteTLSKey Delete a TLS private key
 
 Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsPrivateKeyId Alphanumeric string identifying a private Key.
- @return APIDeleteTlsKeyRequest
+ @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
+ @return APIDeleteTLSKeyRequest
 */
-func (a *TlsPrivateKeysAPIService) DeleteTlsKey(ctx context.Context, tlsPrivateKeyId string) APIDeleteTlsKeyRequest {
-	return APIDeleteTlsKeyRequest{
+func (a *TLSPrivateKeysAPIService) DeleteTLSKey(ctx context.Context, tlsPrivateKeyID string) APIDeleteTLSKeyRequest {
+	return APIDeleteTLSKeyRequest{
 		APIService:      a,
 		ctx:             ctx,
-		tlsPrivateKeyId: tlsPrivateKeyId,
+		tlsPrivateKeyID: tlsPrivateKeyID,
 	}
 }
 
-// DeleteTlsKeyExecute executes the request
-func (a *TlsPrivateKeysAPIService) DeleteTlsKeyExecute(r APIDeleteTlsKeyRequest) (*http.Response, error) {
+// DeleteTLSKeyExecute executes the request
+func (a *TLSPrivateKeysAPIService) DeleteTLSKeyExecute(r APIDeleteTLSKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsPrivateKeysAPIService.DeleteTlsKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.DeleteTLSKey")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/private_keys/{tls_private_key_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_private_key_id"+"}", gourl.PathEscape(parameterToString(r.tlsPrivateKeyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_private_key_id"+"}", gourl.PathEscape(parameterToString(r.tlsPrivateKeyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,52 +349,52 @@ func (a *TlsPrivateKeysAPIService) DeleteTlsKeyExecute(r APIDeleteTlsKeyRequest)
 	return localVarHTTPResponse, nil
 }
 
-// APIGetTlsKeyRequest represents a request for the resource.
-type APIGetTlsKeyRequest struct {
+// APIGetTLSKeyRequest represents a request for the resource.
+type APIGetTLSKeyRequest struct {
 	ctx             context.Context
-	APIService      TlsPrivateKeysAPI
-	tlsPrivateKeyId string
+	APIService      TLSPrivateKeysAPI
+	tlsPrivateKeyID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetTlsKeyRequest) Execute() (*TlsPrivateKeyResponse, *http.Response, error) {
-	return r.APIService.GetTlsKeyExecute(r)
+func (r APIGetTLSKeyRequest) Execute() (*TLSPrivateKeyResponse, *http.Response, error) {
+	return r.APIService.GetTLSKeyExecute(r)
 }
 
 /*
-GetTlsKey Get a TLS private key
+GetTLSKey Get a TLS private key
 
 Show a TLS private key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsPrivateKeyId Alphanumeric string identifying a private Key.
- @return APIGetTlsKeyRequest
+ @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
+ @return APIGetTLSKeyRequest
 */
-func (a *TlsPrivateKeysAPIService) GetTlsKey(ctx context.Context, tlsPrivateKeyId string) APIGetTlsKeyRequest {
-	return APIGetTlsKeyRequest{
+func (a *TLSPrivateKeysAPIService) GetTLSKey(ctx context.Context, tlsPrivateKeyID string) APIGetTLSKeyRequest {
+	return APIGetTLSKeyRequest{
 		APIService:      a,
 		ctx:             ctx,
-		tlsPrivateKeyId: tlsPrivateKeyId,
+		tlsPrivateKeyID: tlsPrivateKeyID,
 	}
 }
 
-// GetTlsKeyExecute executes the request
-//  @return TlsPrivateKeyResponse
-func (a *TlsPrivateKeysAPIService) GetTlsKeyExecute(r APIGetTlsKeyRequest) (*TlsPrivateKeyResponse, *http.Response, error) {
+// GetTLSKeyExecute executes the request
+//  @return TLSPrivateKeyResponse
+func (a *TLSPrivateKeysAPIService) GetTLSKeyExecute(r APIGetTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsPrivateKeyResponse
+		localVarReturnValue *TLSPrivateKeyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsPrivateKeysAPIService.GetTlsKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.GetTLSKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/private_keys/{tls_private_key_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_private_key_id"+"}", gourl.PathEscape(parameterToString(r.tlsPrivateKeyId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_private_key_id"+"}", gourl.PathEscape(parameterToString(r.tlsPrivateKeyID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -481,64 +481,64 @@ func (a *TlsPrivateKeysAPIService) GetTlsKeyExecute(r APIGetTlsKeyRequest) (*Tls
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListTlsKeysRequest represents a request for the resource.
-type APIListTlsKeysRequest struct {
+// APIListTLSKeysRequest represents a request for the resource.
+type APIListTLSKeysRequest struct {
 	ctx         context.Context
-	APIService  TlsPrivateKeysAPI
+	APIService  TLSPrivateKeysAPI
 	filterInUse *string
 	pageNumber  *int32
 	pageSize    *int32
 }
 
 // FilterInUse Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
-func (r *APIListTlsKeysRequest) FilterInUse(filterInUse string) *APIListTlsKeysRequest {
+func (r *APIListTLSKeysRequest) FilterInUse(filterInUse string) *APIListTLSKeysRequest {
 	r.filterInUse = &filterInUse
 	return r
 }
 
 // PageNumber Current page.
-func (r *APIListTlsKeysRequest) PageNumber(pageNumber int32) *APIListTlsKeysRequest {
+func (r *APIListTLSKeysRequest) PageNumber(pageNumber int32) *APIListTLSKeysRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
 
 // PageSize Number of records per page.
-func (r *APIListTlsKeysRequest) PageSize(pageSize int32) *APIListTlsKeysRequest {
+func (r *APIListTLSKeysRequest) PageSize(pageSize int32) *APIListTLSKeysRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListTlsKeysRequest) Execute() (*TlsPrivateKeysResponse, *http.Response, error) {
-	return r.APIService.ListTlsKeysExecute(r)
+func (r APIListTLSKeysRequest) Execute() (*TLSPrivateKeysResponse, *http.Response, error) {
+	return r.APIService.ListTLSKeysExecute(r)
 }
 
 /*
-ListTlsKeys List TLS private keys
+ListTLSKeys List TLS private keys
 
 List all TLS private keys.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIListTlsKeysRequest
+ @return APIListTLSKeysRequest
 */
-func (a *TlsPrivateKeysAPIService) ListTlsKeys(ctx context.Context) APIListTlsKeysRequest {
-	return APIListTlsKeysRequest{
+func (a *TLSPrivateKeysAPIService) ListTLSKeys(ctx context.Context) APIListTLSKeysRequest {
+	return APIListTLSKeysRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ListTlsKeysExecute executes the request
-//  @return TlsPrivateKeysResponse
-func (a *TlsPrivateKeysAPIService) ListTlsKeysExecute(r APIListTlsKeysRequest) (*TlsPrivateKeysResponse, *http.Response, error) {
+// ListTLSKeysExecute executes the request
+//  @return TLSPrivateKeysResponse
+func (a *TLSPrivateKeysAPIService) ListTLSKeysExecute(r APIListTLSKeysRequest) (*TLSPrivateKeysResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TlsPrivateKeysResponse
+		localVarReturnValue *TLSPrivateKeysResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsPrivateKeysAPIService.ListTlsKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.ListTLSKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}

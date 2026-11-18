@@ -45,10 +45,10 @@ type LoggingEndpointErrorsAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId
+		 @param serviceID
 		 @return APIGetLogEndpointErrorsRequest
 	*/
-	GetLogEndpointErrors(ctx context.Context, serviceId string) APIGetLogEndpointErrorsRequest
+	GetLogEndpointErrors(ctx context.Context, serviceID string) APIGetLogEndpointErrorsRequest
 
 	// GetLogEndpointErrorsExecute executes the request
 	//  @return string
@@ -62,7 +62,7 @@ type LoggingEndpointErrorsAPIService service
 type APIGetLogEndpointErrorsRequest struct {
 	ctx            context.Context
 	APIService     LoggingEndpointErrorsAPI
-	serviceId      string
+	serviceID      string
 	from           *int64
 	to             *int64
 	filterEndpoint *string
@@ -106,14 +106,14 @@ to request standard JSON array format instead.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId
+ @param serviceID
  @return APIGetLogEndpointErrorsRequest
 */
-func (a *LoggingEndpointErrorsAPIService) GetLogEndpointErrors(ctx context.Context, serviceId string) APIGetLogEndpointErrorsRequest {
+func (a *LoggingEndpointErrorsAPIService) GetLogEndpointErrors(ctx context.Context, serviceID string) APIGetLogEndpointErrorsRequest {
 	return APIGetLogEndpointErrorsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
+		serviceID:  serviceID,
 	}
 }
 
@@ -133,7 +133,7 @@ func (a *LoggingEndpointErrorsAPIService) GetLogEndpointErrorsExecute(r APIGetLo
 	}
 
 	localVarPath := localBasePath + "/observability/service/{service_id}/logging/errors"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

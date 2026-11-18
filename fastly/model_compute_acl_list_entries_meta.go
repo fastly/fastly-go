@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// ComputeAclListEntriesMeta struct for ComputeAclListEntriesMeta
-type ComputeAclListEntriesMeta struct {
+// ComputeACLListEntriesMeta struct for ComputeACLListEntriesMeta
+type ComputeACLListEntriesMeta struct {
 	// The maximum number of results shown in this response.
 	Limit *int32 `json:"limit,omitempty"`
 	// Used for pagination, supply to the next request to get the next block of results.
@@ -25,27 +25,27 @@ type ComputeAclListEntriesMeta struct {
 	AdditionalProperties map[string]any
 }
 
-type _ComputeAclListEntriesMeta ComputeAclListEntriesMeta
+type _ComputeACLListEntriesMeta ComputeACLListEntriesMeta
 
-// NewComputeAclListEntriesMeta instantiates a new ComputeAclListEntriesMeta object
+// NewComputeACLListEntriesMeta instantiates a new ComputeACLListEntriesMeta object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeAclListEntriesMeta() *ComputeAclListEntriesMeta {
-	this := ComputeAclListEntriesMeta{}
+func NewComputeACLListEntriesMeta() *ComputeACLListEntriesMeta {
+	this := ComputeACLListEntriesMeta{}
 	return &this
 }
 
-// NewComputeAclListEntriesMetaWithDefaults instantiates a new ComputeAclListEntriesMeta object
+// NewComputeACLListEntriesMetaWithDefaults instantiates a new ComputeACLListEntriesMeta object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeAclListEntriesMetaWithDefaults() *ComputeAclListEntriesMeta {
-	this := ComputeAclListEntriesMeta{}
+func NewComputeACLListEntriesMetaWithDefaults() *ComputeACLListEntriesMeta {
+	this := ComputeACLListEntriesMeta{}
 	return &this
 }
 
 // GetLimit returns the Limit field value if set, zero value otherwise.
-func (o *ComputeAclListEntriesMeta) GetLimit() int32 {
+func (o *ComputeACLListEntriesMeta) GetLimit() int32 {
 	if o == nil || o.Limit == nil {
 		var ret int32
 		return ret
@@ -55,7 +55,7 @@ func (o *ComputeAclListEntriesMeta) GetLimit() int32 {
 
 // GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeAclListEntriesMeta) GetLimitOk() (*int32, bool) {
+func (o *ComputeACLListEntriesMeta) GetLimitOk() (*int32, bool) {
 	if o == nil || o.Limit == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *ComputeAclListEntriesMeta) GetLimitOk() (*int32, bool) {
 }
 
 // HasLimit returns a boolean if a field has been set.
-func (o *ComputeAclListEntriesMeta) HasLimit() bool {
+func (o *ComputeACLListEntriesMeta) HasLimit() bool {
 	if o != nil && o.Limit != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *ComputeAclListEntriesMeta) HasLimit() bool {
 }
 
 // SetLimit gets a reference to the given int32 and assigns it to the Limit field.
-func (o *ComputeAclListEntriesMeta) SetLimit(v int32) {
+func (o *ComputeACLListEntriesMeta) SetLimit(v int32) {
 	o.Limit = &v
 }
 
 // GetNextCursor returns the NextCursor field value if set, zero value otherwise.
-func (o *ComputeAclListEntriesMeta) GetNextCursor() string {
+func (o *ComputeACLListEntriesMeta) GetNextCursor() string {
 	if o == nil || o.NextCursor == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *ComputeAclListEntriesMeta) GetNextCursor() string {
 
 // GetNextCursorOk returns a tuple with the NextCursor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeAclListEntriesMeta) GetNextCursorOk() (*string, bool) {
+func (o *ComputeACLListEntriesMeta) GetNextCursorOk() (*string, bool) {
 	if o == nil || o.NextCursor == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *ComputeAclListEntriesMeta) GetNextCursorOk() (*string, bool) {
 }
 
 // HasNextCursor returns a boolean if a field has been set.
-func (o *ComputeAclListEntriesMeta) HasNextCursor() bool {
+func (o *ComputeACLListEntriesMeta) HasNextCursor() bool {
 	if o != nil && o.NextCursor != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *ComputeAclListEntriesMeta) HasNextCursor() bool {
 }
 
 // SetNextCursor gets a reference to the given string and assigns it to the NextCursor field.
-func (o *ComputeAclListEntriesMeta) SetNextCursor(v string) {
+func (o *ComputeACLListEntriesMeta) SetNextCursor(v string) {
 	o.NextCursor = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeAclListEntriesMeta) MarshalJSON() ([]byte, error) {
+func (o ComputeACLListEntriesMeta) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Limit != nil {
 		toSerialize["limit"] = o.Limit
@@ -128,11 +128,11 @@ func (o ComputeAclListEntriesMeta) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeAclListEntriesMeta) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeAclListEntriesMeta := _ComputeAclListEntriesMeta{}
+func (o *ComputeACLListEntriesMeta) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeACLListEntriesMeta := _ComputeACLListEntriesMeta{}
 
-	if err = json.Unmarshal(bytes, &varComputeAclListEntriesMeta); err == nil {
-		*o = ComputeAclListEntriesMeta(varComputeAclListEntriesMeta)
+	if err = json.Unmarshal(bytes, &varComputeACLListEntriesMeta); err == nil {
+		*o = ComputeACLListEntriesMeta(varComputeACLListEntriesMeta)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *ComputeAclListEntriesMeta) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeAclListEntriesMeta is a helper abstraction for handling nullable computeacllistentriesmeta types.
-type NullableComputeAclListEntriesMeta struct {
-	value *ComputeAclListEntriesMeta
+// NullableComputeACLListEntriesMeta is a helper abstraction for handling nullable computeacllistentriesmeta types.
+type NullableComputeACLListEntriesMeta struct {
+	value *ComputeACLListEntriesMeta
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeAclListEntriesMeta) Get() *ComputeAclListEntriesMeta {
+func (v NullableComputeACLListEntriesMeta) Get() *ComputeACLListEntriesMeta {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeAclListEntriesMeta) Set(val *ComputeAclListEntriesMeta) {
+func (v *NullableComputeACLListEntriesMeta) Set(val *ComputeACLListEntriesMeta) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeAclListEntriesMeta) IsSet() bool {
+func (v NullableComputeACLListEntriesMeta) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeAclListEntriesMeta) Unset() {
+func (v *NullableComputeACLListEntriesMeta) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeAclListEntriesMeta returns a pointer to a new instance of NullableComputeAclListEntriesMeta.
-func NewNullableComputeAclListEntriesMeta(val *ComputeAclListEntriesMeta) *NullableComputeAclListEntriesMeta {
-	return &NullableComputeAclListEntriesMeta{value: val, isSet: true}
+// NewNullableComputeACLListEntriesMeta returns a pointer to a new instance of NullableComputeACLListEntriesMeta.
+func NewNullableComputeACLListEntriesMeta(val *ComputeACLListEntriesMeta) *NullableComputeACLListEntriesMeta {
+	return &NullableComputeACLListEntriesMeta{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeAclListEntriesMeta) MarshalJSON() ([]byte, error) {
+func (v NullableComputeACLListEntriesMeta) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeAclListEntriesMeta) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeACLListEntriesMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

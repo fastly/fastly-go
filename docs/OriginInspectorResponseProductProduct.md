@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Product identifier | [optional] 
+**ID** | Pointer to **string** | Product identifier | [optional] 
 **Object** | Pointer to **string** | Name of the object | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewOriginInspectorResponseProductProductWithDefaults instantiates a new OriginIn
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *OriginInspectorResponseProductProduct) GetId() string`
+`func (o *OriginInspectorResponseProductProduct) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *OriginInspectorResponseProductProduct) GetIdOk() (*string, bool)`
+`func (o *OriginInspectorResponseProductProduct) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *OriginInspectorResponseProductProduct) SetId(v string)`
+`func (o *OriginInspectorResponseProductProduct) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *OriginInspectorResponseProductProduct) HasId() bool`
+`func (o *OriginInspectorResponseProductProduct) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetObject
 
@@ -78,5 +78,3 @@ HasObject returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

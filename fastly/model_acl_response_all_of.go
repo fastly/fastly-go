@@ -16,68 +16,68 @@ import (
 	"encoding/json"
 )
 
-// AclResponseAllOf struct for AclResponseAllOf
-type AclResponseAllOf struct {
-	ServiceId *string `json:"service_id,omitempty"`
+// ACLResponseAllOf struct for ACLResponseAllOf
+type ACLResponseAllOf struct {
+	ServiceID *string `json:"service_id,omitempty"`
 	// String representing the number identifying a version of the service.
 	Version              *string `json:"version,omitempty"`
-	Id                   *string `json:"id,omitempty"`
+	ID                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _AclResponseAllOf AclResponseAllOf
+type _ACLResponseAllOf ACLResponseAllOf
 
-// NewAclResponseAllOf instantiates a new AclResponseAllOf object
+// NewACLResponseAllOf instantiates a new ACLResponseAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAclResponseAllOf() *AclResponseAllOf {
-	this := AclResponseAllOf{}
+func NewACLResponseAllOf() *ACLResponseAllOf {
+	this := ACLResponseAllOf{}
 	return &this
 }
 
-// NewAclResponseAllOfWithDefaults instantiates a new AclResponseAllOf object
+// NewACLResponseAllOfWithDefaults instantiates a new ACLResponseAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAclResponseAllOfWithDefaults() *AclResponseAllOf {
-	this := AclResponseAllOf{}
+func NewACLResponseAllOfWithDefaults() *ACLResponseAllOf {
+	this := ACLResponseAllOf{}
 	return &this
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *AclResponseAllOf) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *ACLResponseAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclResponseAllOf) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *ACLResponseAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *AclResponseAllOf) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *ACLResponseAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *AclResponseAllOf) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *ACLResponseAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *AclResponseAllOf) GetVersion() string {
+func (o *ACLResponseAllOf) GetVersion() string {
 	if o == nil || o.Version == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *AclResponseAllOf) GetVersion() string {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclResponseAllOf) GetVersionOk() (*string, bool) {
+func (o *ACLResponseAllOf) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *AclResponseAllOf) GetVersionOk() (*string, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *AclResponseAllOf) HasVersion() bool {
+func (o *ACLResponseAllOf) HasVersion() bool {
 	if o != nil && o.Version != nil {
 		return true
 	}
@@ -104,54 +104,54 @@ func (o *AclResponseAllOf) HasVersion() bool {
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *AclResponseAllOf) SetVersion(v string) {
+func (o *ACLResponseAllOf) SetVersion(v string) {
 	o.Version = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AclResponseAllOf) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ACLResponseAllOf) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclResponseAllOf) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ACLResponseAllOf) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *AclResponseAllOf) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ACLResponseAllOf) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AclResponseAllOf) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ACLResponseAllOf) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o AclResponseAllOf) MarshalJSON() ([]byte, error) {
+func (o ACLResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -163,11 +163,11 @@ func (o AclResponseAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *AclResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varAclResponseAllOf := _AclResponseAllOf{}
+func (o *ACLResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varACLResponseAllOf := _ACLResponseAllOf{}
 
-	if err = json.Unmarshal(bytes, &varAclResponseAllOf); err == nil {
-		*o = AclResponseAllOf(varAclResponseAllOf)
+	if err = json.Unmarshal(bytes, &varACLResponseAllOf); err == nil {
+		*o = ACLResponseAllOf(varACLResponseAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -182,48 +182,48 @@ func (o *AclResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableAclResponseAllOf is a helper abstraction for handling nullable aclresponseallof types.
-type NullableAclResponseAllOf struct {
-	value *AclResponseAllOf
+// NullableACLResponseAllOf is a helper abstraction for handling nullable aclresponseallof types.
+type NullableACLResponseAllOf struct {
+	value *ACLResponseAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableAclResponseAllOf) Get() *AclResponseAllOf {
+func (v NullableACLResponseAllOf) Get() *ACLResponseAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableAclResponseAllOf) Set(val *AclResponseAllOf) {
+func (v *NullableACLResponseAllOf) Set(val *ACLResponseAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableAclResponseAllOf) IsSet() bool {
+func (v NullableACLResponseAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableAclResponseAllOf) Unset() {
+func (v *NullableACLResponseAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableAclResponseAllOf returns a pointer to a new instance of NullableAclResponseAllOf.
-func NewNullableAclResponseAllOf(val *AclResponseAllOf) *NullableAclResponseAllOf {
-	return &NullableAclResponseAllOf{value: val, isSet: true}
+// NewNullableACLResponseAllOf returns a pointer to a new instance of NullableACLResponseAllOf.
+func NewNullableACLResponseAllOf(val *ACLResponseAllOf) *NullableACLResponseAllOf {
+	return &NullableACLResponseAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableAclResponseAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableACLResponseAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableAclResponseAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableACLResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -95,12 +95,12 @@ import (
 )
 
 func main() {
-    dashboardId := "2eGFXF4F4kTxd4gU39Bg3e" // string | 
+    dashboardID := "2eGFXF4F4kTxd4gU39Bg3e" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObservabilityCustomDashboardsAPI.DeleteDashboard(ctx, dashboardId).Execute()
+    resp, r, err := apiClient.ObservabilityCustomDashboardsAPI.DeleteDashboard(ctx, dashboardID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObservabilityCustomDashboardsAPI.DeleteDashboard`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -114,7 +114,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dashboardId** | **string** |  | 
+**dashboardID** | **string** |  | 
 
 ### Other Parameters
 
@@ -160,12 +160,12 @@ import (
 )
 
 func main() {
-    dashboardId := "2eGFXF4F4kTxd4gU39Bg3e" // string | 
+    dashboardID := "2eGFXF4F4kTxd4gU39Bg3e" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObservabilityCustomDashboardsAPI.GetDashboard(ctx, dashboardId).Execute()
+    resp, r, err := apiClient.ObservabilityCustomDashboardsAPI.GetDashboard(ctx, dashboardID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObservabilityCustomDashboardsAPI.GetDashboard`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -181,7 +181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dashboardId** | **string** |  | 
+**dashboardID** | **string** |  | 
 
 ### Other Parameters
 
@@ -286,13 +286,13 @@ import (
 )
 
 func main() {
-    dashboardId := "2eGFXF4F4kTxd4gU39Bg3e" // string | 
+    dashboardID := "2eGFXF4F4kTxd4gU39Bg3e" // string | 
     updateDashboardRequest := *openapiclient.NewUpdateDashboardRequest() // UpdateDashboardRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObservabilityCustomDashboardsAPI.UpdateDashboard(ctx, dashboardId).UpdateDashboardRequest(updateDashboardRequest).Execute()
+    resp, r, err := apiClient.ObservabilityCustomDashboardsAPI.UpdateDashboard(ctx, dashboardID).UpdateDashboardRequest(updateDashboardRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObservabilityCustomDashboardsAPI.UpdateDashboard`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -308,7 +308,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dashboardId** | **string** |  | 
+**dashboardID** | **string** |  | 
 
 ### Other Parameters
 
@@ -333,4 +333,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

@@ -74,11 +74,12 @@ func (o *LogInsightsDimensionAttributes) UnmarshalJSON(data []byte) error {
 		o.DimensionAttributesRate = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(LogInsightsDimensionAttributes)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(LogInsightsDimensionAttributes)")
 	}
+	if match == 1 {
+		return nil // exactly one match
+	}
+	// no match
+	return fmt.Errorf("data failed to match schemas in oneOf(LogInsightsDimensionAttributes)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.

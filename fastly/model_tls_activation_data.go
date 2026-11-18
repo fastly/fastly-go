@@ -16,40 +16,40 @@ import (
 	"encoding/json"
 )
 
-// TlsActivationData struct for TlsActivationData
-type TlsActivationData struct {
-	Type                 *TypeTlsActivation             `json:"type,omitempty"`
-	Relationships        *RelationshipsForTlsActivation `json:"relationships,omitempty"`
+// TLSActivationData struct for TLSActivationData
+type TLSActivationData struct {
+	Type                 *TypeTLSActivation             `json:"type,omitempty"`
+	Relationships        *RelationshipsForTLSActivation `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TlsActivationData TlsActivationData
+type _TLSActivationData TLSActivationData
 
-// NewTlsActivationData instantiates a new TlsActivationData object
+// NewTLSActivationData instantiates a new TLSActivationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTlsActivationData() *TlsActivationData {
-	this := TlsActivationData{}
-	var type_ TypeTlsActivation = TYPETLSACTIVATION_TLS_ACTIVATION
-	this.Type = &type_
+func NewTLSActivationData() *TLSActivationData {
+	this := TLSActivationData{}
+	var resourceType TypeTLSActivation = TYPETLSACTIVATION_TLS_ACTIVATION
+	this.Type = &resourceType
 	return &this
 }
 
-// NewTlsActivationDataWithDefaults instantiates a new TlsActivationData object
+// NewTLSActivationDataWithDefaults instantiates a new TLSActivationData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTlsActivationDataWithDefaults() *TlsActivationData {
-	this := TlsActivationData{}
-	var type_ TypeTlsActivation = TYPETLSACTIVATION_TLS_ACTIVATION
-	this.Type = &type_
+func NewTLSActivationDataWithDefaults() *TLSActivationData {
+	this := TLSActivationData{}
+	var resourceType TypeTLSActivation = TYPETLSACTIVATION_TLS_ACTIVATION
+	this.Type = &resourceType
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *TlsActivationData) GetType() TypeTlsActivation {
+func (o *TLSActivationData) GetType() TypeTLSActivation {
 	if o == nil || o.Type == nil {
-		var ret TypeTlsActivation
+		var ret TypeTLSActivation
 		return ret
 	}
 	return *o.Type
@@ -57,7 +57,7 @@ func (o *TlsActivationData) GetType() TypeTlsActivation {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsActivationData) GetTypeOk() (*TypeTlsActivation, bool) {
+func (o *TLSActivationData) GetTypeOk() (*TypeTLSActivation, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *TlsActivationData) GetTypeOk() (*TypeTlsActivation, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *TlsActivationData) HasType() bool {
+func (o *TLSActivationData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -73,15 +73,15 @@ func (o *TlsActivationData) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTlsActivation and assigns it to the Type field.
-func (o *TlsActivationData) SetType(v TypeTlsActivation) {
+// SetType gets a reference to the given TypeTLSActivation and assigns it to the Type field.
+func (o *TLSActivationData) SetType(v TypeTLSActivation) {
 	o.Type = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TlsActivationData) GetRelationships() RelationshipsForTlsActivation {
+func (o *TLSActivationData) GetRelationships() RelationshipsForTLSActivation {
 	if o == nil || o.Relationships == nil {
-		var ret RelationshipsForTlsActivation
+		var ret RelationshipsForTLSActivation
 		return ret
 	}
 	return *o.Relationships
@@ -89,7 +89,7 @@ func (o *TlsActivationData) GetRelationships() RelationshipsForTlsActivation {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TlsActivationData) GetRelationshipsOk() (*RelationshipsForTlsActivation, bool) {
+func (o *TLSActivationData) GetRelationshipsOk() (*RelationshipsForTLSActivation, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *TlsActivationData) GetRelationshipsOk() (*RelationshipsForTlsActivation
 }
 
 // HasRelationships returns a boolean if a field has been set.
-func (o *TlsActivationData) HasRelationships() bool {
+func (o *TLSActivationData) HasRelationships() bool {
 	if o != nil && o.Relationships != nil {
 		return true
 	}
@@ -105,14 +105,14 @@ func (o *TlsActivationData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given RelationshipsForTlsActivation and assigns it to the Relationships field.
-func (o *TlsActivationData) SetRelationships(v RelationshipsForTlsActivation) {
+// SetRelationships gets a reference to the given RelationshipsForTLSActivation and assigns it to the Relationships field.
+func (o *TLSActivationData) SetRelationships(v RelationshipsForTLSActivation) {
 	o.Relationships = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TlsActivationData) MarshalJSON() ([]byte, error) {
+func (o TLSActivationData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -130,11 +130,11 @@ func (o TlsActivationData) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TlsActivationData) UnmarshalJSON(bytes []byte) (err error) {
-	varTlsActivationData := _TlsActivationData{}
+func (o *TLSActivationData) UnmarshalJSON(bytes []byte) (err error) {
+	varTLSActivationData := _TLSActivationData{}
 
-	if err = json.Unmarshal(bytes, &varTlsActivationData); err == nil {
-		*o = TlsActivationData(varTlsActivationData)
+	if err = json.Unmarshal(bytes, &varTLSActivationData); err == nil {
+		*o = TLSActivationData(varTLSActivationData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -148,48 +148,48 @@ func (o *TlsActivationData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTlsActivationData is a helper abstraction for handling nullable tlsactivationdata types.
-type NullableTlsActivationData struct {
-	value *TlsActivationData
+// NullableTLSActivationData is a helper abstraction for handling nullable tlsactivationdata types.
+type NullableTLSActivationData struct {
+	value *TLSActivationData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTlsActivationData) Get() *TlsActivationData {
+func (v NullableTLSActivationData) Get() *TLSActivationData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTlsActivationData) Set(val *TlsActivationData) {
+func (v *NullableTLSActivationData) Set(val *TLSActivationData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTlsActivationData) IsSet() bool {
+func (v NullableTLSActivationData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTlsActivationData) Unset() {
+func (v *NullableTLSActivationData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTlsActivationData returns a pointer to a new instance of NullableTlsActivationData.
-func NewNullableTlsActivationData(val *TlsActivationData) *NullableTlsActivationData {
-	return &NullableTlsActivationData{value: val, isSet: true}
+// NewNullableTLSActivationData returns a pointer to a new instance of NullableTLSActivationData.
+func NewNullableTLSActivationData(val *TLSActivationData) *NullableTLSActivationData {
+	return &NullableTLSActivationData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTlsActivationData) MarshalJSON() ([]byte, error) {
+func (v NullableTLSActivationData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTlsActivationData) UnmarshalJSON(src []byte) error {
+func (v *NullableTLSActivationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

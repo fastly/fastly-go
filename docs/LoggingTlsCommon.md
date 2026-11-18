@@ -1,174 +1,172 @@
-# LoggingTlsCommon
+# LoggingTLSCommon
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TlsHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
+**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TLSHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
 
 ## Methods
 
-### NewLoggingTlsCommon
+### NewLoggingTLSCommon
 
-`func NewLoggingTlsCommon() *LoggingTlsCommon`
+`func NewLoggingTLSCommon() *LoggingTLSCommon`
 
-NewLoggingTlsCommon instantiates a new LoggingTlsCommon object
+NewLoggingTLSCommon instantiates a new LoggingTLSCommon object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLoggingTlsCommonWithDefaults
+### NewLoggingTLSCommonWithDefaults
 
-`func NewLoggingTlsCommonWithDefaults() *LoggingTlsCommon`
+`func NewLoggingTLSCommonWithDefaults() *LoggingTLSCommon`
 
-NewLoggingTlsCommonWithDefaults instantiates a new LoggingTlsCommon object
+NewLoggingTLSCommonWithDefaults instantiates a new LoggingTLSCommon object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTlsCaCert
+### GetTLSCaCert
 
-`func (o *LoggingTlsCommon) GetTlsCaCert() string`
+`func (o *LoggingTLSCommon) GetTLSCaCert() string`
 
-GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
+GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
 
-### GetTlsCaCertOk
+### GetTLSCaCertOk
 
-`func (o *LoggingTlsCommon) GetTlsCaCertOk() (*string, bool)`
+`func (o *LoggingTLSCommon) GetTLSCaCertOk() (*string, bool)`
 
-GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
+GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsCaCert
+### SetTLSCaCert
 
-`func (o *LoggingTlsCommon) SetTlsCaCert(v string)`
+`func (o *LoggingTLSCommon) SetTLSCaCert(v string)`
 
-SetTlsCaCert sets TlsCaCert field to given value.
+SetTLSCaCert sets TLSCaCert field to given value.
 
-### HasTlsCaCert
+### HasTLSCaCert
 
-`func (o *LoggingTlsCommon) HasTlsCaCert() bool`
+`func (o *LoggingTLSCommon) HasTLSCaCert() bool`
 
-HasTlsCaCert returns a boolean if a field has been set.
+HasTLSCaCert returns a boolean if a field has been set.
 
-### SetTlsCaCertNil
+### SetTLSCaCertNil
 
-`func (o *LoggingTlsCommon) SetTlsCaCertNil(b bool)`
+`func (o *LoggingTLSCommon) SetTLSCaCertNil(b bool)`
 
- SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+ SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 
-### UnsetTlsCaCert
-`func (o *LoggingTlsCommon) UnsetTlsCaCert()`
+### UnsetTLSCaCert
+`func (o *LoggingTLSCommon) UnsetTLSCaCert()`
 
-UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
-### GetTlsClientCert
+UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
+### GetTLSClientCert
 
-`func (o *LoggingTlsCommon) GetTlsClientCert() string`
+`func (o *LoggingTLSCommon) GetTLSClientCert() string`
 
-GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
+GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
 
-### GetTlsClientCertOk
+### GetTLSClientCertOk
 
-`func (o *LoggingTlsCommon) GetTlsClientCertOk() (*string, bool)`
+`func (o *LoggingTLSCommon) GetTLSClientCertOk() (*string, bool)`
 
-GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
+GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientCert
+### SetTLSClientCert
 
-`func (o *LoggingTlsCommon) SetTlsClientCert(v string)`
+`func (o *LoggingTLSCommon) SetTLSClientCert(v string)`
 
-SetTlsClientCert sets TlsClientCert field to given value.
+SetTLSClientCert sets TLSClientCert field to given value.
 
-### HasTlsClientCert
+### HasTLSClientCert
 
-`func (o *LoggingTlsCommon) HasTlsClientCert() bool`
+`func (o *LoggingTLSCommon) HasTLSClientCert() bool`
 
-HasTlsClientCert returns a boolean if a field has been set.
+HasTLSClientCert returns a boolean if a field has been set.
 
-### SetTlsClientCertNil
+### SetTLSClientCertNil
 
-`func (o *LoggingTlsCommon) SetTlsClientCertNil(b bool)`
+`func (o *LoggingTLSCommon) SetTLSClientCertNil(b bool)`
 
- SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+ SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 
-### UnsetTlsClientCert
-`func (o *LoggingTlsCommon) UnsetTlsClientCert()`
+### UnsetTLSClientCert
+`func (o *LoggingTLSCommon) UnsetTLSClientCert()`
 
-UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
-### GetTlsClientKey
+UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
+### GetTLSClientKey
 
-`func (o *LoggingTlsCommon) GetTlsClientKey() string`
+`func (o *LoggingTLSCommon) GetTLSClientKey() string`
 
-GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
+GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
 
-### GetTlsClientKeyOk
+### GetTLSClientKeyOk
 
-`func (o *LoggingTlsCommon) GetTlsClientKeyOk() (*string, bool)`
+`func (o *LoggingTLSCommon) GetTLSClientKeyOk() (*string, bool)`
 
-GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
+GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsClientKey
+### SetTLSClientKey
 
-`func (o *LoggingTlsCommon) SetTlsClientKey(v string)`
+`func (o *LoggingTLSCommon) SetTLSClientKey(v string)`
 
-SetTlsClientKey sets TlsClientKey field to given value.
+SetTLSClientKey sets TLSClientKey field to given value.
 
-### HasTlsClientKey
+### HasTLSClientKey
 
-`func (o *LoggingTlsCommon) HasTlsClientKey() bool`
+`func (o *LoggingTLSCommon) HasTLSClientKey() bool`
 
-HasTlsClientKey returns a boolean if a field has been set.
+HasTLSClientKey returns a boolean if a field has been set.
 
-### SetTlsClientKeyNil
+### SetTLSClientKeyNil
 
-`func (o *LoggingTlsCommon) SetTlsClientKeyNil(b bool)`
+`func (o *LoggingTLSCommon) SetTLSClientKeyNil(b bool)`
 
- SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+ SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 
-### UnsetTlsClientKey
-`func (o *LoggingTlsCommon) UnsetTlsClientKey()`
+### UnsetTLSClientKey
+`func (o *LoggingTLSCommon) UnsetTLSClientKey()`
 
-UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
-### GetTlsHostname
+UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
+### GetTLSHostname
 
-`func (o *LoggingTlsCommon) GetTlsHostname() string`
+`func (o *LoggingTLSCommon) GetTLSHostname() string`
 
-GetTlsHostname returns the TlsHostname field if non-nil, zero value otherwise.
+GetTLSHostname returns the TLSHostname field if non-nil, zero value otherwise.
 
-### GetTlsHostnameOk
+### GetTLSHostnameOk
 
-`func (o *LoggingTlsCommon) GetTlsHostnameOk() (*string, bool)`
+`func (o *LoggingTLSCommon) GetTLSHostnameOk() (*string, bool)`
 
-GetTlsHostnameOk returns a tuple with the TlsHostname field if it's non-nil, zero value otherwise
+GetTLSHostnameOk returns a tuple with the TLSHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsHostname
+### SetTLSHostname
 
-`func (o *LoggingTlsCommon) SetTlsHostname(v string)`
+`func (o *LoggingTLSCommon) SetTLSHostname(v string)`
 
-SetTlsHostname sets TlsHostname field to given value.
+SetTLSHostname sets TLSHostname field to given value.
 
-### HasTlsHostname
+### HasTLSHostname
 
-`func (o *LoggingTlsCommon) HasTlsHostname() bool`
+`func (o *LoggingTLSCommon) HasTLSHostname() bool`
 
-HasTlsHostname returns a boolean if a field has been set.
+HasTLSHostname returns a boolean if a field has been set.
 
-### SetTlsHostnameNil
+### SetTLSHostnameNil
 
-`func (o *LoggingTlsCommon) SetTlsHostnameNil(b bool)`
+`func (o *LoggingTLSCommon) SetTLSHostnameNil(b bool)`
 
- SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
+ SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 
-### UnsetTlsHostname
-`func (o *LoggingTlsCommon) UnsetTlsHostname()`
+### UnsetTLSHostname
+`func (o *LoggingTLSCommon) UnsetTLSHostname()`
 
-UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
+UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

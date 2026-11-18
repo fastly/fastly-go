@@ -19,11 +19,11 @@ import (
 // ValuesStatusCodes struct for ValuesStatusCodes
 type ValuesStatusCodes struct {
 	// The HTTP request path.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// The URL accounts for this percentage of the status code in this dimension.
 	RatePerStatus *float32 `json:"rate_per_status,omitempty"`
 	// The rate at which the status code in this dimension occurs for this URL.
-	RatePerUrl *float32 `json:"rate_per_url,omitempty"`
+	RatePerURL *float32 `json:"rate_per_url,omitempty"`
 }
 
 // NewValuesStatusCodes instantiates a new ValuesStatusCodes object
@@ -43,36 +43,36 @@ func NewValuesStatusCodesWithDefaults() *ValuesStatusCodes {
 	return &this
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *ValuesStatusCodes) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *ValuesStatusCodes) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ValuesStatusCodes) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *ValuesStatusCodes) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *ValuesStatusCodes) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *ValuesStatusCodes) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *ValuesStatusCodes) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *ValuesStatusCodes) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetRatePerStatus returns the RatePerStatus field value if set, zero value otherwise.
@@ -107,50 +107,50 @@ func (o *ValuesStatusCodes) SetRatePerStatus(v float32) {
 	o.RatePerStatus = &v
 }
 
-// GetRatePerUrl returns the RatePerUrl field value if set, zero value otherwise.
-func (o *ValuesStatusCodes) GetRatePerUrl() float32 {
-	if o == nil || o.RatePerUrl == nil {
+// GetRatePerURL returns the RatePerURL field value if set, zero value otherwise.
+func (o *ValuesStatusCodes) GetRatePerURL() float32 {
+	if o == nil || o.RatePerURL == nil {
 		var ret float32
 		return ret
 	}
-	return *o.RatePerUrl
+	return *o.RatePerURL
 }
 
-// GetRatePerUrlOk returns a tuple with the RatePerUrl field value if set, nil otherwise
+// GetRatePerURLOk returns a tuple with the RatePerURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ValuesStatusCodes) GetRatePerUrlOk() (*float32, bool) {
-	if o == nil || o.RatePerUrl == nil {
+func (o *ValuesStatusCodes) GetRatePerURLOk() (*float32, bool) {
+	if o == nil || o.RatePerURL == nil {
 		return nil, false
 	}
-	return o.RatePerUrl, true
+	return o.RatePerURL, true
 }
 
-// HasRatePerUrl returns a boolean if a field has been set.
-func (o *ValuesStatusCodes) HasRatePerUrl() bool {
-	if o != nil && o.RatePerUrl != nil {
+// HasRatePerURL returns a boolean if a field has been set.
+func (o *ValuesStatusCodes) HasRatePerURL() bool {
+	if o != nil && o.RatePerURL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRatePerUrl gets a reference to the given float32 and assigns it to the RatePerUrl field.
-func (o *ValuesStatusCodes) SetRatePerUrl(v float32) {
-	o.RatePerUrl = &v
+// SetRatePerURL gets a reference to the given float32 and assigns it to the RatePerURL field.
+func (o *ValuesStatusCodes) SetRatePerURL(v float32) {
+	o.RatePerURL = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ValuesStatusCodes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.RatePerStatus != nil {
 		toSerialize["rate_per_status"] = o.RatePerStatus
 	}
-	if o.RatePerUrl != nil {
-		toSerialize["rate_per_url"] = o.RatePerUrl
+	if o.RatePerURL != nil {
+		toSerialize["rate_per_url"] = o.RatePerURL
 	}
 	return json.Marshal(toSerialize)
 }

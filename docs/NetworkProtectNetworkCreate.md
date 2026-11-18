@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** | Optional descriptive text for the network. This metadata does not change traffic handling. Null clears it on update. | [optional] 
 **Name** | **string** | A human-readable name, unique within the customer. | 
 **Prefix** | **string** | The CIDR block to protect, masked to its network address. It cannot be changed after creation. | 
-**RuleSetId** | Pointer to **string** | Custom rule-set attachment is unavailable. Omit this value or send an empty string to use the backend-assigned default rule set. | [optional] 
+**RuleSetID** | Pointer to **string** | Custom rule-set attachment is unavailable. Omit this value or send an empty string to use the backend-assigned default rule set. | [optional] 
 **EndpointPolicies** | Pointer to [**[]NetworkProtectEndpointPolicy**](NetworkProtectEndpointPolicy.md) | Complete endpoint policy configuration. A network has at most one policy per region and may have no policies. | [optional] 
 
 ## Methods
@@ -104,30 +104,30 @@ and a boolean to check if the value has been set.
 SetPrefix sets Prefix field to given value.
 
 
-### GetRuleSetId
+### GetRuleSetID
 
-`func (o *NetworkProtectNetworkCreate) GetRuleSetId() string`
+`func (o *NetworkProtectNetworkCreate) GetRuleSetID() string`
 
-GetRuleSetId returns the RuleSetId field if non-nil, zero value otherwise.
+GetRuleSetID returns the RuleSetID field if non-nil, zero value otherwise.
 
-### GetRuleSetIdOk
+### GetRuleSetIDOk
 
-`func (o *NetworkProtectNetworkCreate) GetRuleSetIdOk() (*string, bool)`
+`func (o *NetworkProtectNetworkCreate) GetRuleSetIDOk() (*string, bool)`
 
-GetRuleSetIdOk returns a tuple with the RuleSetId field if it's non-nil, zero value otherwise
+GetRuleSetIDOk returns a tuple with the RuleSetID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRuleSetId
+### SetRuleSetID
 
-`func (o *NetworkProtectNetworkCreate) SetRuleSetId(v string)`
+`func (o *NetworkProtectNetworkCreate) SetRuleSetID(v string)`
 
-SetRuleSetId sets RuleSetId field to given value.
+SetRuleSetID sets RuleSetID field to given value.
 
-### HasRuleSetId
+### HasRuleSetID
 
-`func (o *NetworkProtectNetworkCreate) HasRuleSetId() bool`
+`func (o *NetworkProtectNetworkCreate) HasRuleSetID() bool`
 
-HasRuleSetId returns a boolean if a field has been set.
+HasRuleSetID returns a boolean if a field has been set.
 
 ### GetEndpointPolicies
 
@@ -156,5 +156,3 @@ HasEndpointPolicies returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GeneralDefaultHost** | Pointer to **string** | The default host name for the version. | [optional] 
-**GeneralDefaultTtl** | Pointer to **int32** | The default time-to-live (TTL) for the version. | [optional] 
+**GeneralDefaultTTL** | Pointer to **int32** | The default time-to-live (TTL) for the version. | [optional] 
 **GeneralStaleIfError** | Pointer to **bool** | Enables serving a stale object if there is an error. | [optional] [default to false]
-**GeneralStaleIfErrorTtl** | Pointer to **int32** | The default time-to-live (TTL) for serving the stale object for the version. | [optional] [default to 43200]
+**GeneralStaleIfErrorTTL** | Pointer to **int32** | The default time-to-live (TTL) for serving the stale object for the version. | [optional] [default to 43200]
 
 ## Methods
 
@@ -53,30 +53,30 @@ SetGeneralDefaultHost sets GeneralDefaultHost field to given value.
 
 HasGeneralDefaultHost returns a boolean if a field has been set.
 
-### GetGeneralDefaultTtl
+### GetGeneralDefaultTTL
 
-`func (o *VersionDetailSettings) GetGeneralDefaultTtl() int32`
+`func (o *VersionDetailSettings) GetGeneralDefaultTTL() int32`
 
-GetGeneralDefaultTtl returns the GeneralDefaultTtl field if non-nil, zero value otherwise.
+GetGeneralDefaultTTL returns the GeneralDefaultTTL field if non-nil, zero value otherwise.
 
-### GetGeneralDefaultTtlOk
+### GetGeneralDefaultTTLOk
 
-`func (o *VersionDetailSettings) GetGeneralDefaultTtlOk() (*int32, bool)`
+`func (o *VersionDetailSettings) GetGeneralDefaultTTLOk() (*int32, bool)`
 
-GetGeneralDefaultTtlOk returns a tuple with the GeneralDefaultTtl field if it's non-nil, zero value otherwise
+GetGeneralDefaultTTLOk returns a tuple with the GeneralDefaultTTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGeneralDefaultTtl
+### SetGeneralDefaultTTL
 
-`func (o *VersionDetailSettings) SetGeneralDefaultTtl(v int32)`
+`func (o *VersionDetailSettings) SetGeneralDefaultTTL(v int32)`
 
-SetGeneralDefaultTtl sets GeneralDefaultTtl field to given value.
+SetGeneralDefaultTTL sets GeneralDefaultTTL field to given value.
 
-### HasGeneralDefaultTtl
+### HasGeneralDefaultTTL
 
-`func (o *VersionDetailSettings) HasGeneralDefaultTtl() bool`
+`func (o *VersionDetailSettings) HasGeneralDefaultTTL() bool`
 
-HasGeneralDefaultTtl returns a boolean if a field has been set.
+HasGeneralDefaultTTL returns a boolean if a field has been set.
 
 ### GetGeneralStaleIfError
 
@@ -103,32 +103,30 @@ SetGeneralStaleIfError sets GeneralStaleIfError field to given value.
 
 HasGeneralStaleIfError returns a boolean if a field has been set.
 
-### GetGeneralStaleIfErrorTtl
+### GetGeneralStaleIfErrorTTL
 
-`func (o *VersionDetailSettings) GetGeneralStaleIfErrorTtl() int32`
+`func (o *VersionDetailSettings) GetGeneralStaleIfErrorTTL() int32`
 
-GetGeneralStaleIfErrorTtl returns the GeneralStaleIfErrorTtl field if non-nil, zero value otherwise.
+GetGeneralStaleIfErrorTTL returns the GeneralStaleIfErrorTTL field if non-nil, zero value otherwise.
 
-### GetGeneralStaleIfErrorTtlOk
+### GetGeneralStaleIfErrorTTLOk
 
-`func (o *VersionDetailSettings) GetGeneralStaleIfErrorTtlOk() (*int32, bool)`
+`func (o *VersionDetailSettings) GetGeneralStaleIfErrorTTLOk() (*int32, bool)`
 
-GetGeneralStaleIfErrorTtlOk returns a tuple with the GeneralStaleIfErrorTtl field if it's non-nil, zero value otherwise
+GetGeneralStaleIfErrorTTLOk returns a tuple with the GeneralStaleIfErrorTTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGeneralStaleIfErrorTtl
+### SetGeneralStaleIfErrorTTL
 
-`func (o *VersionDetailSettings) SetGeneralStaleIfErrorTtl(v int32)`
+`func (o *VersionDetailSettings) SetGeneralStaleIfErrorTTL(v int32)`
 
-SetGeneralStaleIfErrorTtl sets GeneralStaleIfErrorTtl field to given value.
+SetGeneralStaleIfErrorTTL sets GeneralStaleIfErrorTTL field to given value.
 
-### HasGeneralStaleIfErrorTtl
+### HasGeneralStaleIfErrorTTL
 
-`func (o *VersionDetailSettings) HasGeneralStaleIfErrorTtl() bool`
+`func (o *VersionDetailSettings) HasGeneralStaleIfErrorTTL() bool`
 
-HasGeneralStaleIfErrorTtl returns a boolean if a field has been set.
+HasGeneralStaleIfErrorTTL returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

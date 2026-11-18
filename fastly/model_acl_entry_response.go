@@ -17,14 +17,14 @@ import (
 	"time"
 )
 
-// AclEntryResponse struct for AclEntryResponse
-type AclEntryResponse struct {
+// ACLEntryResponse struct for ACLEntryResponse
+type ACLEntryResponse struct {
 	// Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
 	Negated *int32 `json:"negated,omitempty"`
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`
 	// An IP address.
-	Ip *string `json:"ip,omitempty"`
+	IP *string `json:"ip,omitempty"`
 	// Number of bits for the subnet mask applied to the IP address. For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses), and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
 	Subnet NullableInt32 `json:"subnet,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -33,37 +33,37 @@ type AclEntryResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	AclId                *string      `json:"acl_id,omitempty"`
-	Id                   *string      `json:"id,omitempty"`
-	ServiceId            *string      `json:"service_id,omitempty"`
+	ACLID                *string      `json:"acl_id,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _AclEntryResponse AclEntryResponse
+type _ACLEntryResponse ACLEntryResponse
 
-// NewAclEntryResponse instantiates a new AclEntryResponse object
+// NewACLEntryResponse instantiates a new ACLEntryResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAclEntryResponse() *AclEntryResponse {
-	this := AclEntryResponse{}
+func NewACLEntryResponse() *ACLEntryResponse {
+	this := ACLEntryResponse{}
 	var negated int32 = 0
 	this.Negated = &negated
 	return &this
 }
 
-// NewAclEntryResponseWithDefaults instantiates a new AclEntryResponse object
+// NewACLEntryResponseWithDefaults instantiates a new ACLEntryResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAclEntryResponseWithDefaults() *AclEntryResponse {
-	this := AclEntryResponse{}
+func NewACLEntryResponseWithDefaults() *ACLEntryResponse {
+	this := ACLEntryResponse{}
 	var negated int32 = 0
 	this.Negated = &negated
 	return &this
 }
 
 // GetNegated returns the Negated field value if set, zero value otherwise.
-func (o *AclEntryResponse) GetNegated() int32 {
+func (o *ACLEntryResponse) GetNegated() int32 {
 	if o == nil || o.Negated == nil {
 		var ret int32
 		return ret
@@ -73,7 +73,7 @@ func (o *AclEntryResponse) GetNegated() int32 {
 
 // GetNegatedOk returns a tuple with the Negated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclEntryResponse) GetNegatedOk() (*int32, bool) {
+func (o *ACLEntryResponse) GetNegatedOk() (*int32, bool) {
 	if o == nil || o.Negated == nil {
 		return nil, false
 	}
@@ -81,7 +81,7 @@ func (o *AclEntryResponse) GetNegatedOk() (*int32, bool) {
 }
 
 // HasNegated returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasNegated() bool {
+func (o *ACLEntryResponse) HasNegated() bool {
 	if o != nil && o.Negated != nil {
 		return true
 	}
@@ -90,12 +90,12 @@ func (o *AclEntryResponse) HasNegated() bool {
 }
 
 // SetNegated gets a reference to the given int32 and assigns it to the Negated field.
-func (o *AclEntryResponse) SetNegated(v int32) {
+func (o *ACLEntryResponse) SetNegated(v int32) {
 	o.Negated = &v
 }
 
 // GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AclEntryResponse) GetComment() string {
+func (o *ACLEntryResponse) GetComment() string {
 	if o == nil || o.Comment.Get() == nil {
 		var ret string
 		return ret
@@ -106,7 +106,7 @@ func (o *AclEntryResponse) GetComment() string {
 // GetCommentOk returns a tuple with the Comment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AclEntryResponse) GetCommentOk() (*string, bool) {
+func (o *ACLEntryResponse) GetCommentOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -114,7 +114,7 @@ func (o *AclEntryResponse) GetCommentOk() (*string, bool) {
 }
 
 // HasComment returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasComment() bool {
+func (o *ACLEntryResponse) HasComment() bool {
 	if o != nil && o.Comment.IsSet() {
 		return true
 	}
@@ -123,54 +123,54 @@ func (o *AclEntryResponse) HasComment() bool {
 }
 
 // SetComment gets a reference to the given NullableString and assigns it to the Comment field.
-func (o *AclEntryResponse) SetComment(v string) {
+func (o *ACLEntryResponse) SetComment(v string) {
 	o.Comment.Set(&v)
 }
 
 // SetCommentNil sets the value for Comment to be an explicit nil
-func (o *AclEntryResponse) SetCommentNil() {
+func (o *ACLEntryResponse) SetCommentNil() {
 	o.Comment.Set(nil)
 }
 
 // UnsetComment ensures that no value is present for Comment, not even an explicit nil
-func (o *AclEntryResponse) UnsetComment() {
+func (o *ACLEntryResponse) UnsetComment() {
 	o.Comment.Unset()
 }
 
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *AclEntryResponse) GetIp() string {
-	if o == nil || o.Ip == nil {
+// GetIP returns the IP field value if set, zero value otherwise.
+func (o *ACLEntryResponse) GetIP() string {
+	if o == nil || o.IP == nil {
 		var ret string
 		return ret
 	}
-	return *o.Ip
+	return *o.IP
 }
 
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
+// GetIPOk returns a tuple with the IP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclEntryResponse) GetIpOk() (*string, bool) {
-	if o == nil || o.Ip == nil {
+func (o *ACLEntryResponse) GetIPOk() (*string, bool) {
+	if o == nil || o.IP == nil {
 		return nil, false
 	}
-	return o.Ip, true
+	return o.IP, true
 }
 
-// HasIp returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasIp() bool {
-	if o != nil && o.Ip != nil {
+// HasIP returns a boolean if a field has been set.
+func (o *ACLEntryResponse) HasIP() bool {
+	if o != nil && o.IP != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *AclEntryResponse) SetIp(v string) {
-	o.Ip = &v
+// SetIP gets a reference to the given string and assigns it to the IP field.
+func (o *ACLEntryResponse) SetIP(v string) {
+	o.IP = &v
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AclEntryResponse) GetSubnet() int32 {
+func (o *ACLEntryResponse) GetSubnet() int32 {
 	if o == nil || o.Subnet.Get() == nil {
 		var ret int32
 		return ret
@@ -181,7 +181,7 @@ func (o *AclEntryResponse) GetSubnet() int32 {
 // GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AclEntryResponse) GetSubnetOk() (*int32, bool) {
+func (o *ACLEntryResponse) GetSubnetOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -189,7 +189,7 @@ func (o *AclEntryResponse) GetSubnetOk() (*int32, bool) {
 }
 
 // HasSubnet returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasSubnet() bool {
+func (o *ACLEntryResponse) HasSubnet() bool {
 	if o != nil && o.Subnet.IsSet() {
 		return true
 	}
@@ -198,22 +198,22 @@ func (o *AclEntryResponse) HasSubnet() bool {
 }
 
 // SetSubnet gets a reference to the given NullableInt32 and assigns it to the Subnet field.
-func (o *AclEntryResponse) SetSubnet(v int32) {
+func (o *ACLEntryResponse) SetSubnet(v int32) {
 	o.Subnet.Set(&v)
 }
 
 // SetSubnetNil sets the value for Subnet to be an explicit nil
-func (o *AclEntryResponse) SetSubnetNil() {
+func (o *ACLEntryResponse) SetSubnetNil() {
 	o.Subnet.Set(nil)
 }
 
 // UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
-func (o *AclEntryResponse) UnsetSubnet() {
+func (o *ACLEntryResponse) UnsetSubnet() {
 	o.Subnet.Unset()
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AclEntryResponse) GetCreatedAt() time.Time {
+func (o *ACLEntryResponse) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -224,7 +224,7 @@ func (o *AclEntryResponse) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AclEntryResponse) GetCreatedAtOk() (*time.Time, bool) {
+func (o *ACLEntryResponse) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -232,7 +232,7 @@ func (o *AclEntryResponse) GetCreatedAtOk() (*time.Time, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasCreatedAt() bool {
+func (o *ACLEntryResponse) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -241,22 +241,22 @@ func (o *AclEntryResponse) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *AclEntryResponse) SetCreatedAt(v time.Time) {
+func (o *ACLEntryResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *AclEntryResponse) SetCreatedAtNil() {
+func (o *ACLEntryResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *AclEntryResponse) UnsetCreatedAt() {
+func (o *ACLEntryResponse) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AclEntryResponse) GetDeletedAt() time.Time {
+func (o *ACLEntryResponse) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -267,7 +267,7 @@ func (o *AclEntryResponse) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AclEntryResponse) GetDeletedAtOk() (*time.Time, bool) {
+func (o *ACLEntryResponse) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -275,7 +275,7 @@ func (o *AclEntryResponse) GetDeletedAtOk() (*time.Time, bool) {
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasDeletedAt() bool {
+func (o *ACLEntryResponse) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -284,22 +284,22 @@ func (o *AclEntryResponse) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *AclEntryResponse) SetDeletedAt(v time.Time) {
+func (o *ACLEntryResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *AclEntryResponse) SetDeletedAtNil() {
+func (o *ACLEntryResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *AclEntryResponse) UnsetDeletedAt() {
+func (o *ACLEntryResponse) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AclEntryResponse) GetUpdatedAt() time.Time {
+func (o *ACLEntryResponse) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -310,7 +310,7 @@ func (o *AclEntryResponse) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AclEntryResponse) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *ACLEntryResponse) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -318,7 +318,7 @@ func (o *AclEntryResponse) GetUpdatedAtOk() (*time.Time, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasUpdatedAt() bool {
+func (o *ACLEntryResponse) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -327,119 +327,119 @@ func (o *AclEntryResponse) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *AclEntryResponse) SetUpdatedAt(v time.Time) {
+func (o *ACLEntryResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *AclEntryResponse) SetUpdatedAtNil() {
+func (o *ACLEntryResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *AclEntryResponse) UnsetUpdatedAt() {
+func (o *ACLEntryResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetAclId returns the AclId field value if set, zero value otherwise.
-func (o *AclEntryResponse) GetAclId() string {
-	if o == nil || o.AclId == nil {
+// GetACLID returns the ACLID field value if set, zero value otherwise.
+func (o *ACLEntryResponse) GetACLID() string {
+	if o == nil || o.ACLID == nil {
 		var ret string
 		return ret
 	}
-	return *o.AclId
+	return *o.ACLID
 }
 
-// GetAclIdOk returns a tuple with the AclId field value if set, nil otherwise
+// GetACLIDOk returns a tuple with the ACLID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclEntryResponse) GetAclIdOk() (*string, bool) {
-	if o == nil || o.AclId == nil {
+func (o *ACLEntryResponse) GetACLIDOk() (*string, bool) {
+	if o == nil || o.ACLID == nil {
 		return nil, false
 	}
-	return o.AclId, true
+	return o.ACLID, true
 }
 
-// HasAclId returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasAclId() bool {
-	if o != nil && o.AclId != nil {
+// HasACLID returns a boolean if a field has been set.
+func (o *ACLEntryResponse) HasACLID() bool {
+	if o != nil && o.ACLID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAclId gets a reference to the given string and assigns it to the AclId field.
-func (o *AclEntryResponse) SetAclId(v string) {
-	o.AclId = &v
+// SetACLID gets a reference to the given string and assigns it to the ACLID field.
+func (o *ACLEntryResponse) SetACLID(v string) {
+	o.ACLID = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AclEntryResponse) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *ACLEntryResponse) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclEntryResponse) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *ACLEntryResponse) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *ACLEntryResponse) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AclEntryResponse) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *ACLEntryResponse) SetID(v string) {
+	o.ID = &v
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *AclEntryResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *ACLEntryResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AclEntryResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *ACLEntryResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *AclEntryResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *ACLEntryResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *AclEntryResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *ACLEntryResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o AclEntryResponse) MarshalJSON() ([]byte, error) {
+func (o ACLEntryResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Negated != nil {
 		toSerialize["negated"] = o.Negated
@@ -447,8 +447,8 @@ func (o AclEntryResponse) MarshalJSON() ([]byte, error) {
 	if o.Comment.IsSet() {
 		toSerialize["comment"] = o.Comment.Get()
 	}
-	if o.Ip != nil {
-		toSerialize["ip"] = o.Ip
+	if o.IP != nil {
+		toSerialize["ip"] = o.IP
 	}
 	if o.Subnet.IsSet() {
 		toSerialize["subnet"] = o.Subnet.Get()
@@ -462,14 +462,14 @@ func (o AclEntryResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.AclId != nil {
-		toSerialize["acl_id"] = o.AclId
+	if o.ACLID != nil {
+		toSerialize["acl_id"] = o.ACLID
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -481,11 +481,11 @@ func (o AclEntryResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *AclEntryResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varAclEntryResponse := _AclEntryResponse{}
+func (o *ACLEntryResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varACLEntryResponse := _ACLEntryResponse{}
 
-	if err = json.Unmarshal(bytes, &varAclEntryResponse); err == nil {
-		*o = AclEntryResponse(varAclEntryResponse)
+	if err = json.Unmarshal(bytes, &varACLEntryResponse); err == nil {
+		*o = ACLEntryResponse(varACLEntryResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -507,48 +507,48 @@ func (o *AclEntryResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableAclEntryResponse is a helper abstraction for handling nullable aclentryresponse types.
-type NullableAclEntryResponse struct {
-	value *AclEntryResponse
+// NullableACLEntryResponse is a helper abstraction for handling nullable aclentryresponse types.
+type NullableACLEntryResponse struct {
+	value *ACLEntryResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableAclEntryResponse) Get() *AclEntryResponse {
+func (v NullableACLEntryResponse) Get() *ACLEntryResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableAclEntryResponse) Set(val *AclEntryResponse) {
+func (v *NullableACLEntryResponse) Set(val *ACLEntryResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableAclEntryResponse) IsSet() bool {
+func (v NullableACLEntryResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableAclEntryResponse) Unset() {
+func (v *NullableACLEntryResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableAclEntryResponse returns a pointer to a new instance of NullableAclEntryResponse.
-func NewNullableAclEntryResponse(val *AclEntryResponse) *NullableAclEntryResponse {
-	return &NullableAclEntryResponse{value: val, isSet: true}
+// NewNullableACLEntryResponse returns a pointer to a new instance of NullableACLEntryResponse.
+func NewNullableACLEntryResponse(val *ACLEntryResponse) *NullableACLEntryResponse {
+	return &NullableACLEntryResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableAclEntryResponse) MarshalJSON() ([]byte, error) {
+func (v NullableACLEntryResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableAclEntryResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableACLEntryResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

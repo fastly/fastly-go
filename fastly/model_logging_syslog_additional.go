@@ -25,7 +25,7 @@ type LoggingSyslogAdditional struct {
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// Whether to prepend each message with a specific token.
 	Token                NullableString       `json:"token,omitempty"`
-	UseTls               *LoggingUseTlsString `json:"use_tls,omitempty"`
+	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -41,8 +41,8 @@ func NewLoggingSyslogAdditional() *LoggingSyslogAdditional {
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -55,8 +55,8 @@ func NewLoggingSyslogAdditionalWithDefaults() *LoggingSyslogAdditional {
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -210,36 +210,36 @@ func (o *LoggingSyslogAdditional) UnsetToken() {
 	o.Token.Unset()
 }
 
-// GetUseTls returns the UseTls field value if set, zero value otherwise.
-func (o *LoggingSyslogAdditional) GetUseTls() LoggingUseTlsString {
-	if o == nil || o.UseTls == nil {
-		var ret LoggingUseTlsString
+// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
+func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLSString {
+	if o == nil || o.UseTLS == nil {
+		var ret LoggingUseTLSString
 		return ret
 	}
-	return *o.UseTls
+	return *o.UseTLS
 }
 
-// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
+// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSyslogAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool) {
-	if o == nil || o.UseTls == nil {
+func (o *LoggingSyslogAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool) {
+	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
-	return o.UseTls, true
+	return o.UseTLS, true
 }
 
-// HasUseTls returns a boolean if a field has been set.
-func (o *LoggingSyslogAdditional) HasUseTls() bool {
-	if o != nil && o.UseTls != nil {
+// HasUseTLS returns a boolean if a field has been set.
+func (o *LoggingSyslogAdditional) HasUseTLS() bool {
+	if o != nil && o.UseTLS != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTls gets a reference to the given LoggingUseTlsString and assigns it to the UseTls field.
-func (o *LoggingSyslogAdditional) SetUseTls(v LoggingUseTlsString) {
-	o.UseTls = &v
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingSyslogAdditional) SetUseTLS(v LoggingUseTLSString) {
+	o.UseTLS = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -258,8 +258,8 @@ func (o LoggingSyslogAdditional) MarshalJSON() ([]byte, error) {
 	if o.Token.IsSet() {
 		toSerialize["token"] = o.Token.Get()
 	}
-	if o.UseTls != nil {
-		toSerialize["use_tls"] = o.UseTls
+	if o.UseTLS != nil {
+		toSerialize["use_tls"] = o.UseTLS
 	}
 
 	for key, value := range o.AdditionalProperties {

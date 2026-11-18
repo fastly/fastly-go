@@ -27,154 +27,154 @@ var (
 	_ context.Context
 )
 
-// AclEntryAPI defines an interface for interacting with the resource.
-type AclEntryAPI interface {
+// ACLEntryAPI defines an interface for interacting with the resource.
+type ACLEntryAPI interface {
 
 	/*
-		BulkUpdateAclEntries Update multiple ACL entries
+		BulkUpdateACLEntries Update multiple ACL entries
 
 		Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param aclId Alphanumeric string identifying a ACL.
-		 @return APIBulkUpdateAclEntriesRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @return APIBulkUpdateACLEntriesRequest
 	*/
-	BulkUpdateAclEntries(ctx context.Context, serviceId string, aclId string) APIBulkUpdateAclEntriesRequest
+	BulkUpdateACLEntries(ctx context.Context, serviceID string, aclID string) APIBulkUpdateACLEntriesRequest
 
-	// BulkUpdateAclEntriesExecute executes the request
+	// BulkUpdateACLEntriesExecute executes the request
 	//  @return InlineResponse200
-	BulkUpdateAclEntriesExecute(r APIBulkUpdateAclEntriesRequest) (*InlineResponse200, *http.Response, error)
+	BulkUpdateACLEntriesExecute(r APIBulkUpdateACLEntriesRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		CreateAclEntry Create an ACL entry
+		CreateACLEntry Create an ACL entry
 
 		Add an ACL entry to an ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param aclId Alphanumeric string identifying a ACL.
-		 @return APICreateAclEntryRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @return APICreateACLEntryRequest
 	*/
-	CreateAclEntry(ctx context.Context, serviceId string, aclId string) APICreateAclEntryRequest
+	CreateACLEntry(ctx context.Context, serviceID string, aclID string) APICreateACLEntryRequest
 
-	// CreateAclEntryExecute executes the request
-	//  @return AclEntryResponse
-	CreateAclEntryExecute(r APICreateAclEntryRequest) (*AclEntryResponse, *http.Response, error)
+	// CreateACLEntryExecute executes the request
+	//  @return ACLEntryResponse
+	CreateACLEntryExecute(r APICreateACLEntryRequest) (*ACLEntryResponse, *http.Response, error)
 
 	/*
-		DeleteAclEntry Delete an ACL entry
+		DeleteACLEntry Delete an ACL entry
 
 		Delete an ACL entry from a specified ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param aclId Alphanumeric string identifying a ACL.
-		 @param aclEntryId Alphanumeric string identifying an ACL Entry.
-		 @return APIDeleteAclEntryRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @param aclEntryID Alphanumeric string identifying an ACL Entry.
+		 @return APIDeleteACLEntryRequest
 	*/
-	DeleteAclEntry(ctx context.Context, serviceId string, aclId string, aclEntryId string) APIDeleteAclEntryRequest
+	DeleteACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIDeleteACLEntryRequest
 
-	// DeleteAclEntryExecute executes the request
+	// DeleteACLEntryExecute executes the request
 	//  @return InlineResponse200
-	DeleteAclEntryExecute(r APIDeleteAclEntryRequest) (*InlineResponse200, *http.Response, error)
+	DeleteACLEntryExecute(r APIDeleteACLEntryRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		GetAclEntry Describe an ACL entry
+		GetACLEntry Describe an ACL entry
 
 		Retrieve a single ACL entry.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param aclId Alphanumeric string identifying a ACL.
-		 @param aclEntryId Alphanumeric string identifying an ACL Entry.
-		 @return APIGetAclEntryRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @param aclEntryID Alphanumeric string identifying an ACL Entry.
+		 @return APIGetACLEntryRequest
 	*/
-	GetAclEntry(ctx context.Context, serviceId string, aclId string, aclEntryId string) APIGetAclEntryRequest
+	GetACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIGetACLEntryRequest
 
-	// GetAclEntryExecute executes the request
-	//  @return AclEntryResponse
-	GetAclEntryExecute(r APIGetAclEntryRequest) (*AclEntryResponse, *http.Response, error)
+	// GetACLEntryExecute executes the request
+	//  @return ACLEntryResponse
+	GetACLEntryExecute(r APIGetACLEntryRequest) (*ACLEntryResponse, *http.Response, error)
 
 	/*
-		ListAclEntries List ACL entries
+		ListACLEntries List ACL entries
 
 		List ACL entries for a specified ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param aclId Alphanumeric string identifying a ACL.
-		 @return APIListAclEntriesRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @return APIListACLEntriesRequest
 	*/
-	ListAclEntries(ctx context.Context, serviceId string, aclId string) APIListAclEntriesRequest
+	ListACLEntries(ctx context.Context, serviceID string, aclID string) APIListACLEntriesRequest
 
-	// ListAclEntriesExecute executes the request
-	//  @return []AclEntryResponse
-	ListAclEntriesExecute(r APIListAclEntriesRequest) ([]AclEntryResponse, *http.Response, error)
+	// ListACLEntriesExecute executes the request
+	//  @return []ACLEntryResponse
+	ListACLEntriesExecute(r APIListACLEntriesRequest) ([]ACLEntryResponse, *http.Response, error)
 
 	/*
-		UpdateAclEntry Update an ACL entry
+		UpdateACLEntry Update an ACL entry
 
 		Update an ACL entry for a specified ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
-		 @param aclId Alphanumeric string identifying a ACL.
-		 @param aclEntryId Alphanumeric string identifying an ACL Entry.
-		 @return APIUpdateAclEntryRequest
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @param aclEntryID Alphanumeric string identifying an ACL Entry.
+		 @return APIUpdateACLEntryRequest
 	*/
-	UpdateAclEntry(ctx context.Context, serviceId string, aclId string, aclEntryId string) APIUpdateAclEntryRequest
+	UpdateACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIUpdateACLEntryRequest
 
-	// UpdateAclEntryExecute executes the request
-	//  @return AclEntryResponse
-	UpdateAclEntryExecute(r APIUpdateAclEntryRequest) (*AclEntryResponse, *http.Response, error)
+	// UpdateACLEntryExecute executes the request
+	//  @return ACLEntryResponse
+	UpdateACLEntryExecute(r APIUpdateACLEntryRequest) (*ACLEntryResponse, *http.Response, error)
 }
 
-// AclEntryAPIService AclEntryAPI service
-type AclEntryAPIService service
+// ACLEntryAPIService ACLEntryAPI service
+type ACLEntryAPIService service
 
-// APIBulkUpdateAclEntriesRequest represents a request for the resource.
-type APIBulkUpdateAclEntriesRequest struct {
+// APIBulkUpdateACLEntriesRequest represents a request for the resource.
+type APIBulkUpdateACLEntriesRequest struct {
 	ctx                         context.Context
-	APIService                  AclEntryAPI
-	serviceId                   string
-	aclId                       string
-	bulkUpdateAclEntriesRequest *BulkUpdateAclEntriesRequest
+	APIService                  ACLEntryAPI
+	serviceID                   string
+	aclID                       string
+	bulkUpdateACLEntriesRequest *BulkUpdateACLEntriesRequest
 }
 
-// BulkUpdateAclEntriesRequest returns a pointer to a request.
-func (r *APIBulkUpdateAclEntriesRequest) BulkUpdateAclEntriesRequest(bulkUpdateAclEntriesRequest BulkUpdateAclEntriesRequest) *APIBulkUpdateAclEntriesRequest {
-	r.bulkUpdateAclEntriesRequest = &bulkUpdateAclEntriesRequest
+// BulkUpdateACLEntriesRequest returns a pointer to a request.
+func (r *APIBulkUpdateACLEntriesRequest) BulkUpdateACLEntriesRequest(bulkUpdateACLEntriesRequest BulkUpdateACLEntriesRequest) *APIBulkUpdateACLEntriesRequest {
+	r.bulkUpdateACLEntriesRequest = &bulkUpdateACLEntriesRequest
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIBulkUpdateAclEntriesRequest) Execute() (*InlineResponse200, *http.Response, error) {
-	return r.APIService.BulkUpdateAclEntriesExecute(r)
+func (r APIBulkUpdateACLEntriesRequest) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.BulkUpdateACLEntriesExecute(r)
 }
 
 /*
-BulkUpdateAclEntries Update multiple ACL entries
+BulkUpdateACLEntries Update multiple ACL entries
 
 Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param aclId Alphanumeric string identifying a ACL.
- @return APIBulkUpdateAclEntriesRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param aclID Alphanumeric string identifying a ACL.
+ @return APIBulkUpdateACLEntriesRequest
 */
-func (a *AclEntryAPIService) BulkUpdateAclEntries(ctx context.Context, serviceId string, aclId string) APIBulkUpdateAclEntriesRequest {
-	return APIBulkUpdateAclEntriesRequest{
+func (a *ACLEntryAPIService) BulkUpdateACLEntries(ctx context.Context, serviceID string, aclID string) APIBulkUpdateACLEntriesRequest {
+	return APIBulkUpdateACLEntriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		aclId:      aclId,
+		serviceID:  serviceID,
+		aclID:      aclID,
 	}
 }
 
-// BulkUpdateAclEntriesExecute executes the request
+// BulkUpdateACLEntriesExecute executes the request
 //  @return InlineResponse200
-func (a *AclEntryAPIService) BulkUpdateAclEntriesExecute(r APIBulkUpdateAclEntriesRequest) (*InlineResponse200, *http.Response, error) {
+func (a *ACLEntryAPIService) BulkUpdateACLEntriesExecute(r APIBulkUpdateACLEntriesRequest) (*InlineResponse200, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
@@ -182,14 +182,14 @@ func (a *AclEntryAPIService) BulkUpdateAclEntriesExecute(r APIBulkUpdateAclEntri
 		localVarReturnValue *InlineResponse200
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclEntryAPIService.BulkUpdateAclEntries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.BulkUpdateACLEntries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/acl/{acl_id}/entries"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -213,7 +213,7 @@ func (a *AclEntryAPIService) BulkUpdateAclEntriesExecute(r APIBulkUpdateAclEntri
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bulkUpdateAclEntriesRequest
+	localVarPostBody = r.bulkUpdateACLEntriesRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -278,63 +278,63 @@ func (a *AclEntryAPIService) BulkUpdateAclEntriesExecute(r APIBulkUpdateAclEntri
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APICreateAclEntryRequest represents a request for the resource.
-type APICreateAclEntryRequest struct {
+// APICreateACLEntryRequest represents a request for the resource.
+type APICreateACLEntryRequest struct {
 	ctx        context.Context
-	APIService AclEntryAPI
-	serviceId  string
-	aclId      string
-	aclEntry   *AclEntry
+	APIService ACLEntryAPI
+	serviceID  string
+	aclID      string
+	aclEntry   *ACLEntry
 }
 
-// AclEntry returns a pointer to a request.
-func (r *APICreateAclEntryRequest) AclEntry(aclEntry AclEntry) *APICreateAclEntryRequest {
+// ACLEntry returns a pointer to a request.
+func (r *APICreateACLEntryRequest) ACLEntry(aclEntry ACLEntry) *APICreateACLEntryRequest {
 	r.aclEntry = &aclEntry
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateAclEntryRequest) Execute() (*AclEntryResponse, *http.Response, error) {
-	return r.APIService.CreateAclEntryExecute(r)
+func (r APICreateACLEntryRequest) Execute() (*ACLEntryResponse, *http.Response, error) {
+	return r.APIService.CreateACLEntryExecute(r)
 }
 
 /*
-CreateAclEntry Create an ACL entry
+CreateACLEntry Create an ACL entry
 
 Add an ACL entry to an ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param aclId Alphanumeric string identifying a ACL.
- @return APICreateAclEntryRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param aclID Alphanumeric string identifying a ACL.
+ @return APICreateACLEntryRequest
 */
-func (a *AclEntryAPIService) CreateAclEntry(ctx context.Context, serviceId string, aclId string) APICreateAclEntryRequest {
-	return APICreateAclEntryRequest{
+func (a *ACLEntryAPIService) CreateACLEntry(ctx context.Context, serviceID string, aclID string) APICreateACLEntryRequest {
+	return APICreateACLEntryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		aclId:      aclId,
+		serviceID:  serviceID,
+		aclID:      aclID,
 	}
 }
 
-// CreateAclEntryExecute executes the request
-//  @return AclEntryResponse
-func (a *AclEntryAPIService) CreateAclEntryExecute(r APICreateAclEntryRequest) (*AclEntryResponse, *http.Response, error) {
+// CreateACLEntryExecute executes the request
+//  @return ACLEntryResponse
+func (a *ACLEntryAPIService) CreateACLEntryExecute(r APICreateACLEntryRequest) (*ACLEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *AclEntryResponse
+		localVarReturnValue *ACLEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclEntryAPIService.CreateAclEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.CreateACLEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/acl/{acl_id}/entry"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -423,44 +423,44 @@ func (a *AclEntryAPIService) CreateAclEntryExecute(r APICreateAclEntryRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteAclEntryRequest represents a request for the resource.
-type APIDeleteAclEntryRequest struct {
+// APIDeleteACLEntryRequest represents a request for the resource.
+type APIDeleteACLEntryRequest struct {
 	ctx        context.Context
-	APIService AclEntryAPI
-	serviceId  string
-	aclId      string
-	aclEntryId string
+	APIService ACLEntryAPI
+	serviceID  string
+	aclID      string
+	aclEntryID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteAclEntryRequest) Execute() (*InlineResponse200, *http.Response, error) {
-	return r.APIService.DeleteAclEntryExecute(r)
+func (r APIDeleteACLEntryRequest) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.DeleteACLEntryExecute(r)
 }
 
 /*
-DeleteAclEntry Delete an ACL entry
+DeleteACLEntry Delete an ACL entry
 
 Delete an ACL entry from a specified ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param aclId Alphanumeric string identifying a ACL.
- @param aclEntryId Alphanumeric string identifying an ACL Entry.
- @return APIDeleteAclEntryRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param aclID Alphanumeric string identifying a ACL.
+ @param aclEntryID Alphanumeric string identifying an ACL Entry.
+ @return APIDeleteACLEntryRequest
 */
-func (a *AclEntryAPIService) DeleteAclEntry(ctx context.Context, serviceId string, aclId string, aclEntryId string) APIDeleteAclEntryRequest {
-	return APIDeleteAclEntryRequest{
+func (a *ACLEntryAPIService) DeleteACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIDeleteACLEntryRequest {
+	return APIDeleteACLEntryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		aclId:      aclId,
-		aclEntryId: aclEntryId,
+		serviceID:  serviceID,
+		aclID:      aclID,
+		aclEntryID: aclEntryID,
 	}
 }
 
-// DeleteAclEntryExecute executes the request
+// DeleteACLEntryExecute executes the request
 //  @return InlineResponse200
-func (a *AclEntryAPIService) DeleteAclEntryExecute(r APIDeleteAclEntryRequest) (*InlineResponse200, *http.Response, error) {
+func (a *ACLEntryAPIService) DeleteACLEntryExecute(r APIDeleteACLEntryRequest) (*InlineResponse200, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
@@ -468,15 +468,15 @@ func (a *AclEntryAPIService) DeleteAclEntryExecute(r APIDeleteAclEntryRequest) (
 		localVarReturnValue *InlineResponse200
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclEntryAPIService.DeleteAclEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.DeleteACLEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_entry_id"+"}", gourl.PathEscape(parameterToString(r.aclEntryId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_entry_id"+"}", gourl.PathEscape(parameterToString(r.aclEntryID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -563,60 +563,60 @@ func (a *AclEntryAPIService) DeleteAclEntryExecute(r APIDeleteAclEntryRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetAclEntryRequest represents a request for the resource.
-type APIGetAclEntryRequest struct {
+// APIGetACLEntryRequest represents a request for the resource.
+type APIGetACLEntryRequest struct {
 	ctx        context.Context
-	APIService AclEntryAPI
-	serviceId  string
-	aclId      string
-	aclEntryId string
+	APIService ACLEntryAPI
+	serviceID  string
+	aclID      string
+	aclEntryID string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAclEntryRequest) Execute() (*AclEntryResponse, *http.Response, error) {
-	return r.APIService.GetAclEntryExecute(r)
+func (r APIGetACLEntryRequest) Execute() (*ACLEntryResponse, *http.Response, error) {
+	return r.APIService.GetACLEntryExecute(r)
 }
 
 /*
-GetAclEntry Describe an ACL entry
+GetACLEntry Describe an ACL entry
 
 Retrieve a single ACL entry.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param aclId Alphanumeric string identifying a ACL.
- @param aclEntryId Alphanumeric string identifying an ACL Entry.
- @return APIGetAclEntryRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param aclID Alphanumeric string identifying a ACL.
+ @param aclEntryID Alphanumeric string identifying an ACL Entry.
+ @return APIGetACLEntryRequest
 */
-func (a *AclEntryAPIService) GetAclEntry(ctx context.Context, serviceId string, aclId string, aclEntryId string) APIGetAclEntryRequest {
-	return APIGetAclEntryRequest{
+func (a *ACLEntryAPIService) GetACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIGetACLEntryRequest {
+	return APIGetACLEntryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		aclId:      aclId,
-		aclEntryId: aclEntryId,
+		serviceID:  serviceID,
+		aclID:      aclID,
+		aclEntryID: aclEntryID,
 	}
 }
 
-// GetAclEntryExecute executes the request
-//  @return AclEntryResponse
-func (a *AclEntryAPIService) GetAclEntryExecute(r APIGetAclEntryRequest) (*AclEntryResponse, *http.Response, error) {
+// GetACLEntryExecute executes the request
+//  @return ACLEntryResponse
+func (a *ACLEntryAPIService) GetACLEntryExecute(r APIGetACLEntryRequest) (*ACLEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *AclEntryResponse
+		localVarReturnValue *ACLEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclEntryAPIService.GetAclEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.GetACLEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_entry_id"+"}", gourl.PathEscape(parameterToString(r.aclEntryId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_entry_id"+"}", gourl.PathEscape(parameterToString(r.aclEntryID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -703,12 +703,12 @@ func (a *AclEntryAPIService) GetAclEntryExecute(r APIGetAclEntryRequest) (*AclEn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListAclEntriesRequest represents a request for the resource.
-type APIListAclEntriesRequest struct {
+// APIListACLEntriesRequest represents a request for the resource.
+type APIListACLEntriesRequest struct {
 	ctx        context.Context
-	APIService AclEntryAPI
-	serviceId  string
-	aclId      string
+	APIService ACLEntryAPI
+	serviceID  string
+	aclID      string
 	page       *int32
 	perPage    *int32
 	sort       *string
@@ -716,71 +716,71 @@ type APIListAclEntriesRequest struct {
 }
 
 // Page Current page.
-func (r *APIListAclEntriesRequest) Page(page int32) *APIListAclEntriesRequest {
+func (r *APIListACLEntriesRequest) Page(page int32) *APIListACLEntriesRequest {
 	r.page = &page
 	return r
 }
 
 // PerPage Number of records per page.
-func (r *APIListAclEntriesRequest) PerPage(perPage int32) *APIListAclEntriesRequest {
+func (r *APIListACLEntriesRequest) PerPage(perPage int32) *APIListACLEntriesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // Sort Field on which to sort.
-func (r *APIListAclEntriesRequest) Sort(sort string) *APIListAclEntriesRequest {
+func (r *APIListACLEntriesRequest) Sort(sort string) *APIListACLEntriesRequest {
 	r.sort = &sort
 	return r
 }
 
 // Direction Direction in which to sort results.
-func (r *APIListAclEntriesRequest) Direction(direction string) *APIListAclEntriesRequest {
+func (r *APIListACLEntriesRequest) Direction(direction string) *APIListACLEntriesRequest {
 	r.direction = &direction
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListAclEntriesRequest) Execute() ([]AclEntryResponse, *http.Response, error) {
-	return r.APIService.ListAclEntriesExecute(r)
+func (r APIListACLEntriesRequest) Execute() ([]ACLEntryResponse, *http.Response, error) {
+	return r.APIService.ListACLEntriesExecute(r)
 }
 
 /*
-ListAclEntries List ACL entries
+ListACLEntries List ACL entries
 
 List ACL entries for a specified ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param aclId Alphanumeric string identifying a ACL.
- @return APIListAclEntriesRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param aclID Alphanumeric string identifying a ACL.
+ @return APIListACLEntriesRequest
 */
-func (a *AclEntryAPIService) ListAclEntries(ctx context.Context, serviceId string, aclId string) APIListAclEntriesRequest {
-	return APIListAclEntriesRequest{
+func (a *ACLEntryAPIService) ListACLEntries(ctx context.Context, serviceID string, aclID string) APIListACLEntriesRequest {
+	return APIListACLEntriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		aclId:      aclId,
+		serviceID:  serviceID,
+		aclID:      aclID,
 	}
 }
 
-// ListAclEntriesExecute executes the request
-//  @return []AclEntryResponse
-func (a *AclEntryAPIService) ListAclEntriesExecute(r APIListAclEntriesRequest) ([]AclEntryResponse, *http.Response, error) {
+// ListACLEntriesExecute executes the request
+//  @return []ACLEntryResponse
+func (a *ACLEntryAPIService) ListACLEntriesExecute(r APIListACLEntriesRequest) ([]ACLEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue []AclEntryResponse
+		localVarReturnValue []ACLEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclEntryAPIService.ListAclEntries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.ListACLEntries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/acl/{acl_id}/entries"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -879,67 +879,67 @@ func (a *AclEntryAPIService) ListAclEntriesExecute(r APIListAclEntriesRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUpdateAclEntryRequest represents a request for the resource.
-type APIUpdateAclEntryRequest struct {
+// APIUpdateACLEntryRequest represents a request for the resource.
+type APIUpdateACLEntryRequest struct {
 	ctx        context.Context
-	APIService AclEntryAPI
-	serviceId  string
-	aclId      string
-	aclEntryId string
-	aclEntry   *AclEntry
+	APIService ACLEntryAPI
+	serviceID  string
+	aclID      string
+	aclEntryID string
+	aclEntry   *ACLEntry
 }
 
-// AclEntry returns a pointer to a request.
-func (r *APIUpdateAclEntryRequest) AclEntry(aclEntry AclEntry) *APIUpdateAclEntryRequest {
+// ACLEntry returns a pointer to a request.
+func (r *APIUpdateACLEntryRequest) ACLEntry(aclEntry ACLEntry) *APIUpdateACLEntryRequest {
 	r.aclEntry = &aclEntry
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateAclEntryRequest) Execute() (*AclEntryResponse, *http.Response, error) {
-	return r.APIService.UpdateAclEntryExecute(r)
+func (r APIUpdateACLEntryRequest) Execute() (*ACLEntryResponse, *http.Response, error) {
+	return r.APIService.UpdateACLEntryExecute(r)
 }
 
 /*
-UpdateAclEntry Update an ACL entry
+UpdateACLEntry Update an ACL entry
 
 Update an ACL entry for a specified ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
- @param aclId Alphanumeric string identifying a ACL.
- @param aclEntryId Alphanumeric string identifying an ACL Entry.
- @return APIUpdateAclEntryRequest
+ @param serviceID Alphanumeric string identifying the service.
+ @param aclID Alphanumeric string identifying a ACL.
+ @param aclEntryID Alphanumeric string identifying an ACL Entry.
+ @return APIUpdateACLEntryRequest
 */
-func (a *AclEntryAPIService) UpdateAclEntry(ctx context.Context, serviceId string, aclId string, aclEntryId string) APIUpdateAclEntryRequest {
-	return APIUpdateAclEntryRequest{
+func (a *ACLEntryAPIService) UpdateACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIUpdateACLEntryRequest {
+	return APIUpdateACLEntryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceId:  serviceId,
-		aclId:      aclId,
-		aclEntryId: aclEntryId,
+		serviceID:  serviceID,
+		aclID:      aclID,
+		aclEntryID: aclEntryID,
 	}
 }
 
-// UpdateAclEntryExecute executes the request
-//  @return AclEntryResponse
-func (a *AclEntryAPIService) UpdateAclEntryExecute(r APIUpdateAclEntryRequest) (*AclEntryResponse, *http.Response, error) {
+// UpdateACLEntryExecute executes the request
+//  @return ACLEntryResponse
+func (a *ACLEntryAPIService) UpdateACLEntryExecute(r APIUpdateACLEntryRequest) (*ACLEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *AclEntryResponse
+		localVarReturnValue *ACLEntryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclEntryAPIService.UpdateAclEntry")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.UpdateACLEntry")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_entry_id"+"}", gourl.PathEscape(parameterToString(r.aclEntryId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_entry_id"+"}", gourl.PathEscape(parameterToString(r.aclEntryID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

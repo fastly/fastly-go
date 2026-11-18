@@ -22,9 +22,9 @@ type NetworkProtectEndpointResponse struct {
 	// A human-readable name, unique within the customer.
 	Name string `json:"name"`
 	// The GRE destination address, unique within the customer. It cannot be changed after endpoint creation.
-	IpAddress string `json:"ip_address"`
+	IPAddress string `json:"ip_address"`
 	// A read-only unique identifier for a Network Protect resource.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// An ISO 8601 timestamp in UTC.
 	CreatedAt time.Time `json:"created_at"`
 	// An ISO 8601 timestamp in UTC.
@@ -41,8 +41,8 @@ type _NetworkProtectEndpointResponse NetworkProtectEndpointResponse
 func NewNetworkProtectEndpointResponse(name string, ipAddress string, id string, createdAt time.Time, updatedAt time.Time) *NetworkProtectEndpointResponse {
 	this := NetworkProtectEndpointResponse{}
 	this.Name = name
-	this.IpAddress = ipAddress
-	this.Id = id
+	this.IPAddress = ipAddress
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -80,52 +80,52 @@ func (o *NetworkProtectEndpointResponse) SetName(v string) {
 	o.Name = v
 }
 
-// GetIpAddress returns the IpAddress field value
-func (o *NetworkProtectEndpointResponse) GetIpAddress() string {
+// GetIPAddress returns the IPAddress field value
+func (o *NetworkProtectEndpointResponse) GetIPAddress() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.IpAddress
+	return o.IPAddress
 }
 
-// GetIpAddressOk returns a tuple with the IpAddress field value
+// GetIPAddressOk returns a tuple with the IPAddress field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectEndpointResponse) GetIpAddressOk() (*string, bool) {
+func (o *NetworkProtectEndpointResponse) GetIPAddressOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.IpAddress, true
+	return &o.IPAddress, true
 }
 
-// SetIpAddress sets field value
-func (o *NetworkProtectEndpointResponse) SetIpAddress(v string) {
-	o.IpAddress = v
+// SetIPAddress sets field value
+func (o *NetworkProtectEndpointResponse) SetIPAddress(v string) {
+	o.IPAddress = v
 }
 
-// GetId returns the Id field value
-func (o *NetworkProtectEndpointResponse) GetId() string {
+// GetID returns the ID field value
+func (o *NetworkProtectEndpointResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectEndpointResponse) GetIdOk() (*string, bool) {
+func (o *NetworkProtectEndpointResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *NetworkProtectEndpointResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *NetworkProtectEndpointResponse) SetID(v string) {
+	o.ID = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
@@ -184,10 +184,10 @@ func (o NetworkProtectEndpointResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["ip_address"] = o.IpAddress
+		toSerialize["ip_address"] = o.IPAddress
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["created_at"] = o.CreatedAt

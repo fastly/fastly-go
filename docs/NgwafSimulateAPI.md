@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    workspaceId := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the workspace.
+    workspaceID := "SU1Z0isxPaozGVKXdv0eY" // string | The ID of the workspace.
     wafSimulateRequest := *openapiclient.NewWafSimulateRequest("POST /login HTTP/1.1
 Host: example.com
 Content-Type: application/x-www-form-urlencoded
@@ -38,7 +38,7 @@ username=admin&password=1' OR '1'='1") // WafSimulateRequest |
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.NgwafSimulateAPI.NgwafSimulateWafRequest(ctx, workspaceId).WafSimulateRequest(wafSimulateRequest).Execute()
+    resp, r, err := apiClient.NgwafSimulateAPI.NgwafSimulateWafRequest(ctx, workspaceID).WafSimulateRequest(wafSimulateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NgwafSimulateAPI.NgwafSimulateWafRequest`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ username=admin&password=1' OR '1'='1") // WafSimulateRequest |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**workspaceId** | **string** | The ID of the workspace. | 
+**workspaceID** | **string** | The ID of the workspace. | 
 
 ### Other Parameters
 
@@ -79,4 +79,3 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

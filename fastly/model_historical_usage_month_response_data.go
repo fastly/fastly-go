@@ -18,7 +18,7 @@ import (
 
 // HistoricalUsageMonthResponseData struct for HistoricalUsageMonthResponseData
 type HistoricalUsageMonthResponseData struct {
-	CustomerId *string `json:"customer_id,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
 	// Organized by *service id*.
 	Services *map[string]HistoricalUsageService `json:"services,omitempty"`
 	// Organized by *region*.
@@ -45,36 +45,36 @@ func NewHistoricalUsageMonthResponseDataWithDefaults() *HistoricalUsageMonthResp
 	return &this
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *HistoricalUsageMonthResponseData) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *HistoricalUsageMonthResponseData) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageMonthResponseData) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *HistoricalUsageMonthResponseData) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *HistoricalUsageMonthResponseData) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *HistoricalUsageMonthResponseData) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *HistoricalUsageMonthResponseData) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *HistoricalUsageMonthResponseData) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
 // GetServices returns the Services field value if set, zero value otherwise.
@@ -145,8 +145,8 @@ func (o *HistoricalUsageMonthResponseData) SetTotal(v map[string]HistoricalUsage
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o HistoricalUsageMonthResponseData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
 	if o.Services != nil {
 		toSerialize["services"] = o.Services

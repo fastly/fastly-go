@@ -250,11 +250,12 @@ func (o *LogInsightsValues) UnmarshalJSON(data []byte) error {
 		o.ValuesStatusCodes = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(LogInsightsValues)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(LogInsightsValues)")
 	}
+	if match == 1 {
+		return nil // exactly one match
+	}
+	// no match
+	return fmt.Errorf("data failed to match schemas in oneOf(LogInsightsValues)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.

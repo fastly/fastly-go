@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ExpectedResponse** | Pointer to **int32** | The status code expected from the host. | [optional] 
 **Headers** | Pointer to **[]string** | Array of custom headers that will be added to the health check probes. | [optional] 
 **Host** | Pointer to **string** | Which host to check. | [optional] 
-**HttpVersion** | Pointer to **string** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
+**HTTPVersion** | Pointer to **string** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
 **Initial** | Pointer to **int32** | When loading a config, the initial number of probes to be seen as OK. | [optional] 
 **Method** | Pointer to **string** | Which HTTP method to use. | [optional] 
 **Name** | Pointer to **string** | The name of the health check. | [optional] 
@@ -172,30 +172,30 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
-### GetHttpVersion
+### GetHTTPVersion
 
-`func (o *Healthcheck) GetHttpVersion() string`
+`func (o *Healthcheck) GetHTTPVersion() string`
 
-GetHttpVersion returns the HttpVersion field if non-nil, zero value otherwise.
+GetHTTPVersion returns the HTTPVersion field if non-nil, zero value otherwise.
 
-### GetHttpVersionOk
+### GetHTTPVersionOk
 
-`func (o *Healthcheck) GetHttpVersionOk() (*string, bool)`
+`func (o *Healthcheck) GetHTTPVersionOk() (*string, bool)`
 
-GetHttpVersionOk returns a tuple with the HttpVersion field if it's non-nil, zero value otherwise
+GetHTTPVersionOk returns a tuple with the HTTPVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHttpVersion
+### SetHTTPVersion
 
-`func (o *Healthcheck) SetHttpVersion(v string)`
+`func (o *Healthcheck) SetHTTPVersion(v string)`
 
-SetHttpVersion sets HttpVersion field to given value.
+SetHTTPVersion sets HTTPVersion field to given value.
 
-### HasHttpVersion
+### HasHTTPVersion
 
-`func (o *Healthcheck) HasHttpVersion() bool`
+`func (o *Healthcheck) HasHTTPVersion() bool`
 
-HasHttpVersion returns a boolean if a field has been set.
+HasHTTPVersion returns a boolean if a field has been set.
 
 ### GetInitial
 
@@ -374,5 +374,3 @@ HasWindow returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 **Attributes** | Pointer to [**MutualAuthenticationResponseAttributes**](MutualAuthenticationResponseAttributes.md) |  | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewMutualAuthenticationResponseDataAllOfWithDefaults instantiates a new MutualAu
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *MutualAuthenticationResponseDataAllOf) GetId() string`
+`func (o *MutualAuthenticationResponseDataAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *MutualAuthenticationResponseDataAllOf) GetIdOk() (*string, bool)`
+`func (o *MutualAuthenticationResponseDataAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *MutualAuthenticationResponseDataAllOf) SetId(v string)`
+`func (o *MutualAuthenticationResponseDataAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *MutualAuthenticationResponseDataAllOf) HasId() bool`
+`func (o *MutualAuthenticationResponseDataAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetAttributes
 
@@ -78,5 +78,3 @@ HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

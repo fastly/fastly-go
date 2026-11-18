@@ -1,82 +1,80 @@
-# BulkUpdateAclEntryAllOf
+# BulkUpdateACLEntryAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Op** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewBulkUpdateAclEntryAllOf
+### NewBulkUpdateACLEntryAllOf
 
-`func NewBulkUpdateAclEntryAllOf() *BulkUpdateAclEntryAllOf`
+`func NewBulkUpdateACLEntryAllOf() *BulkUpdateACLEntryAllOf`
 
-NewBulkUpdateAclEntryAllOf instantiates a new BulkUpdateAclEntryAllOf object
+NewBulkUpdateACLEntryAllOf instantiates a new BulkUpdateACLEntryAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBulkUpdateAclEntryAllOfWithDefaults
+### NewBulkUpdateACLEntryAllOfWithDefaults
 
-`func NewBulkUpdateAclEntryAllOfWithDefaults() *BulkUpdateAclEntryAllOf`
+`func NewBulkUpdateACLEntryAllOfWithDefaults() *BulkUpdateACLEntryAllOf`
 
-NewBulkUpdateAclEntryAllOfWithDefaults instantiates a new BulkUpdateAclEntryAllOf object
+NewBulkUpdateACLEntryAllOfWithDefaults instantiates a new BulkUpdateACLEntryAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetOp
 
-`func (o *BulkUpdateAclEntryAllOf) GetOp() string`
+`func (o *BulkUpdateACLEntryAllOf) GetOp() string`
 
 GetOp returns the Op field if non-nil, zero value otherwise.
 
 ### GetOpOk
 
-`func (o *BulkUpdateAclEntryAllOf) GetOpOk() (*string, bool)`
+`func (o *BulkUpdateACLEntryAllOf) GetOpOk() (*string, bool)`
 
 GetOpOk returns a tuple with the Op field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOp
 
-`func (o *BulkUpdateAclEntryAllOf) SetOp(v string)`
+`func (o *BulkUpdateACLEntryAllOf) SetOp(v string)`
 
 SetOp sets Op field to given value.
 
 ### HasOp
 
-`func (o *BulkUpdateAclEntryAllOf) HasOp() bool`
+`func (o *BulkUpdateACLEntryAllOf) HasOp() bool`
 
 HasOp returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *BulkUpdateAclEntryAllOf) GetId() string`
+`func (o *BulkUpdateACLEntryAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *BulkUpdateAclEntryAllOf) GetIdOk() (*string, bool)`
+`func (o *BulkUpdateACLEntryAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *BulkUpdateAclEntryAllOf) SetId(v string)`
+`func (o *BulkUpdateACLEntryAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *BulkUpdateAclEntryAllOf) HasId() bool`
+`func (o *BulkUpdateACLEntryAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

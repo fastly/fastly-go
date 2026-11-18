@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the virtual key. | [readonly] 
+**ID** | **string** | The unique identifier of the virtual key. | [readonly] 
 **Type** | **string** | The type of the resource. | [readonly] 
-**UserId** | **string** | The ID of the user who created the key. | [readonly] 
+**UserID** | **string** | The ID of the user who created the key. | [readonly] 
 **CreatedBy** | Pointer to **string** | The display name of the user who created the key. | [optional] [readonly] 
 **LastUsedAt** | Pointer to **NullableTime** | The date and time the key was last used to make a request, in RFC 3339 format. `null` if the key has never been used. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | The date and time the key was deleted, in RFC 3339 format. `null` unless the key was deleted and `include_deleted` was used to retrieve it. | [optional] [readonly] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewArcVirtualKeyResponseExtra
 
-`func NewArcVirtualKeyResponseExtra(id string, type_ string, userId string, createdAt time.Time, updatedAt time.Time, ) *ArcVirtualKeyResponseExtra`
+`func NewArcVirtualKeyResponseExtra(id string, resourceType string, userID string, createdAt time.Time, updatedAt time.Time, ) *ArcVirtualKeyResponseExtra`
 
 NewArcVirtualKeyResponseExtra instantiates a new ArcVirtualKeyResponseExtra object
 This constructor will assign default values to properties that have it defined,
@@ -34,24 +34,24 @@ NewArcVirtualKeyResponseExtraWithDefaults instantiates a new ArcVirtualKeyRespon
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *ArcVirtualKeyResponseExtra) GetId() string`
+`func (o *ArcVirtualKeyResponseExtra) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *ArcVirtualKeyResponseExtra) GetIdOk() (*string, bool)`
+`func (o *ArcVirtualKeyResponseExtra) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *ArcVirtualKeyResponseExtra) SetId(v string)`
+`func (o *ArcVirtualKeyResponseExtra) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetType
@@ -74,24 +74,24 @@ and a boolean to check if the value has been set.
 SetType sets Type field to given value.
 
 
-### GetUserId
+### GetUserID
 
-`func (o *ArcVirtualKeyResponseExtra) GetUserId() string`
+`func (o *ArcVirtualKeyResponseExtra) GetUserID() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *ArcVirtualKeyResponseExtra) GetUserIdOk() (*string, bool)`
+`func (o *ArcVirtualKeyResponseExtra) GetUserIDOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *ArcVirtualKeyResponseExtra) SetUserId(v string)`
+`func (o *ArcVirtualKeyResponseExtra) SetUserID(v string)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
 
 ### GetCreatedBy
@@ -291,5 +291,3 @@ HasSpendLimitEnabledOn returns a boolean if a field has been set.
 UnsetSpendLimitEnabledOn ensures that no value is present for SpendLimitEnabledOn, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -20,7 +20,7 @@ import (
 // NetworkProtectEndpointResponseFields Read-only fields and required fields in an endpoint response.
 type NetworkProtectEndpointResponseFields struct {
 	// A read-only unique identifier for a Network Protect resource.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// An ISO 8601 timestamp in UTC.
 	CreatedAt time.Time `json:"created_at"`
 	// An ISO 8601 timestamp in UTC.
@@ -36,7 +36,7 @@ type _NetworkProtectEndpointResponseFields NetworkProtectEndpointResponseFields
 // will change when the set of required properties is changed
 func NewNetworkProtectEndpointResponseFields(id string, createdAt time.Time, updatedAt time.Time) *NetworkProtectEndpointResponseFields {
 	this := NetworkProtectEndpointResponseFields{}
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -50,28 +50,28 @@ func NewNetworkProtectEndpointResponseFieldsWithDefaults() *NetworkProtectEndpoi
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *NetworkProtectEndpointResponseFields) GetId() string {
+// GetID returns the ID field value
+func (o *NetworkProtectEndpointResponseFields) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectEndpointResponseFields) GetIdOk() (*string, bool) {
+func (o *NetworkProtectEndpointResponseFields) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *NetworkProtectEndpointResponseFields) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *NetworkProtectEndpointResponseFields) SetID(v string) {
+	o.ID = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
@@ -127,7 +127,7 @@ func (o *NetworkProtectEndpointResponseFields) SetUpdatedAt(v time.Time) {
 func (o NetworkProtectEndpointResponseFields) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["created_at"] = o.CreatedAt

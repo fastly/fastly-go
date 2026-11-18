@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | A UUID used to uniquely identify the workspace. | [readonly] 
+**ID** | **string** | A UUID used to uniquely identify the workspace. | [readonly] 
 **Services** | Pointer to **[]string** | The IDs of the services attached to this workspace. | [optional] [readonly] 
 **CreatedAt** | **time.Time** | The date and time the workspace was created, in RFC 3339 format. | [readonly] 
 **UpdatedAt** | **time.Time** | The date and time the workspace was last updated, in RFC 3339 format. | [readonly] 
@@ -28,24 +28,24 @@ NewBotManagementWorkspaceResponseExtraWithDefaults instantiates a new BotManagem
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *BotManagementWorkspaceResponseExtra) GetId() string`
+`func (o *BotManagementWorkspaceResponseExtra) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *BotManagementWorkspaceResponseExtra) GetIdOk() (*string, bool)`
+`func (o *BotManagementWorkspaceResponseExtra) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *BotManagementWorkspaceResponseExtra) SetId(v string)`
+`func (o *BotManagementWorkspaceResponseExtra) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetServices
@@ -115,5 +115,3 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

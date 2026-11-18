@@ -34,7 +34,7 @@ type LoggingGrafanacloudlogsResponse struct {
 	// The Grafana Cloud Logs Dataset you want to log to.
 	User *string `json:"user,omitempty"`
 	// The URL of the Loki instance in your Grafana stack.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// The Grafana Access Policy token with `logs:write` access scoped to your Loki instance.
 	Token *string `json:"token,omitempty"`
 	// The Stream Labels, a JSON string used to identify the stream.
@@ -45,7 +45,7 @@ type LoggingGrafanacloudlogsResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceId            *string      `json:"service_id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -323,36 +323,36 @@ func (o *LoggingGrafanacloudlogsResponse) SetUser(v string) {
 	o.User = &v
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingGrafanacloudlogsResponse) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingGrafanacloudlogsResponse) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGrafanacloudlogsResponse) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingGrafanacloudlogsResponse) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingGrafanacloudlogsResponse) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingGrafanacloudlogsResponse) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingGrafanacloudlogsResponse) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingGrafanacloudlogsResponse) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetToken returns the Token field value if set, zero value otherwise.
@@ -548,36 +548,36 @@ func (o *LoggingGrafanacloudlogsResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceId returns the ServiceId field value if set, zero value otherwise.
-func (o *LoggingGrafanacloudlogsResponse) GetServiceId() string {
-	if o == nil || o.ServiceId == nil {
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingGrafanacloudlogsResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceId
+	return *o.ServiceID
 }
 
-// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGrafanacloudlogsResponse) GetServiceIdOk() (*string, bool) {
-	if o == nil || o.ServiceId == nil {
+func (o *LoggingGrafanacloudlogsResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.ServiceId, true
+	return o.ServiceID, true
 }
 
-// HasServiceId returns a boolean if a field has been set.
-func (o *LoggingGrafanacloudlogsResponse) HasServiceId() bool {
-	if o != nil && o.ServiceId != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingGrafanacloudlogsResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
-func (o *LoggingGrafanacloudlogsResponse) SetServiceId(v string) {
-	o.ServiceId = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingGrafanacloudlogsResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -637,8 +637,8 @@ func (o LoggingGrafanacloudlogsResponse) MarshalJSON() ([]byte, error) {
 	if o.User != nil {
 		toSerialize["user"] = o.User
 	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
@@ -655,8 +655,8 @@ func (o LoggingGrafanacloudlogsResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceId != nil {
-		toSerialize["service_id"] = o.ServiceId
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

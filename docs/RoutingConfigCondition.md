@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewRoutingConfigCondition
 
-`func NewRoutingConfigCondition(type_ ConditionType, operator ConditionOperator, value string, ) *RoutingConfigCondition`
+`func NewRoutingConfigCondition(resourceType ConditionType, operator ConditionOperator, value string, ) *RoutingConfigCondition`
 
 NewRoutingConfigCondition instantiates a new RoutingConfigCondition object
 This constructor will assign default values to properties that have it defined,
@@ -115,5 +115,3 @@ SetValue sets Value field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

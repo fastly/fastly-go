@@ -16,40 +16,40 @@ import (
 	"encoding/json"
 )
 
-// RelationshipMemberTlsConfiguration struct for RelationshipMemberTlsConfiguration
-type RelationshipMemberTlsConfiguration struct {
-	Type                 *TypeTlsConfiguration `json:"type,omitempty"`
-	Id                   *string               `json:"id,omitempty"`
+// RelationshipMemberTLSConfiguration struct for RelationshipMemberTLSConfiguration
+type RelationshipMemberTLSConfiguration struct {
+	Type                 *TypeTLSConfiguration `json:"type,omitempty"`
+	ID                   *string               `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipMemberTlsConfiguration RelationshipMemberTlsConfiguration
+type _RelationshipMemberTLSConfiguration RelationshipMemberTLSConfiguration
 
-// NewRelationshipMemberTlsConfiguration instantiates a new RelationshipMemberTlsConfiguration object
+// NewRelationshipMemberTLSConfiguration instantiates a new RelationshipMemberTLSConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipMemberTlsConfiguration() *RelationshipMemberTlsConfiguration {
-	this := RelationshipMemberTlsConfiguration{}
-	var type_ TypeTlsConfiguration = TYPETLSCONFIGURATION_TLS_CONFIGURATION
-	this.Type = &type_
+func NewRelationshipMemberTLSConfiguration() *RelationshipMemberTLSConfiguration {
+	this := RelationshipMemberTLSConfiguration{}
+	var resourceType TypeTLSConfiguration = TYPETLSCONFIGURATION_TLS_CONFIGURATION
+	this.Type = &resourceType
 	return &this
 }
 
-// NewRelationshipMemberTlsConfigurationWithDefaults instantiates a new RelationshipMemberTlsConfiguration object
+// NewRelationshipMemberTLSConfigurationWithDefaults instantiates a new RelationshipMemberTLSConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipMemberTlsConfigurationWithDefaults() *RelationshipMemberTlsConfiguration {
-	this := RelationshipMemberTlsConfiguration{}
-	var type_ TypeTlsConfiguration = TYPETLSCONFIGURATION_TLS_CONFIGURATION
-	this.Type = &type_
+func NewRelationshipMemberTLSConfigurationWithDefaults() *RelationshipMemberTLSConfiguration {
+	this := RelationshipMemberTLSConfiguration{}
+	var resourceType TypeTLSConfiguration = TYPETLSCONFIGURATION_TLS_CONFIGURATION
+	this.Type = &resourceType
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *RelationshipMemberTlsConfiguration) GetType() TypeTlsConfiguration {
+func (o *RelationshipMemberTLSConfiguration) GetType() TypeTLSConfiguration {
 	if o == nil || o.Type == nil {
-		var ret TypeTlsConfiguration
+		var ret TypeTLSConfiguration
 		return ret
 	}
 	return *o.Type
@@ -57,7 +57,7 @@ func (o *RelationshipMemberTlsConfiguration) GetType() TypeTlsConfiguration {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipMemberTlsConfiguration) GetTypeOk() (*TypeTlsConfiguration, bool) {
+func (o *RelationshipMemberTLSConfiguration) GetTypeOk() (*TypeTLSConfiguration, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *RelationshipMemberTlsConfiguration) GetTypeOk() (*TypeTlsConfiguration,
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *RelationshipMemberTlsConfiguration) HasType() bool {
+func (o *RelationshipMemberTLSConfiguration) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -73,52 +73,52 @@ func (o *RelationshipMemberTlsConfiguration) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTlsConfiguration and assigns it to the Type field.
-func (o *RelationshipMemberTlsConfiguration) SetType(v TypeTlsConfiguration) {
+// SetType gets a reference to the given TypeTLSConfiguration and assigns it to the Type field.
+func (o *RelationshipMemberTLSConfiguration) SetType(v TypeTLSConfiguration) {
 	o.Type = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RelationshipMemberTlsConfiguration) GetId() string {
-	if o == nil || o.Id == nil {
+// GetID returns the ID field value if set, zero value otherwise.
+func (o *RelationshipMemberTLSConfiguration) GetID() string {
+	if o == nil || o.ID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipMemberTlsConfiguration) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *RelationshipMemberTLSConfiguration) GetIDOk() (*string, bool) {
+	if o == nil || o.ID == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ID, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *RelationshipMemberTlsConfiguration) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasID returns a boolean if a field has been set.
+func (o *RelationshipMemberTLSConfiguration) HasID() bool {
+	if o != nil && o.ID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *RelationshipMemberTlsConfiguration) SetId(v string) {
-	o.Id = &v
+// SetID gets a reference to the given string and assigns it to the ID field.
+func (o *RelationshipMemberTLSConfiguration) SetID(v string) {
+	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipMemberTlsConfiguration) MarshalJSON() ([]byte, error) {
+func (o RelationshipMemberTLSConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.ID != nil {
+		toSerialize["id"] = o.ID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -130,11 +130,11 @@ func (o RelationshipMemberTlsConfiguration) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipMemberTlsConfiguration) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipMemberTlsConfiguration := _RelationshipMemberTlsConfiguration{}
+func (o *RelationshipMemberTLSConfiguration) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipMemberTLSConfiguration := _RelationshipMemberTLSConfiguration{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipMemberTlsConfiguration); err == nil {
-		*o = RelationshipMemberTlsConfiguration(varRelationshipMemberTlsConfiguration)
+	if err = json.Unmarshal(bytes, &varRelationshipMemberTLSConfiguration); err == nil {
+		*o = RelationshipMemberTLSConfiguration(varRelationshipMemberTLSConfiguration)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -148,48 +148,48 @@ func (o *RelationshipMemberTlsConfiguration) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableRelationshipMemberTlsConfiguration is a helper abstraction for handling nullable relationshipmembertlsconfiguration types.
-type NullableRelationshipMemberTlsConfiguration struct {
-	value *RelationshipMemberTlsConfiguration
+// NullableRelationshipMemberTLSConfiguration is a helper abstraction for handling nullable relationshipmembertlsconfiguration types.
+type NullableRelationshipMemberTLSConfiguration struct {
+	value *RelationshipMemberTLSConfiguration
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipMemberTlsConfiguration) Get() *RelationshipMemberTlsConfiguration {
+func (v NullableRelationshipMemberTLSConfiguration) Get() *RelationshipMemberTLSConfiguration {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipMemberTlsConfiguration) Set(val *RelationshipMemberTlsConfiguration) {
+func (v *NullableRelationshipMemberTLSConfiguration) Set(val *RelationshipMemberTLSConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipMemberTlsConfiguration) IsSet() bool {
+func (v NullableRelationshipMemberTLSConfiguration) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipMemberTlsConfiguration) Unset() {
+func (v *NullableRelationshipMemberTLSConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipMemberTlsConfiguration returns a pointer to a new instance of NullableRelationshipMemberTlsConfiguration.
-func NewNullableRelationshipMemberTlsConfiguration(val *RelationshipMemberTlsConfiguration) *NullableRelationshipMemberTlsConfiguration {
-	return &NullableRelationshipMemberTlsConfiguration{value: val, isSet: true}
+// NewNullableRelationshipMemberTLSConfiguration returns a pointer to a new instance of NullableRelationshipMemberTLSConfiguration.
+func NewNullableRelationshipMemberTLSConfiguration(val *RelationshipMemberTLSConfiguration) *NullableRelationshipMemberTLSConfiguration {
+	return &NullableRelationshipMemberTLSConfiguration{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipMemberTlsConfiguration) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipMemberTLSConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipMemberTlsConfiguration) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipMemberTLSConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

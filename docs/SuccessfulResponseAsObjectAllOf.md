@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | Domain Identifier (UUID). | [optional] 
+**ID** | Pointer to **string** | Domain Identifier (UUID). | [optional] 
 **Fqdn** | Pointer to **string** | The fully-qualified domain name for your domain. Can be created, but not updated. | [optional] 
-**ServiceId** | Pointer to **NullableString** | The `service_id` associated with your domain or `null` if there is no association. | [optional] 
-**RoutingConfigurationId** | Pointer to **NullableString** | The `routing_configuration_id` associated with your domain or `null` if there is no association. | [optional] 
+**ServiceID** | Pointer to **NullableString** | The `service_id` associated with your domain or `null` if there is no association. | [optional] 
+**RoutingConfigurationID** | Pointer to **NullableString** | The `routing_configuration_id` associated with your domain or `null` if there is no association. | [optional] 
 **Description** | Pointer to **string** | A freeform descriptive note. | [optional] 
 **Activated** | Pointer to **bool** | Denotes if the domain has at least one TLS activation or not. | [optional] [readonly] 
 **Verified** | Pointer to **bool** | Denotes that the customer has proven ownership over the domain by obtaining a Fastly-managed TLS certificate for it or by providing a their own TLS certificate from a publicly-trusted CA that includes the domain or matching wildcard.      | [optional] [readonly] 
@@ -31,30 +31,30 @@ NewSuccessfulResponseAsObjectAllOfWithDefaults instantiates a new SuccessfulResp
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *SuccessfulResponseAsObjectAllOf) GetId() string`
+`func (o *SuccessfulResponseAsObjectAllOf) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *SuccessfulResponseAsObjectAllOf) GetIdOk() (*string, bool)`
+`func (o *SuccessfulResponseAsObjectAllOf) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *SuccessfulResponseAsObjectAllOf) SetId(v string)`
+`func (o *SuccessfulResponseAsObjectAllOf) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *SuccessfulResponseAsObjectAllOf) HasId() bool`
+`func (o *SuccessfulResponseAsObjectAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
 ### GetFqdn
 
@@ -81,76 +81,76 @@ SetFqdn sets Fqdn field to given value.
 
 HasFqdn returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceID
 
-`func (o *SuccessfulResponseAsObjectAllOf) GetServiceId() string`
+`func (o *SuccessfulResponseAsObjectAllOf) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *SuccessfulResponseAsObjectAllOf) GetServiceIdOk() (*string, bool)`
+`func (o *SuccessfulResponseAsObjectAllOf) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *SuccessfulResponseAsObjectAllOf) SetServiceId(v string)`
+`func (o *SuccessfulResponseAsObjectAllOf) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *SuccessfulResponseAsObjectAllOf) HasServiceId() bool`
+`func (o *SuccessfulResponseAsObjectAllOf) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
-### SetServiceIdNil
+### SetServiceIDNil
 
-`func (o *SuccessfulResponseAsObjectAllOf) SetServiceIdNil(b bool)`
+`func (o *SuccessfulResponseAsObjectAllOf) SetServiceIDNil(b bool)`
 
- SetServiceIdNil sets the value for ServiceId to be an explicit nil
+ SetServiceIDNil sets the value for ServiceID to be an explicit nil
 
-### UnsetServiceId
-`func (o *SuccessfulResponseAsObjectAllOf) UnsetServiceId()`
+### UnsetServiceID
+`func (o *SuccessfulResponseAsObjectAllOf) UnsetServiceID()`
 
-UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
-### GetRoutingConfigurationId
+UnsetServiceID ensures that no value is present for ServiceID, not even an explicit nil
+### GetRoutingConfigurationID
 
-`func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationId() string`
+`func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationID() string`
 
-GetRoutingConfigurationId returns the RoutingConfigurationId field if non-nil, zero value otherwise.
+GetRoutingConfigurationID returns the RoutingConfigurationID field if non-nil, zero value otherwise.
 
-### GetRoutingConfigurationIdOk
+### GetRoutingConfigurationIDOk
 
-`func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationIdOk() (*string, bool)`
+`func (o *SuccessfulResponseAsObjectAllOf) GetRoutingConfigurationIDOk() (*string, bool)`
 
-GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field if it's non-nil, zero value otherwise
+GetRoutingConfigurationIDOk returns a tuple with the RoutingConfigurationID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingConfigurationId
+### SetRoutingConfigurationID
 
-`func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationId(v string)`
+`func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationID(v string)`
 
-SetRoutingConfigurationId sets RoutingConfigurationId field to given value.
+SetRoutingConfigurationID sets RoutingConfigurationID field to given value.
 
-### HasRoutingConfigurationId
+### HasRoutingConfigurationID
 
-`func (o *SuccessfulResponseAsObjectAllOf) HasRoutingConfigurationId() bool`
+`func (o *SuccessfulResponseAsObjectAllOf) HasRoutingConfigurationID() bool`
 
-HasRoutingConfigurationId returns a boolean if a field has been set.
+HasRoutingConfigurationID returns a boolean if a field has been set.
 
-### SetRoutingConfigurationIdNil
+### SetRoutingConfigurationIDNil
 
-`func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationIdNil(b bool)`
+`func (o *SuccessfulResponseAsObjectAllOf) SetRoutingConfigurationIDNil(b bool)`
 
- SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
+ SetRoutingConfigurationIDNil sets the value for RoutingConfigurationID to be an explicit nil
 
-### UnsetRoutingConfigurationId
-`func (o *SuccessfulResponseAsObjectAllOf) UnsetRoutingConfigurationId()`
+### UnsetRoutingConfigurationID
+`func (o *SuccessfulResponseAsObjectAllOf) UnsetRoutingConfigurationID()`
 
-UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
+UnsetRoutingConfigurationID ensures that no value is present for RoutingConfigurationID, not even an explicit nil
 ### GetDescription
 
 `func (o *SuccessfulResponseAsObjectAllOf) GetDescription() string`
@@ -228,5 +228,3 @@ HasVerified returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

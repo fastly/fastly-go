@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ArcRoleArn** | **string** | The ARN of the AI Runtime Control IAM role your AWS account&#39;s trust policy must trust. | 
-**ExternalId** | **string** | The external ID to require in your trust policy. This is your Fastly customer ID. | 
+**ExternalID** | **string** | The external ID to require in your trust policy. This is your Fastly customer ID. | 
 
 ## Methods
 
 ### NewArcBedrockSetupResponse
 
-`func NewArcBedrockSetupResponse(arcRoleArn string, externalId string, ) *ArcBedrockSetupResponse`
+`func NewArcBedrockSetupResponse(arcRoleArn string, externalID string, ) *ArcBedrockSetupResponse`
 
 NewArcBedrockSetupResponse instantiates a new ArcBedrockSetupResponse object
 This constructor will assign default values to properties that have it defined,
@@ -46,27 +46,25 @@ and a boolean to check if the value has been set.
 SetArcRoleArn sets ArcRoleArn field to given value.
 
 
-### GetExternalId
+### GetExternalID
 
-`func (o *ArcBedrockSetupResponse) GetExternalId() string`
+`func (o *ArcBedrockSetupResponse) GetExternalID() string`
 
-GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+GetExternalID returns the ExternalID field if non-nil, zero value otherwise.
 
-### GetExternalIdOk
+### GetExternalIDOk
 
-`func (o *ArcBedrockSetupResponse) GetExternalIdOk() (*string, bool)`
+`func (o *ArcBedrockSetupResponse) GetExternalIDOk() (*string, bool)`
 
-GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+GetExternalIDOk returns a tuple with the ExternalID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExternalId
+### SetExternalID
 
-`func (o *ArcBedrockSetupResponse) SetExternalId(v string)`
+`func (o *ArcBedrockSetupResponse) SetExternalID(v string)`
 
-SetExternalId sets ExternalId field to given value.
+SetExternalID sets ExternalID field to given value.
 
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

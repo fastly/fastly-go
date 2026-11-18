@@ -20,7 +20,7 @@ import (
 // TagGetExtra struct for TagGetExtra
 type TagGetExtra struct {
 	// The unique identifier of the operation tag.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The number of operations associated with this operation tag.
 	Count *int32 `json:"count,omitempty"`
 	// The date and time the operation tag was created.
@@ -38,7 +38,7 @@ type _TagGetExtra TagGetExtra
 // will change when the set of required properties is changed
 func NewTagGetExtra(id string) *TagGetExtra {
 	this := TagGetExtra{}
-	this.Id = id
+	this.ID = id
 	return &this
 }
 
@@ -50,28 +50,28 @@ func NewTagGetExtraWithDefaults() *TagGetExtra {
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *TagGetExtra) GetId() string {
+// GetID returns the ID field value
+func (o *TagGetExtra) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *TagGetExtra) GetIdOk() (*string, bool) {
+func (o *TagGetExtra) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *TagGetExtra) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *TagGetExtra) SetID(v string) {
+	o.ID = v
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
@@ -175,7 +175,7 @@ func (o *TagGetExtra) SetUpdatedAt(v time.Time) {
 func (o TagGetExtra) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.Count != nil {
 		toSerialize["count"] = o.Count

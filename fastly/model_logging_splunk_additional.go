@@ -19,10 +19,10 @@ import (
 // LoggingSplunkAdditional struct for LoggingSplunkAdditional
 type LoggingSplunkAdditional struct {
 	// The URL to post logs to.
-	Url *string `json:"url,omitempty"`
+	URL *string `json:"url,omitempty"`
 	// A Splunk token for use in posting logs over HTTP to your collector.
 	Token                *string              `json:"token,omitempty"`
-	UseTls               *LoggingUseTlsString `json:"use_tls,omitempty"`
+	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -34,8 +34,8 @@ type _LoggingSplunkAdditional LoggingSplunkAdditional
 // will change when the set of required properties is changed
 func NewLoggingSplunkAdditional() *LoggingSplunkAdditional {
 	this := LoggingSplunkAdditional{}
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
@@ -44,41 +44,41 @@ func NewLoggingSplunkAdditional() *LoggingSplunkAdditional {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingSplunkAdditionalWithDefaults() *LoggingSplunkAdditional {
 	this := LoggingSplunkAdditional{}
-	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTls = &useTls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTLS = &useTLS
 	return &this
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise.
-func (o *LoggingSplunkAdditional) GetUrl() string {
-	if o == nil || o.Url == nil {
+// GetURL returns the URL field value if set, zero value otherwise.
+func (o *LoggingSplunkAdditional) GetURL() string {
+	if o == nil || o.URL == nil {
 		var ret string
 		return ret
 	}
-	return *o.Url
+	return *o.URL
 }
 
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// GetURLOk returns a tuple with the URL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSplunkAdditional) GetUrlOk() (*string, bool) {
-	if o == nil || o.Url == nil {
+func (o *LoggingSplunkAdditional) GetURLOk() (*string, bool) {
+	if o == nil || o.URL == nil {
 		return nil, false
 	}
-	return o.Url, true
+	return o.URL, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *LoggingSplunkAdditional) HasUrl() bool {
-	if o != nil && o.Url != nil {
+// HasURL returns a boolean if a field has been set.
+func (o *LoggingSplunkAdditional) HasURL() bool {
+	if o != nil && o.URL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUrl gets a reference to the given string and assigns it to the Url field.
-func (o *LoggingSplunkAdditional) SetUrl(v string) {
-	o.Url = &v
+// SetURL gets a reference to the given string and assigns it to the URL field.
+func (o *LoggingSplunkAdditional) SetURL(v string) {
+	o.URL = &v
 }
 
 // GetToken returns the Token field value if set, zero value otherwise.
@@ -113,50 +113,50 @@ func (o *LoggingSplunkAdditional) SetToken(v string) {
 	o.Token = &v
 }
 
-// GetUseTls returns the UseTls field value if set, zero value otherwise.
-func (o *LoggingSplunkAdditional) GetUseTls() LoggingUseTlsString {
-	if o == nil || o.UseTls == nil {
-		var ret LoggingUseTlsString
+// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
+func (o *LoggingSplunkAdditional) GetUseTLS() LoggingUseTLSString {
+	if o == nil || o.UseTLS == nil {
+		var ret LoggingUseTLSString
 		return ret
 	}
-	return *o.UseTls
+	return *o.UseTLS
 }
 
-// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
+// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSplunkAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool) {
-	if o == nil || o.UseTls == nil {
+func (o *LoggingSplunkAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool) {
+	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
-	return o.UseTls, true
+	return o.UseTLS, true
 }
 
-// HasUseTls returns a boolean if a field has been set.
-func (o *LoggingSplunkAdditional) HasUseTls() bool {
-	if o != nil && o.UseTls != nil {
+// HasUseTLS returns a boolean if a field has been set.
+func (o *LoggingSplunkAdditional) HasUseTLS() bool {
+	if o != nil && o.UseTLS != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTls gets a reference to the given LoggingUseTlsString and assigns it to the UseTls field.
-func (o *LoggingSplunkAdditional) SetUseTls(v LoggingUseTlsString) {
-	o.UseTls = &v
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingSplunkAdditional) SetUseTLS(v LoggingUseTLSString) {
+	o.UseTLS = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o LoggingSplunkAdditional) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
+	if o.URL != nil {
+		toSerialize["url"] = o.URL
 	}
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
 	}
-	if o.UseTls != nil {
-		toSerialize["use_tls"] = o.UseTls
+	if o.UseTLS != nil {
+		toSerialize["use_tls"] = o.UseTLS
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Models** | Pointer to **[]string** | The AI model identifiers this connection is allowed to use. Must be non-empty if included. | [optional] 
-**BaseUrl** | Pointer to **string** | The base URL of the provider&#39;s API (`api-key` connections only). | [optional] 
+**BaseURL** | Pointer to **string** | The base URL of the provider&#39;s API (`api-key` connections only). | [optional] 
 **ApiKey** | Pointer to **string** | The provider&#39;s secret API key (`api-key` connections only). | [optional] 
 **CustomerRoleArn** | Pointer to **string** | The ARN of the IAM role to assume for Bedrock requests (`aws-iam` connections only). | [optional] 
 **Region** | Pointer to **string** | The AWS region for Bedrock API requests (`aws-iam` connections only). | [optional] 
@@ -54,30 +54,30 @@ SetModels sets Models field to given value.
 
 HasModels returns a boolean if a field has been set.
 
-### GetBaseUrl
+### GetBaseURL
 
-`func (o *ArcUpdateProviderConnectionRequest) GetBaseUrl() string`
+`func (o *ArcUpdateProviderConnectionRequest) GetBaseURL() string`
 
-GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
 
-### GetBaseUrlOk
+### GetBaseURLOk
 
-`func (o *ArcUpdateProviderConnectionRequest) GetBaseUrlOk() (*string, bool)`
+`func (o *ArcUpdateProviderConnectionRequest) GetBaseURLOk() (*string, bool)`
 
-GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBaseUrl
+### SetBaseURL
 
-`func (o *ArcUpdateProviderConnectionRequest) SetBaseUrl(v string)`
+`func (o *ArcUpdateProviderConnectionRequest) SetBaseURL(v string)`
 
-SetBaseUrl sets BaseUrl field to given value.
+SetBaseURL sets BaseURL field to given value.
 
-### HasBaseUrl
+### HasBaseURL
 
-`func (o *ArcUpdateProviderConnectionRequest) HasBaseUrl() bool`
+`func (o *ArcUpdateProviderConnectionRequest) HasBaseURL() bool`
 
-HasBaseUrl returns a boolean if a field has been set.
+HasBaseURL returns a boolean if a field has been set.
 
 ### GetApiKey
 
@@ -156,5 +156,3 @@ HasRegion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

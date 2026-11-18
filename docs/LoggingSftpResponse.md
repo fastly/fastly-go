@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **Password** | Pointer to **string** | The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] 
 **Path** | Pointer to **NullableString** | The path to upload logs to. | [optional] [default to "null"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
 **SecretKey** | Pointer to **NullableString** | The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] [default to "null"]
-**SshKnownHosts** | Pointer to **string** | A list of host keys for all hosts we can connect to over SFTP. | [optional] 
+**SSHKnownHosts** | Pointer to **string** | A list of host keys for all hosts we can connect to over SFTP. | [optional] 
 **User** | Pointer to **string** | The username for the server. | [optional] 
 **Address** | Pointer to **string** | A hostname or IPv4 address. | [optional] 
 **Port** | Pointer to **string** | The port number. | [optional] [default to "22"]
@@ -408,30 +408,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingSftpResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceId
+### GetServiceID
 
-`func (o *LoggingSftpResponse) GetServiceId() string`
+`func (o *LoggingSftpResponse) GetServiceID() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceIDOk
 
-`func (o *LoggingSftpResponse) GetServiceIdOk() (*string, bool)`
+`func (o *LoggingSftpResponse) GetServiceIDOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceID
 
-`func (o *LoggingSftpResponse) SetServiceId(v string)`
+`func (o *LoggingSftpResponse) SetServiceID(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceID sets ServiceID field to given value.
 
-### HasServiceId
+### HasServiceID
 
-`func (o *LoggingSftpResponse) HasServiceId() bool`
+`func (o *LoggingSftpResponse) HasServiceID() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -588,30 +588,30 @@ HasSecretKey returns a boolean if a field has been set.
 `func (o *LoggingSftpResponse) UnsetSecretKey()`
 
 UnsetSecretKey ensures that no value is present for SecretKey, not even an explicit nil
-### GetSshKnownHosts
+### GetSSHKnownHosts
 
-`func (o *LoggingSftpResponse) GetSshKnownHosts() string`
+`func (o *LoggingSftpResponse) GetSSHKnownHosts() string`
 
-GetSshKnownHosts returns the SshKnownHosts field if non-nil, zero value otherwise.
+GetSSHKnownHosts returns the SSHKnownHosts field if non-nil, zero value otherwise.
 
-### GetSshKnownHostsOk
+### GetSSHKnownHostsOk
 
-`func (o *LoggingSftpResponse) GetSshKnownHostsOk() (*string, bool)`
+`func (o *LoggingSftpResponse) GetSSHKnownHostsOk() (*string, bool)`
 
-GetSshKnownHostsOk returns a tuple with the SshKnownHosts field if it's non-nil, zero value otherwise
+GetSSHKnownHostsOk returns a tuple with the SSHKnownHosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSshKnownHosts
+### SetSSHKnownHosts
 
-`func (o *LoggingSftpResponse) SetSshKnownHosts(v string)`
+`func (o *LoggingSftpResponse) SetSSHKnownHosts(v string)`
 
-SetSshKnownHosts sets SshKnownHosts field to given value.
+SetSSHKnownHosts sets SSHKnownHosts field to given value.
 
-### HasSshKnownHosts
+### HasSSHKnownHosts
 
-`func (o *LoggingSftpResponse) HasSshKnownHosts() bool`
+`func (o *LoggingSftpResponse) HasSSHKnownHosts() bool`
 
-HasSshKnownHosts returns a boolean if a field has been set.
+HasSSHKnownHosts returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -740,5 +740,3 @@ HasGzipLevel returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

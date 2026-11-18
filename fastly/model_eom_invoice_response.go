@@ -20,9 +20,9 @@ import (
 // EomInvoiceResponse struct for EomInvoiceResponse
 type EomInvoiceResponse struct {
 	// Customer ID associated with the invoice.
-	CustomerId *string `json:"customer_id,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
 	// Numeric string identifying the invoice.
-	InvoiceId *string `json:"invoice_id,omitempty"`
+	InvoiceID *string `json:"invoice_id,omitempty"`
 	// Date and time invoice was posted on, in ISO 8601 format.
 	InvoicePostedOn *time.Time `json:"invoice_posted_on,omitempty"`
 	// Date and time (in ISO 8601 format) for initiation point of a billing cycle, signifying the start of charges for a service or subscription.
@@ -58,68 +58,68 @@ func NewEomInvoiceResponseWithDefaults() *EomInvoiceResponse {
 	return &this
 }
 
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *EomInvoiceResponse) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
+// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
+func (o *EomInvoiceResponse) GetCustomerID() string {
+	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerId
+	return *o.CustomerID
 }
 
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
+// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EomInvoiceResponse) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
+func (o *EomInvoiceResponse) GetCustomerIDOk() (*string, bool) {
+	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
-	return o.CustomerId, true
+	return o.CustomerID, true
 }
 
-// HasCustomerId returns a boolean if a field has been set.
-func (o *EomInvoiceResponse) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
+// HasCustomerID returns a boolean if a field has been set.
+func (o *EomInvoiceResponse) HasCustomerID() bool {
+	if o != nil && o.CustomerID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *EomInvoiceResponse) SetCustomerId(v string) {
-	o.CustomerId = &v
+// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
+func (o *EomInvoiceResponse) SetCustomerID(v string) {
+	o.CustomerID = &v
 }
 
-// GetInvoiceId returns the InvoiceId field value if set, zero value otherwise.
-func (o *EomInvoiceResponse) GetInvoiceId() string {
-	if o == nil || o.InvoiceId == nil {
+// GetInvoiceID returns the InvoiceID field value if set, zero value otherwise.
+func (o *EomInvoiceResponse) GetInvoiceID() string {
+	if o == nil || o.InvoiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.InvoiceId
+	return *o.InvoiceID
 }
 
-// GetInvoiceIdOk returns a tuple with the InvoiceId field value if set, nil otherwise
+// GetInvoiceIDOk returns a tuple with the InvoiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EomInvoiceResponse) GetInvoiceIdOk() (*string, bool) {
-	if o == nil || o.InvoiceId == nil {
+func (o *EomInvoiceResponse) GetInvoiceIDOk() (*string, bool) {
+	if o == nil || o.InvoiceID == nil {
 		return nil, false
 	}
-	return o.InvoiceId, true
+	return o.InvoiceID, true
 }
 
-// HasInvoiceId returns a boolean if a field has been set.
-func (o *EomInvoiceResponse) HasInvoiceId() bool {
-	if o != nil && o.InvoiceId != nil {
+// HasInvoiceID returns a boolean if a field has been set.
+func (o *EomInvoiceResponse) HasInvoiceID() bool {
+	if o != nil && o.InvoiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetInvoiceId gets a reference to the given string and assigns it to the InvoiceId field.
-func (o *EomInvoiceResponse) SetInvoiceId(v string) {
-	o.InvoiceId = &v
+// SetInvoiceID gets a reference to the given string and assigns it to the InvoiceID field.
+func (o *EomInvoiceResponse) SetInvoiceID(v string) {
+	o.InvoiceID = &v
 }
 
 // GetInvoicePostedOn returns the InvoicePostedOn field value if set, zero value otherwise.
@@ -350,11 +350,11 @@ func (o *EomInvoiceResponse) SetTransactionLineItems(v []Invoicelineitems) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o EomInvoiceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
+	if o.CustomerID != nil {
+		toSerialize["customer_id"] = o.CustomerID
 	}
-	if o.InvoiceId != nil {
-		toSerialize["invoice_id"] = o.InvoiceId
+	if o.InvoiceID != nil {
+		toSerialize["invoice_id"] = o.InvoiceID
 	}
 	if o.InvoicePostedOn != nil {
 		toSerialize["invoice_posted_on"] = o.InvoicePostedOn

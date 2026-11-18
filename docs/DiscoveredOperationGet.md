@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Method** | **string** | The HTTP method for the operation. | 
 **Domain** | **string** | The domain for the operation. | 
 **Path** | **string** | The path for the operation, which may include path parameters. | 
-**Id** | **string** | The unique identifier of the discovered operation. | [readonly] 
+**ID** | **string** | The unique identifier of the discovered operation. | [readonly] 
 **UpdatedAt** | Pointer to **time.Time** | The timestamp when the operation was last updated. | [optional] [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
 **Rps** | Pointer to **float32** | Requests per second observed for this operation. | [optional] [readonly] 
@@ -91,24 +91,24 @@ and a boolean to check if the value has been set.
 SetPath sets Path field to given value.
 
 
-### GetId
+### GetID
 
-`func (o *DiscoveredOperationGet) GetId() string`
+`func (o *DiscoveredOperationGet) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *DiscoveredOperationGet) GetIdOk() (*string, bool)`
+`func (o *DiscoveredOperationGet) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *DiscoveredOperationGet) SetId(v string)`
+`func (o *DiscoveredOperationGet) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetUpdatedAt
@@ -188,5 +188,3 @@ HasRps returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

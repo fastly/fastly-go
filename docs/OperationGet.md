@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Path** | **string** | The path for the operation, which may include path parameters. | 
 **Description** | Pointer to **string** | A description of what the operation does. | [optional] 
 **TagIds** | Pointer to **[]string** | An array of operation tag IDs associated with this operation. | [optional] 
-**Id** | **string** | The unique identifier of the operation. | [readonly] 
+**ID** | **string** | The unique identifier of the operation. | [readonly] 
 **CreatedAt** | Pointer to **time.Time** | The timestamp when the operation was created. | [optional] [readonly] 
 **UpdatedAt** | **time.Time** | The timestamp when the operation was last updated. | [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
@@ -145,24 +145,24 @@ SetTagIds sets TagIds field to given value.
 
 HasTagIds returns a boolean if a field has been set.
 
-### GetId
+### GetID
 
-`func (o *OperationGet) GetId() string`
+`func (o *OperationGet) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *OperationGet) GetIdOk() (*string, bool)`
+`func (o *OperationGet) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *OperationGet) SetId(v string)`
+`func (o *OperationGet) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetCreatedAt
@@ -287,5 +287,3 @@ HasStatus returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

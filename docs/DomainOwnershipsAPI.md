@@ -66,4 +66,3 @@ Other parameters are passed through a pointer to a apiListDomainOwnershipsReques
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-

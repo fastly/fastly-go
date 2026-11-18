@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the discovered operation. | [readonly] 
+**ID** | **string** | The unique identifier of the discovered operation. | [readonly] 
 **UpdatedAt** | Pointer to **time.Time** | The timestamp when the operation was last updated. | [optional] [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
 **Rps** | Pointer to **float32** | Requests per second observed for this operation. | [optional] [readonly] 
@@ -28,24 +28,24 @@ NewDiscoveredOperationGetExtraWithDefaults instantiates a new DiscoveredOperatio
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *DiscoveredOperationGetExtra) GetId() string`
+`func (o *DiscoveredOperationGetExtra) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *DiscoveredOperationGetExtra) GetIdOk() (*string, bool)`
+`func (o *DiscoveredOperationGetExtra) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *DiscoveredOperationGetExtra) SetId(v string)`
+`func (o *DiscoveredOperationGetExtra) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetUpdatedAt
@@ -125,5 +125,3 @@ HasRps returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

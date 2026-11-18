@@ -29,7 +29,7 @@ type LoggingBigqueryAdditional struct {
 	// BigQuery table name suffix template. Optional.
 	TemplateSuffix NullableString `json:"template_suffix,omitempty"`
 	// Your Google Cloud Platform project ID. Required
-	ProjectId            *string `json:"project_id,omitempty"`
+	ProjectID            *string `json:"project_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -223,36 +223,36 @@ func (o *LoggingBigqueryAdditional) UnsetTemplateSuffix() {
 	o.TemplateSuffix.Unset()
 }
 
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
-func (o *LoggingBigqueryAdditional) GetProjectId() string {
-	if o == nil || o.ProjectId == nil {
+// GetProjectID returns the ProjectID field value if set, zero value otherwise.
+func (o *LoggingBigqueryAdditional) GetProjectID() string {
+	if o == nil || o.ProjectID == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectId
+	return *o.ProjectID
 }
 
-// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingBigqueryAdditional) GetProjectIdOk() (*string, bool) {
-	if o == nil || o.ProjectId == nil {
+func (o *LoggingBigqueryAdditional) GetProjectIDOk() (*string, bool) {
+	if o == nil || o.ProjectID == nil {
 		return nil, false
 	}
-	return o.ProjectId, true
+	return o.ProjectID, true
 }
 
-// HasProjectId returns a boolean if a field has been set.
-func (o *LoggingBigqueryAdditional) HasProjectId() bool {
-	if o != nil && o.ProjectId != nil {
+// HasProjectID returns a boolean if a field has been set.
+func (o *LoggingBigqueryAdditional) HasProjectID() bool {
+	if o != nil && o.ProjectID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
-func (o *LoggingBigqueryAdditional) SetProjectId(v string) {
-	o.ProjectId = &v
+// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
+func (o *LoggingBigqueryAdditional) SetProjectID(v string) {
+	o.ProjectID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -274,8 +274,8 @@ func (o LoggingBigqueryAdditional) MarshalJSON() ([]byte, error) {
 	if o.TemplateSuffix.IsSet() {
 		toSerialize["template_suffix"] = o.TemplateSuffix.Get()
 	}
-	if o.ProjectId != nil {
-		toSerialize["project_id"] = o.ProjectId
+	if o.ProjectID != nil {
+		toSerialize["project_id"] = o.ProjectID
 	}
 
 	for key, value := range o.AdditionalProperties {

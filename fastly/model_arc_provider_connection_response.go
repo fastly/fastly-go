@@ -20,15 +20,15 @@ import (
 // ArcProviderConnectionResponse A provider connection.
 type ArcProviderConnectionResponse struct {
 	// The unique identifier of the provider connection.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// An opaque identifier for the secret material backing this connection. Not the secret itself.
-	SecretId string `json:"secret_id"`
+	SecretID string `json:"secret_id"`
 	// The display name of the provider connection.
 	Name string `json:"name"`
 	// The AI model identifiers this connection is allowed to use.
 	Models []string `json:"models"`
 	// The base URL of the provider's API. Present only for `api-key` connections.
-	BaseUrl *string `json:"base_url,omitempty"`
+	BaseURL *string `json:"base_url,omitempty"`
 	// The authentication type for this connection.
 	AuthType string `json:"auth_type"`
 	// The AWS region for Bedrock API requests. Present only for `aws-iam` connections.
@@ -46,10 +46,10 @@ type _ArcProviderConnectionResponse ArcProviderConnectionResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArcProviderConnectionResponse(id string, secretId string, name string, models []string, authType string, createdAt time.Time, updatedAt time.Time) *ArcProviderConnectionResponse {
+func NewArcProviderConnectionResponse(id string, secretID string, name string, models []string, authType string, createdAt time.Time, updatedAt time.Time) *ArcProviderConnectionResponse {
 	this := ArcProviderConnectionResponse{}
-	this.Id = id
-	this.SecretId = secretId
+	this.ID = id
+	this.SecretID = secretID
 	this.Name = name
 	this.Models = models
 	this.AuthType = authType
@@ -66,52 +66,52 @@ func NewArcProviderConnectionResponseWithDefaults() *ArcProviderConnectionRespon
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *ArcProviderConnectionResponse) GetId() string {
+// GetID returns the ID field value
+func (o *ArcProviderConnectionResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *ArcProviderConnectionResponse) GetIdOk() (*string, bool) {
+func (o *ArcProviderConnectionResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *ArcProviderConnectionResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *ArcProviderConnectionResponse) SetID(v string) {
+	o.ID = v
 }
 
-// GetSecretId returns the SecretId field value
-func (o *ArcProviderConnectionResponse) GetSecretId() string {
+// GetSecretID returns the SecretID field value
+func (o *ArcProviderConnectionResponse) GetSecretID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.SecretId
+	return o.SecretID
 }
 
-// GetSecretIdOk returns a tuple with the SecretId field value
+// GetSecretIDOk returns a tuple with the SecretID field value
 // and a boolean to check if the value has been set.
-func (o *ArcProviderConnectionResponse) GetSecretIdOk() (*string, bool) {
+func (o *ArcProviderConnectionResponse) GetSecretIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.SecretId, true
+	return &o.SecretID, true
 }
 
-// SetSecretId sets field value
-func (o *ArcProviderConnectionResponse) SetSecretId(v string) {
-	o.SecretId = v
+// SetSecretID sets field value
+func (o *ArcProviderConnectionResponse) SetSecretID(v string) {
+	o.SecretID = v
 }
 
 // GetName returns the Name field value
@@ -162,36 +162,36 @@ func (o *ArcProviderConnectionResponse) SetModels(v []string) {
 	o.Models = v
 }
 
-// GetBaseUrl returns the BaseUrl field value if set, zero value otherwise.
-func (o *ArcProviderConnectionResponse) GetBaseUrl() string {
-	if o == nil || o.BaseUrl == nil {
+// GetBaseURL returns the BaseURL field value if set, zero value otherwise.
+func (o *ArcProviderConnectionResponse) GetBaseURL() string {
+	if o == nil || o.BaseURL == nil {
 		var ret string
 		return ret
 	}
-	return *o.BaseUrl
+	return *o.BaseURL
 }
 
-// GetBaseUrlOk returns a tuple with the BaseUrl field value if set, nil otherwise
+// GetBaseURLOk returns a tuple with the BaseURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArcProviderConnectionResponse) GetBaseUrlOk() (*string, bool) {
-	if o == nil || o.BaseUrl == nil {
+func (o *ArcProviderConnectionResponse) GetBaseURLOk() (*string, bool) {
+	if o == nil || o.BaseURL == nil {
 		return nil, false
 	}
-	return o.BaseUrl, true
+	return o.BaseURL, true
 }
 
-// HasBaseUrl returns a boolean if a field has been set.
-func (o *ArcProviderConnectionResponse) HasBaseUrl() bool {
-	if o != nil && o.BaseUrl != nil {
+// HasBaseURL returns a boolean if a field has been set.
+func (o *ArcProviderConnectionResponse) HasBaseURL() bool {
+	if o != nil && o.BaseURL != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBaseUrl gets a reference to the given string and assigns it to the BaseUrl field.
-func (o *ArcProviderConnectionResponse) SetBaseUrl(v string) {
-	o.BaseUrl = &v
+// SetBaseURL gets a reference to the given string and assigns it to the BaseURL field.
+func (o *ArcProviderConnectionResponse) SetBaseURL(v string) {
+	o.BaseURL = &v
 }
 
 // GetAuthType returns the AuthType field value
@@ -303,10 +303,10 @@ func (o *ArcProviderConnectionResponse) SetUpdatedAt(v time.Time) {
 func (o ArcProviderConnectionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
-		toSerialize["secret_id"] = o.SecretId
+		toSerialize["secret_id"] = o.SecretID
 	}
 	if true {
 		toSerialize["name"] = o.Name
@@ -314,8 +314,8 @@ func (o ArcProviderConnectionResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["models"] = o.Models
 	}
-	if o.BaseUrl != nil {
-		toSerialize["base_url"] = o.BaseUrl
+	if o.BaseURL != nil {
+		toSerialize["base_url"] = o.BaseURL
 	}
 	if true {
 		toSerialize["auth_type"] = o.AuthType

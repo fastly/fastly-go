@@ -208,5 +208,3 @@ HasBotEdgeRequestsChallengeTokenValidCount returns a boolean if a field has been
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to [**ReadOnlyId**](ReadOnlyId.md) |  | [optional] 
-**UserId** | Pointer to [**ReadOnlyUserId**](ReadOnlyUserId.md) |  | [optional] 
-**CustomerId** | Pointer to [**ReadOnlyCustomerId**](ReadOnlyCustomerId.md) |  | [optional] 
+**ID** | Pointer to [**ReadOnlyID**](ReadOnlyID.md) |  | [optional] 
+**UserID** | Pointer to [**ReadOnlyUserID**](ReadOnlyUserID.md) |  | [optional] 
+**CustomerID** | Pointer to [**ReadOnlyCustomerID**](ReadOnlyCustomerID.md) |  | [optional] 
 **CreatedAt** | Pointer to **time.Time** | A UTC timestamp of when the token was created.  | [optional] [readonly] 
 **AccessToken** | Pointer to **string** |  | [optional] [readonly] 
-**TlsAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
+**TLSAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
 **LastUsedAt** | Pointer to **time.Time** | A UTC timestamp of when the token was last used. | [optional] [readonly] 
 **UserAgent** | Pointer to **string** | The User-Agent header of the client that last used the token. | [optional] 
 
@@ -32,80 +32,80 @@ NewAutomationTokenCreateResponseAllOfWithDefaults instantiates a new AutomationT
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *AutomationTokenCreateResponseAllOf) GetId() ReadOnlyId`
+`func (o *AutomationTokenCreateResponseAllOf) GetID() ReadOnlyID`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *AutomationTokenCreateResponseAllOf) GetIdOk() (*ReadOnlyId, bool)`
+`func (o *AutomationTokenCreateResponseAllOf) GetIDOk() (*ReadOnlyID, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *AutomationTokenCreateResponseAllOf) SetId(v ReadOnlyId)`
+`func (o *AutomationTokenCreateResponseAllOf) SetID(v ReadOnlyID)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
-### HasId
+### HasID
 
-`func (o *AutomationTokenCreateResponseAllOf) HasId() bool`
+`func (o *AutomationTokenCreateResponseAllOf) HasID() bool`
 
-HasId returns a boolean if a field has been set.
+HasID returns a boolean if a field has been set.
 
-### GetUserId
+### GetUserID
 
-`func (o *AutomationTokenCreateResponseAllOf) GetUserId() ReadOnlyUserId`
+`func (o *AutomationTokenCreateResponseAllOf) GetUserID() ReadOnlyUserID`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserID returns the UserID field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIDOk
 
-`func (o *AutomationTokenCreateResponseAllOf) GetUserIdOk() (*ReadOnlyUserId, bool)`
+`func (o *AutomationTokenCreateResponseAllOf) GetUserIDOk() (*ReadOnlyUserID, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserID
 
-`func (o *AutomationTokenCreateResponseAllOf) SetUserId(v ReadOnlyUserId)`
+`func (o *AutomationTokenCreateResponseAllOf) SetUserID(v ReadOnlyUserID)`
 
-SetUserId sets UserId field to given value.
+SetUserID sets UserID field to given value.
 
-### HasUserId
+### HasUserID
 
-`func (o *AutomationTokenCreateResponseAllOf) HasUserId() bool`
+`func (o *AutomationTokenCreateResponseAllOf) HasUserID() bool`
 
-HasUserId returns a boolean if a field has been set.
+HasUserID returns a boolean if a field has been set.
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *AutomationTokenCreateResponseAllOf) GetCustomerId() ReadOnlyCustomerId`
+`func (o *AutomationTokenCreateResponseAllOf) GetCustomerID() ReadOnlyCustomerID`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *AutomationTokenCreateResponseAllOf) GetCustomerIdOk() (*ReadOnlyCustomerId, bool)`
+`func (o *AutomationTokenCreateResponseAllOf) GetCustomerIDOk() (*ReadOnlyCustomerID, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *AutomationTokenCreateResponseAllOf) SetCustomerId(v ReadOnlyCustomerId)`
+`func (o *AutomationTokenCreateResponseAllOf) SetCustomerID(v ReadOnlyCustomerID)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *AutomationTokenCreateResponseAllOf) HasCustomerId() bool`
+`func (o *AutomationTokenCreateResponseAllOf) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -157,30 +157,30 @@ SetAccessToken sets AccessToken field to given value.
 
 HasAccessToken returns a boolean if a field has been set.
 
-### GetTlsAccess
+### GetTLSAccess
 
-`func (o *AutomationTokenCreateResponseAllOf) GetTlsAccess() bool`
+`func (o *AutomationTokenCreateResponseAllOf) GetTLSAccess() bool`
 
-GetTlsAccess returns the TlsAccess field if non-nil, zero value otherwise.
+GetTLSAccess returns the TLSAccess field if non-nil, zero value otherwise.
 
-### GetTlsAccessOk
+### GetTLSAccessOk
 
-`func (o *AutomationTokenCreateResponseAllOf) GetTlsAccessOk() (*bool, bool)`
+`func (o *AutomationTokenCreateResponseAllOf) GetTLSAccessOk() (*bool, bool)`
 
-GetTlsAccessOk returns a tuple with the TlsAccess field if it's non-nil, zero value otherwise
+GetTLSAccessOk returns a tuple with the TLSAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTlsAccess
+### SetTLSAccess
 
-`func (o *AutomationTokenCreateResponseAllOf) SetTlsAccess(v bool)`
+`func (o *AutomationTokenCreateResponseAllOf) SetTLSAccess(v bool)`
 
-SetTlsAccess sets TlsAccess field to given value.
+SetTLSAccess sets TLSAccess field to given value.
 
-### HasTlsAccess
+### HasTLSAccess
 
-`func (o *AutomationTokenCreateResponseAllOf) HasTlsAccess() bool`
+`func (o *AutomationTokenCreateResponseAllOf) HasTLSAccess() bool`
 
-HasTlsAccess returns a boolean if a field has been set.
+HasTLSAccess returns a boolean if a field has been set.
 
 ### GetLastUsedAt
 
@@ -234,5 +234,3 @@ HasUserAgent returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

@@ -25,7 +25,7 @@ type BotManagementWorkspaceResponse struct {
 	Description    *string                     `json:"description,omitempty"`
 	ProtectionMode BotManagementProtectionMode `json:"protection_mode"`
 	// A UUID used to uniquely identify the workspace.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// The IDs of the services attached to this workspace.
 	Services []string `json:"services,omitempty"`
 	// The date and time the workspace was created, in RFC 3339 format.
@@ -45,7 +45,7 @@ func NewBotManagementWorkspaceResponse(name string, protectionMode BotManagement
 	this := BotManagementWorkspaceResponse{}
 	this.Name = name
 	this.ProtectionMode = protectionMode
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -139,28 +139,28 @@ func (o *BotManagementWorkspaceResponse) SetProtectionMode(v BotManagementProtec
 	o.ProtectionMode = v
 }
 
-// GetId returns the Id field value
-func (o *BotManagementWorkspaceResponse) GetId() string {
+// GetID returns the ID field value
+func (o *BotManagementWorkspaceResponse) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *BotManagementWorkspaceResponse) GetIdOk() (*string, bool) {
+func (o *BotManagementWorkspaceResponse) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *BotManagementWorkspaceResponse) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *BotManagementWorkspaceResponse) SetID(v string) {
+	o.ID = v
 }
 
 // GetServices returns the Services field value if set, zero value otherwise.
@@ -257,7 +257,7 @@ func (o BotManagementWorkspaceResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["protection_mode"] = o.ProtectionMode
 	}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if o.Services != nil {
 		toSerialize["services"] = o.Services

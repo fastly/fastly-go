@@ -23,7 +23,7 @@ type NetworkProtectNetworkUpdate struct {
 	// A human-readable name, unique within the customer.
 	Name *string `json:"name,omitempty"`
 	// Custom rule-set attachment is unavailable. Omission, null, and an empty string preserve the current backend-assigned rule set.
-	RuleSetId NullableString `json:"rule_set_id,omitempty"`
+	RuleSetID NullableString `json:"rule_set_id,omitempty"`
 	// Complete endpoint policy configuration. A network has at most one policy per region and may have no policies.
 	EndpointPolicies []NetworkProtectEndpointPolicy `json:"endpoint_policies,omitempty"`
 	// Desired advertisement state, which is not the same as observed route state. Enabling it requires approved LOA, valid ROA, and a ready default-region delivery policy. A later ROA failure does not turn an existing advertisement off; losing LOA approval or the last ready default endpoint does.
@@ -129,47 +129,47 @@ func (o *NetworkProtectNetworkUpdate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetRuleSetId returns the RuleSetId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NetworkProtectNetworkUpdate) GetRuleSetId() string {
-	if o == nil || o.RuleSetId.Get() == nil {
+// GetRuleSetID returns the RuleSetID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkProtectNetworkUpdate) GetRuleSetID() string {
+	if o == nil || o.RuleSetID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.RuleSetId.Get()
+	return *o.RuleSetID.Get()
 }
 
-// GetRuleSetIdOk returns a tuple with the RuleSetId field value if set, nil otherwise
+// GetRuleSetIDOk returns a tuple with the RuleSetID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NetworkProtectNetworkUpdate) GetRuleSetIdOk() (*string, bool) {
+func (o *NetworkProtectNetworkUpdate) GetRuleSetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.RuleSetId.Get(), o.RuleSetId.IsSet()
+	return o.RuleSetID.Get(), o.RuleSetID.IsSet()
 }
 
-// HasRuleSetId returns a boolean if a field has been set.
-func (o *NetworkProtectNetworkUpdate) HasRuleSetId() bool {
-	if o != nil && o.RuleSetId.IsSet() {
+// HasRuleSetID returns a boolean if a field has been set.
+func (o *NetworkProtectNetworkUpdate) HasRuleSetID() bool {
+	if o != nil && o.RuleSetID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRuleSetId gets a reference to the given NullableString and assigns it to the RuleSetId field.
-func (o *NetworkProtectNetworkUpdate) SetRuleSetId(v string) {
-	o.RuleSetId.Set(&v)
+// SetRuleSetID gets a reference to the given NullableString and assigns it to the RuleSetID field.
+func (o *NetworkProtectNetworkUpdate) SetRuleSetID(v string) {
+	o.RuleSetID.Set(&v)
 }
 
-// SetRuleSetIdNil sets the value for RuleSetId to be an explicit nil
-func (o *NetworkProtectNetworkUpdate) SetRuleSetIdNil() {
-	o.RuleSetId.Set(nil)
+// SetRuleSetIDNil sets the value for RuleSetID to be an explicit nil
+func (o *NetworkProtectNetworkUpdate) SetRuleSetIDNil() {
+	o.RuleSetID.Set(nil)
 }
 
-// UnsetRuleSetId ensures that no value is present for RuleSetId, not even an explicit nil
-func (o *NetworkProtectNetworkUpdate) UnsetRuleSetId() {
-	o.RuleSetId.Unset()
+// UnsetRuleSetID ensures that no value is present for RuleSetID, not even an explicit nil
+func (o *NetworkProtectNetworkUpdate) UnsetRuleSetID() {
+	o.RuleSetID.Unset()
 }
 
 // GetEndpointPolicies returns the EndpointPolicies field value if set, zero value otherwise.
@@ -246,8 +246,8 @@ func (o NetworkProtectNetworkUpdate) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.RuleSetId.IsSet() {
-		toSerialize["rule_set_id"] = o.RuleSetId.Get()
+	if o.RuleSetID.IsSet() {
+		toSerialize["rule_set_id"] = o.RuleSetID.Get()
 	}
 	if o.EndpointPolicies != nil {
 		toSerialize["endpoint_policies"] = o.EndpointPolicies

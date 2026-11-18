@@ -20,7 +20,7 @@ import (
 type ListDashboardsResponse struct {
 	Data []Dashboard `json:"data,omitempty"`
 	// Meta for the pagination.
-	Meta                 interface{} `json:"meta,omitempty"`
+	Meta                 any `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,9 +76,9 @@ func (o *ListDashboardsResponse) SetData(v []Dashboard) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListDashboardsResponse) GetMeta() interface{} {
+func (o *ListDashboardsResponse) GetMeta() any {
 	if o == nil {
-		var ret interface{}
+		var ret any
 		return ret
 	}
 	return o.Meta
@@ -87,7 +87,7 @@ func (o *ListDashboardsResponse) GetMeta() interface{} {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListDashboardsResponse) GetMetaOk() (*interface{}, bool) {
+func (o *ListDashboardsResponse) GetMetaOk() (*any, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListDashboardsResponse) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given interface{} and assigns it to the Meta field.
-func (o *ListDashboardsResponse) SetMeta(v interface{}) {
+// SetMeta gets a reference to the given any and assigns it to the Meta field.
+func (o *ListDashboardsResponse) SetMeta(v any) {
 	o.Meta = v
 }
 

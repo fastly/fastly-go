@@ -30,9 +30,9 @@ type _Action Action
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAction(type_ ActionType, value string) *Action {
+func NewAction(resourceType ActionType, value string) *Action {
 	this := Action{}
-	this.Type = type_
+	this.Type = resourceType
 	this.Value = value
 	return &this
 }

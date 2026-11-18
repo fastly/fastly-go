@@ -20,7 +20,7 @@ import (
 // NetworkProtectRuleSetResponseFields Read-only fields and required fields in a rule-set response.
 type NetworkProtectRuleSetResponseFields struct {
 	// A read-only unique identifier for a Network Protect resource.
-	Id string `json:"id"`
+	ID string `json:"id"`
 	// An ISO 8601 timestamp in UTC.
 	CreatedAt time.Time `json:"created_at"`
 	// An ISO 8601 timestamp in UTC.
@@ -36,7 +36,7 @@ type _NetworkProtectRuleSetResponseFields NetworkProtectRuleSetResponseFields
 // will change when the set of required properties is changed
 func NewNetworkProtectRuleSetResponseFields(id string, createdAt time.Time, updatedAt time.Time) *NetworkProtectRuleSetResponseFields {
 	this := NetworkProtectRuleSetResponseFields{}
-	this.Id = id
+	this.ID = id
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -50,28 +50,28 @@ func NewNetworkProtectRuleSetResponseFieldsWithDefaults() *NetworkProtectRuleSet
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *NetworkProtectRuleSetResponseFields) GetId() string {
+// GetID returns the ID field value
+func (o *NetworkProtectRuleSetResponseFields) GetID() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Id
+	return o.ID
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIDOk returns a tuple with the ID field value
 // and a boolean to check if the value has been set.
-func (o *NetworkProtectRuleSetResponseFields) GetIdOk() (*string, bool) {
+func (o *NetworkProtectRuleSetResponseFields) GetIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return &o.ID, true
 }
 
-// SetId sets field value
-func (o *NetworkProtectRuleSetResponseFields) SetId(v string) {
-	o.Id = v
+// SetID sets field value
+func (o *NetworkProtectRuleSetResponseFields) SetID(v string) {
+	o.ID = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
@@ -127,7 +127,7 @@ func (o *NetworkProtectRuleSetResponseFields) SetUpdatedAt(v time.Time) {
 func (o NetworkProtectRuleSetResponseFields) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["id"] = o.ID
 	}
 	if true {
 		toSerialize["created_at"] = o.CreatedAt

@@ -1,4 +1,4 @@
-# TlsDnsRecord
+# TLSDNSRecord
 
 ## Properties
 
@@ -9,74 +9,72 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTlsDnsRecord
+### NewTLSDNSRecord
 
-`func NewTlsDnsRecord() *TlsDnsRecord`
+`func NewTLSDNSRecord() *TLSDNSRecord`
 
-NewTlsDnsRecord instantiates a new TlsDnsRecord object
+NewTLSDNSRecord instantiates a new TLSDNSRecord object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsDnsRecordWithDefaults
+### NewTLSDNSRecordWithDefaults
 
-`func NewTlsDnsRecordWithDefaults() *TlsDnsRecord`
+`func NewTLSDNSRecordWithDefaults() *TLSDNSRecord`
 
-NewTlsDnsRecordWithDefaults instantiates a new TlsDnsRecord object
+NewTLSDNSRecordWithDefaults instantiates a new TLSDNSRecord object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetRegion
 
-`func (o *TlsDnsRecord) GetRegion() string`
+`func (o *TLSDNSRecord) GetRegion() string`
 
 GetRegion returns the Region field if non-nil, zero value otherwise.
 
 ### GetRegionOk
 
-`func (o *TlsDnsRecord) GetRegionOk() (*string, bool)`
+`func (o *TLSDNSRecord) GetRegionOk() (*string, bool)`
 
 GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegion
 
-`func (o *TlsDnsRecord) SetRegion(v string)`
+`func (o *TLSDNSRecord) SetRegion(v string)`
 
 SetRegion sets Region field to given value.
 
 ### HasRegion
 
-`func (o *TlsDnsRecord) HasRegion() bool`
+`func (o *TLSDNSRecord) HasRegion() bool`
 
 HasRegion returns a boolean if a field has been set.
 
 ### GetRecordType
 
-`func (o *TlsDnsRecord) GetRecordType() string`
+`func (o *TLSDNSRecord) GetRecordType() string`
 
 GetRecordType returns the RecordType field if non-nil, zero value otherwise.
 
 ### GetRecordTypeOk
 
-`func (o *TlsDnsRecord) GetRecordTypeOk() (*string, bool)`
+`func (o *TLSDNSRecord) GetRecordTypeOk() (*string, bool)`
 
 GetRecordTypeOk returns a tuple with the RecordType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecordType
 
-`func (o *TlsDnsRecord) SetRecordType(v string)`
+`func (o *TLSDNSRecord) SetRecordType(v string)`
 
 SetRecordType sets RecordType field to given value.
 
 ### HasRecordType
 
-`func (o *TlsDnsRecord) HasRecordType() bool`
+`func (o *TLSDNSRecord) HasRecordType() bool`
 
 HasRecordType returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

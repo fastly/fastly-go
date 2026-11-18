@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerId** | Pointer to **string** | Customer ID associated with the invoice. | [optional] 
-**InvoiceId** | Pointer to **string** | Numeric string identifying the invoice. | [optional] 
+**CustomerID** | Pointer to **string** | Customer ID associated with the invoice. | [optional] 
+**InvoiceID** | Pointer to **string** | Numeric string identifying the invoice. | [optional] 
 **InvoicePostedOn** | Pointer to **time.Time** | Date and time invoice was posted on, in ISO 8601 format. | [optional] 
 **BillingStartDate** | Pointer to **time.Time** | Date and time (in ISO 8601 format) for initiation point of a billing cycle, signifying the start of charges for a service or subscription. | [optional] 
 **BillingEndDate** | Pointer to **time.Time** | Date and time (in ISO 8601 format) for termination point of a billing cycle, signifying the end of charges for a service or subscription. | [optional] 
@@ -33,55 +33,55 @@ NewEomInvoiceResponseWithDefaults instantiates a new EomInvoiceResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCustomerId
+### GetCustomerID
 
-`func (o *EomInvoiceResponse) GetCustomerId() string`
+`func (o *EomInvoiceResponse) GetCustomerID() string`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomerIDOk
 
-`func (o *EomInvoiceResponse) GetCustomerIdOk() (*string, bool)`
+`func (o *EomInvoiceResponse) GetCustomerIDOk() (*string, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomerID
 
-`func (o *EomInvoiceResponse) SetCustomerId(v string)`
+`func (o *EomInvoiceResponse) SetCustomerID(v string)`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomerID sets CustomerID field to given value.
 
-### HasCustomerId
+### HasCustomerID
 
-`func (o *EomInvoiceResponse) HasCustomerId() bool`
+`func (o *EomInvoiceResponse) HasCustomerID() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomerID returns a boolean if a field has been set.
 
-### GetInvoiceId
+### GetInvoiceID
 
-`func (o *EomInvoiceResponse) GetInvoiceId() string`
+`func (o *EomInvoiceResponse) GetInvoiceID() string`
 
-GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+GetInvoiceID returns the InvoiceID field if non-nil, zero value otherwise.
 
-### GetInvoiceIdOk
+### GetInvoiceIDOk
 
-`func (o *EomInvoiceResponse) GetInvoiceIdOk() (*string, bool)`
+`func (o *EomInvoiceResponse) GetInvoiceIDOk() (*string, bool)`
 
-GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+GetInvoiceIDOk returns a tuple with the InvoiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInvoiceId
+### SetInvoiceID
 
-`func (o *EomInvoiceResponse) SetInvoiceId(v string)`
+`func (o *EomInvoiceResponse) SetInvoiceID(v string)`
 
-SetInvoiceId sets InvoiceId field to given value.
+SetInvoiceID sets InvoiceID field to given value.
 
-### HasInvoiceId
+### HasInvoiceID
 
-`func (o *EomInvoiceResponse) HasInvoiceId() bool`
+`func (o *EomInvoiceResponse) HasInvoiceID() bool`
 
-HasInvoiceId returns a boolean if a field has been set.
+HasInvoiceID returns a boolean if a field has been set.
 
 ### GetInvoicePostedOn
 
@@ -260,5 +260,3 @@ HasTransactionLineItems returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

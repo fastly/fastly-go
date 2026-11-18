@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Request** | Pointer to **string** | The raw request data. | [optional] 
 **Response** | Pointer to **string** | The raw response data. | [optional] 
-**Attrs** | Pointer to **map[string]map[string]interface{}** | Additional attributes recorded for this request/response pair. | [optional] 
+**Attrs** | Pointer to **map[string]map[string]any** | Additional attributes recorded for this request/response pair. | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasResponse returns a boolean if a field has been set.
 
 ### GetAttrs
 
-`func (o *ArcSessionLogEntry) GetAttrs() map[string]map[string]interface{}`
+`func (o *ArcSessionLogEntry) GetAttrs() map[string]map[string]any`
 
 GetAttrs returns the Attrs field if non-nil, zero value otherwise.
 
 ### GetAttrsOk
 
-`func (o *ArcSessionLogEntry) GetAttrsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *ArcSessionLogEntry) GetAttrsOk() (*map[string]map[string]any, bool)`
 
 GetAttrsOk returns a tuple with the Attrs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttrs
 
-`func (o *ArcSessionLogEntry) SetAttrs(v map[string]map[string]interface{})`
+`func (o *ArcSessionLogEntry) SetAttrs(v map[string]map[string]any)`
 
 SetAttrs sets Attrs field to given value.
 
@@ -104,5 +104,3 @@ HasAttrs returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

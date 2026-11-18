@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique identifier of the operation. | [readonly] 
+**ID** | **string** | The unique identifier of the operation. | [readonly] 
 **CreatedAt** | Pointer to **time.Time** | The timestamp when the operation was created. | [optional] [readonly] 
 **UpdatedAt** | **time.Time** | The timestamp when the operation was last updated. | [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
@@ -30,24 +30,24 @@ NewOperationGetExtraWithDefaults instantiates a new OperationGetExtra object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetID
 
-`func (o *OperationGetExtra) GetId() string`
+`func (o *OperationGetExtra) GetID() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetID returns the ID field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetIDOk
 
-`func (o *OperationGetExtra) GetIdOk() (*string, bool)`
+`func (o *OperationGetExtra) GetIDOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetID
 
-`func (o *OperationGetExtra) SetId(v string)`
+`func (o *OperationGetExtra) SetID(v string)`
 
-SetId sets Id field to given value.
+SetID sets ID field to given value.
 
 
 ### GetCreatedAt
@@ -172,5 +172,3 @@ HasStatus returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-

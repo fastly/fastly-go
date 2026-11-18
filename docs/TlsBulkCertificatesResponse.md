@@ -1,4 +1,4 @@
-# TlsBulkCertificatesResponse
+# TLSBulkCertificatesResponse
 
 ## Properties
 
@@ -6,103 +6,101 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationMeta1**](PaginationMeta1.md) |  | [optional] 
-**Data** | Pointer to [**[]TlsBulkCertificateResponseData**](TlsBulkCertificateResponseData.md) |  | [optional] 
+**Data** | Pointer to [**[]TLSBulkCertificateResponseData**](TlsBulkCertificateResponseData.md) |  | [optional] 
 
 ## Methods
 
-### NewTlsBulkCertificatesResponse
+### NewTLSBulkCertificatesResponse
 
-`func NewTlsBulkCertificatesResponse() *TlsBulkCertificatesResponse`
+`func NewTLSBulkCertificatesResponse() *TLSBulkCertificatesResponse`
 
-NewTlsBulkCertificatesResponse instantiates a new TlsBulkCertificatesResponse object
+NewTLSBulkCertificatesResponse instantiates a new TLSBulkCertificatesResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTlsBulkCertificatesResponseWithDefaults
+### NewTLSBulkCertificatesResponseWithDefaults
 
-`func NewTlsBulkCertificatesResponseWithDefaults() *TlsBulkCertificatesResponse`
+`func NewTLSBulkCertificatesResponseWithDefaults() *TLSBulkCertificatesResponse`
 
-NewTlsBulkCertificatesResponseWithDefaults instantiates a new TlsBulkCertificatesResponse object
+NewTLSBulkCertificatesResponseWithDefaults instantiates a new TLSBulkCertificatesResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLinks
 
-`func (o *TlsBulkCertificatesResponse) GetLinks() PaginationLinks`
+`func (o *TLSBulkCertificatesResponse) GetLinks() PaginationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *TlsBulkCertificatesResponse) GetLinksOk() (*PaginationLinks, bool)`
+`func (o *TLSBulkCertificatesResponse) GetLinksOk() (*PaginationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *TlsBulkCertificatesResponse) SetLinks(v PaginationLinks)`
+`func (o *TLSBulkCertificatesResponse) SetLinks(v PaginationLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *TlsBulkCertificatesResponse) HasLinks() bool`
+`func (o *TLSBulkCertificatesResponse) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *TlsBulkCertificatesResponse) GetMeta() PaginationMeta1`
+`func (o *TLSBulkCertificatesResponse) GetMeta() PaginationMeta1`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *TlsBulkCertificatesResponse) GetMetaOk() (*PaginationMeta1, bool)`
+`func (o *TLSBulkCertificatesResponse) GetMetaOk() (*PaginationMeta1, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *TlsBulkCertificatesResponse) SetMeta(v PaginationMeta1)`
+`func (o *TLSBulkCertificatesResponse) SetMeta(v PaginationMeta1)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *TlsBulkCertificatesResponse) HasMeta() bool`
+`func (o *TLSBulkCertificatesResponse) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *TlsBulkCertificatesResponse) GetData() []TlsBulkCertificateResponseData`
+`func (o *TLSBulkCertificatesResponse) GetData() []TLSBulkCertificateResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TlsBulkCertificatesResponse) GetDataOk() (*[]TlsBulkCertificateResponseData, bool)`
+`func (o *TLSBulkCertificatesResponse) GetDataOk() (*[]TLSBulkCertificateResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TlsBulkCertificatesResponse) SetData(v []TlsBulkCertificateResponseData)`
+`func (o *TLSBulkCertificatesResponse) SetData(v []TLSBulkCertificateResponseData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TlsBulkCertificatesResponse) HasData() bool`
+`func (o *TLSBulkCertificatesResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-
